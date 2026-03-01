@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Decoratiuni Baloane București | SuperParty" description="Decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti. Arcade, aranjamente, decor tematic. Rezerva: 0763 795 919.">
+  <section style="padding:6rem 0 3rem;">
+    <div class="container">
+      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Decoratiuni <span style="color:var(--primary);">Baloane</span> București</h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Transformam orice spatiu cu decoratiuni spectaculoase din baloane! Arcade, coloane, aranjamente de masa, tafturi si decor tematic complet pentru petreceri de neuitat.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:3rem;">
+        {['🎀 Arcade Baloane','🎈 Baloane Heliu','🎊 Coloane Baloane','💐 Aranjamente Masa','🏰 Decor Tematic','🌈 Baloane Latex'].map(s => (
+          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:12px; padding:1rem; text-align:center; font-weight:600;">{s}</div>
+        ))}
+      </div>
+      <a href="tel:+40763795919" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Comanda Decoratiuni</a>
+    </div>
+  </section>
+</Layout>

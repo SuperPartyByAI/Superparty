@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+const currentYear = new Date().getFullYear();
+---
+<Layout title="SuperParty — Animatori Petreceri Copii București | Nr. 1" description="Animatori profesionisti pentru petreceri copii in Bucuresti si Ilfov. Personaje costumate, baloane, decoratiuni. Rezerva acum: 0763 795 919.">
+
+  <!-- HERO -->
+  <section style="position:relative; overflow:hidden; min-height:90vh; display:flex; align-items:center;">
+    <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.2) 0%, transparent 60%), var(--dark); z-index:0;"></div>
+    <div style="position:absolute; inset:0; z-index:0;" id="stars-bg"></div>
+
+    <div class="container" style="position:relative; z-index:1; padding-top:3rem; padding-bottom:3rem;">
+      <div style="max-width:680px;">
+        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,107,53,0.15); border:1px solid rgba(255,107,53,0.35); border-radius:50px; padding:0.4rem 1rem; font-size:0.85rem; color:#ff8c5a; margin-bottom:1.5rem; font-weight:600;">
+          🏆 Nr. 1 în București · 300+ Petreceri Organizate
+        </div>
+
+        <h1 style="font-size:clamp(2.2rem, 5vw, 3.6rem); font-weight:800; line-height:1.15; margin-bottom:1.5rem;">
+          <span style="background: linear-gradient(135deg, #fff 0%, #ffe8d6 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Animatori</span><br/>
+          <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Petreceri Copii</span><br/>
+          <span style="background: linear-gradient(135deg, #fff 0%, #ffe8d6 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">București</span>
+        </h1>
+
+        <p style="font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem; max-width:520px; line-height:1.7;">
+          Aducem magia personajelor favorite direct la petrecerea copilului! Costume premium, animatori actori, baloane, decoratiuni.
+        </p>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="tel:+40763795919" style="display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:0.9rem 2rem; border-radius:50px; font-weight:700; font-size:1.05rem; box-shadow:0 8px 30px rgba(255,107,53,0.4); text-decoration:none; transition:transform 0.2s;">
+            📞 Rezerva Acum — 0763 795 919
+          </a>
+          <a href="#servicii" style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:white; padding:0.9rem 2rem; border-radius:50px; font-weight:600; text-decoration:none;">
+            Vezi Servicii ↓
+          </a>
+        </div>
+
+        <div style="display:flex; gap:2rem; margin-top:2.5rem; flex-wrap:wrap;">
+          {[['🎈', '300+', 'Petreceri'], ['👑', '80+', 'Personaje'], ['⭐', '5/5', 'Rating'], ['📅', '7/7', 'Disponibil']].map(([icon, num, label]) => (
+            <div style="text-align:center;">
+              <p style="font-size:1.4rem;">{icon}</p>
+              <p style="font-size:1.1rem; font-weight:800; color:var(--accent);">{num}</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating emojis -->
+    <div style="position:absolute; right:5%; top:15%; font-size:5rem; z-index:0; animation:float 4s ease-in-out infinite; opacity:0.8; pointer-events:none;">🎉</div>
+    <div style="position:absolute; right:8%; bottom:30%; font-size:4rem; z-index:0; animation:float 5s ease-in-out infinite 1s; opacity:0.6; pointer-events:none;">🎈</div>
+    <div style="position:absolute; right:2%; bottom:10%; font-size:3.5rem; z-index:0; animation:float 3.5s ease-in-out infinite 0.5s; opacity:0.6; pointer-events:none;">🎊</div>
+  </section>
+
+  <!-- SERVICII -->
+  <section id="servicii" style="padding:5rem 0; background:var(--dark-2);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Serviciile <span style="color:var(--primary);">Noastre</span></h2>
+        <p style="color:var(--text-muted);">Tot ce ai nevoie pentru o petrecere perfectă</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1.5rem;">
+        {[
+          ['🎭', 'Animatori Petreceri Copii', 'animatori profesionisti costumati in personajele favorite', '/animatori-petreceri-copii/'],
+          ['🎈', 'Decoratiuni Baloane', 'arcade, aranjamente si decoruri din baloane premium', '/decoratiuni-baloane/'],
+          ['🎀', 'Arcade Baloane', 'arcuri spectaculoase din baloane pentru intrare', '/arcade-baloane/'],
+          ['🎁', 'Baloane cu Heliu', 'baloane cu heliu in forme si culori diverse', '/baloane-cu-heliu/'],
+          ['👼', 'Ursitoare Botez', 'ursitoare profesioniste pentru ceremonia botezului', '/ursitoare-botez/'],
+          ['🎅', 'Moș Crăciun de Închiriat', 'mos craciun autentic pentru surprize de neuitat', '/mos-craciun-de-inchiriat/'],
+          ['🪅', 'Piniata', 'piniate personalizate pentru distractie garantata', '/piniata/'],
+          ['🍭', 'Vată de Zahăr și Popcorn', 'masini profesionale de vata si popcorn pentru petreceri', '/vata-de-zahar-si-popcorn/'],
+        ].map(([icon, title, desc, link]) => (
+          <a href={link} style="display:block; background:var(--dark-3); border:1px solid rgba(255,107,53,0.15); border-radius:var(--radius); padding:1.5rem; text-decoration:none; transition:all 0.25s;" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(255,107,53,0.5)';this.style.boxShadow='0 8px 25px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,107,53,0.15)';this.style.boxShadow='none'">
+            <p style="font-size:2.5rem; margin-bottom:0.75rem;">{icon}</p>
+            <h3 style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:0.4rem;">{title}</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">{desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PACHETE & PRETURI -->
+  <section id="pachete" style="padding:5rem 0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Pachete și <span style="color:var(--accent);">Prețuri</span> {currentYear}</h2>
+        <p style="color:var(--text-muted);">Preturi transparente, fara costuri ascunse</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:1.5rem;">
+        {[
+          { name: 'Basic', price: '399 lei', duration: '2 ore', features: ['1 Animator costumat', 'Jocuri interactive', 'Baloane modelate', 'Diplome personalizate'], highlight: false },
+          { name: 'Party ⭐', price: '699 lei', duration: '3 ore', features: ['2 Animatori', 'Jocuri + teatru', 'Pictura fata', 'Baloane heliu', 'Surprize copii'], highlight: true },
+          { name: 'Premium 🏆', price: '1099 lei', duration: '4 ore', features: ['2 Animatori VIP', 'Tot din Party', 'Arcade baloane', 'Decor tematic', 'Vata de zahar'], highlight: false },
+        ].map((pkg) => (
+          <div style={`background:var(--dark-2); border:2px solid ${pkg.highlight ? 'var(--primary)' : 'rgba(255,255,255,0.08)'}; border-radius:var(--radius); padding:2rem; position:relative; ${pkg.highlight ? 'transform: scale(1.04); box-shadow: 0 12px 40px rgba(255,107,53,0.3);' : ''}`}>
+            {pkg.highlight && <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--primary); color:white; padding:0.25rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:700; white-space:nowrap;">CEL MAI ALES</div>}
+            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:0.5rem;">{pkg.name}</h3>
+            <p style="font-size:2.5rem; font-weight:800; color:var(--accent); margin-bottom:0.25rem;">{pkg.price}</p>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">{pkg.duration}</p>
+            <ul style="list-style:none; margin-bottom:2rem;">
+              {pkg.features.map(f => <li style="padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem; color:var(--text);">✅ {f}</li>)}
+            </ul>
+            <a href="tel:+40763795919" style={`display:block; text-align:center; padding:0.85rem; border-radius:50px; font-weight:700; color:white; text-decoration:none; background:${pkg.highlight ? 'linear-gradient(135deg, var(--primary), var(--primary-dark))' : 'rgba(255,255,255,0.1)'};`}>
+              Rezerva {pkg.name.split(' ')[0]}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:5rem 0; background:linear-gradient(135deg, var(--dark-3), var(--dark-2)); text-align:center;">
+    <div class="container">
+      <p style="font-size:3rem; margin-bottom:1.5rem;">🎊</p>
+      <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1rem;">Rezervă Petrecerea Perfectă<br/><span style="color:var(--primary);">Chiar Acum!</span></h2>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:500px; margin:0 auto 2rem;">Weekendurile se ocupă rapid! Contactează-ne acum pentru disponibilitate.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="tel:+40763795919" style="background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none; box-shadow:0 8px 30px rgba(255,107,53,0.5);">📞 Sună Acum</a>
+        <a href="https://wa.me/40763795919" style="background:#25d366; color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none;">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const bg = document.getElementById('stars-bg');
+  if (bg) {
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      const size = Math.random() * 3 + 1;
+      star.style.cssText = `position:absolute; width:${size}px; height:${size}px; background:rgba(255,255,255,${Math.random() * 0.5 + 0.2}); border-radius:50%; left:${Math.random()*100}%; top:${Math.random()*100}%; animation:glow ${2 + Math.random()*3}s ease-in-out infinite ${Math.random()*3}s;`;
+      bg.appendChild(star);
+    }
+  }
+</script>

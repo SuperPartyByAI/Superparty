@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Vată de Zahăr și Popcorn pentru Petreceri | SuperParty" description="Masini de vata de zahar si popcorn pentru petreceri copii in Bucuresti. Inchiriere si servire. Rezerva: 0763 795 919.">
+  <section style="padding:6rem 0 3rem;">
+    <div class="container">
+      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Vată de Zahăr și <span style="color:var(--primary);">Popcorn</span> București</h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Completam petrecerea cu gustări de neuitat! Masini profesionale de vată de zahăr si popcorn, servite direct la petrecerea ta de catre personalul nostru.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin-bottom:3rem;">
+        {[
+          ['🍭', 'Vată de Zahăr', 'Clasica si colorata, adora de toti copiii', 'Roz, albastra, mixta'],
+          ['🍿', 'Popcorn', 'Proaspat si aromat, dulce sau sarat', 'Clasic, caramel, dulce'],
+        ].map(([icon, name, desc, variants]) => (
+          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; text-align:center;">
+            <p style="font-size:3rem; margin-bottom:1rem;">{icon}</p>
+            <h3 style="font-weight:700; margin-bottom:0.5rem;">{name}</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">{desc}</p>
+            <p style="color:var(--primary); font-size:0.85rem; font-weight:600;">{variants}</p>
+          </div>
+        ))}
+      </div>
+      <a href="tel:+40763795919" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Masina</a>
+    </div>
+  </section>
+</Layout>

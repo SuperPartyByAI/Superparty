@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Piniata Petreceri Copii București | SuperParty" description="Piniate personalizate pentru petreceri copii in Bucuresti. Diverse forme si teme. Comanda: 0763 795 919.">
+  <section style="padding:6rem 0 3rem;">
+    <div class="container">
+      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Piniată <span style="color:var(--primary);">Petreceri</span> București</h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Piniatele SuperParty sunt atractia principala a oricărei petreceri! Colorate, rezistente si pline de surprize, ele aduc bucurie tuturor copiilor.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:3rem;">
+        {['🦄 Unicorn','⭐ Stele','🎂 Tort','🦸 Supereroi','🐱 Animale','🎠 Personalizate'].map(p => (
+          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:12px; padding:1rem; text-align:center; font-weight:600;">{p}</div>
+        ))}
+      </div>
+      <a href="tel:+40763795919" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Comanda Piniata</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Moș Crăciun de Închiriat București | SuperParty" description="Mos Craciun autentic pentru acasa, birouri si gradinite. Cadouri si surprize copii. Rezerva: 0763 795 919.">
+  <section style="padding:6rem 0 3rem;">
+    <div class="container">
+      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Moș Crăciun <span style="color:var(--primary);">de Închiriat</span> București</h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Moș Crăciun SuperParty vine direct la voi acasă sau la evenimentul vostru! Cu costum autentic, barba reala si sacul plin de cadouri, cream momente magice pentru cei mici.</p>
+      <div style="background:var(--dark-2); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; margin-bottom:2rem;">
+        <h2 style="color:var(--primary); margin-bottom:1rem;">Disponibil pentru:</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:1rem;">
+          {['🏠 Acasa (familie)','🏢 Birouri (companii)','🎓 Gradinite si scoli','🎄 Evenimente de Craciun','🎁 Petreceri tematice'].map(loc => (
+            <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.15); border-radius:12px; padding:1rem; text-align:center; font-weight:600; color:var(--text-muted);">{loc}</div>
+          ))}
+        </div>
+      </div>
+      <a href="tel:+40763795919" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Mos Craciun</a>
+    </div>
+  </section>
+</Layout>

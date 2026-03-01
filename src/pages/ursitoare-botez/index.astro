@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Ursitoare Botez București | SuperParty" description="Ursitoare profesioniste pentru botez in Bucuresti si Ilfov. Ceremonii elegante si emotionante. Rezerva: 0763 795 919.">
+  <section style="padding:6rem 0 3rem;">
+    <div class="container">
+      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Ursitoare <span style="color:var(--primary);">Botez</span> București</h1>
+      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Ursitoarele SuperParty fac din botezul copilului tau un moment magic si emotionant! Cu costume elegante si urari frumoase, cream amintiri de neuitat pentru intreaga familie.</p>
+      <div style="background:var(--dark-2); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; margin-bottom:2rem;">
+        <h2 style="color:var(--primary); margin-bottom:1rem;">Ce oferim:</h2>
+        <ul style="list-style:none; color:var(--text-muted);">
+          {['👼 Costume elegante de ursitoare','📜 Urari personalizate scrise','🎭 Prezenta scenica profesionista','🌸 Disponibil in Bucuresti si Ilfov','⏰ Program 30-60 minute'].map(f => <li style="padding:0.5rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">{f}</li>)}
+        </ul>
+      </div>
+      <a href="tel:+40763795919" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Ursitoare</a>
+    </div>
+  </section>
+</Layout>
