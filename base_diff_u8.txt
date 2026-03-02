@@ -1,0 +1,113 @@
+﻿diff --git a/src/layouts/BaseLayout.astro b/src/layouts/BaseLayout.astro
+new file mode 100644
+index 0000000..53e8ce6
+--- /dev/null
++++ b/src/layouts/BaseLayout.astro
+@@ -0,0 +1,107 @@
++---
++interface Props {
++	title: string;
++	description?: string;
++}
++
++const { title, description = "Superparty.ro - Cea mai bun─â experien╚¢─â de petreceri pentru copii din Rom├ónia" } = Astro.props;
++---
++
++<!doctype html>
++<html lang="ro">
++	<head>
++		<meta charset="UTF-8" />
++		<meta name="description" content={description} />
++		<meta name="viewport" content="width=device-width" />
++		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
++		<meta name="generator" content={Astro.generator} />
++		<title>{title}</title>
++
++		<!-- Preconnect & Fonts pentru font modern Premium (ex: Outfit) -->
++		<link rel="preconnect" href="https://fonts.googleapis.com">
++		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
++	</head>
++	<body class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-pink-500 selection:text-white overflow-x-hidden w-full overflow-y-auto">
++		<header class="bg-white shadow-sm sticky top-0 z-50">
++			<div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
++				<a href="/" class="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600 tracking-tight shrink-0 mr-2">
++					Superparty
++				</a>
++				<nav class="hidden md:flex gap-6 font-semibold text-sm">
++					<a href="/animatori" class="hover:text-pink-600 transition-colors">Animatori</a>
++					<a href="/pachete" class="hover:text-pink-600 transition-colors">Pachete All-Inclusive</a>
++					<a href="/contact" class="hover:text-pink-600 transition-colors">Rezerv─â F─âr─â Stres</a>
++				</nav>
++				<a href="tel:0700000000" class="bg-pink-600 text-white px-3 py-2 text-sm md:text-base md:px-5 md:py-2.5 rounded-full font-bold shadow-lg shadow-pink-200 hover:bg-pink-700 transition hover:-translate-y-0.5 whitespace-nowrap shrink-0">
++					≡ƒô₧ Sun─â Acum
++				</a>
++			</div>
++		</header>
++
++		<main class="min-h-screen">
++			<slot />
++		</main>
++
++		<footer class="bg-gray-900 text-gray-400 py-12 mt-20 border-t-4 border-pink-500">
++			<div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
++				<div>
++					<h3 class="text-white text-xl font-bold mb-4">Superparty.ro</h3>
++					<p class="text-sm leading-relaxed">Pachetul complet pentru festivalul copiilor. Zero stres pentru p─ârin╚¢i, amintiri memorabile pentru cei mici.</p>
++				</div>
++				<div>
++					<h4 class="text-white font-semibold mb-3">Servicii Premium</h4>
++					<ul class="space-y-2 text-sm">
++						<li><a href="#" class="hover:text-pink-400 transition">Animatori Petreceri Copii</a></li>
++						<li><a href="#" class="hover:text-pink-400 transition">Ursitoare Botez</a></li>
++						<li><a href="#" class="hover:text-pink-400 transition">Arcade Baloane</a></li>
++					</ul>
++				</div>
++				<div>
++					<h4 class="text-white font-semibold mb-3">Contact</h4>
++					<p class="text-sm mb-1">≡ƒô₧ 0700 000 000</p>
++					<p class="text-sm">Bucure╚Öti & Ilfov</p>
++				</div>
++			</div>
++		</footer>
++	</body>
++</html>
++
++<style is:global>
++	body {
++		font-family: 'Outfit', sans-serif;
++	}
++	
++	/* Stiluri globale pentru MDX injec╚¢at - Premium Vibe */
++	article.prose h1 {
++		@apply text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight;
++	}
++	article.prose h2 {
++		@apply text-3xl font-bold text-gray-800 mt-12 mb-6 border-b-2 border-pink-100 pb-2 inline-block;
++	}
++	article.prose h3 {
++		@apply text-2xl font-bold text-gray-800 mt-8 mb-4;
++	}
++	article.prose p {
++		@apply text-lg text-gray-600 leading-relaxed mb-6;
++	}
++	article.prose ul {
++		@apply list-none space-y-3 mb-8;
++	}
++	article.prose li {
++		@apply text-lg text-gray-700 flex items-start;
++	}
++	article.prose li::before {
++		content: 'Γ£¿';
++		@apply mr-3 shrink-0;
++	}
++	article.prose strong {
++		@apply text-violet-700 font-bold bg-violet-50 px-1 rounded;
++	}
++	article.prose a {
++		@apply text-pink-600 font-semibold underline decoration-pink-200 decoration-2 underline-offset-4 hover:decoration-pink-600 transition;
++	}
++	article.prose .cta-box {
++		@apply bg-gradient-to-br from-pink-50 to-violet-50 p-8 rounded-2xl border border-pink-100 my-10 shadow-sm text-center;
++	}
++</style>
