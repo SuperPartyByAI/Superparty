@@ -72,6 +72,18 @@ def load_reports():
         data = json.load(f)
     return {item["slug"]: item for item in data}
 
+def load_testimonials():
+    TESTIMONIALS_FILE = "src/data/superparty_testimonials.json"
+    t_slugs = set()
+    if os.path.exists(TESTIMONIALS_FILE):
+        with open(TESTIMONIALS_FILE, 'r', encoding='utf-8') as f:
+            try:
+                t_data = json.load(f)
+                t_slugs = {t.get("slug") for t in t_data if t.get("siteId") == "superparty"}
+            except:
+                pass
+    return t_slugs
+
 def generate_rewrite(slug, keyword_personaj, keyword_locatie, event_type="aniversare"):
     intro = random.choice(INTRO_TEMPLATES)
     logistics = random.choice(LOGISTICS_TEMPLATES)
@@ -114,6 +126,7 @@ def generate_rewrite(slug, keyword_personaj, keyword_locatie, event_type="aniver
 
 def process_all_files():
     reports = load_reports()
+    t_slugs = load_testimonials()
     files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx')]
     
     new_csv_rows = [["filename", "slug", "indexStatus", "action_taken"]]
@@ -146,14 +159,13 @@ def process_all_files():
         
         # Test placeholders (simulating dynamic content generation limits)
         has_placeholders = '[TELEFON]' in content or '[GALERIE]' in content
+        has_real_testimonial = slug in t_slugs
         
-        # Stricter categorization logic as per 10/10 Prompt
-        if max_sim >= 0.60 or has_placeholders:
+        # Stricter categorization logic as per 10/10 Prompt: Only pages WITH real testimonials escape the 'hold' gate!
+        if max_sim >= 0.60 or has_placeholders or not has_real_testimonial:
             idx_status = "hold"
-        elif max_sim < 0.60 and score >= 8.5:
-            idx_status = "ready"
         else:
-            idx_status = "revise"
+            idx_status = "ready"
             
         fm_dict['indexStatus'] = f"'{idx_status}'"
         

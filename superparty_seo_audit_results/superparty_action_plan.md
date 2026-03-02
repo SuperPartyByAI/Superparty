@@ -1,8 +1,8 @@
 # Action Plan Prioritar (Site: superparty)
 
 - Total analizat: 500
-- Ready To Index: 0
-- Doorways / Risc ridicat (>85% sim): 28
+- Ready To Index: 1
+- Doorways / Risc ridicat (>85% sim): 33
 - Fara testimoniale alocate: 498
 
 ## Top Remedieri Imediate

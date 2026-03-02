@@ -264,7 +264,7 @@ def main():
     with open(os.path.join(OUTPUT_DIR, "superparty_articles_report.json"), "w", encoding='utf-8') as f:
         json.dump(reports, f, indent=2, ensure_ascii=False)
         
-    ready_pages = [r for r in reports if r["overall_score"] >= 8]
+    ready_pages = [r for r in reports if not r["has_placeholders"] and r["has_testimonial"] and (r["top_similar_docs"][0]["similarity"] if r["top_similar_docs"] else 0) < 0.60]
     risk_pages = [r for r in reports if r["doorway_risk"] == "high" or r["overall_score"] <= 4]
     
     # Check Meta Duplicates globally
@@ -284,7 +284,7 @@ def main():
             d_dup = "Yes" if desc_counts[parsed[fn]["desc_val"]] > 1 else "No"
             has_plh = "Yes" if parsed[fn]["has_placeholders"] else "No"
             has_testim = "Yes" if r["has_testimonial"] else "No"
-            act = "Ready" if max_sim < 0.60 and has_plh == "No" else "Hold/Rewrite"
+            act = "Ready" if max_sim < 0.60 and has_plh == "No" and r["has_testimonial"] else "Hold/Rewrite"
             writer.writerow([
                 SITE_ID, fn, r["slug"], r["word_count"], parsed[fn]["title_val"], 
                 r["meta_length"], r["title_length"], max_sim, r["doorway_risk"],
