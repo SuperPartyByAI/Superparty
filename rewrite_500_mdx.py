@@ -85,7 +85,11 @@ def generate_rewrite(slug, keyword_personaj, keyword_locatie, event_type="aniver
     def p(text):
         return text.replace("[LOCATIE]", keyword_locatie.title())\
                    .replace("[PERSONAJ]", keyword_personaj.title())\
-                   .replace("[EVENIMENT]", event_type)
+                   .replace("[EVENIMENT]", event_type)\
+                   .replace("[TELEFON]", "0722744377")\
+                   .replace("[WHATSAPP]", "0722744377")\
+                   .replace("[GALERIE]", "sutele de evenimente documentate")\
+                   .replace("[PACHETE]", "pagina de Oferte")
 
     body = p(intro) + "\n\n"
     body += p(logistics) + "\n\n"

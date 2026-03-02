@@ -2,8 +2,8 @@
 
 - Total analizat: 500
 - Ready To Index: 0
-- Doorways / Risc ridicat (>85% sim): 18
-- Fara testimoniale alocate: 499
+- Doorways / Risc ridicat (>85% sim): 28
+- Fara testimoniale alocate: 498
 
 ## Top Remedieri Imediate
 1. **Frontmatter lipsa:** Update YAML pe fisiere adaugand locale, author, image URL si datePublished native.
