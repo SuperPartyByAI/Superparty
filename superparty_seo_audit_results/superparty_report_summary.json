@@ -1,10 +1,10 @@
 {
   "siteId": "superparty",
   "total_articles": 500,
-  "avg_word_count": 654,
-  "avg_overall_score": 5.4,
-  "ready_for_index": 1,
-  "needs_improvement": 466,
-  "high_risk": 33,
-  "missing_testimonials": 498
+  "avg_word_count": 655,
+  "avg_overall_score": 5.41,
+  "ready_for_index": 21,
+  "needs_improvement": 461,
+  "high_risk": 18,
+  "missing_testimonials": 450
 }
