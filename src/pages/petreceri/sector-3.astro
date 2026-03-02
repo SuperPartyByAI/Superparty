@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('seo-articles');
+
+// Filtram articolele care apartin acestui hub si sunt indexabile
+const hubArticles = allArticles.filter(article => 
+  article.slug.includes('sector-3') && article.data.indexStatus !== 'hold'
+);
+
+const pageTitle = "Animatori Petreceri Copii Sector 3 | Superparty";
+const pageDesc = "Găsește cel mai potrivit animator pentru petrecerea copilului tău în Sector 3. Pachete premium, zeci de personaje și distracție garantată cu Superparty.";
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical={`https://superparty.ro/petreceri/sector-3`}>
+  <div class="relative bg-white pt-10 pb-20 lg:pt-16 lg:pb-28">
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-4">
+          Petreceri de Vis în Sector 3
+        </h1>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+          {pageDesc}
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-xl shadow-pink-500/5 ring-1 ring-gray-100 overflow-hidden p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Personajele Disponibile în Sector 3</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {hubArticles.map(article => (
+            <a href={`/petreceri/${article.slug}`} class="block p-4 border border-gray-200 rounded-xl hover:border-pink-500 hover:shadow-md transition">
+              <h3 class="font-semibold text-lg text-pink-600">{article.data.title}</h3>
+              <p class="text-sm text-gray-500 mt-1 truncate">{article.data.description}</p>
+            </a>
+          ))}
+          {hubArticles.length === 0 && <p class="text-gray-500 italic">Momentan actualizăm lista de servicii pentru această zonă.</p>}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

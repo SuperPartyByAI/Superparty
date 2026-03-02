@@ -2,7 +2,7 @@
 
 - Total analizat: 500
 - Ready To Index: 0
-- Doorways / Risc ridicat (>85% sim): 377
+- Doorways / Risc ridicat (>85% sim): 18
 - Fara testimoniale alocate: 499
 
 ## Top Remedieri Imediate

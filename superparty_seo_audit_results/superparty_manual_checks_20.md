@@ -1,142 +1,142 @@
 # Manual Audit Checks (20 Representative Articles)
 
-### File: animatopia-despre-noi-echipa-animatori.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animatopia-despre-noi-echipa-animatori
-**Doorway Risk:** HIGH (Similar to: animator-aladin-petreceri-copii-bucuresti.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animator-aladin-petreceri-copii-bucuresti.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cenusareasa-dragomiresti-vale.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-dragomiresti-vale
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-ariel-dragomiresti-vale.mdx cu sim 0.744)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.744 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-aurora-frumoasa-adormita-petreceri-copii.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animator-aurora-frumoasa-adormita-petreceri-copii
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cenusareasa-popesti-leordeni.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-popesti-leordeni
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-elsa-popesti-leordeni.mdx cu sim 0.77)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.77 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-buzz-lightyear-toy-story-petreceri-copii.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animator-buzz-lightyear-toy-story-petreceri-copii
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-chase-paw-patrol-domnesti.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-chase-paw-patrol-domnesti
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-chase-paw-patrol-sector-5.mdx cu sim 0.766)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.766 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-dragon-verde-mascota-petreceri-copii.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animator-dragon-verde-mascota-petreceri-copii
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-chase-paw-patrol-dragomiresti-vale.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-chase-paw-patrol-dragomiresti-vale
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-marshall-paw-patrol-dragomiresti-vale.mdx cu sim 0.787)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.787 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-peter-pan-niciodata-tara-petreceri-copii.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animator-peter-pan-niciodata-tara-petreceri-copii
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-marshall-paw-patrol-chiajna.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-marshall-paw-patrol-chiajna
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-marshall-paw-patrol-sector-1.mdx cu sim 0.747)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.747 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-princess-peach-mario-petreceri-copii.mdx (Score: 3.7)
-**URL:** https://superparty.ro/petreceri/animator-princess-peach-mario-petreceri-copii
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-marshall-paw-patrol-copaceni.mdx (Score: 4.5)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-marshall-paw-patrol-copaceni
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-marshall-paw-patrol-sector-2.mdx cu sim 0.776)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.776 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-lightning-mcqueen-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-lightning-mcqueen-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cenusareasa-cornetu.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-cornetu
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-bumblebee-cornetu.mdx cu sim 0.66)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.66 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-luigi-bros-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-luigi-bros-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cenusareasa-domnesti.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-domnesti
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-cenusareasa-sector-1.mdx cu sim 0.647)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.647 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-mario-bros-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-mario-bros-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cenusareasa-jilava.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-jilava
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-cenusareasa-sector-1.mdx cu sim 0.631)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.631 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-merida-brave-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-merida-brave-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-cluj-napoca-animatopia.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-cluj-napoca-animatopia
+**Doorway Risk:** LOW (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 0.465)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.465 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-minion-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-minion-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-elsa-afumati.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-elsa-afumati
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-miraculous-ladybug-afumati.mdx cu sim 0.649)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.649 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-moana-disney-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-moana-disney-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-elsa-baneasa.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-elsa-baneasa
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-ariel-baneasa.mdx cu sim 0.64)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.64 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animator-mulan-disney-petreceri-copii-bucuresti.mdx (Score: 4.7)
-**URL:** https://superparty.ro/petreceri/animator-mulan-disney-petreceri-copii-bucuresti
-**Doorway Risk:** HIGH (Similar to: animatopia-despre-noi-echipa-animatori.mdx cu sim 1.0)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 1.0 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (1.0) cu animatopia-despre-noi-echipa-animatori.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-elsa-copaceni.mdx (Score: 5.3)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-elsa-copaceni
+**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-ariel-copaceni.mdx cu sim 0.644)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.644 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-elsa-sector-3.mdx (Score: 5.5)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-elsa-sector-3
-**Doorway Risk:** HIGH (Similar to: animatori-petreceri-copii-elsa-copaceni.mdx cu sim 0.883)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.883 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Rescrie: Similaritate masiva (0.883) cu animatori-petreceri-copii-elsa-copaceni.mdx. Posibil 301/unificare., RISC DOORWAY. Adauga NOINDEX temporar pana la rescrierea diversificata.
+### File: animatori-petreceri-copii-giulesti-bucuresti.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-giulesti-bucuresti
+**Doorway Risk:** LOW (Similar to: animatori-petreceri-copii-cotroceni-bucuresti.mdx cu sim 0.426)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.426 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-chase-paw-patrol-otopeni.mdx (Score: 5.6)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-chase-paw-patrol-otopeni
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-chase-paw-patrol-copaceni.mdx cu sim 0.839)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.839 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 98 chars sau lipsesc kw (animatori).
+### File: animatori-petreceri-copii-masha-magurele.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-masha-magurele
+**Doorway Risk:** LOW (Similar to: animatori-petreceri-copii-masha-baneasa.mdx cu sim 0.598)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.598 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-marshall-paw-patrol-otopeni.mdx (Score: 5.6)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-marshall-paw-patrol-otopeni
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-marshall-paw-patrol-copaceni.mdx cu sim 0.834)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.834 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 101 chars sau lipsesc kw (animatori).
+### File: petrecere-decoratiuni-flori-natura-fete-bucuresti.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/petrecere-decoratiuni-flori-natura-fete-bucuresti
+**Doorway Risk:** LOW (Similar to: idei-petrecere-copil-3-ani-bucuresti.mdx cu sim 0.423)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.423 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-miraculous-ladybug-otopeni.mdx (Score: 5.6)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-miraculous-ladybug-otopeni
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-miraculous-ladybug-domnesti.mdx cu sim 0.828)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.828 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 100 chars sau lipsesc kw (animatori).
+### File: petrecere-stiinta-experimente-copii-bucuresti.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/petrecere-stiinta-experimente-copii-bucuresti
+**Doorway Risk:** LOW (Similar to: animator-ladybug-petreceri-copii-bucuresti.mdx cu sim 0.416)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.416 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-spider-man-otopeni.mdx (Score: 5.7)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-spider-man-otopeni
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-spider-man-branesti.mdx cu sim 0.812)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.812 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 92 chars sau lipsesc kw (animatori).
+### File: petrecere-tematica-animale-farm-copii-mici-bucuresti.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/petrecere-tematica-animale-farm-copii-mici-bucuresti
+**Doorway Risk:** LOW (Similar to: petrecere-tematica-paw-patrol-bucuresti.mdx cu sim 0.413)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.413 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-rapunzel-otopeni.mdx (Score: 5.8)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-rapunzel-otopeni
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-rapunzel-dascalu.mdx cu sim 0.78)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.78 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 90 chars sau lipsesc kw (animatori).
+### File: petrecere-tematica-winnie-the-pooh-bucuresti.mdx (Score: 6.4)
+**URL:** https://superparty.ro/petreceri/petrecere-tematica-winnie-the-pooh-bucuresti
+**Doorway Risk:** LOW (Similar to: animator-ladybug-petreceri-copii-bucuresti.mdx cu sim 0.434)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.434 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
-### File: animatori-petreceri-copii-gruiu-ilfov.mdx (Score: 5.9)
-**URL:** https://superparty.ro/petreceri/animatori-petreceri-copii-gruiu-ilfov
-**Doorway Risk:** MEDIUM (Similar to: animatori-petreceri-copii-iron-man-gruiu.mdx cu sim 0.721)
-**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.721 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
-**Actiuni prioritar:** Adauga Schema.org JSON-LD injectat din Frontmatter., Ajusteaza title: are 97 chars sau lipsesc kw (animatori).
+### File: animator-spongebob-squarepants-petreceri-copii-bucuresti.mdx (Score: 6.5)
+**URL:** https://superparty.ro/petreceri/animator-spongebob-squarepants-petreceri-copii-bucuresti
+**Doorway Risk:** LOW (Similar to: idei-petrecere-copil-7-ani-bucuresti.mdx cu sim 0.389)
+**Auditor Notes:** Acest articol pare sa aiba o problema minora la metadata si lungimea titlului. Similaritatea 0.389 sugereaza o diversificare semantica. Este recomandat adaugarea de specific local (ex: nume strazi magazin etc.).
+**Actiuni prioritar:** Adauga text: <1200 cuvinte., Adauga Schema.org JSON-LD injectat din Frontmatter.
 
 ---
