@@ -1,4 +1,3 @@
-```
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
@@ -15,13 +14,13 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// Strict Testimonial Logic
-const siteTestimonials = testimonialsData.filter((t: any) => t.siteId === 'superparty');
-const pageTestimonials = siteTestimonials.filter((t: any) => t.slug === entry.slug);
-const testimonialsToShow = pageTestimonials.slice(0, 3); // Get up to 3 testimonials
+// Strict Testimonial Logic: filter by siteId AND slug
+const siteTestimonials = (testimonialsData as any[]).filter((t) => t.siteId === 'superparty');
+const pageTestimonials = siteTestimonials.filter((t) => t.slug === entry.slug).slice(0, 3);
 
+// READY logic: if indexStatus is 'hold' -> noindex
 const isHold = entry.data.indexStatus === 'hold';
-const robotsProp = isHold ? 'noindex, follow' : undefined;
+const robotsProp = isHold ? 'noindex, follow' : 'index, follow';
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -29,11 +28,12 @@ const schemaData = {
     {
       "@type": "LocalBusiness",
       "name": "SuperParty",
-      "telephone": "+40722123456", // Fixed [TELEFON] placeholder
+      "telephone": "0722744377",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "București/Ilfov",
-        "addressRegion": "București"
+        "addressLocality": "București",
+        "addressRegion": "București",
+        "addressCountry": "RO"
       },
       "url": `https://superparty.ro/petreceri/${entry.slug}`
     },
@@ -44,28 +44,23 @@ const schemaData = {
       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
       "author": { "@type": "Organization", "name": "SuperParty" }
     },
-    // Add Review schema for each testimonial
-    ...testimonialsToShow.map((t: any) => ({
+    ...(pageTestimonials.length > 0 ? pageTestimonials.map((t: any) => ({
       "@type": "Review",
       "itemReviewed": {
         "@type": "LocalBusiness",
-        "name": "SuperParty",
-        "url": `https://superparty.ro/petreceri/${entry.slug}`
+        "name": "SuperParty"
       },
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5" // Assuming all testimonials are 5-star
-      },
-      "author": {
-        "@type": "Person",
-        "name": t.name
+        "ratingValue": "5",
+        "bestRating": "5"
       },
       "reviewBody": t.text,
-      "datePublished": t.date // Use the testimonial's date
-    }))
+      "author": { "@type": "Person", "name": t.name },
+      "datePublished": t.date
+    })) : [])
   ]
 };
-
 ---
 
 <Layout 
@@ -95,22 +90,33 @@ const schemaData = {
             <Content />
           </article>
           
-          {testimonialsToShow.length > 0 && (
-            <div class="mt-12 p-8 bg-pink-50 rounded-2xl border border-pink-100">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Feedback de la Părinți</h3>
-              {testimonialsToShow.map((testimonial: any) => (
-                <div class="mb-6 last:mb-0">
-                  <blockquote class="italic text-gray-700 text-lg border-l-4 border-pink-400 pl-4 py-2 my-4">
-                    "{testimonial.text}"
+          {pageTestimonials.length > 0 && (
+            <div class="mt-12 space-y-4">
+              <h3 class="text-2xl font-bold text-gray-900">Feedback de la Părinți</h3>
+              {pageTestimonials.map((t: any) => (
+                <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
+                  <blockquote class="italic text-gray-700 text-lg border-l-4 border-pink-400 pl-4 py-2">
+                    "{t.text}"
                   </blockquote>
                   <div class="flex items-center justify-between mt-4">
-                    <div class="text-sm font-semibold text-gray-900">{testimonial.name} <span class="text-gray-500 font-normal">| {testimonial.event}</span></div>
-                    <div class="text-xs text-gray-400 capitalize">Verificat prin {testimonial.source} - {testimonial.date}</div>
+                    <div class="text-sm font-semibold text-gray-900">
+                      {t.name} <span class="text-gray-500 font-normal">| {t.location} | {t.event}</span>
+                    </div>
+                    <div class="text-xs text-gray-400 capitalize">Verificat prin {t.source} — {t.date}</div>
                   </div>
                 </div>
               ))}
             </div>
           )}
+
+          <!-- CTA -->
+          <div class="mt-12 text-center p-8 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl text-white">
+            <h3 class="text-2xl font-bold mb-2">Rezervă acum animatorul!</h3>
+            <p class="mb-4 text-pink-100">Sună sau trimite un WhatsApp pentru disponibilitate</p>
+            <a href="tel:0722744377" class="inline-block bg-white text-pink-600 font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">
+              📞 0722744377
+            </a>
+          </div>
           
         </div>
       </div>
@@ -118,4 +124,3 @@ const schemaData = {
   </div>
 
 </Layout>
-```
