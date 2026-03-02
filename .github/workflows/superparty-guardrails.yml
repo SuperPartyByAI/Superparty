@@ -1,0 +1,83 @@
+name: Superparty Guardrails
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fail if Animatopia appears anywhere in src/
+        run: |
+          set -e
+          if grep -RIn "Animatopia" src/; then
+            echo "ERROR: Found 'Animatopia' in src/. Remove all references."
+            exit 1
+          fi
+          echo "OK: no Animatopia in src/"
+
+      - name: Fail if forbidden animatopia-*.mdx files exist
+        run: |
+          set -e
+          if ls src/content/seo-articles/animatopia-*.mdx 1>/dev/null 2>&1; then
+            echo "ERROR: Found animatopia-*.mdx inside Superparty SEO articles."
+            ls -1 src/content/seo-articles/animatopia-*.mdx
+            exit 1
+          fi
+          echo "OK: no animatopia-*.mdx files"
+
+      - name: Enforce superparty_testimonials.json with only siteId=superparty
+        run: |
+          set -e
+          FILE="src/data/superparty_testimonials.json"
+          if [ ! -f "$FILE" ]; then
+            echo "ERROR: Missing $FILE"
+            exit 1
+          fi
+          if ! grep -q '"siteId".*"superparty"' "$FILE"; then
+            echo "ERROR: $FILE does not contain siteId:superparty"
+            exit 1
+          fi
+          SITE_IDS=$(grep -oE '"siteId"[[:space:]]*:[[:space:]]*"[^"]+"' "$FILE" | \
+            sed -E 's/.*"siteId"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/' | sort -u)
+          echo "Detected siteId values: $SITE_IDS"
+          if [ "$SITE_IDS" != "superparty" ]; then
+            echo "ERROR: testimonials contain siteId values other than superparty"
+            exit 1
+          fi
+          echo "OK: siteId=superparty only"
+
+      - name: Fail if sitemap contains non-superparty.ro URLs
+        run: |
+          set -e
+          for f in public/sitemap.xml superparty_sitemap_recommendation.xml; do
+            if [ -f "$f" ]; then
+              if grep -P "<loc>https://(?!superparty\.ro)" "$f" >/dev/null 2>&1; then
+                echo "ERROR: Found non-superparty.ro <loc> in $f"
+                grep -P "<loc>https://(?!superparty\.ro)" "$f" || true
+                exit 1
+              fi
+              echo "OK: $f has only superparty.ro URLs"
+            fi
+          done
+
+      - name: Validate indexStatus values in MDX frontmatter
+        run: |
+          set -e
+          BAD=$(grep -RIn "indexStatus:" src/content/seo-articles/ | \
+            grep -vE "indexStatus:[[:space:]]*'(ready|revise|hold)'" || true)
+          if [ -n "$BAD" ]; then
+            echo "ERROR: Found invalid indexStatus values:"
+            echo "$BAD"
+            exit 1
+          fi
+          echo "OK: all indexStatus values are valid"
+
+      - name: Guardrails passed
+        run: |
+          echo "All Superparty guardrails passed!"
