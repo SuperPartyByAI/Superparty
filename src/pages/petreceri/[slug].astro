@@ -46,21 +46,20 @@ const schemaData = {
     },
     ...(pageTestimonials.length > 0 ? pageTestimonials.map((t: any) => ({
       "@type": "Review",
-      "itemReviewed": {
-        "@type": "LocalBusiness",
-        "name": "SuperParty"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
+      "itemReviewed": { "@type": "LocalBusiness", "name": "SuperParty" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
       "reviewBody": t.text,
-      "author": { "@type": "Person", "name": t.name },
-      "datePublished": t.date
+      "author": { "@type": "Person", "name": t.name }
     })) : [])
   ]
 };
+
+// CTA — WhatsApp with pre-filled form message (no invented "Verificat" claims)
+const PHONE_E164 = '40722744377';
+const waText = encodeURIComponent(
+  `Bună! Sunt interesat(ă) de: ${entry.data.title}\nLink: https://superparty.ro/petreceri/${entry.slug}\nData petrecerii: \nLocalitate/Sector: \nVârsta copilului: \nNr. copii: `
+);
+const waUrl = `https://wa.me/${PHONE_E164}?text=${waText}`;
 ---
 
 <Layout 
@@ -72,6 +71,7 @@ const schemaData = {
 	
   <div class="relative bg-white pt-10 pb-20 lg:pt-16 lg:pb-28">
     <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+
       <div class="text-center mb-16">
         <span class="text-pink-600 font-bold tracking-wider uppercase text-sm border border-pink-200 bg-pink-50 px-3 py-1 rounded-full mb-4 inline-block">
           Experiență Premium
@@ -86,48 +86,57 @@ const schemaData = {
 
       <div class="bg-white rounded-3xl shadow-xl shadow-pink-500/5 ring-1 ring-gray-100 overflow-hidden">
         <div class="prose prose-lg prose-pink max-w-none p-8 md:p-12 lg:p-16">
+
           <article class="prose">
             <Content />
           </article>
-          
+
           {pageTestimonials.length > 0 && (
-            <div class="mt-12 space-y-4">
+            <div class="mt-12 space-y-4 not-prose">
               <h3 class="text-2xl font-bold text-gray-900">Feedback de la Părinți</h3>
               {pageTestimonials.map((t: any) => (
                 <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
                   <blockquote class="italic text-gray-700 text-lg border-l-4 border-pink-400 pl-4 py-2">
                     "{t.text}"
                   </blockquote>
-                  <div class="flex items-center justify-between mt-4">
-                    <div class="text-sm font-semibold text-gray-900">
-                      {t.name} <span class="text-gray-500 font-normal">| {t.location} | {t.event}</span>
-                    </div>
-                    <div class="text-xs text-gray-400 capitalize">Verificat prin {t.source} — {t.date}</div>
+                  <div class="mt-3 flex flex-wrap gap-2 items-center">
+                    <span class="text-sm font-semibold text-gray-900">{t.name}</span>
+                    {t.location && <span class="text-sm text-gray-500">· {t.location}</span>}
+                    {t.event && <span class="text-xs bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">{t.event}</span>}
                   </div>
                 </div>
               ))}
             </div>
           )}
 
-          <!-- CTA -->
-          <div class="mt-12 text-center p-8 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl text-white">
+          <!-- CTA: Call + WhatsApp -->
+          <div class="mt-12 text-center p-8 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl text-white not-prose">
             <h3 class="text-2xl font-bold mb-2">Rezervă acum animatorul!</h3>
-            <p class="mb-4 text-pink-100">Sună sau scrie pe WhatsApp pentru disponibilitate și ofertă</p>
+            <p class="mb-6 text-pink-100">Sună sau scrie pe WhatsApp — îți trimitem oferta și disponibilitatea</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:0722744377" class="inline-flex items-center gap-2 bg-white text-pink-600 font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">
+              <a
+                href="tel:+40722744377"
+                aria-label="Sună acum 0722744377"
+                data-cta="call"
+                data-slug={entry.slug}
+                class="inline-flex items-center gap-2 bg-white text-pink-600 font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition"
+              >
                 📞 Sună acum
               </a>
-              <a 
-                href={`https://wa.me/40722744377?text=Bună!%20Vreau%20o%20ofertă%20pentru%20https://superparty.ro/petreceri/${entry.slug}`}
+              <a
+                href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Trimite mesaj pe WhatsApp"
+                data-cta="whatsapp"
+                data-slug={entry.slug}
                 class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition"
               >
                 💬 WhatsApp
               </a>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
