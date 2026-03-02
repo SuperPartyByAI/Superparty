@@ -112,10 +112,20 @@ const schemaData = {
           <!-- CTA -->
           <div class="mt-12 text-center p-8 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl text-white">
             <h3 class="text-2xl font-bold mb-2">Rezervă acum animatorul!</h3>
-            <p class="mb-4 text-pink-100">Sună sau trimite un WhatsApp pentru disponibilitate</p>
-            <a href="tel:0722744377" class="inline-block bg-white text-pink-600 font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">
-              📞 0722744377
-            </a>
+            <p class="mb-4 text-pink-100">Sună sau scrie pe WhatsApp pentru disponibilitate și ofertă</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="tel:0722744377" class="inline-flex items-center gap-2 bg-white text-pink-600 font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">
+                📞 Sună acum
+              </a>
+              <a 
+                href={`https://wa.me/40722744377?text=Bună!%20Vreau%20o%20ofertă%20pentru%20https://superparty.ro/petreceri/${entry.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-full text-lg hover:shadow-lg transition"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
           
         </div>
