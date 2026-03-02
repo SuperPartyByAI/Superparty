@@ -2,9 +2,9 @@
   "siteId": "superparty",
   "total_articles": 500,
   "avg_word_count": 655,
-  "avg_overall_score": 5.42,
-  "ready_for_index": 33,
-  "needs_improvement": 442,
-  "high_risk": 25,
-  "missing_testimonials": 300
+  "avg_overall_score": 5.4,
+  "ready_for_index": 32,
+  "needs_improvement": 437,
+  "high_risk": 31,
+  "missing_testimonials": 250
 }

@@ -1,9 +1,9 @@
 # Action Plan Prioritar (Site: superparty)
 
 - Total analizat: 500
-- Ready To Index: 33
-- Doorways / Risc ridicat (>85% sim): 25
-- Fara testimoniale alocate: 300
+- Ready To Index: 32
+- Doorways / Risc ridicat (>85% sim): 31
+- Fara testimoniale alocate: 250
 
 ## Top Remedieri Imediate
 1. **Frontmatter lipsa:** Update YAML pe fisiere adaugand locale, author, image URL si datePublished native.
