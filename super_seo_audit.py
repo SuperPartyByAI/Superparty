@@ -9,7 +9,9 @@ import shutil
 import random
 
 INPUT_DIR = "src/content/seo-articles"
-OUTPUT_DIR = "seo_audit_results"
+OUTPUT_DIR = "superparty_seo_audit_results"
+SITE_ID = "superparty"
+TESTIMONIALS_FILE = "src/data/superparty_testimonials.json"
 
 # --- Constants & Rules ---
 REQ_FIELDS = ["title", "description", "canonical", "datePublished", "image", "author", "locale"]
@@ -72,7 +74,17 @@ def main():
     os.makedirs(OUTPUT_DIR)
     
     os.makedirs(os.path.join(OUTPUT_DIR, "fixes_patch"), exist_ok=True)
-    os.makedirs(os.path.join(OUTPUT_DIR, "suggested_schema"), exist_ok=True)
+    os.makedirs(os.path.join(OUTPUT_DIR, "superparty_suggested_schema"), exist_ok=True)
+    
+    # Load testimonials
+    testimonials_slugs = set()
+    if os.path.exists(TESTIMONIALS_FILE):
+        with open(TESTIMONIALS_FILE, 'r', encoding='utf-8') as f:
+            try:
+                t_data = json.load(f)
+                testimonials_slugs = {t.get("slug") for t in t_data if t.get("siteId") == SITE_ID}
+            except json.JSONDecodeError:
+                pass
     
     files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx')]
     
@@ -109,6 +121,11 @@ def main():
         
         words = re.findall(r'\b\w+\b', body)
         word_count = len(words)
+        
+        # Helper variables for later duplicate comparison
+        parsed[f]["title_val"] = fm.get("title", "")
+        parsed[f]["desc_val"] = fm.get("description", "")
+        parsed[f]["has_placeholders"] = '[TELEFON]' in body or '[GALERIE]' in body
         
         # A. Frontmatter
         fm_missing = [k for k in REQ_FIELDS if k not in fm]
@@ -195,10 +212,14 @@ def main():
                 }
             ]
         }
-        with open(os.path.join(OUTPUT_DIR, "suggested_schema", f"{slug}.json"), 'w', encoding='utf-8') as sf:
+        
+        # Site ID injected in schema file name
+        schema_file = f"superparty_suggested_schema/superparty_{slug}.json"
+        with open(os.path.join(OUTPUT_DIR, schema_file), 'w', encoding='utf-8') as sf:
             json.dump(schema, sf, indent=2, ensure_ascii=False)
 
         reports.append({
+            "siteId": SITE_ID,
             "filename": f,
             "slug": slug,
             "url": url,
@@ -220,9 +241,11 @@ def main():
             "status_url_test": "not-tested-live",
             "title_ok": title_ok,
             "meta_ok": meta_ok,
+            "has_placeholders": parsed[f]["has_placeholders"],
+            "has_testimonial": slug in testimonials_slugs,
             "schema_recommendation": {
-                "types_recommended": ["LocalBusiness", "Article", "FAQPage"],
-                "schema_file": f"suggested_schema/{slug}.json"
+                "types_recommended": ["LocalBusiness", "Article", "FAQPage"] if faq else ["LocalBusiness", "Article"],
+                "schema_file": schema_file
             },
             "canonical_recommendation": url if not doorway_risk == "high" else f"Recomandare centralizare cu {top_sim[0]['filename']}",
             "overall_score": overall,
@@ -238,62 +261,106 @@ def main():
         })
 
     # Save main JSON
-    with open(os.path.join(OUTPUT_DIR, "articles_report.json"), "w", encoding='utf-8') as f:
+    with open(os.path.join(OUTPUT_DIR, "superparty_articles_report.json"), "w", encoding='utf-8') as f:
         json.dump(reports, f, indent=2, ensure_ascii=False)
         
     ready_pages = [r for r in reports if r["overall_score"] >= 8]
     risk_pages = [r for r in reports if r["doorway_risk"] == "high" or r["overall_score"] <= 4]
     
-    # Save CSVs
-    with open(os.path.join(OUTPUT_DIR, "top_ready.csv"), "w", newline='', encoding='utf-8') as f:
+    # Check Meta Duplicates globally
+    all_titles = [r["title_val"] for name, r in parsed.items() if r.get("title_val")]
+    all_descs = [r["desc_val"] for name, r in parsed.items() if r.get("desc_val")]
+    title_counts = Counter(all_titles)
+    desc_counts = Counter(all_descs)
+
+    # 1. Outputul exact "seo_upgrade_report.csv"
+    with open(os.path.join(OUTPUT_DIR, "superparty_seo_upgrade_report.csv"), "w", newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(["siteId", "filename", "slug", "word_count", "title", "desc_len", "title_len", "similarity_max", "risk", "title_dup", "desc_dup", "placeholders_present", "has_testimonial", "recommended_action"])
+        for r in reports:
+            max_sim = r["top_similar_docs"][0]["similarity"] if r["top_similar_docs"] else 0
+            fn = r["filename"]
+            t_dup = "Yes" if title_counts[parsed[fn]["title_val"]] > 1 else "No"
+            d_dup = "Yes" if desc_counts[parsed[fn]["desc_val"]] > 1 else "No"
+            has_plh = "Yes" if parsed[fn]["has_placeholders"] else "No"
+            has_testim = "Yes" if r["has_testimonial"] else "No"
+            act = "Ready" if max_sim < 0.60 and has_plh == "No" else "Hold/Rewrite"
+            writer.writerow([
+                SITE_ID, fn, r["slug"], r["word_count"], parsed[fn]["title_val"], 
+                r["meta_length"], r["title_length"], max_sim, r["doorway_risk"],
+                t_dup, d_dup, has_plh, has_testim, act
+            ])
+
+    # Save old CSVs for backwards compatibility
+    with open(os.path.join(OUTPUT_DIR, "superparty_top_ready.csv"), "w", newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(["filename", "url", "score", "suggested_actions"])
         for r in sorted(ready_pages, key=lambda x: x["overall_score"], reverse=True)[:50]:
             writer.writerow([r["filename"], r["url"], r["overall_score"], " | ".join(r["suggested_actions"])])
 
-    with open(os.path.join(OUTPUT_DIR, "top_risk.csv"), "w", newline='', encoding='utf-8') as f:
+    with open(os.path.join(OUTPUT_DIR, "superparty_top_risk.csv"), "w", newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(["filename", "url", "score", "doorway_risk", "suggested_actions"])
+        writer.writerow(["siteId", "filename", "url", "score", "doorway_risk", "suggested_actions"])
         for r in sorted(risk_pages, key=lambda x: x["overall_score"])[:50]:
-            writer.writerow([r["filename"], r["url"], r["overall_score"], r["doorway_risk"], " | ".join(r["suggested_actions"])])
+            writer.writerow([SITE_ID, r["filename"], r["url"], r["overall_score"], r["doorway_risk"], " | ".join(r["suggested_actions"])])
 
-    # Sitemap
-    with open(os.path.join(OUTPUT_DIR, "sitemap_recommendation.xml"), "w", encoding='utf-8') as f:
-        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+    # Generate missing testimonials CSV
+    with open(os.path.join(OUTPUT_DIR, "superparty_testimonials_missing.csv"), "w", newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(["siteId", "slug", "filename"])
         for r in reports:
-            pri = 0.8 if r["overall_score"] >= 8 else (0.6 if r["overall_score"] >= 6 else 0.4)
-            date = parsed[r['filename']]['fm'].get("datePublished", "2026-03-01")
+            if not r["has_testimonial"]:
+                writer.writerow([SITE_ID, r["slug"], r["filename"]])
+
+    # Sitemap (DOAR pentru ready_pages)
+    with open(os.path.join(OUTPUT_DIR, "superparty_sitemap_recommendation.xml"), "w", encoding='utf-8') as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        # Punem si paginile HUB prevazute
+        for hub in ["bucuresti", "ilfov", "sector-1", "sector-2", "sector-3", "sector-4", "sector-5", "sector-6"]:
+            f.write(f'  <url>\n    <loc>https://superparty.ro/petreceri/{hub}</loc>\n    <lastmod>2026-03-02</lastmod>\n    <priority>0.9</priority>\n  </url>\n')
+            
+        for r in reports:
+            # Determinare status "hold" precis din conditii
+            max_sim = r["top_similar_docs"][0]["similarity"] if r["top_similar_docs"] else 0
+            is_hold = max_sim >= 0.60 or r["has_placeholders"] or title_counts[parsed[r["filename"]]["title_val"]] > 1
+            if is_hold:
+                continue # Paginile hold NU intra in sitemap conform instructiunilor!
+                
+            pri = 0.8 if r["overall_score"] >= 8 else 0.6
+            date = parsed[r['filename']]['fm'].get("datePublished", "2026-03-02")
             f.write(f'  <url>\n    <loc>{r["url"]}</loc>\n    <lastmod>{date}</lastmod>\n    <priority>{pri}</priority>\n  </url>\n')
         f.write('</urlset>')
 
     # Robots
-    with open(os.path.join(OUTPUT_DIR, "robots_recommendation.txt"), "w", encoding='utf-8') as f:
-        f.write("User-agent: *\nDisallow: \nSitemap: https://superparty.ro/sitemap.xml\n")
+    with open(os.path.join(OUTPUT_DIR, "superparty_robots_recommendation.txt"), "w", encoding='utf-8') as f:
+        f.write("User-agent: *\nDisallow: \nSitemap: https://superparty.ro/superparty_sitemap_recommendation.xml\n")
         
     # Stats
     summary = {
+        "siteId": SITE_ID,
         "total_articles": len(reports),
         "avg_word_count": sum(r["word_count"] for r in reports) // max(1, len(reports)),
         "avg_overall_score": round(sum(r["overall_score"] for r in reports) / max(1, len(reports)), 2),
         "ready_for_index": len(ready_pages),
         "needs_improvement": len(reports) - len(ready_pages) - len(risk_pages),
-        "high_risk": len(risk_pages)
+        "high_risk": len(risk_pages),
+        "missing_testimonials": len([r for r in reports if not r["has_testimonial"]])
     }
-    with open(os.path.join(OUTPUT_DIR, "report_summary.json"), "w", encoding='utf-8') as f:
+    with open(os.path.join(OUTPUT_DIR, "superparty_report_summary.json"), "w", encoding='utf-8') as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
-    # 8. Extragere Manual Checked (20 articole stratificate)
+    # 8. Extragere Manual Checked
     sorted_reps = sorted(reports, key=lambda x: x["overall_score"])
     manual_picks = []
     if len(sorted_reps) >= 20:
-        manual_picks.extend(sorted_reps[:6]) # bottom 6
+        manual_picks.extend(sorted_reps[:6])
         mid_idx = len(sorted_reps) // 2
-        manual_picks.extend(sorted_reps[mid_idx-3:mid_idx+4]) # middle 7
-        manual_picks.extend(sorted_reps[-7:]) # top 7
+        manual_picks.extend(sorted_reps[mid_idx-3:mid_idx+4])
+        manual_picks.extend(sorted_reps[-7:])
     else:
         manual_picks = sorted_reps
         
-    with open(os.path.join(OUTPUT_DIR, "manual_checks_20.md"), "w", encoding='utf-8') as f:
+    with open(os.path.join(OUTPUT_DIR, "superparty_manual_checks_20.md"), "w", encoding='utf-8') as f:
         f.write("# Manual Audit Checks (20 Representative Articles)\n\n")
         for r in manual_picks:
             f.write(f"### File: {r['filename']} (Score: {r['overall_score']})\n")
@@ -303,24 +370,17 @@ def main():
             f.write(f"**Actiuni prioritar:** {', '.join(r['suggested_actions'][:2])}\n\n---\n")
 
     # Action Plan
-    with open(os.path.join(OUTPUT_DIR, "action_plan.md"), "w", encoding='utf-8') as f:
-        f.write("# Action Plan Prioritar\n\n")
+    with open(os.path.join(OUTPUT_DIR, "superparty_action_plan.md"), "w", encoding='utf-8') as f:
+        f.write(f"# Action Plan Prioritar (Site: {SITE_ID})\n\n")
         f.write(f"- Total analizat: {summary['total_articles']}\n")
         f.write(f"- Ready To Index: {summary['ready_for_index']}\n")
-        f.write(f"- Doorways / Risc ridicat (>85% sim): {summary['high_risk']}\n\n")
+        f.write(f"- Doorways / Risc ridicat (>85% sim): {summary['high_risk']}\n")
+        f.write(f"- Fara testimoniale alocate: {summary['missing_testimonials']}\n\n")
         f.write("## Top Remedieri Imediate\n")
         f.write("1. **Frontmatter lipsa:** Update YAML pe fisiere adaugand locale, author, image URL si datePublished native.\n")
-        f.write("2. **Canonical & NOINDEX:** Cele ~300 fisiere raportate ca `high risk` in top_risk.csv trebuie puse noindex pana cand echipa modifica contentul pentru a-i reduce similaritatea TF-IDF sub 70%.\n")
-        f.write("3. **JSON-LD Schema Integration:** Injecteaza datele generate in `[slug].astro` in tag-ul <head>.\n\n")
-        f.write("## 10) Cod Snippet Implementare Astro\n")
-        f.write("```javascript\n")
-        f.write("export async function getStaticPaths() {\n")
-        f.write("  const modules = import.meta.glob('../../content/seo-articles/*.mdx', { eager: true });\n")
-        f.write("  return Object.keys(modules).map(path => {\n")
-        f.write("    const slug = path.split('/').pop().replace('.mdx','');\n")
-        f.write("    return { params: { slug } };\n")
-        f.write("  });\n")
-        f.write("}\n```\n")
+        f.write("2. **Canonical & NOINDEX:** Cele ~300 fisiere raportate ca `high risk` in superparty_top_risk.csv trebuie puse noindex.\n")
+        f.write("3. **JSON-LD Schema Integration:** Injecteaza datele generate in `[slug].astro` in tag-ul <head>.\n")
+        f.write("4. **Testimoniale:** Populeaza `src/data/superparty_testimonials.json` pentru slugurile listate in `superparty_testimonials_missing.csv`.\n\n")
 
     # README
     with open(os.path.join(OUTPUT_DIR, "README.md"), "w", encoding='utf-8') as f:

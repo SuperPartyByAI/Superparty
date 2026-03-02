@@ -2,8 +2,11 @@
 export interface Props {
   title: string;
   description?: string;
+  robots?: string;
+  schema?: string;
+  canonical?: string;
 }
-const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. Personaje costumate, baloane, decoratiuni. Rezerva: 0722 744 377' } = Astro.props;
+const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. Personaje costumate, baloane, decoratiuni. Rezerva: 0722 744 377', robots, schema, canonical } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="ro">
@@ -12,6 +15,9 @@ const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {robots && <meta name="robots" content={robots} />}
+  {canonical && <link rel="canonical" href={canonical} />}
+  {schema && <script type="application/ld+json" set:html={schema} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>

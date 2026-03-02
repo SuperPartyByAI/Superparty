@@ -8,6 +8,8 @@ const seoArticlesCollection = defineCollection({
         pubDate: z.date().optional(),
         heroImage: z.string().optional(),
         keywords: z.string().optional(),
+        indexStatus: z.enum(['ready', 'revise', 'hold']).optional(),
+        canonical: z.string().optional(),
     }),
 });
 

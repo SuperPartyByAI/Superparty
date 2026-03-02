@@ -1,0 +1,48 @@
+﻿
+> superparty-astro@1.0.0 build C:\Users\ursac\.gemini\antigravity\playground\polar-magnetosphere\Creare Siteuri\superparty-astro
+> astro build
+
+node.exe : (node:1476) Warning: To load an ES module, set "
+type": "module" in the package.json or use the .mjs extensi
+on.
+At C:\nvm4w\nodejs\pnpm.ps1:16 char:5
++     & "$basedir/node$exe"  "$basedir/node_modules/pnpm/bi
+n/pnpm.cjs"  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:1476) W 
+   ar....mjs extension.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning 
+was created)
+06:11:39 [types] Generated 2.41s
+06:11:39 [build] output: "static"
+06:11:39 [build] directory: C:\Users\ursac\.gemini\antigravity\playground\polar-magnetosphere\Creare Siteuri\superparty-astro\dist\
+06:11:39 [build] Collecting build info...
+06:11:39 [build] Γ£ô Completed in 2.53s.
+06:11:39 [build] Building static entrypoints...
+06:11:40 [ERROR] [vite] [31mx[39m Build failed in 1.13s
+
+[1m[33mwarn[39m[22m - The `content` option in your Tail
+wind CSS configuration is missing or empty.
+[1m[33mwarn[39m[22m - Configure your content sources or
+ your generated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/cont
+ent-configuration
+Could not resolve "../../layouts/BaseLayout.astro" from "sr
+c/pages/petreceri/[slug].astro"
+file: C:/Users/ursac/.gemini/antigravity/playground/polar-m
+agnetosphere/Creare Siteuri/superparty-astro/src/pages/petr
+eceri/[slug].astro
+  Stack trace:
+    at getRollupError (file:///C:/Users/ursac/.gemini/antig
+ravity/playground/polar-magnetosphere/Creare%20Siteuri/supe
+rparty-astro/node_modules/.pnpm/rollup@4.59.0/node_modules/
+rollup/dist/es/shared/parseAst.js:402:41)
+    at ModuleLoader.handleInvalidResolvedId (file:///C:/Use
+rs/ursac/.gemini/antigravity/playground/polar-magnetosphere
+/Creare%20Siteuri/superparty-astro/node_modules/.pnpm/rollu
+p@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:2
+1710:24)
+ΓÇëELIFECYCLEΓÇë Command failed with exit code 1.
