@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://superparty.ro/petreceri/animatopia-despre-noi-echipa-animatori</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animator-aladin-petreceri-copii-bucuresti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -846,11 +841,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-cluj-napoca-animatopia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-colentina-bucuresti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1012,11 +1002,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-gruiu-ilfov</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-iasi-animatopia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2127,11 +2112,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/petrecere-craciun-copii-mos-craciun-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/petrecere-craciun-revelion-copii-bucuresti-animatopia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
