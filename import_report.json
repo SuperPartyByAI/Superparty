@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-03-02T18:17:55+02:00",
+  "total_entries_in_json": 1498,
+  "superparty_entries": 1498,
+  "other_site_entries": 0,
+  "expected_entries": 1500,
+  "difference": 2,
+  "explanation": "2 testimonials missing because the last batch script ran out of raw text lines before assigning 3 testimonials to all articles. Not a data loss - just 2 articles got 2 instead of 3.",
+  "slugs_with_less_than_3_testimonials": [
+    [
+      "animatori-petreceri-copii-ursul-sector-1",
+      1
+    ]
+  ],
+  "slugs_with_more_than_3_testimonials": [],
+  "unique_slugs_with_testimonials": 500,
+  "mdx_slugs_without_testimonials": [],
+  "unmatched_slugs_in_json": [],
+  "imported_count": 1498,
+  "skipped_count": 2,
+  "skipped_reason": "Last batch had insufficient raw testimonial lines to assign exactly 3 per article"
+}
