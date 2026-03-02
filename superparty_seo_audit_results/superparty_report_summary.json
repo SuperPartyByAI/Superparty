@@ -3,8 +3,8 @@
   "total_articles": 500,
   "avg_word_count": 655,
   "avg_overall_score": 5.41,
-  "ready_for_index": 37,
-  "needs_improvement": 433,
-  "high_risk": 30,
-  "missing_testimonials": 116
+  "ready_for_index": 56,
+  "needs_improvement": 412,
+  "high_risk": 32,
+  "missing_testimonials": 66
 }
