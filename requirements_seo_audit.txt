@@ -1,0 +1,4 @@
+# Acest script Python (super_seo_audit.py) foloseste exclusiv bibliotecile standard Python.
+# Nu necesita instalarea niciunui pachet extern prin pip (fara pandas, scikit-learn, etc).
+# Pentru a-l rula local, ai nevoie doar de:
+python>=3.8
