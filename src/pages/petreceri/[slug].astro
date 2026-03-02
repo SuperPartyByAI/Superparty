@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<Layout title={entry.data.title} description={entry.data.description}>
 	
   <div class="relative bg-white pt-10 pb-20 lg:pt-16 lg:pb-28">
     <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -40,4 +40,4 @@ const { Content } = await entry.render();
     </div>
   </div>
 
-</BaseLayout>
+</Layout>
