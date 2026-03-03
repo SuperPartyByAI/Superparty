@@ -1,22 +1,18 @@
+# agent/sites/superparty.yml — Superparty site config
 site_id: superparty
-enabled: true
-domain:
-  primary: https://superparty.ro
-  host: superparty.ro
-repo:
-  full_name: SuperPartyByAI/Superparty
-  default_branch: main
-  branch_prefix: agent
-gsc:
-  property: https://superparty.ro
-vercel:
-  project_id: prj_plVq0ho20uP36bVyGw3PK9F6lw7U
-  team_id: team_gjJrKuzifRErrP5r41D6suvF
+site_url: https://superparty.ro
+repo: SuperPartyByAI/Superparty
+gsc_property: sc-domain:superparty.ro
+ga4_property_id: "517190822"
+content_dirs:
+  - src/content
+  - src/pages
 seo:
-  wave:
-    weekly_max_changes: 30
-    daily_max_changes: 10
-  allow_frontmatter_keys: [title, description, indexStatus, canonical]
-  forbidden_phrases: [testimonial, guarantee, animatopia]
+  max_weekly_wave: 25
+  min_conversions_gate: 5
+  dedup_days: 14
+monitoring:
+  sitemap_url: https://superparty.ro/sitemap.xml
+  ga4_fail_threshold: 2
 ads:
   enabled: false

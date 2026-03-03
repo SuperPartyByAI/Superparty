@@ -1,0 +1,42 @@
+# agent/sites/schema.yml
+# Schema for site configuration files (agent/sites/<site_id>.yml)
+# Each site_id must match:
+#   - reports/<site_id>/ (output dir)
+#   - env prefix: SITE_<SITE_ID>_GSC_PROPERTY etc. (optional, OR shared vars)
+#
+# Required fields:
+site_id: superparty             # Unique identifier (lowercase, no spaces)
+site_url: https://superparty.ro # Full URL including https://
+repo: SuperPartyByAI/Superparty # GitHub org/repo
+
+# GSC configuration
+gsc_property: sc-domain:superparty.ro  # Exact GSC property string
+
+# GA4 configuration
+ga4_property_id: "517190822"           # Numeric GA4 property ID
+
+# Content directories (relative to repo root)
+content_dirs:
+  - src/content
+  - src/pages
+
+# SEO settings
+seo:
+  max_weekly_wave: 25
+  min_conversions_gate: 5
+  dedup_days: 14
+  allowed_frontmatter_keys:
+    - title
+    - description
+    - meta_title
+    - meta_description
+
+# Monitoring
+monitoring:
+  sitemap_url: https://superparty.ro/sitemap.xml
+  ga4_fail_threshold: 2  # Alert after N consecutive failures
+
+# Ads (optional)
+ads:
+  enabled: false
+  meta_page_id: ""  # Set when enabling
