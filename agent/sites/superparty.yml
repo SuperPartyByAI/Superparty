@@ -1,18 +1,81 @@
-# agent/sites/superparty.yml — Superparty site config
+# agent/sites/superparty.yml
 site_id: superparty
-site_url: https://superparty.ro
-repo: SuperPartyByAI/Superparty
-gsc_property: sc-domain:superparty.ro
+enabled: true
+
+domain:
+  primary: "https://superparty.ro"
+  industry: "events"
+  vertical: "party_planning"
+  domain_of_activity: "private parties, corporate events, kids parties"
+
+gsc_property: "sc-domain:superparty.ro"
 ga4_property_id: "517190822"
+
 content_dirs:
   - src/content
   - src/pages
+
 seo:
   max_weekly_wave: 25
   min_conversions_gate: 5
   dedup_days: 14
+  allowed_frontmatter_keys:
+    - title
+    - description
+    - meta_title
+    - meta_description
+
 monitoring:
-  sitemap_url: https://superparty.ro/sitemap.xml
+  sitemap_url: "https://superparty.ro/sitemap.xml"
   ga4_fail_threshold: 2
+
+# ─── Promotion Accent ───────────────────────────────────────────
+promotion:
+  accent: "corporate"        # corporate | private | kids | seasonal
+  primary_kpi: "lead"        # lead | booking | ticket_sales | awareness
+  cpa_target_eur: 20
+  budget:
+    campaign_daily_default_eur: 10
+    account_daily_cap_eur: 50
+  canary_daily_eur: 10
+  canary_days: 7
+
+audience:
+  primary: "corporate_hr"
+  age_range: [25, 55]
+  geos: ["RO"]
+  languages: ["ro"]
+  interests:
+    - "event planning"
+    - "corporate events"
+    - "team building"
+  custom_audiences: []       # populate with Meta custom audience IDs
+
+creative:
+  tone: "professional, friendly"
+  style: "celebratory, dynamic"
+  forbidden_phrases:
+    - "testimonial"
+    - "guarantee"
+    - "medical cure"
+    - "garantat"
+    - "cel mai bun"
+  cta: "Solicita oferta"
+  max_headline_chars: 60
+  max_description_chars: 155
+  landing_page_default: "https://superparty.ro/contact"
+  landing_pages:
+    corporate: "https://superparty.ro/evenimente-corporate"
+    private: "https://superparty.ro/petreceri-private"
+    kids: "https://superparty.ro/petreceri-copii"
+    seasonal: "https://superparty.ro"
+
 ads:
-  enabled: false
+  enabled: false              # set to true when META_ACCESS_TOKEN is ready
+  default_platforms: ["meta"]
+  placements: ["feed", "stories"]
+  objective_map:
+    lead: "OUTCOME_LEADS"
+    booking: "OUTCOME_TRAFFIC"
+    ticket_sales: "OUTCOME_SALES"
+    awareness: "OUTCOME_AWARENESS"

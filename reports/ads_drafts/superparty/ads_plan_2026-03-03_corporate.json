@@ -1,0 +1,63 @@
+{
+  "site_id": "superparty",
+  "campaign_name": "Superparty — Corporate (2026-03-03)",
+  "accent": "corporate",
+  "objective": "OUTCOME_LEADS",
+  "primary_kpi": "lead",
+  "cpa_target_eur": 20,
+  "daily_budget_eur": 10,
+  "canary_days": 7,
+  "landing_page": "https://superparty.ro/evenimente-corporate",
+  "targeting": {
+    "age_min": 25,
+    "age_max": 55,
+    "geo_locations": {
+      "countries": [
+        "RO"
+      ]
+    },
+    "locales": [
+      "ro"
+    ],
+    "interests": [
+      {
+        "name": "event planning"
+      },
+      {
+        "name": "corporate events"
+      },
+      {
+        "name": "team building"
+      }
+    ]
+  },
+  "creatives": [
+    {
+      "title": "Organizăm corporate de neuitat",
+      "body": "Superparty organizează evenimente corporate complete. Solicită ofertă gratuită.",
+      "cta": "Solicita oferta"
+    },
+    {
+      "title": "Evenimente corporate personalizate",
+      "body": "De la corporate la private — pachetele noastre includ tot. Solicita oferta azi.",
+      "cta": "Solicita oferta"
+    },
+    {
+      "title": "Petrecerea perfectă pentru echipa ta",
+      "body": "Evenimente memorabile în București. Experiență, creativitate, profesionalism.",
+      "cta": "Solicita oferta"
+    }
+  ],
+  "platforms": [
+    "meta"
+  ],
+  "placements": [
+    "feed",
+    "stories"
+  ],
+  "status": "PAUSED",
+  "created_at": "2026-03-03T11:44:22.943565Z",
+  "copy_validation_ok": true,
+  "copy_validation_errors": [],
+  "dry_run": true
+}
