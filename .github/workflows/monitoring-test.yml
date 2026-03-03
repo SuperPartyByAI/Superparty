@@ -1,0 +1,20 @@
+name: monitoring-test
+on:
+  push:
+    paths: ['agent/tasks/monitoring.py']
+  pull_request:
+    paths: ['agent/tasks/monitoring.py']
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests
+      - run: python -m py_compile agent/tasks/monitoring.py && echo SYNTAX_OK
+      - run: |
+          export GITHUB_TOKEN=dummy
+          export GITHUB_REPOSITORY=owner/repo
+          python -c "import sys; sys.path.insert(0,'.'); from agent.tasks.monitoring import run_checks; print('import_ok')"
