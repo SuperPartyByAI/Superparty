@@ -7,6 +7,16 @@ log=logging.getLogger("orchestrator")
 SITES=["superparty"]
 
 def enqueue_daily():
+    # GA4 SEO quick-wins (every Monday)
+    import datetime as _dt
+    if _dt.datetime.utcnow().weekday() == 0:
+        try:
+            from agent.tasks.seo import seo_plan_task, seo_apply_task
+            seo_plan_task(mode="ga4_weekly_wave")
+            seo_apply_task()
+        except Exception as _e:
+            import logging; logging.getLogger(__name__).error(f"GA4 wave: {_e}")
+
     for s in SITES:
         get_queue("backup").enqueue("agent.tasks.backup.daily_backup_task",s)
         get_queue("ga4_collect_task(site_id="superparty", lookback_days=7)
