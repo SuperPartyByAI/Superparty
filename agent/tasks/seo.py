@@ -54,7 +54,7 @@ def seo_collect_task(site_id="superparty"):
     last_err = "unknown"
     for prop in candidates:
         try:
-            response = service.searchAnalytics().query(siteUrl=prop, body=body).execute()
+            response = service.searchanalytics().query(siteUrl=prop, body=body).execute()
             rows = response.get("rows", [])
             out_dir = Path(f"reports/{site_id}/gsc")
             out_dir.mkdir(parents=True, exist_ok=True)
