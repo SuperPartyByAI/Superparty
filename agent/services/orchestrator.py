@@ -1,4 +1,5 @@
 import time, logging
+from agent.tasks.ga4 import ga4_collect_task, ga4_status_task
 from datetime import datetime
 from agent.common.redisq import get_queue
 logging.basicConfig(level=logging.INFO)
@@ -8,7 +9,9 @@ SITES=["superparty"]
 def enqueue_daily():
     for s in SITES:
         get_queue("backup").enqueue("agent.tasks.backup.daily_backup_task",s)
-        get_queue("seo_collect").enqueue("agent.tasks.seo.seo_collect_task",s)
+        get_queue("ga4_collect_task(site_id="superparty", lookback_days=7)
+    seo_collect").enqueue("agent.tasks.seo.ga4_collect_task(site_id="superparty", lookback_days=7)
+    seo_collect_task",s)
         get_queue("seo_index").enqueue("agent.tasks.seo.seo_index_task",s)
         get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task",s,"daily_small")
         get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task",s)
