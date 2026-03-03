@@ -9,3 +9,7 @@ dist/
 whole-wind/
 .env.agent
 .env.agent.local
+
+.env.agent.*
+.env.local
+*.bak
