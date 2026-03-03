@@ -20,31 +20,94 @@ def _rep_dir(s):
     return Path("reports/" + s)
 
 
-def seo_collect_task(site="superparty"):
-    _data_dir(site).mkdir(parents=True, exist_ok=True)
-    sa = getenv("GSC_SERVICE_ACCOUNT_JSON")
-    prop = getenv("GSC_PROPERTY")
-    if not sa or sa.strip() in ("{}", "") or not prop:
-        return {"ok": False, "error": "gsc_not_configured"}
+def _gsc_client():
+    """Build GSC client using webmasters v3 (more compatible with service accounts)."""
+    import json, os
+    from google.oauth2 import service_account
+    from googleapiclient.discovery import build
+    
+    gsc_json = os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
+    if not gsc_json or gsc_json in ("{}", ""):
+        return None, "gsc_not_configured"
+    
     try:
-        from google.oauth2 import service_account
-        from googleapiclient.discovery import build
-        creds = service_account.Credentials.from_service_account_info(json.loads(sa))
-        svc = build("searchconsole", "v1", credentials=creds, cache_discovery=False)
-        end = date.today()
-        start = end - timedelta(days=28)
-        resp = svc.searchanalytics().query(siteUrl=prop, body={
-            "startDate": start.isoformat(),
-            "endDate": end.isoformat(),
-            "dimensions": ["query", "page"],
-            "rowLimit": 25000,
-        }).execute()
-        out = _data_dir(site) / ("gsc_" + start.isoformat() + "_" + end.isoformat() + ".json")
-        out.write_text(json.dumps(resp, ensure_ascii=False, indent=2), encoding="utf-8")
-        return {"ok": True, "rows": len(resp.get("rows", []))}
+        sa_info = json.loads(gsc_json)
     except Exception as e:
-        log.exception("GSC error: %s", e)
-        return {"ok": False, "error": str(e)}
+        return None, f"gsc_json_parse_error: {e}"
+    
+    try:
+        creds = service_account.Credentials.from_service_account_info(
+            sa_info,
+            scopes=["https://www.googleapis.com/auth/webmasters.readonly"]
+        )
+        service = build("webmasters", "v3", credentials=creds)
+        return service, None
+    except Exception as e:
+        return None, f"gsc_build_error: {e}"
+
+
+def seo_collect_task(site_id="superparty"):
+    """Collect GSC data (impressions, clicks, positions) for top queries."""
+    import os, json, datetime, pathlib
+    
+    service, err = _gsc_client()
+    if err:
+        return {"ok": False, "error": err}
+    
+    gsc_property = os.environ.get("GSC_PROPERTY", "https://superparty.ro/").strip()
+    # Normalize: Search Console supports sc-domain: or https:// prefix
+    if not gsc_property.startswith("sc-domain:") and not gsc_property.startswith("http"):
+        gsc_property = f"https://{gsc_property}/"
+    
+    try:
+        # Date range: last 28 days
+        end = datetime.date.today() - datetime.timedelta(days=3)  # GSC lag ~3 days
+        start = end - datetime.timedelta(days=28)
+        
+        body = {
+            "startDate": str(start),
+            "endDate": str(end),
+            "dimensions": ["query", "page"],
+            "rowLimit": 500,
+            "startRow": 0
+        }
+        
+        # Try sc-domain: first, fallback to url prefix
+        for prop in [f"sc-domain:{gsc_property.replace('https://','').replace('http://','').rstrip('/')}", gsc_property]:
+            try:
+                response = service.searchAnalytics().query(siteUrl=prop, body=body).execute()
+                rows = response.get("rows", [])
+                
+                if rows:
+                    # Save results
+                    out_dir = pathlib.Path(f"reports/{site_id}/gsc")
+                    out_dir.mkdir(parents=True, exist_ok=True)
+                    out_file = out_dir / f"collect_{datetime.date.today()}.json"
+                    
+                    data = {
+                        "collected_at": str(datetime.datetime.utcnow()),
+                        "property": prop,
+                        "date_range": f"{start} to {end}",
+                        "rows": rows,
+                        "total_rows": len(rows)
+                    }
+                    out_file.write_text(json.dumps(data, indent=2))
+                    
+                    return {
+                        "ok": True,
+                        "rows": len(rows),
+                        "property": prop,
+                        "file": str(out_file),
+                        "date_range": f"{start} to {end}"
+                    }
+            except Exception as e:
+                last_err = str(e)
+                continue
+        
+        return {"ok": False, "error": f"No data from GSC: {last_err}"}
+        
+    except Exception as e:
+        return {"ok": False, "error": f"gsc_collect_error: {e}"}
 
 
 def seo_index_task(site="superparty"):
