@@ -1,40 +1,24 @@
-import json, logging
+import json, logging, os
 from datetime import date, timedelta
 from pathlib import Path
 import requests
 from agent.common.env import getenv, getenv_int
-from agent.common.guardrails import max_weekly_wave
 
-log = logging.getLogger("seo")
-
-
-def _data_dir(s):
-    return Path("data/" + s + "/seo")
-
-
-def _idx_dir(s):
-    return Path("data/" + s + "/seo_index")
-
-
-def _rep_dir(s):
-    return Path("reports/" + s)
+log = logging.getLogger(__name__)
 
 
 def _gsc_client():
-    """Build GSC client using webmasters v3 (more compatible with service accounts)."""
-    import json, os
+    """Build GSC client using webmasters v3 (works with service account)."""
     from google.oauth2 import service_account
     from googleapiclient.discovery import build
-    
+
     gsc_json = os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
     if not gsc_json or gsc_json in ("{}", ""):
         return None, "gsc_not_configured"
-    
     try:
         sa_info = json.loads(gsc_json)
     except Exception as e:
         return None, f"gsc_json_parse_error: {e}"
-    
     try:
         creds = service_account.Credentials.from_service_account_info(
             sa_info,
@@ -47,127 +31,199 @@ def _gsc_client():
 
 
 def seo_collect_task(site_id="superparty"):
-    """Collect GSC data (impressions, clicks, positions) for top queries."""
-    import os, json, datetime, pathlib
-    
+    """Collect GSC analytics (impressions, clicks, positions) for top queries."""
     service, err = _gsc_client()
     if err:
         return {"ok": False, "error": err}
-    
+
     gsc_property = os.environ.get("GSC_PROPERTY", "https://superparty.ro/").strip()
-    # Normalize: Search Console supports sc-domain: or https:// prefix
-    if not gsc_property.startswith("sc-domain:") and not gsc_property.startswith("http"):
-        gsc_property = f"https://{gsc_property}/"
-    
-    try:
-        # Date range: last 28 days
-        end = datetime.date.today() - datetime.timedelta(days=3)  # GSC lag ~3 days
-        start = end - datetime.timedelta(days=28)
-        
-        body = {
-            "startDate": str(start),
-            "endDate": str(end),
-            "dimensions": ["query", "page"],
-            "rowLimit": 500,
-            "startRow": 0
-        }
-        
-        # Try sc-domain: first, fallback to url prefix
-        for prop in [f"sc-domain:{gsc_property.replace('https://','').replace('http://','').rstrip('/')}", gsc_property]:
-            try:
-                response = service.searchAnalytics().query(siteUrl=prop, body=body).execute()
-                rows = response.get("rows", [])
-                
-                if rows:
-                    # Save results
-                    out_dir = pathlib.Path(f"reports/{site_id}/gsc")
-                    out_dir.mkdir(parents=True, exist_ok=True)
-                    out_file = out_dir / f"collect_{datetime.date.today()}.json"
-                    
-                    data = {
-                        "collected_at": str(datetime.datetime.utcnow()),
-                        "property": prop,
-                        "date_range": f"{start} to {end}",
-                        "rows": rows,
-                        "total_rows": len(rows)
-                    }
-                    out_file.write_text(json.dumps(data, indent=2))
-                    
-                    return {
-                        "ok": True,
-                        "rows": len(rows),
-                        "property": prop,
-                        "file": str(out_file),
-                        "date_range": f"{start} to {end}"
-                    }
-            except Exception as e:
-                last_err = str(e)
-                continue
-        
-        return {"ok": False, "error": f"No data from GSC: {last_err}"}
-        
-    except Exception as e:
-        return {"ok": False, "error": f"gsc_collect_error: {e}"}
+
+    end = date.today() - timedelta(days=3)
+    start = end - timedelta(days=28)
+
+    body = {
+        "startDate": str(start),
+        "endDate": str(end),
+        "dimensions": ["query", "page"],
+        "rowLimit": 500,
+    }
+
+    # Try sc-domain: (domain property) first, then url-prefix
+    host = gsc_property.replace("https://", "").replace("http://", "").rstrip("/")
+    candidates = [f"sc-domain:{host}", gsc_property]
+    last_err = "unknown"
+    for prop in candidates:
+        try:
+            response = service.searchAnalytics().query(siteUrl=prop, body=body).execute()
+            rows = response.get("rows", [])
+            out_dir = Path(f"reports/{site_id}/gsc")
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_file = out_dir / f"collect_{date.today()}.json"
+            data = {
+                "collected_at": str(date.today()),
+                "property": prop,
+                "date_range": f"{start} to {end}",
+                "rows": rows,
+                "total_rows": len(rows),
+            }
+            out_file.write_text(json.dumps(data, indent=2))
+            return {
+                "ok": True,
+                "rows": len(rows),
+                "property": prop,
+                "file": str(out_file),
+                "date_range": f"{start} to {end}",
+            }
+        except Exception as e:
+            last_err = str(e)
+            continue
+
+    return {"ok": False, "error": f"gsc_collect_failed: {last_err}"}
 
 
-def seo_index_task(site="superparty"):
-    _idx_dir(site).mkdir(parents=True, exist_ok=True)
-    files = sorted(_data_dir(site).glob("gsc_*.json"))
+def seo_index_task(site_id="superparty"):
+    """Index collected GSC data for planning."""
+    gsc_dir = Path(f"reports/{site_id}/gsc")
+    if not gsc_dir.exists():
+        return {"ok": False, "error": "no_gsc_files"}
+
+    files = sorted(gsc_dir.glob("collect_*.json"))
     if not files:
         return {"ok": False, "error": "no_gsc_files"}
-    raw = json.loads(files[-1].read_text(encoding="utf-8"))
-    norm = []
-    for r in raw.get("rows", []):
-        keys = r.get("keys", [])
-        if len(keys) < 2:
+
+    # Aggregate all rows from all files
+    all_rows = []
+    for f in files[-7:]:  # last 7 days
+        try:
+            d = json.loads(f.read_text())
+            all_rows.extend(d.get("rows", []))
+        except Exception:
+            pass
+
+    if not all_rows:
+        return {"ok": False, "error": "no_rows_in_gsc_files"}
+
+    # Aggregate by query
+    query_agg = {}
+    for row in all_rows:
+        keys = row.get("keys", [])
+        if not keys:
             continue
-        norm.append({
-            "query": keys[0],
-            "page": keys[1],
-            "clicks": r.get("clicks", 0),
-            "impressions": r.get("impressions", 0),
-            "ctr": r.get("ctr", 0),
-            "position": r.get("position", 999),
+        query = keys[0] if len(keys) > 0 else "unknown"
+        page = keys[1] if len(keys) > 1 else ""
+        clicks = row.get("clicks", 0)
+        impressions = row.get("impressions", 0)
+        position = row.get("position", 0)
+        ctr = row.get("ctr", 0)
+
+        if query not in query_agg:
+            query_agg[query] = {"query": query, "page": page,
+                                "clicks": 0, "impressions": 0,
+                                "position_sum": 0, "count": 0, "ctr": 0}
+        query_agg[query]["clicks"] += clicks
+        query_agg[query]["impressions"] += impressions
+        query_agg[query]["position_sum"] += position
+        query_agg[query]["count"] += 1
+
+    # Compute avg position and sort by impressions
+    index = []
+    for q, agg in query_agg.items():
+        avg_pos = agg["position_sum"] / agg["count"] if agg["count"] > 0 else 99
+        index.append({
+            "query": q,
+            "page": agg["page"],
+            "clicks": agg["clicks"],
+            "impressions": agg["impressions"],
+            "avg_position": round(avg_pos, 1),
         })
-    out = _idx_dir(site) / "latest.json"
-    out.write_text(json.dumps(norm, ensure_ascii=False, indent=2), encoding="utf-8")
-    return {"ok": True, "indexed": len(norm)}
+    index.sort(key=lambda x: x["impressions"], reverse=True)
+
+    out_dir = Path(f"reports/{site_id}/gsc")
+    index_file = out_dir / "index.json"
+    index_file.write_text(json.dumps(index, indent=2))
+
+    return {"ok": True, "indexed_queries": len(index), "file": str(index_file)}
 
 
-def seo_plan_task(site="superparty", mode="weekly_wave"):
-    idx = _idx_dir(site) / "latest.json"
-    if not idx.exists():
+def seo_plan_task(site_id="superparty", wave="daily_small"):
+    """Generate SEO improvement plan from indexed data."""
+    index_file = Path(f"reports/{site_id}/gsc/index.json")
+    if not index_file.exists():
         return {"ok": False, "error": "no_index"}
-    rows = json.loads(idx.read_text(encoding="utf-8"))
-    imp_min = getenv_int("SEO_IMPRESSIONS_MIN", 100)
+
+    index = json.loads(index_file.read_text())
+
+    # Filter: impressions > 50, position between 5 and 25 (opportunity zone)
+    min_impressions = getenv_int("SEO_IMPRESSIONS_MIN", 50)
     pos_min = getenv_int("SEO_POS_MIN", 5)
     pos_max = getenv_int("SEO_POS_MAX", 25)
-    candidates = [r for r in rows if r["impressions"] >= imp_min and pos_min <= r["position"] <= pos_max]
-    candidates.sort(key=lambda x: x["impressions"], reverse=True)
-    wave = max_weekly_wave() if mode == "weekly_wave" else min(10, max_weekly_wave())
-    plan = []
-    llm_url = getenv("LLM_WORKER_URL", "http://localhost:8100") + "/generate"
-    for item in candidates[:wave]:
-        q = item["query"]
-        p = item["page"]
-        prompt = "Write SEO title max 60 chars and meta description max 155 chars for: " + q + " on page " + p + ". Reply JSON only with keys title and description."
-        try:
-            r = requests.post(llm_url, json={"prompt": prompt}, timeout=60)
-            llm = r.json()
-        except Exception as e:
-            llm = {"error": str(e)}
-        plan.append(dict(item, llm=llm))
-    _rep_dir(site).mkdir(parents=True, exist_ok=True)
-    out = _rep_dir(site) / ("seo_plan_" + mode + "_" + date.today().isoformat() + ".json")
-    out.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
-    return {"ok": True, "count": len(plan), "plan_file": str(out)}
+    wave_size = getenv_int("MAX_WEEKLY_WAVE", 10) if wave == "daily_small" else getenv_int("MAX_WEEKLY_WAVE", 30)
+
+    opportunities = [
+        row for row in index
+        if row.get("impressions", 0) >= min_impressions
+        and pos_min <= row.get("avg_position", 99) <= pos_max
+    ][:wave_size]
+
+    if not opportunities:
+        # Fall back: top queries regardless of position
+        opportunities = index[:min(5, wave_size)]
+
+    plan = {
+        "wave": wave,
+        "created": str(date.today()),
+        "opportunities": opportunities,
+        "count": len(opportunities),
+    }
+
+    plan_dir = Path(f"reports/{site_id}/seo_plans")
+    plan_dir.mkdir(parents=True, exist_ok=True)
+    plan_file = plan_dir / f"plan_{date.today()}_{wave}.json"
+    plan_file.write_text(json.dumps(plan, indent=2))
+
+    return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
 
-def seo_apply_task(site="superparty"):
-    plans = sorted(_rep_dir(site).glob("seo_plan_*_*.json"))
+def seo_apply_task(site_id="superparty"):
+    """Apply latest SEO plan by creating a GitHub PR."""
+    from agent.common.git_pr import create_pr
+
+    plan_dir = Path(f"reports/{site_id}/seo_plans")
+    if not plan_dir.exists():
+        return {"ok": False, "error": "no_plan"}
+
+    plans = sorted(plan_dir.glob("plan_*.json"))
     if not plans:
         return {"ok": False, "error": "no_plan"}
-    token = getenv("GITHUB_TOKEN", "")
-    if not token or "CHANGEME" in token or len(token) < 20:
-        return {"ok": False, "error": "github_token_missing", "plan": str(plans[-1])}
-    return {"ok": True, "note": "apply ready - call git_commit_push_pr to create PR", "plan": str(plans[-1])}
+
+    latest = json.loads(plans[-1].read_text())
+    opportunities = latest.get("opportunities", [])
+    if not opportunities:
+        return {"ok": False, "error": "no_opportunities_in_plan"}
+
+    # Create a report file to commit
+    report_dir = Path(f"reports/{site_id}")
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_file = report_dir / f"seo_report_{date.today()}.md"
+
+    lines = [
+        f"# SEO Opportunity Report — {date.today()}",
+        "",
+        f"Wave: {latest.get('wave')} | Opportunities: {len(opportunities)}",
+        "",
+        "| Query | Page | Impressions | Avg Position |",
+        "|-------|------|-------------|--------------|",
+    ]
+    for opp in opportunities[:20]:
+        page = opp.get("page", "").replace("|", "/")
+        lines.append(f"| {opp.get('query','')} | {page} | {opp.get('impressions')} | {opp.get('avg_position')} |")
+
+    report_file.write_text("\n".join(lines))
+
+    result = create_pr(
+        site_id=site_id,
+        title=f"SEO: {len(opportunities)} opportunities ({latest.get('wave')}) {date.today()}",
+        body=f"Automated SEO opportunity report.\n\nTop opportunity: {opportunities[0].get('query') if opportunities else 'none'}",
+        files={str(report_file): "\n".join(lines)},
+    )
+    return result
