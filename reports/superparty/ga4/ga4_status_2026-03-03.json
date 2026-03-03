@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "details": {
+    "GA4_PROPERTY_ID": "missing",
+    "GSC_SERVICE_ACCOUNT_JSON": "set (len=2366)",
+    "GA4_MEASUREMENT_ID": "missing",
+    "GA4_API_SECRET": "missing"
+  }
+}

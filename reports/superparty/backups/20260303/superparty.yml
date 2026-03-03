@@ -1,0 +1,22 @@
+site_id: superparty
+enabled: true
+domain:
+  primary: https://superparty.ro
+  host: superparty.ro
+repo:
+  full_name: SuperPartyByAI/Superparty
+  default_branch: main
+  branch_prefix: agent
+gsc:
+  property: https://superparty.ro
+vercel:
+  project_id: prj_plVq0ho20uP36bVyGw3PK9F6lw7U
+  team_id: team_gjJrKuzifRErrP5r41D6suvF
+seo:
+  wave:
+    weekly_max_changes: 30
+    daily_max_changes: 10
+  allow_frontmatter_keys: [title, description, indexStatus, canonical]
+  forbidden_phrases: [testimonial, guarantee, animatopia]
+ads:
+  enabled: false

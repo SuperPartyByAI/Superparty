@@ -1,0 +1,4 @@
+# monitoring.example.yml
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+SITE_URL=https://superparty.ro
+# GA4_FAIL_THRESHOLD=2 (default, hardcoded)

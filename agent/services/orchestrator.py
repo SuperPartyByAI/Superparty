@@ -19,6 +19,13 @@ def get_queue(name):
 
 
 def enqueue_daily():
+
+    # Monitoring checks (daily)
+    try:
+        from agent.tasks.monitoring import run_checks
+        run_checks(site_id="superparty")
+    except Exception as _me:
+        import logging; logging.getLogger(__name__).warning("monitoring: %s", _me)
     for site_id in SITES:
         try:
             get_queue("seo_collect").enqueue("agent.tasks.seo.seo_collect_task", site_id=site_id)
