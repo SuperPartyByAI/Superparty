@@ -7,6 +7,9 @@ export interface Props {
   canonical?: string;
 }
 const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. Personaje costumate, baloane, decoratiuni. Rezerva: 0722 744 377', robots, schema, canonical } = Astro.props;
+
+// GA4 Measurement ID — set in .env: PUBLIC_GA4_ID=G-XXXXXXXXXX
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID || '';
 ---
 <!DOCTYPE html>
 <html lang="ro">
@@ -20,6 +23,20 @@ const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. 
   {schema && <script type="application/ld+json" set:html={schema} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics 4 -->
+  {GA4_ID && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+      <script define:vars={{ GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', GA4_ID, { send_page_view: true });
+        window._gtag = gtag;
+      </script>
+    </>
+  )}
   <style>
     :root {
       --primary: #ff6b35;
@@ -94,6 +111,66 @@ const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. 
       <p style="font-size:0.8rem;">© {new Date().getFullYear()} SuperParty.ro — Toate drepturile rezervate</p>
     </div>
   </footer>
-  <a href="https://wa.me/40722744377" class="whatsapp-float">💬</a>
+  <a href="https://wa.me/40722744377"
+    class="whatsapp-float"
+    id="wa-float-btn"
+    aria-label="Contacteaza-ne pe WhatsApp">💬</a>
+
+  <!-- GA4 click event tracking -->
+  <script>
+    (function() {
+      function gtag() {
+        if (typeof window._gtag === 'function') { window._gtag.apply(null, arguments); }
+        else { (window.dataLayer = window.dataLayer||[]).push(arguments); }
+      }
+
+      function trackClick(eventName, params) {
+        gtag('event', eventName, Object.assign({
+          event_category: 'engagement',
+          event_label: document.title,
+        }, params));
+      }
+
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('a, button');
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        var text = (el.innerText || el.getAttribute('aria-label') || '').trim().slice(0, 80);
+
+        // Phone call
+        if (href.startsWith('tel:')) {
+          trackClick('click_to_call', { phone: href, label: text });
+        }
+        // WhatsApp
+        else if (href.includes('wa.me') || href.includes('whatsapp')) {
+          trackClick('click_to_whatsapp', { label: text });
+        }
+        // CTA buttons (rezerva, comanda, etc)
+        else if (el.classList.contains('cta') || el.classList.contains('nav-cta') ||
+                 el.closest('.hero-ctas') || el.closest('[class*="cta"]')) {
+          trackClick('cta_click', { destination: href, label: text });
+        }
+      });
+
+      // Track scroll depth (25%, 50%, 75%, 90%)
+      var depths = [25, 50, 75, 90];
+      var fired = {};
+      window.addEventListener('scroll', function() {
+        var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        depths.forEach(function(d) {
+          if (pct >= d && !fired[d]) {
+            fired[d] = true;
+            trackClick('scroll_depth', { percent: d });
+          }
+        });
+      }, { passive: true });
+
+      // Track form submits
+      document.addEventListener('submit', function(e) {
+        var form = e.target;
+        trackClick('form_submit', { form_id: form.id || form.action || 'unknown' });
+      });
+    })();
+  </script>
 </body>
 </html>
