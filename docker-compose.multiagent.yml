@@ -1,0 +1,73 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7
+    container_name: sp_redis
+    restart: unless-stopped
+    ports: ["6379:6379"]
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: sp_ollama
+    restart: unless-stopped
+    ports: ["11434:11434"]
+    volumes:
+      - ollama_data:/root/.ollama
+
+  llm_worker:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_llm_worker
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [ollama, redis]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.llm_worker_server"]
+    ports: ["8100:8100"]
+
+  orchestrator:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_orchestrator
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [redis]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.orchestrator"]
+
+  worker_seo:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_worker_seo
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [redis, llm_worker]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.worker", "seo_collect,seo_index,seo_plan"]
+
+  worker_apply:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_worker_apply
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [redis]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.worker", "apply"]
+
+  worker_backup:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_worker_backup
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [redis]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.worker", "backup"]
+
+  worker_ads:
+    build: {context: ., dockerfile: Dockerfile.agent}
+    container_name: sp_worker_ads
+    restart: unless-stopped
+    env_file: .env.agent
+    depends_on: [redis, llm_worker]
+    volumes: ["./:/workdir"]
+    command: ["python", "-m", "agent.services.worker", "ads_plan,ads_draft"]
+
+volumes:
+  ollama_data:
