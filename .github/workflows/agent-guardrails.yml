@@ -1,0 +1,157 @@
+name: Agent PR Guardrails
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "agent/**"
+      - "reports/**"
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install PyYAML python-frontmatter
+
+      - name: Check forbidden phrases
+        run: |
+          python3 - <<'PY'
+          import sys, pathlib, re
+
+          FORBIDDEN = ["testimonial", "guarantee", "animatopia", "100% guaranteed", "best in class"]
+          ALLOWED_EXTENSIONS = {".md", ".astro", ".html", ".xml"}
+
+          errors = []
+          for f in pathlib.Path("src").rglob("*"):
+              if f.suffix not in ALLOWED_EXTENSIONS:
+                  continue
+              text = f.read_text(encoding="utf-8", errors="ignore").lower()
+              for phrase in FORBIDDEN:
+                  if phrase in text:
+                      errors.append(f"{f}: forbidden phrase '{phrase}'")
+
+          if errors:
+              print("GUARDRAIL FAILED - Forbidden phrases found:")
+              for e in errors:
+                  print(" ", e)
+              sys.exit(1)
+          print("Forbidden phrases check PASSED")
+          PY
+
+      - name: Check frontmatter keys (whitelist)
+        run: |
+          python3 - <<'PY'
+          import sys, pathlib, frontmatter
+
+          ALLOWED_KEYS = {
+              "title", "description", "pubDate", "heroImage", "layout",
+              "indexStatus", "canonical", "author", "tags", "category",
+              "city", "type", "slug"
+          }
+
+          errors = []
+          for f in pathlib.Path("src").rglob("*.md"):
+              try:
+                  post = frontmatter.load(f)
+                  for key in post.metadata:
+                      if key not in ALLOWED_KEYS:
+                          errors.append(f"{f}: unknown frontmatter key '{key}'")
+              except Exception as e:
+                  pass  # Not all .md files have frontmatter
+
+          if errors:
+              print("GUARDRAIL FAILED - Unknown frontmatter keys:")
+              for e in errors:
+                  print(" ", e)
+              sys.exit(1)
+          print("Frontmatter keys check PASSED")
+          PY
+
+      - name: Check wave size (max 30 files changed)
+        run: |
+          CHANGED=$(git diff --name-only origin/main HEAD -- src/ public/ | wc -l)
+          echo "Files changed: $CHANGED"
+          if [ "$CHANGED" -gt 30 ]; then
+            echo "GUARDRAIL FAILED: Wave size $CHANGED exceeds limit of 30"
+            exit 1
+          fi
+          echo "Wave size check PASSED ($CHANGED <= 30)"
+
+      - name: Check ads drafts are PAUSED only
+        run: |
+          python3 - <<'PY'
+          import sys, pathlib, json
+
+          errors = []
+          for f in pathlib.Path("reports/ads_drafts").rglob("*.json"):
+              try:
+                  data = json.loads(f.read_text(encoding="utf-8"))
+                  if isinstance(data, dict):
+                      status = data.get("status", "draft")
+                      if status not in ("draft", "paused"):
+                          errors.append(f"{f}: ads status '{status}' must be 'draft' or 'paused'")
+              except Exception:
+                  pass
+
+          if errors:
+              print("GUARDRAIL FAILED - Active ads found (must be draft/paused):")
+              for e in errors:
+                  print(" ", e)
+              sys.exit(1)
+          print("Ads status check PASSED")
+          PY
+
+      - name: Allowlist enforcement
+        run: |
+          python3 - <<'PY'
+          import sys, pathlib
+
+          # Files that agent is allowed to modify via PR
+          ALLOWED_PATTERNS = [
+              "src/pages/",
+              "src/content/",
+              "public/sitemap.xml",
+              "public/robots.txt",
+              "agent/sites/",
+              "reports/",
+          ]
+
+          import subprocess
+          result = subprocess.run(
+              ["git", "diff", "--name-only", "origin/main", "HEAD"],
+              capture_output=True, text=True
+          )
+          changed_files = result.stdout.strip().split("\n") if result.stdout.strip() else []
+
+          errors = []
+          for f in changed_files:
+              if not f:
+                  continue
+              allowed = any(f.startswith(p) for p in ALLOWED_PATTERNS)
+              # Also allow env example and CI files
+              if f in (".env.agent.example", ".gitignore", "docker-compose.multiagent.yml", "Dockerfile.agent"):
+                  allowed = True
+              if f.startswith(".github/workflows/"):
+                  allowed = True
+              if f.startswith("agent/"):
+                  allowed = True
+              if not allowed:
+                  errors.append(f"  {f}: not in agent allowlist")
+
+          if errors:
+              print("GUARDRAIL FAILED - Modified files outside allowlist:")
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          print(f"Allowlist check PASSED ({len(changed_files)} files)")
+          PY
