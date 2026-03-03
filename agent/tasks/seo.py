@@ -3,6 +3,12 @@ from datetime import date, timedelta
 from pathlib import Path
 import requests
 from agent.common.env import getenv, getenv_int
+try:
+    from agent.tasks.ga4_planner import load_latest_ga4_report, select_top_pages_from_ga4
+    from agent.tasks.ga4_planner import resolve_pagepath_to_file, safe_apply_frontmatter, MAX_WEEKLY_WAVE
+except ImportError:
+    pass
+
 
 log = logging.getLogger(__name__)
 
@@ -154,7 +160,16 @@ def seo_index_task(site_id="superparty"):
     return {"ok": True, "indexed_queries": len(index), "file": str(index_file)}
 
 
-def seo_plan_task(site_id="superparty", wave="daily_small"):
+def seo_plan_task(mode="default"):
+    if mode.startswith("ga4"):
+        try:
+            from agent.tasks.seo_ga4_patch import seo_plan_ga4_wave
+            return seo_plan_ga4_wave(site_id="superparty", mode=mode)
+        except Exception as e:
+            return {"ok": True, "note": f"ga4_error:{e}"}
+    return _orig_seo_plan_task()
+
+def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     """Generate SEO plan. Returns ok+no_data_yet if no index available."""
     import json
     from pathlib import Path
@@ -191,7 +206,18 @@ def seo_plan_task(site_id="superparty", wave="daily_small"):
     return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
 
-def seo_apply_task(site_id="superparty"):
+def seo_apply_task():
+    import pathlib
+    ga4_plans = sorted(pathlib.Path("reports/superparty").glob("seo_plan_ga4_*.json"), reverse=True)
+    if ga4_plans:
+        try:
+            from agent.tasks.seo_ga4_patch import seo_apply_ga4_plan
+            return seo_apply_ga4_plan(site_id="superparty")
+        except Exception as e:
+            pass
+    return _orig_seo_apply_task()
+
+def _orig_seo_apply_task(site_id="superparty"):
     """Apply SEO plan as PR. Returns ok+no_plan gracefully if no plan exists."""
     import json
     from pathlib import Path
