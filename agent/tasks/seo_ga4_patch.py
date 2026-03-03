@@ -9,6 +9,10 @@ from pathlib import Path
 log = logging.getLogger(__name__)
 
 
+
+MIN_CONVERSIONS_GATE = 5   # Wave skipped if total conversions < this
+DEDUP_DAYS = 14            # Days to skip already-optimized pages
+
 def seo_plan_ga4_wave(site_id="superparty", mode="ga4_weekly_wave"):
     """GA4-driven SEO planner: selects top converting pages and drafts title/desc improvements."""
     from agent.tasks.ga4_planner import (
@@ -23,6 +27,26 @@ def seo_plan_ga4_wave(site_id="superparty", mode="ga4_weekly_wave"):
     top_pages = select_top_pages_from_ga4(ga4_data, limit=MAX_WEEKLY_WAVE)
     if not top_pages:
         return {"ok": True, "note": "no_ga4_conversions_yet"}
+
+    total_conv = sum(p.get("conversions", 0) for p in top_pages)
+    if total_conv < MIN_CONVERSIONS_GATE:
+        return {"ok": True, "note": f"below_min_conversions:{total_conv}<{MIN_CONVERSIONS_GATE}"}
+
+    import datetime as _dt
+    _cutoff = _dt.date.today() - _dt.timedelta(days=DEDUP_DAYS)
+    _done = set()
+    for _af in sorted(Path(f"reports/{site_id}").glob("seo_apply_ga4_*.json"), reverse=True):
+        try:
+            _ad = _dt.date.fromisoformat(json.loads(_af.read_text()).get("date","2000-01-01"))
+            if _ad >= _cutoff:
+                for _ai in json.loads(_af.read_text()).get("applied",[]):
+                    _done.add(_ai.get("pagePath",""))
+        except Exception:
+            pass
+    top_pages = [p for p in top_pages if p.get("pagePath","") not in _done]
+    if not top_pages:
+        return {"ok": True, "note": "all_top_pages_recently_optimized"}
+
 
     content_dirs = ["src/content", "src/pages", "content", "pages", "src"]
     plan = []
