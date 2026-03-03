@@ -9,7 +9,8 @@ SITES=["superparty"]
 def enqueue_daily():
     # GA4 SEO quick-wins (every Monday)
     import datetime as _dt
-    if _dt.datetime.utcnow().weekday() == 0:
+    _now_u = _dt.datetime.utcnow()
+    if _now_u.weekday() == 6 and _now_u.hour == 10:
         try:
             from agent.tasks.seo import seo_plan_task, seo_apply_task
             seo_plan_task(mode="ga4_weekly_wave")
