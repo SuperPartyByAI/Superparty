@@ -1,0 +1,24 @@
+name: Check Vercel Token Expiry
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # Monthly check
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Vercel token age
+        env:
+          VERCEL_TOKEN_CREATED_AT: ${{ secrets.VERCEL_TOKEN_CREATED_AT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: bash scripts/rotate_vercel_token.sh

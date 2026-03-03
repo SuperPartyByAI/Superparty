@@ -1,0 +1,52 @@
+name: Refresh Meta Long-lived Token
+
+on:
+  schedule:
+    - cron: "0 4 1 */2 *"   # 1st of every 2nd month at 04:00 UTC (~50 days)
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    name: Refresh Meta Token
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      secrets: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq + gh CLI
+        run: sudo apt-get install -y jq
+
+      - name: Setup deploy SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan 46.225.182.127 >> ~/.ssh/known_hosts
+
+      - name: Refresh Meta token
+        env:
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          META_SHORT_LIVED_TOKEN: ${{ secrets.META_SHORT_LIVED_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: bash scripts/rotate_meta_token.sh
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TS=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+          [ -n "$SLACK_WEBHOOK_URL" ] && curl -sS -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\":red_circle: *Meta token refresh FAILED* at ${TS}.\"}" \
+            "$SLACK_WEBHOOK_URL"
+          gh issue create --repo="${{ github.repository }}" \
+            --title="Meta token refresh FAILED at ${TS}" \
+            --body="Workflow run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
