@@ -6,7 +6,7 @@ domain:
   primary: "https://superparty.ro"
   industry: "events"
   vertical: "party_planning"
-  domain_of_activity: "private parties, corporate events, kids parties"
+  domain_of_activity: "petreceri private, evenimente corporate, petreceri copii, animatori"
 
 gsc_property: "sc-domain:superparty.ro"
 ga4_property_id: "517190822"
@@ -29,9 +29,50 @@ monitoring:
   sitemap_url: "https://superparty.ro/sitemap.xml"
   ga4_fail_threshold: 2
 
+# ─── Keyword Seeds ──────────────────────────────────────────────
+# Used by SEO planner and Ads planner for LLM prompts + clustering
+keyword_seeds:
+  primary:
+    - "animatori petreceri copii"
+    - "animatori petreceri copii bucuresti"
+    - "animatori copii"
+    - "animatori pentru copii"
+    - "animatori petreceri copii bucurești"
+    - "animatori petreceri copii ilfov"
+    - "animator petreceri copii"
+    - "animatoare petreceri copii"
+    - "animatori pentru botez"
+  corporate_and_family:
+    - "animatori pentru team building copii"
+    - "animatori evenimente family"
+    - "animatori petreceri private"
+    - "animatori evenimente corporate copii"
+  kids_specific:
+    - "animatori petrecere aniversare copii"
+    - "animatori petrecere tematică"
+    - "clovni petreceri copii"
+    - "clovni petreceri copii bucuresti"
+    - "pachete animatori copii"
+    - "program animatori petrecere copii"
+  local_variants:
+    - "animatori petreceri copii bucurești sector 1"
+    - "animatori petreceri copii bucuresti sector 2"
+    - "animatori petreceri copii centru bucuresti"
+    - "animatori petreceri copii piata unirii"
+  longtail:
+    - "animator petrecere copii cu jocuri interactive"
+    - "animator copii cu costum personaj"
+    - "animator petrecere copii muzica si jocuri"
+    - "animator petrecere copii profesional"
+  negative_keywords:
+    - "job animatori"
+    - "angajare animatori"
+    - "tehnic animator"
+    - "curs animatori"
+
 # ─── Promotion Accent ───────────────────────────────────────────
 promotion:
-  accent: "corporate"        # corporate | private | kids | seasonal
+  accent: "kids"             # corporate | private | kids | seasonal
   primary_kpi: "lead"        # lead | booking | ticket_sales | awareness
   cpa_target_eur: 20
   budget:
@@ -41,25 +82,29 @@ promotion:
   canary_days: 7
 
 audience:
-  primary: "corporate_hr"
-  age_range: [25, 55]
+  primary: "parents_of_children"
+  age_range: [25, 45]
   geos: ["RO"]
   languages: ["ro"]
   interests:
+    - "parenting"
+    - "kids birthday parties"
     - "event planning"
-    - "corporate events"
-    - "team building"
-  custom_audiences: []       # populate with Meta custom audience IDs
+    - "children activities"
+    - "animatori copii"
+  custom_audiences: []
 
 creative:
-  tone: "professional, friendly"
-  style: "celebratory, dynamic"
+  tone: "vesel, prietenos, de încredere"
+  style: "colorat, dinamic, orientat spre familie"
   forbidden_phrases:
     - "testimonial"
     - "guarantee"
     - "medical cure"
     - "garantat"
     - "cel mai bun"
+    - "magician"
+    - "magic show"
   cta: "Solicita oferta"
   max_headline_chars: 60
   max_description_chars: 155
@@ -71,7 +116,7 @@ creative:
     seasonal: "https://superparty.ro"
 
 ads:
-  enabled: false              # set to true when META_ACCESS_TOKEN is ready
+  enabled: false              # set true when META_ACCESS_TOKEN ready
   default_platforms: ["meta"]
   placements: ["feed", "stories"]
   objective_map:
