@@ -1,0 +1,46 @@
+name: Google Ads Smoke Test
+
+on:
+  push:
+    paths:
+      - "agent/ads/google_adapter.py"
+      - "agent/tasks/ads_google.py"
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    name: Google Ads dry-run smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install google-ads==33.0.0 pyyaml
+      - name: Syntax check
+        run: python -m py_compile agent/ads/google_adapter.py agent/tasks/ads_google.py && echo "SYNTAX_OK"
+      - name: Dry-run smoke
+        run: |
+          python3 -c "
+          import sys
+          sys.path.insert(0, '.')
+          from agent.tasks.ads_google import _build_manifest
+          # Load site config minimal
+          site = {
+            'promotion': {'accent': 'kids', 'primary_kpi': 'lead', 'cpa_target_eur': 20,
+                          'budget': {'campaign_daily_default_eur': 10, 'account_daily_cap_eur': 50}},
+            'audience': {'geos': ['RO'], 'languages': ['ro']},
+            'keyword_seeds': {'primary': ['animatori petreceri copii'], 'negative_keywords': ['job animatori']},
+            'creative': {'forbidden_phrases': ['magician'], 'cta': 'Solicita oferta',
+                         'landing_pages': {'kids': 'https://superparty.ro/petreceri-copii'}},
+            'domain': {'primary': 'https://superparty.ro'},
+          }
+          m = _build_manifest(site, 'kids')
+          assert m['campaign_name'], 'No campaign name'
+          assert m['keywords'], 'No keywords'
+          assert 'magician' not in str(m).lower(), 'Forbidden phrase in manifest'
+          assert m['status'] == 'PAUSED', 'Should be PAUSED'
+          print('SMOKE_OK:', m['campaign_name'], 'keywords:', len(m['keywords']))
+          "
