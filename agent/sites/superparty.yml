@@ -116,7 +116,7 @@ creative:
     seasonal: "https://superparty.ro"
 
 ads:
-  enabled: false              # set true when META_ACCESS_TOKEN ready
+  enabled: true              # set true when META_ACCESS_TOKEN ready
   default_platforms: ["meta"]
   placements: ["feed", "stories"]
   objective_map:

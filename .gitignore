@@ -12,4 +12,10 @@ whole-wind/
 
 .env.agent.*
 .env.local
-*.bak
+*.bakrunner_final.py
+runner2.py
+ads_runner.py
+full_test.py
+vs2.py
+dry_runner.py
+vs_check.py
