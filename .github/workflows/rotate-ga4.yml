@@ -1,0 +1,61 @@
+name: Rotate GA4 Service Account Key
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"   # 1st of every month at 03:00 UTC
+  workflow_dispatch:        # Manual trigger
+
+jobs:
+  rotate:
+    name: Rotate GA4 Key
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      secrets: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup gcloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_ROTATION_SA_KEY }}
+
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install jq + gh CLI
+        run: |
+          sudo apt-get install -y jq
+          type gh || (curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null && sudo apt-get update && sudo apt-get install -y gh)
+
+      - name: Setup deploy SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan 46.225.182.127 >> ~/.ssh/known_hosts
+
+      - name: Rotate GA4 key
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+          GA4_SA_EMAIL: ${{ secrets.GA4_SA_EMAIL }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: bash scripts/rotate_ga4_key.sh
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TS=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+          [ -n "$SLACK_WEBHOOK_URL" ] && curl -sS -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\":red_circle: *GA4 key rotation FAILED* at ${TS}. Check [Actions](https://github.com/${{ github.repository }}/actions).\"}" \
+            "$SLACK_WEBHOOK_URL"
+          gh issue create --repo="${{ github.repository }}" \
+            --title="GA4 key rotation FAILED at ${TS}" \
+            --body="Workflow run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"

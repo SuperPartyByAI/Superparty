@@ -1,0 +1,17 @@
+{
+  "date": "2026-03-03T11:17:12.296622",
+  "results": {
+    "orchestrator": {
+      "ok": false,
+      "msg": "docker_ps_failed:[Errno 2] No such file or directory: 'docker'"
+    },
+    "ga4_collect": {
+      "ok": false,
+      "msg": "ok=False fails=1"
+    },
+    "sitemap": {
+      "ok": true,
+      "msg": "status=200"
+    }
+  }
+}
