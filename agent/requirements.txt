@@ -1,0 +1,12 @@
+PyYAML
+python-frontmatter
+requests
+redis
+rq
+fastapi
+uvicorn
+google-api-python-client==2.70.0
+google-auth
+supabase
+sentence-transformers
+beautifulsoup4
