@@ -4,63 +4,63 @@
     "tier": 2,
     "hub": "animatori-petreceri-copii",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/ilfov"
+    "url": "https://www.superparty.ro/petreceri/ilfov"
   },
   {
     "slug": "sector-6",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-6"
+    "url": "https://www.superparty.ro/petreceri/sector-6"
   },
   {
     "slug": "sector-5",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-5"
+    "url": "https://www.superparty.ro/petreceri/sector-5"
   },
   {
     "slug": "sector-4",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-4"
+    "url": "https://www.superparty.ro/petreceri/sector-4"
   },
   {
     "slug": "sector-3",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-3"
+    "url": "https://www.superparty.ro/petreceri/sector-3"
   },
   {
     "slug": "sector-2",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-2"
+    "url": "https://www.superparty.ro/petreceri/sector-2"
   },
   {
     "slug": "sector-1",
     "tier": 2,
     "hub": "bucuresti",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/sector-1"
+    "url": "https://www.superparty.ro/petreceri/sector-1"
   },
   {
     "slug": "bucuresti",
     "tier": 2,
     "hub": "animatori-petreceri-copii",
     "indexable": true,
-    "url": "https://superparty.ro/petreceri/bucuresti"
+    "url": "https://www.superparty.ro/petreceri/bucuresti"
   },
   {
     "slug": "animatori-petreceri-copii",
     "tier": 1,
     "hub": null,
     "indexable": true,
-    "url": "https://superparty.ro/animatori-petreceri-copii"
+    "url": "https://www.superparty.ro/animatori-petreceri-copii"
   },
   {
     "slug": "teleorman",
@@ -68,7 +68,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/teleorman"
+    "url": "https://www.superparty.ro/petreceri/teleorman"
   },
   {
     "slug": "calarasi",
@@ -76,7 +76,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/calarasi"
+    "url": "https://www.superparty.ro/petreceri/calarasi"
   },
   {
     "slug": "ialomita",
@@ -84,7 +84,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/ialomita"
+    "url": "https://www.superparty.ro/petreceri/ialomita"
   },
   {
     "slug": "giurgiu",
@@ -92,7 +92,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/giurgiu"
+    "url": "https://www.superparty.ro/petreceri/giurgiu"
   },
   {
     "slug": "dambovita",
@@ -100,7 +100,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/dambovita"
+    "url": "https://www.superparty.ro/petreceri/dambovita"
   },
   {
     "slug": "prahova",
@@ -108,7 +108,7 @@
     "indexable": true,
     "place_type": "county_hub",
     "hub": "animatori-petreceri-copii",
-    "url": "https://superparty.ro/petreceri/prahova"
+    "url": "https://www.superparty.ro/petreceri/prahova"
   },
   {
     "slug": "bolintin-vale",
@@ -119,7 +119,7 @@
     "dist_km": 27.5,
     "score": 22.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/bolintin-vale"
+    "url": "https://www.superparty.ro/petreceri/bolintin-vale"
   },
   {
     "slug": "mihailesti",
@@ -130,7 +130,7 @@
     "dist_km": 19.3,
     "score": 22.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/mihailesti"
+    "url": "https://www.superparty.ro/petreceri/mihailesti"
   },
   {
     "slug": "budesti",
@@ -141,7 +141,7 @@
     "dist_km": 36.0,
     "score": 15.0,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/budesti"
+    "url": "https://www.superparty.ro/petreceri/budesti"
   },
   {
     "slug": "fierbinti-targ",
@@ -152,7 +152,7 @@
     "dist_km": 36.1,
     "score": 15.0,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/fierbinti-targ"
+    "url": "https://www.superparty.ro/petreceri/fierbinti-targ"
   },
   {
     "slug": "fundulea",
@@ -163,7 +163,7 @@
     "dist_km": 32.7,
     "score": 15.0,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/fundulea"
+    "url": "https://www.superparty.ro/petreceri/fundulea"
   },
   {
     "slug": "mihai-voda",
@@ -174,7 +174,7 @@
     "dist_km": 22.7,
     "score": 15.0,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/mihai-voda"
+    "url": "https://www.superparty.ro/petreceri/mihai-voda"
   },
   {
     "slug": "racari",
@@ -185,7 +185,7 @@
     "dist_km": 36.0,
     "score": 15.0,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/racari"
+    "url": "https://www.superparty.ro/petreceri/racari"
   },
   {
     "slug": "belciugatele",
@@ -196,7 +196,7 @@
     "dist_km": 27.0,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/belciugatele"
+    "url": "https://www.superparty.ro/petreceri/belciugatele"
   },
   {
     "slug": "ciorogarla",
@@ -207,7 +207,7 @@
     "dist_km": 17.4,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/ciorogarla"
+    "url": "https://www.superparty.ro/petreceri/ciorogarla"
   },
   {
     "slug": "clinceni",
@@ -218,7 +218,7 @@
     "dist_km": 13.9,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/clinceni"
+    "url": "https://www.superparty.ro/petreceri/clinceni"
   },
   {
     "slug": "comana",
@@ -229,7 +229,7 @@
     "dist_km": 28.4,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/comana"
+    "url": "https://www.superparty.ro/petreceri/comana"
   },
   {
     "slug": "copaceni",
@@ -240,7 +240,7 @@
     "dist_km": 17.3,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/copaceni"
+    "url": "https://www.superparty.ro/petreceri/copaceni"
   },
   {
     "slug": "iepuresti",
@@ -251,7 +251,7 @@
     "dist_km": 25.6,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/iepuresti"
+    "url": "https://www.superparty.ro/petreceri/iepuresti"
   },
   {
     "slug": "nuci",
@@ -262,7 +262,7 @@
     "dist_km": 29.5,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/nuci"
+    "url": "https://www.superparty.ro/petreceri/nuci"
   },
   {
     "slug": "petrachioaia",
@@ -273,7 +273,7 @@
     "dist_km": 24.0,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/petrachioaia"
+    "url": "https://www.superparty.ro/petreceri/petrachioaia"
   },
   {
     "slug": "vidra",
@@ -284,7 +284,7 @@
     "dist_km": 18.9,
     "score": 11.25,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/vidra"
+    "url": "https://www.superparty.ro/petreceri/vidra"
   },
   {
     "slug": "dimieni",
@@ -295,7 +295,7 @@
     "dist_km": 18.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/dimieni"
+    "url": "https://www.superparty.ro/petreceri/dimieni"
   },
   {
     "slug": "ordoreanu-vatra-veche",
@@ -306,7 +306,7 @@
     "dist_km": 19.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/ordoreanu-vatra-veche"
+    "url": "https://www.superparty.ro/petreceri/ordoreanu-vatra-veche"
   },
   {
     "slug": "valea-piersicilor",
@@ -317,7 +317,7 @@
     "dist_km": 10.5,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/valea-piersicilor"
+    "url": "https://www.superparty.ro/petreceri/valea-piersicilor"
   },
   {
     "slug": "adunatii-copaceni",
@@ -328,7 +328,7 @@
     "dist_km": 19.8,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/adunatii-copaceni"
+    "url": "https://www.superparty.ro/petreceri/adunatii-copaceni"
   },
   {
     "slug": "alunisu",
@@ -339,7 +339,7 @@
     "dist_km": 10.4,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/alunisu"
+    "url": "https://www.superparty.ro/petreceri/alunisu"
   },
   {
     "slug": "bolintin-deal",
@@ -350,7 +350,7 @@
     "dist_km": 22.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/bolintin-deal"
+    "url": "https://www.superparty.ro/petreceri/bolintin-deal"
   },
   {
     "slug": "branistari",
@@ -361,7 +361,7 @@
     "dist_km": 27.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/branistari"
+    "url": "https://www.superparty.ro/petreceri/branistari"
   },
   {
     "slug": "buciumeni",
@@ -372,7 +372,7 @@
     "dist_km": 17.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/buciumeni"
+    "url": "https://www.superparty.ro/petreceri/buciumeni"
   },
   {
     "slug": "budeni",
@@ -383,7 +383,7 @@
     "dist_km": 26.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/budeni"
+    "url": "https://www.superparty.ro/petreceri/budeni"
   },
   {
     "slug": "bulbucata",
@@ -394,7 +394,7 @@
     "dist_km": 28.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/bulbucata"
+    "url": "https://www.superparty.ro/petreceri/bulbucata"
   },
   {
     "slug": "butimanu",
@@ -405,7 +405,7 @@
     "dist_km": 33.8,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/butimanu"
+    "url": "https://www.superparty.ro/petreceri/butimanu"
   },
   {
     "slug": "buturugeni",
@@ -416,7 +416,7 @@
     "dist_km": 22.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/buturugeni"
+    "url": "https://www.superparty.ro/petreceri/buturugeni"
   },
   {
     "slug": "bacu",
@@ -427,7 +427,7 @@
     "dist_km": 17.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/bacu"
+    "url": "https://www.superparty.ro/petreceri/bacu"
   },
   {
     "slug": "balaceanca",
@@ -438,7 +438,7 @@
     "dist_km": 15.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/balaceanca"
+    "url": "https://www.superparty.ro/petreceri/balaceanca"
   },
   {
     "slug": "baneasa",
@@ -449,7 +449,7 @@
     "dist_km": 42.4,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/baneasa"
+    "url": "https://www.superparty.ro/petreceri/baneasa"
   },
   {
     "slug": "chirculesti",
@@ -460,7 +460,7 @@
     "dist_km": 23.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/chirculesti"
+    "url": "https://www.superparty.ro/petreceri/chirculesti"
   },
   {
     "slug": "ciocanesti",
@@ -471,7 +471,7 @@
     "dist_km": 26.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/ciocanesti"
+    "url": "https://www.superparty.ro/petreceri/ciocanesti"
   },
   {
     "slug": "ciofliceni",
@@ -482,7 +482,7 @@
     "dist_km": 28.5,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/ciofliceni"
+    "url": "https://www.superparty.ro/petreceri/ciofliceni"
   },
   {
     "slug": "cocani",
@@ -493,7 +493,7 @@
     "dist_km": 27.8,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cocani"
+    "url": "https://www.superparty.ro/petreceri/cocani"
   },
   {
     "slug": "cojasca",
@@ -504,7 +504,7 @@
     "dist_km": 38.5,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cojasca"
+    "url": "https://www.superparty.ro/petreceri/cojasca"
   },
   {
     "slug": "cojesti",
@@ -515,7 +515,7 @@
     "dist_km": 25.0,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cojesti"
+    "url": "https://www.superparty.ro/petreceri/cojesti"
   },
   {
     "slug": "colibasi",
@@ -526,7 +526,7 @@
     "dist_km": 25.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/colibasi"
+    "url": "https://www.superparty.ro/petreceri/colibasi"
   },
   {
     "slug": "cornetu",
@@ -537,7 +537,7 @@
     "dist_km": 15.7,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cornetu"
+    "url": "https://www.superparty.ro/petreceri/cornetu"
   },
   {
     "slug": "cosoba",
@@ -548,7 +548,7 @@
     "dist_km": 25.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cosoba"
+    "url": "https://www.superparty.ro/petreceri/cosoba"
   },
   {
     "slug": "coteni",
@@ -559,7 +559,7 @@
     "dist_km": 25.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/coteni"
+    "url": "https://www.superparty.ro/petreceri/coteni"
   },
   {
     "slug": "cozieni",
@@ -570,7 +570,7 @@
     "dist_km": 16.7,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cozieni"
+    "url": "https://www.superparty.ro/petreceri/cozieni"
   },
   {
     "slug": "creata",
@@ -581,7 +581,7 @@
     "dist_km": 23.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/creata"
+    "url": "https://www.superparty.ro/petreceri/creata"
   },
   {
     "slug": "crevedia",
@@ -592,7 +592,7 @@
     "dist_km": 24.2,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/crevedia"
+    "url": "https://www.superparty.ro/petreceri/crevedia"
   },
   {
     "slug": "crevedia-mare",
@@ -603,7 +603,7 @@
     "dist_km": 37.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/crevedia-mare"
+    "url": "https://www.superparty.ro/petreceri/crevedia-mare"
   },
   {
     "slug": "cretesti",
@@ -614,7 +614,7 @@
     "dist_km": 16.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cretesti"
+    "url": "https://www.superparty.ro/petreceri/cretesti"
   },
   {
     "slug": "cretuleasca",
@@ -625,7 +625,7 @@
     "dist_km": 13.6,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cretuleasca"
+    "url": "https://www.superparty.ro/petreceri/cretuleasca"
   },
   {
     "slug": "crivina",
@@ -636,7 +636,7 @@
     "dist_km": 25.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/crivina"
+    "url": "https://www.superparty.ro/petreceri/crivina"
   },
   {
     "slug": "cranguri",
@@ -647,7 +647,7 @@
     "dist_km": 26.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cranguri"
+    "url": "https://www.superparty.ro/petreceri/cranguri"
   },
   {
     "slug": "cucuieti",
@@ -658,7 +658,7 @@
     "dist_km": 25.5,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/cucuieti"
+    "url": "https://www.superparty.ro/petreceri/cucuieti"
   },
   {
     "slug": "campurelu",
@@ -669,7 +669,7 @@
     "dist_km": 22.5,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/campurelu"
+    "url": "https://www.superparty.ro/petreceri/campurelu"
   },
   {
     "slug": "candeasca",
@@ -680,7 +680,7 @@
     "dist_km": 27.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/candeasca"
+    "url": "https://www.superparty.ro/petreceri/candeasca"
   },
   {
     "slug": "caciulati",
@@ -691,7 +691,7 @@
     "dist_km": 22.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/caciulati"
+    "url": "https://www.superparty.ro/petreceri/caciulati"
   },
   {
     "slug": "caldararu",
@@ -702,7 +702,7 @@
     "dist_km": 12.7,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/caldararu"
+    "url": "https://www.superparty.ro/petreceri/caldararu"
   },
   {
     "slug": "calugareni",
@@ -713,7 +713,7 @@
     "dist_km": 27.9,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/calugareni"
+    "url": "https://www.superparty.ro/petreceri/calugareni"
   },
   {
     "slug": "catrunesti",
@@ -724,7 +724,7 @@
     "dist_km": 27.0,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/catrunesti"
+    "url": "https://www.superparty.ro/petreceri/catrunesti"
   },
   {
     "slug": "catelu",
@@ -735,7 +735,7 @@
     "dist_km": 9.6,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/catelu"
+    "url": "https://www.superparty.ro/petreceri/catelu"
   },
   {
     "slug": "decindea",
@@ -746,7 +746,7 @@
     "dist_km": 27.1,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/decindea"
+    "url": "https://www.superparty.ro/petreceri/decindea"
   },
   {
     "slug": "dobreni",
@@ -757,7 +757,7 @@
     "dist_km": 21.3,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/dobreni"
+    "url": "https://www.superparty.ro/petreceri/dobreni"
   },
   {
     "slug": "dragomiresti-deal",
@@ -768,6 +768,6 @@
     "dist_km": 13.8,
     "score": 7.5,
     "hub": "ilfov",
-    "url": "https://superparty.ro/petreceri/dragomiresti-deal"
+    "url": "https://www.superparty.ro/petreceri/dragomiresti-deal"
   }
 ]

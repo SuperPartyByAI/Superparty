@@ -17,6 +17,19 @@ GA4_CONVERSION_EVENTS = {
 
 SAFE_FRONTMATTER_KEYS = {"title", "description", "meta_title", "meta_description"}
 
+# ─── Animatori cluster: query keywords that get priority boost ────────────────
+ANIMATORI_KEYWORDS = [
+    "animatori", "animator", "animatie", "animator copii", "animatori copii",
+    "petreceri copii", "petrecere copii", "animatoare", "animatoare copii",
+    "zana", "personaje", "clown", "jongler", "magie", "spectacol copii",
+]
+GEO_BOOST_KEYWORDS = [
+    "bucuresti", "ilfov", "sector", "sector 1", "sector 2", "sector 3",
+    "sector 4", "sector 5", "sector 6",
+]
+KEYWORD_BOOST_FACTOR = 5    # x5 for animatori cluster
+GEO_BOOST_FACTOR = 2        # extra x2 for geo queries
+
 WEAK_TITLE_PATTERNS = re.compile(
     r"^(home|acas[ar]|untitled|todo|index|page|default|welcome|pagina)$",
     re.IGNORECASE
@@ -39,6 +52,17 @@ def load_latest_ga4_report(site_id="superparty"):
         return None
 
 
+def _animatori_boost(query: str) -> float:
+    """Return score multiplier for 'animatori petreceri copii' cluster queries."""
+    q = query.lower()
+    boost = 1.0
+    if any(kw in q for kw in ANIMATORI_KEYWORDS):
+        boost *= KEYWORD_BOOST_FACTOR
+    if any(kw in q for kw in GEO_BOOST_KEYWORDS):
+        boost *= GEO_BOOST_FACTOR
+    return boost
+
+
 def select_top_pages_from_ga4(ga4_data, limit=MAX_WEEKLY_WAVE):
     if not ga4_data:
         return []
@@ -58,8 +82,31 @@ def select_top_pages_from_ga4(ga4_data, limit=MAX_WEEKLY_WAVE):
             if page_path and sessions > 0:
                 conversion_by_page[page_path] += sessions
 
-    ranked = sorted(conversion_by_page.items(), key=lambda x: x[1], reverse=True)[:limit]
-    return [{"pagePath": p, "conversions": c} for p, c in ranked]
+    # ─── Apply animatori cluster boost ───────────────────────────────────────
+    # Boost pages matching animatori/petreceri-copii/sector keywords
+    boosted = {}
+    for page_path, base_score in conversion_by_page.items():
+        q = page_path.lower()
+        multiplier = 1.0
+        if any(kw.replace(" ", "-") in q or kw in q for kw in ANIMATORI_KEYWORDS):
+            multiplier *= KEYWORD_BOOST_FACTOR
+        if any(kw.replace(" ", "-") in q or kw in q for kw in GEO_BOOST_KEYWORDS):
+            multiplier *= GEO_BOOST_FACTOR
+        boosted[page_path] = base_score * multiplier
+
+    ranked = sorted(boosted.items(), key=lambda x: x[1], reverse=True)[:limit]
+    log.info("Animatori cluster boost applied. Top page: %s score=%.1f",
+             ranked[0][0] if ranked else 'none',
+             ranked[0][1] if ranked else 0)
+    return [
+        {
+            "pagePath": p,
+            "score": round(s, 2),
+            "keyword_priority_applied": True,
+            "boost": round(boosted.get(p, s) / max(conversion_by_page.get(p, 1), 1), 2)
+        }
+        for p, s in ranked
+    ]
 
 
 def _load_frontmatter_slug(fpath):
