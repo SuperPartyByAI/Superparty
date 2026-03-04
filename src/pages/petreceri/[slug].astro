@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import testimonialsData from '../../data/superparty_testimonials.json';
+import reviewsData from '../../data/superparty_testimonials.json';
 
 export async function getStaticPaths() {
   const articles = await getCollection('seo-articles');
@@ -14,9 +14,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// Strict Testimonial Logic: filter by siteId AND slug
-const siteTestimonials = (testimonialsData as any[]).filter((t) => t.siteId === 'superparty');
-const pageTestimonials = siteTestimonials.filter((t) => t.slug === entry.slug).slice(0, 3);
+// Filter reviews by siteId AND slug
+const siteReviews = (reviewsData as any[]).filter((t) => t.siteId === 'superparty');
+const pageReviews = siteReviews.filter((t) => t.slug === entry.slug).slice(0, 3);
 
 // READY logic: if indexStatus is 'hold' -> noindex
 const isHold = entry.data.indexStatus === 'hold';
@@ -44,7 +44,7 @@ const schemaData = {
       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
       "author": { "@type": "Organization", "name": "SuperParty" }
     },
-    ...(pageTestimonials.length > 0 ? pageTestimonials.map((t: any) => ({
+    ...(pageReviews.length > 0 ? pageReviews.map((t: any) => ({
       "@type": "Review",
       "itemReviewed": { "@type": "LocalBusiness", "name": "SuperParty" },
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
@@ -91,10 +91,10 @@ const waUrl = `https://wa.me/${PHONE_E164}?text=${waText}`;
             <Content />
           </article>
 
-          {pageTestimonials.length > 0 && (
+          {pageReviews.length > 0 && (
             <div class="mt-12 space-y-4 not-prose">
               <h3 class="text-2xl font-bold text-gray-900">Feedback de la Părinți</h3>
-              {pageTestimonials.map((t: any) => (
+              {pageReviews.map((t: any) => ({
                 <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
                   <blockquote class="italic text-gray-700 text-lg border-l-4 border-pink-400 pl-4 py-2">
                     "{t.text}"
