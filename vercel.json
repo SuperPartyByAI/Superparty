@@ -134,6 +134,81 @@
             "source": "/?p=1101",
             "destination": "/animatori-petreceri-copii",
             "permanent": true
+        },
+        {
+            "source": "/wp-content/uploads/2021/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/uploads/2022/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/uploads/2023/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/uploads/2024/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/uploads/2025/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-includes/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-admin/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-json/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-login.php",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/xmlrpc.php",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/feed",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/feed/",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/comments/feed",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/comments/feed/",
+            "destination": "/",
+            "permanent": true
         }
     ]
 }
