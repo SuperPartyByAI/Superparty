@@ -1,0 +1,522 @@
+{
+  "date": "2026-03-04 15:20",
+  "stats": {
+    "downloaded": 119,
+    "skipped": 0,
+    "failed": 9
+  },
+  "results": [
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-copii-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-acasa.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-elsa-ana-olaf-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse-300x213.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-superparty-2-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/animatori-petreceri-copii-superparty-2.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/aranjamente-baloane-1-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/aranjamente-baloane-1.jpg",
+      "result": "failed: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/batman.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/cenusareasa-si-print-1-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/cenusareasa-si-print-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/cp-png-1.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/cropped-logo-supaerparty-ico-192x192.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/cropped-logo-superparty-160.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/decoratiuni-baloane-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/decoratiuni-baloane-pentru-copii-1-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/decoratiuni-baloane-pentru-copii-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/decoratiuni-baloane-superparty-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/decoratiuni-din-baloane-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/logo-superparty-160.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-1-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-copii-1-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-copii-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-pentru-copii.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-petreceri-1-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-petreceri-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-superparty-1-300x225.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/piniata-superparty-1.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/popcorn-1-300x225.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/popcorn-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/printesele-disney-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/printesele-disney.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/spiderman-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/spiderman.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/superman.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/testoasele-ninja.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/vata-de-zahar-1-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/vata-de-zahar-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/vata-de-zahar-pe-bat.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/vata-pe-bat-1-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/04/vata-pe-bat-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/web-design-si-seo.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/inchiriere-mos-craciun-bucuresti-1-a-177x300.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/inchiriere-mos-craciun-bucuresti-1-a-603x1024.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/inchiriere-mos-craciun-bucuresti-1-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/mos-craciun-de-inchiriat-1-a-300x296.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/mos-craciun-de-inchiriat-1-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-3-a-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-3-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-4-a-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-4-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-mos-1-a-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-mos-1-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-mos-2-a-300x212.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/pachet-mos-2-a.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-botez-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-botez-1.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-majorat-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-majorat-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-nunta-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcada-baloane-nunta-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcade-baloane-1-300x256.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/arcade-baloane-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-1-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-gata-umflate-nunta-botez-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-gata-umflate-nunta-botez-1.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-majoratt-zi-de-nastere-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-majoratt-zi-de-nastere-1.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-pb-3-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/baloane-cu-heliu-pb-3.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/decor-petreceri-copii-bucuresti-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/decor-petreceri-copii-bucuresti-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/decoratiuni-ghirlanda-botez-1-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/decoratiuni-ghirlanda-botez-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/ursitoare-300x231.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/ursitoare-botez-300x229.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/ursitoare-botez.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/07/ursitoare.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/arcade-baloane-botez-nunta-majorat-superparty-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/arcade-baloane-botez-nunta-majorat-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/arcade-baloane-super-party.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/baloane-cu-heliu-super-party.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/baloane-cu-heliu-superparty-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/baloane-cu-heliu-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/decorationi-baloane-botez-1-300x245.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/decorationi-baloane-botez-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/decorationi-baloane-super-party.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/decoratiuni-baloane-superparty-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/decoratiuni-baloane-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/mos-craciun-de-inchiriat-super-party.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/mos-craciun-de-inchiriat-superparty-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/mos-craciun-de-inchiriat-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/ursitoare-botez-bucuresti-superparty-300x224.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/ursitoare-botez-bucuresti-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/ursitoare-botez-super-party.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/animatori-petreceri-copii-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/animatori-petreceri-copii-bucuresti-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/animatori-petreceri-copii-bucuresti.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/animatori-petreceri-copii.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-1-300x210.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-2-300x213.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-2.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-3-300x213.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/09/pachet-zane-3.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/10/decor-botez-nunta-majorat-300x225.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2022/10/decor-botez-nunta-majorat.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/animatori-petreceri-copii-super-party-1-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/animatori-petreceri-copii-super-party-1.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/arcada-baloane-superparty-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/arcada-baloane-superparty.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/decoratiuni-baloane-aranjamente-300x244.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/08/decoratiuni-baloane-aranjamente.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/09/cropped-ico-sigla-suparparty-180x180.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/09/cropped-ico-sigla-suparparty-192x192.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/09/cropped-ico-sigla-suparparty-270x270.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/09/cropped-ico-sigla-suparparty-32x32.png",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2023/09/whatsapp-icon.png",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2025/01/animator-spiderman.jpg",
+      "result": "failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "path": "/wp-content/uploads/2025/01/animatori-elsa-ana-si-olaf.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2025/01/baloane-heliu.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2025/01/mascote-petreceri-copii-bucuresti.jpg",
+      "result": "downloaded"
+    },
+    {
+      "path": "/wp-content/uploads/2025/01/ursitoare-la-botez.jpg",
+      "result": "downloaded"
+    }
+  ]
+}

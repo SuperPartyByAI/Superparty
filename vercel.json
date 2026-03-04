@@ -165,31 +165,6 @@
             "permanent": true
         },
         {
-            "source": "/wp-content/uploads/2021/:path*",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/wp-content/uploads/2022/:path*",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/wp-content/uploads/2023/:path*",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/wp-content/uploads/2024/:path*",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/wp-content/uploads/2025/:path*",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
             "source": "/wp-content/:path*",
             "destination": "/",
             "permanent": true
