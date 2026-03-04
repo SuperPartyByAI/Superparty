@@ -91,47 +91,13 @@
             "permanent": true
         },
         {
-            "source": "/?p=59",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=155",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=170",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=184",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=197",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=738",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=1019",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=1077",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/?p=1101",
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p"
+                }
+            ],
             "destination": "/animatori-petreceri-copii",
             "permanent": true
         },
