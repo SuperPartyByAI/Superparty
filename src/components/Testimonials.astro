@@ -1,0 +1,124 @@
+---
+/**
+ * Testimonials.astro — componenta reutilizabilă (1498 testimoniale reale)
+ * Props:
+ *   count: number (default 12) — câte testimoniale afișăm
+ *   cityFilter: string (optional) — "București" / "Ilfov" / etc.
+ *   showLink: boolean (default true) — afișează link "Vezi toate recenziile"
+ */
+import reviewsRaw from '../data/superparty_testimonials.json';
+
+export interface Props {
+  count?: number;
+  cityFilter?: string;
+  showLink?: boolean;
+  title?: string;
+}
+
+const { count = 12, cityFilter, showLink = true, title = 'Ce spun părinții' } = Astro.props;
+
+type Review = { siteId: string; slug: string; name: string; location: string; event: string; text: string; source: string; date: string; };
+const allReviews = reviewsRaw as Review[];
+
+// Shuffle deterministic (by date hash) + filter by city if requested
+function shuffle(arr: Review[]) {
+  return [...arr].sort((a, b) => {
+    const ha = a.date ? parseInt(a.date.replace(/-/g,'')) : 0;
+    const hb = b.date ? parseInt(b.date.replace(/-/g,'')) : 0;
+    return hb - ha; // most recent first
+  });
+}
+
+let filtered = shuffle(allReviews);
+if (cityFilter) {
+  filtered = filtered.filter(r => r.location && r.location.toLowerCase().includes(cityFilter.toLowerCase()));
+  if (filtered.length < 4) filtered = shuffle(allReviews); // fallback
+}
+const reviews = filtered.slice(0, count);
+
+function sourceIcon(src: string) {
+  if (src === 'google') return '🟢';
+  if (src === 'facebook') return '🔵';
+  if (src === 'whatsapp') return '💬';
+  return '⭐';
+}
+function sourceLabel(src: string) {
+  if (src === 'google') return 'Google';
+  if (src === 'facebook') return 'Facebook';
+  if (src === 'whatsapp') return 'WhatsApp';
+  return 'Client';
+}
+---
+
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{title}</h2>
+      <p class="section-sub">1.498 testimoniale reale de la părinți mulțumiți</p>
+    </div>
+    <div class="reviews-grid">
+      {reviews.map((r, i) => (
+        <div class="review-card" style={`animation-delay:${i * 0.05}s`}>
+          <div class="review-quote">"</div>
+          <p class="review-text">{r.text}</p>
+          <div class="review-footer">
+            <div class="review-meta">
+              <span class="review-source" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
+              <span class="review-name">{r.name}</span>
+              {r.location && <span class="review-loc">· {r.location}</span>}
+            </div>
+            {r.event && <span class="review-event">{r.event}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+    {showLink && (
+      <div class="testimonials-cta">
+        <a href="/recenzii/" class="btn-recenzii">⭐ Vezi toate cele 1.498 recenzii →</a>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .testimonials-section { padding: 4rem 0; background: var(--dark-2); }
+  .section-header { text-align: center; margin-bottom: 2.5rem; }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; }
+  .section-title span { color: var(--primary); }
+  .section-sub { color: var(--text-muted); font-size: 0.95rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .review-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,107,53,0.12);
+    border-radius: 16px;
+    padding: 1.4rem 1.4rem 1rem;
+    position: relative;
+    animation: fadeInUp 0.4s both;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .review-card:hover { border-color: rgba(255,107,53,0.35); transform: translateY(-2px); }
+  .review-quote { font-size: 3rem; line-height: 1; color: var(--primary); opacity: 0.3; position: absolute; top: 0.8rem; right: 1.2rem; font-family: Georgia, serif; }
+  .review-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; padding-right: 2rem; }
+  .review-footer { display: flex; flex-direction: column; gap: 0.3rem; }
+  .review-meta { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; }
+  .review-source { font-size: 1rem; }
+  .review-name { font-weight: 700; color: var(--text); }
+  .review-loc { color: var(--text-muted); }
+  .review-event { font-size: 0.78rem; background: rgba(255,107,53,0.12); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 20px; display: inline-block; }
+  .testimonials-cta { text-align: center; margin-top: 2rem; }
+  .btn-recenzii {
+    display: inline-block; padding: 0.85rem 2rem;
+    background: transparent; border: 2px solid var(--primary);
+    color: var(--primary); border-radius: 50px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-recenzii:hover { background: var(--primary); color: white; }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 480px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -4,18 +4,22 @@ from datetime import datetime
 log = logging.getLogger(__name__)
 SITES = ["superparty"]
 
-
-def get_queue(name):
-    class _Q:
-        def enqueue(self, fn_path, *args, **kwargs):
-            try:
-                parts = fn_path.split(".")
-                import importlib
-                mod = importlib.import_module(".".join(parts[:-1]))
-                return getattr(mod, parts[-1])(*args, **kwargs)
-            except Exception as e:
-                log.error("Queue %s %s: %s", name, fn_path, e)
-    return _Q()
+try:
+    from agent.common.redisq import get_queue
+    log.info("Using Redis/RQ queues (real)")
+except ImportError:
+    log.warning("Redis not available, using direct execution fallback")
+    def get_queue(name):
+        class _Q:
+            def enqueue(self, fn_path, *args, **kwargs):
+                try:
+                    parts = fn_path.split(".")
+                    import importlib
+                    mod = importlib.import_module(".".join(parts[:-1]))
+                    return getattr(mod, parts[-1])(*args, **kwargs)
+                except Exception as e:
+                    log.error("FallbackQueue %s %s: %s", name, fn_path, e)
+        return _Q()
 
 
 def enqueue_daily():
@@ -38,13 +42,14 @@ def enqueue_daily():
 
 
 def enqueue_weekly():
-    # GA4-driven SEO quick wins (Sunday 10:00 UTC)
-    try:
-        from agent.tasks.seo import seo_plan_task, seo_apply_task
-        seo_plan_task(mode="ga4_weekly_wave")
-        seo_apply_task()
-    except Exception as e:
-        log.warning("GA4 weekly wave: %s", e)
+    # GA4-driven SEO quick wins (Sunday 10:00 UTC) — runs in worker, not orchestrator
+    for site_id in SITES:
+        try:
+            get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="ga4_weekly_wave")
+            get_queue("seo_plan").enqueue("agent.tasks.seo.seo_apply_task")
+        except Exception as e:
+            log.warning("GA4 weekly wave %s: %s", site_id, e)
+
 
 
 def main():
