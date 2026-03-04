@@ -1,0 +1,183 @@
+Localități în raza de 100km de București — 140 total
+================================================================================
+
+
+────────────────────────────────────────────────────────────
+  Argeș (2 localități)
+────────────────────────────────────────────────────────────
+  Costești (Argeș)                            88km  /costesti-arges
+  Topoloveni                                  92km  /topoloveni
+
+────────────────────────────────────────────────────────────
+  București (32 localități)
+────────────────────────────────────────────────────────────
+  Centrul Vechi                                2km  /centrul-vechi [Sector 3]
+  13 Septembrie                                3km  /13-septembrie [Sector 5]
+  Cotroceni                                    3km  /cotroceni [Sector 5]
+  Dorobanți                                    4km  /dorobanti [Sector 1]
+  Aviatorilor                                  5km  /aviatorilor [Sector 1]
+  Herastrau                                    5km  /herastrau [Sector 1]
+  Obor                                         5km  /obor [Sector 2]
+  Vitan                                        5km  /vitan [Sector 3]
+  Dristor                                      5km  /dristor [Sector 3]
+  Tineretului                                  5km  /tineretului [Sector 4]
+  Crângași                                     5km  /crangasi [Sector 6]
+  Floreasca                                    6km  /floreasca [Sector 1]
+  Iancului                                     6km  /iancului [Sector 2]
+  Rahova                                       6km  /rahova [Sector 5]
+  Ferentari                                    6km  /ferentari [Sector 5]
+  Giulești                                     6km  /giulesti [Sector 6]
+  Titan                                        7km  /titan [Sector 3]
+  Brâncoveanu                                  7km  /brancoveanu [Sector 4]
+  Militari                                     7km  /militari [Sector 6]
+  Drumul Taberei                               7km  /drumul-taberei [Sector 6]
+  Lujerului                                    7km  /lujerului [Sector 6]
+  București Sector 1                           8km  /sector-1 [Dorobanți, Floreasca, Aviatorilor, Băneasa]
+  București Sector 2                           8km  /sector-2 [Colentina, Pantelimon, Fundeni, Obor]
+  București Sector 3                           8km  /sector-3 [Titan, Vitan, Dristor, Balta Albă]
+  București Sector 4                           8km  /sector-4 [Berceni, Brâncoveanu, Olteniței]
+  București Sector 5                           8km  /sector-5 [Rahova, Ferentari, 13 Septembrie]
+  București Sector 6                           8km  /sector-6 [Militari, Drumul Taberei, Crângași]
+  Colentina                                    8km  /colentina [Sector 2]
+  Balta Albă                                   8km  /balta-alba [Sector 3]
+  Berceni                                      8km  /berceni-bucuresti [Sector 4]
+  Ghencea                                      8km  /ghencea [Sector 6]
+  Băneasa                                     10km  /baneasa [Sector 1]
+
+────────────────────────────────────────────────────────────
+  București/Ilfov (1 localități)
+────────────────────────────────────────────────────────────
+  Pipera                                      12km  /pipera [Sector 1 / Voluntari]
+
+────────────────────────────────────────────────────────────
+  Călărași (10 localități)
+────────────────────────────────────────────────────────────
+  Budești                                     48km  /budesti-calarasi
+  Fundulea                                    52km  /fundulea
+  Chitila (Călărași)                          55km  /chitila-calarasi
+  Ștefan Vodă (Călărași)                      55km  /stefan-voda-calarasi
+  Belciugatele                                58km  /belciugatele
+  Înfrățirea                                  60km  /infratirea
+  Olteniță (Călărași)                         65km  /oltenita
+  Oltenița                                    65km  /oltenita-calarasi
+  Lehliu-Gară                                 75km  /lehliu-gara
+  Călărași                                    95km  /calarasi
+
+────────────────────────────────────────────────────────────
+  Dâmbovița (14 localități)
+────────────────────────────────────────────────────────────
+  Cojasca                                     38km  /cojasca
+  Răcari                                      42km  /racari
+  Butimanu                                    42km  /butimanu
+  Brănești (Dâmbovița)                        45km  /branesti-dambovita
+  Ghimpați                                    48km  /ghimpati
+  Titu                                        52km  /titu
+  Găești                                      62km  /gaesti
+  Târgoviște                                  82km  /targoviste
+  Moreni                                      82km  /moreni
+  Gura Ocniței                                87km  /gura-ocnitei
+  Doicești                                    88km  /doicesti
+  Voinești (Dâmbovița)                        88km  /voinesti-dambovita
+  Pucioasa                                    90km  /pucioasa
+  Fieni                                       95km  /fieni
+
+────────────────────────────────────────────────────────────
+  Giurgiu (11 localități)
+────────────────────────────────────────────────────────────
+  Mihăilești                                  38km  /mihailesti
+  Frătești                                    45km  /fratesti
+  Crevedia Mare                               45km  /crevedia-mare
+  Bolintin-Vale                               48km  /bolintin-vale
+  Comana                                      50km  /comana
+  Iepurești                                   52km  /iepuresti
+  Băneasa (Giurgiu)                           55km  /baneasa-giurgiu
+  Stoenești (Giurgiu)                         55km  /stoenesti-giurgiu
+  Hotarele                                    60km  /hotarele
+  Giurgiu                                     64km  /giurgiu
+  Găujani                                     70km  /gaujani
+
+────────────────────────────────────────────────────────────
+  Ialomița (10 localități)
+────────────────────────────────────────────────────────────
+  Dridu                                       60km  /dridu
+  Urziceni                                    65km  /urziceni
+  Fierbinți-Târg                              65km  /fierbinti-targ
+  Grindu                                      65km  /grindu
+  Căzănești                                   70km  /cazanesti-ialomita
+  Reviga                                      72km  /reviga
+  Amara                                       80km  /amara
+  Slobozia                                    95km  /slobozia
+  Țăndărei                                    95km  /tandarei
+  Fetești                                     98km  /fetesti
+
+────────────────────────────────────────────────────────────
+  Ilfov (38 localități)
+────────────────────────────────────────────────────────────
+  Popești-Leordeni                            10km  /popesti-leordeni
+  Chiajna                                     10km  /chiajna
+  Voluntari                                   12km  /voluntari
+  Pantelimon                                  12km  /pantelimon
+  Bragadiru                                   12km  /bragadiru
+  Jilava                                      12km  /jilava
+  Chitila                                     14km  /chitila
+  Măgurele                                    14km  /magurele
+  Dobroești                                   14km  /dobroesti
+  Glina                                       14km  /glina
+  Cernica                                     16km  /cernica
+  Tunari                                      16km  /tunari
+  Otopeni                                     17km  /otopeni
+  Mogoșoaia                                   18km  /mogosoaia
+  Berceni                                     18km  /berceni-ilfov
+  Domnești                                    18km  /domnesti
+  Clinceni                                    18km  /clinceni
+  1 Decembrie                                 20km  /1-decembrie
+  Găneasa                                     20km  /ganeasa
+  Afumați                                     20km  /afumati
+  Dragomirești-Vale                           22km  /dragomiresti-vale
+  Brănești                                    22km  /branesti
+  Ciorogârla                                  22km  /ciorogirla
+  Buftea                                      25km  /buftea
+  Balotești                                   25km  /balotesti
+  Ștefăneștii de Jos                          25km  /stefanestii-de-jos
+  Vidra                                       25km  /vidra
+  Dascălu                                     28km  /dascalu
+  Copăceni                                    28km  /copaceni
+  Corbeanca                                   30km  /corbeanca
+  Grădiștea                                   30km  /gradistea
+  Petrachioaia                                30km  /petrachioaia
+  Nuci                                        32km  /nuci
+  Periș                                       35km  /peris
+  Gruiu                                       35km  /gruiu
+  Călugăreni (Ilfov)                          35km  /calugareni-ilfov
+  Moara Vlăsiei                               38km  /moara-vlasiei
+  Snagov                                      40km  /snagov
+
+────────────────────────────────────────────────────────────
+  Prahova (18 localități)
+────────────────────────────────────────────────────────────
+  Filipeștii de Pădure                        55km  /filipestii-de-padure
+  Blejoi                                      55km  /blejoi
+  Brazi                                       56km  /brazi-prahova
+  Ploiești                                    58km  /ploiesti
+  Florești (Prahova)                          60km  /floresti-prahova
+  Băicoi                                      63km  /baicoi
+  Urlați                                      68km  /urlati
+  Dumbrăvești                                 68km  /dumbravesti
+  Boldești-Scăeni                             70km  /boldesti-scaeni
+  Ceptura                                     72km  /ceptura
+  Mizil                                       75km  /mizil
+  Câmpina                                     85km  /campina
+  Vălenii de Munte                            88km  /valenii-de-munte
+  Breaza                                      90km  /breaza
+  Comarnic                                    93km  /comarnic
+  Bușteni                                     95km  /busteni
+  Sinaia                                      98km  /sinaia
+  Azuga                                       98km  /azuga
+
+────────────────────────────────────────────────────────────
+  Teleorman (4 localități)
+────────────────────────────────────────────────────────────
+  Videle                                      60km  /videle
+  Alexandria                                  95km  /alexandria
+  Roșiorii de Vede                            98km  /rosiorii-de-vede
+  Zimnicea                                    98km  /zimnicea
