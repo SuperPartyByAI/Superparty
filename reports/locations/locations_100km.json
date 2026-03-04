@@ -1,0 +1,1155 @@
+[
+  {
+    "name": "București Sector 1",
+    "slug": "sector-1",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Dorobanți, Floreasca, Aviatorilor, Băneasa"
+  },
+  {
+    "name": "București Sector 2",
+    "slug": "sector-2",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Colentina, Pantelimon, Fundeni, Obor"
+  },
+  {
+    "name": "București Sector 3",
+    "slug": "sector-3",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Titan, Vitan, Dristor, Balta Albă"
+  },
+  {
+    "name": "București Sector 4",
+    "slug": "sector-4",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Berceni, Brâncoveanu, Olteniței"
+  },
+  {
+    "name": "București Sector 5",
+    "slug": "sector-5",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Rahova, Ferentari, 13 Septembrie"
+  },
+  {
+    "name": "București Sector 6",
+    "slug": "sector-6",
+    "type": "sector",
+    "type_ro": "Sector",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Militari, Drumul Taberei, Crângași"
+  },
+  {
+    "name": "Voluntari",
+    "slug": "voluntari",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 12
+  },
+  {
+    "name": "Popești-Leordeni",
+    "slug": "popesti-leordeni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 10
+  },
+  {
+    "name": "Pantelimon",
+    "slug": "pantelimon",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 12
+  },
+  {
+    "name": "Buftea",
+    "slug": "buftea",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 25
+  },
+  {
+    "name": "Otopeni",
+    "slug": "otopeni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 17
+  },
+  {
+    "name": "Bragadiru",
+    "slug": "bragadiru",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 12
+  },
+  {
+    "name": "Chitila",
+    "slug": "chitila",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 14
+  },
+  {
+    "name": "Măgurele",
+    "slug": "magurele",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ilfov",
+    "dist_km": 14
+  },
+  {
+    "name": "Mogoșoaia",
+    "slug": "mogosoaia",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 18
+  },
+  {
+    "name": "Chiajna",
+    "slug": "chiajna",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 10
+  },
+  {
+    "name": "Dobroești",
+    "slug": "dobroesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 14
+  },
+  {
+    "name": "Cernica",
+    "slug": "cernica",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 16
+  },
+  {
+    "name": "Balotești",
+    "slug": "balotesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 25
+  },
+  {
+    "name": "Corbeanca",
+    "slug": "corbeanca",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 30
+  },
+  {
+    "name": "Tunari",
+    "slug": "tunari",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 16
+  },
+  {
+    "name": "Snagov",
+    "slug": "snagov",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 40
+  },
+  {
+    "name": "Jilava",
+    "slug": "jilava",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 12
+  },
+  {
+    "name": "Glina",
+    "slug": "glina",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 14
+  },
+  {
+    "name": "Berceni",
+    "slug": "berceni-ilfov",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 18
+  },
+  {
+    "name": "1 Decembrie",
+    "slug": "1-decembrie",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 20
+  },
+  {
+    "name": "Dragomirești-Vale",
+    "slug": "dragomiresti-vale",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 22
+  },
+  {
+    "name": "Găneasa",
+    "slug": "ganeasa",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 20
+  },
+  {
+    "name": "Afumați",
+    "slug": "afumati",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 20
+  },
+  {
+    "name": "Brănești",
+    "slug": "branesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 22
+  },
+  {
+    "name": "Periș",
+    "slug": "peris",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 35
+  },
+  {
+    "name": "Dascălu",
+    "slug": "dascalu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 28
+  },
+  {
+    "name": "Moara Vlăsiei",
+    "slug": "moara-vlasiei",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 38
+  },
+  {
+    "name": "Ciorogârla",
+    "slug": "ciorogirla",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 22
+  },
+  {
+    "name": "Ștefăneștii de Jos",
+    "slug": "stefanestii-de-jos",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 25
+  },
+  {
+    "name": "Domnești",
+    "slug": "domnesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 18
+  },
+  {
+    "name": "Grădiștea",
+    "slug": "gradistea",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 30
+  },
+  {
+    "name": "Nuci",
+    "slug": "nuci",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 32
+  },
+  {
+    "name": "Copăceni",
+    "slug": "copaceni",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 28
+  },
+  {
+    "name": "Clinceni",
+    "slug": "clinceni",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 18
+  },
+  {
+    "name": "Vidra",
+    "slug": "vidra",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 25
+  },
+  {
+    "name": "Gruiu",
+    "slug": "gruiu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 35
+  },
+  {
+    "name": "Petrachioaia",
+    "slug": "petrachioaia",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 30
+  },
+  {
+    "name": "Călugăreni (Ilfov)",
+    "slug": "calugareni-ilfov",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ilfov",
+    "dist_km": 35
+  },
+  {
+    "name": "Ploiești",
+    "slug": "ploiesti",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Prahova",
+    "dist_km": 58
+  },
+  {
+    "name": "Câmpina",
+    "slug": "campina",
+    "type": "city",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 85
+  },
+  {
+    "name": "Sinaia",
+    "slug": "sinaia",
+    "type": "city",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 98
+  },
+  {
+    "name": "Băicoi",
+    "slug": "baicoi",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 63
+  },
+  {
+    "name": "Boldești-Scăeni",
+    "slug": "boldesti-scaeni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 70
+  },
+  {
+    "name": "Breaza",
+    "slug": "breaza",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 90
+  },
+  {
+    "name": "Comarnic",
+    "slug": "comarnic",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 93
+  },
+  {
+    "name": "Azuga",
+    "slug": "azuga",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 98
+  },
+  {
+    "name": "Bușteni",
+    "slug": "busteni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 95
+  },
+  {
+    "name": "Mizil",
+    "slug": "mizil",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 75
+  },
+  {
+    "name": "Urlați",
+    "slug": "urlati",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 68
+  },
+  {
+    "name": "Vălenii de Munte",
+    "slug": "valenii-de-munte",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Prahova",
+    "dist_km": 88
+  },
+  {
+    "name": "Filipeștii de Pădure",
+    "slug": "filipestii-de-padure",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 55
+  },
+  {
+    "name": "Ceptura",
+    "slug": "ceptura",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 72
+  },
+  {
+    "name": "Blejoi",
+    "slug": "blejoi",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 55
+  },
+  {
+    "name": "Florești (Prahova)",
+    "slug": "floresti-prahova",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 60
+  },
+  {
+    "name": "Brazi",
+    "slug": "brazi-prahova",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 56
+  },
+  {
+    "name": "Dumbrăvești",
+    "slug": "dumbravesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Prahova",
+    "dist_km": 68
+  },
+  {
+    "name": "Târgoviște",
+    "slug": "targoviste",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Dâmbovița",
+    "dist_km": 82
+  },
+  {
+    "name": "Moreni",
+    "slug": "moreni",
+    "type": "city",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 82
+  },
+  {
+    "name": "Titu",
+    "slug": "titu",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 52
+  },
+  {
+    "name": "Pucioasa",
+    "slug": "pucioasa",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 90
+  },
+  {
+    "name": "Găești",
+    "slug": "gaesti",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 62
+  },
+  {
+    "name": "Răcari",
+    "slug": "racari",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 42
+  },
+  {
+    "name": "Fieni",
+    "slug": "fieni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 95
+  },
+  {
+    "name": "Doicești",
+    "slug": "doicesti",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 88
+  },
+  {
+    "name": "Gura Ocniței",
+    "slug": "gura-ocnitei",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Dâmbovița",
+    "dist_km": 87
+  },
+  {
+    "name": "Ghimpați",
+    "slug": "ghimpati",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Dâmbovița",
+    "dist_km": 48
+  },
+  {
+    "name": "Cojasca",
+    "slug": "cojasca",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Dâmbovița",
+    "dist_km": 38
+  },
+  {
+    "name": "Brănești (Dâmbovița)",
+    "slug": "branesti-dambovita",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Dâmbovița",
+    "dist_km": 45
+  },
+  {
+    "name": "Butimanu",
+    "slug": "butimanu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Dâmbovița",
+    "dist_km": 42
+  },
+  {
+    "name": "Voinești (Dâmbovița)",
+    "slug": "voinesti-dambovita",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Dâmbovița",
+    "dist_km": 88
+  },
+  {
+    "name": "Giurgiu",
+    "slug": "giurgiu",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Giurgiu",
+    "dist_km": 64
+  },
+  {
+    "name": "Bolintin-Vale",
+    "slug": "bolintin-vale",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Giurgiu",
+    "dist_km": 48
+  },
+  {
+    "name": "Mihăilești",
+    "slug": "mihailesti",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Giurgiu",
+    "dist_km": 38
+  },
+  {
+    "name": "Comana",
+    "slug": "comana",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 50
+  },
+  {
+    "name": "Frătești",
+    "slug": "fratesti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 45
+  },
+  {
+    "name": "Băneasa (Giurgiu)",
+    "slug": "baneasa-giurgiu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 55
+  },
+  {
+    "name": "Hotarele",
+    "slug": "hotarele",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 60
+  },
+  {
+    "name": "Crevedia Mare",
+    "slug": "crevedia-mare",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 45
+  },
+  {
+    "name": "Iepurești",
+    "slug": "iepuresti",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 52
+  },
+  {
+    "name": "Stoenești (Giurgiu)",
+    "slug": "stoenesti-giurgiu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 55
+  },
+  {
+    "name": "Găujani",
+    "slug": "gaujani",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Giurgiu",
+    "dist_km": 70
+  },
+  {
+    "name": "Alexandria",
+    "slug": "alexandria",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Teleorman",
+    "dist_km": 95
+  },
+  {
+    "name": "Roșiorii de Vede",
+    "slug": "rosiorii-de-vede",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Teleorman",
+    "dist_km": 98
+  },
+  {
+    "name": "Videle",
+    "slug": "videle",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Teleorman",
+    "dist_km": 60
+  },
+  {
+    "name": "Zimnicea",
+    "slug": "zimnicea",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Teleorman",
+    "dist_km": 98
+  },
+  {
+    "name": "Olteniță (Călărași)",
+    "slug": "oltenita",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Călărași",
+    "dist_km": 65
+  },
+  {
+    "name": "Călărași",
+    "slug": "calarasi",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Călărași",
+    "dist_km": 95
+  },
+  {
+    "name": "Oltenița",
+    "slug": "oltenita-calarasi",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Călărași",
+    "dist_km": 65
+  },
+  {
+    "name": "Budești",
+    "slug": "budesti-calarasi",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Călărași",
+    "dist_km": 48
+  },
+  {
+    "name": "Fundulea",
+    "slug": "fundulea",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Călărași",
+    "dist_km": 52
+  },
+  {
+    "name": "Lehliu-Gară",
+    "slug": "lehliu-gara",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Călărași",
+    "dist_km": 75
+  },
+  {
+    "name": "Chitila (Călărași)",
+    "slug": "chitila-calarasi",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Călărași",
+    "dist_km": 55
+  },
+  {
+    "name": "Ștefan Vodă (Călărași)",
+    "slug": "stefan-voda-calarasi",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Călărași",
+    "dist_km": 55
+  },
+  {
+    "name": "Belciugatele",
+    "slug": "belciugatele",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Călărași",
+    "dist_km": 58
+  },
+  {
+    "name": "Înfrățirea",
+    "slug": "infratirea",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Călărași",
+    "dist_km": 60
+  },
+  {
+    "name": "Slobozia",
+    "slug": "slobozia",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Ialomița",
+    "dist_km": 95
+  },
+  {
+    "name": "Urziceni",
+    "slug": "urziceni",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Ialomița",
+    "dist_km": 65
+  },
+  {
+    "name": "Fetești",
+    "slug": "fetesti",
+    "type": "city",
+    "type_ro": "Municipiu",
+    "county": "Ialomița",
+    "dist_km": 98
+  },
+  {
+    "name": "Amara",
+    "slug": "amara",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ialomița",
+    "dist_km": 80
+  },
+  {
+    "name": "Țăndărei",
+    "slug": "tandarei",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ialomița",
+    "dist_km": 95
+  },
+  {
+    "name": "Fierbinți-Târg",
+    "slug": "fierbinti-targ",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Ialomița",
+    "dist_km": 65
+  },
+  {
+    "name": "Căzănești",
+    "slug": "cazanesti-ialomita",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ialomița",
+    "dist_km": 70
+  },
+  {
+    "name": "Grindu",
+    "slug": "grindu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ialomița",
+    "dist_km": 65
+  },
+  {
+    "name": "Dridu",
+    "slug": "dridu",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ialomița",
+    "dist_km": 60
+  },
+  {
+    "name": "Reviga",
+    "slug": "reviga",
+    "type": "commune",
+    "type_ro": "Comună",
+    "county": "Ialomița",
+    "dist_km": 72
+  },
+  {
+    "name": "Costești (Argeș)",
+    "slug": "costesti-arges",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Argeș",
+    "dist_km": 88
+  },
+  {
+    "name": "Topoloveni",
+    "slug": "topoloveni",
+    "type": "town",
+    "type_ro": "Oraș",
+    "county": "Argeș",
+    "dist_km": 92
+  },
+  {
+    "name": "Floreasca",
+    "slug": "floreasca",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 6,
+    "note": "Sector 1"
+  },
+  {
+    "name": "Dorobanți",
+    "slug": "dorobanti",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 4,
+    "note": "Sector 1"
+  },
+  {
+    "name": "Aviatorilor",
+    "slug": "aviatorilor",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 1"
+  },
+  {
+    "name": "Băneasa",
+    "slug": "baneasa",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 10,
+    "note": "Sector 1"
+  },
+  {
+    "name": "Pipera",
+    "slug": "pipera",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București/Ilfov",
+    "dist_km": 12,
+    "note": "Sector 1 / Voluntari"
+  },
+  {
+    "name": "Herastrau",
+    "slug": "herastrau",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 1"
+  },
+  {
+    "name": "Colentina",
+    "slug": "colentina",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Sector 2"
+  },
+  {
+    "name": "Obor",
+    "slug": "obor",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 2"
+  },
+  {
+    "name": "Iancului",
+    "slug": "iancului",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 6,
+    "note": "Sector 2"
+  },
+  {
+    "name": "Titan",
+    "slug": "titan",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 7,
+    "note": "Sector 3"
+  },
+  {
+    "name": "Vitan",
+    "slug": "vitan",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 3"
+  },
+  {
+    "name": "Dristor",
+    "slug": "dristor",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 3"
+  },
+  {
+    "name": "Balta Albă",
+    "slug": "balta-alba",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Sector 3"
+  },
+  {
+    "name": "Centrul Vechi",
+    "slug": "centrul-vechi",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 2,
+    "note": "Sector 3"
+  },
+  {
+    "name": "Berceni",
+    "slug": "berceni-bucuresti",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Sector 4"
+  },
+  {
+    "name": "Brâncoveanu",
+    "slug": "brancoveanu",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 7,
+    "note": "Sector 4"
+  },
+  {
+    "name": "Tineretului",
+    "slug": "tineretului",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 4"
+  },
+  {
+    "name": "Rahova",
+    "slug": "rahova",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 6,
+    "note": "Sector 5"
+  },
+  {
+    "name": "Ferentari",
+    "slug": "ferentari",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 6,
+    "note": "Sector 5"
+  },
+  {
+    "name": "13 Septembrie",
+    "slug": "13-septembrie",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 3,
+    "note": "Sector 5"
+  },
+  {
+    "name": "Cotroceni",
+    "slug": "cotroceni",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 3,
+    "note": "Sector 5"
+  },
+  {
+    "name": "Militari",
+    "slug": "militari",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 7,
+    "note": "Sector 6"
+  },
+  {
+    "name": "Drumul Taberei",
+    "slug": "drumul-taberei",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 7,
+    "note": "Sector 6"
+  },
+  {
+    "name": "Crângași",
+    "slug": "crangasi",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 5,
+    "note": "Sector 6"
+  },
+  {
+    "name": "Giulești",
+    "slug": "giulesti",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 6,
+    "note": "Sector 6"
+  },
+  {
+    "name": "Ghencea",
+    "slug": "ghencea",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 8,
+    "note": "Sector 6"
+  },
+  {
+    "name": "Lujerului",
+    "slug": "lujerului",
+    "type": "suburb",
+    "type_ro": "Cartier",
+    "county": "București",
+    "dist_km": 7,
+    "note": "Sector 6"
+  }
+]

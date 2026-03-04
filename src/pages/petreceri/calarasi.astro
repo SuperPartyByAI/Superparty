@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('seo-articles');
+const hubArticles = allArticles.filter(a =>
+  a.slug.includes('calarasi') && a.data.indexStatus !== 'hold'
+).slice(0, 12);
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Animatori Petreceri Copii Județul Călărași",
+      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
+      "areaServed": "Județul Călărași",
+      "url": "https://superparty.ro/petreceri/calarasi"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Activați în Oltenița?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Oltenița este la ~65 km de București. Contactați-ne pentru confirmare și condiții de deplasare."}},
+        {"@type": "Question", "name": "Activați în Fundulea sau Budești?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acestea sunt la 48–52 km de București, în raza noastră standard."}},
+        {"@type": "Question", "name": "Există taxă de deplasare pentru Călărași?", "acceptedAnswer": {"@type": "Answer", "text": "Da — taxa variază cu distanța. Contactați-ne cu adresa exactă pentru ofertă completă."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro" },
+        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://superparty.ro/animatori-petreceri-copii" },
+        { "@type": "ListItem", "position": 3, "name": "Județul Călărași", "item": "https://superparty.ro/petreceri/calarasi" }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title="Animatori Petreceri Copii Județul Călărași | SuperParty"
+  description="Animatori profesioniști pentru petreceri copii în județul Călărași — Oltenița, Fundulea, Lehliu-Gară. Costume premium. Rezervă: 0722 744 377."
+  canonical="https://superparty.ro/petreceri/calarasi"
+  robots="index, follow"
+  schema={schema}
+>
+<style>
+  .hub-hero { padding:4.5rem 0 3rem; background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%); }
+  .hub-hero h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
+  .btn-p:hover { transform:translateY(-2px); }
+  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
+  .hub-s { padding:3.5rem 0; } .hub-s-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
+  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
+  .info-card ul { list-style:none; padding:0; }
+  .info-card li { padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
+  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
+  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
+  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+</style>
+
+<section class="hub-hero">
+  <div class="container">
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Județul Călărași</span></h1>
+    <p>Animatorii SuperParty acoperă și județul Călărași — Oltenița, Budești, Fundulea, Lehliu-Gară și alte localități la est și sud-est de București.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
+      <a href="https://wa.me/40722744377?text=Salut%21%20Vreau%20o%20ofert%C4%83%20pentru%20animatori%20petrecere%20copii.%20Data%3A%20____%20Loca%C8%9Bie%3A%20____%20V%C3%A2rst%C4%83%3A%20____%20Nr.%20copii%3A%20____" class="btn-wa cta">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="hub-s">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📍 Localități principale Județul Călărași</h3>
+        <ul>
+              <li>📍 Oltenița</li>
+              <li>📍 Fundulea</li>
+              <li>📍 Budești</li>
+              <li>📍 Lehliu-Gară</li>
+              <li>📍 Belciugatele</li>
+              <li>📍 Ștefan Vodă</li>
+              <li>📍 Căscioarele</li>
+              <li>📍 Frumușani</li>
+              <li>📍 Nana</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>⏱ Distanță aproximativă</h3>
+        <ul>
+          <li>~45–100 km față de București</li>
+          <li>Taxă de deplasare comunicată la rezervare</li>
+          <li>Rezervare cu minim 7–14 zile înainte</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>🎭 Pachete disponibile</h3>
+        <ul>
+          <li>Super 1 — 1 personaj, 2 ore — 490 lei</li>
+          <li>Super 3 — 2 personaje, 2 ore + confetti — 840 lei</li>
+          <li>Super 7 — 3 ore + spectacol botez — 1290 lei</li>
+        </ul>
+        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
+          <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Toate pachetele și prețurile</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hub-s-alt">
+  <div class="container">
+    <h2 class="sec-title">Întrebări despre Județul Călărași</h2>
+    <div class="faq-list">
+      {[
+        ["Activați în Oltenița?", "Da — Oltenița este la ~65 km de București. Contactați-ne pentru confirmare și condiții de deplasare."],
+        ["Activați în Fundulea sau Budești?", "Da — acestea sunt la 48–52 km de București, în raza noastră standard."],
+        ["Există taxă de deplasare pentru Călărași?", "Da — taxa variază cu distanța. Contactați-ne cu adresa exactă pentru ofertă completă."],
+      ].map(([q,a]) => (
+        <div class="faq-item">
+          <h3>❓ {q}</h3>
+          <p>{a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="hub-s">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Rezervă animator în <span style="color:var(--primary)">Județul Călărași</span></h2>
+      <p>Contactați-ne cu data și zona exactă — vă confirmăm disponibilitatea și oferta cu taxă de deplasare.</p>
+      <div class="cta-btns">
+        <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
+        <a href="https://wa.me/40722744377?text=Salut%21%20Vreau%20o%20ofert%C4%83%20pentru%20animatori%20petrecere%20copii.%20Data%3A%20____%20Loca%C8%9Bie%3A%20____%20V%C3%A2rst%C4%83%3A%20____%20Nr.%20copii%3A%20____" class="btn-wa cta">💬 WhatsApp</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
+        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Pagina principală Animatori Petreceri Copii</a>
+        &nbsp;|&nbsp;
+        <a href="/arie-acoperire" style="color:var(--primary);">Toate zonele acoperite →</a>
+      </p>
+    </div>
+  </div>
+</section>
+</Layout>

@@ -1,0 +1,27 @@
+﻿
+> superparty-astro@1.0.0 build
+> astro build
+
+npm : 'astro' is not re
+cognized as an internal
+ or external command,
+At line:1 char:1
++ npm run build --prefi
+x "C:\Users\ursac\Super
+party" 2>&1 | Out-File 
+"C ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ('astro' is no   
+ t ...ternal comman    
+d,:String) [], Rem    o
+teException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+operable program or bat
+ch file.

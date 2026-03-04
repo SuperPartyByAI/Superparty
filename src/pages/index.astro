@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Testimonials from '../components/Testimonials.astro';
 const currentYear = new Date().getFullYear();
+const WA_TEXT = encodeURIComponent('Bună! Vreau să rezerv animatori pentru petrecerea copilului meu.\nData: \nLocalitate/Sector: \nVârsta copilului: \nNr. copii: \nPachet dorit (opțional): ');
+const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
 ---
 <Layout title="SuperParty — Animatori Petreceri Copii București | Nr. 1" description="Animatori profesionisti pentru petreceri copii in Bucuresti si Ilfov. Personaje costumate, baloane, decoratiuni. Rezerva acum: 0722 744 377.">
 
@@ -12,7 +15,7 @@ const currentYear = new Date().getFullYear();
     <div class="container" style="position:relative; z-index:1; padding-top:3rem; padding-bottom:3rem;">
       <div style="max-width:680px;">
         <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,107,53,0.15); border:1px solid rgba(255,107,53,0.35); border-radius:50px; padding:0.4rem 1rem; font-size:0.85rem; color:#ff8c5a; margin-bottom:1.5rem; font-weight:600;">
-          🏆 Nr. 1 în București · 300+ Petreceri Organizate
+          🎉 8.000+ Petreceri Organizate în București și Ilfov
         </div>
 
         <h1 style="font-size:clamp(1.8rem, 8vw, 3.6rem); font-weight:800; line-height:1.15; margin-bottom:1.5rem; word-break: break-word; -webkit-hyphens: auto; hyphens: auto;">
@@ -35,7 +38,7 @@ const currentYear = new Date().getFullYear();
         </div>
 
         <div style="display:flex; gap:2rem; margin-top:2.5rem; flex-wrap:wrap;">
-          {[['🎈', '300+', 'Petreceri'], ['👑', '80+', 'Personaje'], ['⭐', '5/5', 'Rating'], ['📅', '7/7', 'Disponibil']].map(([icon, num, label]) => (
+          {[['🎉', '8.000+', 'Petreceri'], ['👑', '30+', 'Personaje'], ['⭐', '1.498+', 'Recenzii reale'], ['📅', '7/7', 'Disponibil']].map(([icon, num, label]) => (
             <div style="text-align:center;">
               <p style="font-size:1.4rem;">{icon}</p>
               <p style="font-size:1.1rem; font-weight:800; color:var(--accent);">{num}</p>
@@ -59,7 +62,7 @@ const currentYear = new Date().getFullYear();
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Serviciile <span style="color:var(--primary);">Noastre</span></h2>
         <p style="color:var(--text-muted);">Tot ce ai nevoie pentru o petrecere perfectă</p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1.5rem;">
+      <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:1.5rem;">
         {[
           ['🎭', 'Animatori Petreceri Copii', 'animatori profesionisti costumati in personajele favorite', '/animatori-petreceri-copii/'],
           ['🎈', 'Decoratiuni Baloane', 'arcade, aranjamente si decoruri din baloane premium', '/decoratiuni-baloane/'],
@@ -70,7 +73,7 @@ const currentYear = new Date().getFullYear();
           ['🪅', 'Piniata', 'piniate personalizate pentru distractie garantata', '/piniata/'],
           ['🍭', 'Vată de Zahăr și Popcorn', 'masini profesionale de vata si popcorn pentru petreceri', '/vata-de-zahar-si-popcorn/'],
         ].map(([icon, title, desc, link]) => (
-          <a href={link} style="display:block; background:var(--dark-3); border:1px solid rgba(255,107,53,0.15); border-radius:var(--radius); padding:1.5rem; text-decoration:none; transition:all 0.25s;" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(255,107,53,0.5)';this.style.boxShadow='0 8px 25px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,107,53,0.15)';this.style.boxShadow='none'">
+          <a href={link} class="service-card">
             <p style="font-size:2.5rem; margin-bottom:0.75rem;">{icon}</p>
             <h3 style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:0.4rem;">{title}</h3>
             <p style="font-size:0.85rem; color:var(--text-muted);">{desc}</p>
@@ -87,31 +90,35 @@ const currentYear = new Date().getFullYear();
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Pachete și <span style="color:var(--accent);">Prețuri</span> {currentYear}</h2>
         <p style="color:var(--text-muted);">Preturi transparente, fara costuri ascunse</p>
       </div>
+      <div class="packages-grid">
         {[
-          { name: 'Super 1', price: '490 lei', duration: '1 Personaj 2 ore', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
-          { name: 'Super 2', price: '490 lei', duration: '2 Personaje 1 oră (Luni-Vineri)', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
-          { name: 'Super 3', price: '840 lei', duration: '2 Personaje 2 ore + Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Confetti party'], highlight: true },
-          { name: 'Super 4', price: '590 lei', duration: '1 Personaj 1 oră + Tort dulciuri', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Tort din dulciuri (Tedy, Barni, Kinder)'], highlight: false },
-          { name: 'Super 5', price: '840 lei', duration: '1 Pers. 2 ore + 1h Vată + 1h Popcorn', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Mașină vată de zahăr și popcorn'], highlight: false },
-          { name: 'Super 6', price: '540 lei', duration: '1 Animator 2 ore + Banner + Tun Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Banner personalizat nume', 'Tun confetti + Lumânare tort'], highlight: false },
-          { name: 'Super 7', price: '1290 lei', duration: '1 Animator 3 ore + 4 Ursitoare', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Spectacol 4 ursitoare la botez'], highlight: false },
+          { name: 'Super 1', price: '490 lei', duration: '1 Personaj · 2 ore', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
+          { name: 'Super 2', price: '490 lei', duration: '2 Personaje · 1 oră (Luni-Vineri)', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
+          { name: 'Super 3', price: '840 lei', duration: '2 Personaje · 2 ore + Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Confetti party'], highlight: true },
+          { name: 'Super 4', price: '590 lei', duration: '1 Personaj · 1 oră + Tort dulciuri', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Tort din dulciuri'], highlight: false },
+          { name: 'Super 5', price: '840 lei', duration: '1 Pers. · 2 ore + 1h Vată + 1h Popcorn', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Mașină vată de zahăr și popcorn'], highlight: false },
+          { name: 'Super 6', price: '540 lei', duration: '1 Animator · 2 ore + Banner + Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Banner personalizat + Tun confetti'], highlight: false },
+          { name: 'Super 7', price: '1290 lei', duration: '1 Animator · 3 ore + 4 Ursitoare', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Spectacol 4 ursitoare botez'], highlight: false },
         ].map((pkg) => (
-          <div style={`background:var(--dark-2); border:2px solid ${pkg.highlight ? 'var(--primary)' : 'rgba(255,255,255,0.08)'}; border-radius:var(--radius); padding:2rem; position:relative; ${pkg.highlight ? 'transform: scale(1.04); box-shadow: 0 12px 40px rgba(255,107,53,0.3);' : ''}`}>
-            {pkg.highlight && <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--primary); color:white; padding:0.25rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:700; white-space:nowrap;">CEL MAI ALES</div>}
-            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:0.5rem;">{pkg.name}</h3>
-            <p style="font-size:2.5rem; font-weight:800; color:var(--accent); margin-bottom:0.25rem;">{pkg.price}</p>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">{pkg.duration}</p>
-            <ul style="list-style:none; margin-bottom:2rem;">
-              {pkg.features.map(f => <li style="padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.9rem; color:var(--text);">✅ {f}</li>)}
+          <div class={`pkg-card ${pkg.highlight ? 'pkg-featured' : ''}`}>
+            {pkg.highlight && <div class="pkg-badge">CEL MAI ALES</div>}
+            <h3 class="pkg-name">{pkg.name}</h3>
+            <p class="pkg-price">{pkg.price}</p>
+            <p class="pkg-duration">{pkg.duration}</p>
+            <ul class="pkg-features">
+              {pkg.features.map(f => <li>✅ {f}</li>)}
             </ul>
-            <a href="tel:+40722744377" style={`display:block; text-align:center; padding:0.85rem; border-radius:50px; font-weight:700; color:white; text-decoration:none; background:${pkg.highlight ? 'linear-gradient(135deg, var(--primary), var(--primary-dark))' : 'rgba(255,255,255,0.1)'};`}>
-              Rezerva {pkg.name.split(' ')[0]}
+            <a href="tel:+40722744377" class={`pkg-cta ${pkg.highlight ? 'pkg-cta-primary' : 'pkg-cta-secondary'}`}>
+              Rezervă {pkg.name}
             </a>
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- TESTIMONIALE -->
+  <Testimonials count={12} title="Ce Spun Părinții" showLink={true} />
 
   <!-- CTA -->
   <section style="padding:5rem 0; background:linear-gradient(135deg, var(--dark-3), var(--dark-2)); text-align:center;">
@@ -120,13 +127,44 @@ const currentYear = new Date().getFullYear();
       <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1rem;">Rezervă Petrecerea Perfectă<br/><span style="color:var(--primary);">Chiar Acum!</span></h2>
       <p style="color:var(--text-muted); font-size:1.1rem; max-width:500px; margin:0 auto 2rem;">Weekendurile se ocupă rapid! Contactează-ne acum pentru disponibilitate.</p>
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="tel:+40722744377" style="background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none; box-shadow:0 8px 30px rgba(255,107,53,0.5);">📞 Sună Acum</a>
-        <a href="https://wa.me/40722744377" style="background:#25d366; color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none;">💬 WhatsApp</a>
+        <a href="tel:+40722744377" style="background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none; box-shadow:0 8px 30px rgba(255,107,53,0.5);" class="cta">📞 Sună Acum</a>
+        <a href={WA_URL} target="_blank" rel="noopener noreferrer" style="background:#25d366; color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none;" class="cta">💬 WhatsApp</a>
       </div>
     </div>
   </section>
 
 </Layout>
+
+<style>
+  .service-card {
+    display: block; background: var(--dark-3); border: 1px solid rgba(255,107,53,0.15);
+    border-radius: var(--radius); padding: 1.5rem; text-decoration: none; transition: all 0.25s;
+  }
+  .service-card:hover { transform: translateY(-5px); border-color: rgba(255,107,53,0.5); box-shadow: 0 8px 25px rgba(255,107,53,0.2); }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+  .pkg-card { background: var(--dark-2); border: 2px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 2rem; position: relative; transition: border-color 0.2s; }
+  .pkg-card:hover { border-color: rgba(255,107,53,0.3); }
+  .pkg-featured { border-color: var(--primary) !important; box-shadow: 0 12px 40px rgba(255,107,53,0.3); transform: scale(1.02); }
+  .pkg-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+  .pkg-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .pkg-price { font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.25rem; }
+  .pkg-duration { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .pkg-features { list-style: none; margin-bottom: 2rem; }
+  .pkg-features li { padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+  .pkg-cta { display: block; text-align: center; padding: 0.85rem; border-radius: 50px; font-weight: 700; color: white; text-decoration: none; transition: opacity 0.2s; }
+  .pkg-cta:hover { opacity: 0.9; }
+  .pkg-cta-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+  .pkg-cta-secondary { background: rgba(255,255,255,0.1); }
+  @media (max-width: 640px) {
+    .packages-grid { grid-template-columns: 1fr; }
+    .pkg-featured { transform: none; }
+  }
+</style>
 
 <script>
   const bg = document.getElementById('stars-bg');

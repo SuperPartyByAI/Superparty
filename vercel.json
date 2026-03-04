@@ -1,6 +1,17 @@
 {
     "redirects": [
         {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "superparty.ro"
+                }
+            ],
+            "destination": "https://www.superparty.ro/$1",
+            "permanent": true
+        },
+        {
             "source": "/animatori-petreceri-copii/",
             "destination": "/animatori-petreceri-copii",
             "permanent": true
