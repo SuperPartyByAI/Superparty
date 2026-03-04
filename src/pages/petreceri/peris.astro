@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  article.slug.includes('ilfov') && article.data.indexStatus !== 'hold'
+  article.slug.includes('peris') && article.data.indexStatus !== 'hold'
 ).slice(0, 18);
 
 const schema = JSON.stringify({
@@ -12,23 +12,23 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "name": "Animatori Petreceri Copii Ilfov",
+      "name": "Animatori Petreceri Copii Periș | SuperParty",
       "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Județul Ilfov",
-      "url": "https://superparty.ro/petreceri/ilfov"
+      "areaServed": "Periș",
+      "url": "https://superparty.ro/petreceri/peris"
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
               {
         "@type": "Question",
-        "name": "Există taxă de deplasare în Ilfov?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depinde de localitate și distanță. Localitățile apropiate (Voluntari, Bragadiru) sunt adesea fără taxă. Contactați-ne pentru detalii." }
+        "name": "Activați în Periș?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Da — activăm în Periș și localitățile adiacente. Contactați-ne pentru confirmare și detalii privind deplasarea." }
       }
       {
         "@type": "Question",
-        "name": "Activați în Voluntari?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — Voluntari este una din localitățile Ilfov cu cea mai mare cerere pentru serviciile noastre." }
+        "name": "Există taxă de deplasare pentru Periș?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Depinde de distanță — contactați-ne cu adresa exactă din Periș pentru o ofertă completă inclusiv transport." }
       }
       ]
     },
@@ -37,7 +37,7 @@ const schema = JSON.stringify({
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro" },
         { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Județul Ilfov", "item": "https://superparty.ro/petreceri/ilfov" }
+        { "@type": "ListItem", "position": 3, "name": "Periș", "item": "https://superparty.ro/petreceri/peris" }
       ]
     }
   ]
@@ -45,9 +45,9 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Ilfov | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în județul Ilfov — Voluntari, Otopeni, Bragadiru, Chiajna. Costume premium. Rezervă: 0722 744 377."
-  canonical="https://superparty.ro/petreceri/ilfov"
+  title="Animatori Petreceri Copii Periș | SuperParty | SuperParty"
+  description="Animatori profesioniști pentru petreceri copii în Periș, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
+  canonical="https://superparty.ro/petreceri/peris"
   robots="index, follow"
   schema={schema}
 >
@@ -85,8 +85,8 @@ const schema = JSON.stringify({
 
 <section class="hub-hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Județul Ilfov</span></h1>
-    <p>SuperParty activează în tot județul Ilfov — Voluntari, Otopeni, Pantelimon, Bragadiru, Chiajna și alte localități. Distanța nu e o problemă; aducem magia personajelor favorite direct la petrecerea copilului.</p>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Periș</span></h1>
+    <p>Animatori petreceri copii în Periș — comună la nord de Ilfov, pe drumul spre Snagov.</p>
     <div style="display:flex; gap:1rem; flex-wrap:wrap;">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
@@ -98,19 +98,18 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="info-grid">
       <div class="info-card">
-        <h3>📍 Locații populare în Județul Ilfov</h3>
+        <h3>📍 Locații populare în Periș</h3>
         <ul>
-                        <li>📍 Voluntari / Pipera</li>
-              <li>📍 Otopeni / Mogoșoaia</li>
-              <li>📍 Pantelimon / Cernica</li>
-              <li>📍 Bragadiru / Chiajna / Chitila</li>
-              <li>📍 Popești-Leordeni / Jilava</li>
+                        <li>📍 Periș centru</li>
+              <li>📍 Merii Petchii (sat component)</li>
+              <li>📍 Zona Snagov (adiacent)</li>
+              <li>📍 Pensiuni disponibile</li>
         </ul>
       </div>
       <div class="info-card">
         <h3>⏱ Timp de deplasare</h3>
         <ul>
-          <li>25-45 min, în funcție de localitate (posibilă taxă de deplasare)</li>
+          <li>~40-50 min din centrul Bucureștiului</li>
           <li>Sosim cu 10 min înainte de program</li>
           <li>Fără taxă de deplasare în zona centrală</li>
         </ul>
@@ -133,7 +132,7 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="hub-section-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Județul Ilfov</span></h2>
+    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Periș</span></h2>
     <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
@@ -149,12 +148,12 @@ const schema = JSON.stringify({
 
 <section class="hub-section">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Județul Ilfov</span></h2>
+    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Periș</span></h2>
     <div class="faq-list">
       {[
-        ["Activați în Județul Ilfov?", "Da — acoperim toată zona Județul Ilfov. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Județul Ilfov?", "Prețurile pornesc de la 350 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Județul Ilfov?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Județul Ilfov și împrejurimi."],
+        ["Activați în Periș?", "Da — acoperim toată zona Periș. Contactați-ne pentru confirmare și detalii logistice."],
+        ["Cât costă un animator în Periș?", "Prețurile pornesc de la 350 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
+        ["Se poate organiza la domiciliu în Periș?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Periș și împrejurimi."],
       ].map(([q, a]) => (
         <div class="faq-item">
           <h3>❓ {q}</h3>
@@ -168,7 +167,7 @@ const schema = JSON.stringify({
 <section class="hub-section-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Județul Ilfov</span></h2>
+      <h2>Rezervă animator în <span style="color:var(--primary)">Periș</span></h2>
       <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
       <div class="cta-btns">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>

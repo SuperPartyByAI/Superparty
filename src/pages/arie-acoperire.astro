@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Animatori Petreceri Copii — Arie Acoperire",
+      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
+      "areaServed": "București, Ilfov și localități până la ~100 km",
+      "url": "https://superparty.ro/arie-acoperire"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro" },
+        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://superparty.ro/animatori-petreceri-copii" },
+        { "@type": "ListItem", "position": 3, "name": "Arie Acoperire", "item": "https://superparty.ro/arie-acoperire" }
+      ]
+    }
+  ]
+});
+
+const bucuresti = [
+  { name: 'Sector 1', href: '/petreceri/sector-1', desc: 'Dorobanți, Floreasca, Aviatorilor, Băneasa, Pipera' },
+  { name: 'Sector 2', href: '/petreceri/sector-2', desc: 'Colentina, Pantelimon, Fundeni, Obor, Iancului' },
+  { name: 'Sector 3', href: '/petreceri/sector-3', desc: 'Titan, Vitan, Dristor, Balta Albă, Oltenița' },
+  { name: 'Sector 4', href: '/petreceri/sector-4', desc: 'Berceni, Brâncoveanu, Olteniței, Giurgiului' },
+  { name: 'Sector 5', href: '/petreceri/sector-5', desc: 'Rahova, Ferentari, 13 Septembrie, Cotroceni' },
+  { name: 'Sector 6', href: '/petreceri/sector-6', desc: 'Militari, Drumul Taberei, Crângași, Giulești' },
+];
+
+const ilfov_principale = [
+  { name: 'Voluntari', href: '/petreceri/voluntari' },
+  { name: 'Popești-Leordeni', href: '/petreceri/popesti-leordeni' },
+  { name: 'Otopeni', href: '/petreceri/otopeni' },
+  { name: 'Pantelimon', href: '/petreceri/pantelimon' },
+  { name: 'Bragadiru', href: '/petreceri/bragadiru' },
+  { name: 'Chiajna', href: '/petreceri/chiajna' },
+  { name: 'Chitila', href: '/petreceri/chitila' },
+  { name: 'Buftea', href: '/petreceri/buftea' },
+  { name: 'Mogoșoaia', href: '/petreceri/mogosoaia' },
+  { name: 'Corbeanca', href: '/petreceri/corbeanca' },
+  { name: 'Tunari', href: '/petreceri/tunari' },
+  { name: 'Snagov', href: '/petreceri/snagov' },
+  { name: 'Dobroești', href: '/petreceri/dobroesti' },
+  { name: 'Jilava', href: '/petreceri/jilava' },
+  { name: 'Măgurele', href: '/petreceri/magurele' },
+  { name: 'Cernica', href: '/petreceri/cernica' },
+  { name: 'Afumați', href: '/petreceri/afumati' },
+  { name: 'Brănești', href: '/petreceri/branesti' },
+  { name: 'Domnești', href: '/petreceri/domnesti' },
+  { name: 'Berceni Ilfov', href: '/petreceri/berceni-ilfov' },
+  { name: '1 Decembrie', href: '/petreceri/1-decembrie' },
+  { name: 'Dragomirești-Vale', href: '/petreceri/dragomiresti-vale' },
+  { name: 'Găneasa', href: '/petreceri/ganeasa' },
+  { name: 'Glina', href: '/petreceri/glina' },
+  { name: 'Periș', href: '/petreceri/peris' },
+  { name: 'Dascălu', href: '/petreceri/dascalu' },
+  { name: 'Moara Vlăsiei', href: '/petreceri/moara-vlasiei' },
+  { name: 'Ștefăneștii de Jos', href: '/petreceri/stefanestii-de-jos' },
+  { name: 'Ciorogârla', href: '/petreceri/ciorogirla' },
+  { name: 'Balotești', href: '/petreceri/balotesti' },
+];
+
+const alte_zone = [
+  'Ploiești (Prahova)', 'Târgoviște (Dâmbovița)', 'Câmpina', 'Sinaia',
+  'Pitești (Argeș)', 'Alexandria (Teleorman)', 'Slobozia (Ialomița)',
+  'Urziceni', 'Giurgiu', 'Oltenița', 'Comănești', 'Calugareni'
+];
+---
+
+<Layout
+  title="Zone Acoperite — Animatori Petreceri Copii | SuperParty"
+  description="SuperParty asigură animatori petreceri copii în toată zona București-Ilfov și localități până la ~100 km. Verificați lista completă de zone."
+  canonical="https://superparty.ro/arie-acoperire"
+  robots="index, follow"
+  schema={schema}
+>
+<style>
+  .ac-hero { padding:4.5rem 0 3rem; background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%); }
+  .ac-hero h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; }
+  .ac-hero p { color:var(--text-muted); font-size:1.05rem; max-width:640px; line-height:1.8; margin-bottom:2rem; }
+  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
+  .ac-section { padding:3.5rem 0; }
+  .ac-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.4rem; }
+  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
+  .buc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+  .buc-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.2); border-radius:14px; padding:1.3rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
+  .buc-card:hover { border-color:var(--primary); }
+  .buc-card h3 { font-weight:700; margin-bottom:.3rem; color:var(--primary); }
+  .buc-card p { font-size:.85rem; color:var(--text-muted); }
+  .ilfov-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.75rem; }
+  .ilfov-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:10px; padding:.9rem 1.1rem; text-decoration:none; color:var(--text); font-weight:600; font-size:.9rem; transition:border-color .2s; }
+  .ilfov-card:hover { border-color:var(--primary); color:var(--primary); }
+  .alte-grid { display:flex; flex-wrap:wrap; gap:.6rem; }
+  .alte-tag { background:var(--dark-3); border:1px solid rgba(255,255,255,.08); border-radius:8px; padding:.4rem .9rem; font-size:.85rem; color:var(--text-muted); }
+  .info-box { background:rgba(255,107,53,.08); border:1px solid rgba(255,107,53,.2); border-radius:16px; padding:1.5rem 2rem; }
+  .info-box h3 { font-weight:700; margin-bottom:.6rem; }
+  .info-box p { color:var(--text-muted); font-size:.93rem; line-height:1.7; }
+</style>
+
+<section class="ac-hero">
+  <div class="container">
+    <h1>Zone <span style="color:var(--primary)">Acoperite</span> — Animatori Petreceri Copii</h1>
+    <p>SuperParty asigură animatori profesioniști în toată zona <strong>București-Ilfov</strong> și localități până la aproximativ <strong>100 km</strong>. Consultați lista de mai jos sau contactați-ne direct.</p>
+    <a href="tel:+40722744377" class="btn-p cta">📞 Verificați disponibilitatea: 0722 744 377</a>
+  </div>
+</section>
+
+<section class="ac-section">
+  <div class="container">
+    <h2 class="sec-title">București — <span style="color:var(--primary)">Toate Sectoarele</span></h2>
+    <p class="sec-sub">Acoperire completă în toată capitala. Fără taxă de deplasare standard.</p>
+    <div class="buc-grid">
+      {bucuresti.map(z => (
+        <a href={z.href} class="buc-card">
+          <h3>📍 {z.name}</h3>
+          <p>{z.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="ac-section-alt">
+  <div class="container">
+    <h2 class="sec-title">Județul Ilfov — <span style="color:var(--primary)">30 Localități</span></h2>
+    <p class="sec-sub">Localitățile cu pagini dedicate — informații specifice și timp de deplasare estimat.</p>
+    <div class="ilfov-grid">
+      {ilfov_principale.map(loc => (
+        <a href={loc.href} class="ilfov-card">📍 {loc.name}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="ac-section">
+  <div class="container">
+    <h2 class="sec-title">Alte Zone (~100 km)</h2>
+    <p class="sec-sub">Localități din județele limitrofe unde ajungem ocazional. Contactați-ne pentru confirmare și taxă de deplasare.</p>
+    <div class="alte-grid">
+      {alte_zone.map(z => <span class="alte-tag">📍 {z}</span>)}
+    </div>
+    <div class="info-box" style="margin-top:2rem;">
+      <h3>ℹ️ Cum funcționează deplasarea?</h3>
+      <p>În <strong>București și Ilfov</strong> — fără taxă sau cu taxă minimă (verificați cu noi). Pentru localitățile la distanță mai mare, taxa se calculează în funcție de km și se comunică la rezervare. Nu existe surprize.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ac-section-alt">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:1rem;">Nu ați găsit localitatea voastră?</h2>
+    <p style="color:var(--text-muted); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto;">Contactați-ne — dacă suntem în raza de activitate, venim cu plăcere!</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
+      <a href="https://wa.me/40722744377" style="background:#25d366; color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;" class="cta">💬 WhatsApp</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
+      ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Pagina principală Animatori Petreceri Copii</a>
+    </p>
+  </div>
+</section>
+
+</Layout>
