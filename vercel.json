@@ -1,18 +1,8 @@
 {
     "redirects": [
         {
-            "source": "/animatori-petreceri-copii",
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
             "source": "/animatori-petreceri-copii/",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/arcade-baloane",
-            "destination": "/arcade-baloane",
             "permanent": true
         },
         {
@@ -21,18 +11,8 @@
             "permanent": true
         },
         {
-            "source": "/baloane-cu-heliu",
-            "destination": "/baloane-cu-heliu",
-            "permanent": true
-        },
-        {
             "source": "/baloane-cu-heliu/",
             "destination": "/baloane-cu-heliu",
-            "permanent": true
-        },
-        {
-            "source": "/decoratiuni-baloane",
-            "destination": "/decoratiuni-baloane",
             "permanent": true
         },
         {
@@ -41,18 +21,8 @@
             "permanent": true
         },
         {
-            "source": "/mos-craciun-de-inchiriat",
-            "destination": "/mos-craciun-de-inchiriat",
-            "permanent": true
-        },
-        {
             "source": "/mos-craciun-de-inchiriat/",
             "destination": "/mos-craciun-de-inchiriat",
-            "permanent": true
-        },
-        {
-            "source": "/piniata",
-            "destination": "/piniata",
             "permanent": true
         },
         {
@@ -61,18 +31,8 @@
             "permanent": true
         },
         {
-            "source": "/ursitoare-botez",
-            "destination": "/ursitoare-botez",
-            "permanent": true
-        },
-        {
             "source": "/ursitoare-botez/",
             "destination": "/ursitoare-botez",
-            "permanent": true
-        },
-        {
-            "source": "/vata-de-zahar-si-popcorn",
-            "destination": "/vata-de-zahar-si-popcorn",
             "permanent": true
         },
         {
@@ -81,13 +41,116 @@
             "permanent": true
         },
         {
-            "source": "/contact",
+            "source": "/contact/",
             "destination": "/contact",
             "permanent": true
         },
         {
-            "source": "/contact/",
-            "destination": "/contact",
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "59"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "155"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "170"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "184"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "197"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "738"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "1019"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "1077"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "p",
+                    "value": "1101"
+                }
+            ],
+            "destination": "/animatori-petreceri-copii",
             "permanent": true
         },
         {
