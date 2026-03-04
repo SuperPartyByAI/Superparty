@@ -46,7 +46,7 @@ def enqueue_weekly():
     for site_id in SITES:
         try:
             get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="ga4_weekly_wave")
-            get_queue("seo_plan").enqueue("agent.tasks.seo.seo_apply_task")
+            get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
         except Exception as e:
             log.warning("GA4 weekly wave %s: %s", site_id, e)
 
