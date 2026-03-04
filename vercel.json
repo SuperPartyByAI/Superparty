@@ -1,0 +1,139 @@
+{
+    "redirects": [
+        {
+            "source": "/animatori-petreceri-copii",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/animatori-petreceri-copii/",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/arcade-baloane",
+            "destination": "/arcade-baloane",
+            "permanent": true
+        },
+        {
+            "source": "/arcade-baloane/",
+            "destination": "/arcade-baloane",
+            "permanent": true
+        },
+        {
+            "source": "/baloane-cu-heliu",
+            "destination": "/baloane-cu-heliu",
+            "permanent": true
+        },
+        {
+            "source": "/baloane-cu-heliu/",
+            "destination": "/baloane-cu-heliu",
+            "permanent": true
+        },
+        {
+            "source": "/decoratiuni-baloane",
+            "destination": "/decoratiuni-baloane",
+            "permanent": true
+        },
+        {
+            "source": "/decoratiuni-baloane/",
+            "destination": "/decoratiuni-baloane",
+            "permanent": true
+        },
+        {
+            "source": "/mos-craciun-de-inchiriat",
+            "destination": "/mos-craciun-de-inchiriat",
+            "permanent": true
+        },
+        {
+            "source": "/mos-craciun-de-inchiriat/",
+            "destination": "/mos-craciun-de-inchiriat",
+            "permanent": true
+        },
+        {
+            "source": "/piniata",
+            "destination": "/piniata",
+            "permanent": true
+        },
+        {
+            "source": "/piniata/",
+            "destination": "/piniata",
+            "permanent": true
+        },
+        {
+            "source": "/ursitoare-botez",
+            "destination": "/ursitoare-botez",
+            "permanent": true
+        },
+        {
+            "source": "/ursitoare-botez/",
+            "destination": "/ursitoare-botez",
+            "permanent": true
+        },
+        {
+            "source": "/vata-de-zahar-si-popcorn",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/vata-de-zahar-si-popcorn/",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact",
+            "permanent": true
+        },
+        {
+            "source": "/contact/",
+            "destination": "/contact",
+            "permanent": true
+        },
+        {
+            "source": "/?p=59",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=155",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=170",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=184",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=197",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=738",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=1019",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=1077",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/?p=1101",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        }
+    ]
+}
