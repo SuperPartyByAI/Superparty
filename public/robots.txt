@@ -4,4 +4,4 @@ Allow: /
 # Block hold/noindex pages from crawling
 Disallow: /api/
 
-Sitemap: https://superparty.ro/sitemap.xml
+Sitemap: https://www.superparty.ro/sitemap.xml
