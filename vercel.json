@@ -1,0 +1,190 @@
+{
+  "redirects": [
+    {
+      "source": "/animator-:slug*",
+      "destination": "/petreceri/animator-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/animatori-:slug*",
+      "destination": "/petreceri/animatori-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/animatopia-:slug*",
+      "destination": "/petreceri/animatopia-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/arcade-:slug*",
+      "destination": "/petreceri/arcade-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/baloane-:slug*",
+      "destination": "/petreceri/baloane-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/cat-costa-:slug*",
+      "destination": "/petreceri/cat-costa-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/cum-:slug*",
+      "destination": "/petreceri/cum-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/diplome-:slug*",
+      "destination": "/petreceri/diplome-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/faq-:slug*",
+      "destination": "/petreceri/faq-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/fotografii-:slug*",
+      "destination": "/petreceri/fotografii-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/goodie-:slug*",
+      "destination": "/petreceri/goodie-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/greseli-:slug*",
+      "destination": "/petreceri/greseli-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/idei-:slug*",
+      "destination": "/petreceri/idei-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/intrebari-:slug*",
+      "destination": "/petreceri/intrebari-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/jocuri-:slug*",
+      "destination": "/petreceri/jocuri-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/numar-:slug*",
+      "destination": "/petreceri/numar-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/ocazii-:slug*",
+      "destination": "/petreceri/ocazii-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/personaje-:slug*",
+      "destination": "/petreceri/personaje-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/petrecere-:slug*",
+      "destination": "/petreceri/petrecere-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/pictura-:slug*",
+      "destination": "/petreceri/pictura-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/rezervare-:slug*",
+      "destination": "/petreceri/rezervare-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/sala-:slug*",
+      "destination": "/petreceri/sala-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/seo-:slug*",
+      "destination": "/petreceri/seo-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/servicii-:slug*",
+      "destination": "/petreceri/servicii-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/sfaturi-:slug*",
+      "destination": "/petreceri/sfaturi-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/spectacol-:slug*",
+      "destination": "/petreceri/spectacol-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/supereroi-:slug*",
+      "destination": "/petreceri/supereroi-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/auto-:slug*",
+      "destination": "/petreceri/auto-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/teme-:slug*",
+      "destination": "/petreceri/teme-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/top-:slug*",
+      "destination": "/petreceri/top-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/tot-ce-:slug*",
+      "destination": "/petreceri/tot-ce-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.superparty.ro"
+        }
+      ],
+      "destination": "https://superparty.ro/$1",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
