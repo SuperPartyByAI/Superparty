@@ -1,0 +1,773 @@
+[
+  {
+    "slug": "ilfov",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/ilfov"
+  },
+  {
+    "slug": "sector-6",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-6"
+  },
+  {
+    "slug": "sector-5",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-5"
+  },
+  {
+    "slug": "sector-4",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-4"
+  },
+  {
+    "slug": "sector-3",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-3"
+  },
+  {
+    "slug": "sector-2",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-2"
+  },
+  {
+    "slug": "sector-1",
+    "tier": 2,
+    "hub": "bucuresti",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/sector-1"
+  },
+  {
+    "slug": "bucuresti",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": true,
+    "url": "https://superparty.ro/petreceri/bucuresti"
+  },
+  {
+    "slug": "animatori-petreceri-copii",
+    "tier": 1,
+    "hub": null,
+    "indexable": true,
+    "url": "https://superparty.ro/animatori-petreceri-copii"
+  },
+  {
+    "slug": "teleorman",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/teleorman"
+  },
+  {
+    "slug": "calarasi",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/calarasi"
+  },
+  {
+    "slug": "ialomita",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/ialomita"
+  },
+  {
+    "slug": "giurgiu",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/giurgiu"
+  },
+  {
+    "slug": "dambovita",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/dambovita"
+  },
+  {
+    "slug": "prahova",
+    "tier": 2,
+    "indexable": true,
+    "place_type": "county_hub",
+    "hub": "animatori-petreceri-copii",
+    "url": "https://superparty.ro/petreceri/prahova"
+  },
+  {
+    "slug": "bolintin-vale",
+    "name": "Bolintin-Vale",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 27.5,
+    "score": 22.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/bolintin-vale"
+  },
+  {
+    "slug": "mihailesti",
+    "name": "Mihăilești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 19.3,
+    "score": 22.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/mihailesti"
+  },
+  {
+    "slug": "budesti",
+    "name": "Budești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 36.0,
+    "score": 15.0,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/budesti"
+  },
+  {
+    "slug": "fierbinti-targ",
+    "name": "Fierbinți-Târg",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 36.1,
+    "score": 15.0,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/fierbinti-targ"
+  },
+  {
+    "slug": "fundulea",
+    "name": "Fundulea",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 32.7,
+    "score": 15.0,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/fundulea"
+  },
+  {
+    "slug": "mihai-voda",
+    "name": "Mihai Vodă",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 22.7,
+    "score": 15.0,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/mihai-voda"
+  },
+  {
+    "slug": "racari",
+    "name": "Răcari",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "town",
+    "dist_km": 36.0,
+    "score": 15.0,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/racari"
+  },
+  {
+    "slug": "belciugatele",
+    "name": "Belciugatele",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.0,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/belciugatele"
+  },
+  {
+    "slug": "ciorogarla",
+    "name": "Ciorogârla",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 17.4,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/ciorogarla"
+  },
+  {
+    "slug": "clinceni",
+    "name": "Clinceni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 13.9,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/clinceni"
+  },
+  {
+    "slug": "comana",
+    "name": "Comana",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 28.4,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/comana"
+  },
+  {
+    "slug": "copaceni",
+    "name": "Copăceni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 17.3,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/copaceni"
+  },
+  {
+    "slug": "iepuresti",
+    "name": "Iepurești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.6,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/iepuresti"
+  },
+  {
+    "slug": "nuci",
+    "name": "Nuci",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 29.5,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/nuci"
+  },
+  {
+    "slug": "petrachioaia",
+    "name": "Petrăchioaia",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 24.0,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/petrachioaia"
+  },
+  {
+    "slug": "vidra",
+    "name": "Vidra",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 18.9,
+    "score": 11.25,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/vidra"
+  },
+  {
+    "slug": "dimieni",
+    "name": "Dimieni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "hamlet",
+    "dist_km": 18.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/dimieni"
+  },
+  {
+    "slug": "ordoreanu-vatra-veche",
+    "name": "Ordoreanu (Vatra veche)",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "locality",
+    "dist_km": 19.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/ordoreanu-vatra-veche"
+  },
+  {
+    "slug": "valea-piersicilor",
+    "name": "Valea Piersicilor",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "locality",
+    "dist_km": 10.5,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/valea-piersicilor"
+  },
+  {
+    "slug": "adunatii-copaceni",
+    "name": "Adunații-Copăceni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 19.8,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/adunatii-copaceni"
+  },
+  {
+    "slug": "alunisu",
+    "name": "Alunișu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 10.4,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/alunisu"
+  },
+  {
+    "slug": "bolintin-deal",
+    "name": "Bolintin-Deal",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 22.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/bolintin-deal"
+  },
+  {
+    "slug": "branistari",
+    "name": "Brăniștari",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/branistari"
+  },
+  {
+    "slug": "buciumeni",
+    "name": "Buciumeni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 17.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/buciumeni"
+  },
+  {
+    "slug": "budeni",
+    "name": "Budeni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 26.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/budeni"
+  },
+  {
+    "slug": "bulbucata",
+    "name": "Bulbucata",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 28.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/bulbucata"
+  },
+  {
+    "slug": "butimanu",
+    "name": "Butimanu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 33.8,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/butimanu"
+  },
+  {
+    "slug": "buturugeni",
+    "name": "Buturugeni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 22.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/buturugeni"
+  },
+  {
+    "slug": "bacu",
+    "name": "Bâcu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 17.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/bacu"
+  },
+  {
+    "slug": "balaceanca",
+    "name": "Bălăceanca",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 15.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/balaceanca"
+  },
+  {
+    "slug": "baneasa",
+    "name": "Băneasa",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 42.4,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/baneasa"
+  },
+  {
+    "slug": "chirculesti",
+    "name": "Chirculești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 23.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/chirculesti"
+  },
+  {
+    "slug": "ciocanesti",
+    "name": "Ciocănești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 26.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/ciocanesti"
+  },
+  {
+    "slug": "ciofliceni",
+    "name": "Ciofliceni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 28.5,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/ciofliceni"
+  },
+  {
+    "slug": "cocani",
+    "name": "Cocani",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.8,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cocani"
+  },
+  {
+    "slug": "cojasca",
+    "name": "Cojasca",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 38.5,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cojasca"
+  },
+  {
+    "slug": "cojesti",
+    "name": "Cojești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.0,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cojesti"
+  },
+  {
+    "slug": "colibasi",
+    "name": "Colibași",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/colibasi"
+  },
+  {
+    "slug": "cornetu",
+    "name": "Cornetu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 15.7,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cornetu"
+  },
+  {
+    "slug": "cosoba",
+    "name": "Cosoba",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cosoba"
+  },
+  {
+    "slug": "coteni",
+    "name": "Coteni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/coteni"
+  },
+  {
+    "slug": "cozieni",
+    "name": "Cozieni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 16.7,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cozieni"
+  },
+  {
+    "slug": "creata",
+    "name": "Creața",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 23.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/creata"
+  },
+  {
+    "slug": "crevedia",
+    "name": "Crevedia",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 24.2,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/crevedia"
+  },
+  {
+    "slug": "crevedia-mare",
+    "name": "Crevedia Mare",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 37.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/crevedia-mare"
+  },
+  {
+    "slug": "cretesti",
+    "name": "Crețești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 16.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cretesti"
+  },
+  {
+    "slug": "cretuleasca",
+    "name": "Crețuleasca",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 13.6,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cretuleasca"
+  },
+  {
+    "slug": "crivina",
+    "name": "Crivina",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/crivina"
+  },
+  {
+    "slug": "cranguri",
+    "name": "Crânguri",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 26.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cranguri"
+  },
+  {
+    "slug": "cucuieti",
+    "name": "Cucuieți",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 25.5,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/cucuieti"
+  },
+  {
+    "slug": "campurelu",
+    "name": "Câmpurelu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 22.5,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/campurelu"
+  },
+  {
+    "slug": "candeasca",
+    "name": "Cândeasca",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/candeasca"
+  },
+  {
+    "slug": "caciulati",
+    "name": "Căciulați",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 22.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/caciulati"
+  },
+  {
+    "slug": "caldararu",
+    "name": "Căldăraru",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 12.7,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/caldararu"
+  },
+  {
+    "slug": "calugareni",
+    "name": "Călugăreni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.9,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/calugareni"
+  },
+  {
+    "slug": "catrunesti",
+    "name": "Cătrunești",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.0,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/catrunesti"
+  },
+  {
+    "slug": "catelu",
+    "name": "Cățelu",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 9.6,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/catelu"
+  },
+  {
+    "slug": "decindea",
+    "name": "Decindea",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 27.1,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/decindea"
+  },
+  {
+    "slug": "dobreni",
+    "name": "Dobreni",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 21.3,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/dobreni"
+  },
+  {
+    "slug": "dragomiresti-deal",
+    "name": "Dragomirești - Deal",
+    "tier": 3,
+    "indexable": true,
+    "place_type": "village",
+    "dist_km": 13.8,
+    "score": 7.5,
+    "hub": "ilfov",
+    "url": "https://superparty.ro/petreceri/dragomiresti-deal"
+  }
+]
