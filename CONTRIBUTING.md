@@ -1,6 +1,39 @@
 # Contributing — SuperParty
 
-Mulțumim că contribui! Urmează ghidul de mai jos.
+## Instalare hook-uri locale (o singură dată)
+
+```bash
+git config core.hooksPath .githooks
+# Verificare: adaugă o imagine mare → pre-commit va fi avertizat
+```
+
+## Exemplu complet: adaugă o imagine nouă în galerie
+
+```bash
+# 1. Copiază imaginea în folder-ul corect
+cp ~/Downloads/animatoare-noi.jpg public/wp-content/uploads/2026/03/
+
+# 2. Generează versiunile WebP optimizate
+npm install sharp --no-save   # o singură dată
+node scripts/optimize-images.mjs
+# → generează public/optimized/thumb/2026/03/animatoare-noi.webp
+# → generează public/optimized/hero/2026/03/animatoare-noi.webp
+
+# 3. Adaugă URL în gallery.ts
+# Editează src/data/gallery.ts → adaugă în galleryAll:
+# { url: 'https://www.superparty.ro/wp-content/uploads/2026/03/animatoare-noi.jpg', alt: '...', category: 'animatori' }
+
+# 4. Commit tot
+git add public/wp-content/uploads/2026/03/animatoare-noi.jpg \
+        public/optimized/thumb/2026/03/animatoare-noi.webp \
+        public/optimized/hero/2026/03/animatoare-noi.webp \
+        src/data/gallery.ts
+git commit -m "feat(gallery): imagine nouă animatoare 2026-03"
+
+# 5. Push → CI verifică local că fișierele există
+git push origin feat/imagine-noua
+# Deschide PR → checklist apare automat → CI rulează
+```
 
 ## Adaugă imagini în galerie (checklist obligatoriu)
 

@@ -1,0 +1,55 @@
+#!/bin/bash
+# .githooks/pre-commit — Avertizare imagini mari și WebP lipsă
+# Instalare: git config core.hooksPath .githooks
+# Sau: ln -s ../../.githooks/pre-commit .git/hooks/pre-commit
+
+set -e
+
+MAX_SIZE_KB=2048   # 2MB — imagini mai mari de atât ar trebui optimizate
+WARN_MISSING_WEBP=true
+FAIL=0
+
+# Fișiere stagiate în public/wp-content/uploads/ (imagini noi)
+NEW_IMAGES=$(git diff --cached --name-only --diff-filter=A \
+    | grep -E '^public/wp-content/uploads/.*\.(jpe?g|png|webp)$' || true)
+
+if [ -z "$NEW_IMAGES" ]; then
+    exit 0  # Nicio imagine nouă — skip
+fi
+
+echo "🔍 SuperParty pre-commit: verificare imagini noi..."
+
+while IFS= read -r imgpath; do
+    [ -z "$imgpath" ] && continue
+    
+    # Verifică dimensiunea
+    if [ -f "$imgpath" ]; then
+        SIZE_KB=$(du -k "$imgpath" | cut -f1)
+        if [ "$SIZE_KB" -gt "$MAX_SIZE_KB" ]; then
+            echo "⚠️  MARE: $imgpath (${SIZE_KB}KB > ${MAX_SIZE_KB}KB)"
+            echo "   → Rulează: node scripts/optimize-images.mjs"
+            echo "   → Sau: SRC_DIR=$(dirname $imgpath) node scripts/optimize-images.mjs"
+        fi
+    fi
+
+    # Verifică dacă există versiunea WebP optimizată
+    if [ "$WARN_MISSING_WEBP" = "true" ]; then
+        rel="${imgpath#public/wp-content/uploads/}"
+        baseName="${rel%.*}"
+        webp_thumb="public/optimized/thumb/${baseName}.webp"
+        if [ ! -f "$webp_thumb" ]; then
+            echo "⚠️  LIPSĂ WebP thumb: $webp_thumb"
+            echo "   → Rulează: node scripts/optimize-images.mjs"
+        fi
+    fi
+done <<< "$NEW_IMAGES"
+
+if [ "$FAIL" -ne 0 ]; then
+    echo ""
+    echo "❌ Pre-commit: blocaj din cauza imaginilor mari. Rulează optimize și re-add."
+    exit 1
+fi
+
+# Warnings dar nu blochează commit-ul
+echo "ℹ️  Pre-commit completat (warnings de mai sus sunt sugestii, nu blochează)."
+exit 0
