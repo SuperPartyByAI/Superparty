@@ -8,6 +8,7 @@
  *   title: string
  */
 import reviewsRaw from '../data/superparty_testimonials.json';
+import { fixMojibake } from '../lib/text/normalizeReview';
 
 export interface Props {
   count?: number;
@@ -49,7 +50,8 @@ function genderSafeText(text: string): string {
 
 // Truncate text to ~260 chars at word boundary
 function truncate(text: string, max = 260): { short: string; full: string; truncated: boolean } {
-  const safe = genderSafeText(text || '');
+  const clean = fixMojibake(text || '');
+  const safe = genderSafeText(clean);
   if (safe.length <= max) return { short: safe, full: safe, truncated: false };
   const cut = safe.lastIndexOf(' ', max);
   return { short: safe.slice(0, cut > 0 ? cut : max) + '…', full: safe, truncated: true };
