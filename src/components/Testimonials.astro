@@ -39,6 +39,7 @@ if (cityFilter) {
   if (cf.length >= 4) filtered = cf;
 }
 const reviews = filtered.slice(0, count);
+const reviewsView = reviews.map(r => ({ ...r, text: processReview(r.text || '') }));
 
 // Gender-safe phrasing: "Ei, Prenume," → "Fetiței Prenume,"
 function genderSafeText(text: string): string {
@@ -93,7 +94,7 @@ function sourceLabel(src: string) {
       <p class="t-sub">1.498 testimoniale reale de la părinți mulțumiți</p>
     </div>
     <div class="t-grid">
-      {reviews.map((r, i) => {
+      {reviewsView.map((r, i) => {
         const { short, full, truncated } = truncate(r.text);
         const zone = zoneBadge(r.location);
         return (

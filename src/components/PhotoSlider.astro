@@ -4,12 +4,16 @@
  * Slider touch-friendly cu imagini reale.
  */
 import { sliderImages } from '../data/gallery_images';
+import { SITE_ORIGIN } from '../config/site';
 
 export interface Props {
   title?: string;
 }
 const { title = 'Cum arată o petrecere SuperParty' } = Astro.props;
-const images = sliderImages;
+// Build absolute URLs and filter invalid entries
+const safeImages = sliderImages
+  .map(i => ({ ...i, url: (i.src || '').startsWith('http') ? (i.src || '') : `${SITE_ORIGIN}${(i.src || '').startsWith('/') ? '' : '/'}${(i.src || '').replace(/^\/+/, '')}` }))
+  .filter(i => i.url.includes('/wp-content/uploads/'));
 ---
 
 <section class="slider-section">
@@ -20,19 +24,25 @@ const images = sliderImages;
     </div>
     <div class="slider-wrap" id="photoSlider">
       <div class="slider-track" id="sliderTrack">
-        {images.map((img, i) => (
-          <div class="slide" data-index={i}>
-            <img
-              src={img.src}
-              alt={img.alt}
-              loading={i < 3 ? 'eager' : 'lazy'}
-              decoding="async"
-              width="800"
-              height="600"
-            />
-            <div class="slide-label">{img.alt}</div>
+        {safeImages.length === 0 ? (
+          <div class="slide" style="display:flex;align-items:center;justify-content:center;min-width:100%;">
+            <p style="color:#6B7280;padding:3rem;">Imagini momentan indisponibile</p>
           </div>
-        ))}
+        ) : (
+          safeImages.map((img, i) => (
+            <div class="slide" data-index={i}>
+              <img
+                src={img.url}
+                alt={img.alt ?? 'Animator petreceri copii'}
+                loading={i < 3 ? 'eager' : 'lazy'}
+                decoding="async"
+                width="800"
+                height="600"
+              />
+              <div class="slide-label">{img.alt}</div>
+            </div>
+          ))
+        )}
       </div>
       <button class="slider-btn slider-prev" aria-label="Anterior" id="sliderPrev">‹</button>
       <button class="slider-btn slider-next" aria-label="Următor" id="sliderNext">›</button>
