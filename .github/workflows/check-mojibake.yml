@@ -10,6 +10,7 @@ on:
     paths:
       - 'src/data/**.json'
       - 'src/content/**'
+      - 'public/**'
 
 jobs:
   check-mojibake:
