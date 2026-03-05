@@ -39,7 +39,7 @@ if (cityFilter) {
   if (cf.length >= 4) filtered = cf;
 }
 const reviews = filtered.slice(0, count);
-const reviewsView = reviews.map(r => ({ ...r, text: processReview(r.text || '') }));
+const reviewsView = reviews.map(r => ({ ...r, text: fixMojibake(r.text || '') }));
 
 // Gender-safe phrasing: "Ei, Prenume," → "Fetiței Prenume,"
 function genderSafeText(text: string): string {
