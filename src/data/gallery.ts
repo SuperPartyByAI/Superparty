@@ -14,44 +14,76 @@ export interface GalleryImage {
 }
 
 const BASE = 'https://www.superparty.ro/wp-content/uploads';
-const CAT  = `${BASE}/catalog`;
+const CAT = `${BASE}/catalog`;
 
 /** Hero slider (12 imagini curate) */
 export const galleryHero: GalleryImage[] = [
-    { url: `${BASE}/2021/04/animatori-1.jpg`,                                     alt: 'Animatori profesioniști SuperParty',       category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-copii-1.jpg`,                               alt: 'Animatori pentru copii',                   category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`,          alt: 'Elsa, Ana și Olaf la petrecere',           category: 'personaje' },
-    { url: `${BASE}/2025/01/animator-spiderman.jpg`,                              alt: 'Animator Spiderman petreceri',             category: 'personaje' },
-    { url: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`,                      alt: 'Elsa Ana Olaf 2025',                       category: 'personaje' },
-    { url: `${BASE}/2023/08/arcada-baloane-superparty.jpg`,                       alt: 'Arcadă baloane SuperParty',                category: 'decor' },
-    { url: `${BASE}/2022/08/decoratiuni-baloane-superparty.jpg`,                  alt: 'Decorațiuni baloane',                      category: 'decor' },
-    { url: `${BASE}/2021/04/vata-de-zahar-1.jpg`,                                 alt: 'Vată de zahăr la petrecere',               category: 'vata-popcorn' },
-    { url: `${BASE}/2025/01/ursitoare-la-botez.jpg`,                              alt: 'Ursitoare la botez',                       category: 'ursitoare' },
-    { url: `${BASE}/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg`, alt: 'Mickey și Minnie Mouse',            category: 'personaje' },
-    { url: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`,                          alt: 'Cenușăreasa și Prințul',                   category: 'animatori' },
-    { url: `${BASE}/2022/08/baloane-cu-heliu-superparty.jpg`,                     alt: 'Baloane cu heliu SuperParty',              category: 'decor' },
+    { url: `${BASE}/2021/04/animatori-1.jpg`, alt: 'Animatori profesioniști SuperParty', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-copii-1.jpg`, alt: 'Animatori pentru copii', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`, alt: 'Elsa, Ana și Olaf la petrecere', category: 'personaje' },
+    { url: `${BASE}/2025/01/animator-spiderman.jpg`, alt: 'Animator Spiderman petreceri', category: 'personaje' },
+    { url: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`, alt: 'Elsa Ana Olaf 2025', category: 'personaje' },
+    { url: `${BASE}/2023/08/arcada-baloane-superparty.jpg`, alt: 'Arcadă baloane SuperParty', category: 'decor' },
+    { url: `${BASE}/2022/08/decoratiuni-baloane-superparty.jpg`, alt: 'Decorațiuni baloane', category: 'decor' },
+    { url: `${BASE}/2021/04/vata-de-zahar-1.jpg`, alt: 'Vată de zahăr la petrecere', category: 'vata-popcorn' },
+    { url: `${BASE}/2025/01/ursitoare-la-botez.jpg`, alt: 'Ursitoare la botez', category: 'ursitoare' },
+    { url: `${BASE}/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg`, alt: 'Mickey și Minnie Mouse', category: 'personaje' },
+    { url: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`, alt: 'Cenușăreasa și Prințul', category: 'animatori' },
+    { url: `${BASE}/2022/08/baloane-cu-heliu-superparty.jpg`, alt: 'Baloane cu heliu SuperParty', category: 'decor' },
 ];
 
 /** Galerie extinsă — animatori + personaje + decor + vată + ursitoare */
 export const galleryAll: GalleryImage[] = [
     // ── Animatori (10) ───────────────────────────────────────────────────────────
-    { url: `${BASE}/2021/04/animatori-1.jpg`,                                     alt: 'Animatori profesioniști',                  category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-copii-1.jpg`,                               alt: 'Animatori copii distracție',               category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-petreceri-copii-acasa.jpg`,                 alt: 'Animatori la domiciliu',                   category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-petreceri-copii-superparty-2.jpg`,          alt: 'SuperParty animatori',                     category: 'animatori' },
-    { url: `${BASE}/2021/04/printesele-disney.jpg`,                               alt: 'Prințesele Disney la petrecere',           category: 'animatori' },
-    { url: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`,                          alt: 'Cenușăreasa și Prințul',                   category: 'animatori' },
-    { url: `${BASE}/2025/01/mascote-petreceri-copii-bucuresti.jpg`,               alt: 'Mascote petreceri copii București',        category: 'animatori' },
-    { url: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`,                      alt: 'Elsa Ana și Olaf animatori 2025',          category: 'animatori' },
-    { url: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`,          alt: 'Elsa, Ana și Olaf animatori',              category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-1.jpg`, alt: 'Animatori profesioniști', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-copii-1.jpg`, alt: 'Animatori copii distracție', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-petreceri-copii-acasa.jpg`, alt: 'Animatori la domiciliu', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-petreceri-copii-superparty-2.jpg`, alt: 'SuperParty animatori', category: 'animatori' },
+    { url: `${BASE}/2021/04/printesele-disney.jpg`, alt: 'Prințesele Disney la petrecere', category: 'animatori' },
+    { url: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`, alt: 'Cenușăreasa și Prințul', category: 'animatori' },
+    { url: `${BASE}/2025/01/mascote-petreceri-copii-bucuresti.jpg`, alt: 'Mascote petreceri copii București', category: 'animatori' },
+    { url: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`, alt: 'Elsa Ana și Olaf animatori 2025', category: 'animatori' },
+    { url: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`, alt: 'Elsa, Ana și Olaf animatori', category: 'animatori' },
     { url: `${BASE}/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg`, alt: 'Mickey și Minnie Mouse animatori', category: 'animatori' },
 
     // ── Personaje animatori reali (5) ────────────────────────────────────────────
-    { url: `${BASE}/2025/01/animator-spiderman.jpg`,                              alt: 'Animator Spiderman petreceri',             category: 'personaje' },
-    { url: `${BASE}/2021/04/spiderman.jpg`,                                       alt: 'Spiderman la petrecere',                   category: 'personaje' },
-    { url: `${BASE}/2021/04/batman.jpg`,                                          alt: 'Batman animatori copii',                   category: 'personaje' },
-    { url: `${BASE}/2021/04/superman.jpg`,                                        alt: 'Superman petreceri copii',                 category: 'personaje' },
-    { url: `${BASE}/2021/04/testoasele-ninja.jpg`,                                alt: 'Testoasele Ninja',                         category: 'personaje' },
+    { url: `${BASE}/2025/01/animator-spiderman.jpg`, alt: 'Animator Spiderman petreceri', category: 'personaje' },
+    { url: `${BASE}/2021/04/spiderman.jpg`, alt: 'Spiderman la petrecere', category: 'personaje' },
+    { url: `${BASE}/2021/04/batman.jpg`, alt: 'Batman animatori copii', category: 'personaje' },
+    { url: `${BASE}/2021/04/superman.jpg`, alt: 'Superman petreceri copii', category: 'personaje' },
+    { url: `${BASE}/2021/04/testoasele-ninja.jpg`, alt: 'Testoasele Ninja', category: 'personaje' },
+
+    // ── Petreceri cu personaje — imagini AI (30) ──────────────────────────────────
+    { url: `${BASE}/generated/party_aurora_1772697306142.png`, alt: 'Aurora la petrecere copii cu baloane și decor', category: 'personaje' },
+    { url: `${BASE}/generated/party_catboy_1772696769977.png`, alt: 'Catboy PJ Masks la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_chase_paw_patrol_1772696788849.png`, alt: 'Chase PAW Patrol la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_creeper_1772696805101.png`, alt: 'Creeper Minecraft la petrecere copii veseli', category: 'personaje' },
+    { url: `${BASE}/generated/party_hello_kitty_1772697405648.png`, alt: 'Hello Kitty la petrecere fetite cu baloane roz', category: 'personaje' },
+    { url: `${BASE}/generated/party_jasmine_1772697185539.png`, alt: 'Printesa Jasmine la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_jerry_1772696831890.png`, alt: 'Jerry Tom and Jerry la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_ladybug_1772697235867.png`, alt: 'Ladybug Miraculous la petrecere supereroina', category: 'personaje' },
+    { url: `${BASE}/generated/party_luigi_1772696850411.png`, alt: 'Luigi Super Mario la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_marshall_1772696866254.png`, alt: 'Marshall PAW Patrol la petrecere baieti', category: 'personaje' },
+    { url: `${BASE}/generated/party_masha_1772697323772.png`, alt: 'Masha la petrecere copii zgarcie-branza', category: 'personaje' },
+    { url: `${BASE}/generated/party_merida_1772697374252.png`, alt: 'Merida Brave la petrecere printesa curajoasa', category: 'personaje' },
+    { url: `${BASE}/generated/party_minion_1772696909706.png`, alt: 'Minion Despicable Me la petrecere copii haios', category: 'personaje' },
+    { url: `${BASE}/generated/party_mulan_1772697439176.png`, alt: 'Mulan la petrecere copii dans razboinic', category: 'personaje' },
+    { url: `${BASE}/generated/party_pikachu_1772696930559.png`, alt: 'Pikachu Pokemon la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_pirate_1772696983702.png`, alt: 'Pirat la petrecere copii aventura', category: 'personaje' },
+    { url: `${BASE}/generated/party_princess_peach_1772697000751.png`, alt: 'Princess Peach Mario la petrecere fetite', category: 'personaje' },
+    { url: `${BASE}/generated/party_pumpkin_1772697484876.png`, alt: 'Dovleac la petrecere Halloween copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_rocky_paw_1772697033025.png`, alt: 'Rocky PAW Patrol la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_scorpion_1772697202670.png`, alt: 'Scorpion Mortal Kombat la petrecere baieti', category: 'personaje' },
+    { url: `${BASE}/generated/party_snow_white_1772697257789.png`, alt: 'Alba ca Zapada la petrecere fetite printesa', category: 'personaje' },
+    { url: `${BASE}/generated/party_sofia_1772697389928.png`, alt: 'Sofia Intai la petrecere printesa mica', category: 'personaje' },
+    { url: `${BASE}/generated/party_sonic_1772697050530.png`, alt: 'Sonic Hedgehog la petrecere copii rapid', category: 'personaje' },
+    { url: `${BASE}/generated/party_spiderman_1772697170534.png`, alt: 'Spiderman la petrecere copii supererou', category: 'personaje' },
+    { url: `${BASE}/generated/party_tinkerbell_1772697066743.png`, alt: 'Tinkerbell zanuta la petrecere fetite cu sclipici', category: 'personaje' },
+    { url: `${BASE}/generated/party_tom_cat_1772697102222.png`, alt: 'Tom pisica Tom and Jerry la petrecere', category: 'personaje' },
+    { url: `${BASE}/generated/party_unicorn_colorful_1772697119156.png`, alt: 'Unicorn curcubeu la petrecere fetite magica', category: 'personaje' },
+    { url: `${BASE}/generated/party_unicorn_myp_1772697467861.png`, alt: 'Unicorn My Little Pony la petrecere copii', category: 'personaje' },
+    { url: `${BASE}/generated/party_venom_1772697340461.png`, alt: 'Venom Marvel la petrecere baieti antierou', category: 'personaje' },
+    { url: `${BASE}/generated/party_wednesday_1772697272978.png`, alt: 'Wednesday Addams la petrecere tematica gotik', category: 'personaje' },
 
     // ── Catalog personaje (105 costume) ──────────────────────────────────
     { url: `${CAT}/catalog_batman_v2.png`, alt: 'catalog batman v2 costume petreceri copii', category: 'personaje' },
@@ -161,26 +193,26 @@ export const galleryAll: GalleryImage[] = [
     { url: `${CAT}/mickey_costume_edit_1772208351182.png`, alt: 'mickey costume edit costume petreceri copii', category: 'personaje' },
 
     // ── Decor & baloane (8) ──────────────────────────────────────────────────────
-    { url: `${BASE}/2023/08/arcada-baloane-superparty.jpg`,                       alt: 'Arcadă baloane SuperParty',                category: 'decor' },
-    { url: `${BASE}/2022/08/decoratiuni-baloane-superparty.jpg`,                  alt: 'Decorațiuni baloane',                      category: 'decor' },
-    { url: `${BASE}/2022/08/baloane-cu-heliu-superparty.jpg`,                     alt: 'Baloane cu heliu SuperParty',              category: 'decor' },
-    { url: `${BASE}/2021/04/decoratiuni-baloane-1.jpg`,                           alt: 'Decorațiuni baloane petrecere',            category: 'decor' },
-    { url: `${BASE}/2021/04/decoratiuni-baloane-pentru-copii-1.jpg`,              alt: 'Decorațiuni baloane copii',                category: 'decor' },
-    { url: `${BASE}/2021/04/decoratiuni-din-baloane-1.jpg`,                       alt: 'Decorațiuni din baloane',                  category: 'decor' },
-    { url: `${BASE}/2021/04/piniata-1.jpg`,                                       alt: 'Piniată SuperParty',                       category: 'decor' },
-    { url: `${BASE}/2021/04/piniata-copii-1.jpg`,                                 alt: 'Piniată petreceri copii',                  category: 'decor' },
+    { url: `${BASE}/2023/08/arcada-baloane-superparty.jpg`, alt: 'Arcadă baloane SuperParty', category: 'decor' },
+    { url: `${BASE}/2022/08/decoratiuni-baloane-superparty.jpg`, alt: 'Decorațiuni baloane', category: 'decor' },
+    { url: `${BASE}/2022/08/baloane-cu-heliu-superparty.jpg`, alt: 'Baloane cu heliu SuperParty', category: 'decor' },
+    { url: `${BASE}/2021/04/decoratiuni-baloane-1.jpg`, alt: 'Decorațiuni baloane petrecere', category: 'decor' },
+    { url: `${BASE}/2021/04/decoratiuni-baloane-pentru-copii-1.jpg`, alt: 'Decorațiuni baloane copii', category: 'decor' },
+    { url: `${BASE}/2021/04/decoratiuni-din-baloane-1.jpg`, alt: 'Decorațiuni din baloane', category: 'decor' },
+    { url: `${BASE}/2021/04/piniata-1.jpg`, alt: 'Piniată SuperParty', category: 'decor' },
+    { url: `${BASE}/2021/04/piniata-copii-1.jpg`, alt: 'Piniată petreceri copii', category: 'decor' },
 
     // ── Vată & Popcorn (4) ───────────────────────────────────────────────────────
-    { url: `${BASE}/2021/04/vata-de-zahar-1.jpg`,                                 alt: 'Vată de zahăr petreceri',                  category: 'vata-popcorn' },
-    { url: `${BASE}/2021/04/popcorn-1.jpg`,                                       alt: 'Popcorn petreceri copii',                  category: 'vata-popcorn' },
-    { url: `${BASE}/2021/04/vata-de-zahar-pe-bat.jpg`,                            alt: 'Vată de zahăr pe băț',                     category: 'vata-popcorn' },
-    { url: `${BASE}/2021/04/vata-pe-bat-1.jpg`,                                   alt: 'Vată colorată pe băț',                     category: 'vata-popcorn' },
+    { url: `${BASE}/2021/04/vata-de-zahar-1.jpg`, alt: 'Vată de zahăr petreceri', category: 'vata-popcorn' },
+    { url: `${BASE}/2021/04/popcorn-1.jpg`, alt: 'Popcorn petreceri copii', category: 'vata-popcorn' },
+    { url: `${BASE}/2021/04/vata-de-zahar-pe-bat.jpg`, alt: 'Vată de zahăr pe băț', category: 'vata-popcorn' },
+    { url: `${BASE}/2021/04/vata-pe-bat-1.jpg`, alt: 'Vată colorată pe băț', category: 'vata-popcorn' },
 
     // ── Ursitoare (4) ────────────────────────────────────────────────────────────
-    { url: `${BASE}/2025/01/ursitoare-la-botez.jpg`,                              alt: 'Ursitoare la botez 2025',                  category: 'ursitoare' },
-    { url: `${BASE}/2022/08/ursitoare-botez-bucuresti-superparty.jpg`,            alt: 'Ursitoare botez București',                category: 'ursitoare' },
-    { url: `${BASE}/2021/10/mos-craciun-de-inchiriat-1-a.jpg`,                   alt: 'Moș Crăciun de închiriat',                 category: 'ursitoare' },
-    { url: `${BASE}/2021/10/inchiriere-mos-craciun-bucuresti-1-a.jpg`,           alt: 'Închiriere Moș Crăciun București',         category: 'ursitoare' },
+    { url: `${BASE}/2025/01/ursitoare-la-botez.jpg`, alt: 'Ursitoare la botez 2025', category: 'ursitoare' },
+    { url: `${BASE}/2022/08/ursitoare-botez-bucuresti-superparty.jpg`, alt: 'Ursitoare botez București', category: 'ursitoare' },
+    { url: `${BASE}/2021/10/mos-craciun-de-inchiriat-1-a.jpg`, alt: 'Moș Crăciun de închiriat', category: 'ursitoare' },
+    { url: `${BASE}/2021/10/inchiriere-mos-craciun-bucuresti-1-a.jpg`, alt: 'Închiriere Moș Crăciun București', category: 'ursitoare' },
 ];
 
 // ── Build-time validation ─────────────────────────────────────────────────────
