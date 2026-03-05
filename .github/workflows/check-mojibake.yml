@@ -1,0 +1,56 @@
+name: Guardrail — No Mojibake
+
+on:
+  push:
+    paths:
+      - 'src/data/**.json'
+      - 'src/content/**'
+      - 'public/**'
+  pull_request:
+    paths:
+      - 'src/data/**.json'
+      - 'src/content/**'
+
+jobs:
+  check-mojibake:
+    name: Block mojibake patterns in content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for mojibake patterns
+        run: |
+          # Patterns: latin1 misinterpreted as utf-8
+          PATTERNS="BucureÈ|Ã®n |Äƒ|È™ti|â€™|â€˜|Å£|ÅŸ|Ã¢|Ã®|Ã®n|PÄƒrinte|mulÈ"
+          echo "Checking for mojibake patterns..."
+          
+          FOUND=0
+          
+          # Check JSON files
+          for f in src/data/*.json; do
+            if [ -f "$f" ]; then
+              MATCHES=$(grep -cP "$PATTERNS" "$f" 2>/dev/null || echo 0)
+              if [ "$MATCHES" -gt 0 ]; then
+                echo "MOJIBAKE FOUND in $f: $MATCHES lines"
+                grep -nP "$PATTERNS" "$f" | head -5
+                FOUND=1
+              fi
+            fi
+          done
+          
+          # Check SEO content
+          find src/content -name "*.mdx" -o -name "*.md" 2>/dev/null | while read f; do
+            MATCHES=$(grep -cP "$PATTERNS" "$f" 2>/dev/null || echo 0)
+            if [ "$MATCHES" -gt 0 ]; then
+              echo "MOJIBAKE FOUND in $f: $MATCHES lines"
+              FOUND=1
+            fi
+          done
+          
+          if [ "$FOUND" -eq 1 ]; then
+            echo ""
+            echo "FAILURE: Mojibake detected. Run: python scripts/fix_mojibake_ro.py --apply"
+            exit 1
+          fi
+          
+          echo "OK: No mojibake patterns found."
