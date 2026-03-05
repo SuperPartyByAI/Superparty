@@ -17,36 +17,54 @@ on:
 jobs:
   check-gallery-urls:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Extract gallery URLs from gallery.ts
-        run: |
-          set -e
-          grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\", \`\)>]+" src/data/gallery.ts \
-            | sort -u > /tmp/gallery_urls.txt || true
-          COUNT=$(wc -l < /tmp/gallery_urls.txt | tr -d ' ')
-          echo "Found $COUNT gallery URLs to check"
-          cat /tmp/gallery_urls.txt
-
-      - name: HEAD check all gallery URLs
+      - name: Check local static files exist for /wp-content/uploads/ URLs
         run: |
           set -e
           FAIL=0
-          while IFS= read -r url; do
-            [ -z "$url" ] && continue
-            status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 -L "$url" 2>/dev/null || echo "000")
-            if [ "$status" != "200" ]; then
-              echo "::error::NON-200: $url -> HTTP $status"
+
+          # Extract relative paths from gallery.ts for local files (/wp-content/uploads/...)
+          # These must exist in public/ inside the repo
+          grep -oE "/wp-content/uploads/[^'\",\` \)>]+" src/data/gallery.ts \
+            | sort -u > /tmp/gallery_paths.txt || true
+
+          TOTAL=$(wc -l < /tmp/gallery_paths.txt | tr -d ' ')
+          echo "Checking $TOTAL gallery paths against public/ directory..."
+
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            local_file="public${path}"
+            if [ ! -f "$local_file" ]; then
+              echo "::error::MISSING local file: $local_file (URL: https://www.superparty.ro${path})"
               FAIL=1
             else
-              echo "OK $status: ${url##*/}"
+              echo "OK: $local_file"
             fi
-          done < /tmp/gallery_urls.txt
+          done < /tmp/gallery_paths.txt
+
           if [ "$FAIL" -ne 0 ]; then
-            echo "::error::One or more gallery image URLs returned non-200. Fix broken URLs before merging."
+            echo "::error::One or more gallery image paths are missing from public/. Add the files or fix the URL in gallery.ts."
             exit 1
           fi
-          echo "All gallery image URLs OK!"
+          echo "All $TOTAL gallery image paths exist in public/ ✅"
+
+      - name: Check live URLs (non-blocking, informational only)
+        continue-on-error: true
+        run: |
+          # Quick spot-check of 5 random live URLs — non-blocking (does not fail PR)
+          grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\",\` \)>]+" src/data/gallery.ts \
+            | sort -R | head -5 > /tmp/spot_urls.txt || true
+
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 -L "$url" 2>/dev/null || echo "000")
+            if [ "$status" != "200" ]; then
+              echo "::warning::LIVE spot-check non-200: $url -> $status (informational only, Vercel may not have deployed yet)"
+            else
+              echo "LIVE OK: ${url##*/} -> $status"
+            fi
+          done < /tmp/spot_urls.txt
