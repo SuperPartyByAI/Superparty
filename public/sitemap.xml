@@ -529,4 +529,10 @@
     <priority>0.7</priority>
     <lastmod>2026-03-04</lastmod>
   </url>
+  <url>
+    <loc>https://www.superparty.ro/galerie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-05</lastmod>
+  </url>
 </urlset>
