@@ -1,179 +1,336 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Testimonials from '../components/Testimonials.astro';
+import PhotoSlider from '../components/PhotoSlider.astro';
+import { heroImages, productImages } from '../data/gallery_images';
+
 const currentYear = new Date().getFullYear();
 const WA_TEXT = encodeURIComponent('Bună! Vreau să rezerv animatori pentru petrecerea copilului meu.\nData: \nLocalitate/Sector: \nVârsta copilului: \nNr. copii: \nPachet dorit (opțional): ');
 const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
+
+const packages = [
+  { name: 'Super 1', price: '490 lei', duration: '1 Personaj · 2 ore', key: 'super1',
+    features: ['Jocuri & concursuri interactive', 'Baloane modelate', 'Pictură pe față', 'Dansuri & coregrafii', 'Tatuaje temporare', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+  { name: 'Super 2', price: '490 lei', duration: '2 Personaje · 1 oră (L–V)', key: 'super2',
+    features: ['Jocuri & concursuri interactive', 'Baloane modelate', 'Pictură pe față', 'Dansuri & coregrafii', 'Tatuaje temporare', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+  { name: 'Super 3 ⭐', price: '840 lei', duration: '2 Personaje · 2 ore + Confetti', key: 'super3',
+    features: ['Jocuri & concursuri interactive', 'Confetti party', 'Baloane modelate', 'Pictură pe față', 'Dansuri & coregrafii', 'Tatuaje temporare', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: true },
+  { name: 'Super 4', price: '590 lei', duration: '1 Personaj · 1 oră + Tort dulciuri', key: 'super4',
+    features: ['Tort din dulciuri (22–24 copii)', 'Jocuri & concursuri', 'Baloane modelate', 'Pictură pe față', 'Dansuri', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+  { name: 'Super 5', price: '840 lei', duration: '1 Pers. · 2 ore + 1h Vată + 1h Popcorn', key: 'super5',
+    features: ['Mașină vată de zahăr + popcorn', 'Jocuri & concursuri', 'Baloane modelate', 'Pictură pe față', 'Dansuri', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+  { name: 'Super 6', price: '540 lei', duration: '1 Animator · 2 ore + Banner + Confetti', key: 'super6',
+    features: ['Banner personalizat + Tun confetti', 'Jocuri & concursuri', 'Baloane modelate', 'Pictură pe față', 'Dansuri', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+  { name: 'Super 7 🎭', price: '1290 lei', duration: '1 Animator · 3 ore + 4 Ursitoare', key: 'super7',
+    features: ['Spectacol 4 ursitoare botez', 'Jocuri & concursuri', 'Baloane modelate', 'Pictură pe față', 'Dansuri', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },
+];
+
+const benefits = [
+  { icon: '🎉', title: 'Veselie garantată', desc: 'Animatori actori cu energie 100% — copiii nu stau pe margine.' },
+  { icon: '👫', title: 'Socializare rapidă', desc: 'Primul joc sparge gheața în 5 minute. Toți copiii devin echipă.' },
+  { icon: '🎭', title: '30+ personaje', desc: 'De la Spiderman la Elsa: personajul preferat vine la petrecere.' },
+  { icon: '💛', title: 'Grijă și siguranță', desc: 'Animatori cu experiență, pregătiți pentru orice grupă de vârstă.' },
+];
 ---
-<Layout title="SuperParty — Animatori Petreceri Copii București | Nr. 1" description="Animatori profesionisti pentru petreceri copii in Bucuresti si Ilfov. Personaje costumate, baloane, decoratiuni. Rezerva acum: 0722 744 377.">
 
-  <!-- HERO -->
-  <section style="position:relative; overflow:hidden; min-height:90vh; display:flex; align-items:center;">
-    <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.2) 0%, transparent 60%), var(--dark); z-index:0;"></div>
-    <div style="position:absolute; inset:0; z-index:0;" id="stars-bg"></div>
+<Layout
+  title="SuperParty — Animatori Petreceri Copii București & Ilfov"
+  description="Animatori profesioniști pentru petreceri copii în București și Ilfov. 8.000+ petreceri. Personaje costumate, jocuri, baloane, confetti. Rezervă: 0722 744 377."
+>
 
-    <div class="container" style="position:relative; z-index:1; padding-top:3rem; padding-bottom:3rem;">
-      <div style="max-width:680px;">
-        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,107,53,0.15); border:1px solid rgba(255,107,53,0.35); border-radius:50px; padding:0.4rem 1rem; font-size:0.85rem; color:#ff8c5a; margin-bottom:1.5rem; font-weight:600;">
-          🎉 8.000+ Petreceri Organizate în București și Ilfov
-        </div>
+<!-- ── HERO ──────────────────────────────────────────────────────────── -->
+<section class="hero-lw">
+  <div class="hero-img-wrap">
+    <img
+      class="hero-img"
+      src={heroImages[0].src}
+      alt={heroImages[0].alt}
+      width="1400"
+      height="800"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay"></div>
+  </div>
 
-        <h1 style="font-size:clamp(1.8rem, 8vw, 3.6rem); font-weight:800; line-height:1.15; margin-bottom:1.5rem; word-break: break-word; -webkit-hyphens: auto; hyphens: auto;">
-          <span style="background: linear-gradient(135deg, #fff 0%, #ffe8d6 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Animatori</span><br/>
-          <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Petreceri Copii</span><br/>
-          <span style="background: linear-gradient(135deg, #fff 0%, #ffe8d6 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">București</span>
-        </h1>
+  <div class="container hero-content">
+    <div class="hero-badge">🎉 8.000+ Petreceri în București &amp; Ilfov</div>
 
-        <p style="font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem; max-width:520px; line-height:1.7;">
-          Aducem magia personajelor favorite direct la petrecerea copilului! Costume premium, animatori actori, baloane, decoratiuni.
-        </p>
+    <h1 class="hero-h1">
+      Animatori<br/>
+      <span class="hero-accent">Petreceri Copii</span><br/>
+      București
+    </h1>
 
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="tel:+40722744377" style="display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:0.9rem 2rem; border-radius:50px; font-weight:700; font-size:1.05rem; box-shadow:0 8px 30px rgba(255,107,53,0.4); text-decoration:none; transition:transform 0.2s;">
-            📞 Rezerva Acum — 0722 744 377
-          </a>
-          <a href="#servicii" style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:white; padding:0.9rem 2rem; border-radius:50px; font-weight:600; text-decoration:none;">
-            Vezi Servicii ↓
-          </a>
-        </div>
+    <p class="hero-sub">
+      Personaje costumate, jocuri interactive, confetti party, pictură pe față &amp; baloane.<br/>
+      Aducem magia direct la petrecerea copilului!
+    </p>
 
-        <div style="display:flex; gap:2rem; margin-top:2.5rem; flex-wrap:wrap;">
-          {[['🎉', '8.000+', 'Petreceri'], ['👑', '30+', 'Personaje'], ['⭐', '1.498+', 'Recenzii reale'], ['📅', '7/7', 'Disponibil']].map(([icon, num, label]) => (
-            <div style="text-align:center;">
-              <p style="font-size:1.4rem;">{icon}</p>
-              <p style="font-size:1.1rem; font-weight:800; color:var(--accent);">{num}</p>
-              <p style="font-size:0.8rem; color:var(--text-muted);">{label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div class="hero-ctas">
+      <a href="tel:+40722744377" class="btn-primary" id="hero-call-cta">
+        📞 Sună Acum — 0722 744 377
+      </a>
+      <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn-wa" id="hero-wa-cta">
+        💬 WhatsApp
+      </a>
     </div>
 
-    <!-- Floating emojis -->
-    <div style="position:absolute; right:5%; top:15%; font-size:5rem; z-index:0; animation:float 4s ease-in-out infinite; opacity:0.8; pointer-events:none;">🎉</div>
-    <div style="position:absolute; right:8%; bottom:30%; font-size:4rem; z-index:0; animation:float 5s ease-in-out infinite 1s; opacity:0.6; pointer-events:none;">🎈</div>
-    <div style="position:absolute; right:2%; bottom:10%; font-size:3.5rem; z-index:0; animation:float 3.5s ease-in-out infinite 0.5s; opacity:0.6; pointer-events:none;">🎊</div>
-  </section>
-
-  <!-- SERVICII -->
-  <section id="servicii" style="padding:5rem 0; background:var(--dark-2);">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
-        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Serviciile <span style="color:var(--primary);">Noastre</span></h2>
-        <p style="color:var(--text-muted);">Tot ce ai nevoie pentru o petrecere perfectă</p>
-      </div>
-      <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:1.5rem;">
-        {[
-          ['🎭', 'Animatori Petreceri Copii', 'animatori profesionisti costumati in personajele favorite', '/animatori-petreceri-copii/'],
-          ['🎈', 'Decoratiuni Baloane', 'arcade, aranjamente si decoruri din baloane premium', '/decoratiuni-baloane/'],
-          ['🎀', 'Arcade Baloane', 'arcuri spectaculoase din baloane pentru intrare', '/arcade-baloane/'],
-          ['🎁', 'Baloane cu Heliu', 'baloane cu heliu in forme si culori diverse', '/baloane-cu-heliu/'],
-          ['👼', 'Ursitoare Botez', 'ursitoare profesioniste pentru ceremonia botezului', '/ursitoare-botez/'],
-          ['🎅', 'Moș Crăciun de Închiriat', 'mos craciun autentic pentru surprize de neuitat', '/mos-craciun-de-inchiriat/'],
-          ['🪅', 'Piniata', 'piniate personalizate pentru distractie garantata', '/piniata/'],
-          ['🍭', 'Vată de Zahăr și Popcorn', 'masini profesionale de vata si popcorn pentru petreceri', '/vata-de-zahar-si-popcorn/'],
-        ].map(([icon, title, desc, link]) => (
-          <a href={link} class="service-card">
-            <p style="font-size:2.5rem; margin-bottom:0.75rem;">{icon}</p>
-            <h3 style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:0.4rem;">{title}</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted);">{desc}</p>
-          </a>
-        ))}
-      </div>
+    <div class="hero-stats">
+      {([
+        ['🎉', '8.000+', 'Petreceri'],
+        ['👑', '30+', 'Personaje'],
+        ['⭐', '1.498+', 'Recenzii reale'],
+        ['📅', '7/7', 'Disponibil'],
+      ] as const).map(([icon, num, label]) => (
+        <div class="hero-stat">
+          <span class="stat-icon">{icon}</span>
+          <span class="stat-num">{num}</span>
+          <span class="stat-lbl">{label}</span>
+        </div>
+      ))}
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PACHETE & PRETURI -->
-  <section id="pachete" style="padding:5rem 0;">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
-        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.75rem;">Pachete și <span style="color:var(--accent);">Prețuri</span> {currentYear}</h2>
-        <p style="color:var(--text-muted);">Preturi transparente, fara costuri ascunse</p>
-      </div>
-      <div class="packages-grid">
-        {[
-          { name: 'Super 1', price: '490 lei', duration: '1 Personaj · 2 ore', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
-          { name: 'Super 2', price: '490 lei', duration: '2 Personaje · 1 oră (Luni-Vineri)', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față'], highlight: false },
-          { name: 'Super 3', price: '840 lei', duration: '2 Personaje · 2 ore + Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Confetti party'], highlight: true },
-          { name: 'Super 4', price: '590 lei', duration: '1 Personaj · 1 oră + Tort dulciuri', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Tort din dulciuri'], highlight: false },
-          { name: 'Super 5', price: '840 lei', duration: '1 Pers. · 2 ore + 1h Vată + 1h Popcorn', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Mașină vată de zahăr și popcorn'], highlight: false },
-          { name: 'Super 6', price: '540 lei', duration: '1 Animator · 2 ore + Banner + Confetti', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Banner personalizat + Tun confetti'], highlight: false },
-          { name: 'Super 7', price: '1290 lei', duration: '1 Animator · 3 ore + 4 Ursitoare', features: ['Personaj la alegere (+170 lei extra)', 'Diplome magnetice', 'Jocuri și concursuri', 'Baloane modelate', 'Boxă portabilă', 'Dansuri și coregrafii', 'Tatuaje temporare', 'Transport gratuit București', 'Pictură pe față', 'Spectacol 4 ursitoare botez'], highlight: false },
-        ].map((pkg) => (
-          <div class={`pkg-card ${pkg.highlight ? 'pkg-featured' : ''}`}>
-            {pkg.highlight && <div class="pkg-badge">CEL MAI ALES</div>}
+<!-- ── SLIDER "Cum arată o petrecere" ────────────────────────────────── -->
+<PhotoSlider title="Cum arată o petrecere SuperParty" />
+
+<!-- ── BENEFICII (4 carduri) ─────────────────────────────────────────── -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="section-hdr">
+      <h2 class="section-title">De ce copiii <span class="accent-text">adoră</span> SuperParty</h2>
+      <p class="section-sub">Nu e un simplu animator — e o experiență completă</p>
+    </div>
+    <div class="benefits-grid">
+      {benefits.map(b => (
+        <div class="benefit-card">
+          <div class="benefit-icon">{b.icon}</div>
+          <h3 class="benefit-title">{b.title}</h3>
+          <p class="benefit-desc">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICII (grid compact) ───────────────────────────────────────── -->
+<section id="servicii" class="services-section">
+  <div class="container">
+    <div class="section-hdr">
+      <h2 class="section-title">Servicii <span class="accent-text">SuperParty</span></h2>
+      <p class="section-sub">Tot ce ai nevoie pentru o petrecere perfectă</p>
+    </div>
+    <div class="services-grid">
+      {([
+        ['🎭', 'Animatori Petreceri Copii', 'Personaje + jocuri + baloane + pictură + dansuri', '/animatori-petreceri-copii/'],
+        ['🎈', 'Decorațiuni Baloane', 'Arcade, aranjamente și decoruri premium', '/decoratiuni-baloane/'],
+        ['🎀', 'Arcade Baloane', 'Arcuri spectaculoase la intrare', '/arcade-baloane/'],
+        ['🎁', 'Baloane cu Heliu', 'Baloane cu heliu diverse forme', '/baloane-cu-heliu/'],
+        ['👼', 'Ursitoare Botez', 'Spectacol ursitoare 4 personaje', '/ursitoare-botez/'],
+        ['🎅', 'Moș Crăciun', 'Moș Crăciun autentic acasă', '/mos-craciun-de-inchiriat/'],
+        ['🪅', 'Piniată', 'Piniate personalizate de distracție', '/piniata/'],
+        ['🍭', 'Vată & Popcorn', 'Mașini profesionale vată + popcorn', '/vata-de-zahar-si-popcorn/'],
+      ] as const).map(([icon, title, desc, link]) => (
+        <a href={link} class="svc-card" id={`svc-${title.toLowerCase().replace(/[^a-z]/g,'-')}`}>
+          <span class="svc-icon">{icon}</span>
+          <h3 class="svc-title">{title}</h3>
+          <p class="svc-desc">{desc}</p>
+          <span class="svc-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── PACHETE & PREȚURI ──────────────────────────────────────────────── -->
+<section id="pachete" class="packages-section">
+  <div class="container">
+    <div class="section-hdr">
+      <h2 class="section-title">Pachete &amp; <span class="accent-text">Prețuri</span> {currentYear}</h2>
+      <p class="section-sub">Prețuri transparente, fără costuri ascunse</p>
+    </div>
+    <div class="packages-grid">
+      {packages.map(pkg => (
+        <div class={`pkg-card${pkg.highlight ? ' pkg-featured' : ''}`}>
+          {pkg.highlight && <div class="pkg-badge">CEL MAI ALES</div>}
+          <img
+            class="pkg-img"
+            src={productImages[pkg.key]}
+            alt={`Pachet ${pkg.name}`}
+            width="400"
+            height="200"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="pkg-body">
             <h3 class="pkg-name">{pkg.name}</h3>
             <p class="pkg-price">{pkg.price}</p>
             <p class="pkg-duration">{pkg.duration}</p>
             <ul class="pkg-features">
-              {pkg.features.map(f => <li>✅ {f}</li>)}
+              {pkg.features.map(f => <li>✓ {f}</li>)}
             </ul>
-            <a href="tel:+40722744377" class={`pkg-cta ${pkg.highlight ? 'pkg-cta-primary' : 'pkg-cta-secondary'}`}>
+            <a href="tel:+40722744377" class={`pkg-cta${pkg.highlight ? ' pkg-cta-primary' : ' pkg-cta-secondary'}`} id={`pkg-cta-${pkg.key}`}>
               Rezervă {pkg.name}
             </a>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  </section>
+    <p class="pkg-note">Extra personaj / oră: +170 lei · Acoperim București & Ilfov · Disponibil 7/7</p>
+  </div>
+</section>
 
-  <!-- TESTIMONIALE -->
-  <Testimonials count={12} title="Ce Spun Părinții" showLink={true} />
+<!-- ── TESTIMONIALE ────────────────────────────────────────────────────── -->
+<Testimonials count={9} title="Ce spun părinții" showLink={true} />
 
-  <!-- CTA -->
-  <section style="padding:5rem 0; background:linear-gradient(135deg, var(--dark-3), var(--dark-2)); text-align:center;">
-    <div class="container">
-      <p style="font-size:3rem; margin-bottom:1.5rem;">🎊</p>
-      <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1rem;">Rezervă Petrecerea Perfectă<br/><span style="color:var(--primary);">Chiar Acum!</span></h2>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:500px; margin:0 auto 2rem;">Weekendurile se ocupă rapid! Contactează-ne acum pentru disponibilitate.</p>
-      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="tel:+40722744377" style="background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none; box-shadow:0 8px 30px rgba(255,107,53,0.5);" class="cta">📞 Sună Acum</a>
-        <a href={WA_URL} target="_blank" rel="noopener noreferrer" style="background:#25d366; color:white; padding:1rem 2.5rem; border-radius:50px; font-size:1.1rem; font-weight:700; text-decoration:none;" class="cta">💬 WhatsApp</a>
-      </div>
+<!-- ── CTA FINAL ──────────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div class="cta-text">
+      <h2 class="cta-title">Rezervă petrecerea perfectă<br/><span class="cta-accent">chiar acum!</span></h2>
+      <p class="cta-sub">Weekendurile se ocupă rapid! Contactează-ne pentru disponibilitate.</p>
     </div>
-  </section>
+    <div class="cta-actions">
+      <a href="tel:+40722744377" class="btn-primary btn-lg" id="footer-call-cta">📞 Sună: 0722 744 377</a>
+      <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg" id="footer-wa-cta">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
 
 </Layout>
 
 <style>
-  .service-card {
-    display: block; background: var(--dark-3); border: 1px solid rgba(255,107,53,0.15);
-    border-radius: var(--radius); padding: 1.5rem; text-decoration: none; transition: all 0.25s;
-  }
-  .service-card:hover { transform: translateY(-5px); border-color: rgba(255,107,53,0.5); box-shadow: 0 8px 25px rgba(255,107,53,0.2); }
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 0;
-  }
-  .pkg-card { background: var(--dark-2); border: 2px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 2rem; position: relative; transition: border-color 0.2s; }
-  .pkg-card:hover { border-color: rgba(255,107,53,0.3); }
-  .pkg-featured { border-color: var(--primary) !important; box-shadow: 0 12px 40px rgba(255,107,53,0.3); transform: scale(1.02); }
-  .pkg-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
-  .pkg-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
-  .pkg-price { font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.25rem; }
-  .pkg-duration { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-  .pkg-features { list-style: none; margin-bottom: 2rem; }
-  .pkg-features li { padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
-  .pkg-cta { display: block; text-align: center; padding: 0.85rem; border-radius: 50px; font-weight: 700; color: white; text-decoration: none; transition: opacity 0.2s; }
-  .pkg-cta:hover { opacity: 0.9; }
-  .pkg-cta-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
-  .pkg-cta-secondary { background: rgba(255,255,255,0.1); }
-  @media (max-width: 640px) {
-    .packages-grid { grid-template-columns: 1fr; }
-    .pkg-featured { transform: none; }
-  }
-</style>
+/* ── Design tokens (Light-Warm) ─────────────────────────── */
+:root {
+  --lw-bg: #FFF7ED;
+  --lw-bg2: #FFF1E0;
+  --lw-card: #FFFFFF;
+  --lw-text: #111827;
+  --lw-muted: #6B7280;
+  --lw-accent: #F97316;
+  --lw-accent2: #EC4899;
+  --lw-accent3: #22C55E;
+  --lw-border: rgba(249,115,22,0.15);
+  --lw-shadow: 0 10px 30px rgba(17,24,39,0.08);
+  --lw-radius: 18px;
+}
 
-<script>
-  const bg = document.getElementById('stars-bg');
-  if (bg) {
-    for (let i = 0; i < 80; i++) {
-      const star = document.createElement('div');
-      const size = Math.random() * 3 + 1;
-      star.style.cssText = `position:absolute; width:${size}px; height:${size}px; background:rgba(255,255,255,${Math.random() * 0.5 + 0.2}); border-radius:50%; left:${Math.random()*100}%; top:${Math.random()*100}%; animation:glow ${2 + Math.random()*3}s ease-in-out infinite ${Math.random()*3}s;`;
-      bg.appendChild(star);
-    }
-  }
-</script>
+/* ── Hero ────────────────────────────────────────────────── */
+.hero-lw { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: #111; }
+.hero-img-wrap { position: absolute; inset: 0; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,24,39,0.82) 0%, rgba(17,24,39,0.4) 60%, rgba(17,24,39,0.1) 100%); }
+.hero-content { position: relative; z-index: 2; padding-top: 5rem; padding-bottom: 3rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(249,115,22,0.2); border: 1px solid rgba(249,115,22,0.4); padding: 0.35rem 1rem; border-radius: 99px; font-size: 0.85rem; font-weight: 600; color: #fdba74; margin-bottom: 1.5rem; }
+.hero-h1 { font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 1.2rem; }
+.hero-accent { color: #fb923c; }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255,255,255,0.85); max-width: 520px; line-height: 1.7; margin-bottom: 2rem; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+.hero-stat { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
+.stat-icon { font-size: 1.3rem; }
+.stat-num { font-size: 1.2rem; font-weight: 800; color: #fb923c; }
+.stat-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, #F97316, #ea580c);
+  color: white; padding: 0.9rem 2rem; border-radius: 99px;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  box-shadow: 0 8px 24px rgba(249,115,22,0.4); transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(249,115,22,0.5); }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #25d366; color: white; padding: 0.9rem 2rem; border-radius: 99px;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.3); transition: transform 0.2s;
+}
+.btn-wa:hover { transform: translateY(-2px); }
+.btn-lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
+
+/* ── Section headers ─────────────────────────────────────── */
+.section-hdr { text-align: center; margin-bottom: 3rem; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--lw-text); margin-bottom: 0.5rem; }
+.section-sub { color: var(--lw-muted); font-size: 0.95rem; }
+.accent-text { color: var(--lw-accent); }
+
+/* ── Benefits ────────────────────────────────────────────── */
+.benefits-section { padding: 5rem 0; background: var(--lw-bg); }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+.benefit-card {
+  background: var(--lw-card); border-radius: var(--lw-radius);
+  padding: 2rem 1.5rem; text-align: center; box-shadow: var(--lw-shadow);
+  border: 1px solid var(--lw-border); transition: transform 0.2s, box-shadow 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(17,24,39,0.12); }
+.benefit-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.benefit-title { font-size: 1.05rem; font-weight: 700; color: var(--lw-text); margin-bottom: 0.5rem; }
+.benefit-desc { font-size: 0.88rem; color: var(--lw-muted); line-height: 1.6; }
+
+/* ── Services ────────────────────────────────────────────── */
+.services-section { padding: 5rem 0; background: var(--lw-bg2); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; }
+.svc-card {
+  background: var(--lw-card); border-radius: var(--lw-radius); padding: 1.5rem;
+  text-decoration: none; display: flex; flex-direction: column; gap: 0.4rem;
+  box-shadow: var(--lw-shadow); border: 1px solid transparent; transition: all 0.2s;
+  position: relative;
+}
+.svc-card:hover { border-color: var(--lw-accent); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(249,115,22,0.15); }
+.svc-icon { font-size: 2rem; }
+.svc-title { font-size: 0.95rem; font-weight: 700; color: var(--lw-text); }
+.svc-desc { font-size: 0.8rem; color: var(--lw-muted); }
+.svc-arrow { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--lw-accent); font-size: 1.1rem; opacity: 0; transition: opacity 0.2s; }
+.svc-card:hover .svc-arrow { opacity: 1; }
+
+/* ── Packages ────────────────────────────────────────────── */
+.packages-section { padding: 5rem 0; background: var(--lw-bg); }
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.pkg-card {
+  background: var(--lw-card); border-radius: var(--lw-radius);
+  border: 2px solid rgba(17,24,39,0.08); overflow: hidden;
+  box-shadow: var(--lw-shadow); position: relative; transition: border-color 0.2s;
+}
+.pkg-card:hover { border-color: rgba(249,115,22,0.3); }
+.pkg-featured { border-color: var(--lw-accent) !important; box-shadow: 0 16px 50px rgba(249,115,22,0.25); }
+.pkg-badge { position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2; background: var(--lw-accent); color: white; padding: 0.2rem 0.8rem; border-radius: 99px; font-size: 0.72rem; font-weight: 700; }
+.pkg-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.pkg-body { padding: 1.5rem; }
+.pkg-name { font-size: 1.2rem; font-weight: 800; color: var(--lw-text); margin-bottom: 0.3rem; }
+.pkg-price { font-size: 2rem; font-weight: 900; color: var(--lw-accent); margin-bottom: 0.15rem; }
+.pkg-duration { color: var(--lw-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.pkg-features { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+.pkg-features li { font-size: 0.84rem; color: var(--lw-text); padding: 0.3rem 0; border-bottom: 1px solid rgba(17,24,39,0.06); }
+.pkg-cta { display: block; text-align: center; padding: 0.85rem; border-radius: 99px; font-weight: 700; color: white; text-decoration: none; transition: opacity 0.2s; }
+.pkg-cta:hover { opacity: 0.9; }
+.pkg-cta-primary { background: linear-gradient(135deg, #F97316, #ea580c); }
+.pkg-cta-secondary { background: rgba(17,24,39,0.08); color: var(--lw-text); }
+.pkg-note { text-align: center; color: var(--lw-muted); font-size: 0.88rem; }
+
+/* ── CTA Section ─────────────────────────────────────────── */
+.cta-section { padding: 5rem 0; background: linear-gradient(135deg, #FFF7ED, #FFE4C4); }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--lw-text); margin-bottom: 0.5rem; }
+.cta-accent { color: var(--lw-accent); }
+.cta-sub { color: var(--lw-muted); font-size: 1rem; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .packages-grid { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .cta-actions { justify-content: center; }
+  .hero-stats { gap: 1rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+</style>
