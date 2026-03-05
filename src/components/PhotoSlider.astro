@@ -111,6 +111,8 @@ const safeImages = sliderImages
     isDrag = false;
   });
 
-  // Auto-advance every 4s
-  setInterval(() => go(cur + 1), 4000);
+  // Auto-advance every 4s (guard: no slides -> no interval)
+  if (track && total > 0) {
+    setInterval(() => go(cur + 1), 4000);
+  }
 </script>

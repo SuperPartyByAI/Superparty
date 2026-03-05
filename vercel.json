@@ -69,113 +69,6 @@
             "permanent": true
         },
         {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "155"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "170"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "184"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "197"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "738"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "1019"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "1077"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p",
-                    "value": "1101"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "p"
-                }
-            ],
-            "destination": "/animatori-petreceri-copii",
-            "permanent": true
-        },
-        {
             "source": "/wp-content/plugins/:path*",
             "destination": "/",
             "permanent": true
@@ -207,21 +100,6 @@
         },
         {
             "source": "/wp-includes/:path*",
-            "destination": "/",
-            "permanent": true
-        },
-        {
-            "source": "/wp-admin/:path*",
-            "destination": "/",
-            "permanent": true
-        },
-        {
-            "source": "/wp-json/:path*",
-            "destination": "/",
-            "permanent": true
-        },
-        {
-            "source": "/wp-login.php",
             "destination": "/",
             "permanent": true
         },
