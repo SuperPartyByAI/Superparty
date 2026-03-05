@@ -1,4 +1,4 @@
-name: "Optimize new images on PR"
+name: "Optimize new images on PR (auto-commit thumbs)"
 
 on:
   pull_request:
@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
-      pull-requests: write   # pentru comment PR
-      contents: read
-
+      pull-requests: write
+      contents: write   # necesar pentru auto-commit
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # necesar pentru diff cu base
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Detect new image files vs base branch
         id: detect
         run: |
           set -e
           BASE="${{ github.event.pull_request.base.sha }}"
-          # Imaginile adăugate/modificate în PR (fișiere noi față de base)
           git diff --name-only --diff-filter=A "$BASE" HEAD \
             | grep -E '^public/wp-content/uploads/.*\.(jpe?g|png|webp)$' \
             > /tmp/new_images.txt || true
@@ -43,58 +43,90 @@ jobs:
         if: steps.detect.outputs.new_count != '0'
         run: npm install sharp --no-save
 
-      - name: Optimize only new images
+      - name: Optimize new images
         if: steps.detect.outputs.new_count != '0'
+        id: optimize
         run: |
           set -e
-          mkdir -p public/optimized/thumb public/optimized/hero
-          OPTIMIZED_LIST=""
+          COMMITTED_THUMBS=""
+          ARTIFACT_HEROS=""
+          TOTAL_THUMB_SIZE=0
+
           while IFS= read -r imgpath; do
             [ -z "$imgpath" ] && continue
-            # Cale relativă față de public/wp-content/uploads/
             rel="${imgpath#public/wp-content/uploads/}"
             baseName="${rel%.*}"
 
-            # Thumb 400px
+            # ── Thumb 400px → auto-commit dacă <500KB ──────────────
             outThumb="public/optimized/thumb/${baseName}.webp"
             mkdir -p "$(dirname "$outThumb")"
             node -e "
-              const sharp = require('sharp');
+              const sharp=require('sharp');
               sharp('${imgpath}')
-                .resize({ width: 400, withoutEnlargement: true })
-                .webp({ quality: 80 })
+                .resize({width:400,withoutEnlargement:true})
+                .webp({quality:80})
                 .toFile('${outThumb}')
-                .then(() => process.exit(0))
-                .catch(e => { console.error(e.message); process.exit(0); });
+                .then(()=>process.exit(0))
+                .catch(e=>{console.error(e.message);process.exit(0)});
             " || true
 
-            # Hero 1200px
+            if [ -f "$outThumb" ]; then
+              THUMB_KB=$(du -k "$outThumb" | cut -f1)
+              TOTAL_THUMB_SIZE=$((TOTAL_THUMB_SIZE + THUMB_KB))
+              if [ "$THUMB_KB" -le 500 ]; then
+                # Thumb mic → auto-commit
+                COMMITTED_THUMBS+="$outThumb "
+              fi
+            fi
+
+            # ── Hero 1200px → artifact (poate fi mare) ─────────────
             outHero="public/optimized/hero/${baseName}.webp"
             mkdir -p "$(dirname "$outHero")"
             node -e "
-              const sharp = require('sharp');
+              const sharp=require('sharp');
               sharp('${imgpath}')
-                .resize({ width: 1200, withoutEnlargement: true })
-                .webp({ quality: 80 })
+                .resize({width:1200,withoutEnlargement:true})
+                .webp({quality:80})
                 .toFile('${outHero}')
-                .then(() => process.exit(0))
-                .catch(e => { console.error(e.message); process.exit(0); });
+                .then(()=>process.exit(0))
+                .catch(e=>{console.error(e.message);process.exit(0)});
             " || true
-
-            OPTIMIZED_LIST+="- \`${imgpath}\` → \`${outThumb}\`%0A"
+            ARTIFACT_HEROS+="$outHero "
           done < /tmp/new_images.txt
 
-          echo "OPTIMIZED_LIST=${OPTIMIZED_LIST}" >> "$GITHUB_ENV"
+          echo "committed_thumbs=${COMMITTED_THUMBS}" >> "$GITHUB_OUTPUT"
+          echo "artifact_heros=${ARTIFACT_HEROS}" >> "$GITHUB_OUTPUT"
+          echo "Thumbs for auto-commit: $COMMITTED_THUMBS"
+          echo "Heroes for artifact: $ARTIFACT_HEROS"
 
-      - name: Upload optimized images as artifact
+      - name: Auto-commit thumbs (<500KB)
+        if: steps.detect.outputs.new_count != '0' && steps.optimize.outputs.committed_thumbs != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Adaugă doar thumb-urile mici
+          for f in ${{ steps.optimize.outputs.committed_thumbs }}; do
+            [ -f "$f" ] && git add "$f"
+          done
+
+          if git diff --cached --quiet; then
+            echo "Nimic de commituit (toate deja existente)."
+          else
+            git commit -m "chore(perf): WebP thumbs auto-generate din CI (optimize-on-pr) [skip ci]"
+            git push origin ${{ github.event.pull_request.head.ref }}
+            echo "✅ Thumburi commituite în PR branch."
+          fi
+
+      - name: Upload hero WebP as artifact
         if: steps.detect.outputs.new_count != '0'
         uses: actions/upload-artifact@v4
         with:
-          name: optimized-images-pr-${{ github.event.pull_request.number }}
-          path: public/optimized/
+          name: hero-optimized-pr-${{ github.event.pull_request.number }}
+          path: public/optimized/hero/
           retention-days: 7
 
-      - name: Comment PR with optimization results
+      - name: Comment PR cu summary
         if: steps.detect.outputs.new_count != '0'
         uses: actions/github-script@v7
         with:
@@ -104,14 +136,15 @@ jobs:
             const body = [
               `## 🖼️ Imagini noi detectate: ${count}`,
               '',
-              'Versiunile WebP optimizate (thumb 400px + hero 1200px) sunt disponibile ca **artifact** al acestui job.',
+              '### ✅ Auto-commituite în branch (thumbs <500KB):',
+              '`public/optimized/thumb/**/*.webp` — gata de merge.',
               '',
-              '### ⚠️ Pasul manual necesar înainte de merge:',
-              '1. Descarcă artifact `optimized-images-pr-${{ github.event.pull_request.number }}`',
-              '2. Copiază conținutul în `public/optimized/` din repo',
-              '3. Fă commit cu `git add public/optimized/ && git commit -m "feat(perf): WebP optimizate pentru imagini noi"`',
+              '### ⬇️ Hero WebP (1200px) — descarcă manual:',
+              `Artifact: **hero-optimized-pr-${{ github.event.pull_request.number }}**`,
+              '1. Descarcă artifact din sidebar Actions',
+              '2. `git add public/optimized/hero/... && git commit -m "feat(perf): hero WebP"`',
               '',
-              "> **Alternativă**: rulează local `node scripts/optimize-images.mjs` și commit rezultatul.",
+              '> Dacă hero-urile sunt mici (<500KB), pot fi auto-commituite la următoarea configurare a workflow-ului.',
             ].join('\n');
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -120,6 +153,6 @@ jobs:
               body
             });
 
-      - name: No new images found
+      - name: No new images
         if: steps.detect.outputs.new_count == '0'
-        run: echo "✅ Nicio imagine nouă detectată în public/wp-content/uploads/ — skip optimizare."
+        run: echo "✅ Nicio imagine nouă — skip."
