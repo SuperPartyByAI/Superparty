@@ -10,10 +10,10 @@ export interface Props {
   title?: string;
 }
 const { title = 'Cum arată o petrecere SuperParty' } = Astro.props;
-// Build absolute URLs and filter invalid entries
+// Use images directly with relative paths — no absolute URL conversion needed
 const safeImages = sliderImages
-  .map(i => ({ ...i, url: (i.src || '').startsWith('http') ? (i.src || '') : `${SITE_ORIGIN}${(i.src || '').startsWith('/') ? '' : '/'}${(i.src || '').replace(/^\/+/, '')}` }))
-  .filter(i => i.url.includes('/wp-content/uploads/'));
+  .filter(i => i.src && i.src.includes('/wp-content/uploads/'))
+  .map(i => ({ src: i.src, alt: i.alt }));
 ---
 
 <section class="slider-section">
@@ -32,7 +32,7 @@ const safeImages = sliderImages
           safeImages.map((img, i) => (
             <div class="slide" data-index={i}>
               <img
-                src={img.url}
+                src={img.src}
                 alt={img.alt ?? 'Animator petreceri copii'}
                 loading={i < 3 ? 'eager' : 'lazy'}
                 decoding="async"
