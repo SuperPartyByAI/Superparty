@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import reviewsRaw from '../data/superparty_testimonials.json';
+import { normalizeReview } from '../lib/text/normalizeReview';
 
 type Review = { siteId: string; slug: string; name: string; location: string; event: string; text: string; source: string; date: string; };
 const allReviews = (reviewsRaw as Review[]).filter(r => r.siteId === 'superparty');
@@ -181,7 +182,7 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
           data-idx={idx}
           data-hidden={idx >= 24 ? 'true' : 'false'}
         >
-          <p class="review-text">"{r.text}"</p>
+          <p class="review-text">"{normalizeReview(r.text)}"</p>
           <div class="review-meta">
             <span class="src-badge" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
             <span class="review-name">{r.name}</span>
