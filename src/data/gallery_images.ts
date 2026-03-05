@@ -9,16 +9,16 @@ const BASE = "/wp-content/uploads";
 export const heroImages = [
   { src: `${BASE}/2021/04/animatori-1.jpg`, alt: "Animatori profesioniști SuperParty" },
   { src: `${BASE}/2021/04/animatori-copii-1.jpg`, alt: "Animatori pentru copii" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`, alt: "Animatori Elsa, Ana și Olaf" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg`, alt: "Mickey și Minnie Mouse la petrecere" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-superparty-2.jpg`, alt: "Animatori SuperParty" },
+  { src: `${BASE}/generated/party_batman_1772696670487.png`, alt: "Batman la petrecere copii" },
+  { src: `${BASE}/generated/party_pikachu_1772696930559.png`, alt: "Pikachu la petrecere copii" },
+  { src: `${BASE}/generated/party_spiderman_1772697170534.png`, alt: "Spiderman la petrecere" },
   { src: `${BASE}/2025/01/animator-spiderman.jpg`, alt: "Animator Spiderman" },
   { src: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`, alt: "Elsa, Ana și Olaf 2025" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-acasa.jpg`, alt: "Animatori la domiciliu" },
-  { src: `${BASE}/2021/04/printesele-disney.jpg`, alt: "Prințesele Disney" },
-  { src: `${BASE}/2021/04/spiderman.jpg`, alt: "Spiderman la petrecere" },
-  { src: `${BASE}/2021/04/batman.jpg`, alt: "Batman animatori" },
-  { src: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`, alt: "Cenușăreasa și Prințul" },
+  { src: `${BASE}/generated/party2_mario_1772698389935.png`, alt: "Mario la petrecere copii" },
+  { src: `${BASE}/generated/party2_skye_1772698531817.png`, alt: "Skye PAW Patrol la petrecere" },
+  { src: `${BASE}/generated/party_sonic_1772697050530.png`, alt: "Sonic la petrecere copii" },
+  { src: `${BASE}/generated/party_tinkerbell_1772697066743.png`, alt: "Tinkerbell la petrecere" },
+  { src: `${BASE}/generated/party2_dragon_1772698409388.png`, alt: "Dragon la petrecere copii" },
 ] as const;
 
 // ─── Gallery images (30+) — mixed categories ──────────────────────────────────
@@ -31,15 +31,20 @@ export const galleryImages = [
   { src: `${BASE}/2021/04/cenusareasa-si-print-1.jpg`, alt: "Cenușăreasa și Prințul", category: "animatori" },
   { src: `${BASE}/2021/04/printesele-disney.jpg`, alt: "Prințesele Disney", category: "animatori" },
   { src: `${BASE}/2025/01/mascote-petreceri-copii-bucuresti.jpg`, alt: "Mascote petreceri copii", category: "animatori" },
-  // Personaje
+  // Personaje — imagini reale
   { src: `${BASE}/2025/01/animator-spiderman.jpg`, alt: "Spiderman", category: "personaje" },
-  { src: `${BASE}/2021/04/spiderman.jpg`, alt: "Spiderman la petrecere", category: "personaje" },
   { src: `${BASE}/2021/04/batman.jpg`, alt: "Batman", category: "personaje" },
   { src: `${BASE}/2021/04/superman.jpg`, alt: "Superman", category: "personaje" },
-  { src: `${BASE}/2021/04/testoasele-ninja.jpg`, alt: "Testoasele Ninja", category: "personaje" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-elsa-ana-olaf.jpg`, alt: "Elsa Ana Olaf", category: "personaje" },
   { src: `${BASE}/2025/01/animatori-elsa-ana-si-olaf.jpg`, alt: "Elsa Ana Olaf 2025", category: "personaje" },
-  { src: `${BASE}/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse.jpg`, alt: "Mickey Minnie Mouse", category: "personaje" },
+  // Personaje — imagini AI (copii + costume reale)
+  { src: `${BASE}/generated/party_batman_1772696670487.png`, alt: "Batman la petrecere cu copii", category: "personaje" },
+  { src: `${BASE}/generated/party_spiderman_1772697170534.png`, alt: "Spiderman la petrecere copii", category: "personaje" },
+  { src: `${BASE}/generated/party_pikachu_1772696930559.png`, alt: "Pikachu la petrecere", category: "personaje" },
+  { src: `${BASE}/generated/party_sonic_1772697050530.png`, alt: "Sonic la petrecere copii", category: "personaje" },
+  { src: `${BASE}/generated/party2_mario_1772698389935.png`, alt: "Mario la petrecere", category: "personaje" },
+  { src: `${BASE}/generated/party_ladybug_1772697235867.png`, alt: "Ladybug la petrecere", category: "personaje" },
+  { src: `${BASE}/generated/party_tinkerbell_1772697066743.png`, alt: "Tinkerbell la petrecere", category: "personaje" },
+  { src: `${BASE}/generated/party2_belle_1772698205454.png`, alt: "Belle la petrecere", category: "personaje" },
   // Decor
   { src: `${BASE}/2023/08/arcada-baloane-superparty.jpg`, alt: "Arcadă baloane", category: "decor" },
   { src: `${BASE}/2022/08/decoratiuni-baloane-superparty.jpg`, alt: "Decorațiuni baloane", category: "decor" },
