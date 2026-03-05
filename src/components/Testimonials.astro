@@ -48,7 +48,21 @@ function sourceLabel(src: string) {
   if (src === 'whatsapp') return 'WhatsApp';
   return 'Client';
 }
+
+// Gender-safe phrasing: fix "Ei, Prenume," → "Fetiței Prenume" for girls
+// "Lui Prenume" / "lui Prenume" stays correct for boys
+function genderSafeText(text: string): string {
+  if (!text) return text;
+  // "Ei, Denisa, i-au..." → "Fetiței Denisa i-au..."
+  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+),/g, 'Fetiței $1,');
+  // "Ei, Denisa i-au" (without comma after name) → "Fetiței Denisa i-au"
+  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+)\s+(i-au|i-a|l-au|a\s|ei\s)/g, 'Fetiței $1 $2');
+  // Remove double spaces
+  text = text.replace(/  +/g, ' ');
+  return text;
+}
 ---
+
 
 <section class="testimonials-section">
   <div class="container">
@@ -60,7 +74,7 @@ function sourceLabel(src: string) {
       {reviews.map((r, i) => (
         <div class="review-card" style={`animation-delay:${i * 0.05}s`}>
           <div class="review-quote">"</div>
-          <p class="review-text">{r.text}</p>
+          <p class="review-text">{genderSafeText(r.text)}</p>
           <div class="review-footer">
             <div class="review-meta">
               <span class="review-source" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
