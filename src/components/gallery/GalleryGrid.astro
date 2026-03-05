@@ -1,0 +1,227 @@
+---
+/**
+ * GalleryGrid.astro — grid cu filtre + lightbox pentru /galerie
+ * Props:
+ *   images: array de { url, alt, category }
+ */
+
+export interface GalleryImage {
+  url: string;
+  alt: string;
+  category: string;
+}
+
+export interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+
+// Unique categories
+const categories = ['toate', ...Array.from(new Set(images.map(i => i.category)))];
+
+// Validate: all URLs must contain /wp-content/uploads
+const invalid = images.filter(i => !i.url.includes('/wp-content/uploads'));
+if (invalid.length > 0 && import.meta.env.DEV) {
+  console.error('[GalleryGrid] Invalid image URLs (not from wp-content/uploads):', invalid.map(i => i.url));
+}
+
+const LABELS: Record<string, string> = {
+  toate: '🎊 Toate',
+  animatori: '🎭 Animatori',
+  personaje: '👑 Personaje',
+  decor: '🎈 Decor',
+  'vata-popcorn': '🍭 Vată & Popcorn',
+  ursitoare: '👼 Ursitoare',
+};
+---
+
+<div class="gg-wrap">
+  <!-- Filter tabs -->
+  <div class="gg-filters" role="tablist" aria-label="Filtrează galeria">
+    {categories.map(cat => (
+      <button
+        class={`gg-filter ${cat === 'toate' ? 'gg-filter-active' : ''}`}
+        data-cat={cat}
+        role="tab"
+        aria-selected={cat === 'toate' ? 'true' : 'false'}
+      >
+        {LABELS[cat] ?? cat}
+      </button>
+    ))}
+  </div>
+
+  <!-- Grid -->
+  <div class="gg-grid" id="ggGrid">
+    {images.map((img, i) => (
+      <button
+        class="gg-item"
+        data-cat={img.category}
+        data-index={i}
+        aria-label={`Deschide: ${img.alt}`}
+      >
+        <img
+          src={img.url}
+          alt={img.alt}
+          loading="lazy"
+          decoding="async"
+          width="400"
+          height="300"
+        />
+        <div class="gg-caption">{img.alt}</div>
+      </button>
+    ))}
+  </div>
+
+  <p class="gg-count"><span id="ggCount">{images.length}</span> imagini afișate</p>
+</div>
+
+<!-- Lightbox -->
+<dialog class="lightbox" id="lightbox" aria-modal="true" aria-label="Previzualizare imagine">
+  <button class="lb-close" id="lbClose" aria-label="Închide">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <div class="lb-content">
+    <img class="lb-img" id="lbImg" src="" alt="" loading="lazy" decoding="async" />
+    <p class="lb-label" id="lbLabel"></p>
+  </div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Următor">›</button>
+</dialog>
+
+<style>
+  /* ── Filters ──────────────────────────────────────────── */
+  .gg-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; justify-content: center; }
+  .gg-filter {
+    padding: 0.45rem 1.1rem; border-radius: 99px; border: 1.5px solid rgba(249,115,22,0.2);
+    background: white; color: #6B7280; font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; transition: all 0.18s;
+  }
+  .gg-filter:hover { border-color: #F97316; color: #F97316; }
+  .gg-filter-active { background: #F97316; color: white; border-color: #F97316; }
+
+  /* ── Grid ─────────────────────────────────────────────── */
+  .gg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.85rem;
+  }
+  .gg-item {
+    all: unset; position: relative; overflow: hidden; border-radius: 14px;
+    cursor: pointer; aspect-ratio: 4/3; display: block;
+    box-shadow: 0 4px 16px rgba(17,24,39,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .gg-item:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(17,24,39,0.15); }
+  .gg-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gg-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0.4rem 0.6rem;
+    background: linear-gradient(transparent, rgba(17,24,39,0.72));
+    color: white; font-size: 0.72rem; opacity: 0; transition: opacity 0.2s;
+  }
+  .gg-item:hover .gg-caption { opacity: 1; }
+  .gg-item[data-hidden="true"] { display: none; }
+  .gg-count { text-align: center; color: #9CA3AF; font-size: 0.82rem; margin-top: 1.2rem; }
+
+  /* ── Lightbox ─────────────────────────────────────────── */
+  .lightbox {
+    border: none; border-radius: 20px; padding: 0; background: rgba(17,24,39,0.96);
+    max-width: min(92vw, 900px); max-height: 92vh; width: 92vw;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    position: fixed; inset: 0; margin: auto;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  }
+  .lightbox::backdrop { background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); }
+  .lb-close {
+    position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.15);
+    border: none; color: white; width: 36px; height: 36px; border-radius: 50%;
+    cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; z-index: 10;
+  }
+  .lb-close:hover { background: rgba(255,255,255,0.3); }
+  .lb-nav {
+    background: rgba(255,255,255,0.12); border: none; color: white; width: 44px; height: 44px;
+    border-radius: 50%; font-size: 1.5rem; cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+  }
+  .lb-nav:hover { background: rgba(255,255,255,0.25); }
+  .lb-content { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 2rem 0; }
+  .lb-img { max-width: 100%; max-height: 70vh; object-fit: contain; border-radius: 12px; }
+  .lb-label { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.75rem; text-align: center; }
+  @media (max-width: 640px) {
+    .gg-grid { grid-template-columns: repeat(2, 1fr); }
+    .lb-nav { width: 36px; height: 36px; font-size: 1.2rem; }
+  }
+</style>
+
+<script>
+  // ── Filter logic ─────────────────────────────────────────
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gg-filter');
+  const items = document.querySelectorAll<HTMLElement>('.gg-item');
+  const countEl = document.getElementById('ggCount');
+
+  function applyFilter(cat: string) {
+    let visible = 0;
+    items.forEach(item => {
+      const match = cat === 'toate' || item.dataset.cat === cat;
+      item.dataset.hidden = match ? 'false' : 'true';
+      if (match) visible++;
+    });
+    if (countEl) countEl.textContent = String(visible);
+    filterBtns.forEach(btn => {
+      const isActive = btn.dataset.cat === cat;
+      btn.classList.toggle('gg-filter-active', isActive);
+      btn.setAttribute('aria-selected', String(isActive));
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.cat ?? 'toate'));
+  });
+
+  // ── Lightbox ─────────────────────────────────────────────
+  const lb = document.getElementById('lightbox') as HTMLDialogElement;
+  const lbImg = document.getElementById('lbImg') as HTMLImageElement;
+  const lbLabel = document.getElementById('lbLabel') as HTMLElement;
+
+  let currentIndex = 0;
+  let visibleItems: HTMLElement[] = [];
+
+  function openLightbox(idx: number) {
+    visibleItems = Array.from(items).filter(i => i.dataset.hidden !== 'true');
+    currentIndex = idx;
+    showLbItem();
+    lb?.showModal();
+  }
+
+  function showLbItem() {
+    const item = visibleItems[currentIndex];
+    if (!item) return;
+    const img = item.querySelector('img');
+    if (img && lbImg) {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+    }
+    if (lbLabel) lbLabel.textContent = item.querySelector('.gg-caption')?.textContent ?? '';
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      visibleItems = Array.from(items).filter(it => it.dataset.hidden !== 'true');
+      const visIdx = visibleItems.indexOf(item);
+      openLightbox(visIdx >= 0 ? visIdx : 0);
+    });
+  });
+
+  document.getElementById('lbClose')?.addEventListener('click', () => lb.close());
+  document.getElementById('lbPrev')?.addEventListener('click', () => { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLbItem(); });
+  document.getElementById('lbNext')?.addEventListener('click', () => { currentIndex = (currentIndex + 1) % visibleItems.length; showLbItem(); });
+  lb?.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!lb?.open) return;
+    if (e.key === 'Escape') lb.close();
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLbItem(); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; showLbItem(); }
+  });
+</script>
