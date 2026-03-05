@@ -11,7 +11,7 @@ import fs from 'fs';
 import path from 'path';
 
 const SRC = process.env.SRC_DIR || 'public/wp-content/uploads';
-const OUT = process.env.OUT_DIR || 'public/_optimized';
+const OUT = process.env.OUT_DIR || 'public/optimized';
 const SIZES = [
     { name: 'thumb', w: 400 },
     { name: 'hero', w: 1200 },

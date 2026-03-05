@@ -193,11 +193,11 @@ const PAGE_SIZE = 24;
   }
   const esc = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'};
 
-  // URL original → cale WebP thumb optimizat (/_optimized/thumb/...)
+  // URL original → cale WebP thumb optimizat (/optimized/thumb/...)
   function toWebp(url: string): string {
     const rel = url.replace('https://www.superparty.ro/wp-content/uploads/', '');
     const noExt = rel.replace(/\.[^.]+$/, '');
-    return `/_optimized/thumb/${noExt}.webp`;
+    return `/optimized/thumb/${noExt}.webp`;
   }
 
   // ── Render batch ─────────────────────────────────────────────────────────
