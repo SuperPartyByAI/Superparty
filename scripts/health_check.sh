@@ -102,7 +102,50 @@ EOF
 
 echo "$STATUS_JSON" > "$STATUS_FILE"
 
-# ─── 6. Log summary ──────────────────────────────────────────────────────────
+# ─── 7. Telegram alert (opțional) ────────────────────────────────────────────
+# Setează TELEGRAM_BOT_TOKEN și TELEGRAM_CHAT_ID în /etc/superparty-secrets sau env
+# Sursă secrets dacă există:
+SECRETS_FILE="${SECRETS_FILE:-/etc/superparty-secrets}"
+if [ -f "$SECRETS_FILE" ]; then
+    # shellcheck source=/dev/null
+    source "$SECRETS_FILE"
+fi
+
+TELEGRAM_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
+TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID:-}"
+
+send_telegram() {
+    local msg="$1"
+    if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+        return 0  # Telegram neconfigurat — skip silentios
+    fi
+    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+        -d "chat_id=${TELEGRAM_CHAT_ID}" \
+        -d "parse_mode=HTML" \
+        --data-urlencode "text=${msg}" \
+        --max-time 10 > /dev/null 2>&1 || true
+}
+
+if [ ${#ALERTS[@]} -gt 0 ]; then
+    # Construieste mesajul grupat pe severity
+    CRITICAL_LIST=$(printf '%s\n' "${ALERTS[@]}" | grep "^CRITICAL" | head -n 10)
+    WARNING_LIST=$(printf '%s\n' "${ALERTS[@]}" | grep "^WARNING" | head -n 5)
+    MSG="🚨 <b>SuperParty Alert — $TIMESTAMP</b>%0A"
+    if [ -n "$CRITICAL_LIST" ]; then
+        MSG+="❌ CRITICAL:%0A$(echo "$CRITICAL_LIST" | sed 's/CRITICAL: /• /g' | tr '\n' '|' | sed 's/|/%0A/g')%0A"
+    fi
+    if [ -n "$WARNING_LIST" ]; then
+        MSG+="⚠️ WARNINGS:%0A$(echo "$WARNING_LIST" | sed 's/WARNING: /• /g' | tr '\n' '|' | sed 's/|/%0A/g')"
+    fi
+    send_telegram "$MSG"
+else
+    # All OK — trimite heartbeat la fiecare oră (min 0 sau via flag)
+    MINUTE=$(date +%M)
+    if [ "$MINUTE" = "00" ]; then
+        send_telegram "✅ <b>SuperParty OK</b> — $TIMESTAMP%0Asitemap: $SITEMAP_COUNT gallery: ${GALLERY_COUNT:-?}"
+    fi
+fi
+
 echo "[$TIMESTAMP] all_ok=$ALL_OK site=$SITE_STATUS sitemap=$SITEMAP_COUNT alerts=${#ALERTS[@]}"
 if [ ${#ALERTS[@]} -gt 0 ]; then
     for alert in "${ALERTS[@]}"; do
