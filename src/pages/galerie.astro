@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GalleryGrid from '../components/gallery/GalleryGrid.astro';
+import { galleryAll } from '../data/gallery';
+
+const WA_TEXT = encodeURIComponent('Bună! Vreau o ofertă pentru animatori petrecere copii.\nData: \nZonă: \nVârstă: \nNr. copii: ');
+const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
+---
+
+<Layout
+  title="Galerie SuperParty — Fotografii Reale Animatori & Petreceri Copii"
+  description="Galerie foto reală: animatori petreceri copii, personaje costumate, decorațiuni baloane, vată de zahăr, ursitoare botez. 8.000+ petreceri organizate în București și Ilfov."
+>
+
+<!-- Hero mic -->
+<section class="gal-hero">
+  <div class="container gal-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Acasă</a> <span>›</span>
+      <span>Galerie Foto</span>
+    </nav>
+    <h1 class="gal-h1">Galerie <span class="gal-accent">SuperParty</span></h1>
+    <p class="gal-sub">
+      Fotografii reale din petrecerile pe care le-am organizat.<br/>
+      {galleryAll.length}+ momente de bucurie, zâmbete și amintiri de neuitat.
+    </p>
+    <div class="gal-stats">
+      {([['🎉','8.000+','Petreceri'], ['🎭','30+','Personaje'], ['📸',`${galleryAll.length}+`,'Fotografii reale']] as const).map(([icon,num,lbl]) => (
+        <div class="gal-stat">
+          <span class="gs-icon">{icon}</span>
+          <span class="gs-num">{num}</span>
+          <span class="gs-lbl">{lbl}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Grid cu filtre + lightbox -->
+<section class="gal-section">
+  <div class="container">
+    <GalleryGrid images={galleryAll} />
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="gal-cta">
+  <div class="container gal-cta-inner">
+    <div>
+      <h2 class="gal-cta-title">Vrei și tu o petrecere ca în galerie?</h2>
+      <p class="gal-cta-sub">Suntem disponibili 7 zile din 7, București &amp; Ilfov.</p>
+    </div>
+    <div class="gal-cta-btns">
+      <a href="tel:+40722744377" class="btn-primary" id="gal-call-cta">📞 Sună Acum</a>
+      <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn-wa" id="gal-wa-cta">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────────────── */
+  .gal-hero { background: linear-gradient(135deg, #FFF7ED 0%, #FDE8CC 100%); padding: 4rem 0 3rem; border-bottom: 1px solid rgba(249,115,22,0.12); }
+  .gal-hero-inner { max-width: 760px; }
+  .breadcrumb { font-size: 0.82rem; color: #9CA3AF; margin-bottom: 1rem; display: flex; gap: 0.4rem; align-items: center; }
+  .breadcrumb a { color: #F97316; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .gal-h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #111827; margin-bottom: 0.75rem; line-height: 1.1; }
+  .gal-accent { color: #F97316; }
+  .gal-sub { font-size: 1.05rem; color: #4B5563; line-height: 1.65; margin-bottom: 1.5rem; }
+  .gal-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .gal-stat { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
+  .gs-icon { font-size: 1.2rem; }
+  .gs-num { font-size: 1.1rem; font-weight: 800; color: #F97316; }
+  .gs-lbl { font-size: 0.75rem; color: #6B7280; }
+
+  /* ── Gallery ──────────────────────────────────────────── */
+  .gal-section { padding: 4rem 0 3rem; background: #FFF7ED; }
+
+  /* ── CTA ──────────────────────────────────────────────── */
+  .gal-cta { background: linear-gradient(135deg, #FFF7ED, #FFE4C4); padding: 4rem 0; }
+  .gal-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .gal-cta-title { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; color: #111827; margin-bottom: 0.4rem; }
+  .gal-cta-sub { color: #6B7280; font-size: 0.95rem; }
+  .gal-cta-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+  /* ── Buttons (local, same as homepage) ───────────────── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: linear-gradient(135deg, #F97316, #ea580c);
+    color: white; padding: 0.85rem 1.8rem; border-radius: 99px;
+    font-weight: 700; font-size: 0.95rem; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(249,115,22,0.35); transition: transform 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: #25d366; color: white; padding: 0.85rem 1.8rem; border-radius: 99px;
+    font-weight: 700; font-size: 0.95rem; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.3); transition: transform 0.2s;
+  }
+  .btn-wa:hover { transform: translateY(-2px); }
+
+  @media (max-width: 640px) {
+    .gal-cta-inner { flex-direction: column; text-align: center; }
+    .gal-cta-btns { justify-content: center; }
+    .gal-stats { gap: 1rem; }
+  }
+</style>

@@ -1,10 +1,11 @@
 ---
 /**
- * Testimonials.astro — componenta reutilizabilă (1498 testimoniale reale)
+ * Testimonials.astro — 1498 testimoniale reale, design light-warm
  * Props:
- *   count: number (default 12) — câte testimoniale afișăm
- *   cityFilter: string (optional) — "București" / "Ilfov" / etc.
- *   showLink: boolean (default true) — afișează link "Vezi toate recenziile"
+ *   count: number (default 9)
+ *   cityFilter: string (optional)
+ *   showLink: boolean (default true)
+ *   title: string
  */
 import reviewsRaw from '../data/superparty_testimonials.json';
 
@@ -15,26 +16,59 @@ export interface Props {
   title?: string;
 }
 
-const { count = 12, cityFilter, showLink = true, title = 'Ce spun părinții' } = Astro.props;
+const { count = 9, cityFilter, showLink = true, title = 'Ce spun părinții' } = Astro.props;
 
-type Review = { siteId: string; slug: string; name: string; location: string; event: string; text: string; source: string; date: string; };
+type Review = {
+  siteId: string; slug: string; name: string; location: string;
+  event: string; text: string; source: string; date: string;
+};
 const allReviews = reviewsRaw as Review[];
 
-// Shuffle deterministic (by date hash) + filter by city if requested
-function shuffle(arr: Review[]) {
+function sortRecent(arr: Review[]) {
   return [...arr].sort((a, b) => {
     const ha = a.date ? parseInt(a.date.replace(/-/g,'')) : 0;
     const hb = b.date ? parseInt(b.date.replace(/-/g,'')) : 0;
-    return hb - ha; // most recent first
+    return hb - ha;
   });
 }
 
-let filtered = shuffle(allReviews);
+let filtered = sortRecent(allReviews);
 if (cityFilter) {
-  filtered = filtered.filter(r => r.location && r.location.toLowerCase().includes(cityFilter.toLowerCase()));
-  if (filtered.length < 4) filtered = shuffle(allReviews); // fallback
+  const cf = filtered.filter(r => r.location?.toLowerCase().includes(cityFilter.toLowerCase()));
+  if (cf.length >= 4) filtered = cf;
 }
 const reviews = filtered.slice(0, count);
+
+// Gender-safe phrasing: "Ei, Prenume," → "Fetiței Prenume,"
+function genderSafeText(text: string): string {
+  if (!text) return text;
+  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+),/g, 'Fetiței $1,');
+  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+)\s+(i-au|i-a|l-au|a\s|ei\s)/g, 'Fetiței $1 $2');
+  return text.replace(/  +/g, ' ');
+}
+
+// Truncate text to ~260 chars at word boundary
+function truncate(text: string, max = 260): { short: string; full: string; truncated: boolean } {
+  const safe = genderSafeText(text || '');
+  if (safe.length <= max) return { short: safe, full: safe, truncated: false };
+  const cut = safe.lastIndexOf(' ', max);
+  return { short: safe.slice(0, cut > 0 ? cut : max) + '…', full: safe, truncated: true };
+}
+
+// Location zone badge
+function zoneBadge(loc: string): string {
+  if (!loc) return '';
+  const l = loc.toLowerCase();
+  if (l.includes('sector 1') || l.includes('sector1')) return 'Sector 1';
+  if (l.includes('sector 2') || l.includes('sector2')) return 'Sector 2';
+  if (l.includes('sector 3') || l.includes('sector3')) return 'Sector 3';
+  if (l.includes('sector 4') || l.includes('sector4')) return 'Sector 4';
+  if (l.includes('sector 5') || l.includes('sector5')) return 'Sector 5';
+  if (l.includes('sector 6') || l.includes('sector6')) return 'Sector 6';
+  if (l.includes('ilfov')) return 'Ilfov';
+  if (l.includes('bucurești') || l.includes('bucuresti')) return 'București';
+  return loc.split(',')[0].trim().slice(0, 20);
+}
 
 function sourceIcon(src: string) {
   if (src === 'google') return '🟢';
@@ -48,46 +82,41 @@ function sourceLabel(src: string) {
   if (src === 'whatsapp') return 'WhatsApp';
   return 'Client';
 }
-
-// Gender-safe phrasing: fix "Ei, Prenume," → "Fetiței Prenume" for girls
-// "Lui Prenume" / "lui Prenume" stays correct for boys
-function genderSafeText(text: string): string {
-  if (!text) return text;
-  // "Ei, Denisa, i-au..." → "Fetiței Denisa i-au..."
-  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+),/g, 'Fetiței $1,');
-  // "Ei, Denisa i-au" (without comma after name) → "Fetiței Denisa i-au"
-  text = text.replace(/\bEi,\s+([A-ZĂÎȘȚÂ][a-zăîșțâA-ZĂÎȘȚÂ\-]+)\s+(i-au|i-a|l-au|a\s|ei\s)/g, 'Fetiței $1 $2');
-  // Remove double spaces
-  text = text.replace(/  +/g, ' ');
-  return text;
-}
 ---
 
-
-<section class="testimonials-section">
+<section class="testimonials-lw">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{title}</h2>
-      <p class="section-sub">1.498 testimoniale reale de la părinți mulțumiți</p>
+    <div class="t-header">
+      <h2 class="t-title">{title}</h2>
+      <p class="t-sub">1.498 testimoniale reale de la părinți mulțumiți</p>
     </div>
-    <div class="reviews-grid">
-      {reviews.map((r, i) => (
-        <div class="review-card" style={`animation-delay:${i * 0.05}s`}>
-          <div class="review-quote">"</div>
-          <p class="review-text">{genderSafeText(r.text)}</p>
-          <div class="review-footer">
-            <div class="review-meta">
-              <span class="review-source" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
-              <span class="review-name">{r.name}</span>
-              {r.location && <span class="review-loc">· {r.location}</span>}
+    <div class="t-grid">
+      {reviews.map((r, i) => {
+        const { short, full, truncated } = truncate(r.text);
+        const zone = zoneBadge(r.location);
+        return (
+          <div class="t-card" style={`animation-delay:${i * 0.05}s`}>
+            <div class="t-quote">"</div>
+            <p class="t-text" data-full={full} data-truncated={truncated ? 'true' : 'false'}>{short}</p>
+            {truncated && (
+              <button class="t-expand" aria-label="Citește recenzia completă">Citește tot ↓</button>
+            )}
+            <div class="t-footer">
+              <div class="t-meta">
+                <span class="t-source" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
+                <span class="t-name">{r.name}</span>
+              </div>
+              <div class="t-tags">
+                {zone && <span class="t-badge t-badge-zone">📍 {zone}</span>}
+                {r.event && <span class="t-badge t-badge-event">{r.event}</span>}
+              </div>
             </div>
-            {r.event && <span class="review-event">{r.event}</span>}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
     {showLink && (
-      <div class="testimonials-cta">
+      <div class="t-cta">
         <a href="/recenzii/" class="btn-recenzii">⭐ Vezi toate cele 1.498 recenzii →</a>
       </div>
     )}
@@ -95,44 +124,78 @@ function genderSafeText(text: string): string {
 </section>
 
 <style>
-  .testimonials-section { padding: 4rem 0; background: var(--dark-2); }
-  .section-header { text-align: center; margin-bottom: 2.5rem; }
-  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; }
-  .section-title span { color: var(--primary); }
-  .section-sub { color: var(--text-muted); font-size: 0.95rem; }
-  .reviews-grid {
+  .testimonials-lw { padding: 5rem 0; background: #FFF7ED; }
+  .t-header { text-align: center; margin-bottom: 3rem; }
+  .t-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #111827; margin-bottom: 0.4rem; }
+  .t-sub { color: #6B7280; font-size: 0.95rem; }
+  .t-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.2rem;
+    gap: 1.3rem;
   }
-  .review-card {
-    background: var(--dark-3);
-    border: 1px solid rgba(255,107,53,0.12);
-    border-radius: 16px;
-    padding: 1.4rem 1.4rem 1rem;
+  .t-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(249,115,22,0.12);
+    border-radius: 18px;
+    padding: 1.5rem 1.5rem 1.1rem;
     position: relative;
     animation: fadeInUp 0.4s both;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 24px rgba(17,24,39,0.06);
   }
-  .review-card:hover { border-color: rgba(255,107,53,0.35); transform: translateY(-2px); }
-  .review-quote { font-size: 3rem; line-height: 1; color: var(--primary); opacity: 0.3; position: absolute; top: 0.8rem; right: 1.2rem; font-family: Georgia, serif; }
-  .review-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; padding-right: 2rem; }
-  .review-footer { display: flex; flex-direction: column; gap: 0.3rem; }
-  .review-meta { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; }
-  .review-source { font-size: 1rem; }
-  .review-name { font-weight: 700; color: var(--text); }
-  .review-loc { color: var(--text-muted); }
-  .review-event { font-size: 0.78rem; background: rgba(255,107,53,0.12); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 20px; display: inline-block; }
-  .testimonials-cta { text-align: center; margin-top: 2rem; }
+  .t-card:hover {
+    border-color: rgba(249,115,22,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(17,24,39,0.1);
+  }
+  .t-quote {
+    font-size: 3.5rem; line-height: 1; color: #F97316; opacity: 0.2;
+    position: absolute; top: 0.6rem; right: 1rem;
+    font-family: Georgia, serif; pointer-events: none;
+  }
+  .t-text {
+    font-size: 0.91rem; color: #374151; line-height: 1.75;
+    margin-bottom: 0.75rem; padding-right: 2rem;
+  }
+  .t-expand {
+    background: none; border: none; color: #F97316; font-size: 0.82rem;
+    font-weight: 600; cursor: pointer; padding: 0; margin-bottom: 0.75rem;
+    transition: opacity 0.2s;
+  }
+  .t-expand:hover { opacity: 0.75; }
+  .t-footer { display: flex; flex-direction: column; gap: 0.5rem; }
+  .t-meta { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; }
+  .t-source { font-size: 1rem; }
+  .t-name { font-weight: 700; color: #111827; }
+  .t-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .t-badge {
+    font-size: 0.72rem; padding: 0.18rem 0.55rem; border-radius: 99px;
+    font-weight: 600; display: inline-flex; align-items: center; gap: 0.2rem;
+  }
+  .t-badge-zone { background: #FFF7ED; color: #EA580C; border: 1px solid rgba(234,88,12,0.2); }
+  .t-badge-event { background: #F0FDF4; color: #16A34A; border: 1px solid rgba(22,163,74,0.2); }
+  .t-cta { text-align: center; margin-top: 2.5rem; }
   .btn-recenzii {
-    display: inline-block; padding: 0.85rem 2rem;
-    background: transparent; border: 2px solid var(--primary);
-    color: var(--primary); border-radius: 50px; font-weight: 700;
-    text-decoration: none; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.85rem 2rem; border: 2px solid #F97316; border-radius: 99px;
+    color: #F97316; font-weight: 700; text-decoration: none;
+    background: transparent; transition: all 0.2s; font-size: 0.95rem;
   }
-  .btn-recenzii:hover { background: var(--primary); color: white; }
-  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-  @media (max-width: 480px) {
-    .reviews-grid { grid-template-columns: 1fr; }
-  }
+  .btn-recenzii:hover { background: #F97316; color: white; }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 480px) { .t-grid { grid-template-columns: 1fr; } }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.t-expand').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.t-card');
+      const p = card?.querySelector<HTMLElement>('.t-text');
+      if (!p) return;
+      const full = p.dataset.full || '';
+      p.textContent = full;
+      p.dataset.truncated = 'false';
+      btn.remove();
+    });
+  });
+</script>
