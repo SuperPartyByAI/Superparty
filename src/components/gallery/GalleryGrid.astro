@@ -189,7 +189,15 @@ const PAGE_SIZE = 24;
   let lbCurrentIndex = 0;
 
   function escHtml(s: string): string {
-    return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c] ?? c));
+    return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c as keyof typeof esc] ?? c));
+  }
+  const esc = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'};
+
+  // URL original → cale WebP thumb optimizat (/_optimized/thumb/...)
+  function toWebp(url: string): string {
+    const rel = url.replace('https://www.superparty.ro/wp-content/uploads/', '');
+    const noExt = rel.replace(/\.[^.]+$/, '');
+    return `/_optimized/thumb/${noExt}.webp`;
   }
 
   // ── Render batch ─────────────────────────────────────────────────────────
@@ -201,10 +209,15 @@ const PAGE_SIZE = 24;
       btn.className = 'gg-item';
       btn.dataset.cat = img.category;
       btn.dataset.index = String(idx);
+      btn.dataset.originalUrl = img.url;
       btn.setAttribute('aria-label', `Deschide: ${escHtml(img.alt)}`);
+      const webpSrc = toWebp(img.url);
       btn.innerHTML = `
-        <img src="${escHtml(img.url)}" alt="${escHtml(img.alt)}"
-             loading="lazy" decoding="async" width="400" height="300" />
+        <picture>
+          <source srcset="${escHtml(webpSrc)}" type="image/webp" />
+          <img src="${escHtml(img.url)}" alt="${escHtml(img.alt)}"
+               loading="lazy" decoding="async" width="400" height="300" />
+        </picture>
         <div class="gg-caption">${escHtml(img.alt)}</div>`;
 
       // Aplică filtru curent
