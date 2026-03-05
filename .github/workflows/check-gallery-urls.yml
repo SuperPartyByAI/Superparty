@@ -1,0 +1,52 @@
+name: "Check gallery image URLs"
+
+on:
+  pull_request:
+    paths:
+      - 'src/data/**'
+      - 'src/components/**'
+      - 'src/pages/**'
+      - 'public/wp-content/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/data/**'
+      - 'public/wp-content/**'
+
+jobs:
+  check-gallery-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract gallery URLs from gallery.ts
+        run: |
+          set -e
+          grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\", \`\)>]+" src/data/gallery.ts \
+            | sort -u > /tmp/gallery_urls.txt || true
+          COUNT=$(wc -l < /tmp/gallery_urls.txt | tr -d ' ')
+          echo "Found $COUNT gallery URLs to check"
+          cat /tmp/gallery_urls.txt
+
+      - name: HEAD check all gallery URLs
+        run: |
+          set -e
+          FAIL=0
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 -L "$url" 2>/dev/null || echo "000")
+            if [ "$status" != "200" ]; then
+              echo "::error::NON-200: $url -> HTTP $status"
+              FAIL=1
+            else
+              echo "OK $status: ${url##*/}"
+            fi
+          done < /tmp/gallery_urls.txt
+          if [ "$FAIL" -ne 0 ]; then
+            echo "::error::One or more gallery image URLs returned non-200. Fix broken URLs before merging."
+            exit 1
+          fi
+          echo "All gallery image URLs OK!"

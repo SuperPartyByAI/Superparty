@@ -61,6 +61,13 @@ if [ "${SITEMAP_COUNT:-0}" -ne "$SITEMAP_EXPECTED" ]; then
     ALL_OK=false
 fi
 
+# ─── 4.b Gallery count check ─────────────────────────────────────────────
+GALLERY_EXPECTED=49
+GALLERY_COUNT=$(curl -s --max-time 15 "https://www.superparty.ro/galerie/" 2>/dev/null | grep -c "gg-item" || echo 0)
+if [ "${GALLERY_COUNT:-0}" -lt "$GALLERY_EXPECTED" ]; then
+    ALERTS+=("WARNING: gallery has $GALLERY_COUNT items (expected at ≥ $GALLERY_EXPECTED)")
+    ALL_OK=false
+fi
 
 # ─── 5. Write status.json ────────────────────────────────────────────────────
 ALERT_JSON=$(printf '%s\n' "${ALERTS[@]}" | python3 -c "import sys,json; lines=sys.stdin.read().splitlines(); print(json.dumps(lines))")
@@ -70,6 +77,7 @@ STATUS_JSON=$(cat <<EOF
   "all_ok": $( [ "$ALL_OK" = true ] && echo "true" || echo "false" ),
   "site": "$SITE_STATUS",
   "sitemap_count": $SITEMAP_COUNT,
+  "gallery_count": ${GALLERY_COUNT:-0},
   "redirect": "$REDIRECT_CODE",
   "alerts": ${ALERT_JSON:-[]},
   "checked_at": "$TIMESTAMP"
