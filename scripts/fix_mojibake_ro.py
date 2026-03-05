@@ -16,20 +16,19 @@ import sys
 import re
 from pathlib import Path
 
-# Known mojibake patterns (subset): detect that latin1→utf8 fix is needed
+# Known mojibake patterns: detect that cp1252→utf8 fix is needed
 MOJIBAKE_PATTERNS = re.compile(
-    r"Ã[¢®°ºÃ¯Â]|Ä[Ă€ƒ„†‡ˆ‰Š‹Œ]|È[™ŠŒ›œ]|â€[˜™šœ]|Å[¸ ¡£Å¸]|[Åé]‚|"
-    r"ÈÅ|Ã‚|\bÄƒ\b|BucureÈ|Ã®|â€™|È™|È›|Å£|Äƒ"
+    r"(BucureÈ|PÄ|mulÈ|Ã.|Â.|â€.|È™|È›|Å£|ÅŸ)"
 )
 
 def fix_mojibake(s: str, max_iter: int = 3) -> str:
-    """Try to fix mojibake by re-encoding latin1→utf-8, up to max_iter times."""
+    """Try to fix mojibake by re-encoding cp1252→utf-8, up to max_iter times."""
     if not isinstance(s, str):
         return s
     prev = s
     for _ in range(max_iter):
         try:
-            fixed = prev.encode("latin1").decode("utf-8")
+            fixed = prev.encode("cp1252").decode("utf-8")
             if fixed == prev:
                 break
             prev = fixed

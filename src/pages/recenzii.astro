@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import reviewsRaw from '../data/superparty_testimonials.json';
-import { normalizeReview } from '../lib/text/normalizeReview';
+import { normalizeReview, processReview } from '../lib/text/normalizeReview';
 
 type Review = { siteId: string; slug: string; name: string; location: string; event: string; text: string; source: string; date: string; };
 const allReviews = (reviewsRaw as Review[]).filter(r => r.siteId === 'superparty');
@@ -174,24 +174,30 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
 <section class="reviews-section">
   <div class="container">
     <div class="reviews-grid" id="reviews-grid">
-      {sorted.map((r, idx) => (
+      {sorted.map((r, idx) => {
+        const name     = normalizeReview(r.name || '');
+        const loc      = normalizeReview(r.location || '');
+        const event    = normalizeReview(r.event || '');
+        const text     = processReview(r.text || '');
+        return (
         <article
           class="review-card"
-          data-loc={r.location || ''}
-          data-text={(r.text || '').toLowerCase()}
+          data-loc={loc}
+          data-text={text.toLowerCase()}
           data-idx={idx}
           data-hidden={idx >= 24 ? 'true' : 'false'}
         >
-          <p class="review-text">"{normalizeReview(r.text)}"</p>
+          <p class="review-text">"{text}"</p>
           <div class="review-meta">
             <span class="src-badge" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
-            <span class="review-name">{r.name}</span>
-            {r.location && <span class="review-loc">· {r.location}</span>}
+            <span class="review-name">{name}</span>
+            {loc && <span class="review-loc">· {loc}</span>}
             {r.date && <span class="review-date">{r.date.slice(0, 7)}</span>}
           </div>
-          {r.event && <span class="event-tag">{r.event}</span>}
+          {event && <span class="event-tag">{event}</span>}
         </article>
-      ))}
+        );
+      })}
     </div>
     <p class="no-results" id="no-results" style="display:none">Nu s-au găsit recenzii pentru acest filtru.</p>
     <div class="load-more-wrap" id="load-more-wrap">

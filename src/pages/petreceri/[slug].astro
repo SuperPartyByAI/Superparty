@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import reviewsData from '../../data/superparty_testimonials.json';
+import { normalizeReview, processReview } from '../../lib/text/normalizeReview';
 
 export async function getStaticPaths() {
   const articles = await getCollection('seo-articles');
@@ -17,6 +18,13 @@ const { Content } = await entry.render();
 // Filter reviews by siteId AND slug
 const siteReviews = (reviewsData as any[]).filter((t) => t.siteId === 'superparty');
 const pageReviews = siteReviews.filter((t) => t.slug === entry.slug).slice(0, 3);
+const cleanReviews = pageReviews.map((t: any) => ({
+  ...t,
+  text:     processReview(t.text || ''),
+  name:     normalizeReview(t.name || ''),
+  location: normalizeReview(t.location || ''),
+  event:    normalizeReview(t.event || ''),
+}));
 
 // READY logic: if indexStatus is 'hold' -> noindex
 const isHold = entry.data.indexStatus === 'hold';
@@ -44,7 +52,7 @@ const schemaData = {
       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
       "author": { "@type": "Organization", "name": "SuperParty" }
     },
-    ...(pageReviews.length > 0 ? pageReviews.map((t: any) => ({
+    ...(cleanReviews.length > 0 ? cleanReviews.map((t: any) => ({
       "@type": "Review",
       "itemReviewed": { "@type": "LocalBusiness", "name": "SuperParty" },
       "reviewBody": t.text,
@@ -90,10 +98,10 @@ const waUrl = `https://wa.me/${PHONE_E164}?text=${waText}`;
             <Content />
           </article>
 
-          {pageReviews.length > 0 && (
+          {cleanReviews.length > 0 && (
             <div class="mt-12 space-y-4 not-prose">
               <h3 class="text-2xl font-bold text-gray-900">Feedback de la Părinți</h3>
-              {pageReviews.map((t: any) => (
+              {cleanReviews.map((t: any) => (
                 <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
                   <blockquote class="italic text-gray-700 text-lg border-l-4 border-pink-400 pl-4 py-2">
                     "{t.text}"
@@ -104,8 +112,7 @@ const waUrl = `https://wa.me/${PHONE_E164}?text=${waText}`;
                     {t.event && <span class="text-xs bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">{t.event}</span>}
                   </div>
                 </div>
-              ))}
-            </div>
+              ))}            </div>
           )}
 
           <!-- CTA: Call + WhatsApp -->

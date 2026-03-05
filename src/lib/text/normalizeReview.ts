@@ -3,8 +3,16 @@
  */
 
 /**
- * Fix mojibake: re-encode latin1-misinterpreted UTF-8, max 3 passes.
+ * Fix mojibake: re-encode Windows-1252 / latin1-misinterpreted UTF-8, max 3 passes.
+ * Needed because mojibake strings can contain CP1252 chars like "ƒ", "€", "\u2018", "\u2019" etc.
  */
+const WIN1252_CODEPOINT_TO_BYTE: Record<number, number> = {
+    0x20AC: 0x80, 0x201A: 0x82, 0x0192: 0x83, 0x201E: 0x84, 0x2026: 0x85, 0x2020: 0x86, 0x2021: 0x87,
+    0x02C6: 0x88, 0x2030: 0x89, 0x0160: 0x8A, 0x2039: 0x8B, 0x0152: 0x8C, 0x017D: 0x8E,
+    0x2018: 0x91, 0x2019: 0x92, 0x201C: 0x93, 0x201D: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97,
+    0x02DC: 0x98, 0x2122: 0x99, 0x0161: 0x9A, 0x203A: 0x9B, 0x0153: 0x9C, 0x017E: 0x9E, 0x0178: 0x9F,
+};
+
 export function fixMojibake(s: string, maxPasses = 3): string {
     if (!s || typeof s !== 'string') return s;
     let prev = s;
@@ -13,8 +21,9 @@ export function fixMojibake(s: string, maxPasses = 3): string {
             const bytes = new Uint8Array(prev.length);
             for (let j = 0; j < prev.length; j++) {
                 const code = prev.charCodeAt(j);
-                if (code > 255) return prev; // already valid unicode, stop
-                bytes[j] = code;
+                const b = (code <= 0xFF) ? code : WIN1252_CODEPOINT_TO_BYTE[code];
+                if (b === undefined) return prev; // not a single-byte mojibake string
+                bytes[j] = b;
             }
             const decoded = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
             if (decoded === prev) break;
@@ -26,8 +35,9 @@ export function fixMojibake(s: string, maxPasses = 3): string {
     return prev;
 }
 
-// Common mojibake detection patterns
-const MOJIBAKE_PATTERNS = /Ã[¢®°ÃÂ¯]|Ä[Ă€ƒ†]|È[™Š]|â€[˜™š]|BucureÈ|Ã®n?|Å[£¸ ]|ÅŸ|ÄÆ'/;
+
+// Mojibake detection patterns (aligned with CI guardrail signals)
+const MOJIBAKE_PATTERNS = /(BucureÈ|PÄ|mulÈ|Ã.|Â.|â€.|È™|È›|Å£|ÅŸ)/;
 
 export function hasMojibake(s: string): boolean {
     return MOJIBAKE_PATTERNS.test(s ?? '');
