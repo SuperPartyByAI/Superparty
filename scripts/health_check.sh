@@ -55,8 +55,9 @@ REDIRECT_LOCATION=$(curl -sI --max-time 10 "https://superparty.ro/" 2>/dev/null 
 # ─── 4. Sitemap check ────────────────────────────────────────────────────────
 SITEMAP_COUNT=$(curl -s --max-time 15 "https://www.superparty.ro/sitemap.xml" 2>/dev/null | grep -c "<loc>")
 SITEMAP_STATUS="ok_$SITEMAP_COUNT"
-if [ "${SITEMAP_COUNT:-0}" -lt 80 ]; then
-    ALERTS+=("WARNING: sitemap only has $SITEMAP_COUNT URLs (expected ~89)")
+SITEMAP_EXPECTED=89
+if [ "${SITEMAP_COUNT:-0}" -ne "$SITEMAP_EXPECTED" ]; then
+    ALERTS+=("WARNING: sitemap has $SITEMAP_COUNT URLs (expected exactly $SITEMAP_EXPECTED) — check for accidental additions or deletions")
     ALL_OK=false
 fi
 
