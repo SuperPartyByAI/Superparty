@@ -176,7 +176,32 @@
             "permanent": true
         },
         {
-            "source": "/wp-content/:path*",
+            "source": "/wp-content/plugins/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/themes/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/cache/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-admin/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-login.php",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-json/:path*",
             "destination": "/",
             "permanent": true
         },
