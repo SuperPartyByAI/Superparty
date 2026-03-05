@@ -48,7 +48,7 @@ const safeImages = sliderImages
       <button class="slider-btn slider-next" aria-label="Următor" id="sliderNext">›</button>
     </div>
     <div class="slider-dots" id="sliderDots">
-      {images.map((_, i) => (
+      {safeImages.map((_, i) => (
         <button class={`dot ${i === 0 ? 'dot-active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
       ))}
     </div>
