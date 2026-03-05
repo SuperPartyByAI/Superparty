@@ -1,0 +1,106 @@
+---
+/**
+ * PhotoSlider.astro — "Cum arată o petrecere SuperParty"
+ * Slider touch-friendly cu imagini reale.
+ */
+import { sliderImages } from '../data/gallery_images';
+
+export interface Props {
+  title?: string;
+}
+const { title = 'Cum arată o petrecere SuperParty' } = Astro.props;
+const images = sliderImages;
+---
+
+<section class="slider-section">
+  <div class="container">
+    <div class="slider-header">
+      <h2 class="slider-title">{title}</h2>
+      <p class="slider-sub">Momente reale, copii fericiți, amintiri de neuitat</p>
+    </div>
+    <div class="slider-wrap" id="photoSlider">
+      <div class="slider-track" id="sliderTrack">
+        {images.map((img, i) => (
+          <div class="slide" data-index={i}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading={i < 3 ? 'eager' : 'lazy'}
+              decoding="async"
+              width="800"
+              height="600"
+            />
+            <div class="slide-label">{img.alt}</div>
+          </div>
+        ))}
+      </div>
+      <button class="slider-btn slider-prev" aria-label="Anterior" id="sliderPrev">‹</button>
+      <button class="slider-btn slider-next" aria-label="Următor" id="sliderNext">›</button>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      {images.map((_, i) => (
+        <button class={`dot ${i === 0 ? 'dot-active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider-section { padding: 4rem 0; background: #FFF7ED; }
+  .slider-header { text-align: center; margin-bottom: 2rem; }
+  .slider-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #111827; margin-bottom: 0.4rem; }
+  .slider-sub { color: #6B7280; font-size: 0.95rem; }
+  .slider-wrap { position: relative; overflow: hidden; border-radius: 24px; box-shadow: 0 20px 60px rgba(17,24,39,0.12); aspect-ratio: 16/9; max-height: 480px; touch-action: pan-y; }
+  .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); height: 100%; }
+  .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .slide-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.6rem 1rem; background: linear-gradient(transparent, rgba(17,24,39,0.7)); color: white; font-size: 0.85rem; }
+  .slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.9); border: none; width: 44px; height: 44px;
+    border-radius: 50%; font-size: 1.4rem; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; color: #111827;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .slider-btn:hover { background: white; box-shadow: 0 6px 20px rgba(0,0,0,0.2); transform: translateY(-50%) scale(1.05); }
+  .slider-prev { left: 1rem; }
+  .slider-next { right: 1rem; }
+  .slider-dots { display: flex; justify-content: center; gap: 0.4rem; margin-top: 1.2rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #D1D5DB; cursor: pointer; transition: all 0.2s; padding: 0; }
+  .dot-active { background: #F97316; width: 24px; border-radius: 4px; }
+  @media (max-width: 640px) { .slider-btn { width: 36px; height: 36px; font-size: 1.1rem; } }
+</style>
+
+<script>
+  const track = document.getElementById('sliderTrack') as HTMLElement;
+  const dotsEl = document.querySelectorAll('.dot');
+  const total = dotsEl.length;
+  let cur = 0;
+  let startX = 0;
+  let isDrag = false;
+
+  function go(idx: number) {
+    cur = (idx + total) % total;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dotsEl.forEach((d, i) => {
+      d.classList.toggle('dot-active', i === cur);
+    });
+  }
+
+  document.getElementById('sliderPrev')?.addEventListener('click', () => go(cur - 1));
+  document.getElementById('sliderNext')?.addEventListener('click', () => go(cur + 1));
+  dotsEl.forEach(d => d.addEventListener('click', () => go(Number(d.getAttribute('data-dot')))));
+
+  // Touch swipe
+  const wrap = document.getElementById('photoSlider');
+  wrap?.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDrag = true; }, { passive: true });
+  wrap?.addEventListener('touchend', e => {
+    if (!isDrag) return;
+    const dx = startX - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 40) go(dx > 0 ? cur + 1 : cur - 1);
+    isDrag = false;
+  });
+
+  // Auto-advance every 4s
+  setInterval(() => go(cur + 1), 4000);
+</script>
