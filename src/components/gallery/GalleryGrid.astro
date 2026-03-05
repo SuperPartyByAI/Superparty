@@ -1,8 +1,8 @@
 ---
 /**
- * GalleryGrid.astro — grid cu filtre + lightbox pentru /galerie
- * Props:
- *   images: array de { url, alt, category }
+ * GalleryGrid.astro — grid cu filtre + lightbox + load more pentru /galerie
+ * Props: images: array de { url, alt, category }
+ * Afișează 24 inițial, buton "Încarcă mai multe" pentru restul.
  */
 
 export interface GalleryImage {
@@ -23,17 +23,26 @@ const categories = ['toate', ...Array.from(new Set(images.map(i => i.category)))
 // Validate: all URLs must contain /wp-content/uploads
 const invalid = images.filter(i => !i.url.includes('/wp-content/uploads'));
 if (invalid.length > 0 && import.meta.env.DEV) {
-  console.error('[GalleryGrid] Invalid image URLs (not from wp-content/uploads):', invalid.map(i => i.url));
+  console.error('[GalleryGrid] Invalid image URLs:', invalid.map(i => i.url));
 }
 
 const LABELS: Record<string, string> = {
-  toate: '🎊 Toate',
-  animatori: '🎭 Animatori',
-  personaje: '👑 Personaje',
-  decor: '🎈 Decor',
+  toate:        '🎊 Toate',
+  animatori:    '🎭 Animatori',
+  personaje:    '👑 Personaje',
+  decor:        '🎈 Decor',
   'vata-popcorn': '🍭 Vată & Popcorn',
-  ursitoare: '👼 Ursitoare',
+  ursitoare:    '👼 Ursitoare',
 };
+
+// Serializăm imaginile pentru client-side JS (Load More)
+const imagesJson = JSON.stringify(images.map(img => ({
+  url: img.url,
+  alt: img.alt,
+  category: img.category,
+})));
+
+const PAGE_SIZE = 24;
 ---
 
 <div class="gg-wrap">
@@ -51,29 +60,17 @@ const LABELS: Record<string, string> = {
     ))}
   </div>
 
-  <!-- Grid -->
-  <div class="gg-grid" id="ggGrid">
-    {images.map((img, i) => (
-      <button
-        class="gg-item"
-        data-cat={img.category}
-        data-index={i}
-        aria-label={`Deschide: ${img.alt}`}
-      >
-        <img
-          src={img.url}
-          alt={img.alt}
-          loading="lazy"
-          decoding="async"
-          width="400"
-          height="300"
-        />
-        <div class="gg-caption">{img.alt}</div>
-      </button>
-    ))}
+  <!-- Grid — populat dinamic de JS -->
+  <div class="gg-grid" id="ggGrid"></div>
+
+  <!-- Load More -->
+  <div class="gg-load-wrap" id="ggLoadWrap">
+    <button class="gg-load-more" id="ggLoadMore" aria-label="Încarcă mai multe imagini">
+      ↓ Încarcă mai multe
+    </button>
   </div>
 
-  <p class="gg-count"><span id="ggCount">{images.length}</span> imagini afișate</p>
+  <p class="gg-count"><span id="ggCount">0</span> imagini afișate din {images.length}</p>
 </div>
 
 <!-- Lightbox -->
@@ -86,6 +83,9 @@ const LABELS: Record<string, string> = {
   </div>
   <button class="lb-nav lb-next" id="lbNext" aria-label="Următor">›</button>
 </dialog>
+
+<!-- Datele imaginilor pentru JS (nu sunt în DOM, evitând 136 elemente inițiale) -->
+<script type="application/json" id="ggData">{imagesJson}</script>
 
 <style>
   /* ── Filters ──────────────────────────────────────────── */
@@ -122,6 +122,17 @@ const LABELS: Record<string, string> = {
   .gg-item[data-hidden="true"] { display: none; }
   .gg-count { text-align: center; color: #9CA3AF; font-size: 0.82rem; margin-top: 1.2rem; }
 
+  /* ── Load More ─────────────────────────────────────────── */
+  .gg-load-wrap { display: flex; justify-content: center; margin-top: 2rem; }
+  .gg-load-more {
+    padding: 0.75rem 2.5rem; border-radius: 99px;
+    border: 2px solid #F97316; background: white; color: #F97316;
+    font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .gg-load-more:hover { background: #F97316; color: white; transform: translateY(-2px); }
+  .gg-load-more[hidden] { display: none; }
+
   /* ── Lightbox ─────────────────────────────────────────── */
   .lightbox {
     border: none; border-radius: 20px; padding: 0; background: rgba(17,24,39,0.96);
@@ -147,6 +158,7 @@ const LABELS: Record<string, string> = {
   .lb-content { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 2rem 0; }
   .lb-img { max-width: 100%; max-height: 70vh; object-fit: contain; border-radius: 12px; }
   .lb-label { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.75rem; text-align: center; }
+
   @media (max-width: 640px) {
     .gg-grid { grid-template-columns: repeat(2, 1fr); }
     .lb-nav { width: 36px; height: 36px; font-size: 1.2rem; }
@@ -154,74 +166,127 @@ const LABELS: Record<string, string> = {
 </style>
 
 <script>
-  // ── Filter logic ─────────────────────────────────────────
-  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gg-filter');
-  const items = document.querySelectorAll<HTMLElement>('.gg-item');
-  const countEl = document.getElementById('ggCount');
+  // ── Date imagini (din JSON injectat la build) ─────────────────────────────
+  const raw = document.getElementById('ggData');
+  const ALL_IMAGES: Array<{ url: string; alt: string; category: string }> =
+    raw ? JSON.parse(raw.textContent || '[]') : [];
 
+  const PAGE_SIZE = 24;
+  let renderedCount = 0;
+  let activeFilter = 'toate';
+  let visibleItems: HTMLElement[] = [];
+
+  const ggGrid = document.getElementById('ggGrid') as HTMLElement;
+  const countEl = document.getElementById('ggCount') as HTMLElement;
+  const loadMoreBtn = document.getElementById('ggLoadMore') as HTMLButtonElement;
+  const loadMoreWrap = document.getElementById('ggLoadWrap') as HTMLElement;
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gg-filter');
+
+  // Lightbox
+  const lb = document.getElementById('lightbox') as HTMLDialogElement;
+  const lbImg = document.getElementById('lbImg') as HTMLImageElement;
+  const lbLabel = document.getElementById('lbLabel') as HTMLElement;
+  let lbCurrentIndex = 0;
+
+  function escHtml(s: string): string {
+    return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c] ?? c));
+  }
+
+  // ── Render batch ─────────────────────────────────────────────────────────
+  function renderBatch(count: number) {
+    const batch = ALL_IMAGES.slice(renderedCount, renderedCount + count);
+    batch.forEach((img, i) => {
+      const idx = renderedCount + i;
+      const btn = document.createElement('button');
+      btn.className = 'gg-item';
+      btn.dataset.cat = img.category;
+      btn.dataset.index = String(idx);
+      btn.setAttribute('aria-label', `Deschide: ${escHtml(img.alt)}`);
+      btn.innerHTML = `
+        <img src="${escHtml(img.url)}" alt="${escHtml(img.alt)}"
+             loading="lazy" decoding="async" width="400" height="300" />
+        <div class="gg-caption">${escHtml(img.alt)}</div>`;
+
+      // Aplică filtru curent
+      if (activeFilter !== 'toate' && img.category !== activeFilter) {
+        btn.dataset.hidden = 'true';
+        btn.style.display = 'none';
+      }
+      btn.addEventListener('click', () => openLightboxByBtn(btn));
+      ggGrid.appendChild(btn);
+    });
+    renderedCount += batch.length;
+    updateCount();
+    // Ascunde Load More dacă am randat tot
+    const allRendered = renderedCount >= ALL_IMAGES.length;
+    if (loadMoreWrap) loadMoreWrap.style.display = allRendered ? 'none' : 'flex';
+  }
+
+  function updateCount() {
+    const items = Array.from(ggGrid.querySelectorAll<HTMLElement>('.gg-item'));
+    const visible = items.filter(it => it.style.display !== 'none' && it.dataset.hidden !== 'true').length;
+    if (countEl) countEl.textContent = String(visible);
+  }
+
+  // ── Filter ───────────────────────────────────────────────────────────────
   function applyFilter(cat: string) {
-    let visible = 0;
+    activeFilter = cat;
+    const items = Array.from(ggGrid.querySelectorAll<HTMLElement>('.gg-item'));
     items.forEach(item => {
       const match = cat === 'toate' || item.dataset.cat === cat;
       item.dataset.hidden = match ? 'false' : 'true';
-      if (match) visible++;
+      item.style.display = match ? '' : 'none';
     });
-    if (countEl) countEl.textContent = String(visible);
     filterBtns.forEach(btn => {
       const isActive = btn.dataset.cat === cat;
       btn.classList.toggle('gg-filter-active', isActive);
       btn.setAttribute('aria-selected', String(isActive));
     });
+    updateCount();
   }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => applyFilter(btn.dataset.cat ?? 'toate'));
   });
 
-  // ── Lightbox ─────────────────────────────────────────────
-  const lb = document.getElementById('lightbox') as HTMLDialogElement;
-  const lbImg = document.getElementById('lbImg') as HTMLImageElement;
-  const lbLabel = document.getElementById('lbLabel') as HTMLElement;
+  loadMoreBtn?.addEventListener('click', () => renderBatch(PAGE_SIZE));
 
-  let currentIndex = 0;
-  let visibleItems: HTMLElement[] = [];
-
-  function openLightbox(idx: number) {
-    visibleItems = Array.from(items).filter(i => i.dataset.hidden !== 'true');
-    currentIndex = idx;
+  // ── Lightbox ─────────────────────────────────────────────────────────────
+  function openLightboxByBtn(btn: HTMLElement) {
+    visibleItems = Array.from(ggGrid.querySelectorAll<HTMLElement>('.gg-item'))
+      .filter(it => it.style.display !== 'none' && it.dataset.hidden !== 'true');
+    const idx = visibleItems.indexOf(btn);
+    lbCurrentIndex = idx >= 0 ? idx : 0;
     showLbItem();
     lb?.showModal();
   }
 
   function showLbItem() {
-    const item = visibleItems[currentIndex];
+    const item = visibleItems[lbCurrentIndex];
     if (!item) return;
     const img = item.querySelector('img');
-    if (img && lbImg) {
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-    }
+    if (img && lbImg) { lbImg.src = img.src; lbImg.alt = img.alt; }
     if (lbLabel) lbLabel.textContent = item.querySelector('.gg-caption')?.textContent ?? '';
   }
 
-  items.forEach((item, i) => {
-    item.addEventListener('click', () => {
-      visibleItems = Array.from(items).filter(it => it.dataset.hidden !== 'true');
-      const visIdx = visibleItems.indexOf(item);
-      openLightbox(visIdx >= 0 ? visIdx : 0);
-    });
-  });
-
   document.getElementById('lbClose')?.addEventListener('click', () => lb.close());
-  document.getElementById('lbPrev')?.addEventListener('click', () => { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLbItem(); });
-  document.getElementById('lbNext')?.addEventListener('click', () => { currentIndex = (currentIndex + 1) % visibleItems.length; showLbItem(); });
+  document.getElementById('lbPrev')?.addEventListener('click', () => {
+    lbCurrentIndex = (lbCurrentIndex - 1 + visibleItems.length) % visibleItems.length;
+    showLbItem();
+  });
+  document.getElementById('lbNext')?.addEventListener('click', () => {
+    lbCurrentIndex = (lbCurrentIndex + 1) % visibleItems.length;
+    showLbItem();
+  });
   lb?.addEventListener('click', e => { if (e.target === lb) lb.close(); });
 
-  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (!lb?.open) return;
     if (e.key === 'Escape') lb.close();
-    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length; showLbItem(); }
-    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleItems.length; showLbItem(); }
+    if (e.key === 'ArrowLeft') { lbCurrentIndex = (lbCurrentIndex - 1 + visibleItems.length) % visibleItems.length; showLbItem(); }
+    if (e.key === 'ArrowRight') { lbCurrentIndex = (lbCurrentIndex + 1) % visibleItems.length; showLbItem(); }
   });
+
+  // ── Init — randează primele 24 ──────────────────────────────────────────
+  renderBatch(PAGE_SIZE);
 </script>

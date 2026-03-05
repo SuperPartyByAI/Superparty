@@ -27,44 +27,57 @@ jobs:
           set -e
           FAIL=0
 
-          # Extract relative paths from gallery.ts for local files (/wp-content/uploads/...)
-          # These must exist in public/ inside the repo
+          # Extrage căile relative din gallery.ts (după /wp-content/uploads/)
           grep -oE "/wp-content/uploads/[^'\",\` \)>]+" src/data/gallery.ts \
             | sort -u > /tmp/gallery_paths.txt || true
 
           TOTAL=$(wc -l < /tmp/gallery_paths.txt | tr -d ' ')
-          echo "Checking $TOTAL gallery paths against public/ directory..."
+          echo "Verificând $TOTAL căi de imagini din public/..."
 
-          while IFS= read -r path; do
-            [ -z "$path" ] && continue
-            local_file="public${path}"
+          # Fișiere lipsă
+          > /tmp/gallery_missing.txt
+          while IFS= read -r p; do
+            [ -z "$p" ] && continue
+            local_file="public${p}"
             if [ ! -f "$local_file" ]; then
-              echo "::error::MISSING local file: $local_file (URL: https://www.superparty.ro${path})"
+              echo "$local_file" >> /tmp/gallery_missing.txt
               FAIL=1
-            else
-              echo "OK: $local_file"
             fi
           done < /tmp/gallery_paths.txt
 
           if [ "$FAIL" -ne 0 ]; then
-            echo "::error::One or more gallery image paths are missing from public/. Add the files or fix the URL in gallery.ts."
+            MISSING_COUNT=$(wc -l < /tmp/gallery_missing.txt | tr -d ' ')
+            echo "::error::$MISSING_COUNT fișiere lipsesc din public/. Primele 10:"
+            head -n 10 /tmp/gallery_missing.txt | while read -r f; do
+              echo "::error::  MISSING: $f"
+            done
+            echo ""
+            echo "Regulă: dacă adaugi un URL în gallery.ts, adaugă și fișierul în public/ în același PR."
             exit 1
           fi
-          echo "All $TOTAL gallery image paths exist in public/ ✅"
+          echo "✅ Toate $TOTAL căi există în public/"
 
-      - name: Check live URLs (non-blocking, informational only)
+      - name: Spot-check 5 URL-uri live (non-blocant)
         continue-on-error: true
         run: |
-          # Quick spot-check of 5 random live URLs — non-blocking (does not fail PR)
+          # Extrage 5 URL-uri random și face HEAD check non-blocant
           grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\",\` \)>]+" src/data/gallery.ts \
-            | sort -R | head -5 > /tmp/spot_urls.txt || true
+            | sort -u | shuf -n 5 > /tmp/spot_urls.txt 2>/dev/null || \
+          grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\",\` \)>]+" src/data/gallery.ts \
+            | sort -u | sort -R | head -5 > /tmp/spot_urls.txt || true
 
+          if [ ! -s /tmp/spot_urls.txt ]; then
+            echo "Niciun URL live de verificat."
+            exit 0
+          fi
+
+          echo "Spot-check live (5 URL-uri random):"
           while IFS= read -r url; do
             [ -z "$url" ] && continue
             status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 -L "$url" 2>/dev/null || echo "000")
-            if [ "$status" != "200" ]; then
-              echo "::warning::LIVE spot-check non-200: $url -> $status (informational only, Vercel may not have deployed yet)"
+            if [ "$status" = "200" ]; then
+              echo "  ✅ $status ${url##*/}"
             else
-              echo "LIVE OK: ${url##*/} -> $status"
+              echo "  ::warning::$status ${url##*/} — Vercel poate nu a terminat deploy-ul"
             fi
           done < /tmp/spot_urls.txt

@@ -69,6 +69,21 @@ if [ "${GALLERY_COUNT:-0}" -lt "$GALLERY_EXPECTED" ]; then
     ALL_OK=false
 fi
 
+# ─── 4.c Hero images HEAD check (CRITICAL) ──────────────────────────────────
+REPO_DIR="${REPO_DIR:-/srv/superparty}"
+GALLERY_TS="$REPO_DIR/src/data/gallery.ts"
+if [ -f "$GALLERY_TS" ]; then
+    # Extrage primele 12 URL-uri (galleryHero) din gallery.ts
+    HERO_URLS=$(grep -oE "https://www\.superparty\.ro/wp-content/uploads/[^'\",\` )>]+" "$GALLERY_TS" | head -n 12)
+    for url in $HERO_URLS; do
+        CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 -L "$url" 2>/dev/null || echo "000")
+        if [ "$CODE" != "200" ]; then
+            ALERTS+=("CRITICAL: hero image returned $CODE — $url")
+            ALL_OK=false
+        fi
+    done
+fi
+
 # ─── 5. Write status.json ────────────────────────────────────────────────────
 ALERT_JSON=$(printf '%s\n' "${ALERTS[@]}" | python3 -c "import sys,json; lines=sys.stdin.read().splitlines(); print(json.dumps(lines))")
 STATUS_JSON=$(cat <<EOF
