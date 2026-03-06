@@ -518,6 +518,20 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
     import agent.common.env
     max_files = agent.common.env.getenv_int("SEO_REAL_MAX_FILES", 5)
 
+    state_file = Path(f"reports/{site_id}/seo_apply_state.json")
+    state = _load_apply_state(state_file)
+            
+    if state["files_applied_today"] >= max_files_per_day:
+        return {"ok": True, "note": "budget_reached", "reason": "max_files_per_day"}
+    if state["prs_created_today"] >= max_prs_per_day:
+        return {"ok": True, "note": "budget_reached", "reason": "max_prs_per_day"}
+
+    try:
+        from agent.tasks.seo_ctr_experiments import db_connect, get_page_state
+        db_con = db_connect()
+    except Exception:
+        db_con = None
+
     from datetime import datetime
     for opp in opportunities:
         url_path = opp.get("page", "")
@@ -525,6 +539,16 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         if not fpath:
             audit_log["unmapped"].append({"page": url_path, "reason": "not_resolved"})
             continue
+            
+        # Check active experiment contamination
+        if db_con:
+            try:
+                page_db_state = get_page_state(db_con, site_id, url_path)
+                if page_db_state and page_db_state.get("active_exp_id"):
+                    audit_log["skipped"].append({"page": url_path, "reason": "active_experiment"})
+                    continue
+            except Exception:
+                pass
             
         # COOLDOWN Check
         last_applied_str = state["page_last_applied"].get(url_path)

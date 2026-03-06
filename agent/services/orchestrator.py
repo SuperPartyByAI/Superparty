@@ -37,6 +37,9 @@ def enqueue_daily():
             get_queue("backup").enqueue("agent.tasks.backup.daily_backup_task", site_id=site_id)
             get_queue("ga4").enqueue("agent.tasks.ga4.ga4_collect_task", site_id=site_id, lookback_days=7)
             get_queue("audit").enqueue("agent.tasks.pre_gsc_audit.pre_gsc_audit_task", site_id=site_id)
+            # Evaluate CTR experiments (T+21)
+            if os.environ.get("SEO_EXPERIMENTS_ENABLED", "0") == "1":
+                get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_evaluate_task", site_id="superparty")
         except Exception as e:
             log.error("daily %s: %s", site_id, e)
 
@@ -81,6 +84,10 @@ def main():
             try:
                 get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="default")
                 get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
+                
+                if os.environ.get("SEO_EXPERIMENTS_ENABLED", "0") == "1":
+                    get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_plan_task", site_id="superparty")
+                    get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_apply_task", site_id="superparty")
             except Exception as e:
                 log.error(f"Failed Fast Lane enqueue: {e}")
             next_fast = time.time() + FAST_MIN * 60
