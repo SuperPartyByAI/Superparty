@@ -1,8 +1,8 @@
-import os
 from pathlib import Path
-REPO_ROOT = str(Path(__file__).resolve().parents[1])
 import json
 import os
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
 import unicodedata
 import re
 
@@ -13,11 +13,13 @@ def slugify(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii','ignore').decode('ascii')
     return re.sub(r'[^a-z0-9]+', '-', text).strip('-')
 
-MANIFEST_PATH = r'reports/seo/indexing_manifest.json'
-LOCATIONS_PATH = r'reports/locations/locations_100km.json'
+MANIFEST_PATH = REPO_ROOT / "reports" / "seo" / "indexing_manifest.json"
+LOCATIONS_PATH = REPO_ROOT / "reports" / "locations" / "locations_100km.json"
+OUT_PAGE = REPO_ROOT / "src" / "pages" / "arie-acoperire.astro"
+CANONICAL_HOST = "https://www.superparty.ro"
 
 def main():
-    if not os.path.exists(MANIFEST_PATH) or not os.path.exists(LOCATIONS_PATH):
+    if not MANIFEST_PATH.exists() or not LOCATIONS_PATH.exists():
         print("Missing reports. Rulati generate manifest / colectare locatii.")
         return
 
@@ -33,9 +35,9 @@ def main():
     by_suburb = []
 
     for loc in locations:
-        if loc.get('type') in ('town', 'commune'):
+        if loc.get('type') in ('town', 'commune') and loc.get('county') == 'Ilfov':
             by_city_town.append(loc)
-        elif loc.get('type') in ('suburb', 'neighbourhood'):
+        elif loc.get('type') in ('suburb', 'neighbourhood') and loc.get('county') in ('București', 'Bucuresti', 'Ilfov'):
             by_suburb.append(loc)
 
     by_city_town = sorted(by_city_town, key=lambda x: x.get('name', ''))
@@ -75,11 +77,11 @@ def main():
     parts.append('const schema = JSON.stringify({')
     parts.append('  "@context": "https://schema.org",')
     parts.append('  "@graph": [')
-    parts.append('    { "@type": "Service", "name": "Animatori Petreceri Copii — Arie Acoperire", "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" }, "areaServed": "București, Ilfov și zone limitrofe", "url": "https://www.superparty.ro/arie-acoperire" },')
+    parts.append(f'    {{ "@type": "Service", "name": "Animatori Petreceri Copii — Arie Acoperire", "provider": {{ "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" }}, "areaServed": "București și Ilfov", "url": "{CANONICAL_HOST}/arie-acoperire" }},')
     parts.append('    { "@type": "BreadcrumbList", "itemListElement": [')
-    parts.append('      { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },')
-    parts.append('      { "@type": "ListItem", "position": 2, "name": "Animatori", "item": "https://www.superparty.ro/animatori-petreceri-copii" },')
-    parts.append('      { "@type": "ListItem", "position": 3, "name": "Arie Acoperire", "item": "https://www.superparty.ro/arie-acoperire" }')
+    parts.append(f'      {{ "@type": "ListItem", "position": 1, "name": "Acasă", "item": "{CANONICAL_HOST}" }},')
+    parts.append(f'      {{ "@type": "ListItem", "position": 2, "name": "Animatori", "item": "{CANONICAL_HOST}/animatori-petreceri-copii" }},')
+    parts.append(f'      {{ "@type": "ListItem", "position": 3, "name": "Arie Acoperire", "item": "{CANONICAL_HOST}/arie-acoperire" }}')
     parts.append('    ]}')
     parts.append('  ]')
     parts.append('});')
@@ -122,7 +124,7 @@ def main():
     parts.append('<section class="ac-hero">')
     parts.append('  <div class="container">')
     parts.append('    <h1>Zone <span style="color:var(--primary)">Acoperite</span></h1>')
-    parts.append('    <p>SuperParty activează prioritar în <strong>București</strong> (toate sectoarele) și <strong>Ilfov</strong> (comune și orașe), dar și în localități limitrofe. Verificăm disponibilitatea la cerere.</p>')
+    parts.append('    <p>SuperParty activează prioritar în <strong>București</strong> (toate sectoarele) și <strong>Ilfov</strong> (comune și orașe). La cerere, verificăm disponibilitatea și pentru zone limitrofe.</p>')
     parts.append('    <a href="tel:+40722744377" class="btn-p cta" style="margin-bottom:.8rem;">📞 Verificați: 0722 744 377</a>')
     parts.append('  </div>')
     parts.append('</section>')
@@ -214,7 +216,7 @@ def main():
     parts.append('</script>')
     
     content = "\n".join(parts)
-    with open('src/pages/arie-acoperire.astro', 'w', encoding='utf-8') as f:
+    with open(OUT_PAGE, 'w', encoding='utf-8') as f:
         f.write(content)
 
     print(f"DONE: UI curățat generat pt arie-acoperire.astro")

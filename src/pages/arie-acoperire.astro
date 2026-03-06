@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const searchData = [{"n": "1 Decembrie", "t": "oraș/comună", "s": "1-decembrie"}, {"n": "Afumați", "t": "oraș/comună", "s": "afumati"}, {"n": "Amara", "t": "oraș/comună", "s": ""}, {"n": "Azuga", "t": "oraș/comună", "s": ""}, {"n": "Balotești", "t": "oraș/comună", "s": "balotesti"}, {"n": "Belciugatele", "t": "oraș/comună", "s": ""}, {"n": "Berceni", "t": "oraș/comună", "s": "berceni-ilfov"}, {"n": "Blejoi", "t": "oraș/comună", "s": ""}, {"n": "Boldești-Scăeni", "t": "oraș/comună", "s": ""}, {"n": "Bolintin-Vale", "t": "oraș/comună", "s": ""}, {"n": "Bragadiru", "t": "oraș/comună", "s": "bragadiru"}, {"n": "Brazi", "t": "oraș/comună", "s": ""}, {"n": "Breaza", "t": "oraș/comună", "s": ""}, {"n": "Brănești", "t": "oraș/comună", "s": "branesti"}, {"n": "Brănești (Dâmbovița)", "t": "oraș/comună", "s": ""}, {"n": "Budești", "t": "oraș/comună", "s": ""}, {"n": "Buftea", "t": "oraș/comună", "s": "buftea"}, {"n": "Butimanu", "t": "oraș/comună", "s": ""}, {"n": "Bușteni", "t": "oraș/comună", "s": ""}, {"n": "Băicoi", "t": "oraș/comună", "s": ""}, {"n": "Băneasa (Giurgiu)", "t": "oraș/comună", "s": ""}, {"n": "Ceptura", "t": "oraș/comună", "s": ""}, {"n": "Cernica", "t": "oraș/comună", "s": "cernica"}, {"n": "Chiajna", "t": "oraș/comună", "s": "chiajna"}, {"n": "Chitila", "t": "oraș/comună", "s": "chitila"}, {"n": "Chitila (Călărași)", "t": "oraș/comună", "s": ""}, {"n": "Ciorogârla", "t": "oraș/comună", "s": "ciorogirla"}, {"n": "Clinceni", "t": "oraș/comună", "s": "clinceni"}, {"n": "Cojasca", "t": "oraș/comună", "s": ""}, {"n": "Comana", "t": "oraș/comună", "s": ""}, {"n": "Comarnic", "t": "oraș/comună", "s": ""}, {"n": "Copăceni", "t": "oraș/comună", "s": "copaceni"}, {"n": "Corbeanca", "t": "oraș/comună", "s": "corbeanca"}, {"n": "Costești (Argeș)", "t": "oraș/comună", "s": ""}, {"n": "Crevedia Mare", "t": "oraș/comună", "s": ""}, {"n": "Călugăreni (Ilfov)", "t": "oraș/comună", "s": "calugareni-ilfov"}, {"n": "Căzănești", "t": "oraș/comună", "s": ""}, {"n": "Dascălu", "t": "oraș/comună", "s": "dascalu"}, {"n": "Dobroești", "t": "oraș/comună", "s": "dobroesti"}, {"n": "Doicești", "t": "oraș/comună", "s": ""}, {"n": "Domnești", "t": "oraș/comună", "s": "domnesti"}, {"n": "Dragomirești-Vale", "t": "oraș/comună", "s": "dragomiresti-vale"}, {"n": "Dridu", "t": "oraș/comună", "s": ""}, {"n": "Dumbrăvești", "t": "oraș/comună", "s": ""}, {"n": "Fieni", "t": "oraș/comună", "s": ""}, {"n": "Fierbinți-Târg", "t": "oraș/comună", "s": ""}, {"n": "Filipeștii de Pădure", "t": "oraș/comună", "s": ""}, {"n": "Florești (Prahova)", "t": "oraș/comună", "s": ""}, {"n": "Frătești", "t": "oraș/comună", "s": ""}, {"n": "Fundulea", "t": "oraș/comună", "s": ""}, {"n": "Ghimpați", "t": "oraș/comună", "s": ""}, {"n": "Glina", "t": "oraș/comună", "s": "glina"}, {"n": "Grindu", "t": "oraș/comună", "s": ""}, {"n": "Gruiu", "t": "oraș/comună", "s": "gruiu"}, {"n": "Grădiștea", "t": "oraș/comună", "s": "gradistea"}, {"n": "Gura Ocniței", "t": "oraș/comună", "s": ""}, {"n": "Găești", "t": "oraș/comună", "s": ""}, {"n": "Găneasa", "t": "oraș/comună", "s": "ganeasa"}, {"n": "Găujani", "t": "oraș/comună", "s": ""}, {"n": "Hotarele", "t": "oraș/comună", "s": ""}, {"n": "Iepurești", "t": "oraș/comună", "s": ""}, {"n": "Jilava", "t": "oraș/comună", "s": "jilava"}, {"n": "Lehliu-Gară", "t": "oraș/comună", "s": ""}, {"n": "Mihăilești", "t": "oraș/comună", "s": ""}, {"n": "Mizil", "t": "oraș/comună", "s": ""}, {"n": "Moara Vlăsiei", "t": "oraș/comună", "s": "moara-vlasiei"}, {"n": "Mogoșoaia", "t": "oraș/comună", "s": "mogosoaia"}, {"n": "Măgurele", "t": "oraș/comună", "s": "magurele"}, {"n": "Nuci", "t": "oraș/comună", "s": "nuci"}, {"n": "Otopeni", "t": "oraș/comună", "s": "otopeni"}, {"n": "Pantelimon", "t": "oraș/comună", "s": "pantelimon"}, {"n": "Periș", "t": "oraș/comună", "s": "peris"}, {"n": "Petrachioaia", "t": "oraș/comună", "s": "petrachioaia"}, {"n": "Popești-Leordeni", "t": "oraș/comună", "s": "popesti-leordeni"}, {"n": "Pucioasa", "t": "oraș/comună", "s": ""}, {"n": "Reviga", "t": "oraș/comună", "s": ""}, {"n": "Răcari", "t": "oraș/comună", "s": ""}, {"n": "Snagov", "t": "oraș/comună", "s": "snagov"}, {"n": "Stoenești (Giurgiu)", "t": "oraș/comună", "s": ""}, {"n": "Titu", "t": "oraș/comună", "s": ""}, {"n": "Topoloveni", "t": "oraș/comună", "s": ""}, {"n": "Tunari", "t": "oraș/comună", "s": "tunari"}, {"n": "Urlați", "t": "oraș/comună", "s": ""}, {"n": "Videle", "t": "oraș/comună", "s": ""}, {"n": "Vidra", "t": "oraș/comună", "s": "vidra"}, {"n": "Voinești (Dâmbovița)", "t": "oraș/comună", "s": ""}, {"n": "Voluntari", "t": "oraș/comună", "s": "voluntari"}, {"n": "Vălenii de Munte", "t": "oraș/comună", "s": ""}, {"n": "Zimnicea", "t": "oraș/comună", "s": ""}, {"n": "Înfrățirea", "t": "oraș/comună", "s": ""}, {"n": "Ștefan Vodă (Călărași)", "t": "oraș/comună", "s": ""}, {"n": "Ștefăneștii de Jos", "t": "oraș/comună", "s": "stefanestii-de-jos"}, {"n": "Țăndărei", "t": "oraș/comună", "s": ""}, {"n": "13 Septembrie", "t": "cartier", "s": ""}, {"n": "Aviatorilor", "t": "cartier", "s": ""}, {"n": "Balta Albă", "t": "cartier", "s": ""}, {"n": "Berceni", "t": "cartier", "s": ""}, {"n": "Brâncoveanu", "t": "cartier", "s": ""}, {"n": "Băneasa", "t": "cartier", "s": ""}, {"n": "Centrul Vechi", "t": "cartier", "s": ""}, {"n": "Colentina", "t": "cartier", "s": ""}, {"n": "Cotroceni", "t": "cartier", "s": ""}, {"n": "Crângași", "t": "cartier", "s": ""}, {"n": "Dorobanți", "t": "cartier", "s": ""}, {"n": "Dristor", "t": "cartier", "s": ""}, {"n": "Drumul Taberei", "t": "cartier", "s": ""}, {"n": "Ferentari", "t": "cartier", "s": ""}, {"n": "Floreasca", "t": "cartier", "s": ""}, {"n": "Ghencea", "t": "cartier", "s": ""}, {"n": "Giulești", "t": "cartier", "s": ""}, {"n": "Herastrau", "t": "cartier", "s": ""}, {"n": "Iancului", "t": "cartier", "s": ""}, {"n": "Lujerului", "t": "cartier", "s": ""}, {"n": "Militari", "t": "cartier", "s": ""}, {"n": "Obor", "t": "cartier", "s": ""}, {"n": "Pipera", "t": "cartier", "s": ""}, {"n": "Rahova", "t": "cartier", "s": ""}, {"n": "Tineretului", "t": "cartier", "s": ""}, {"n": "Titan", "t": "cartier", "s": ""}, {"n": "Vitan", "t": "cartier", "s": ""}];
+const searchData = [{"n": "1 Decembrie", "t": "oraș/comună", "s": "1-decembrie"}, {"n": "Afumați", "t": "oraș/comună", "s": "afumati"}, {"n": "Balotești", "t": "oraș/comună", "s": "balotesti"}, {"n": "Berceni", "t": "oraș/comună", "s": "berceni-ilfov"}, {"n": "Bragadiru", "t": "oraș/comună", "s": "bragadiru"}, {"n": "Brănești", "t": "oraș/comună", "s": "branesti"}, {"n": "Buftea", "t": "oraș/comună", "s": "buftea"}, {"n": "Cernica", "t": "oraș/comună", "s": "cernica"}, {"n": "Chiajna", "t": "oraș/comună", "s": "chiajna"}, {"n": "Chitila", "t": "oraș/comună", "s": "chitila"}, {"n": "Ciorogârla", "t": "oraș/comună", "s": "ciorogirla"}, {"n": "Clinceni", "t": "oraș/comună", "s": "clinceni"}, {"n": "Copăceni", "t": "oraș/comună", "s": "copaceni"}, {"n": "Corbeanca", "t": "oraș/comună", "s": "corbeanca"}, {"n": "Călugăreni (Ilfov)", "t": "oraș/comună", "s": "calugareni-ilfov"}, {"n": "Dascălu", "t": "oraș/comună", "s": "dascalu"}, {"n": "Dobroești", "t": "oraș/comună", "s": "dobroesti"}, {"n": "Domnești", "t": "oraș/comună", "s": "domnesti"}, {"n": "Dragomirești-Vale", "t": "oraș/comună", "s": "dragomiresti-vale"}, {"n": "Glina", "t": "oraș/comună", "s": "glina"}, {"n": "Gruiu", "t": "oraș/comună", "s": "gruiu"}, {"n": "Grădiștea", "t": "oraș/comună", "s": "gradistea"}, {"n": "Găneasa", "t": "oraș/comună", "s": "ganeasa"}, {"n": "Jilava", "t": "oraș/comună", "s": "jilava"}, {"n": "Moara Vlăsiei", "t": "oraș/comună", "s": "moara-vlasiei"}, {"n": "Mogoșoaia", "t": "oraș/comună", "s": "mogosoaia"}, {"n": "Măgurele", "t": "oraș/comună", "s": "magurele"}, {"n": "Nuci", "t": "oraș/comună", "s": "nuci"}, {"n": "Otopeni", "t": "oraș/comună", "s": "otopeni"}, {"n": "Pantelimon", "t": "oraș/comună", "s": "pantelimon"}, {"n": "Periș", "t": "oraș/comună", "s": "peris"}, {"n": "Petrachioaia", "t": "oraș/comună", "s": "petrachioaia"}, {"n": "Popești-Leordeni", "t": "oraș/comună", "s": "popesti-leordeni"}, {"n": "Snagov", "t": "oraș/comună", "s": "snagov"}, {"n": "Tunari", "t": "oraș/comună", "s": "tunari"}, {"n": "Vidra", "t": "oraș/comună", "s": "vidra"}, {"n": "Voluntari", "t": "oraș/comună", "s": "voluntari"}, {"n": "Ștefăneștii de Jos", "t": "oraș/comună", "s": "stefanestii-de-jos"}, {"n": "13 Septembrie", "t": "cartier", "s": ""}, {"n": "Aviatorilor", "t": "cartier", "s": ""}, {"n": "Balta Albă", "t": "cartier", "s": ""}, {"n": "Berceni", "t": "cartier", "s": ""}, {"n": "Brâncoveanu", "t": "cartier", "s": ""}, {"n": "Băneasa", "t": "cartier", "s": ""}, {"n": "Centrul Vechi", "t": "cartier", "s": ""}, {"n": "Colentina", "t": "cartier", "s": ""}, {"n": "Cotroceni", "t": "cartier", "s": ""}, {"n": "Crângași", "t": "cartier", "s": ""}, {"n": "Dorobanți", "t": "cartier", "s": ""}, {"n": "Dristor", "t": "cartier", "s": ""}, {"n": "Drumul Taberei", "t": "cartier", "s": ""}, {"n": "Ferentari", "t": "cartier", "s": ""}, {"n": "Floreasca", "t": "cartier", "s": ""}, {"n": "Ghencea", "t": "cartier", "s": ""}, {"n": "Giulești", "t": "cartier", "s": ""}, {"n": "Herastrau", "t": "cartier", "s": ""}, {"n": "Iancului", "t": "cartier", "s": ""}, {"n": "Lujerului", "t": "cartier", "s": ""}, {"n": "Militari", "t": "cartier", "s": ""}, {"n": "Obor", "t": "cartier", "s": ""}, {"n": "Rahova", "t": "cartier", "s": ""}, {"n": "Tineretului", "t": "cartier", "s": ""}, {"n": "Titan", "t": "cartier", "s": ""}, {"n": "Vitan", "t": "cartier", "s": ""}];
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Service", "name": "Animatori Petreceri Copii — Arie Acoperire", "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" }, "areaServed": "București, Ilfov și zone limitrofe", "url": "https://www.superparty.ro/arie-acoperire" },
+    { "@type": "Service", "name": "Animatori Petreceri Copii — Arie Acoperire", "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" }, "areaServed": "București și Ilfov", "url": "https://www.superparty.ro/arie-acoperire" },
     { "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
       { "@type": "ListItem", "position": 2, "name": "Animatori", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
@@ -48,7 +48,7 @@ const schema = JSON.stringify({
 <section class="ac-hero">
   <div class="container">
     <h1>Zone <span style="color:var(--primary)">Acoperite</span></h1>
-    <p>SuperParty activează prioritar în <strong>București</strong> (toate sectoarele) și <strong>Ilfov</strong> (comune și orașe), dar și în localități limitrofe. Verificăm disponibilitatea la cerere.</p>
+    <p>SuperParty activează prioritar în <strong>București</strong> (toate sectoarele) și <strong>Ilfov</strong> (comune și orașe). La cerere, verificăm disponibilitatea și pentru zone limitrofe.</p>
     <a href="tel:+40722744377" class="btn-p cta" style="margin-bottom:.8rem;">📞 Verificați: 0722 744 377</a>
   </div>
 </section>
@@ -75,74 +75,33 @@ const schema = JSON.stringify({
 
 <section class="ac-s">
   <div class="container">
-    <h2 class="sec-title">Orașe și <span style="color:var(--primary)">Comune</span> (93)</h2>
+    <h2 class="sec-title">Orașe și <span style="color:var(--primary)">Comune</span> (38)</h2>
     <p class="sec-sub">Localități unde ajungem frecvent (cele cu <a href="#" style="color:var(--primary)">link</a> au oferte dedicate):</p>
     <div class="loc-cloud">
       <a href="/petreceri/1-decembrie" class="loc-chip linked">1 Decembrie</a>
       <a href="/petreceri/afumati" class="loc-chip linked">Afumați</a>
-      <span class="loc-chip">Amara</span>
-      <span class="loc-chip">Azuga</span>
       <a href="/petreceri/balotesti" class="loc-chip linked">Balotești</a>
-      <span class="loc-chip">Belciugatele</span>
       <a href="/petreceri/berceni-ilfov" class="loc-chip linked">Berceni</a>
-      <span class="loc-chip">Blejoi</span>
-      <span class="loc-chip">Boldești-Scăeni</span>
-      <span class="loc-chip">Bolintin-Vale</span>
       <a href="/petreceri/bragadiru" class="loc-chip linked">Bragadiru</a>
-      <span class="loc-chip">Brazi</span>
-      <span class="loc-chip">Breaza</span>
       <a href="/petreceri/branesti" class="loc-chip linked">Brănești</a>
-      <span class="loc-chip">Brănești (Dâmbovița)</span>
-      <span class="loc-chip">Budești</span>
       <a href="/petreceri/buftea" class="loc-chip linked">Buftea</a>
-      <span class="loc-chip">Butimanu</span>
-      <span class="loc-chip">Bușteni</span>
-      <span class="loc-chip">Băicoi</span>
-      <span class="loc-chip">Băneasa (Giurgiu)</span>
-      <span class="loc-chip">Ceptura</span>
       <a href="/petreceri/cernica" class="loc-chip linked">Cernica</a>
       <a href="/petreceri/chiajna" class="loc-chip linked">Chiajna</a>
       <a href="/petreceri/chitila" class="loc-chip linked">Chitila</a>
-      <span class="loc-chip">Chitila (Călărași)</span>
       <a href="/petreceri/ciorogirla" class="loc-chip linked">Ciorogârla</a>
       <a href="/petreceri/clinceni" class="loc-chip linked">Clinceni</a>
-      <span class="loc-chip">Cojasca</span>
-      <span class="loc-chip">Comana</span>
-      <span class="loc-chip">Comarnic</span>
       <a href="/petreceri/copaceni" class="loc-chip linked">Copăceni</a>
       <a href="/petreceri/corbeanca" class="loc-chip linked">Corbeanca</a>
-      <span class="loc-chip">Costești (Argeș)</span>
-      <span class="loc-chip">Crevedia Mare</span>
       <a href="/petreceri/calugareni-ilfov" class="loc-chip linked">Călugăreni (Ilfov)</a>
-      <span class="loc-chip">Căzănești</span>
       <a href="/petreceri/dascalu" class="loc-chip linked">Dascălu</a>
       <a href="/petreceri/dobroesti" class="loc-chip linked">Dobroești</a>
-      <span class="loc-chip">Doicești</span>
       <a href="/petreceri/domnesti" class="loc-chip linked">Domnești</a>
       <a href="/petreceri/dragomiresti-vale" class="loc-chip linked">Dragomirești-Vale</a>
-      <span class="loc-chip">Dridu</span>
-      <span class="loc-chip">Dumbrăvești</span>
-      <span class="loc-chip">Fieni</span>
-      <span class="loc-chip">Fierbinți-Târg</span>
-      <span class="loc-chip">Filipeștii de Pădure</span>
-      <span class="loc-chip">Florești (Prahova)</span>
-      <span class="loc-chip">Frătești</span>
-      <span class="loc-chip">Fundulea</span>
-      <span class="loc-chip">Ghimpați</span>
       <a href="/petreceri/glina" class="loc-chip linked">Glina</a>
-      <span class="loc-chip">Grindu</span>
       <a href="/petreceri/gruiu" class="loc-chip linked">Gruiu</a>
       <a href="/petreceri/gradistea" class="loc-chip linked">Grădiștea</a>
-      <span class="loc-chip">Gura Ocniței</span>
-      <span class="loc-chip">Găești</span>
       <a href="/petreceri/ganeasa" class="loc-chip linked">Găneasa</a>
-      <span class="loc-chip">Găujani</span>
-      <span class="loc-chip">Hotarele</span>
-      <span class="loc-chip">Iepurești</span>
       <a href="/petreceri/jilava" class="loc-chip linked">Jilava</a>
-      <span class="loc-chip">Lehliu-Gară</span>
-      <span class="loc-chip">Mihăilești</span>
-      <span class="loc-chip">Mizil</span>
       <a href="/petreceri/moara-vlasiei" class="loc-chip linked">Moara Vlăsiei</a>
       <a href="/petreceri/mogosoaia" class="loc-chip linked">Mogoșoaia</a>
       <a href="/petreceri/magurele" class="loc-chip linked">Măgurele</a>
@@ -152,25 +111,11 @@ const schema = JSON.stringify({
       <a href="/petreceri/peris" class="loc-chip linked">Periș</a>
       <a href="/petreceri/petrachioaia" class="loc-chip linked">Petrachioaia</a>
       <a href="/petreceri/popesti-leordeni" class="loc-chip linked">Popești-Leordeni</a>
-      <span class="loc-chip">Pucioasa</span>
-      <span class="loc-chip">Reviga</span>
-      <span class="loc-chip">Răcari</span>
       <a href="/petreceri/snagov" class="loc-chip linked">Snagov</a>
-      <span class="loc-chip">Stoenești (Giurgiu)</span>
-      <span class="loc-chip">Titu</span>
-      <span class="loc-chip">Topoloveni</span>
       <a href="/petreceri/tunari" class="loc-chip linked">Tunari</a>
-      <span class="loc-chip">Urlați</span>
-      <span class="loc-chip">Videle</span>
       <a href="/petreceri/vidra" class="loc-chip linked">Vidra</a>
-      <span class="loc-chip">Voinești (Dâmbovița)</span>
       <a href="/petreceri/voluntari" class="loc-chip linked">Voluntari</a>
-      <span class="loc-chip">Vălenii de Munte</span>
-      <span class="loc-chip">Zimnicea</span>
-      <span class="loc-chip">Înfrățirea</span>
-      <span class="loc-chip">Ștefan Vodă (Călărași)</span>
       <a href="/petreceri/stefanestii-de-jos" class="loc-chip linked">Ștefăneștii de Jos</a>
-      <span class="loc-chip">Țăndărei</span>
     </div>
   </div>
 </section>
@@ -202,7 +147,6 @@ const schema = JSON.stringify({
       <span class="loc-chip">Lujerului</span>
       <span class="loc-chip">Militari</span>
       <span class="loc-chip">Obor</span>
-      <span class="loc-chip">Pipera</span>
       <span class="loc-chip">Rahova</span>
       <span class="loc-chip">Tineretului</span>
       <span class="loc-chip">Titan</span>
@@ -228,7 +172,7 @@ const schema = JSON.stringify({
 </section>
 
 <script>
-  const _SD = [{"n": "1 Decembrie", "t": "oraș/comună", "s": "1-decembrie"}, {"n": "Afumați", "t": "oraș/comună", "s": "afumati"}, {"n": "Amara", "t": "oraș/comună", "s": ""}, {"n": "Azuga", "t": "oraș/comună", "s": ""}, {"n": "Balotești", "t": "oraș/comună", "s": "balotesti"}, {"n": "Belciugatele", "t": "oraș/comună", "s": ""}, {"n": "Berceni", "t": "oraș/comună", "s": "berceni-ilfov"}, {"n": "Blejoi", "t": "oraș/comună", "s": ""}, {"n": "Boldești-Scăeni", "t": "oraș/comună", "s": ""}, {"n": "Bolintin-Vale", "t": "oraș/comună", "s": ""}, {"n": "Bragadiru", "t": "oraș/comună", "s": "bragadiru"}, {"n": "Brazi", "t": "oraș/comună", "s": ""}, {"n": "Breaza", "t": "oraș/comună", "s": ""}, {"n": "Brănești", "t": "oraș/comună", "s": "branesti"}, {"n": "Brănești (Dâmbovița)", "t": "oraș/comună", "s": ""}, {"n": "Budești", "t": "oraș/comună", "s": ""}, {"n": "Buftea", "t": "oraș/comună", "s": "buftea"}, {"n": "Butimanu", "t": "oraș/comună", "s": ""}, {"n": "Bușteni", "t": "oraș/comună", "s": ""}, {"n": "Băicoi", "t": "oraș/comună", "s": ""}, {"n": "Băneasa (Giurgiu)", "t": "oraș/comună", "s": ""}, {"n": "Ceptura", "t": "oraș/comună", "s": ""}, {"n": "Cernica", "t": "oraș/comună", "s": "cernica"}, {"n": "Chiajna", "t": "oraș/comună", "s": "chiajna"}, {"n": "Chitila", "t": "oraș/comună", "s": "chitila"}, {"n": "Chitila (Călărași)", "t": "oraș/comună", "s": ""}, {"n": "Ciorogârla", "t": "oraș/comună", "s": "ciorogirla"}, {"n": "Clinceni", "t": "oraș/comună", "s": "clinceni"}, {"n": "Cojasca", "t": "oraș/comună", "s": ""}, {"n": "Comana", "t": "oraș/comună", "s": ""}, {"n": "Comarnic", "t": "oraș/comună", "s": ""}, {"n": "Copăceni", "t": "oraș/comună", "s": "copaceni"}, {"n": "Corbeanca", "t": "oraș/comună", "s": "corbeanca"}, {"n": "Costești (Argeș)", "t": "oraș/comună", "s": ""}, {"n": "Crevedia Mare", "t": "oraș/comună", "s": ""}, {"n": "Călugăreni (Ilfov)", "t": "oraș/comună", "s": "calugareni-ilfov"}, {"n": "Căzănești", "t": "oraș/comună", "s": ""}, {"n": "Dascălu", "t": "oraș/comună", "s": "dascalu"}, {"n": "Dobroești", "t": "oraș/comună", "s": "dobroesti"}, {"n": "Doicești", "t": "oraș/comună", "s": ""}, {"n": "Domnești", "t": "oraș/comună", "s": "domnesti"}, {"n": "Dragomirești-Vale", "t": "oraș/comună", "s": "dragomiresti-vale"}, {"n": "Dridu", "t": "oraș/comună", "s": ""}, {"n": "Dumbrăvești", "t": "oraș/comună", "s": ""}, {"n": "Fieni", "t": "oraș/comună", "s": ""}, {"n": "Fierbinți-Târg", "t": "oraș/comună", "s": ""}, {"n": "Filipeștii de Pădure", "t": "oraș/comună", "s": ""}, {"n": "Florești (Prahova)", "t": "oraș/comună", "s": ""}, {"n": "Frătești", "t": "oraș/comună", "s": ""}, {"n": "Fundulea", "t": "oraș/comună", "s": ""}, {"n": "Ghimpați", "t": "oraș/comună", "s": ""}, {"n": "Glina", "t": "oraș/comună", "s": "glina"}, {"n": "Grindu", "t": "oraș/comună", "s": ""}, {"n": "Gruiu", "t": "oraș/comună", "s": "gruiu"}, {"n": "Grădiștea", "t": "oraș/comună", "s": "gradistea"}, {"n": "Gura Ocniței", "t": "oraș/comună", "s": ""}, {"n": "Găești", "t": "oraș/comună", "s": ""}, {"n": "Găneasa", "t": "oraș/comună", "s": "ganeasa"}, {"n": "Găujani", "t": "oraș/comună", "s": ""}, {"n": "Hotarele", "t": "oraș/comună", "s": ""}, {"n": "Iepurești", "t": "oraș/comună", "s": ""}, {"n": "Jilava", "t": "oraș/comună", "s": "jilava"}, {"n": "Lehliu-Gară", "t": "oraș/comună", "s": ""}, {"n": "Mihăilești", "t": "oraș/comună", "s": ""}, {"n": "Mizil", "t": "oraș/comună", "s": ""}, {"n": "Moara Vlăsiei", "t": "oraș/comună", "s": "moara-vlasiei"}, {"n": "Mogoșoaia", "t": "oraș/comună", "s": "mogosoaia"}, {"n": "Măgurele", "t": "oraș/comună", "s": "magurele"}, {"n": "Nuci", "t": "oraș/comună", "s": "nuci"}, {"n": "Otopeni", "t": "oraș/comună", "s": "otopeni"}, {"n": "Pantelimon", "t": "oraș/comună", "s": "pantelimon"}, {"n": "Periș", "t": "oraș/comună", "s": "peris"}, {"n": "Petrachioaia", "t": "oraș/comună", "s": "petrachioaia"}, {"n": "Popești-Leordeni", "t": "oraș/comună", "s": "popesti-leordeni"}, {"n": "Pucioasa", "t": "oraș/comună", "s": ""}, {"n": "Reviga", "t": "oraș/comună", "s": ""}, {"n": "Răcari", "t": "oraș/comună", "s": ""}, {"n": "Snagov", "t": "oraș/comună", "s": "snagov"}, {"n": "Stoenești (Giurgiu)", "t": "oraș/comună", "s": ""}, {"n": "Titu", "t": "oraș/comună", "s": ""}, {"n": "Topoloveni", "t": "oraș/comună", "s": ""}, {"n": "Tunari", "t": "oraș/comună", "s": "tunari"}, {"n": "Urlați", "t": "oraș/comună", "s": ""}, {"n": "Videle", "t": "oraș/comună", "s": ""}, {"n": "Vidra", "t": "oraș/comună", "s": "vidra"}, {"n": "Voinești (Dâmbovița)", "t": "oraș/comună", "s": ""}, {"n": "Voluntari", "t": "oraș/comună", "s": "voluntari"}, {"n": "Vălenii de Munte", "t": "oraș/comună", "s": ""}, {"n": "Zimnicea", "t": "oraș/comună", "s": ""}, {"n": "Înfrățirea", "t": "oraș/comună", "s": ""}, {"n": "Ștefan Vodă (Călărași)", "t": "oraș/comună", "s": ""}, {"n": "Ștefăneștii de Jos", "t": "oraș/comună", "s": "stefanestii-de-jos"}, {"n": "Țăndărei", "t": "oraș/comună", "s": ""}, {"n": "13 Septembrie", "t": "cartier", "s": ""}, {"n": "Aviatorilor", "t": "cartier", "s": ""}, {"n": "Balta Albă", "t": "cartier", "s": ""}, {"n": "Berceni", "t": "cartier", "s": ""}, {"n": "Brâncoveanu", "t": "cartier", "s": ""}, {"n": "Băneasa", "t": "cartier", "s": ""}, {"n": "Centrul Vechi", "t": "cartier", "s": ""}, {"n": "Colentina", "t": "cartier", "s": ""}, {"n": "Cotroceni", "t": "cartier", "s": ""}, {"n": "Crângași", "t": "cartier", "s": ""}, {"n": "Dorobanți", "t": "cartier", "s": ""}, {"n": "Dristor", "t": "cartier", "s": ""}, {"n": "Drumul Taberei", "t": "cartier", "s": ""}, {"n": "Ferentari", "t": "cartier", "s": ""}, {"n": "Floreasca", "t": "cartier", "s": ""}, {"n": "Ghencea", "t": "cartier", "s": ""}, {"n": "Giulești", "t": "cartier", "s": ""}, {"n": "Herastrau", "t": "cartier", "s": ""}, {"n": "Iancului", "t": "cartier", "s": ""}, {"n": "Lujerului", "t": "cartier", "s": ""}, {"n": "Militari", "t": "cartier", "s": ""}, {"n": "Obor", "t": "cartier", "s": ""}, {"n": "Pipera", "t": "cartier", "s": ""}, {"n": "Rahova", "t": "cartier", "s": ""}, {"n": "Tineretului", "t": "cartier", "s": ""}, {"n": "Titan", "t": "cartier", "s": ""}, {"n": "Vitan", "t": "cartier", "s": ""}];
+  const _SD = [{"n": "1 Decembrie", "t": "oraș/comună", "s": "1-decembrie"}, {"n": "Afumați", "t": "oraș/comună", "s": "afumati"}, {"n": "Balotești", "t": "oraș/comună", "s": "balotesti"}, {"n": "Berceni", "t": "oraș/comună", "s": "berceni-ilfov"}, {"n": "Bragadiru", "t": "oraș/comună", "s": "bragadiru"}, {"n": "Brănești", "t": "oraș/comună", "s": "branesti"}, {"n": "Buftea", "t": "oraș/comună", "s": "buftea"}, {"n": "Cernica", "t": "oraș/comună", "s": "cernica"}, {"n": "Chiajna", "t": "oraș/comună", "s": "chiajna"}, {"n": "Chitila", "t": "oraș/comună", "s": "chitila"}, {"n": "Ciorogârla", "t": "oraș/comună", "s": "ciorogirla"}, {"n": "Clinceni", "t": "oraș/comună", "s": "clinceni"}, {"n": "Copăceni", "t": "oraș/comună", "s": "copaceni"}, {"n": "Corbeanca", "t": "oraș/comună", "s": "corbeanca"}, {"n": "Călugăreni (Ilfov)", "t": "oraș/comună", "s": "calugareni-ilfov"}, {"n": "Dascălu", "t": "oraș/comună", "s": "dascalu"}, {"n": "Dobroești", "t": "oraș/comună", "s": "dobroesti"}, {"n": "Domnești", "t": "oraș/comună", "s": "domnesti"}, {"n": "Dragomirești-Vale", "t": "oraș/comună", "s": "dragomiresti-vale"}, {"n": "Glina", "t": "oraș/comună", "s": "glina"}, {"n": "Gruiu", "t": "oraș/comună", "s": "gruiu"}, {"n": "Grădiștea", "t": "oraș/comună", "s": "gradistea"}, {"n": "Găneasa", "t": "oraș/comună", "s": "ganeasa"}, {"n": "Jilava", "t": "oraș/comună", "s": "jilava"}, {"n": "Moara Vlăsiei", "t": "oraș/comună", "s": "moara-vlasiei"}, {"n": "Mogoșoaia", "t": "oraș/comună", "s": "mogosoaia"}, {"n": "Măgurele", "t": "oraș/comună", "s": "magurele"}, {"n": "Nuci", "t": "oraș/comună", "s": "nuci"}, {"n": "Otopeni", "t": "oraș/comună", "s": "otopeni"}, {"n": "Pantelimon", "t": "oraș/comună", "s": "pantelimon"}, {"n": "Periș", "t": "oraș/comună", "s": "peris"}, {"n": "Petrachioaia", "t": "oraș/comună", "s": "petrachioaia"}, {"n": "Popești-Leordeni", "t": "oraș/comună", "s": "popesti-leordeni"}, {"n": "Snagov", "t": "oraș/comună", "s": "snagov"}, {"n": "Tunari", "t": "oraș/comună", "s": "tunari"}, {"n": "Vidra", "t": "oraș/comună", "s": "vidra"}, {"n": "Voluntari", "t": "oraș/comună", "s": "voluntari"}, {"n": "Ștefăneștii de Jos", "t": "oraș/comună", "s": "stefanestii-de-jos"}, {"n": "13 Septembrie", "t": "cartier", "s": ""}, {"n": "Aviatorilor", "t": "cartier", "s": ""}, {"n": "Balta Albă", "t": "cartier", "s": ""}, {"n": "Berceni", "t": "cartier", "s": ""}, {"n": "Brâncoveanu", "t": "cartier", "s": ""}, {"n": "Băneasa", "t": "cartier", "s": ""}, {"n": "Centrul Vechi", "t": "cartier", "s": ""}, {"n": "Colentina", "t": "cartier", "s": ""}, {"n": "Cotroceni", "t": "cartier", "s": ""}, {"n": "Crângași", "t": "cartier", "s": ""}, {"n": "Dorobanți", "t": "cartier", "s": ""}, {"n": "Dristor", "t": "cartier", "s": ""}, {"n": "Drumul Taberei", "t": "cartier", "s": ""}, {"n": "Ferentari", "t": "cartier", "s": ""}, {"n": "Floreasca", "t": "cartier", "s": ""}, {"n": "Ghencea", "t": "cartier", "s": ""}, {"n": "Giulești", "t": "cartier", "s": ""}, {"n": "Herastrau", "t": "cartier", "s": ""}, {"n": "Iancului", "t": "cartier", "s": ""}, {"n": "Lujerului", "t": "cartier", "s": ""}, {"n": "Militari", "t": "cartier", "s": ""}, {"n": "Obor", "t": "cartier", "s": ""}, {"n": "Rahova", "t": "cartier", "s": ""}, {"n": "Tineretului", "t": "cartier", "s": ""}, {"n": "Titan", "t": "cartier", "s": ""}, {"n": "Vitan", "t": "cartier", "s": ""}];
   const inp = document.getElementById("loc-search");
   const res = document.getElementById("search-results");
   inp.addEventListener("input", function() {
