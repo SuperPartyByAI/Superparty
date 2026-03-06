@@ -68,6 +68,86 @@
             "notes": "Filtrează query-uri precise intralocale."
         },
         {
+            "cluster_id": "sector_2",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_2",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 2",
+                "animatori copii sector 2"
+            ],
+            "query_patterns": [
+                "* sector 2",
+                "* sectorul 2"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_3",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_3",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 3",
+                "animatori copii sector 3"
+            ],
+            "query_patterns": [
+                "* sector 3",
+                "* sectorul 3"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_4",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_4",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 4",
+                "animatori copii sector 4"
+            ],
+            "query_patterns": [
+                "* sector 4",
+                "* sectorul 4"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_5",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_5",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 5",
+                "animatori copii sector 5"
+            ],
+            "query_patterns": [
+                "* sector 5",
+                "* sectorul 5"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_6",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_6",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 6",
+                "animatori copii sector 6"
+            ],
+            "query_patterns": [
+                "* sector 6",
+                "* sectorul 6"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
             "cluster_id": "localitate_voluntari",
             "cluster_type": "localitate",
             "intent_class": "commercial_local",

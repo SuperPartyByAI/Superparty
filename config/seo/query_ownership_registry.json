@@ -3,7 +3,10 @@
         "money_root_animatori_petreceri_copii": {
             "owner_url": "/animatori-petreceri-copii",
             "allowed_support_urls": [
-                "/*"
+                "/petreceri/bucuresti",
+                "/petreceri/ilfov",
+                "/contact",
+                "/articole/*"
             ],
             "forbidden_urls": [
                 "/petreceri/*",
@@ -61,6 +64,96 @@
                 "/petreceri/sector-4",
                 "/petreceri/sector-5",
                 "/petreceri/sector-6"
+            ],
+            "risk_tier": "B",
+            "business_priority": "high",
+            "expansion_policy": "controlled",
+            "notes": "Hub secundar comercial, stricta izolare per sector."
+        },
+        "sector_2": {
+            "owner_url": "/petreceri/sector-2",
+            "allowed_support_urls": [
+                "/petreceri/bucuresti",
+                "/animatori-petreceri-copii"
+            ],
+            "forbidden_urls": [
+                "/petreceri/sector-1",
+                "/petreceri/sector-3",
+                "/petreceri/sector-4",
+                "/petreceri/sector-5",
+                "/petreceri/sector-6"
+            ],
+            "risk_tier": "B",
+            "business_priority": "high",
+            "expansion_policy": "controlled",
+            "notes": "Hub secundar comercial, stricta izolare per sector."
+        },
+        "sector_3": {
+            "owner_url": "/petreceri/sector-3",
+            "allowed_support_urls": [
+                "/petreceri/bucuresti",
+                "/animatori-petreceri-copii"
+            ],
+            "forbidden_urls": [
+                "/petreceri/sector-1",
+                "/petreceri/sector-2",
+                "/petreceri/sector-4",
+                "/petreceri/sector-5",
+                "/petreceri/sector-6"
+            ],
+            "risk_tier": "B",
+            "business_priority": "high",
+            "expansion_policy": "controlled",
+            "notes": "Hub secundar comercial, stricta izolare per sector."
+        },
+        "sector_4": {
+            "owner_url": "/petreceri/sector-4",
+            "allowed_support_urls": [
+                "/petreceri/bucuresti",
+                "/animatori-petreceri-copii"
+            ],
+            "forbidden_urls": [
+                "/petreceri/sector-1",
+                "/petreceri/sector-2",
+                "/petreceri/sector-3",
+                "/petreceri/sector-5",
+                "/petreceri/sector-6"
+            ],
+            "risk_tier": "B",
+            "business_priority": "high",
+            "expansion_policy": "controlled",
+            "notes": "Hub secundar comercial, stricta izolare per sector."
+        },
+        "sector_5": {
+            "owner_url": "/petreceri/sector-5",
+            "allowed_support_urls": [
+                "/petreceri/bucuresti",
+                "/animatori-petreceri-copii"
+            ],
+            "forbidden_urls": [
+                "/petreceri/sector-1",
+                "/petreceri/sector-2",
+                "/petreceri/sector-3",
+                "/petreceri/sector-4",
+                "/petreceri/sector-6"
+            ],
+            "risk_tier": "B",
+            "business_priority": "high",
+            "expansion_policy": "controlled",
+            "notes": "Hub secundar comercial, stricta izolare per sector."
+        },
+        "sector_6": {
+            "owner_url": "/petreceri/sector-6",
+            "allowed_support_urls": [
+                "/petreceri/bucuresti",
+                "/animatori-petreceri-copii"
+            ],
+            "forbidden_urls": [
+                "/petreceri/sector-1",
+                "/petreceri/sector-2",
+                "/petreceri/sector-3",
+                "/petreceri/sector-4",
+                "/petreceri/sector-5"
             ],
             "risk_tier": "B",
             "business_priority": "high",

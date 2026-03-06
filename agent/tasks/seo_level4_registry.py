@@ -1,5 +1,6 @@
 import json
 import logging
+import fnmatch
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -32,15 +33,10 @@ def get_allowed_supporters(cluster_id: str) -> List[str]:
     return cluster.get("allowed_support_urls", [])
 
 def _match_url(url: str, pattern: str) -> bool:
-    """Matcher intern cu suport pentru wildcard (*) de bază."""
+    """Matcher intern cu suport pentru wildcard (*) via fnmatch."""
     u = url.strip().rstrip("/")
     p = pattern.strip().rstrip("/")
-    if p.endswith("/*"):
-        base = p[:-2]
-        return u.startswith(base)
-    if p.startswith("/*"):
-        return u.endswith(p[2:])
-    return u == p
+    return fnmatch.fnmatch(u, p)
 
 def is_owner(url: str, cluster_id: str) -> bool:
     """Aprobă dacă URL-ul este Owner-ul exact decretat."""
