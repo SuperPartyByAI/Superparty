@@ -20,6 +20,12 @@ from datetime import date, datetime, timedelta
 # ─── Paths ───────────────────────────────────────────────────────────────────
 REPORTS_DIR = Path("reports/seo")
 MANIFEST_PATH = REPORTS_DIR / "indexing_manifest.json"
+
+from dotenv import load_dotenv
+# Încărcare explicită a env-ului (în special pentru PM2 și execuții crontab externe)
+env_path = os.environ.get("DOTENV_PATH", "/var/www/superparty/.env")
+load_dotenv(env_path, override=True)
+
 DB_PATH = Path(os.environ.get("SEO_DB_PATH", "reports/seo/seo_experiments.db"))
 AUDIT_GLOB = "seo_apply_gsc_*.json"
 URL_STATES_PATH = REPORTS_DIR / "url_states.json"
