@@ -136,8 +136,8 @@ STATIC_COMMERCIAL = [
 ]
 
 # URL-uri hub din manifest (Tier 2)
-tier2_urls = [m['url'] for m in manifest if m.get('tier') == 2]
-tier3_urls = [m['url'] for m in manifest if m.get('tier') == 3]
+tier2_urls = [m['url'] for m in manifest if m.get('tier') == 2 and m.get('indexable', True)]
+tier3_urls = [m['url'] for m in manifest if m.get('tier') == 3 and m.get('indexable', True)]
 
 print(f"  Tier 1 (pilon): 1")
 print(f"  Tier 2 (hub-uri): {len(tier2_urls)}")

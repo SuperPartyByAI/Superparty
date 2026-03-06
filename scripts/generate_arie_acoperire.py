@@ -146,12 +146,6 @@ def main():
     judete = [
         ("bucuresti","📍 București","Toate sectoarele 1–6"),
         ("ilfov","📍 Ilfov","Voluntari, Otopeni, Bragadiru, Chiajna…"),
-        ("prahova","📍 Prahova","Ploiești, Câmpina, Sinaia…"),
-        ("dambovita","📍 Dâmbovița","Târgoviște, Titu, Găești…"),
-        ("giurgiu","📍 Giurgiu","Giurgiu, Mihăilești, Bolintin…"),
-        ("ialomita","📍 Ialomița","Urziceni, Slobozia, Fetești…"),
-        ("calarasi","📍 Călărași","Oltenița, Fundulea, Lehliu…"),
-        ("teleorman","📍 Teleorman","Videle, Alexandria…"),
     ]
     for jslug, jname, jdesc in judete:
         parts.append(f'      <a href="/petreceri/{jslug}" class="judet-card"><h3>{jname}</h3><p>{jdesc}</p></a>')
