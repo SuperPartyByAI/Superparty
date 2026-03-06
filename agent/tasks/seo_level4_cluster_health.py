@@ -1,5 +1,7 @@
 import json
 import logging
+from datetime import datetime, timezone
+from urllib.parse import urlparse
 from pathlib import Path
 from typing import Dict, List
 from agent.tasks.seo_level4_clusters import get_cluster_for_query, is_money_cluster
@@ -9,6 +11,16 @@ log = logging.getLogger(__name__)
 
 REPORT_DIR = Path("reports/superparty")
 REPORT_FILE = REPORT_DIR / "seo_cluster_health.json"
+
+def normalize_page_url(raw_url: str) -> str:
+    """Normalizează pagina din GSC: taie domeniul dacă există, asigură format cu /."""
+    if not raw_url:
+        return ""
+    parsed = urlparse(raw_url)
+    path = parsed.path
+    if not path.startswith("/"):
+        path = "/" + path
+    return path.rstrip("/") or "/"
 
 def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
     """
@@ -20,7 +32,11 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
     
     for row in gsc_rows:
         query = row.get("query", "")
-        page = row.get("page", "")
+        raw_page = row.get("page", "")
+        if not query or not raw_page:
+            continue
+            
+        page = normalize_page_url(raw_page)
         if not query or not page:
             continue
             
@@ -35,6 +51,11 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
                 "is_money_cluster": is_money_cluster(cluster_id),
                 "total_impressions": 0,
                 "total_clicks": 0,
+                "owner_present": False,
+                "owner_impressions": 0,
+                "supporter_count": 0,
+                "forbidden_count": 0,
+                "unknown_count": 0,
                 "urls": {},
                 "cannibalization_warnings": []
             }
@@ -55,17 +76,44 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
                 "impressions": 0,
                 "clicks": 0
             }
-            if cannibalizing:
-                c_data["cannibalization_warnings"].append(page)
+            if classification == "owner":
+                c_data["owner_present"] = True
+            elif classification == "supporter":
+                c_data["supporter_count"] += 1
+            elif classification == "forbidden":
+                c_data["forbidden_count"] += 1
+            else:
+                c_data["unknown_count"] += 1
                 
         c_data["urls"][page]["impressions"] += row.get("impressions", 0)
         c_data["urls"][page]["clicks"] += row.get("clicks", 0)
-
-    # Deduplicate warning arrays if any overlap occurred
-    for cid, data in health_data.items():
-        data["cannibalization_warnings"] = list(set(data["cannibalization_warnings"]))
         
-    return {"clusters": health_data}
+        if c_data["urls"][page]["classification"] == "owner":
+            c_data["owner_impressions"] += row.get("impressions", 0)
+
+    # Compile structured warnings arrays
+    for cid, data in health_data.items():
+        warnings = []
+        for url, stats in data["urls"].items():
+            if stats["is_cannibalizing"]:
+                warnings.append({
+                    "url": url,
+                    "classification": stats["classification"],
+                    "impressions": stats["impressions"],
+                    "clicks": stats["clicks"],
+                    "severity": "high" if stats["classification"] == "forbidden" else "medium"
+                })
+        data["cannibalization_warnings"] = sorted(warnings, key=lambda x: x["impressions"], reverse=True)
+        
+    return {
+        "metadata": {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "schema_version": "1.0",
+            "input_rows": len(gsc_rows),
+            "clusters_count": len(health_data)
+        },
+        "clusters": health_data
+    }
 
 def save_cluster_health_report(health_data: Dict) -> None:
     """Salvează raportul generat JSON in disk pentru ops.superparty.ro/dashboard."""
