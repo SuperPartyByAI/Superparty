@@ -1,0 +1,38 @@
+import pytest
+from agent.tasks.seo_level4_cluster_health import generate_cluster_health
+
+def test_generate_cluster_health():
+    mock_gsc_data = [
+        # București acționează ca suport curat (conform fix PR#42) -> zero warning
+        {"query": "animatori petreceri copii", "page": "/petreceri/bucuresti", "impressions": 500, "clicks": 50},
+        
+        # Pilonul central convertește la sine însuși -> zero warning
+        {"query": "petreceri copii", "page": "/animatori-petreceri-copii", "impressions": 1000, "clicks": 150},
+        
+        # Sector 1 încearcă să vândă pe query național -> Forbidden -> Canibalizare 
+        {"query": "animatori copii", "page": "/petreceri/sector-1", "impressions": 100, "clicks": 5},
+        
+        # Owner curat de geo bucurești -> zero warning
+        {"query": "animatori petreceri copii bucuresti", "page": "/petreceri/bucuresti", "impressions": 300, "clicks": 40},
+        
+        # Sub-pilon Ilfov încearcă expansiune invalidă peste București -> Forbidden -> Canibalizare
+        {"query": "animatori copii bucuresti", "page": "/petreceri/ilfov", "impressions": 50, "clicks": 0}
+    ]
+    
+    report = generate_cluster_health(mock_gsc_data)
+    clusters = report.get("clusters", {})
+    
+    # 1. Evaluare Cluster ROOT
+    root_cluster = clusters.get("money_root_animatori_petreceri_copii")
+    assert root_cluster is not None
+    assert root_cluster["total_impressions"] == 1600
+    assert "/petreceri/sector-1" in root_cluster["cannibalization_warnings"]
+    assert "/petreceri/bucuresti" not in root_cluster["cannibalization_warnings"]
+    assert "/animatori-petreceri-copii" not in root_cluster["cannibalization_warnings"]
+    
+    # 2. Evaluare Cluster GEO BUCURESTI
+    buc_cluster = clusters.get("money_geo_bucuresti")
+    assert buc_cluster is not None
+    assert buc_cluster["total_impressions"] == 350
+    assert "/petreceri/ilfov" in buc_cluster["cannibalization_warnings"]
+    assert "/petreceri/bucuresti" not in buc_cluster["cannibalization_warnings"]
