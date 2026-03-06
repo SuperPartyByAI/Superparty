@@ -47,6 +47,8 @@ def enqueue_weekly():
         try:
             get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="ga4_weekly_wave")
             get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
+            # Adaug aici Raportul Saptamanal Enterprise (GSC/Apply/GBP Workflow Info)
+            get_queue("apply").enqueue("agent.tasks.seo_weekly_report.generate_weekly_report", site_id="superparty")
         except Exception as e:
             log.warning("GA4 weekly wave %s: %s", site_id, e)
 
