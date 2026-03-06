@@ -59,8 +59,9 @@
     "slug": "animatori-petreceri-copii",
     "tier": 1,
     "hub": null,
-    "indexable": false,
-    "url": "https://www.superparty.ro/animatori-petreceri-copii"
+    "indexable": true,
+    "url": "https://www.superparty.ro/animatori-petreceri-copii",
+    "path": "/animatori-petreceri-copii"
   },
   {
     "slug": "teleorman",

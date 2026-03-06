@@ -4,20 +4,20 @@ seo_premerge_checks.py — pre-merge policy gate pentru Superparty SEO enterpris
 
 Rulare: python scripts/seo_premerge_checks.py
 Esuaza cu exit-code 1 daca oricare gate este violat.
-Destinat CI (GitHub Actions) sau pre-merge manual.
 
 Checks:
-  1. Non-www URL: niciun https://superparty.ro (fara www) in sitemap
-  2a. Village/hamlet/locality indexable:true in manifest (interzis)
-  2b. Non-target counties indexable:true in manifest (Teleorman etc)
-  2c. Town/commune/city indexable:true dar slug NOT in ILFOV_COMMUNES whitelist
-  3. URL-uri noindex in sitemap
-  4. Judete non-target in sitemap slugs
+  1. Non-www URL in sitemap
+  2a. Village/hamlet/locality indexable:true in manifest
+  2b. Non-target counties indexable:true in manifest
+  2c. Non-Ilfov town/commune/city indexable:true (nu in whitelist Ilfov)
+  3. URL-uri noindex in sitemap (mapping corect path: entry[path] > urlparse(url) > fallback)
+  4. Judete non-target in sitemap
   5. Canonical non-www in Astro pages
 """
 
 import sys, json, re
 from pathlib import Path
+from urllib.parse import urlparse
 
 PASS = "\033[92mPASS\033[0m"
 FAIL = "\033[91mFAIL\033[0m"
@@ -34,7 +34,7 @@ ILFOV_COMMUNES = {
     "tunari","vidra","chiajna","cernica","caldararu","ilfov",
 }
 ALWAYS_OK_SLUGS = {
-    "ilfov","bucuresti",
+    "ilfov","bucuresti","animatori-petreceri-copii",
     "sector-1","sector-2","sector-3","sector-4","sector-5","sector-6",
 }
 FORBIDDEN_PLACE_TYPES = {"village", "hamlet", "locality"}
@@ -56,6 +56,19 @@ def check(name, ok, detail=""):
         errors.append(f"{name}: {detail}")
 
 
+def entry_to_path(entry):
+    """Derive URL path from manifest entry.
+    Priority: entry['path'] > urlparse(entry['url']).path > /petreceri/{slug}
+    """
+    if entry.get("path"):
+        return entry["path"].rstrip("/") or "/"
+    if entry.get("url"):
+        parsed = urlparse(entry["url"])
+        return parsed.path.rstrip("/") or "/"
+    slug = entry.get("slug", "")
+    return f"/petreceri/{slug}" if slug else ""
+
+
 # ─── 1. SITEMAP: www-only ───────────────────────────────────────────────────
 print("\n[1] Sitemap — host www-only")
 sitemap = Path("public/sitemap.xml")
@@ -65,6 +78,10 @@ if sitemap.exists():
     non_www = re.findall(r'<loc>https://superparty\.ro[^<]*</loc>', sm_text)
     check("No non-www <loc> in sitemap", len(non_www) == 0,
           f"{len(non_www)} non-www URLs: {non_www[:3]}")
+    # Confirm pilon is present
+    has_pilon = "animatori-petreceri-copii" in sm_text
+    check("Pilon /animatori-petreceri-copii in sitemap", has_pilon,
+          "pilon missing from sitemap!")
 else:
     check("sitemap.xml exists", False, "public/sitemap.xml missing")
 
@@ -79,11 +96,14 @@ if manifest_path.exists():
     bad_village = []
     bad_county = []
     bad_non_ilfov_town = []
+    pilon_indexable = False
 
     for entry in manifest:
+        slug = entry.get("slug", "").lower().strip()
+        if slug == "animatori-petreceri-copii" and entry.get("indexable"):
+            pilon_indexable = True
         if not entry.get("indexable"):
             continue
-        slug = entry.get("slug", "").lower().strip()
         ptype = entry.get("place_type", "").lower()
         county = entry.get("county", "").strip().lower()
 
@@ -96,10 +116,11 @@ if manifest_path.exists():
         if county in NON_TARGET_COUNTIES:
             bad_county.append(f"{entry.get('slug')} (county={county})")
 
-        # Non-Ilfov town: are place_type town/commune/city dar slug nu e in whitelist
         if ptype in {"town", "commune", "city", "municipality"} and slug not in ILFOV_COMMUNES:
             bad_non_ilfov_town.append(f"{entry.get('slug')} (type={ptype}, county={county!r})")
 
+    check("Pilon animatori-petreceri-copii indexable:true", pilon_indexable,
+          "CRITICAL: pilon is indexable:false!")
     check("No village/hamlet/locality indexable:true", len(bad_village) == 0,
           f"{bad_village[:5]}")
     check("No non-target counties indexable:true", len(bad_county) == 0,
@@ -117,14 +138,14 @@ if sm_text and manifest_path.exists():
     noindex_paths = set()
     for entry in manifest:
         if not entry.get("indexable"):
-            slug = entry.get("slug", "")
-            path = entry.get("path") or f"/petreceri/{slug}"
-            noindex_paths.add(path.rstrip("/"))
+            path = entry_to_path(entry)
+            if path:
+                noindex_paths.add(path)
 
     bad_in_sitemap = []
     urls_in_sitemap = re.findall(r'<loc>(https://www\.superparty\.ro[^<]*)</loc>', sm_text)
     for url in urls_in_sitemap:
-        path = url.replace("https://www.superparty.ro", "").rstrip("/") or "/"
+        path = urlparse(url).path.rstrip("/") or "/"
         if path in noindex_paths:
             bad_in_sitemap.append(path)
 
