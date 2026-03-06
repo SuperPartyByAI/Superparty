@@ -1,0 +1,38 @@
+{
+    "schema_version": "2.0",
+    "description": "Enterprise 2D Business Priority Scoring for Level 4 SEO Intelligence",
+    "importance": {
+        "tier_points": {
+            "A": 100,
+            "B": 50,
+            "C": 10
+        },
+        "business_priority_points": {
+            "critical": 50,
+            "high": 30,
+            "medium": 10,
+            "low": 0
+        },
+        "is_money_cluster_bonus": 50,
+        "volume_thresholds": {
+            "high": 1000,
+            "high_bonus": 20,
+            "medium": 100,
+            "medium_bonus": 5
+        }
+    },
+    "risk": {
+        "base_risk": 1.0,
+        "owner_missing_multiplier": 2.0,
+        "conflict_multipliers": {
+            "high_severity": 0.5,
+            "medium_severity": 0.2
+        }
+    },
+    "priority_bands": {
+        "critical": 300,
+        "high": 150,
+        "medium": 50,
+        "low": 0
+    }
+}
