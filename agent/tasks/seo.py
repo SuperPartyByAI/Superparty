@@ -323,12 +323,12 @@ def get_deterministic_payload(clean_path, manifest_data):
     elif page_type == "hub_ilfov":
         payload["description"] = "Animatori pentru petreceri copii în Ilfov (orașe și comune). Programe flexibile, adaptate spațiului și vârstei. Solicită ofertă."
         payload["logistic_text"] = "Acoperim orașe și comune din Ilfov, cu programe pentru petreceri de copii adaptate spațiului și vârstei. Detaliile logistice (deplasare, montaj, durată) se stabilesc la rezervare, în funcție de interval și locație."
-        payload["hub_url"] = "/animatori-petreceri-copii"
-        payload["hub_label"] = "Animatori petreceri copii (pilon)"
+        payload["hub_url"] = "/petreceri/bucuresti"
+        payload["hub_label"] = "Hub București"
     elif page_type == "hub_bucuresti":
         payload["description"] = "Animatori pentru petreceri copii în București, pe sectoare. Activități adaptate vârstei și spațiului. Cere ofertă și verifică disponibilitatea."
     elif page_type == "sector":
-        payload["title"] = f"Animatori copii Sector {slug.replace('sector-', '')} București | Superparty"
+        payload["title"] = f"Animatori petreceri copii Sector {slug.replace('sector-', '')} București | Superparty"
         payload["description"] = f"Animatori pentru petreceri copii în Sector {slug.replace('sector-', '')}, București. Activități adaptate vârstei, pentru aniversări și evenimente. Cere ofertă."
         payload["hub_url"] = "/petreceri/bucuresti"
         payload["hub_label"] = "Hub București"
@@ -471,6 +471,34 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
             pr_body=f"Automated SEO opportunity report.\n\nTop: {opportunities[0].get('query') if opportunities else 'none'}"
         )
         return {"ok": True, "pr_url": result}
+
+
+    def _load_apply_state(state_path: Path) -> dict:
+        today = str(date.today())
+        if state_path.exists():
+            try:
+                st = json.loads(state_path.read_text(encoding="utf-8"))
+            except Exception:
+                st = {}
+        else:
+            st = {}
+
+        if st.get("date") != today:
+            st = {
+                "date": today,
+                "files_applied_today": 0,
+                "prs_created_today": 0,
+                "page_last_applied": st.get("page_last_applied", {}),
+            }
+
+        st.setdefault("page_last_applied", {})
+        st.setdefault("files_applied_today", 0)
+        st.setdefault("prs_created_today", 0)
+        return st
+
+    def _save_apply_state(state_path: Path, st: dict) -> None:
+        state_path.parent.mkdir(parents=True, exist_ok=True)
+        state_path.write_text(json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
 
     # Load Manifest for Source of Truth
     manifest_data = {}
