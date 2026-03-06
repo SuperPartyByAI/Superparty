@@ -396,19 +396,26 @@ seoRouter.get("/cluster-priority", async (req: any, res) => {
       Money Bn: ${intel.explanation?.money_bonus} | Vol Bn: ${intel.explanation?.volume_bonus}
     </div>`;
 
-    let actionsLinks = `<a href="?action=${intel.recommended_action}" style="color:#94a3b8; font-size:10px; text-decoration:underline;">Filtrează Acțiuni Similare</a><br/>`;
-
-    // Custom button generator
-    let triggerStyle = "background:#3b82f6;color:white;padding:4px 8px;border-radius:4px;font-size:10px;text-decoration:none;display:inline-block;margin-top:6px;font-weight:600;";
+    // Suggested next steps — READ-ONLY, no execution
+    let suggestionLabel = "monitor_only";
+    let suggestionColor = "#4b5563";
     if (intel.recommended_action === "escalate_tier_a_conflict") {
-      actionsLinks += `<a href="#" style="${triggerStyle}background:#ef4444;">Run Manual Resolver</a>`;
+      suggestionLabel = "Suggested: Escalate Tier A Conflict Manual";
+      suggestionColor = "#ef4444";
     } else if (intel.recommended_action === "investigate_owner_drift") {
-      actionsLinks += `<a href="#" style="${triggerStyle}">Trigger Audit</a>`;
+      suggestionLabel = "Suggested: Investigate Owner Drift";
+      suggestionColor = "#3b82f6";
     } else if (intel.recommended_action === "review_registry_mapping") {
-      actionsLinks += `<a href="#" style="${triggerStyle}background:#eab308;color:black;">Check Registry</a>`;
+      suggestionLabel = "Suggested: Review Registry Mapping";
+      suggestionColor = "#eab308";
+    } else if (intel.recommended_action === "review_internal_linking_and_content") {
+      suggestionLabel = "Suggested: Review Internal Linking";
+      suggestionColor = "#a855f7";
     } else {
-      actionsLinks += `<span style="font-size:10px;color:#64748b;margin-top:6px;display:inline-block;">Nicio acțiune manuală.</span>`;
+      suggestionLabel = "No manual action required.";
     }
+    const actionsLinks = `<a href="?action=${intel.recommended_action}" style="color:#94a3b8; font-size:10px; text-decoration:underline;">Filtrează Similare</a><br/>
+    <span style="display:inline-block;margin-top:6px;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;background:${suggestionColor}22;color:${suggestionColor};border:1px solid ${suggestionColor}44;">${suggestionLabel}</span>`;
 
     rowsHtml += `
         <tr>
