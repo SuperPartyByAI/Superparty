@@ -76,6 +76,15 @@ export function loadClusterHealth() {
     } catch { return null; }
 }
 
+// Citim Level 4 Cluster Priority (Intelligence)
+export function loadClusterPriority() {
+    try {
+        const p = path.join(config.reportsDir, "seo_cluster_priority.json");
+        if (!fs.existsSync(p)) return null;
+        return JSON.parse(fs.readFileSync(p, "utf-8"));
+    } catch { return null; }
+}
+
 export async function getOverview() {
     const experiments = loadExperiments();
     const recentAudits = loadRecentAudits();
@@ -109,6 +118,25 @@ export async function getOverview() {
         }
     }
 
+    const clusterPriority = loadClusterPriority();
+    let prioritySummary = {
+        critical: 0,
+        high: 0,
+        medium: 0,
+        low: 0,
+        generatedAt: ""
+    };
+    if (clusterPriority && clusterPriority.clusters) {
+        prioritySummary.generatedAt = clusterPriority.metadata?.priority_generated_at || "";
+        for (const c of Object.values<any>(clusterPriority.clusters)) {
+            const band = c.intelligence?.priority_band;
+            if (band === "critical") prioritySummary.critical++;
+            else if (band === "high") prioritySummary.high++;
+            else if (band === "medium") prioritySummary.medium++;
+            else if (band === "low") prioritySummary.low++;
+        }
+    }
+
     return {
         experiments,
         recentAudits,
@@ -119,6 +147,7 @@ export async function getOverview() {
         rollbackCount,
         switches,
         clusterHealthSummary,
+        prioritySummary,
         generatedAt: new Date().toISOString(),
     };
 }
