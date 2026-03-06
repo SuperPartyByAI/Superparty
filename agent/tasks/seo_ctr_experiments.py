@@ -22,6 +22,29 @@ def db_init(con: sqlite3.Connection) -> None:
     con.executescript(ddl)
     con.commit()
 
+def db_migrate(con: sqlite3.Connection) -> None:
+    """Add missing columns to seo_experiments (safe for existing DBs on server)."""
+    existing_cols = {row[1] for row in con.execute("PRAGMA table_info(seo_experiments)").fetchall()}
+    new_cols = {
+        "variant_a_start": "TEXT",
+        "variant_a_end": "TEXT",
+        "variant_a_clicks": "INTEGER DEFAULT 0",
+        "variant_a_impressions": "INTEGER DEFAULT 0",
+        "variant_a_avg_position": "REAL DEFAULT 99.0",
+        "variant_b_start": "TEXT",
+        "variant_b_end": "TEXT",
+        "variant_b_clicks": "INTEGER DEFAULT 0",
+        "variant_b_impressions": "INTEGER DEFAULT 0",
+        "variant_b_avg_position": "REAL DEFAULT 99.0",
+    }
+    for col, col_type in new_cols.items():
+        if col not in existing_cols:
+            try:
+                con.execute(f"ALTER TABLE seo_experiments ADD COLUMN {col} {col_type}")
+            except Exception:
+                pass
+    con.commit()
+
 def now_ymd() -> str:
     return str(date.today())
 
@@ -65,17 +88,19 @@ def create_experiment(con, site_id: str, url_path: str, page_url: str, file_path
     exp_id = str(uuid.uuid4())
     started = date.today()
     ends = started + timedelta(days=duration_days)
-    # latency-safe windows:
+    # Latency-safe baseline window (before experiment started)
     baseline_end = started - timedelta(days=3)
     baseline_start = baseline_end - timedelta(days=14)
-    variant_start = started + timedelta(days=3)
+    # A starts 3 days after apply (GSC latency)
+    variant_a_start = started + timedelta(days=3)
 
     con.execute("""
       INSERT INTO seo_experiments(
         exp_id, site_id, url_path, page_url, file_path,
         exp_type, status,
         started_at, ends_at,
-        baseline_start, baseline_end, variant_start,
+        baseline_start, baseline_end,
+        variant_a_start,
         baseline_clicks, baseline_impressions, baseline_avg_position,
         baseline_title, baseline_description,
         variant_a_title, variant_a_description,
@@ -84,7 +109,8 @@ def create_experiment(con, site_id: str, url_path: str, page_url: str, file_path
       ) VALUES (?,?,?,?,?,
                 'ctr_title_desc','PLANNED',
                 ?,?,
-                ?,?,?,
+                ?,?,
+                ?,
                 ?,?,?,
                 ?,?,
                 ?,?,
@@ -94,7 +120,8 @@ def create_experiment(con, site_id: str, url_path: str, page_url: str, file_path
     """, (
         exp_id, site_id, url_path, page_url, file_path,
         str(started), str(ends),
-        str(baseline_start), str(baseline_end), str(variant_start),
+        str(baseline_start), str(baseline_end),
+        str(variant_a_start),
         int(baseline["clicks"]), int(baseline["impressions"]), float(baseline["avg_position"]),
         baseline_title, baseline_description,
         varA["title"], varA["description"],
@@ -515,37 +542,34 @@ def seo_ctr_experiments_plan_task(site_id="superparty"):
 def seo_ctr_experiments_apply_task(site_id="superparty"):
     from agent.common.env import getenv_int
     max_prs = getenv_int("SEO_REAL_MAX_PRS_PER_DAY", 3)
-    
+
     con = db_connect()
     db_init(con)
-    
-    # Check if we should Switch someone to B
-    # Simplified logic: just apply A for now. A full implementation would apply A, and maybe later apply B if configured as Multi-Armed.
-    # The spec required 14 days per variant if pure A/B, or we just test Variant A against Baseline. Let's start A.
-    
+    db_migrate(con)
+
     rows = con.execute("SELECT * FROM seo_experiments WHERE site_id=? AND status='PLANNED' LIMIT 1", (site_id,)).fetchall()
     if not rows:
         return {"ok": True, "note": "nothing_planned"}
-        
+
     exp = dict(rows[0])
-    
-    # We apply A
-    res = apply_title_desc_variant(site_id, exp["url_path"], exp["page_url"], "A", exp["variant_a_title"], exp["variant_a_description"])
-    
+
+    # Apply Variant A (canary start)
+    res = apply_title_desc_variant(site_id, exp["url_path"], exp["page_url"], "A",
+                                   exp["variant_a_title"], exp["variant_a_description"])
+
     if res.get("ok"):
-        update_experiment(con, exp["exp_id"], status="RUNNING_A")
-        # Ensure we increment PR count
+        a_start = str(date.today() + timedelta(days=3))  # GSC latency
+        update_experiment(con, exp["exp_id"], status="RUNNING_A", variant_a_start=a_start)
         try:
-            from pathlib import Path
-            import json
             sf = Path(f"reports/{site_id}/seo_apply_state.json")
             if sf.exists():
-                st = json.loads(sf.read_text(encoding="utf-8"))
+                import json as _json
+                st = _json.loads(sf.read_text(encoding="utf-8"))
                 st["prs_created_today"] = st.get("prs_created_today", 0) + 1
-                sf.write_text(json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
+                sf.write_text(_json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
         except Exception:
             pass
-            
+
     return res
 
 def seo_ctr_experiments_evaluate_task(site_id="superparty"):
@@ -585,103 +609,191 @@ def seo_ctr_experiments_evaluate_task(site_id="superparty"):
     return {"ok": True, "evaluated": evaluated}
 
 def evaluate_experiment(con, exp, service, early_stop=False):
-    baseline = {
-        "clicks": exp["baseline_clicks"],
-        "impressions": exp["baseline_impressions"],
-        "avg_position": exp["baseline_avg_position"]
-    }
-    
-    endDate = str(date.today() - timedelta(days=3)) # 3 days latency
-    
-    # Fetch variant metrics
-    gsc_prop = getenv("GSC_PROPERTY", "https://www.superparty.ro/").strip()
-    variant = get_page_metrics_with_fallback(service, gsc_prop, exp["page_url"], exp["variant_start"], endDate)
-    
-    # Early stop checks volume
+    """Compare A vs B (real two-window A/B) with Wilson + baseline guard + rollback."""
     from agent.common.env import getenv_int
+
+    baseline = {
+        "clicks": exp["baseline_clicks"] or 0,
+        "impressions": exp["baseline_impressions"] or 0,
+        "avg_position": exp["baseline_avg_position"] or 99.0,
+    }
+
+    end_date = str(date.today() - timedelta(days=3))  # GSC latency
+    gsc_prop = getenv("GSC_PROPERTY", "https://www.superparty.ro/").strip()
     min_imps = getenv_int("SEO_EXPERIMENTS_MIN_VARIANT_IMPRESSIONS", 800)
-    
-    if early_stop and variant["impressions"] < min_imps:
-        return # Not enough volume for early stop
-        
-    decision, reason = decide_experiment(baseline, variant, min_variant_imps=min_imps)
-    
-    update_experiment(con, exp["exp_id"], 
-        variant_clicks=variant["clicks"],
-        variant_impressions=variant["impressions"],
-        variant_avg_position=variant["avg_position"],
-        decision_reason=reason,
-        variant_end=endDate
-    )
-    
-    if decision == "WAIT":
-        if not early_stop:
-            # Over 21 days and still WAIT? mark INCONCLUSIVE
-            update_experiment(con, exp["exp_id"], status="EVALUATING", decision_reason="timeout_" + reason)
+
+    status = exp.get("status", "")
+
+    # --- Determine which window to fetch based on status ---
+    if status == "RUNNING_A" and exp.get("variant_a_start"):
+        # Still in A phase: fetch A metrics so far
+        m_a = get_page_metrics_with_fallback(service, gsc_prop, exp["page_url"],
+                                              exp["variant_a_start"], end_date)
+        if early_stop and m_a["impressions"] < min_imps:
+            return  # not enough volume
+
+        # Only baseline vs A at this stage
+        decision, reason = decide_experiment(baseline, m_a, min_variant_imps=min_imps)
+        update_experiment(con, exp["exp_id"],
+            variant_a_clicks=m_a["clicks"],
+            variant_a_impressions=m_a["impressions"],
+            variant_a_avg_position=m_a["avg_position"]
+        )
+
+        if decision == "LOSER":  # A is already a loser vs baseline -> rollback now
+            rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"],
+                                exp["baseline_title"], exp["baseline_description"], reason)
+            update_experiment(con, exp["exp_id"], status="REVERTED", winner_variant="baseline", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=30)))
         return
-        
-    if decision == "WINNER":
-        update_experiment(con, exp["exp_id"], status="WINNER", winner_variant=exp["status"].split("_")[-1])
-        # It's a winner, we do nothing and keep it.
-        # Clear active state
-        from agent.tasks.seo_ctr_experiments import upsert_page_state
-        upsert_page_state(con, exp["site_id"], exp["url_path"], active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
-        
-    elif decision == "LOSER":
-        # REVERT!
-        res = rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"], exp["baseline_title"], exp["baseline_description"], reason)
-        update_experiment(con, exp["exp_id"], status="REVERTED")
-        from agent.tasks.seo_ctr_experiments import upsert_page_state
-        upsert_page_state(con, exp["site_id"], exp["url_path"], active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=30)))
-        
-    elif decision == "INCONCLUSIVE" and not early_stop:
-        # Keep winner by absolute clicks or just baseline. Let's baseline.
-        res = rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"], exp["baseline_title"], exp["baseline_description"], reason)
-        update_experiment(con, exp["exp_id"], status="REVERTED", decision_reason="inconclusive_timeout")
-        from agent.tasks.seo_ctr_experiments import upsert_page_state
-        upsert_page_state(con, exp["site_id"], exp["url_path"], active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
+
+    elif status == "RUNNING_B" and exp.get("variant_a_start") and exp.get("variant_b_start"):
+        # Both phases available: compare A vs B
+        a_end = exp.get("variant_a_end") or str(date.today() - timedelta(days=1))
+        m_a = get_page_metrics_with_fallback(service, gsc_prop, exp["page_url"],
+                                              exp["variant_a_start"], a_end)
+        m_b = get_page_metrics_with_fallback(service, gsc_prop, exp["page_url"],
+                                              exp["variant_b_start"], end_date)
+
+        if early_stop and m_b["impressions"] < min_imps:
+            return
+
+        # Save metrics
+        update_experiment(con, exp["exp_id"],
+            variant_a_clicks=m_a["clicks"],
+            variant_a_impressions=m_a["impressions"],
+            variant_a_avg_position=m_a["avg_position"],
+            variant_b_clicks=m_b["clicks"],
+            variant_b_impressions=m_b["impressions"],
+            variant_b_avg_position=m_b["avg_position"],
+            variant_b_end=end_date
+        )
+
+        # --- Wilson comparison: A vs B ---
+        a_low, a_high = wilson_interval(m_a["clicks"], m_a["impressions"])
+        b_low, b_high = wilson_interval(m_b["clicks"], m_b["impressions"])
+        b_ctr = m_b["clicks"] / max(1, m_b["impressions"])
+        a_ctr = m_a["clicks"] / max(1, m_a["impressions"])
+        base_ctr = baseline["clicks"] / max(1, baseline["impressions"])
+
+        min_rel_lift = 0.15  # +15% CTR relative
+        max_pos_drop_winner = 1.5
+        max_pos_drop_loser = 2.0
+
+        b_vs_baseline_drop = m_b["avg_position"] - baseline["avg_position"]
+        a_vs_baseline_drop = m_a["avg_position"] - baseline["avg_position"]
+
+        # Hard rollback: both lost rank significantly vs baseline
+        if b_vs_baseline_drop > max_pos_drop_loser and a_vs_baseline_drop > max_pos_drop_loser:
+            reason = f"both_losers_vs_baseline pos_drop_b:{b_vs_baseline_drop:.1f} a:{a_vs_baseline_drop:.1f}"
+            rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"],
+                                exp["baseline_title"], exp["baseline_description"], reason)
+            update_experiment(con, exp["exp_id"], status="REVERTED", winner_variant="baseline", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=30)))
+            return
+
+        # B wins over A
+        if (b_ctr >= a_ctr * (1 + min_rel_lift) and
+                b_low > a_high and
+                b_vs_baseline_drop <= max_pos_drop_winner):
+            reason = f"B_wins_A lift:{(b_ctr-a_ctr)/max(a_ctr,1e-9):.1%} b_low:{b_low:.4f}>a_high:{a_high:.4f}"
+            # B is already applied; just mark winner
+            update_experiment(con, exp["exp_id"], status="WINNER", winner_variant="B", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
+            return
+
+        # A wins over B -> revert to A
+        if (a_ctr >= b_ctr * (1 + min_rel_lift) and
+                a_low > b_high and
+                a_vs_baseline_drop <= max_pos_drop_winner):
+            reason = f"A_wins_B lift:{(a_ctr-b_ctr)/max(b_ctr,1e-9):.1%} a_low:{a_low:.4f}>b_high:{b_high:.4f}"
+            apply_title_desc_variant(exp["site_id"], exp["url_path"], exp["page_url"], "A",
+                                     exp["variant_a_title"], exp["variant_a_description"])
+            update_experiment(con, exp["exp_id"], status="WINNER", winner_variant="A", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
+            return
+
+        # Both variants worse than baseline CTR significantly
+        if b_ctr < base_ctr * 0.85 and a_ctr < base_ctr * 0.85:
+            reason = f"both_losers_vs_baseline_ctr b:{b_ctr:.3f} a:{a_ctr:.3f} base:{base_ctr:.3f}"
+            rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"],
+                                exp["baseline_title"], exp["baseline_description"], reason)
+            update_experiment(con, exp["exp_id"], status="REVERTED", winner_variant="baseline", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=30)))
+            return
+
+        if not early_stop:
+            # Timeout with no clear winner: rollback to baseline (conservative)
+            reason = f"inconclusive_timeout b:{b_ctr:.3f} a:{a_ctr:.3f} base:{base_ctr:.3f}"
+            rollback_title_desc(exp["site_id"], exp["url_path"], exp["file_path"],
+                                exp["baseline_title"], exp["baseline_description"], reason)
+            update_experiment(con, exp["exp_id"], status="REVERTED", winner_variant="baseline", decision_reason=reason)
+            upsert_page_state(con, exp["site_id"], exp["url_path"],
+                              active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
 
 
 def seo_ctr_experiments_switch_task(site_id="superparty"):
+    """Switch from Variant A to Variant B, recording A end date and B start date with GSC latency."""
     from agent.common.env import getenv_int
-    from datetime import datetime, date, timedelta
-    
+    from datetime import datetime
+
     con = db_connect()
     db_init(con)
-    
-    # We find experiments running A that have reached half of their duration (e.g. 10 days)
-    # The spec allows 21 days total, let's switch to B around midway
-    rows = con.execute("SELECT * FROM seo_experiments WHERE site_id=? AND status='RUNNING_A'", (site_id,)).fetchall()
-    
+    db_migrate(con)
+
+    rows = con.execute(
+        "SELECT * FROM seo_experiments WHERE site_id=? AND status='RUNNING_A'",
+        (site_id,)
+    ).fetchall()
+
     switched = 0
     for r in rows:
         exp = dict(r)
-        
-        # Check if 10 days have passed since A started
-        v_start = datetime.strptime(exp["variant_start"], "%Y-%m-%d").date()
-        days_running_a = (date.today() - v_start).days
-        
+
+        # Check if enough days elapsed since A's effective start
+        a_start_str = exp.get("variant_a_start")
+        if not a_start_str:
+            continue
+        a_start = datetime.strptime(a_start_str, "%Y-%m-%d").date()
+        days_running_a = (date.today() - a_start).days
+
         switch_days = getenv_int("SEO_EXPERIMENTS_SWITCH_DAYS", 10)
-        
-        if days_running_a >= switch_days:
-            # We must apply B
-            res = apply_title_desc_variant(site_id, exp["url_path"], exp["page_url"], "B", exp["variant_b_title"], exp["variant_b_description"])
-            
-            if res.get("ok"):
-                # Mark it as RUNNING_B and update variant_start so we can track B's start time properly 
-                # (Note: A true A/B system might track A and B stats separately, here we just switch the phase)
-                update_experiment(con, exp["exp_id"], status="RUNNING_B", variant_start=str(date.today() + timedelta(days=3)))
-                switched += 1
-                
-                try:
-                    from pathlib import Path
-                    import json
-                    sf = Path(f"reports/{site_id}/seo_apply_state.json")
-                    if sf.exists():
-                        st = json.loads(sf.read_text(encoding="utf-8"))
-                        st["prs_created_today"] = st.get("prs_created_today", 0) + 1
-                        sf.write_text(json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
-                except Exception:
-                    pass
-            
+        if days_running_a < switch_days:
+            continue
+
+        # Apply Variant B
+        res = apply_title_desc_variant(
+            site_id, exp["url_path"], exp["page_url"], "B",
+            exp["variant_b_title"], exp["variant_b_description"]
+        )
+
+        if res.get("ok"):
+            switch_date = date.today()
+            # A window ends yesterday (last full day of A)
+            variant_a_end = str(switch_date - timedelta(days=1))
+            # B window starts 3 days after switch (GSC latency)
+            variant_b_start = str(switch_date + timedelta(days=3))
+
+            update_experiment(con, exp["exp_id"],
+                status="RUNNING_B",
+                variant_a_end=variant_a_end,
+                variant_b_start=variant_b_start
+            )
+            switched += 1
+
+            try:
+                import json as _json
+                sf = Path(f"reports/{site_id}/seo_apply_state.json")
+                if sf.exists():
+                    st = _json.loads(sf.read_text(encoding="utf-8"))
+                    st["prs_created_today"] = st.get("prs_created_today", 0) + 1
+                    sf.write_text(_json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
+            except Exception:
+                pass
+
     return {"ok": True, "switched": switched}

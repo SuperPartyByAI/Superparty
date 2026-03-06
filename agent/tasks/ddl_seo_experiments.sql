@@ -16,22 +16,30 @@ CREATE TABLE IF NOT EXISTS seo_experiments (
   started_at TEXT NOT NULL,         -- YYYY-MM-DD
   ends_at TEXT NOT NULL,            -- YYYY-MM-DD (started_at + 21 zile)
 
-  -- windows (cu latență GSC)
+  -- baseline window
   baseline_start TEXT NOT NULL,     -- YYYY-MM-DD
   baseline_end TEXT NOT NULL,       -- YYYY-MM-DD
-  variant_start TEXT NOT NULL,      -- YYYY-MM-DD
-  variant_end TEXT,                -- YYYY-MM-DD (când evaluăm)
 
-  -- snapshots
+  -- variant A window
+  variant_a_start TEXT,             -- YYYY-MM-DD (când s-a aplicat A)
+  variant_a_end TEXT,               -- YYYY-MM-DD (când s-a aplicat B - 1)
+  variant_a_clicks INTEGER DEFAULT 0,
+  variant_a_impressions INTEGER DEFAULT 0,
+  variant_a_avg_position REAL DEFAULT 99.0,
+
+  -- variant B window
+  variant_b_start TEXT,             -- YYYY-MM-DD (variant_a_end + 3 latenta GSC)
+  variant_b_end TEXT,               -- YYYY-MM-DD (endDate la evaluate)
+  variant_b_clicks INTEGER DEFAULT 0,
+  variant_b_impressions INTEGER DEFAULT 0,
+  variant_b_avg_position REAL DEFAULT 99.0,
+
+  -- baseline snapshots (pentru rollback guard)
   baseline_clicks INTEGER DEFAULT 0,
   baseline_impressions INTEGER DEFAULT 0,
   baseline_avg_position REAL DEFAULT 99.0,
 
-  variant_clicks INTEGER DEFAULT 0,
-  variant_impressions INTEGER DEFAULT 0,
-  variant_avg_position REAL DEFAULT 99.0,
-
-  -- content for rollback
+  -- content (pentru rollback si apply)
   baseline_title TEXT,
   baseline_description TEXT,
 
@@ -42,7 +50,7 @@ CREATE TABLE IF NOT EXISTS seo_experiments (
   variant_b_description TEXT,
 
   -- decisions
-  winner_variant TEXT,              -- A | B | NULL
+  winner_variant TEXT,              -- A | B | baseline | NULL
   decision_reason TEXT,             -- text/json summary
 
   created_at TEXT NOT NULL,

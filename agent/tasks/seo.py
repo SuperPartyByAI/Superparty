@@ -394,7 +394,7 @@ def get_deterministic_payload(clean_path, manifest_data):
     payload = {
         "page_type": page_type,
         "location_label": location_label,
-        "title": f"Animatori petreceri copii în {location_label} | Superparty",
+        "title": f"Animatori petreceri copii în {location_label} | SuperParty",
         "description": f"Animatori pentru petreceri copii în {location_label}. Programe adaptate vârstei, în spații private sau săli puse la dispoziție. Rezervă o ofertă.",
         "logistic_text": "Ne deplasăm pentru petreceri de copii și adaptăm programul la vârstă, număr de participanți și spațiul disponibil (acasă, curte sau o sală pusă la dispoziție de organizator). Timpul de deplasare și montajul pot varia.",
         "hub_url": "/petreceri/ilfov",
@@ -413,7 +413,7 @@ def get_deterministic_payload(clean_path, manifest_data):
     elif page_type == "hub_bucuresti":
         payload["description"] = "Animatori pentru petreceri copii în București, pe sectoare. Activități adaptate vârstei și spațiului. Cere ofertă și verifică disponibilitatea."
     elif page_type == "sector":
-        payload["title"] = f"Animatori petreceri copii Sector {slug.replace('sector-', '')} București | Superparty"
+        payload["title"] = f"Animatori petreceri copii Sector {slug.replace('sector-', '')} București | SuperParty"
         payload["description"] = f"Animatori pentru petreceri copii în Sector {slug.replace('sector-', '')}, București. Activități adaptate vârstei, pentru aniversări și evenimente. Cere ofertă."
         payload["hub_url"] = "/petreceri/bucuresti"
         payload["hub_label"] = "Hub București"
@@ -465,7 +465,7 @@ def build_seo_inject_block(heading, logistic_text, faq_items, hub_url, hub_label
         q = html.escape(it.get("q","").strip())
         a = html.escape(it.get("a","").strip())
         if q and a:
-            faq_html_parts.append(f'      <div class="faq-item">\n        <h3>❓ {q}</h3>\n        <p>{a}</p>\n      </div>\n')
+            faq_html_parts.append(f'      <div class="faq-item">\n        <h3>{q}</h3>\n        <p>{a}</p>\n      </div>\n')
     faq_html = "".join(faq_html_parts)
     url = html.escape(hub_url)
     lbl = html.escape(hub_label)
@@ -676,14 +676,18 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         faq_count = new_text.count("faq-item") or new_text.count("{ q: '")
         links_count = new_text.count('href="/')
 
-        min_chars = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 2500)
-        
-        required_links_present = (
-            'href="/animatori-petreceri-copii"' in new_text and
-            'href="/arie-acoperire"' in new_text and
-            f'href="{payload["hub_url"]}"' in new_text
+        # Gate: TOTAL chars (strip tags) >= 2500 AND DELTA >= 600 AND FAQ >= 4 AND required links
+        import re as _re_gate
+        total_text = len(_re_gate.sub(r'<[^>]+>', '', new_text).strip())
+        text_delta = len(new_text) - len(text)
+        min_total = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 2500)
+        min_delta = agent.common.env.getenv_int("SEO_REAL_MIN_DELTA_CHARS", 600)
+        gate_passed = (
+            total_text >= min_total
+            and text_delta >= min_delta
+            and faq_count >= 4
+            and required_links_present
         )
-        gate_passed = text_delta > min_chars and faq_count >= 4 and required_links_present
         
         if gate_passed:
             fpath.write_text(new_text, encoding="utf-8")
