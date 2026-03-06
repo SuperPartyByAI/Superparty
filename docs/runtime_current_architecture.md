@@ -13,11 +13,11 @@ Acest document este **Sursa de Adevăr** privind funcționarea și guvernarea ag
 Serviciile agenților sunt coordonate direct prin Daemon-ul OS-ului și gestionate sub un utilizator izolat `superparty-agent` (fără privilegii de execuție ca root). Toate definițiile fisierelor unit se regăsesc localizate în `.github/workflows` ori sub `infrastructure/systemd/`. 
 
 Servicii active managed prin `systemctl`:
-- `superparty-orchestrator.service` (cron control)
-- `superparty-worker-apply.service`
-- `superparty-worker-seo.service`
-- `superparty-worker-ads.service`
-- `superparty-worker-backup.service`
+- `superparty-orchestrator.service` (cron controler ce introduce taskurile: **zilnic** 03:00 UTC, **săptămânal** Duminică 10:00 UTC)
+- `superparty-worker-apply.service` (gestionează Git PR automation; coada `apply`)
+- `superparty-worker-seo.service` (SEO collect/index/plan; cozile: `seo_collect`, `seo_index`, `seo_plan`)
+- `superparty-worker-ads.service` (Ads draft manifests; cozile: `ads_plan`, `ads_draft`)
+- `superparty-worker-backup.service` (Daily backup; coada: `backup`)
 
 **Atenție**: Containerele Docker, ca metode de execuție, au fost integral eliminate. Orice script, runbook sau README din commiturile vechi care prezintă comenzile de `docker ps`, `docker exec sp_worker` sunt **arhi-depășite**. Dacă descoperiți astfel de documente, ignorați-le.
 
@@ -65,10 +65,20 @@ O listă completă cu parametrii obligatorii ce trebuie să existe la nivel de f
 Aplicația utilizează nativ `rq` pe un server **Redis** ascultând local. 
 Redis nu mai operează ca docker image `sp_redis`. Serviciul curat (pachet Debian `redis-server`) susține prezența la viață. 
 
-Pentru a testa prezența broker-ului care conectează `orchestrator` cu restul worker-ilor, verificați din host:
+Для  a testa prezența broker-ului care conectează `orchestrator` cu restul worker-ilor, verificați din host:
 ```bash
 redis-cli ping
 # Trebuie să obțineți PONG.
+```
+
+Pentru debug specific pe pipeline-ul de mesaje al agenților, aceste comenzi pe hostul local sunt esențiale:
+```bash
+# Să vedeți ce cozi sunt active și ce mesaje de la taskuri ațin în așteptare:
+redis-cli KEYS "rq:queue:*"
+# Vedeți lungimea (nr. taskuri pending) pe o anumită coadă (ex: seo_plan):
+redis-cli LLEN rq:queue:seo_plan
+# Vizualizati câți workeri sunt efectiv recunoscuți de Registrul RQ Redis:
+redis-cli SMEMBERS rq:workers
 ```
 
 ---
