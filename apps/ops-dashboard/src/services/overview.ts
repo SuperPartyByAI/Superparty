@@ -67,6 +67,15 @@ function getKillSwitches() {
     };
 }
 
+// Citim Level 4 Cluster Health
+export function loadClusterHealth() {
+    try {
+        const p = path.join(config.reportsDir, "seo_cluster_health.json");
+        if (!fs.existsSync(p)) return null;
+        return JSON.parse(fs.readFileSync(p, "utf-8"));
+    } catch { return null; }
+}
+
 export async function getOverview() {
     const experiments = loadExperiments();
     const recentAudits = loadRecentAudits();
@@ -77,6 +86,29 @@ export async function getOverview() {
     const activeExperiments = experiments.filter((e: any) => e.status?.includes("RUNNING")).length;
     const rollbackCount = experiments.filter((e: any) => ["REVERTED", "LOSER"].includes(e.status)).length;
 
+    const clusterHealth = loadClusterHealth();
+    let clusterHealthSummary = {
+        totalClusters: 0,
+        moneyWithWarnings: 0,
+        forbiddenConflicts: 0,
+        unknownConflicts: 0,
+        generatedAt: ""
+    };
+
+    if (clusterHealth && clusterHealth.clusters) {
+        const clusters = clusterHealth.clusters;
+        clusterHealthSummary.generatedAt = clusterHealth.metadata?.generated_at || "";
+        clusterHealthSummary.totalClusters = Object.keys(clusters).length;
+
+        for (const [id, c] of Object.entries<any>(clusters)) {
+            if (c.is_money_cluster && c.cannibalization_warnings?.length > 0) {
+                clusterHealthSummary.moneyWithWarnings++;
+            }
+            clusterHealthSummary.forbiddenConflicts += (c.forbidden_count || 0);
+            clusterHealthSummary.unknownConflicts += (c.unknown_count || 0);
+        }
+    }
+
     return {
         experiments,
         recentAudits,
@@ -86,6 +118,7 @@ export async function getOverview() {
         activeExperiments,
         rollbackCount,
         switches,
+        clusterHealthSummary,
         generatedAt: new Date().toISOString(),
     };
 }
