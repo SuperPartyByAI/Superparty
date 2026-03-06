@@ -208,14 +208,26 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
 
 def seo_apply_task():
     import pathlib
+    import os
+    res = {}
+    
     ga4_plans = sorted(pathlib.Path("reports/superparty").glob("seo_plan_ga4_*.json"), reverse=True)
     if ga4_plans:
         try:
             from agent.tasks.seo_ga4_patch import seo_apply_ga4_plan
-            return seo_apply_ga4_plan(site_id="superparty")
+            res["ga4"] = seo_apply_ga4_plan(site_id="superparty")
         except Exception as e:
-            pass
-    return _orig_seo_apply_task()
+            res["ga4_error"] = str(e)
+            
+    apply_mode = os.environ.get("SEO_APPLY_MODE", "report").strip()
+    if apply_mode == "real" or not ga4_plans:
+        res["gsc"] = _orig_seo_apply_task(apply_mode=apply_mode)
+        
+    if "ga4" in res and "gsc" not in res:
+        return res["ga4"]
+    if "gsc" in res and "ga4" not in res:
+        return res["gsc"]
+    return res
 
 def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
     """Apply SEO plan. If apply_mode='real', safely inject content into Astro files."""
