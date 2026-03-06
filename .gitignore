@@ -13,3 +13,6 @@ whole-wind/
 .env.agent.*
 .env.local
 *.bak
+
+# Generated artifacts (not source code)
+reports/seo/dashboard.html
