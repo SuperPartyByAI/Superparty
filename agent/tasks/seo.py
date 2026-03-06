@@ -194,7 +194,7 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
             manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
             for m in manifest_data:
                 # Doar comune si orase din Ilfov care sunt indexable
-                if m.get("county") == "Ilfov" and m.get("indexable") and m.get("place_type") in ("town", "commune"):
+                if m.get("county", "").strip().lower() == "ilfov" and m.get("indexable") and m.get("place_type") in ("town", "commune", "city"):
                     whitelist_slugs.add(m.get("slug", "").lower())
         except Exception:
             pass
@@ -265,7 +265,7 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
             filtered_opps.append(row)
 
     # 2. Sortare Multi-Criteriu
-    filtered_opps.sort(key=lambda x: (x.get("local_intent_score", 0), x.get("impressions", 0), -x.get("avg_position", 99)), reverse=True)
+    filtered_opps.sort(key=lambda x: (-x.get("local_intent_score", 0), -x.get("impressions", 0), x.get("avg_position", 99)))
     
     # 3. Wave cutoff
     opportunities = filtered_opps[:wave_size]
