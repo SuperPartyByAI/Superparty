@@ -11,7 +11,7 @@ from collections import defaultdict, Counter
 SITE_ROOT = r"C:\Users\ursac\Superparty"
 PAGES_DIR = os.path.join(SITE_ROOT, "src", "pages")
 REPORTS_DIR = os.path.join(SITE_ROOT, "reports", "seo")
-CANONICAL_HOST = "https://superparty.ro"
+CANONICAL_HOST = "https://www.superparty.ro"
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
 # ============================================================

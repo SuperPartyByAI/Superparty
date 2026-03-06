@@ -12,7 +12,7 @@ PAGES_DIR = r"C:\Users\ursac\Superparty\src\pages\petreceri"
 REPORTS_DIR = r"C:\Users\ursac\Superparty\reports\seo"
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
-CANONICAL_HOST = "https://superparty.ro"
+CANONICAL_HOST = "https://www.superparty.ro"
 TEL = "tel:+40722744377"
 WA = "https://wa.me/40722744377?text=Salut%21%20Vreau%20o%20ofert%C4%83%20pentru%20animatori%20petrecere%20copii.%20Data%3A%20____%20Loca%C8%9Bie%3A%20____%20V%C3%A2rst%C4%83%3A%20____%20Nr.%20copii%3A%20____"
 
