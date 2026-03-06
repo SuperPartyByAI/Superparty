@@ -1,0 +1,18 @@
+[Unit]
+Description=Superparty SEO Worker (Collect, Index, Plan)
+After=network.target
+
+[Service]
+Type=simple
+User=superparty-agent
+Group=superparty-agent
+WorkingDirectory=/var/www/superparty
+EnvironmentFile=/var/www/superparty/.env
+ExecStart=/usr/bin/python3 -m agent.services.worker seo_collect,seo_index,seo_plan,ga4,audit
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/superparty/logs/worker_seo.log
+StandardError=append:/var/www/superparty/logs/worker_seo.log
+
+[Install]
+WantedBy=multi-user.target

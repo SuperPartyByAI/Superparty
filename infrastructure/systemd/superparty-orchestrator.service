@@ -1,0 +1,18 @@
+[Unit]
+Description=Superparty SEO Orchestrator
+After=network.target
+
+[Service]
+Type=simple
+User=superparty-agent
+Group=superparty-agent
+WorkingDirectory=/var/www/superparty
+EnvironmentFile=/var/www/superparty/.env
+ExecStart=/usr/bin/python3 -m agent.services.orchestrator
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/superparty/logs/orchestrator.log
+StandardError=append:/var/www/superparty/logs/orchestrator.log
+
+[Install]
+WantedBy=multi-user.target

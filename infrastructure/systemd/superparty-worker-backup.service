@@ -1,0 +1,18 @@
+[Unit]
+Description=Superparty Backup Worker
+After=network.target
+
+[Service]
+Type=simple
+User=superparty-agent
+Group=superparty-agent
+WorkingDirectory=/var/www/superparty
+EnvironmentFile=/var/www/superparty/.env
+ExecStart=/usr/bin/python3 -m agent.services.worker backup
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/superparty/logs/worker_backup.log
+StandardError=append:/var/www/superparty/logs/worker_backup.log
+
+[Install]
+WantedBy=multi-user.target
