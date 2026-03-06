@@ -202,16 +202,18 @@ seoRouter.get("/cluster-health", async (req: any, res) => {
   const now = new Date().toLocaleString("ro-RO");
 
   // Filtre aplicate
-  const filterTier = (req.query.tier as string) || "all";
   const filterWarnings = req.query.warnings === "1";
   const filterClassification = (req.query.classification as string) || "all";
   const filterMoney = req.query.money === "1";
+  const filterCluster = req.query.cluster as string;
 
   const clusters = healthData.clusters || {};
   let rowsHtml = "";
 
   for (const [id, c] of Object.entries<any>(clusters)) {
-    // Mock filtering (Tier nu e direct in JSON momentan, lasam 'all' sa treaca)
+    // Exact Match pe Cluster
+    if (filterCluster && id !== filterCluster) continue;
+
     if (filterMoney && !c.is_money_cluster) continue;
     if (filterWarnings && (!c.cannibalization_warnings || c.cannibalization_warnings.length === 0)) continue;
 
@@ -309,10 +311,14 @@ seoRouter.get("/cluster-health", async (req: any, res) => {
 <div class="filters">
   <div style="font-weight:600; color:#94a3b8; margin-right:8px;">FILTRE:</div>
   <div class="filter-group">
-    <a href="?" class="badge ${!filterWarnings && !filterMoney && filterClassification === 'all' ? 'blue' : 'gray'}">Toate</a>
+    <a href="?" class="badge ${!filterCluster && !filterWarnings && !filterMoney && filterClassification === 'all' ? 'blue' : 'gray'}">Toate</a>
   </div>
+  ${filterCluster ? `
   <div class="filter-group">
-    <a href="?warnings=1" class="badge ${filterWarnings ? 'yellow' : 'gray'}">Warnings Only</a>
+    <a href="?" class="badge green">Cluster ID: ${filterCluster} ✖</a>
+  </div>` : ''}
+  <div class="filter-group">
+    <a href="?warnings=1" class="badge ${!filterCluster && filterWarnings ? 'yellow' : 'gray'}">Warnings Only</a>
   </div>
   <div class="filter-group">
     <a href="?money=1" class="badge ${filterMoney ? 'green' : 'gray'}">Money Only</a>

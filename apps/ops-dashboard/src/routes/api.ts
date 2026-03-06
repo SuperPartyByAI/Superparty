@@ -20,19 +20,14 @@ apiRouter.get("/cluster-health", async (req, res) => {
         let data = loadClusterHealth();
         if (!data) return res.status(404).json({ error: "No cluster health report found" });
 
-        const tier = req.query.tier as string;
         const warnings = req.query.warnings === "1";
-        const cluster_type = req.query.cluster_type as string;
 
-        if (tier || warnings || cluster_type) {
+        if (warnings) {
             const filteredClusters: Record<string, any> = {};
             for (const [id, c] of Object.entries<any>(data.clusters || {})) {
-                let keep = true;
-                // tier is not inside cluster JSON. It requires map, but let's do simplistic filtering if we add the fields later. 
-                // wait, the json hasn't tier or type directly. So we return all for now or filter money_clusters.
-                if (warnings && (!c.cannibalization_warnings || c.cannibalization_warnings.length === 0)) keep = false;
-
-                if (keep) filteredClusters[id] = c;
+                if (c.cannibalization_warnings && c.cannibalization_warnings.length > 0) {
+                    filteredClusters[id] = c;
+                }
             }
             data.clusters = filteredClusters;
             res.json(data);
