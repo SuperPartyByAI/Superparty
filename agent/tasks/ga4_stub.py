@@ -65,8 +65,8 @@ def ga4_status_task(site_id="superparty") -> dict:
         "instructions": None if configured else (
             "1. Go to GA4 → Admin → Data Streams → Web → Measurement Protocol API secrets\n"
             "2. Create secret, copy value\n"
-            "3. Add to .env.agent: GA4_MEASUREMENT_ID=G-XXXXXXXX, GA4_API_SECRET=xxxx\n"
-            "4. docker compose restart"
+            "3. Add to .env: GA4_MEASUREMENT_ID=G-XXXXXXXX, GA4_API_SECRET=xxxx\n"
+            "4. systemctl restart superparty-worker-seo"
         ),
         "events_to_implement": [
             "click_to_call",

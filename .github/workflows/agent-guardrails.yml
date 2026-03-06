@@ -139,7 +139,7 @@ jobs:
                   continue
               allowed = any(f.startswith(p) for p in ALLOWED_PATTERNS)
               # Also allow env example and CI files
-              if f in (".env.agent.example", ".gitignore", "docker-compose.multiagent.yml", "Dockerfile.agent"):
+              if f in (".env.agent.example", ".gitignore", "Dockerfile.agent"):
                   allowed = True
               if f.startswith(".github/workflows/"):
                   allowed = True

@@ -4,7 +4,7 @@ Reads site config (keyword_seeds, promotion accent) → builds Google Ads manife
 → (dry_run=False) creates PAUSED campaign via google_adapter.
 
 Usage:
-    docker exec -it sp_worker_ads python3 -c \
+    sudo -u superparty-agent python3 -c \
         "from agent.tasks.ads_google import google_ads_plan_task; import json; \
          print(json.dumps(google_ads_plan_task(dry_run=True), indent=2))"
 """
@@ -147,7 +147,7 @@ def google_ads_plan_task(site_id: str = "superparty",
             "dry_run": False,
             "manifest_path": str(out_path),
             "error": f"Missing env vars: {missing}",
-            "note": "Add to .env.agent and restart sp_worker_ads",
+            "note": "Add to .env and restart superparty-worker-ads",
         }
 
     # Create PAUSED campaign
