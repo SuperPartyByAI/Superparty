@@ -203,68 +203,63 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
             pass
 
     # --- Helpers ---
-    def normalize_text(t):
-        t = t.lower()
-        t = unicodedata.normalize("NFKD", t)
-        t = "".join(c for c in t if not unicodedata.combining(c))
-        return t
-
-    LOCAL_TERMS = [
-        "bucuresti", "ilfov", "sector 1", "sector 2", "sector 3",
-        "sector 4", "sector 5", "sector 6", "sector-1", "sector-2",
-        "sector-3", "sector-4", "sector-5", "sector-6",
-    ]
-    COMMERCIAL_TERMS = ["animatori", "petreceri", "copii", "aniversare", "mascote"]
+    def normalize_text(text):
+        if not text: return ""
+        text = str(text).lower().strip()
+        for r, e in {'ă':'a','â':'a','î':'i','ș':'s','ş':'s','ț':'t','ţ':'t'}.items():
+            text = text.replace(r, e)
+        text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+        return _re.sub(r'[^a-z0-9]+', ' ', text).strip()
 
     def compute_local_intent(query, whitelist):
-        q = normalize_text(query)
+        q_norm = normalize_text(query)
         score = 0
-        matched = set()
-        for term in LOCAL_TERMS:
-            if term in q:
-                score += 2
-                matched.add(term)
-        for slug in whitelist:
-            slug_n = normalize_text(slug)
-            if slug_n and slug_n in q:
-                score += 3
-                matched.add(slug_n)
-        for term in COMMERCIAL_TERMS:
-            if term in q:
-                score += 1
-                matched.add(term)
+        matched = []
+        if "bucuresti" in q_norm:
+            score += 8; matched.append("bucuresti")
+        if "ilfov" in q_norm:
+            score += 8; matched.append("ilfov")
+        sec_match = _re.search(r'sector\s*(ul)?\s*([1-6])', q_norm)
+        if sec_match:
+            score += 10; matched.append(f"sector {sec_match.group(2)}")
+        elif "sector" in q_norm:
+            score += 6; matched.append("sector")
+        if "animatori" in q_norm:
+            score += 6; matched.append("animatori")
+        elif "animator" in q_norm:
+            score += 5; matched.append("animator")
+        if "petreceri copii" in q_norm:
+            score += 6; matched.append("petreceri copii")
+        elif "petreceri pentru copii" in q_norm:
+            score += 5; matched.append("petreceri pentru copii")
+        for w_slug in whitelist:
+            w_norm = w_slug.replace('-', ' ')
+            if w_norm and w_norm in q_norm:
+                score += 9
+                matched.append(f"localitate {w_norm}")
         return score, matched
 
     # --- Thresholds ---
     min_impressions = getenv_int("SEO_IMPRESSIONS_MIN", 50)
-    pos_min = getenv_int("SEO_POS_MIN", 3)
-    pos_max = getenv_int("SEO_POS_MAX", 50)
+    pos_min = getenv_int("SEO_POS_MIN", 5)
+    pos_max = getenv_int("SEO_POS_MAX", 25)
     wave_size = getenv_int("MAX_WEEKLY_WAVE", 10) if wave == "daily_small" else getenv_int("MAX_WEEKLY_WAVE", 30)
 
-    # --- Build opportunities with local_intent_score ---
-    opportunities = []
-    for x in index:
-        query = x.get("query", "").lower()
-        if not any(kw in query for kw in ["animatori", "petreceri", "mascote"]):
-            continue
-        if x.get("impressions", 0) < min_impressions:
-            continue
-        if not (pos_min <= x.get("avg_position", 99) <= pos_max):
-            continue
+    # --- Build opportunities: filter on thresholds, then score, keep all ---
+    filtered = []
+    for row in index:
+        imp = row.get("impressions", 0)
+        pos = row.get("avg_position", 99)
+        if imp >= min_impressions and pos_min <= pos <= pos_max:
+            score, matched = compute_local_intent(row.get("query", ""), whitelist_slugs)
+            r = row.copy()
+            r["local_intent_score"] = score
+            r["matched_terms"] = matched
+            filtered.append(r)
+    filtered.sort(key=lambda r: (-r.get("local_intent_score", 0), -r.get("impressions", 0), r.get("avg_position", 99)))
+    opportunities = filtered[:wave_size]
 
-        score, matched = compute_local_intent(query, whitelist_slugs)
-        # Only include queries with local intent (score > 0)
-        if score > 0:
-            opp = x.copy()
-            opp["local_intent_score"] = score
-            opp["matched_terms"] = sorted(matched)
-            opportunities.append(opp)
-
-    # Sort: local_intent_score DESC, impressions DESC, avg_position ASC
-    opportunities.sort(key=lambda r: (-r.get("local_intent_score", 0), -r.get("impressions", 0), r.get("avg_position", 99)))
-    opportunities = opportunities[:wave_size]
-
-    # Fallback: if no local intent matches, take top impressions
+    # Fallback: if nothing passes threshold, take top impressions
     if not opportunities:
         fallback = [x for x in index if x.get("impressions", 0) >= min_impressions][:min(5, wave_size)]
         for x in fallback:
