@@ -198,10 +198,29 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     if not opportunities:
         opportunities = index[:min(5, wave_size)]
 
-    plan = {"wave": wave, "created": str(date.today()), "opportunities": opportunities, "count": len(opportunities)}
+    import hashlib
+    plan_json_str = json.dumps(opportunities, sort_keys=True)
+    plan_hash = hashlib.sha256(plan_json_str.encode('utf-8')).hexdigest()
+    
+    plan = {"wave": wave, "created": str(date.today()), "opportunities": opportunities, "count": len(opportunities), "hash": plan_hash}
     plan_dir = Path(f"reports/{site_id}/seo_plans")
     plan_dir.mkdir(parents=True, exist_ok=True)
-    plan_file = plan_dir / f"plan_{date.today()}_{wave}.json"
+    
+    # Check if a plan with the same hash already exists today
+    existing_plans = sorted(plan_dir.glob(f"plan_*.json"))
+    if existing_plans:
+        import logging
+        try:
+            last_plan = json.loads(existing_plans[-1].read_text(encoding='utf-8'))
+            if last_plan.get("hash") == plan_hash:
+                logging.getLogger(__name__).info("SEO Plan deduplicated (same hash).")
+                return {"ok": True, "opportunities": len(opportunities), "note": "deduped_hash"}
+        except Exception:
+            pass
+
+    import time
+    run_id = time.strftime("%H%M%S")
+    plan_file = plan_dir / f"plan_{date.today()}_{run_id}_{wave}.json"
     plan_file.write_text(json.dumps(plan, indent=2))
     return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
@@ -471,12 +490,21 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
     import agent.common.env
     max_files = agent.common.env.getenv_int("SEO_REAL_MAX_FILES", 5)
 
+    from datetime import datetime
     for opp in opportunities:
         url_path = opp.get("page", "")
         fpath = resolve_astro_path(url_path)
         if not fpath:
             audit_log["unmapped"].append({"page": url_path, "reason": "not_resolved"})
             continue
+            
+        # COOLDOWN Check
+        last_applied_str = state["page_last_applied"].get(url_path)
+        if last_applied_str:
+            last_applied_date = datetime.strptime(last_applied_str, "%Y-%m-%d").date()
+            if (date.today() - last_applied_date).days < cooldown_days:
+                audit_log["skipped"].append({"page": url_path, "reason": "cooldown"})
+                continue
             
         clean_path = urllib.parse.unquote(url_path).replace("https://www.superparty.ro", "").replace("https://superparty.ro", "").split("?")[0].strip("/")
         text = fpath.read_text(encoding="utf-8", errors="ignore")
@@ -514,10 +542,12 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
             applied_files.append(str(fpath))
             audit_log["applied"].append({"page": url_path, "file": str(fpath), "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
             succes_count += 1
+            state["files_applied_today"] += 1
+            state["page_last_applied"][url_path] = str(date.today())
         else:
             audit_log["skipped"].append({"page": url_path, "reason": "failed_gate", "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
 
-        if succes_count >= max_files:
+        if succes_count >= max_files_per_run or state["files_applied_today"] >= max_files_per_day:
             break
 
     report_dir.mkdir(parents=True, exist_ok=True)

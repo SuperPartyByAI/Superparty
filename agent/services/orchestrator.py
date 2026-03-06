@@ -53,20 +53,37 @@ def enqueue_weekly():
 
 
 def main():
+    import os
+    from agent.common.env import getenv_int
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s %(name)s %(levelname)s %(message)s")
     log.info("Scheduler starting")
+    
+    FAST_MIN = getenv_int("SEO_FAST_INTERVAL_MIN", 60)
+    next_fast = time.time()
+    
     while True:
         now = datetime.utcnow()
         if now.hour == 3 and now.minute == 0:
             enqueue_daily()
             time.sleep(65)
-        elif now.weekday() == 6 and now.hour == 10 and now.minute == 0:
+            continue
+            
+        if now.weekday() == 6 and now.hour == 10 and now.minute == 0:
             enqueue_weekly()
             time.sleep(65)
-        else:
-            time.sleep(10)
-
+            continue
+            
+        if os.environ.get("SEO_CONTINUOUS", "0") == "1" and time.time() >= next_fast:
+            log.info(f"Fast Lane triggers: enqueuing seo_plan and seo_apply (interval {FAST_MIN}m)")
+            try:
+                get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="default")
+                get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
+            except Exception as e:
+                log.error(f"Failed Fast Lane enqueue: {e}")
+            next_fast = time.time() + FAST_MIN * 60
+            
+        time.sleep(10)
 
 if __name__ == "__main__":
     main()
