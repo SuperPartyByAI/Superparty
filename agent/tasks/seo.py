@@ -672,19 +672,26 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
             )
             new_text = replace_or_insert_seo_block(new_text, block)
 
-        text_delta = len(new_text) - len(text)
+        # --- Quality Gate (enterprise anti-thin) ---
+        import re as _re_g
+        def _strip_tags(s): return _re_g.sub(r'<[^>]+>', '', s).strip()
+
+        total_text_chars = len(_strip_tags(new_text))
+        old_text_chars   = len(_strip_tags(text))
+        delta_text_chars = total_text_chars - old_text_chars
         faq_count = new_text.count("faq-item") or new_text.count("{ q: '")
         links_count = new_text.count('href="/')
-
-        # Gate: TOTAL chars (strip tags) >= 2500 AND DELTA >= 600 AND FAQ >= 4 AND required links
-        import re as _re_gate
-        total_text = len(_re_gate.sub(r'<[^>]+>', '', new_text).strip())
-        text_delta = len(new_text) - len(text)
         min_total = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 2500)
         min_delta = agent.common.env.getenv_int("SEO_REAL_MIN_DELTA_CHARS", 600)
+
+        required_links_present = all(
+            f'href="{u}"' in new_text
+            for u in [payload["hub_url"], "/animatori-petreceri-copii", "/arie-acoperire"]
+        )
+
         gate_passed = (
-            total_text >= min_total
-            and text_delta >= min_delta
+            total_text_chars >= min_total
+            and delta_text_chars >= min_delta
             and faq_count >= 4
             and required_links_present
         )
@@ -692,12 +699,12 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         if gate_passed:
             fpath.write_text(new_text, encoding="utf-8")
             applied_files.append(str(fpath))
-            audit_log["applied"].append({"page": page_key, "raw": page_raw, "file": str(fpath), "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
+            audit_log["applied"].append({"page": page_key, "raw": page_raw, "file": str(fpath), "gate": {"total": total_text_chars, "delta": delta_text_chars, "faqs": faq_count, "links": links_count}})
             succes_count += 1
             state["files_applied_today"] += 1
             state["page_last_applied"][page_key] = str(date.today())
         else:
-            audit_log["skipped"].append({"page": page_key, "raw": page_raw, "reason": "failed_gate", "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
+            audit_log["skipped"].append({"page": page_key, "raw": page_raw, "reason": "failed_gate", "gate": {"total": total_text_chars, "delta": delta_text_chars, "faqs": faq_count, "links": links_count, "req_links": required_links_present}})
 
         if succes_count >= max_files_per_run or state["files_applied_today"] >= max_files_per_day:
             break
