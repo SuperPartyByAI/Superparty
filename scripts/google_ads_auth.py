@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 #!/usr/bin/env python3
 """google_ads_auth.py - Interactive OAuth2 flow to get Google Ads refresh token.
 
