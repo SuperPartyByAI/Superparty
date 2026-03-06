@@ -1,4 +1,4 @@
-import time, logging
+import os, time, logging
 from datetime import datetime
 
 log = logging.getLogger(__name__)
@@ -37,6 +37,10 @@ def enqueue_daily():
             get_queue("backup").enqueue("agent.tasks.backup.daily_backup_task", site_id=site_id)
             get_queue("ga4").enqueue("agent.tasks.ga4.ga4_collect_task", site_id=site_id, lookback_days=7)
             get_queue("audit").enqueue("agent.tasks.pre_gsc_audit.pre_gsc_audit_task", site_id=site_id)
+            # Evaluate CTR experiments (T+21)
+            if os.environ.get("SEO_EXPERIMENTS_ENABLED", "0") == "1":
+                get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_switch_task", site_id="superparty")
+                get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_evaluate_task", site_id="superparty")
         except Exception as e:
             log.error("daily %s: %s", site_id, e)
 
@@ -47,26 +51,49 @@ def enqueue_weekly():
         try:
             get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="ga4_weekly_wave")
             get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
+            # Adaug aici Raportul Saptamanal Enterprise (GSC/Apply/GBP Workflow Info)
+            get_queue("apply").enqueue("agent.tasks.seo_weekly_report.generate_weekly_report", site_id="superparty")
         except Exception as e:
             log.warning("GA4 weekly wave %s: %s", site_id, e)
 
 
 
 def main():
+    import os
+    from agent.common.env import getenv_int
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s %(name)s %(levelname)s %(message)s")
     log.info("Scheduler starting")
+    
+    FAST_MIN = getenv_int("SEO_FAST_INTERVAL_MIN", 60)
+    next_fast = time.time()
+    
     while True:
         now = datetime.utcnow()
         if now.hour == 3 and now.minute == 0:
             enqueue_daily()
             time.sleep(65)
-        elif now.weekday() == 6 and now.hour == 10 and now.minute == 0:
+            continue
+            
+        if now.weekday() == 6 and now.hour == 10 and now.minute == 0:
             enqueue_weekly()
             time.sleep(65)
-        else:
-            time.sleep(10)
-
+            continue
+            
+        if os.environ.get("SEO_CONTINUOUS", "0") == "1" and time.time() >= next_fast:
+            log.info(f"Fast Lane triggers: enqueuing seo_plan and seo_apply (interval {FAST_MIN}m)")
+            try:
+                get_queue("seo_plan").enqueue("agent.tasks.seo.seo_plan_task", mode="default")
+                get_queue("apply").enqueue("agent.tasks.seo.seo_apply_task")
+                
+                if os.environ.get("SEO_EXPERIMENTS_ENABLED", "0") == "1":
+                    get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_plan_task", site_id="superparty")
+                    get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_apply_task", site_id="superparty")
+            except Exception as e:
+                log.error(f"Failed Fast Lane enqueue: {e}")
+            next_fast = time.time() + FAST_MIN * 60
+            
+        time.sleep(10)
 
 if __name__ == "__main__":
     main()
