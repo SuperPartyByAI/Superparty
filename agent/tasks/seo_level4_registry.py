@@ -67,10 +67,10 @@ def classify_url_vs_cluster(url: str, cluster_id: str) -> str:
     """Returnează poziția URL-ului față de acest cluster: owner | supporter | forbidden | unknown."""
     if is_owner(url, cluster_id):
         return "owner"
-    if is_forbidden(url, cluster_id):
-        return "forbidden"
     if is_allowed_supporter(url, cluster_id):
         return "supporter"
+    if is_forbidden(url, cluster_id):
+        return "forbidden"
     
     # Implicit, orice e în sandboxul neclasificat care accesează impresii de cluster fără să fie specificat 
     # ca allowed_supporter prezintă risc.

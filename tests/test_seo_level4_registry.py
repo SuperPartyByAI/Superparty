@@ -32,6 +32,17 @@ def test_is_forbidden():
     assert is_forbidden("/servicii-optionale/mascote", "money_root_animatori_petreceri_copii") is True
 
 def test_classify_and_cannibalize():
+    # TEST FUNDAȚIONAL: București și Ilfov trebuie să fie Supporteri Pilon (/animatori-petreceri-copii) PESTE interdicția blacklist /petreceri/*
+    assert classify_url_vs_cluster("/petreceri/bucuresti", "money_root_animatori_petreceri_copii") == "supporter"
+    assert is_cannibalizing("/petreceri/bucuresti", "money_root_animatori_petreceri_copii") is False
+    
+    assert classify_url_vs_cluster("/petreceri/ilfov", "money_root_animatori_petreceri_copii") == "supporter"
+    assert is_cannibalizing("/petreceri/ilfov", "money_root_animatori_petreceri_copii") is False
+
+    # TEST FUNDAȚIONAL: O altă pagină (ex sector-1) neautorizată expres pe Root devine forbidden imediat
+    assert classify_url_vs_cluster("/petreceri/sector-1", "money_root_animatori_petreceri_copii") == "forbidden"
+    assert is_cannibalizing("/petreceri/sector-1", "money_root_animatori_petreceri_copii") is True
+
     # 1. Scenariu Owner
     assert classify_url_vs_cluster("/petreceri/bucuresti", "money_geo_bucuresti") == "owner"
     assert is_cannibalizing("/petreceri/bucuresti", "money_geo_bucuresti") is False
