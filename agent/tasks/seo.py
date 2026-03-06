@@ -170,8 +170,12 @@ def seo_plan_task(mode="default"):
     return _orig_seo_plan_task()
 
 def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
-    """Generate SEO plan. Returns ok+no_data_yet if no index available."""
+    """Generate SEO plan with local_intent_score. Returns ok+no_data_yet if no index available."""
     import json
+    import re as _re
+    import unicodedata
+    import hashlib
+    import time as _time
     from pathlib import Path
     from datetime import date
     from agent.common.env import getenv_int
@@ -184,44 +188,119 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     if not index:
         return {"ok": True, "note": "no_data_yet", "reason": "index_empty", "next_check": "daily"}
 
+    # --- Load Ilfov whitelist from manifest ---
+    manifest_path = Path("reports/seo/indexing_manifest.json")
+    whitelist_slugs = set()
+    if manifest_path.exists():
+        try:
+            manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for m in manifest_data:
+                if (m.get("county", "").strip().lower() == "ilfov"
+                        and m.get("indexable")
+                        and m.get("place_type") in ("town", "commune", "city")):
+                    whitelist_slugs.add(m.get("slug", "").lower())
+        except Exception:
+            pass
+
+    # --- Helpers ---
+    def normalize_text(t):
+        t = t.lower()
+        t = unicodedata.normalize("NFKD", t)
+        t = "".join(c for c in t if not unicodedata.combining(c))
+        return t
+
+    LOCAL_TERMS = [
+        "bucuresti", "ilfov", "sector 1", "sector 2", "sector 3",
+        "sector 4", "sector 5", "sector 6", "sector-1", "sector-2",
+        "sector-3", "sector-4", "sector-5", "sector-6",
+    ]
+    COMMERCIAL_TERMS = ["animatori", "petreceri", "copii", "aniversare", "mascote"]
+
+    def compute_local_intent(query, whitelist):
+        q = normalize_text(query)
+        score = 0
+        matched = set()
+        for term in LOCAL_TERMS:
+            if term in q:
+                score += 2
+                matched.add(term)
+        for slug in whitelist:
+            slug_n = normalize_text(slug)
+            if slug_n and slug_n in q:
+                score += 3
+                matched.add(slug_n)
+        for term in COMMERCIAL_TERMS:
+            if term in q:
+                score += 1
+                matched.add(term)
+        return score, matched
+
+    # --- Thresholds ---
     min_impressions = getenv_int("SEO_IMPRESSIONS_MIN", 50)
-    pos_min = getenv_int("SEO_POS_MIN", 5)
-    pos_max = getenv_int("SEO_POS_MAX", 25)
+    pos_min = getenv_int("SEO_POS_MIN", 3)
+    pos_max = getenv_int("SEO_POS_MAX", 50)
     wave_size = getenv_int("MAX_WEEKLY_WAVE", 10) if wave == "daily_small" else getenv_int("MAX_WEEKLY_WAVE", 30)
 
-    opportunities = [
-        row for row in index
-        if row.get("impressions", 0) >= min_impressions
-        and pos_min <= row.get("avg_position", 99) <= pos_max
-    ][:wave_size]
+    # --- Build opportunities with local_intent_score ---
+    opportunities = []
+    for x in index:
+        query = x.get("query", "").lower()
+        if not any(kw in query for kw in ["animatori", "petreceri", "mascote"]):
+            continue
+        if x.get("impressions", 0) < min_impressions:
+            continue
+        if not (pos_min <= x.get("avg_position", 99) <= pos_max):
+            continue
 
+        score, matched = compute_local_intent(query, whitelist_slugs)
+        # Only include queries with local intent (score > 0)
+        if score > 0:
+            opp = x.copy()
+            opp["local_intent_score"] = score
+            opp["matched_terms"] = sorted(matched)
+            opportunities.append(opp)
+
+    # Sort: local_intent_score DESC, impressions DESC, avg_position ASC
+    opportunities.sort(key=lambda r: (-r.get("local_intent_score", 0), -r.get("impressions", 0), r.get("avg_position", 99)))
+    opportunities = opportunities[:wave_size]
+
+    # Fallback: if no local intent matches, take top impressions
     if not opportunities:
-        opportunities = index[:min(5, wave_size)]
+        fallback = [x for x in index if x.get("impressions", 0) >= min_impressions][:min(5, wave_size)]
+        for x in fallback:
+            opp = x.copy()
+            opp["local_intent_score"] = 0
+            opp["matched_terms"] = []
+            opportunities.append(opp)
 
-    import hashlib
+    # --- Deduplication via hash ---
     plan_json_str = json.dumps(opportunities, sort_keys=True)
-    plan_hash = hashlib.sha256(plan_json_str.encode('utf-8')).hexdigest()
-    
-    plan = {"wave": wave, "created": str(date.today()), "opportunities": opportunities, "count": len(opportunities), "hash": plan_hash}
+    plan_hash = hashlib.sha256(plan_json_str.encode("utf-8")).hexdigest()
+
     plan_dir = Path(f"reports/{site_id}/seo_plans")
     plan_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Check if a plan with the same hash already exists today
-    existing_plans = sorted(plan_dir.glob(f"plan_*.json"))
+
+    existing_plans = sorted(plan_dir.glob("plan_*.json"))
     if existing_plans:
-        import logging
         try:
-            last_plan = json.loads(existing_plans[-1].read_text(encoding='utf-8'))
+            last_plan = json.loads(existing_plans[-1].read_text(encoding="utf-8"))
             if last_plan.get("hash") == plan_hash:
+                import logging
                 logging.getLogger(__name__).info("SEO Plan deduplicated (same hash).")
                 return {"ok": True, "opportunities": len(opportunities), "note": "deduped_hash"}
         except Exception:
             pass
 
-    import time
-    run_id = time.strftime("%H%M%S")
+    run_id = _time.strftime("%H%M%S")
+    plan = {
+        "wave": wave,
+        "created": str(date.today()),
+        "opportunities": opportunities,
+        "count": len(opportunities),
+        "hash": plan_hash
+    }
     plan_file = plan_dir / f"plan_{date.today()}_{run_id}_{wave}.json"
-    plan_file.write_text(json.dumps(plan, indent=2))
+    plan_file.write_text(json.dumps(plan, indent=2, ensure_ascii=False), encoding="utf-8")
     return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
 
@@ -545,16 +624,13 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         return {"ok": True, "note": "budget_reached", "reason": "max_prs_per_day"}
 
     try:
-        from agent.tasks.seo_ctr_experiments import db_connect, get_page_state
+        from agent.tasks.seo_ctr_experiments import db_connect, db_init, get_page_state
         db_con = db_connect()
+        db_init(db_con)
     except Exception:
         db_con = None
 
     from datetime import datetime
-    try:
-        pass
-    finally:
-        pass
 
     import urllib.parse
     for opp in opportunities:
