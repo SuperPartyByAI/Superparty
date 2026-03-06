@@ -22,36 +22,36 @@ const safeImages = sliderImages
       <h2 class="slider-title">{title}</h2>
       <p class="slider-sub">Momente reale, copii fericiți, amintiri de neuitat</p>
     </div>
-    <div class="slider-wrap" id="photoSlider">
-      <div class="slider-track" id="sliderTrack">
-        {safeImages.length === 0 ? (
-          <div class="slide" style="display:flex;align-items:center;justify-content:center;min-width:100%;">
-            <p style="color:#6B7280;padding:3rem;">Imagini momentan indisponibile</p>
+  </div>
+  <div class="slider-wrap" id="photoSlider">
+    <div class="slider-track" id="sliderTrack">
+      {safeImages.length === 0 ? (
+        <div class="slide" style="display:flex;align-items:center;justify-content:center;min-width:100%;">
+          <p style="color:#6B7280;padding:3rem;">Imagini momentan indisponibile</p>
+        </div>
+      ) : (
+        safeImages.map((img, i) => (
+          <div class="slide" data-index={i}>
+            <img
+              src={img.src}
+              alt={img.alt ?? 'Animator petreceri copii'}
+              loading={i < 3 ? 'eager' : 'lazy'}
+              decoding="async"
+              width="800"
+              height="600"
+            />
+            <div class="slide-label">{img.alt}</div>
           </div>
-        ) : (
-          safeImages.map((img, i) => (
-            <div class="slide" data-index={i}>
-              <img
-                src={img.src}
-                alt={img.alt ?? 'Animator petreceri copii'}
-                loading={i < 3 ? 'eager' : 'lazy'}
-                decoding="async"
-                width="800"
-                height="600"
-              />
-              <div class="slide-label">{img.alt}</div>
-            </div>
-          ))
-        )}
-      </div>
-      <button class="slider-btn slider-prev" aria-label="Anterior" id="sliderPrev">‹</button>
-      <button class="slider-btn slider-next" aria-label="Următor" id="sliderNext">›</button>
+        ))
+      )}
     </div>
-    <div class="slider-dots" id="sliderDots">
-      {safeImages.map((_, i) => (
-        <button class={`dot ${i === 0 ? 'dot-active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
-      ))}
-    </div>
+    <button class="slider-btn slider-prev" aria-label="Anterior" id="sliderPrev">‹</button>
+    <button class="slider-btn slider-next" aria-label="Următor" id="sliderNext">›</button>
+  </div>
+  <div class="slider-dots" id="sliderDots">
+    {safeImages.map((_, i) => (
+      <button class={`dot ${i === 0 ? 'dot-active' : ''}`} data-dot={i} aria-label={`Slide ${i + 1}`}></button>
+    ))}
   </div>
 </section>
 
@@ -60,7 +60,7 @@ const safeImages = sliderImages
   .slider-header { text-align: center; margin-bottom: 2rem; }
   .slider-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #111827; margin-bottom: 0.4rem; }
   .slider-sub { color: #6B7280; font-size: 0.95rem; }
-  .slider-wrap { position: relative; overflow: hidden; border-radius: 24px; box-shadow: 0 20px 60px rgba(17,24,39,0.12); aspect-ratio: 16/9; max-height: 480px; touch-action: pan-y; }
+  .slider-wrap { position: relative; width: 100%; overflow: hidden; aspect-ratio: 16/9; max-height: 520px; touch-action: pan-y; }
   .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); height: 100%; }
   .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; }
   .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
@@ -75,7 +75,7 @@ const safeImages = sliderImages
   .slider-btn:hover { background: white; box-shadow: 0 6px 20px rgba(0,0,0,0.2); transform: translateY(-50%) scale(1.05); }
   .slider-prev { left: 1rem; }
   .slider-next { right: 1rem; }
-  .slider-dots { display: flex; justify-content: center; gap: 0.4rem; margin-top: 1.2rem; }
+  .slider-dots { display: flex; justify-content: center; gap: 0.4rem; margin-top: 1.2rem; padding: 0 1.5rem; }
   .dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #D1D5DB; cursor: pointer; transition: all 0.2s; padding: 0; }
   .dot-active { background: #F97316; width: 24px; border-radius: 4px; }
   @media (max-width: 640px) { .slider-btn { width: 36px; height: 36px; font-size: 1.1rem; } }
