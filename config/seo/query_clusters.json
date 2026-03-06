@@ -1,0 +1,182 @@
+{
+    "clusters": [
+        {
+            "cluster_id": "money_root_animatori_petreceri_copii",
+            "cluster_type": "money_root",
+            "intent_class": "commercial_hire",
+            "geo_scope": "national",
+            "tier": "A",
+            "canonical_queries": [
+                "animatori petreceri copii",
+                "petreceri copii",
+                "animatori copii"
+            ],
+            "query_patterns": [
+                "animatori petreceri copii *",
+                "inchiriere animatori *"
+            ],
+            "notes": "Pilonul central al afacerii. Focus pe conversie comercială imediată."
+        },
+        {
+            "cluster_id": "money_geo_bucuresti",
+            "cluster_type": "money_geo",
+            "intent_class": "commercial_hire",
+            "geo_scope": "bucuresti",
+            "tier": "A",
+            "canonical_queries": [
+                "animatori petreceri copii bucuresti",
+                "animatori copii bucuresti",
+                "petreceri copii bucuresti"
+            ],
+            "query_patterns": [
+                "* bucuresti",
+                "animatori bucuresti *"
+            ],
+            "notes": "Cel mai mare hub de volum local."
+        },
+        {
+            "cluster_id": "money_geo_ilfov",
+            "cluster_type": "money_geo",
+            "intent_class": "commercial_hire",
+            "geo_scope": "ilfov",
+            "tier": "A",
+            "canonical_queries": [
+                "animatori petreceri copii ilfov",
+                "animatori copii ilfov",
+                "petreceri copii ilfov"
+            ],
+            "query_patterns": [
+                "* ilfov",
+                "animatori ilfov *"
+            ],
+            "notes": "Hub județean important, apără pilonul de query-uri fragmentate."
+        },
+        {
+            "cluster_id": "sector_1",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_1",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 1",
+                "animatori copii sector 1"
+            ],
+            "query_patterns": [
+                "* sector 1",
+                "* sectorul 1"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_2",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_2",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 2",
+                "animatori copii sector 2"
+            ],
+            "query_patterns": [
+                "* sector 2",
+                "* sectorul 2"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_3",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_3",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 3",
+                "animatori copii sector 3"
+            ],
+            "query_patterns": [
+                "* sector 3",
+                "* sectorul 3"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_4",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_4",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 4",
+                "animatori copii sector 4"
+            ],
+            "query_patterns": [
+                "* sector 4",
+                "* sectorul 4"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_5",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_5",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 5",
+                "animatori copii sector 5"
+            ],
+            "query_patterns": [
+                "* sector 5",
+                "* sectorul 5"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "sector_6",
+            "cluster_type": "sector",
+            "intent_class": "commercial_local",
+            "geo_scope": "sector_6",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii sector 6",
+                "animatori copii sector 6"
+            ],
+            "query_patterns": [
+                "* sector 6",
+                "* sectorul 6"
+            ],
+            "notes": "Filtrează query-uri precise intralocale."
+        },
+        {
+            "cluster_id": "localitate_voluntari",
+            "cluster_type": "localitate",
+            "intent_class": "commercial_local",
+            "geo_scope": "voluntari",
+            "tier": "B",
+            "canonical_queries": [
+                "animatori petreceri copii voluntari",
+                "animatori copii voluntari"
+            ],
+            "query_patterns": [
+                "* voluntari"
+            ],
+            "notes": "Localitate Ilfov aprobată manual în manifest."
+        },
+        {
+            "cluster_id": "suport_idei_petrecere",
+            "cluster_type": "suport",
+            "intent_class": "informational",
+            "geo_scope": "national",
+            "tier": "C",
+            "canonical_queries": [
+                "idei petrecere copii",
+                "tematici petrecere copii"
+            ],
+            "query_patterns": [
+                "cum sa organizezi *",
+                "idei *"
+            ],
+            "notes": "Cluster suport pentru generare inel intern."
+        }
+    ]
+}
