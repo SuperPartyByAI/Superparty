@@ -76,30 +76,30 @@ def _write_state(key: str, obj: dict):
 
 
 def check_orchestrator() -> tuple:
-    """Check if sp_orchestrator container is Up."""
+    """Check if superparty-orchestrator service is Active."""
     try:
         out = subprocess.check_output(
-            ["docker", "ps", "--format", "{{.Names}}\t{{.Status}}"], timeout=10
-        ).decode()
+            ["systemctl", "is-active", "superparty-orchestrator"], timeout=10
+        ).decode().strip()
+    except subprocess.CalledProcessError as e:
+        out = "inactive"
     except Exception as e:
         return False, f"docker_ps_failed:{e}"
 
-    for line in out.splitlines():
-        parts = line.split("\t", 1)
-        if len(parts) == 2 and parts[0].strip() == "sp_orchestrator":
-            if "Up" in parts[1]:
-                _write_state("orch", {"down": False, "last_ok": datetime.utcnow().isoformat()})
-                return True, f"Up: {parts[1].strip()}"
-            else:
-                prev = _read_state("orch").get("down", False)
-                _write_state("orch", {"down": True, "last": datetime.utcnow().isoformat()})
-                if not prev:
-                    msg = f":red_circle: *sp_orchestrator DOWN*: {parts[1].strip()}"
-                    _slack(msg)
-                    _gh_issue("sp_orchestrator down",
-                              f"Status: {parts[1].strip()}\nTime: {datetime.utcnow().isoformat()}Z")
-                return False, parts[1].strip()
-    return False, "not_found_in_docker_ps"
+
+    if out == "active":
+        _write_state("orch", {"down": False, "last_ok": datetime.utcnow().isoformat()})
+        return True, "Up: active"
+    else:
+        prev = _read_state("orch").get("down", False)
+        _write_state("orch", {"down": True, "last": datetime.utcnow().isoformat()})
+        if not prev:
+            msg = f":red_circle: *superparty-orchestrator DOWN*: {out}"
+            _slack(msg)
+            _gh_issue("superparty-orchestrator down",
+                      f"Status: {out}\nTime: {datetime.utcnow().isoformat()}Z")
+        return False, out
+
 
 
 def check_ga4_collect(site_id: str = "superparty") -> tuple:
