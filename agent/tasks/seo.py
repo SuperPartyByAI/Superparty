@@ -262,6 +262,17 @@ from agent.common.git_pr import git_commit_push_pr
 SEO_MARKER_START = "<!-- SEO_INJECT_START:v1 -->"
 SEO_MARKER_END = "<!-- SEO_INJECT_END:v1 -->"
 
+
+def normalize_page_to_path(page: str) -> str:
+    import urllib.parse
+    p = urllib.parse.unquote(page or "")
+    p = p.replace("https://www.superparty.ro", "").replace("https://superparty.ro", "")
+    p = p.split("?")[0]
+    if not p.startswith("/"):
+        p = "/" + p
+    p = p.rstrip("/") if p != "/" else "/"
+    return p
+
 def resolve_astro_path(url_path):
     clean_path = urllib.parse.unquote(url_path)
     clean_path = clean_path.replace("https://www.superparty.ro", "").replace("https://superparty.ro", "")
@@ -520,10 +531,17 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
 
     state_file = Path(f"reports/{site_id}/seo_apply_state.json")
     state = _load_apply_state(state_file)
+
+    max_files_per_run = getenv_int("SEO_REAL_MAX_FILES_PER_RUN", getenv_int("SEO_REAL_MAX_FILES", 5))
+    max_files_per_day = getenv_int("SEO_REAL_MAX_FILES_PER_DAY", 15)
+    max_prs_per_day   = getenv_int("SEO_REAL_MAX_PRS_PER_DAY", 4)
+    cooldown_days     = getenv_int("SEO_REAL_COOLDOWN_DAYS", 7)
             
     if state["files_applied_today"] >= max_files_per_day:
+        _save_apply_state(state_file, state)
         return {"ok": True, "note": "budget_reached", "reason": "max_files_per_day"}
     if state["prs_created_today"] >= max_prs_per_day:
+        _save_apply_state(state_file, state)
         return {"ok": True, "note": "budget_reached", "reason": "max_prs_per_day"}
 
     try:
@@ -533,32 +551,39 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         db_con = None
 
     from datetime import datetime
+    try:
+        pass
+    finally:
+        pass
+
+    import urllib.parse
     for opp in opportunities:
-        url_path = opp.get("page", "")
-        fpath = resolve_astro_path(url_path)
+        page_raw = opp.get("page", "")
+        page_key = normalize_page_to_path(page_raw)
+        fpath = resolve_astro_path(page_key)
         if not fpath:
-            audit_log["unmapped"].append({"page": url_path, "reason": "not_resolved"})
+            audit_log["unmapped"].append({"page": page_key, "raw": page_raw, "reason": "not_resolved"})
             continue
             
         # Check active experiment contamination
         if db_con:
             try:
-                page_db_state = get_page_state(db_con, site_id, url_path)
+                page_db_state = get_page_state(db_con, site_id, page_key)
                 if page_db_state and page_db_state.get("active_exp_id"):
-                    audit_log["skipped"].append({"page": url_path, "reason": "active_experiment"})
+                    audit_log["skipped"].append({"page": page_key, "raw": page_raw, "reason": "active_experiment"})
                     continue
             except Exception:
                 pass
             
         # COOLDOWN Check
-        last_applied_str = state["page_last_applied"].get(url_path)
+        last_applied_str = state["page_last_applied"].get(page_key)
         if last_applied_str:
             last_applied_date = datetime.strptime(last_applied_str, "%Y-%m-%d").date()
             if (date.today() - last_applied_date).days < cooldown_days:
-                audit_log["skipped"].append({"page": url_path, "reason": "cooldown"})
+                audit_log["skipped"].append({"page": page_key, "raw": page_raw, "reason": "cooldown"})
                 continue
             
-        clean_path = urllib.parse.unquote(url_path).replace("https://www.superparty.ro", "").replace("https://superparty.ro", "").split("?")[0].strip("/")
+        clean_path = page_key.strip("/")
         text = fpath.read_text(encoding="utf-8", errors="ignore")
 
         payload = get_deterministic_payload(clean_path, manifest_data)
@@ -592,12 +617,12 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         if gate_passed:
             fpath.write_text(new_text, encoding="utf-8")
             applied_files.append(str(fpath))
-            audit_log["applied"].append({"page": url_path, "file": str(fpath), "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
+            audit_log["applied"].append({"page": page_key, "raw": page_raw, "file": str(fpath), "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
             succes_count += 1
             state["files_applied_today"] += 1
-            state["page_last_applied"][url_path] = str(date.today())
+            state["page_last_applied"][page_key] = str(date.today())
         else:
-            audit_log["skipped"].append({"page": url_path, "reason": "failed_gate", "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
+            audit_log["skipped"].append({"page": page_key, "raw": page_raw, "reason": "failed_gate", "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
 
         if succes_count >= max_files_per_run or state["files_applied_today"] >= max_files_per_day:
             break
@@ -608,6 +633,7 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
     applied_files.append(str(audit_file))
 
     if not succes_count:
+        _save_apply_state(state_file, state)
         return {"ok": True, "note": "no_pages_passed_gate", "audit": str(audit_file)}
 
     try:
@@ -618,8 +644,11 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
             commit_msg=f"feat(seo): gsc apply real {date.today()}T{run_id}Z",
             files=applied_files,
             pr_title=f"SEO Apply Real: {succes_count} pagini optimizate on-page ({date.today()})",
-            pr_body=f"S-a folosit funcția llm deterministica de apply safe pentru modificari pe text.\n\nPagini îmbunătățite:\n" + "\n".join([f"- `{k}`" for k in applied_files])
+            pr_body=f"S-a folosit funcția llm deterministica de apply safe pentru modificari pe text.\\n\\nPagini îmbunătățite:\\n" + "\\n".join([f"- `{k}`" for k in applied_files])
         )
+        state["prs_created_today"] += 1
+        _save_apply_state(state_file, state)
         return {"ok": True, "pr_url": pr_url}
     except Exception as e:
+        _save_apply_state(state_file, state)
         return {"ok": False, "error": str(e), "files": applied_files}

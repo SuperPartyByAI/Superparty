@@ -441,6 +441,7 @@ def seo_ctr_experiments_plan_task(site_id="superparty"):
     max_active = getenv_int("SEO_EXPERIMENTS_MAX_ACTIVE", 10)
     
     con = db_connect()
+    db_init(con)
     active = list_active_experiments(con, site_id)
     if len(active) >= max_active:
         return {"ok": True, "note": "max_active_reached"}
@@ -451,7 +452,8 @@ def seo_ctr_experiments_plan_task(site_id="superparty"):
         log.info("Canary experiment running on Pilon. Halting new experiments.")
         return {"ok": True, "note": "canary_active"}
 
-    candidates = select_ctr_candidates(site_id, max_candidates=10)
+    min_imps = getenv_int("SEO_EXPERIMENTS_MIN_IMPRESSIONS_7D", 80)
+    candidates = select_ctr_candidates(site_id, min_impressions=min_imps, max_candidates=10)
     
     # Load Real Apply Cooldowns to avoid cross-contamination
     content_cooldowns = {}
@@ -483,6 +485,7 @@ def seo_ctr_experiments_plan_task(site_id="superparty"):
                 continue
                 
         # Get baseline text
+        from agent.tasks.seo import resolve_astro_path
         fpath = resolve_astro_path(url_path)
         if not fpath: continue
         
@@ -514,6 +517,7 @@ def seo_ctr_experiments_apply_task(site_id="superparty"):
     max_prs = getenv_int("SEO_REAL_MAX_PRS_PER_DAY", 3)
     
     con = db_connect()
+    db_init(con)
     
     # Check if we should Switch someone to B
     # Simplified logic: just apply A for now. A full implementation would apply A, and maybe later apply B if configured as Multi-Armed.
@@ -546,6 +550,7 @@ def seo_ctr_experiments_apply_task(site_id="superparty"):
 
 def seo_ctr_experiments_evaluate_task(site_id="superparty"):
     con = db_connect()
+    db_init(con)
     from datetime import datetime
     
     # Check T+21
@@ -589,7 +594,8 @@ def evaluate_experiment(con, exp, service, early_stop=False):
     endDate = str(date.today() - timedelta(days=3)) # 3 days latency
     
     # Fetch variant metrics
-    variant = get_page_metrics_with_fallback(service, "https://www.superparty.ro/", exp["page_url"], exp["variant_start"], endDate)
+    gsc_prop = getenv("GSC_PROPERTY", "https://www.superparty.ro/").strip()
+    variant = get_page_metrics_with_fallback(service, gsc_prop, exp["page_url"], exp["variant_start"], endDate)
     
     # Early stop checks volume
     from agent.common.env import getenv_int
