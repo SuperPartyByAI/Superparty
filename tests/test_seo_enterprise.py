@@ -63,3 +63,27 @@ def test_quality_gate():
     faq_count = 4
     links_count = 3
     assert text_delta > 2500 and faq_count >= 4 and links_count >= 3
+
+def test_payload_types():
+    manifest_data = {"ilfov_town": {"county": "Ilfov", "name": "Ilfov Town"}}
+    pay_hub = get_deterministic_payload("ilfov", manifest_data)
+    assert pay_hub["page_type"] == "hub_ilfov"
+    
+    pay_sec = get_deterministic_payload("sector-3", manifest_data)
+    assert pay_sec["page_type"] == "sector"
+    
+    pay_loc = get_deterministic_payload("ilfov_town", manifest_data)
+    assert pay_loc["page_type"] == "localitate_ilfov"
+    
+def test_insert_when_no_marker():
+    text = "<Layout>\n<h1>Hi</h1>\n</Layout>"
+    block = "<!-- SEO_INJECT_START:v1 -->\nSEO BLOCK\n<!-- SEO_INJECT_END:v1 -->"
+    res = replace_or_insert_seo_block(text, block)
+    assert "SEO BLOCK" in res
+    assert res.endswith("</Layout>")
+    
+def test_required_links_present():
+    html = '<a href="/animatori-petreceri-copii">Pilon</a> <a href="/arie-acoperire">Arie</a> <a href="/petreceri/ilfov">Hub</a>'
+    assert 'href="/animatori-petreceri-copii"' in html
+    assert 'href="/arie-acoperire"' in html
+    assert 'href="/petreceri/ilfov"' in html

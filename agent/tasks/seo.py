@@ -290,7 +290,7 @@ def get_deterministic_payload(clean_path, manifest_data):
     payload = {
         "page_type": page_type,
         "location_label": location_label,
-        "title": f"Animatori copii în {location_label} | Superparty",
+        "title": f"Animatori petreceri copii în {location_label} | Superparty",
         "description": f"Animatori pentru petreceri copii în {location_label}. Programe adaptate vârstei, în spații private sau săli puse la dispoziție. Rezervă o ofertă.",
         "logistic_text": "Ne deplasăm pentru petreceri de copii și adaptăm programul la vârstă, număr de participanți și spațiul disponibil (acasă, curte sau o sală pusă la dispoziție de organizator). Timpul de deplasare și montajul pot varia.",
         "hub_url": "/petreceri/ilfov",
@@ -500,9 +500,14 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         faq_count = new_text.count("faq-item") or new_text.count("{ q: '")
         links_count = new_text.count('href="/')
 
-        min_chars = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 1000)
+        min_chars = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 2500)
         
-        gate_passed = text_delta > min_chars and faq_count >= 4 and links_count >= 3
+        required_links_present = (
+            'href="/animatori-petreceri-copii"' in new_text and
+            'href="/arie-acoperire"' in new_text and
+            f'href="{payload["hub_url"]}"' in new_text
+        )
+        gate_passed = text_delta > min_chars and faq_count >= 4 and required_links_present
         
         if gate_passed:
             fpath.write_text(new_text, encoding="utf-8")
@@ -524,9 +529,11 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
         return {"ok": True, "note": "no_pages_passed_gate", "audit": str(audit_file)}
 
     try:
+        import time
+        run_id = time.strftime("%H%M%S")
         pr_url = git_commit_push_pr(
-            branch=f"agent/seo-gsc-apply-{date.today()}",
-            commit_msg=f"feat(seo): gsc apply real {date.today()}",
+            branch=f"agent/seo-gsc-apply-{date.today()}T{run_id}Z",
+            commit_msg=f"feat(seo): gsc apply real {date.today()}T{run_id}Z",
             files=applied_files,
             pr_title=f"SEO Apply Real: {succes_count} pagini optimizate on-page ({date.today()})",
             pr_body=f"S-a folosit funcția llm deterministica de apply safe pentru modificari pe text.\n\nPagini îmbunătățite:\n" + "\n".join([f"- `{k}`" for k in applied_files])
