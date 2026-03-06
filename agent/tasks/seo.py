@@ -206,6 +206,8 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
 
+
+
 def seo_apply_task():
     import pathlib
     import os
@@ -229,15 +231,186 @@ def seo_apply_task():
         return res["gsc"]
     return res
 
+import json
+import re
+import html
+import hashlib
+import urllib.parse
+from pathlib import Path
+from datetime import date
+from agent.common.git_pr import git_commit_push_pr
+
+SEO_MARKER_START = "<!-- SEO_INJECT_START:v1 -->"
+SEO_MARKER_END = "<!-- SEO_INJECT_END:v1 -->"
+
+def resolve_astro_path(url_path):
+    clean_path = urllib.parse.unquote(url_path)
+    clean_path = clean_path.replace("https://www.superparty.ro", "").replace("https://superparty.ro", "")
+    clean_path = clean_path.split("?")[0].strip("/")
+    
+    candidates = [
+        Path(f"src/pages/{clean_path}.astro"),
+        Path(f"src/pages/{clean_path}/index.astro"),
+        Path(f"src/pages/{clean_path}.mdx")
+    ]
+    if not clean_path:
+        candidates.insert(0, Path("src/pages/index.astro"))
+
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
+
+def get_deterministic_payload(clean_path, manifest_data):
+    page_type = "unknown"
+    location_label = ""
+    
+    path_segments = [s for s in clean_path.split("/") if s]
+    slug = path_segments[-1] if path_segments else ""
+
+    if clean_path == "animatori-petreceri-copii":
+        page_type = "pilon"
+        location_label = "București și Ilfov"
+    elif slug == "ilfov":
+        page_type = "hub_ilfov"
+        location_label = "Ilfov"
+    elif slug == "bucuresti":
+        page_type = "hub_bucuresti"
+        location_label = "București"
+    elif "sector-" in slug:
+        page_type = "sector"
+        sec_num = slug.replace("sector-", "")
+        location_label = f"Sector {sec_num}, București"
+    elif manifest_data.get(slug, {}).get("county", "").strip().lower() == "ilfov":
+        page_type = "localitate_ilfov"
+        location_label = manifest_data[slug].get("name", slug.title().replace("-", " "))
+    else:
+        location_label = slug.title().replace("-", " ")
+
+    payload = {
+        "page_type": page_type,
+        "location_label": location_label,
+        "title": f"Animatori copii în {location_label} | Superparty",
+        "description": f"Animatori pentru petreceri copii în {location_label}. Programe adaptate vârstei, în spații private sau săli puse la dispoziție. Rezervă o ofertă.",
+        "logistic_text": "Ne deplasăm pentru petreceri de copii și adaptăm programul la vârstă, număr de participanți și spațiul disponibil (acasă, curte sau o sală pusă la dispoziție de organizator). Timpul de deplasare și montajul pot varia.",
+        "hub_url": "/petreceri/ilfov",
+        "hub_label": "Hub județul Ilfov"
+    }
+
+    if page_type == "pilon":
+        payload["title"] = "Animatori Petreceri Copii București și Ilfov | SuperParty"
+        payload["description"] = "Animatori profesioniști pentru petreceri copii în București și Ilfov. Programe adaptate vârstei, personaje, jocuri și activități. Cere ofertă."
+        payload["logistic_text"] = "Ne deplasăm în București și Ilfov și adaptăm programul la vârstă, numărul de copii și spațiul disponibil. Detaliile logistice (deplasare, montaj, durată) se stabilesc la rezervare, în funcție de interval."
+    elif page_type == "hub_ilfov":
+        payload["description"] = "Animatori pentru petreceri copii în Ilfov (orașe și comune). Programe flexibile, adaptate spațiului și vârstei. Solicită ofertă."
+        payload["logistic_text"] = "Acoperim orașe și comune din Ilfov, cu programe pentru petreceri de copii adaptate spațiului și vârstei. Detaliile logistice (deplasare, montaj, durată) se stabilesc la rezervare, în funcție de interval și locație."
+        payload["hub_url"] = "/animatori-petreceri-copii"
+        payload["hub_label"] = "Animatori petreceri copii (pilon)"
+    elif page_type == "hub_bucuresti":
+        payload["description"] = "Animatori pentru petreceri copii în București, pe sectoare. Activități adaptate vârstei și spațiului. Cere ofertă și verifică disponibilitatea."
+    elif page_type == "sector":
+        payload["title"] = f"Animatori copii Sector {slug.replace('sector-', '')} București | Superparty"
+        payload["description"] = f"Animatori pentru petreceri copii în Sector {slug.replace('sector-', '')}, București. Activități adaptate vârstei, pentru aniversări și evenimente. Cere ofertă."
+        payload["hub_url"] = "/petreceri/bucuresti"
+        payload["hub_label"] = "Hub București"
+
+    base_pool = [
+        {"q": f"Ajungeți și în {location_label}?", "a": f"Da, ne putem deplasa în {location_label} și în zonele apropiate, în funcție de disponibilitate și interval."},
+        {"q": "Cu cât timp înainte e bine să fac rezervarea?", "a": "Recomandăm rezervarea din timp, mai ales pentru weekend. Confirmarea depinde de program și de durata aleasă."},
+        {"q": "Programul se poate adapta vârstei copiilor?", "a": "Da. Activitățile sunt ajustate în funcție de vârstă și de energia grupului, astfel încât copiii să rămână implicați."},
+        {"q": "Se pot ține activitățile și în spații mai mici?", "a": "Da. Putem adapta jocurile și dinamica pentru apartament, living sau spații restrânse, fără a compromite siguranța."},
+        {"q": "Ce durată are, de obicei, un program de animatori?", "a": "Durata se alege în funcție de vârstă și de tipul evenimentului. Stabilim împreună varianta potrivită."},
+        {"q": "Aveți programe pentru grădinițe / afterschool?", "a": "Da, putem adapta formatul pentru grupuri organizate, cu activități potrivite și structură clară."},
+        {"q": "Ce aveți nevoie la fața locului?", "a": "De regulă, un spațiu liber pentru activități și acces la detaliile evenimentului (număr copii, vârstă, durată)."},
+        {"q": "Cum se stabilește costul?", "a": "Costul depinde de durata programului și de detaliile evenimentului. Îți trimitem o ofertă după ce stabilim cerințele."}
+    ]
+
+    h = hashlib.sha256((slug or "home").encode("utf-8")).hexdigest()
+    nums = [int(h[i:i+2], 16) for i in range(0, 32, 2)]
+    order = sorted(range(len(base_pool)), key=lambda i: nums[i] if i < len(nums) else i)
+    payload["faqs"] = [base_pool[i] for i in order[:4]]
+
+    return payload
+
+def _find_layout_open_tag(text: str):
+    m = re.search(r"<Layout\b[\s\S]*?>", text)
+    if not m: return None, None
+    return m.group(0), (m.start(), m.end())
+
+def _upsert_layout_prop(layout_tag: str, prop: str, value: str):
+    escaped = value.replace('"', '\\"').strip()
+    if re.search(rf"\b{re.escape(prop)}\s*=\s*\"[^\"]*\"", layout_tag):
+        return re.sub(rf"(\b{re.escape(prop)}\s*=\s*)\"[^\"]*\"", rf'\1"{escaped}"', layout_tag)
+    if re.search(rf"\b{re.escape(prop)}\s*=\s*\{{[\s\S]*?\}}", layout_tag):
+        return re.sub(rf"(\b{re.escape(prop)}\s*=\s*)\{{[\s\S]*?\}}", rf'\1"{escaped}"', layout_tag)
+    return re.sub(r"<Layout\b", f'<Layout\n  {prop}="{escaped}"', layout_tag, count=1)
+
+def patch_layout_title_description(text: str, title: str, description: str):
+    layout_tag, span = _find_layout_open_tag(text)
+    if not layout_tag or not span: return text
+    patched = _upsert_layout_prop(layout_tag, "title", title)
+    patched = _upsert_layout_prop(patched, "description", description)
+    start, end = span
+    return text[:start] + patched + text[end:]
+
+def build_seo_inject_block(heading, logistic_text, faq_items, hub_url, hub_label):
+    h = html.escape(heading)
+    logi = html.escape(logistic_text)
+    faq_html_parts = []
+    for it in faq_items:
+        q = html.escape(it.get("q","").strip())
+        a = html.escape(it.get("a","").strip())
+        if q and a:
+            faq_html_parts.append(f'      <div class="faq-item">\n        <h3>❓ {q}</h3>\n        <p>{a}</p>\n      </div>\n')
+    faq_html = "".join(faq_html_parts)
+    url = html.escape(hub_url)
+    lbl = html.escape(hub_label)
+
+    return (
+        f"\n{SEO_MARKER_START}\n"
+        f'<section id="seo-injected" class="hub-section">\n'
+        f'  <div class="container">\n'
+        f'    <h2 class="sec-title">{h}</h2>\n'
+        f'    <p class="sec-sub">{logi}</p>\n'
+        f'    <div class="faq-list">\n'
+        f"{faq_html}"
+        f'    </div>\n'
+        f'    <div class="seo-links" style="margin-top:2rem; padding:1.5rem; background:rgba(255,107,53,0.1); border-radius:12px; font-size:0.95rem;">\n'
+        f'      <strong>Vezi și:</strong>\n'
+        f'      <a href="{url}" style="color:var(--primary);">{lbl}</a> |\n'
+        f'      <a href="/animatori-petreceri-copii" style="color:var(--primary);">Animatori petreceri copii (pilon)</a> |\n'
+        f'      <a href="/arie-acoperire" style="color:var(--primary);">Arie de acoperire</a>\n'
+        f'    </div>\n'
+        f'  </div>\n'
+        f'</section>\n'
+        f"{SEO_MARKER_END}\n"
+    )
+
+def replace_or_insert_seo_block(text: str, new_block: str):
+    if SEO_MARKER_START in text and SEO_MARKER_END in text:
+        pattern = re.compile(re.escape(SEO_MARKER_START) + r"[\s\S]*?" + re.escape(SEO_MARKER_END), re.MULTILINE)
+        return pattern.sub(new_block.strip() + "\n", text, count=1)
+    parts = text.rsplit("</Layout>", 1)
+    if len(parts) != 2: return text
+    return parts[0] + new_block + "\n</Layout>" + parts[1]
+
+def patch_const_faq_array(text: str, faq_items):
+    def js_escape(s): return s.replace("\\", "\\\\").replace("'", "\\\'").strip()
+    objs = []
+    for it in faq_items:
+        q = js_escape(it.get("q",""))
+        a = js_escape(it.get("a",""))
+        if q and a: objs.append(f"  {{ q: '{q}', a: '{a}' }},")
+    new_arr = "const faq = [\n" + "\n".join(objs) + "\n];"
+    pattern = re.compile(r"const\s+faq\s*=\s*\[[\s\S]*?\]\s*;", re.MULTILINE)
+    if pattern.search(text): return pattern.sub(new_arr, text, count=1)
+    return text
+
 def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
-    """Apply SEO plan. If apply_mode='real', safely inject content into Astro files."""
-    import json
-    import re
     import os
     from pathlib import Path
     from datetime import date
-    from agent.common.git_pr import create_pr
-
+    import json
     apply_mode = os.environ.get("SEO_APPLY_MODE", apply_mode).strip()
 
     plan_dir = Path(f"reports/{site_id}/seo_plans")
@@ -257,7 +430,6 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
     report_dir.mkdir(parents=True, exist_ok=True)
     report_file = report_dir / f"seo_report_{date.today()}.md"
 
-    # Clasicul generare report
     if apply_mode != "real":
         lines = [
             f"# SEO Opportunity Report — {date.today()}",
@@ -272,134 +444,93 @@ def _orig_seo_apply_task(site_id="superparty", apply_mode="report"):
             lines.append(f"| {opp.get('query','')} | {page} | {opp.get('impressions')} | {opp.get('local_intent_score', '')} |")
 
         report_file.write_text("\n".join(lines), encoding="utf-8")
-        result = create_pr(
-            site_id=site_id,
-            title=f"SEO: {len(opportunities)} opportunities ({latest.get('wave')}) {date.today()}",
-            body=f"Automated SEO opportunity report.\n\nTop: {opportunities[0].get('query') if opportunities else 'none'}",
-            files={str(report_file): "\n".join(lines)},
+        result = git_commit_push_pr(
+            branch=f"agent/seo-gsc-apply-{date.today()}-report",
+            commit_msg=f"feat(seo): gsc apply report {date.today()}",
+            files=[str(report_file)],
+            pr_title=f"SEO: {len(opportunities)} opportunities ({latest.get('wave')}) {date.today()}",
+            pr_body=f"Automated SEO opportunity report.\n\nTop: {opportunities[0].get('query') if opportunities else 'none'}"
         )
-        return result
+        return {"ok": True, "pr_url": result}
 
-    # --- APPLY MODE REAL (Astro Injector) ---
-    def resolve_astro_path(url_path):
-        """Resolves GSC path to physical Astro file (ex: /petreceri/ilfov -> src/pages/petreceri/ilfov.astro)."""
-        clean_path = url_path.replace("https://www.superparty.ro", "").replace("https://superparty.ro", "")
-        clean_path = clean_path.split("?")[0].strip("/")
-        
-        candidates = [
-            Path(f"src/pages/{clean_path}.astro"),
-            Path(f"src/pages/{clean_path}/index.astro"),
-            Path(f"src/pages/{clean_path}.mdx")
-        ]
-        if not clean_path:
-            candidates.insert(0, Path("src/pages/index.astro"))
-
-        for c in candidates:
-            if c.exists():
-                return c
-        return None
-
-    def call_ollama(prompt):
-        import urllib.request as ureq
-        url = os.environ.get("OLLAMA_URL", "http://sp_ollama:11434")
-        model = os.environ.get("LLM_MODEL", "llama3.1:8b")
-        payload = json.dumps({
-            "model": model, "prompt": prompt, "stream": False,
-            "options": {"temperature": 0.4}
-        }).encode()
+    # Load Manifest for Source of Truth
+    manifest_data = {}
+    manifest_path = Path("reports/seo/indexing_manifest.json")
+    if manifest_path.exists():
         try:
-            req = ureq.Request(f"{url}/api/generate", data=payload, headers={"Content-Type": "application/json"})
-            resp = ureq.urlopen(req, timeout=40)
-            raw = json.loads(resp.read()).get("response", "")
-            return raw
+            m_list = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for m in m_list:
+                manifest_data[m.get("slug")] = m
         except Exception:
-            return ""
+            pass
 
-    applied_files = {}
+    audit_log = {"applied": [], "skipped": [], "unmapped": [], "date": str(date.today())}
+    applied_files = []
+    
     succes_count = 0
-
-    import logging
-    log = logging.getLogger(__name__)
+    import agent.common.env
+    max_files = agent.common.env.getenv_int("SEO_REAL_MAX_FILES", 5)
 
     for opp in opportunities:
         url_path = opp.get("page", "")
         fpath = resolve_astro_path(url_path)
         if not fpath:
+            audit_log["unmapped"].append({"page": url_path, "reason": "not_resolved"})
             continue
-
-        query = opp.get("query", "")
+            
+        clean_path = urllib.parse.unquote(url_path).replace("https://www.superparty.ro", "").replace("https://superparty.ro", "").split("?")[0].strip("/")
         text = fpath.read_text(encoding="utf-8", errors="ignore")
 
-        # GATE: If file already has FAQ injected by us (prevent duplication)
-        if "id=\"seo-injected-faq\"" in text:
-            continue
+        payload = get_deterministic_payload(clean_path, manifest_data)
+        new_text = patch_layout_title_description(text, payload["title"], payload["description"])
 
-        prompt = (
-            f"You are a local SEO expert for an animation events company in Romania.\n"
-            f"Generate an EXACT JSON object containing 'faq' list and a 'logistic_text'.\n"
-            f"Target Search Query: '{query}'. Context: they perform kids parties.\n\n"
-            f"Rules:\n"
-            f"1. Generate 4 Q/A pairs relevant to the query location. Real, generic answers.\n"
-            f"2. Generate 1 short paragraph 'logistic_text' explaining we adapt to spaces and travel time may vary.\n"
-            f"3. No fake prices, no fake venues, no guarantees. Use Romanian language.\n\n"
-            f"Output template:\n"
-            f"{{\n  \"faq\": [{{\"q\": \"...\", \"a\": \"...\"}}, ...],\n  \"logistic_text\": \"...\"\n}}"
-        )
+        if payload["page_type"] == "pilon" and "const faq =" in new_text:
+            new_text = patch_const_faq_array(new_text, payload["faqs"])
+        else:
+            block = build_seo_inject_block(
+                heading=f"Informații Utile despre {payload['location_label']}",
+                logistic_text=payload["logistic_text"],
+                faq_items=payload["faqs"],
+                hub_url=payload["hub_url"],
+                hub_label=payload["hub_label"]
+            )
+            new_text = replace_or_insert_seo_block(new_text, block)
 
-        llm_response = call_ollama(prompt)
-        json_match = re.search(r"\{[^{}]+\}", llm_response, re.DOTALL)
-        if not json_match:
-            continue
+        text_delta = len(new_text) - len(text)
+        faq_count = new_text.count("faq-item") or new_text.count("{ q: '")
+        links_count = new_text.count('href="/')
 
-        try:
-            content = json.loads(json_match.group(0))
-            faqs = content.get("faq", [])
-            logistic = content.get("logistic_text", "")
-            if len(faqs) < 4 or len(logistic) < 20:
-                continue
-        except Exception:
-            continue
-
-        # Construct safe ASTRO HTML block
-        inject_html = "\\n\\n<section id=\"seo-injected-faq\" class=\"hub-section\">\\n  <div class=\"container\">\\n"
-        inject_html += f"    <h2 class=\"sec-title\">Informații Utile: <span style=\"color:var(--primary)\">{query.title()}</span></h2>\\n"
-        inject_html += f"    <p class=\"sec-sub\">{logistic}</p>\\n"
-        inject_html += "    <div class=\"faq-list\">\\n"
-        for item in faqs:
-            inject_html += f"      <div class=\"faq-item\">\\n        <h3>❓ {item.get('q')}</h3>\\n        <p>{item.get('a')}</p>\\n      </div>\\n"
+        min_chars = agent.common.env.getenv_int("SEO_REAL_MIN_TEXT_CHARS", 1000)
         
-        inject_html += "    </div>\\n"
+        gate_passed = text_delta > min_chars and faq_count >= 4 and links_count >= 3
         
-        # QUALITY GATE 3 internal links requirements
-        hub_links = "    <div style=\"margin-top:2rem; padding:1.5rem; background:rgba(255,107,53,0.1); border-radius:12px; font-size:0.9rem;\">\\n"
-        hub_links += "      <strong>Vezi și:</strong> <a href=\"/animatori-petreceri-copii\" style=\"color:var(--primary);\">🔗 Animatori Petreceri Copii (Pilon)</a> | "
-        hub_links += "<a href=\"/arie-acoperire\" style=\"color:var(--primary);\">🔗 Arie Acoperire Completă</a> | "
-        hub_links += "<a href=\"/petreceri/ilfov\" style=\"color:var(--primary);\">🔗 Hub județul Ilfov</a>\\n    </div>\\n"
-        
-        inject_html += hub_links
-        inject_html += "  </div>\\n</section>\\n\\n"
+        if gate_passed:
+            fpath.write_text(new_text, encoding="utf-8")
+            applied_files.append(str(fpath))
+            audit_log["applied"].append({"page": url_path, "file": str(fpath), "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
+            succes_count += 1
+        else:
+            audit_log["skipped"].append({"page": url_path, "reason": "failed_gate", "gate": {"delta": text_delta, "faqs": faq_count, "links": links_count}})
 
-        # Replace just before </Layout>
-        if "</Layout>" in text:
-            new_text = text.replace("</Layout>", inject_html + "</Layout>")
-            
-            # QUALITY GATE Validation (min length modification)
-            if len(new_text) - len(text) > 1000:
-                fpath.write_text(new_text, encoding="utf-8")
-                applied_files[str(fpath)] = new_text
-                succes_count += 1
-
-        # Stop applying when wave size is completed
-        if succes_count >= 5:
+        if succes_count >= max_files:
             break
 
-    if not applied_files:
-        return {"ok": True, "note": "no_pages_passed_gate"}
+    report_dir.mkdir(parents=True, exist_ok=True)
+    audit_file = report_dir / f"seo_apply_gsc_{date.today()}.json"
+    audit_file.write_text(json.dumps(audit_log, indent=2, ensure_ascii=False), encoding="utf-8")
+    applied_files.append(str(audit_file))
 
-    pr_result = create_pr(
-        site_id=site_id,
-        title=f"SEO Apply Real: {succes_count} pagini optimizate on-page ({date.today()})",
-        body=f"S-a folosit funcția llm de apply safe pentru modificari pe text.\n\nPagini îmbunătățite cu FAQ și link-uri:\n" + "\n".join([f"- `{k}`" for k in applied_files.keys()]),
-        files=applied_files,
-    )
-    return pr_result
+    if not succes_count:
+        return {"ok": True, "note": "no_pages_passed_gate", "audit": str(audit_file)}
+
+    try:
+        pr_url = git_commit_push_pr(
+            branch=f"agent/seo-gsc-apply-{date.today()}",
+            commit_msg=f"feat(seo): gsc apply real {date.today()}",
+            files=applied_files,
+            pr_title=f"SEO Apply Real: {succes_count} pagini optimizate on-page ({date.today()})",
+            pr_body=f"S-a folosit funcția llm deterministica de apply safe pentru modificari pe text.\n\nPagini îmbunătățite:\n" + "\n".join([f"- `{k}`" for k in applied_files])
+        )
+        return {"ok": True, "pr_url": pr_url}
+    except Exception as e:
+        return {"ok": False, "error": str(e), "files": applied_files}
