@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 """
 Enterprise QA Script — SuperParty.ro
 1. Validare JSON-LD pe TOATE paginile .astro
@@ -8,7 +11,7 @@ Enterprise QA Script — SuperParty.ro
 import os, json, re, glob, unicodedata
 from collections import defaultdict, Counter
 
-SITE_ROOT = r"C:\Users\ursac\Superparty"
+SITE_ROOT = REPO_ROOT
 PAGES_DIR = os.path.join(SITE_ROOT, "src", "pages")
 REPORTS_DIR = os.path.join(SITE_ROOT, "reports", "seo")
 CANONICAL_HOST = "https://www.superparty.ro"

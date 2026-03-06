@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 import math
 import csv
 import time

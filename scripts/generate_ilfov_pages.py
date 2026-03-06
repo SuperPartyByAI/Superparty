@@ -1,8 +1,11 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 import json
 import os
 
-LOCATIONS_PATH = r"C:\Users\ursac\Superparty\reports\locations\locations_100km.json"
-PAGES_DIR = r"C:\Users\ursac\Superparty\src\pages\petreceri"
+LOCATIONS_PATH = r"os.path.join(REPO_ROOT, "reports", "locations", "locations_100km.json")"
+PAGES_DIR = r"os.path.join(REPO_ROOT, "src", "pages", "petreceri")"
 CANONICAL_HOST = "https://www.superparty.ro"
 
 def tier3_template(name, slug, place_type, dist_km):

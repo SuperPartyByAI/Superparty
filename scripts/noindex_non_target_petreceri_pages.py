@@ -1,9 +1,12 @@
 import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
+import os
 import json
 import re
 
-MANIFEST_PATH = r"C:\Users\ursac\Superparty\reports\seo\indexing_manifest.json"
-PAGES_DIR = r"C:\Users\ursac\Superparty\src\pages\petreceri"
+MANIFEST_PATH = r"os.path.join(REPO_ROOT, "reports", "seo", "indexing_manifest.json")"
+PAGES_DIR = r"os.path.join(REPO_ROOT, "src", "pages", "petreceri")"
 
 def main():
     if not os.path.exists(MANIFEST_PATH):

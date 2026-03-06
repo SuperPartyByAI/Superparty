@@ -21,48 +21,6 @@
     "url": "https://www.superparty.ro/petreceri/ilfov"
   },
   {
-    "slug": "prahova",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/prahova"
-  },
-  {
-    "slug": "dambovita",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/dambovita"
-  },
-  {
-    "slug": "giurgiu",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/giurgiu"
-  },
-  {
-    "slug": "ialomita",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/ialomita"
-  },
-  {
-    "slug": "calarasi",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/calarasi"
-  },
-  {
-    "slug": "teleorman",
-    "tier": 2,
-    "hub": "animatori-petreceri-copii",
-    "indexable": true,
-    "url": "https://www.superparty.ro/petreceri/teleorman"
-  },
-  {
     "slug": "sector-1",
     "tier": 2,
     "hub": "bucuresti",
@@ -103,6 +61,48 @@
     "hub": "bucuresti",
     "indexable": true,
     "url": "https://www.superparty.ro/petreceri/sector-6"
+  },
+  {
+    "slug": "prahova",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/prahova"
+  },
+  {
+    "slug": "dambovita",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/dambovita"
+  },
+  {
+    "slug": "giurgiu",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/giurgiu"
+  },
+  {
+    "slug": "ialomita",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/ialomita"
+  },
+  {
+    "slug": "calarasi",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/calarasi"
+  },
+  {
+    "slug": "teleorman",
+    "tier": 2,
+    "hub": "animatori-petreceri-copii",
+    "indexable": false,
+    "url": "https://www.superparty.ro/petreceri/teleorman"
   },
   {
     "slug": "voluntari",

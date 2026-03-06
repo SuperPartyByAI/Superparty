@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 """
 Enterprise SEO Generator — SuperParty.ro
 Generează:
@@ -8,8 +11,8 @@ Generează:
 import os, json, csv, re, unicodedata
 from collections import defaultdict
 
-PAGES_DIR = r"C:\Users\ursac\Superparty\src\pages\petreceri"
-REPORTS_DIR = r"C:\Users\ursac\Superparty\reports\seo"
+PAGES_DIR = r"os.path.join(REPO_ROOT, "src", "pages", "petreceri")"
+REPORTS_DIR = r"os.path.join(REPO_ROOT, "reports", "seo")"
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
 CANONICAL_HOST = "https://www.superparty.ro"
@@ -300,7 +303,7 @@ for slug, data in JUDETE.items():
 print("\n📊 Calculez scoring Tier 3...")
 
 # Citesc CSV OSM
-osm_path = r"C:\Users\ursac\Superparty\reports\locations\bucuresti_100km_places.csv"
+osm_path = r"os.path.join(REPO_ROOT, "reports", "locations", "bucuresti_100km_places.csv")"
 osm_data = []
 with open(osm_path, 'r', encoding='utf-8-sig') as f:
     reader = csv.DictReader(f)
@@ -308,7 +311,7 @@ with open(osm_path, 'r', encoding='utf-8-sig') as f:
         osm_data.append(row)
 
 # Citesc lista curată
-clean_path = r"C:\Users\ursac\Superparty\reports\locations\locations_100km.json"
+clean_path = r"os.path.join(REPO_ROOT, "reports", "locations", "locations_100km.json")"
 with open(clean_path, 'r', encoding='utf-8') as f:
     clean_list = json.load(f)
 clean_slugs = {loc.get("slug","") for loc in clean_list}

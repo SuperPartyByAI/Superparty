@@ -1,8 +1,11 @@
 import json
 import os
+from pathlib import Path
 
-LOCATIONS_PATH = r"C:\Users\ursac\Superparty\reports\locations\locations_100km.json"
-MANIFEST_PATH = r"C:\Users\ursac\Superparty\reports\seo\indexing_manifest.json"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+LOCATIONS_PATH = REPO_ROOT / "reports" / "locations" / "locations_100km.json"
+MANIFEST_PATH = REPO_ROOT / "reports" / "seo" / "indexing_manifest.json"
+PAGES_DIR = REPO_ROOT / "src" / "pages" / "petreceri"
 CANONICAL_HOST = "https://www.superparty.ro"
 
 def main():
@@ -12,33 +15,35 @@ def main():
 
     manifest = []
     
-    # 1. TIER 1 & TIER 2 HUB-URI
+    # Doar București / Ilfov pentru Indexare Core! 
+    # Județele extra se omit (sau se setează indexable: False) ca să nu mai apară în sitemap
     hubs = [
-        {"slug": "animatori-petreceri-copii", "tier": 1, "hub": None},
-        {"slug": "bucuresti", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "ilfov", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "prahova", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "dambovita", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "giurgiu", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "ialomita", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "calarasi", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "teleorman", "tier": 2, "hub": "animatori-petreceri-copii"},
-        {"slug": "sector-1", "tier": 2, "hub": "bucuresti"},
-        {"slug": "sector-2", "tier": 2, "hub": "bucuresti"},
-        {"slug": "sector-3", "tier": 2, "hub": "bucuresti"},
-        {"slug": "sector-4", "tier": 2, "hub": "bucuresti"},
-        {"slug": "sector-5", "tier": 2, "hub": "bucuresti"},
-        {"slug": "sector-6", "tier": 2, "hub": "bucuresti"},
+        {"slug": "animatori-petreceri-copii", "tier": 1, "hub": None, "indexable": True},
+        {"slug": "bucuresti", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": True},
+        {"slug": "ilfov", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": True},
+        {"slug": "sector-1", "tier": 2, "hub": "bucuresti", "indexable": True},
+        {"slug": "sector-2", "tier": 2, "hub": "bucuresti", "indexable": True},
+        {"slug": "sector-3", "tier": 2, "hub": "bucuresti", "indexable": True},
+        {"slug": "sector-4", "tier": 2, "hub": "bucuresti", "indexable": True},
+        {"slug": "sector-5", "tier": 2, "hub": "bucuresti", "indexable": True},
+        {"slug": "sector-6", "tier": 2, "hub": "bucuresti", "indexable": True},
+        
+        # Județele extra (au pagina fizică, dar momentan le marcăm indexable: False pentru Strict Scope)
+        {"slug": "prahova", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
+        {"slug": "dambovita", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
+        {"slug": "giurgiu", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
+        {"slug": "ialomita", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
+        {"slug": "calarasi", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
+        {"slug": "teleorman", "tier": 2, "hub": "animatori-petreceri-copii", "indexable": False},
     ]
     
     for h in hubs:
-        h["indexable"] = True
         h["url"] = f"{CANONICAL_HOST}/{h['slug']}" if h["tier"] == 1 else f"{CANONICAL_HOST}/petreceri/{h['slug']}"
         manifest.append(h)
 
-    # 2. TIER 3 LOCALITATI (Doar Ilfov, Orașe și Comune)
+    # TIER 3 LOCALITATI (Doar Ilfov, Orașe și Comune)
     target_count = 0
-    target_slugs = set(h["slug"] for h in hubs)
+    target_slugs = set(h["slug"] for h in hubs if h["indexable"])
     
     for loc in locations:
         if loc.get("county") == "Ilfov" and loc.get("type") in ["town", "commune"]:
@@ -60,34 +65,34 @@ def main():
                 target_slugs.add(slug)
                 target_count += 1
 
-    # 3. SET NON-TARGET (Existente) TO INDEXABLE: FALSE
-    # Verificăm ce pagini există în `/petreceri/` și dacă nu sunt în target_slugs, le adăugăm ca ne-indexabile
-    pages_dir = r"C:\Users\ursac\Superparty\src\pages\petreceri"
+    # SET NON-TARGET (Existente) TO INDEXABLE: FALSE
     non_target_count = 0
-    if os.path.exists(pages_dir):
-        for fname in os.listdir(pages_dir):
+    if os.path.exists(PAGES_DIR):
+        for fname in os.listdir(PAGES_DIR):
             if fname.endswith('.astro') and fname != '[slug].astro':
                 slug = fname[:-6]
-                if slug not in target_slugs:
+                # If it's not in the indexable list AND not already added in hubs:
+                if slug not in target_slugs and not any(h['slug'] == slug for h in hubs):
                     entry = {
                         "slug": slug,
                         "url": f"{CANONICAL_HOST}/petreceri/{slug}",
-                        "tier": 4, # Fallback
+                        "tier": 4, 
                         "indexable": False,
                         "note": "Scos din SEO core local"
                     }
                     manifest.append(entry)
                     non_target_count += 1
 
-    # Trimming/Salvare
+    # Salvare
     os.makedirs(os.path.dirname(MANIFEST_PATH), exist_ok=True)
     with open(MANIFEST_PATH, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-    print(f"Manifestul a fost salvat. Contine:")
-    print(f" - {len(hubs)} Hub-uri (indexabile)")
-    print(f" - {target_count} Localitati Ilfov Core (indexabile)")
-    print(f" - {non_target_count} Pagini in src/pages marcate NoIndex/Neindexabile")
+    print(f"Manifestul a fost salvat.")
+    print(f" - Hub-uri/Sectoare Indexabile: {len([h for h in hubs if h['indexable']])}")
+    print(f" - Extra Județe NoIndex: {len([h for h in hubs if not h['indexable']])}")
+    print(f" - Localitati Ilfov Core (indexabile): {target_count}")
+    print(f" - Alte Sate/Localitati NoIndex: {non_target_count}")
 
 if __name__ == "__main__":
     main()

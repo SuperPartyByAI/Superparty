@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+REPO_ROOT = str(Path(__file__).resolve().parents[1])
 """
 Colectare localități în raza de 100km de București
 Folosim Nominatim + hardcoded fallback pentru localitățile importante
@@ -11,7 +14,7 @@ import time
 from collections import defaultdict
 import math
 
-OUTPUT_DIR = r"C:\Users\ursac\Superparty\reports\locations"
+OUTPUT_DIR = r"REPO_ROOT\reports\locations"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 CENTER_LAT = 44.4268
@@ -262,7 +265,7 @@ with open(csv_path, "w", encoding="utf-8-sig") as f:
     f.write("Nume,Slug,Tip,Tip_RO,Judet,Dist_km,Note,URL_propusa\n")
     for loc in sorted(locations, key=lambda x: (x["county"], x["dist_km"])):
         note = loc.get("note", "")
-        f.write(f'"{loc["name"]}","{loc["slug"]}","{loc["type"]}","{loc["type_ro"]}","{loc["county"]}",{loc["dist_km"]},"{note}","https://superparty.ro/petreceri/{loc["slug"]}"\n')
+        f.write(f'"{loc["name"]}","{loc["slug"]}","{loc["type"]}","{loc["type_ro"]}","{loc["county"]}",{loc["dist_km"]},"{note}","https://www.superparty.ro/petreceri/{loc["slug"]}"\n')
 
 print(f"\n💾 Fișiere salvate în {OUTPUT_DIR}:")
 print(f"  📄 JSON:  locations_100km.json ({os.path.getsize(json_path)//1024} KB)")
