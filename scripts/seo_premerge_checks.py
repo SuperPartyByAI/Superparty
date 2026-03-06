@@ -7,10 +7,13 @@ Esuaza cu exit-code 1 daca oricare gate este violat.
 Destinat CI (GitHub Actions) sau pre-merge manual.
 
 Checks:
-  1. Non-www URL: niciun https://superparty.ro (fara www) in sitemap/seo files
-  2. Village/hamlet/locality indexable:true in manifest (interzis)
+  1. Non-www URL: niciun https://superparty.ro (fara www) in sitemap
+  2a. Village/hamlet/locality indexable:true in manifest (interzis)
+  2b. Non-target counties indexable:true in manifest (Teleorman etc)
+  2c. Town/commune/city indexable:true dar slug NOT in ILFOV_COMMUNES whitelist
   3. URL-uri noindex in sitemap
-  4. Judete non-target in sitemap (Teleorman, Calarasi, Ialomita, Giurgiu, Dambovita, Prahova)
+  4. Judete non-target in sitemap slugs
+  5. Canonical non-www in Astro pages
 """
 
 import sys, json, re
@@ -19,6 +22,31 @@ from pathlib import Path
 PASS = "\033[92mPASS\033[0m"
 FAIL = "\033[91mFAIL\033[0m"
 errors = []
+
+# Whitelist strict de comune/orase din judetul Ilfov (UAT Ilfov oficial)
+ILFOV_COMMUNES = {
+    "voluntari","pantelimon","popesti-leordeni","buftea","bragadiru","magurele",
+    "otopeni","chitila","dudu","stefanestii-de-jos",
+    "afumati","1-decembrie","balotesti","branesti","ciorogarla","clinceni",
+    "corbeanca","copaceni","cornetu","dascalu","dimieni","dobroesti",
+    "dragomiresti-vale","fundeni","glina","gradistea","gruiu",
+    "jilava","mogosoaia","moara-vlasiei","nuci","petrachioaia","peris",
+    "tunari","vidra","chiajna","cernica","caldararu","ilfov",
+}
+ALWAYS_OK_SLUGS = {
+    "ilfov","bucuresti",
+    "sector-1","sector-2","sector-3","sector-4","sector-5","sector-6",
+}
+FORBIDDEN_PLACE_TYPES = {"village", "hamlet", "locality"}
+NON_TARGET_COUNTIES = {
+    "teleorman","calarasi","ialomita","giurgiu","dambovita","prahova",
+    "arges","constanta","brasov","cluj","timis","iasi",
+}
+NON_TARGET_SLUGS = [
+    "teleorman","calarasi","ialomita","giurgiu","dambovita","prahova",
+    "arges","constanta","brasov","cluj","timisoara","iasi",
+    "bolintin-vale","fundulea","racari","mihailesti","budesti","mihai-voda",
+]
 
 
 def check(name, ok, detail=""):
@@ -31,6 +59,7 @@ def check(name, ok, detail=""):
 # ─── 1. SITEMAP: www-only ───────────────────────────────────────────────────
 print("\n[1] Sitemap — host www-only")
 sitemap = Path("public/sitemap.xml")
+sm_text = ""
 if sitemap.exists():
     sm_text = sitemap.read_text(encoding="utf-8")
     non_www = re.findall(r'<loc>https://superparty\.ro[^<]*</loc>', sm_text)
@@ -41,44 +70,49 @@ else:
 
 
 # ─── 2. MANIFEST: policy indexable=true ────────────────────────────────────
-print("\n[2] Manifest — indexable policy")
+print("\n[2] Manifest — indexable policy (Buc/Ilfov strict)")
 manifest_path = Path("reports/seo/indexing_manifest.json")
-FORBIDDEN_PLACE_TYPES = {"village", "hamlet", "locality"}
-NON_TARGET_COUNTIES = {
-    "teleorman", "calarasi", "ialomita", "giurgiu",
-    "dambovita", "prahova", "arges", "constanta", "brasov",
-}
-TARGET_COUNTIES = {"ilfov", ""}  # empty = pilon/servicii
 
 if manifest_path.exists():
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    bad_village_indexable = []
-    bad_county_indexable = []
+    bad_village = []
+    bad_county = []
+    bad_non_ilfov_town = []
 
     for entry in manifest:
         if not entry.get("indexable"):
             continue
+        slug = entry.get("slug", "").lower().strip()
         ptype = entry.get("place_type", "").lower()
         county = entry.get("county", "").strip().lower()
 
+        if slug in ALWAYS_OK_SLUGS:
+            continue
+
         if ptype in FORBIDDEN_PLACE_TYPES:
-            bad_village_indexable.append(f"{entry.get('slug')} ({ptype})")
+            bad_village.append(f"{entry.get('slug')} ({ptype})")
 
         if county in NON_TARGET_COUNTIES:
-            bad_county_indexable.append(f"{entry.get('slug')} (county={county})")
+            bad_county.append(f"{entry.get('slug')} (county={county})")
 
-    check("No village/hamlet/locality indexable:true", len(bad_village_indexable) == 0,
-          f"{bad_village_indexable[:5]}")
-    check("No non-target counties indexable:true", len(bad_county_indexable) == 0,
-          f"{bad_county_indexable[:5]}")
+        # Non-Ilfov town: are place_type town/commune/city dar slug nu e in whitelist
+        if ptype in {"town", "commune", "city", "municipality"} and slug not in ILFOV_COMMUNES:
+            bad_non_ilfov_town.append(f"{entry.get('slug')} (type={ptype}, county={county!r})")
+
+    check("No village/hamlet/locality indexable:true", len(bad_village) == 0,
+          f"{bad_village[:5]}")
+    check("No non-target counties indexable:true", len(bad_county) == 0,
+          f"{bad_county[:5]}")
+    check("No non-Ilfov town/commune/city indexable:true", len(bad_non_ilfov_town) == 0,
+          f"{bad_non_ilfov_town[:5]}")
 else:
-    print("  [SKIP] reports/seo/indexing_manifest.json not found (OK in CI without report dir)")
+    print("  [SKIP] reports/seo/indexing_manifest.json not found")
 
 
 # ─── 3. SITEMAP: no URL-uri noindex ────────────────────────────────────────
 print("\n[3] Sitemap — no noindex URLs")
-if sitemap.exists() and manifest_path.exists():
+if sm_text and manifest_path.exists():
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     noindex_paths = set()
     for entry in manifest:
@@ -98,16 +132,11 @@ if sitemap.exists() and manifest_path.exists():
           f"{bad_in_sitemap[:5]}")
 
 
-# ─── 4. SITEMAP: no judete non-target ───────────────────────────────────────
-print("\n[4] Sitemap — no non-target counties")
-NON_TARGET_SLUGS = [
-    "teleorman", "calarasi", "ialomita", "giurgiu", "dambovita", "prahova",
-    "arges", "constanta", "brasov", "cluj", "timisoara", "iasi",
-]
-if sitemap.exists():
-    bad_counties_in_sitemap = [s for s in NON_TARGET_SLUGS if f"/{s}" in sm_text or f"-{s}" in sm_text]
-    check("No non-target counties in sitemap", len(bad_counties_in_sitemap) == 0,
-          f"{bad_counties_in_sitemap}")
+# ─── 4. SITEMAP: no judete/sluguri non-target ────────────────────────────────
+print("\n[4] Sitemap — no non-target county slugs")
+if sm_text:
+    found = [s for s in NON_TARGET_SLUGS if f"/{s}" in sm_text]
+    check("No non-target slugs in sitemap", len(found) == 0, f"{found}")
 
 
 # ─── 5. CANONICAL: www-only in Astro layouts ────────────────────────────────
