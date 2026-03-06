@@ -147,21 +147,35 @@ seoRouter.get("/", async (req: any, res) => {
   </div>
 </div>
 
-<!-- LEVEl 4 ADVISORY SECTION -->
-<div class="status-bar" style="border-left: 4px solid #3b82f6; background: #0f172a; border-radius: 4px;">
+<div class="grid" style="margin-bottom: 24px;">
+  <div class="card" style="border-top: 3px solid #ef4444">
+    <div class="card-val" style="color:#ef4444">${data.prioritySummary?.critical || 0}</div>
+    <div class="card-label">🔥 Critical Priority</div>
+  </div>
+  <div class="card" style="border-top: 3px solid #f97316">
+    <div class="card-val" style="color:#f97316">${data.prioritySummary?.high || 0}</div>
+    <div class="card-label">⚡ High Priority</div>
+  </div>
+  <div class="card" style="border-top: 3px solid #eab308">
+    <div class="card-val" style="color:#eab308">${data.prioritySummary?.medium || 0}</div>
+    <div class="card-label">⚠️ Medium Priority</div>
+  </div>
+  <div class="card" style="border-top: 3px solid #22c55e">
+    <div class="card-val" style="color:#22c55e">${data.prioritySummary?.low || 0}</div>
+    <div class="card-label">✅ Low Priority</div>
+  </div>
+</div>
+
+<!-- LEVEl 4 INTELLIGENCE SECTION -->
+<div class="status-bar" style="border-left: 4px solid #ef4444; background: #0f172a; border-radius: 4px;">
   <div style="display:flex; flex-direction:column; gap:6px; width: 100%;">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-weight:700; color:#3b82f6; text-transform:uppercase; font-size:13px; letter-spacing:1px;">🚀 Level 4 — Cluster Health (Advisory)</span>
-        <span class="badge gray" style="font-size:10px;">READ-ONLY | Gen: ${(data.clusterHealthSummary?.generatedAt || "").slice(0, 16).replace("T", " ")}</span>
+        <span style="font-weight:700; color:#ef4444; text-transform:uppercase; font-size:13px; letter-spacing:1px;">🚨 Level 4 — Priority Intelligence</span>
+        <span class="badge gray" style="font-size:10px;">READ-ONLY | Gen: ${(data.prioritySummary?.generatedAt || "").slice(0, 16).replace("T", " ")}</span>
     </div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">
-        <span class="badge gray">Total Clustere: ${data.clusterHealthSummary?.totalClusters || 0}</span>
-        <span class="badge ${data.clusterHealthSummary?.moneyWithWarnings > 0 ? "yellow" : "green"}">Money cu Warnings: ${data.clusterHealthSummary?.moneyWithWarnings || 0}</span>
-        <span class="badge ${data.clusterHealthSummary?.forbiddenConflicts > 0 ? "red" : "gray"}">Conflicte Forbidden: ${data.clusterHealthSummary?.forbiddenConflicts || 0}</span>
-        <span class="badge ${data.clusterHealthSummary?.unknownConflicts > 0 ? "purple" : "gray"}">Conflicte Unknown: ${data.clusterHealthSummary?.unknownConflicts || 0}</span>
-    </div>
-    <div style="margin-top:6px;">
-        <a href="/seo/cluster-health" style="background:#3b82f6; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">Vezi Analiza Detaliată ↗</a>
+    <div style="margin-top:6px; display:flex; gap:12px;">
+        <a href="/seo/cluster-priority" style="background:#ef4444; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">🔥 Top Riscuri & Acțiuni ↗</a>
+        <a href="/seo/cluster-health" style="background:#4b5563; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">📊 Vezi Health Brut ↗</a>
     </div>
   </div>
 </div>
@@ -347,3 +361,149 @@ seoRouter.get("/cluster-health", async (req: any, res) => {
 </body>
 </html>`);
 });
+
+seoRouter.get("/cluster-priority", async (req: any, res) => {
+  let priorityData: any = {};
+  try {
+    const { loadClusterPriority } = await import("../services/overview");
+    const rawData = loadClusterPriority();
+    if (rawData) priorityData = rawData;
+  } catch (e: any) { priorityData = { error: e.message }; }
+
+  const now = new Date().toLocaleString("ro-RO");
+  const filterBand = (req.query.band as string) || "all";
+  const filterAction = (req.query.action as string) || "all";
+
+  const clusters = priorityData.clusters || {};
+  let clusterList = Object.entries<any>(clusters).map(([id, c]) => ({ id, ...c }));
+
+  // Sort descending by priority_score
+  clusterList.sort((a, b) => (b.intelligence?.priority_score || 0) - (a.intelligence?.priority_score || 0));
+
+  let rowsHtml = "";
+
+  for (const c of clusterList) {
+    const intel = c.intelligence || {};
+    if (filterBand !== "all" && intel.priority_band !== filterBand) continue;
+    if (filterAction !== "all" && intel.recommended_action !== filterAction) continue;
+
+    const bandColors: any = { critical: "red", high: "yellow", medium: "blue", low: "green" };
+    const bandColor = bandColors[intel.priority_band] || "gray";
+
+    const explanationHtml = `<div style="font-size:10px; color:#64748b; margin-top:4px;">
+      Imp: <span style="font-weight:600">${intel.importance_score}</span> | Rsk: <span style="font-weight:600">${intel.risk_score}x</span> <br/>
+      Tier Pt: ${intel.explanation?.tier_points} | Biz Pt: ${intel.explanation?.business_priority_points} <br/>
+      Money Bn: ${intel.explanation?.money_bonus} | Vol Bn: ${intel.explanation?.volume_bonus}
+    </div>`;
+
+    // Suggested next steps — READ-ONLY, no execution
+    let suggestionLabel = "monitor_only";
+    let suggestionColor = "#4b5563";
+    if (intel.recommended_action === "escalate_tier_a_conflict") {
+      suggestionLabel = "Suggested: Escalate Tier A Conflict Manual";
+      suggestionColor = "#ef4444";
+    } else if (intel.recommended_action === "investigate_owner_drift") {
+      suggestionLabel = "Suggested: Investigate Owner Drift";
+      suggestionColor = "#3b82f6";
+    } else if (intel.recommended_action === "review_registry_mapping") {
+      suggestionLabel = "Suggested: Review Registry Mapping";
+      suggestionColor = "#eab308";
+    } else if (intel.recommended_action === "review_internal_linking_and_content") {
+      suggestionLabel = "Suggested: Review Internal Linking";
+      suggestionColor = "#a855f7";
+    } else {
+      suggestionLabel = "No manual action required.";
+    }
+    const actionsLinks = `<a href="?action=${intel.recommended_action}" style="color:#94a3b8; font-size:10px; text-decoration:underline;">Filtrează Similare</a><br/>
+    <span style="display:inline-block;margin-top:6px;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;background:${suggestionColor}22;color:${suggestionColor};border:1px solid ${suggestionColor}44;">${suggestionLabel}</span>`;
+
+    rowsHtml += `
+        <tr>
+            <td style="font-weight:600; color:#e2e8f0; width: 25%;">
+                ${c.id}
+                <div style="font-size:10px; color:#64748b; margin-top:6px;">ACȚIUNE: <span style="font-weight:700; color:${bandColor === 'red' ? '#ef4444' : '#e2e8f0'}">${intel.recommended_action}</span></div>
+                <div style="margin-top:6px;"><span class="badge ${bandColor}">${(intel.priority_band || "unknown").toUpperCase()}</span></div>
+            </td>
+            <td><span style="font-size:16px; font-weight:700; color:#e2e8f0;">${intel.priority_score || 0}</span></td>
+            <td><span class="badge blue">${intel.importance_score || 0}</span></td>
+            <td><span class="badge ${(intel.risk_score || 1) > 1.0 ? 'red' : 'green'}">${intel.risk_score || 1}x</span></td>
+            <td>${c.owner_present ? '<span class="badge green">Prezent</span>' : '<span class="badge red">Lipsă</span>'}</td>
+            <td><span class="badge ${(c.forbidden_count || 0) > 0 ? 'red' : 'gray'}">${c.forbidden_count || 0} F / ${c.unknown_count || 0} U</span></td>
+            <td>${explanationHtml}</td>
+            <td style="font-size:11px;">${actionsLinks}</td>
+        </tr>`;
+  }
+
+  if (!rowsHtml) {
+    rowsHtml = `<tr><td colspan="8" style="padding:20px; color:#64748b; text-align:center;">Nu există clustere care să respecte filtrele selectate.</td></tr>`;
+  }
+
+  // Action options
+  const uniqueActions = Array.from(new Set(clusterList.map(c => c.intelligence?.recommended_action).filter(Boolean)));
+  const actionLinks = uniqueActions.map(a => `<a href="?action=${a}" class="badge ${filterAction === a ? 'blue' : 'gray'}">${a}</a>`).join(" ");
+
+  res.send(`<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level 4 Intelligence — Priority Dashboard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f172a; color: #e2e8f0; font-family: system-ui, -apple-system, sans-serif; padding: 20px; }
+  h1 { font-size: 22px; font-weight: 700; color: #ef4444; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  th { color: #64748b; text-align: left; padding: 6px 8px; border-bottom: 1px solid #1e293b; font-size: 11px; text-transform: uppercase; }
+  td { padding: 12px 8px; border-bottom: 1px solid #1e293b; vertical-align: top; }
+  tr:hover td { background: #1e293b; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; color: #fff; margin: 1px; }
+  .badge.green { background: #22c55e; }
+  .badge.red { background: #ef4444; }
+  .badge.yellow { background: #f59e0b; color: #000; }
+  .badge.blue { background: #3b82f6; }
+  .badge.gray { background: #4b5563; }
+  .filters { background: #1e293b; padding: 12px; border-radius: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom:12px; }
+  a { color: #3b82f6; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+  <h1>🔥 Level 4 — Priority Summary <span class="badge red">INTELLIGENCE MODE</span></h1>
+  <a href="/seo" style="font-size:13px; padding:6px 16px; background:#4b5563; color:#fff; border-radius:6px;">← Înapoi Dashboard</a>
+</div>
+<div style="color:#64748b; font-size:12px; margin-bottom:16px;">Sortează automat toate clusterele descrescător după valoarea de business și multiplul de risc analizat (Priority Score).</div>
+
+<div class="filters">
+  <div style="font-weight:600; color:#94a3b8; margin-right:8px;">BANDS:</div>
+  <a href="?" class="badge ${filterBand === 'all' && filterAction === 'all' ? 'blue' : 'gray'}">Toate</a>
+  <a href="?band=critical" class="badge ${filterBand === 'critical' ? 'red' : 'gray'}">Critical</a>
+  <a href="?band=high" class="badge ${filterBand === 'high' ? 'yellow' : 'gray'}">High</a>
+  <a href="?band=medium" class="badge ${filterBand === 'medium' ? 'blue' : 'gray'}">Medium</a>
+  <a href="?band=low" class="badge ${filterBand === 'low' ? 'green' : 'gray'}">Low</a>
+</div>
+
+<div class="filters" style="margin-top:6px;">
+  <div style="font-weight:600; color:#94a3b8; margin-right:8px;">ACȚIUNI:</div>
+  ${actionLinks}
+</div>
+
+<table>
+  <tr>
+    <th>Cluster (Cod Intern & Rol)</th>
+    <th>Prio Score</th>
+    <th>Importance</th>
+    <th>Risk Mul</th>
+    <th>Owner</th>
+    <th>Conflicts</th>
+    <th>Explicație Scor Bi-Dimensional</th>
+    <th>Răspuns Operator</th>
+  </tr>
+  ${rowsHtml}
+</table>
+
+</body>
+</html>`);
+});
+
