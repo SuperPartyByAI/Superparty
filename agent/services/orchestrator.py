@@ -39,6 +39,7 @@ def enqueue_daily():
             get_queue("audit").enqueue("agent.tasks.pre_gsc_audit.pre_gsc_audit_task", site_id=site_id)
             # Evaluate CTR experiments (T+21)
             if os.environ.get("SEO_EXPERIMENTS_ENABLED", "0") == "1":
+                get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_switch_task", site_id="superparty")
                 get_queue("learn").enqueue("agent.tasks.seo_ctr_experiments.seo_ctr_experiments_evaluate_task", site_id="superparty")
         except Exception as e:
             log.error("daily %s: %s", site_id, e)

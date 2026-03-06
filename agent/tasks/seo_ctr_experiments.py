@@ -640,3 +640,48 @@ def evaluate_experiment(con, exp, service, early_stop=False):
         update_experiment(con, exp["exp_id"], status="REVERTED", decision_reason="inconclusive_timeout")
         from agent.tasks.seo_ctr_experiments import upsert_page_state
         upsert_page_state(con, exp["site_id"], exp["url_path"], active_exp_id=None, cooldown_until=str(date.today() + timedelta(days=14)))
+
+
+def seo_ctr_experiments_switch_task(site_id="superparty"):
+    from agent.common.env import getenv_int
+    from datetime import datetime, date, timedelta
+    
+    con = db_connect()
+    db_init(con)
+    
+    # We find experiments running A that have reached half of their duration (e.g. 10 days)
+    # The spec allows 21 days total, let's switch to B around midway
+    rows = con.execute("SELECT * FROM seo_experiments WHERE site_id=? AND status='RUNNING_A'", (site_id,)).fetchall()
+    
+    switched = 0
+    for r in rows:
+        exp = dict(r)
+        
+        # Check if 10 days have passed since A started
+        v_start = datetime.strptime(exp["variant_start"], "%Y-%m-%d").date()
+        days_running_a = (date.today() - v_start).days
+        
+        switch_days = getenv_int("SEO_EXPERIMENTS_SWITCH_DAYS", 10)
+        
+        if days_running_a >= switch_days:
+            # We must apply B
+            res = apply_title_desc_variant(site_id, exp["url_path"], exp["page_url"], "B", exp["variant_b_title"], exp["variant_b_description"])
+            
+            if res.get("ok"):
+                # Mark it as RUNNING_B and update variant_start so we can track B's start time properly 
+                # (Note: A true A/B system might track A and B stats separately, here we just switch the phase)
+                update_experiment(con, exp["exp_id"], status="RUNNING_B", variant_start=str(date.today() + timedelta(days=3)))
+                switched += 1
+                
+                try:
+                    from pathlib import Path
+                    import json
+                    sf = Path(f"reports/{site_id}/seo_apply_state.json")
+                    if sf.exists():
+                        st = json.loads(sf.read_text(encoding="utf-8"))
+                        st["prs_created_today"] = st.get("prs_created_today", 0) + 1
+                        sf.write_text(json.dumps(st, indent=2, ensure_ascii=False), encoding="utf-8")
+                except Exception:
+                    pass
+            
+    return {"ok": True, "switched": switched}
