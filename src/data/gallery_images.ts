@@ -9,7 +9,7 @@ const GEN = `${BASE}/generated`;
 
 // ─── Hero images (12) — toate AI generate, verificate 200 ────────────────────
 export const heroImages = [
-  { src: `${GEN}/party_masha_1772697323772.png`, alt: "Animatori profesioniști SuperParty" },
+  { src: `${GEN}/hero-coperta.jpg`, alt: "Echipa SuperParty — Animatori Petreceri Copii București" },
   { src: `${GEN}/party2_bear_1772698449725.png`, alt: "Animatori pentru copii" },
   { src: `${GEN}/party_batman_1772696670487.png`, alt: "Batman la petrecere copii" },
   { src: `${GEN}/party_pikachu_1772696930559.png`, alt: "Pikachu la petrecere copii" },
