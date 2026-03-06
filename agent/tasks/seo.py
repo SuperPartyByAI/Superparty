@@ -172,6 +172,8 @@ def seo_plan_task(mode="default"):
 def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     """Generate SEO plan. Returns ok+no_data_yet if no index available."""
     import json
+    import re
+    import unicodedata
     from pathlib import Path
     from datetime import date
     from agent.common.env import getenv_int
@@ -184,25 +186,104 @@ def _orig_seo_plan_task(site_id="superparty", wave="daily_small"):
     if not index:
         return {"ok": True, "note": "no_data_yet", "reason": "index_empty", "next_check": "daily"}
 
+    # Incarcare Whitelist pentru Local Intent Score (Ilfov)
+    manifest_path = Path("reports/seo/indexing_manifest.json")
+    whitelist_slugs = set()
+    if manifest_path.exists():
+        try:
+            manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for m in manifest_data:
+                # Doar comune si orase din Ilfov care sunt indexable
+                if m.get("county") == "Ilfov" and m.get("indexable") and m.get("place_type") in ("town", "commune"):
+                    whitelist_slugs.add(m.get("slug", "").lower())
+        except Exception:
+            pass
+
+    def normalize_text(text):
+        if not text: return ""
+        text = str(text).lower().strip()
+        for r, e in {'ă':'a','â':'a','î':'i','ș':'s','ş':'s','ț':'t','ţ':'t'}.items():
+            text = text.replace(r, e)
+        text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+        return re.sub(r'[^a-z0-9]+', ' ', text).strip()
+
+    def compute_local_intent(query, whitelist):
+        q_norm = normalize_text(query)
+        score = 0
+        matched = []
+
+        if "bucuresti" in q_norm:
+            score += 8
+            matched.append("bucuresti")
+        if "ilfov" in q_norm:
+            score += 8
+            matched.append("ilfov")
+        
+        # Sectoare
+        sec_match = re.search(r'sector\s*(ul)?\s*([1-6])', q_norm)
+        if sec_match:
+            score += 10
+            matched.append(f"sector {sec_match.group(2)}")
+        elif "sector" in q_norm:
+            score += 6
+            matched.append("sector")
+
+        # Cuvinte cheie comerciale
+        if "animatori" in q_norm or "animator" in q_norm:
+            score += 6 if "animatori" in q_norm else 5
+            matched.append("animator/i")
+        if "petreceri copii" in q_norm:
+            score += 6
+            matched.append("petreceri copii")
+        elif "petreceri pentru copii" in q_norm:
+            score += 5
+            matched.append("petreceri pentru copii")
+
+        # Whitelist Ilfov
+        for w_slug in whitelist:
+            w_norm = w_slug.replace('-', ' ')
+            if w_norm and w_norm in q_norm:
+                score += 9
+                matched.append(f"localitate {w_norm}")
+
+        return score, matched
+
     min_impressions = getenv_int("SEO_IMPRESSIONS_MIN", 50)
     pos_min = getenv_int("SEO_POS_MIN", 5)
     pos_max = getenv_int("SEO_POS_MAX", 25)
     wave_size = getenv_int("MAX_WEEKLY_WAVE", 10) if wave == "daily_small" else getenv_int("MAX_WEEKLY_WAVE", 30)
 
-    opportunities = [
-        row for row in index
-        if row.get("impressions", 0) >= min_impressions
-        and pos_min <= row.get("avg_position", 99) <= pos_max
-    ][:wave_size]
+    # 1. Filtrare bazata pe praguri si adaugare Score/Matched
+    filtered_opps = []
+    for row in index:
+        imp = row.get("impressions", 0)
+        pos = row.get("avg_position", 99)
+        if imp >= min_impressions and pos_min <= pos <= pos_max:
+            intent_score, matched_terms = compute_local_intent(row.get("query", ""), whitelist_slugs)
+            row["local_intent_score"] = intent_score
+            row["matched_terms"] = matched_terms
+            filtered_opps.append(row)
+
+    # 2. Sortare Multi-Criteriu
+    filtered_opps.sort(key=lambda x: (x.get("local_intent_score", 0), x.get("impressions", 0), -x.get("avg_position", 99)), reverse=True)
+    
+    # 3. Wave cutoff
+    opportunities = filtered_opps[:wave_size]
 
     if not opportunities:
-        opportunities = index[:min(5, wave_size)]
+        index_with_score = []
+        for row in index[:min(5, wave_size)]:
+            score, matched = compute_local_intent(row.get("query", ""), whitelist_slugs)
+            row["local_intent_score"] = score
+            row["matched_terms"] = matched
+            index_with_score.append(row)
+        opportunities = index_with_score
 
     plan = {"wave": wave, "created": str(date.today()), "opportunities": opportunities, "count": len(opportunities)}
     plan_dir = Path(f"reports/{site_id}/seo_plans")
     plan_dir.mkdir(parents=True, exist_ok=True)
     plan_file = plan_dir / f"plan_{date.today()}_{wave}.json"
-    plan_file.write_text(json.dumps(plan, indent=2))
+    plan_file.write_text(json.dumps(plan, indent=2, ensure_ascii=False))
     return {"ok": True, "opportunities": len(opportunities), "file": str(plan_file)}
 
 
