@@ -104,15 +104,19 @@ def analyze_cluster_gap(cluster_id, cluster_data, registry_policy, thresholds):
         opportunity_type = opp_types["low_coverage"]
         confidence = "low"
 
-    # --- Signal 5: Risky Expansion Guard (conservative policy check)
+    # --- Signal 5: Risky Expansion Guard (supplementary warning only)
+    # This is NOT a standalone gap signal. It is added as context when:
+    # - another gap has already been detected AND
+    # - the cluster is Tier A with conservative policy.
+    # A healthy conservative Tier A cluster with NO other signals = return None (no gap).
     expansion_policy = registry_policy.get("expansion_policy", "conservative")
-    if expansion_policy == "conservative" and tier in ["A"] and not gap_signals:
-        # Tier A + healthy = defer, do NOT recommend expansion
-        gap_signals.append("risky_expansion")
-        opportunity_type = opp_types["risky_expansion"]
-        confidence = "high"
+    if gap_signals and expansion_policy == "conservative" and tier == "A":
+        gap_signals.append("risky_expansion_guard")
+        # Escalate the opportunity type to reject expansion if it was just low-level
+        if opportunity_type in ["add_support", "defer"]:
+            opportunity_type = "reject_risky_expansion"
 
-    # No meaningful gap detected
+    # No meaningful gap detected — healthy clusters are not gaps
     if not gap_signals:
         return None
 

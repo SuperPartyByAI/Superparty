@@ -74,8 +74,8 @@ class TestAnalyzeClusterGap:
         assert "high_unknown_ratio" in result["gap_signals"]
         assert result["opportunity_type"] == "review_registry_mapping"
 
-    def test_tier_a_conservative_healthy_cluster_gets_reject_risky_expansion(self, default_thresholds, conservative_policy):
-        """Healthy Tier A conservative cluster should return risky expansion signal — do NOT expand."""
+    def test_tier_a_conservative_healthy_cluster_returns_none(self, default_thresholds, conservative_policy):
+        """Healthy Tier A conservative cluster should NOT be a gap — it is the ideal state."""
         cluster = {
             "total_impressions": 5000,
             "owner_present": True,
@@ -86,9 +86,7 @@ class TestAnalyzeClusterGap:
             "intelligence": {"tier": "A", "importance_score": 220, "risk_score": 1.0}
         }
         result = analyze_cluster_gap("test_a_healthy", cluster, conservative_policy, default_thresholds)
-        assert result is not None
-        assert result["opportunity_type"] == "reject_risky_expansion"
-        assert result["confidence"] == "high"
+        assert result is None, "A healthy conservative Tier A cluster is NOT a gap and must return None"
 
     def test_healthy_tier_c_cluster_returns_none(self, default_thresholds, flexible_policy):
         """A healthy, small, flexible cluster with no gaps should return None."""
