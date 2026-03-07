@@ -139,23 +139,25 @@ def run_all_reports():
         status["overall_status"] = "failed"
         
     status["run_at"] = datetime.now(timezone.utc).isoformat()
+    status["ledger_status"] = "failed"
         
     print(f"\nReport Pipeline Complete: {status['overall_status'].upper()}")
     print(f"- Health:   {status['health']}")
     print(f"- Priority: {status['priority']}")
     print(f"- Trend:    {status['trend']}\n")
     
+    # L6.3: Append the run outcome to the 30-day rotative ledger
+    try:
+        from agent.tasks.seo_level6_report_ledger import append_to_ledger
+        if append_to_ledger(status):
+            status["ledger_status"] = "success"
+    except Exception as e:
+        log.error(f"Failed to append to ledger: {e}")
+        
     status_file = REPORTS_DIR / "seo_report_worker_status.json"
     status_file.parent.mkdir(parents=True, exist_ok=True)
     with open(status_file, "w", encoding="utf-8") as f:
         json.dump(status, f, indent=2)
-        
-    # L6.3: Append the run outcome to the 30-day rotative ledger
-    try:
-        from agent.tasks.seo_level6_report_ledger import append_to_ledger
-        append_to_ledger(status)
-    except Exception as e:
-        log.error(f"Failed to append to ledger: {e}")
     
     return status
 

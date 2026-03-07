@@ -10,7 +10,7 @@ log = logging.getLogger("seo_ledger")
 LEDGER_FILE = Path("reports/superparty/seo_reports_ledger.json")
 MAX_LEDGER_ENTRIES = 30
 
-def append_to_ledger(worker_status: dict, ledger_path: Path = None, max_entries: int = MAX_LEDGER_ENTRIES) -> None:
+def append_to_ledger(worker_status: dict, ledger_path: Path = None, max_entries: int = MAX_LEDGER_ENTRIES) -> bool:
     """
     Appends the daily worker status to the ledger, keeping a maximum of 30 days of history.
     """
@@ -25,10 +25,15 @@ def append_to_ledger(worker_status: dict, ledger_path: Path = None, max_entries:
                 if content:
                     ledger_data = json.loads(content)
         except Exception as e:
-            log.error(f"Could not read existing ledger to append: {e}")
-            # Non-destructive fallback if corrupt; usually we'd back it up but let's reset for now
+            ts = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+            backup_file = target_file.with_name(f"{target_file.name}.corrupt.{ts}.bak")
+            log.error(f"Could not read existing ledger to append: {e}. Backing up corrupt ledger to {backup_file.name}")
+            try:
+                target_file.rename(backup_file)
+            except Exception as move_e:
+                log.error(f"Failed to backup corrupt ledger: {move_e}")
+                return False
             ledger_data = []
-            
     # Create the new entry based on the worker status
     new_entry = {
         "run_id": str(uuid.uuid4()),
@@ -57,10 +62,15 @@ def append_to_ledger(worker_status: dict, ledger_path: Path = None, max_entries:
         
     # Write back
     target_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(target_file, "w", encoding="utf-8") as f:
-        json.dump(ledger_data, f, indent=2)
-        
-    log.info(f"Appended run {new_entry['run_id']} to ledger {target_file.name}. Total entries: {len(ledger_data)}")
+    try:
+        with open(target_file, "w", encoding="utf-8") as f:
+            json.dump(ledger_data, f, indent=2)
+            
+        log.info(f"Appended run {new_entry['run_id']} to ledger {target_file.name}. Total entries: {len(ledger_data)}")
+        return True
+    except Exception as e:
+        log.error(f"Failed to write ledger append: {e}")
+        return False
 
 def print_ledger_summary(ledger_path: Path = None) -> None:
     """
