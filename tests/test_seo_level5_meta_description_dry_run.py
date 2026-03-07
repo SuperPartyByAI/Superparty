@@ -99,6 +99,7 @@ def sandbox(tmp_path, monkeypatch, base_policy):
     monkeypatch.setattr(dry_run_module, "PRIORITY_PATH", priority_path)
     monkeypatch.setattr(dry_run_module, "TREND_PATH", trend_path)
     monkeypatch.setattr(dry_run_module, "OUTPUT_PATH", output_path)
+    monkeypatch.setattr(dry_run_module, "assert_inputs_ready", lambda: {"status": "ready"})
 
     return {
         "policy_path": policy_path,
