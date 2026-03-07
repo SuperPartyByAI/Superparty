@@ -36,6 +36,7 @@ from agent.tasks.seo_level5_meta_description_apply import (
     validate_target_still_matches_plan,
     apply_meta_description_to_file,
     build_rollback_payload,
+    reconcile_with_live_approval_log,
     run_single_apply,
 )
 
@@ -302,6 +303,12 @@ def test_writes_execution_report_with_applied_one(sandbox):
         proposal_desc="Descriere noua de test."
     )
     _write_json(sandbox["apply_plan_path"], _make_apply_plan([action]))
+    # PR #59: write live approval log matching the action
+    _write_json(apply_module.APPROVAL_LOG_PATH, [_make_live_log_entry(
+        "id-exec", url="/blog/articol",
+        before_desc="Descriere veche de test.",
+        proposal_desc="Descriere noua de test.",
+    )])
 
     result = run_single_apply(pages_dir=sandbox["pages_dir"])
 
@@ -327,16 +334,19 @@ def test_never_creates_commit_or_pull_request_artifacts(sandbox):
         proposal_desc="Noua fara commit."
     )
     _write_json(sandbox["apply_plan_path"], _make_apply_plan([action]))
+    # PR #59: live approval log required
+    _write_json(apply_module.APPROVAL_LOG_PATH, [_make_live_log_entry(
+        "id-nc", url="/blog/nocommit",
+        before_desc="Fara commit.",
+        proposal_desc="Noua fara commit.",
+    )])
 
     run_single_apply(pages_dir=sandbox["pages_dir"])
 
-    # No .git commit artifacts, no PR JSON
-    git_dir = sandbox["tmp_path"] / ".git"
     pr_file = sandbox["tmp_path"] / "pull_request.json"
     commit_log = sandbox["tmp_path"] / "commit.log"
     assert not pr_file.exists()
     assert not commit_log.exists()
-    # Execution report must indicate no commit and no PR
     with open(sandbox["execution_report_path"], encoding="utf-8") as f:
         report = json.load(f)
     assert report["metadata"]["commit_changes"] is False
@@ -354,6 +364,12 @@ def test_full_flow_produces_rollback_payload(sandbox):
         proposal_desc="Descriere dupa apply."
     )
     _write_json(sandbox["apply_plan_path"], _make_apply_plan([action]))
+    # PR #59: live approval log required
+    _write_json(apply_module.APPROVAL_LOG_PATH, [_make_live_log_entry(
+        "id-rb-flow", url="/articol-complet",
+        before_desc="Descriere initiala.",
+        proposal_desc="Descriere dupa apply.",
+    )])
 
     result = run_single_apply(pages_dir=sandbox["pages_dir"])
 
@@ -410,3 +426,133 @@ def test_refuses_when_proposal_contains_delimiter_quote_meta_tag(tmp_path):
     _write(page, '---\nimport L from "../layouts/Layout.astro";\n---\n<meta name="description" content="Descriere veche." />\n')
     with pytest.raises(ApplyError, match="unsafe_proposal_contains_quote"):
         apply_meta_description_to_file(page, 'Propunere cu "ghilimele".')
+
+
+# ─── 13. Live approval reconciliation (PR #59) ────────────────────────────────
+
+def _make_live_log_entry(action_id: str, url: str = "/blog/test",
+                         decision: str = "approved", decided_by: str = "ops-review",
+                         before_desc: str = "Descriere veche.",
+                         proposal_desc: str = "Descriere noua propusa.",
+                         decision_id: str = "dec-001") -> dict:
+    return {
+        "action_id": action_id,
+        "decision_id": decision_id,
+        "action_type": ACTION_TYPE,
+        "url": url,
+        "decision": decision,
+        "decided_by": decided_by,
+        "decided_at": datetime.now(timezone.utc).isoformat(),
+        "proposal_snapshot": {
+            "before": {"meta_description": before_desc},
+            "proposal": {"meta_description": proposal_desc},
+        },
+    }
+
+
+def test_reconcile_blocks_when_live_record_missing(tmp_path, monkeypatch):
+    """reconcile_with_live_approval_log must block if no matching entry in live log."""
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH",
+                        tmp_path / "empty_log.json")
+    _write_json(tmp_path / "empty_log.json", [])
+    action = _make_ready_action("id-missing")
+    with pytest.raises(ApplyError, match="live_approval_record_not_found"):
+        reconcile_with_live_approval_log(action, action.get("approval_record"))
+
+
+def test_reconcile_blocks_when_decision_not_approved(tmp_path, monkeypatch):
+    """Block if live record exists but decision != approved."""
+    log_path = tmp_path / "log.json"
+    _write_json(log_path, [_make_live_log_entry("id-rej", decision="rejected")])
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH", log_path)
+    action = _make_ready_action("id-rej")
+    with pytest.raises(ApplyError, match="live_approval_decision_not_approved"):
+        reconcile_with_live_approval_log(action, action.get("approval_record"))
+
+
+def test_reconcile_blocks_on_duplicate_approved_records(tmp_path, monkeypatch):
+    """Block if two approved records for same action_id exist."""
+    log_path = tmp_path / "log.json"
+    _write_json(log_path, [
+        _make_live_log_entry("id-dup", decision_id="dec-A"),
+        _make_live_log_entry("id-dup", decision_id="dec-B"),
+    ])
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH", log_path)
+    action = _make_ready_action("id-dup")
+    with pytest.raises(ApplyError, match="live_approval_duplicate"):
+        reconcile_with_live_approval_log(action, action.get("approval_record"))
+
+
+def test_reconcile_blocks_when_decided_by_empty(tmp_path, monkeypatch):
+    """Block if decided_by is empty in live record."""
+    log_path = tmp_path / "log.json"
+    _write_json(log_path, [_make_live_log_entry("id-noby", decided_by="")])
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH", log_path)
+    action = _make_ready_action("id-noby")
+    with pytest.raises(ApplyError, match="decided_by"):
+        reconcile_with_live_approval_log(action, action.get("approval_record"))
+
+
+def test_reconcile_blocks_on_url_mismatch(tmp_path, monkeypatch):
+    """Block if live record url != plan action url."""
+    log_path = tmp_path / "log.json"
+    _write_json(log_path, [_make_live_log_entry("id-urlx", url="/alt/url")])
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH", log_path)
+    action = _make_ready_action("id-urlx", url="/blog/test")
+    with pytest.raises(ApplyError, match="live_approval_url_mismatch"):
+        reconcile_with_live_approval_log(action, action.get("approval_record"))
+
+
+def test_reconcile_succeeds_on_valid_live_record(tmp_path, monkeypatch):
+    """reconcile_with_live_approval_log succeeds and returns live record when all checks pass."""
+    log_path = tmp_path / "log.json"
+    _write_json(log_path, [_make_live_log_entry("id-ok", url="/blog/test")])
+    monkeypatch.setattr(apply_module, "APPROVAL_LOG_PATH", log_path)
+    action = _make_ready_action("id-ok", url="/blog/test")
+    live = reconcile_with_live_approval_log(action, action.get("approval_record"))
+    assert live["action_id"] == "id-ok"
+    assert live["decision"] == "approved"
+
+
+# ─── 14. Observability + lineage in execution report (PR #59) ─────────────────
+
+def test_execution_report_contains_full_lineage(sandbox):
+    """Execution report must contain execution_id, plan_id, decision_id, rollback_ready, after_value_verified."""
+    page = sandbox["pages_dir"] / "blog" / "lineage.astro"
+    _write(page, '---\ndescription = "Descriere veche lineage."\n---\n<Layout></Layout>\n')
+
+    action = _make_ready_action(
+        action_id="id-lin", url="/blog/lineage",
+        before_desc="Descriere veche lineage.",
+        proposal_desc="Descriere noua lineage.",
+    )
+    plan_id = action["plan_id"]
+    _write_json(sandbox["apply_plan_path"], _make_apply_plan([action]))
+
+    # Write live approval log matching the action
+    log_entry = _make_live_log_entry(
+        "id-lin", url="/blog/lineage",
+        before_desc="Descriere veche lineage.",
+        proposal_desc="Descriere noua lineage.",
+    )
+    _write_json(sandbox["apply_plan_path"].parent / "seo_level5_approval_log.json", [log_entry])
+    import agent.tasks.seo_level5_meta_description_apply as am
+    sandbox_approval_log = sandbox["apply_plan_path"].parent / "seo_level5_approval_log.json"
+    # monkeypatch already points APPROVAL_LOG_PATH to reports_dir via sandbox fixture
+    # sandbox fixture patches ROOT_DIR to tmp_path, APPROVAL_LOG_PATH remains in REPORTS_DIR
+    # We need to also write the live log to the sandbox APPROVAL_LOG_PATH
+    _write_json(apply_module.APPROVAL_LOG_PATH, [log_entry])
+
+    result = run_single_apply(pages_dir=sandbox["pages_dir"])
+    assert result is True
+
+    with open(sandbox["execution_report_path"], encoding="utf-8") as f:
+        report = json.load(f)
+
+    aa = report["applied_actions"][0]
+    assert "execution_id" in aa and aa["execution_id"]
+    assert "plan_id" in aa
+    assert "decision_id" in aa
+    assert "policy_version" in aa
+    assert aa.get("rollback_ready") is True
+    assert aa.get("after_value_verified") is True

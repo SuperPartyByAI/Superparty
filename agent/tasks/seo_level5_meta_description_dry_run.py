@@ -73,10 +73,27 @@ def load_level5_policy() -> dict:
     return policy
 
 
+# Modes under which dry-run is permitted to run.
+# PR #59: forward-compatible with policy v1.2 (controlled_single_apply) —
+# the dry-run phase remains proposal-only regardless of the policy mode.
+_DRY_RUN_PERMITTED_MODES = {
+    "controlled_dry_run_only",   # policy v1.1
+    "controlled_single_apply",  # policy v1.2 — chain is still initiated by dry-run
+}
+
+# Execution modes that still represent a dry/proposal-only step.
+_DRY_RUN_EXECUTION_MODES = {
+    "dry_run_only",     # policy v1.1
+    "single_apply_only",  # policy v1.2 — dry-run phase does not execute apply
+}
+
+
 def validate_action_activation(policy: dict, action_type: str = ACTION_TYPE) -> dict:
-    if policy.get("mode") != "controlled_dry_run_only":
+    mode = policy.get("mode")
+    if mode not in _DRY_RUN_PERMITTED_MODES:
         raise PolicyValidationError(
-            "Level 5 policy mode must be 'controlled_dry_run_only' in PR #54"
+            f"Level 5 policy mode '{mode}' is not permitted for dry-run. "
+            f"Allowed: {sorted(_DRY_RUN_PERMITTED_MODES)}"
         )
 
     allowed_actions = policy.get("allowed_actions", [])
@@ -100,15 +117,18 @@ def validate_action_activation(policy: dict, action_type: str = ACTION_TYPE) -> 
             f"Missing action_activation block for '{action_type}'"
         )
 
-    if activation.get("execution_mode") != "dry_run_only":
-        raise PolicyValidationError("execution_mode must be 'dry_run_only'")
+    exec_mode = activation.get("execution_mode")
+    if exec_mode not in _DRY_RUN_EXECUTION_MODES:
+        raise PolicyValidationError(
+            f"execution_mode='{exec_mode}' not recognized. "
+            f"Allowed: {sorted(_DRY_RUN_EXECUTION_MODES)}"
+        )
 
-    if activation.get("report_only") is not True:
-        raise PolicyValidationError("report_only must be true")
-
-    if activation.get("write_files") is not False:
-        raise PolicyValidationError("write_files must be false")
-
+    # PR #59: dry-run does NOT require global write_files=False.
+    # The policy v1.2 sets write_files=True for the apply executor only.
+    # What we MUST verify: dry-run itself never writes — that is enforced
+    # in generate_dry_run_report() and save_dry_run_report() (report-only).
+    # Cross-phase write guard:
     if activation.get("create_pull_request") is not False:
         raise PolicyValidationError("create_pull_request must be false")
 

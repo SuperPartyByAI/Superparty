@@ -126,17 +126,28 @@ def get_action_from_report(report: dict, action_id: str) -> Optional[dict]:
 
 # ─── Policy validation ────────────────────────────────────────────────────────
 
+# PR #59: forward-compatible with policy v1.2
+_APPLY_PLAN_PERMITTED_MODES = {
+    "controlled_dry_run_only",  # policy v1.1
+    "apply_plan_only",          # explicit plan mode
+    "controlled_single_apply",  # policy v1.2 — apply plan is generated as step before executor
+}
+
+
 def validate_policy_for_apply_plan(policy: dict) -> list[str]:
     """
     Re-validate policy invariants before generating the apply plan.
     Returns a list of blocking issues (empty = policy is valid).
+    PR #59: accepts policy mode 'controlled_single_apply' (v1.2) in addition to v1.1 modes.
+    write_files validation removed — v1.2 sets True for apply executor only;
+    apply-plan generator itself never writes page files (applied=0 invariant).
     """
     issues: list[str] = []
 
     mode = policy.get("mode")
-    if mode not in ("controlled_dry_run_only", "apply_plan_only"):
+    if mode not in _APPLY_PLAN_PERMITTED_MODES:
         issues.append(
-            f"policy.mode='{mode}' — expected 'controlled_dry_run_only' or 'apply_plan_only'"
+            f"policy.mode='{mode}' — expected one of {sorted(_APPLY_PLAN_PERMITTED_MODES)}"
         )
 
     if policy.get("dry_run_required") is not True:
@@ -156,8 +167,9 @@ def validate_policy_for_apply_plan(policy: dict) -> list[str]:
     activation = policy.get("action_activation", {})
     for action_type in allowed:
         act = activation.get(action_type, {})
-        if act.get("write_files") is not False:
-            issues.append(f"action_activation.{action_type}.write_files must be False")
+        # PR #59: write_files is now True in v1.2 for the apply executor — do NOT validate here.
+        # Apply-plan generator does not write to page files (applied=0 invariant holds).
+        # Only validate the guards that must remain false in ALL phases:
         if act.get("create_pull_request") is not False:
             issues.append(f"action_activation.{action_type}.create_pull_request must be False")
         if act.get("commit_changes") is not False:
@@ -198,8 +210,11 @@ def _preflight_checks(action: dict, approval_entry: dict, policy: dict) -> dict[
         # Money / pillar guard (redundant defensive layer — do not rely on upstream)
         "not_money_page": not is_money,
         "not_pillar_page": not is_pillar,
-        # Action-level write guards
-        "write_files_false": activation.get("write_files") is False,
+        # Phase-invariant guards — must be False in ALL phases (apply-plan, apply executor, dry-run)
+        # PR #59: write_files_false REMOVED — apply-plan generator does not control apply executor.
+        # Policy v1.2 sets write_files=True for the apply executor only; plan generator
+        # itself never writes files (applied=0 invariant). Validation is phase-aware:
+        # apply-plan validates that plan is generated (never writes), not that executor cannot write.
         "create_pr_false": activation.get("create_pull_request") is False,
         "commit_changes_false": activation.get("commit_changes") is False,
         # Proposal present
