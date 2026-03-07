@@ -130,10 +130,10 @@ def calculate_cluster_priority(cluster_id, cluster_data, weights, registry_map):
         "explanation": explanation
     }
 
-def run_business_priority_scoring():
+def run_business_priority_scoring(out_path: Path = None):
     reports_dir = Path(__file__).parent.parent.parent / "reports" / "superparty"
     health_path = reports_dir / "seo_cluster_health.json"
-    priority_path = reports_dir / "seo_cluster_priority.json"
+    priority_path = out_path if out_path else reports_dir / "seo_cluster_priority.json"
     
     if not health_path.exists():
         print("No cluster_health report found to score.")
