@@ -1,0 +1,17 @@
+{
+    "min_impressions_for_coverage": 50,
+    "weak_owner_share_threshold": 0.4,
+    "max_allowed_unknown_ratio": 0.5,
+    "expansion_allowed_tiers": [
+        "B",
+        "C"
+    ],
+    "opportunity_types": {
+        "missing_owner": "optimize_owner",
+        "weak_owner": "optimize_owner",
+        "high_unknown_ratio": "review_registry_mapping",
+        "low_coverage": "add_support",
+        "risky_expansion": "reject_risky_expansion",
+        "healthy_expandable": "defer"
+    }
+}

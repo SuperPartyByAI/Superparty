@@ -32,10 +32,10 @@ def load_gap_thresholds():
     if p.exists():
         with open(p, "r", encoding="utf-8") as f:
             return json.load(f)
-    # Sensible defaults
+    # Sensible defaults (used only if gap_detector_config.json does not exist)
     return {
         "min_impressions_for_coverage": 50,
-        "weak_owner_threshold_impressions": 100,
+        "weak_owner_share_threshold": 0.4,
         "max_allowed_unknown_ratio": 0.5,
         "expansion_allowed_tiers": ["B", "C"],
         "opportunity_types": {
@@ -68,9 +68,12 @@ def analyze_cluster_gap(cluster_id, cluster_data, registry_policy, thresholds):
     warnings = cluster_data.get("cannibalization_warnings", [])
 
     min_impressions = thresholds["min_impressions_for_coverage"]
-    weak_threshold = thresholds["weak_owner_threshold_impressions"]
+    weak_owner_share_threshold = thresholds.get("weak_owner_share_threshold", 0.4)
     max_unknown_ratio = thresholds["max_allowed_unknown_ratio"]
     opp_types = thresholds["opportunity_types"]
+
+    # owner_share: read from health report if available (added in Level 4.1 / PR #50)
+    owner_share = cluster_data.get("owner_share", None)
 
     gap_signals = []
     opportunity_type = None
@@ -82,8 +85,10 @@ def analyze_cluster_gap(cluster_id, cluster_data, registry_policy, thresholds):
         opportunity_type = opp_types["missing_owner"]
         confidence = "high" if tier in ["A", "B"] else "medium"
 
-    # --- Signal 2: Weak Owner (owner present but very low impressions)
-    elif total_impressions < weak_threshold and tier in ["A", "B"]:
+    # --- Signal 2: Weak Owner (owner present but low share of cluster impressions)
+    # Uses owner_share if available from health report (PR #50+).
+    # Falls back to skip signal if owner_share is not available.
+    elif owner_share is not None and owner_share < weak_owner_share_threshold and tier in ["A", "B"]:
         gap_signals.append("weak_owner")
         opportunity_type = opp_types["weak_owner"]
         confidence = "medium"
@@ -129,6 +134,7 @@ def analyze_cluster_gap(cluster_id, cluster_data, registry_policy, thresholds):
         "context": {
             "total_impressions": total_impressions,
             "owner_present": owner_present,
+            "owner_share": round(owner_share, 4) if owner_share is not None else None,
             "supporter_count": supporter_count,
             "forbidden_count": forbidden_count,
             "unknown_count": unknown_count,
