@@ -2,7 +2,7 @@ import json
 import logging
 from typing import Dict, Any, List
 from pathlib import Path
-
+from datetime import datetime, timezone
 log = logging.getLogger("gsc_contract")
 
 REQUIRED_SCHEMA_VERSION = "1.0"
@@ -33,13 +33,27 @@ def validate_raw_gsc_snapshot(data: Dict[str, Any]) -> bool:
         return False
         
     # 3. Property validation
-    if not meta.get("property") or not meta["property"].startswith("sc-domain:"):
-        log.error(f"Invalid property format. Expected sc-domain:..., got {meta.get('property')}")
+    if meta.get("property") != "sc-domain:superparty.ro":
+        log.error(f"Invalid property. Expected exactly sc-domain:superparty.ro, got {meta.get('property')}")
         return False
         
     # 4. Collection timings validation
-    if not meta.get("collected_at") or not meta.get("data_interval_days"):
-        log.error("Missing collection temporal context (collected_at, data_interval_days)")
+    collected_at_str = meta.get("collected_at")
+    if not collected_at_str:
+        log.error("Missing collected_at.")
+        return False
+    try:
+        if "T" not in collected_at_str or not (collected_at_str.endswith("Z") or "+" in collected_at_str or "-" in collected_at_str[-6:]):
+            raise ValueError("Missing 'T' or timezone indicator")
+        # Check if it parses as ISO format
+        datetime.fromisoformat(collected_at_str.replace("Z", "+00:00"))
+    except ValueError as e:
+        log.error(f"Invalid collected_at format. Not strictly ISO-8601: {collected_at_str} ({e})")
+        return False
+
+    interval_days = meta.get("data_interval_days")
+    if not isinstance(interval_days, int) or interval_days <= 0:
+        log.error(f"Invalid data_interval_days. Must be positive integer, got {interval_days}")
         return False
         
     # 5. Dimensions and metrics declaration
@@ -58,13 +72,25 @@ def validate_raw_gsc_snapshot(data: Dict[str, Any]) -> bool:
     declared_rows = meta.get("row_count")
     actual_rows = len(data.get("rows", []))
     
-    if declared_rows is None or declared_rows != actual_rows:
-        log.error(f"Row count mismatch. Declared {declared_rows}, actual {actual_rows}")
+    if not isinstance(declared_rows, int) or declared_rows != actual_rows:
+        log.error(f"Row count mismatch or invalid. Declared {declared_rows}, actual {actual_rows}")
         return False
         
     # 7. Semantic Check: 0 rows is acceptable ONLY IF explicitly declared as such. 
-    # API drops should usually cause exception at Http client layer, but if Google legally says "0 traffic today", we accept it iff it passes integrity.
-    # However, if data is completely empty, it might be an anomaly. L7 accepts it structurally, Report Plane (L6) might skip processing.
+    # 8. Row internal structure validation
+    for i, row in enumerate(data.get("rows", [])):
+        keys = row.get("keys")
+        if not isinstance(keys, list) or len(keys) != 2:
+            log.error(f"Invalid row keys at index {i}. Expected list of 2 (query, page), got {keys}")
+            return False
+            
+        for metric in REQUIRED_METRICS:
+            if metric not in row:
+                log.error(f"Missing required metric '{metric}' at row {i}")
+                return False
+            if not isinstance(row[metric], (int, float)):
+                log.error(f"Invalid type for metric '{metric}' at row {i}. Expected int/float.")
+                return False
     
     return True
 

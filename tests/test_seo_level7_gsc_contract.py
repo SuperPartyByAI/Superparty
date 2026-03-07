@@ -77,3 +77,29 @@ def test_enforce_retention_policy(tmp_path):
     names = [p.name for p in remaining_files]
     assert "collect_20260301.json" not in names
     assert "collect_20260335.json" in names
+
+def test_validate_wrong_property_but_sc_domain(valid_snapshot):
+    valid_snapshot["metadata"]["property"] = "sc-domain:alt-domeniu.ro"
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+
+def test_validate_row_without_keys(valid_snapshot):
+    del valid_snapshot["rows"][0]["keys"]
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+
+def test_validate_row_wrong_keys_length(valid_snapshot):
+    valid_snapshot["rows"][0]["keys"] = ["animatori"] # length 1 instead of 2
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+
+def test_validate_row_missing_required_metric(valid_snapshot):
+    del valid_snapshot["rows"][0]["clicks"]
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+
+def test_validate_invalid_collected_at(valid_snapshot):
+    valid_snapshot["metadata"]["collected_at"] = "2026-03-08 10:00:00" # missing T and timezone
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+
+def test_validate_invalid_data_interval_days(valid_snapshot):
+    valid_snapshot["metadata"]["data_interval_days"] = -5
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
+    valid_snapshot["metadata"]["data_interval_days"] = "30" # not int
+    assert validate_raw_gsc_snapshot(valid_snapshot) is False
