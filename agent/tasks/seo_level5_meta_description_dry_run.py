@@ -35,6 +35,14 @@ OUTPUT_PATH = REPORTS_DIR / "seo_level5_dry_run_actions.json"
 
 ACTION_TYPE = "meta_description_update"
 
+# PR #55: import read-only page metadata extractor
+try:
+    from agent.tasks.seo_level5_page_metadata_extractor import enrich_candidates_with_real_metadata as _enrich
+    _EXTRACTOR_AVAILABLE = True
+except ImportError:
+    _EXTRACTOR_AVAILABLE = False
+    log.warning("Page metadata extractor not available — current_meta_description will be blank")
+
 
 class PolicyValidationError(RuntimeError):
     """Raised when Level 5 policy does not permit the requested dry-run."""
@@ -324,6 +332,31 @@ def generate_dry_run_report(action_type: str = ACTION_TYPE) -> dict:
 
     inputs = load_candidate_inputs()
     candidates = resolve_eligible_candidates(inputs, policy)
+
+    # PR #55: enrich candidates with real meta description from Astro source files (read-only)
+    if _EXTRACTOR_AVAILABLE and candidates:
+        candidate_dicts = [
+            {"url": c.url, "tier": c.tier, "is_money_page": c.is_money_page,
+             "is_pillar_page": c.is_pillar_page, "current_meta_description": c.current_meta_description,
+             "reason_flags": c.reason_flags, "score": c.score}
+            for c in candidates
+        ]
+        enriched = _enrich(candidate_dicts)
+        # Update candidates with real descriptions
+        from agent.tasks.seo_level5_meta_description_dry_run import Candidate
+        candidates = [
+            Candidate(
+                url=e["url"],
+                tier=e["tier"],
+                is_money_page=e["is_money_page"],
+                is_pillar_page=e["is_pillar_page"],
+                current_meta_description=e.get("current_meta_description", ""),
+                reason_flags=e["reason_flags"],
+                score=e["score"],
+            )
+            for e in enriched
+        ]
+
     actions = [build_action_record(c, policy) for c in candidates]
 
     return {
@@ -335,6 +368,7 @@ def generate_dry_run_report(action_type: str = ACTION_TYPE) -> dict:
             "action_type": action_type,
             "total_candidates": len(actions),
             "applied": 0,
+            "extractor_active": _EXTRACTOR_AVAILABLE,
         },
         "actions": actions,
     }
