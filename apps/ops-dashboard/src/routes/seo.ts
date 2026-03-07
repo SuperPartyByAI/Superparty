@@ -199,7 +199,26 @@ seoRouter.get("/", async (req: any, res) => {
   </div>
 </div>
 
-<h2>📄 Pagini Money — Ownership & Status</h2>
+<!-- Level 4.1 Trend Dashboard -->
+<div class="status-bar" style="border-left: 4px solid #06b6d4; background: #0f172a; border-radius: 4px; margin-top:8px;">
+  <div style="display:flex; flex-direction:column; gap:6px; width: 100%;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-weight:700; color:#06b6d4; text-transform:uppercase; font-size:13px; letter-spacing:1px;">📈 Level 4.1 — Trend Delta</span>
+        <span class="badge gray" style="font-size:10px;">READ-ONLY${data.trendSummary?.baselineOnly ? ' | BASELINE ONLY' : ' | Prev: ' + (data.trendSummary?.previousSnapshotDate || '—')}</span>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
+        <span class="badge ${data.trendSummary?.improved > 0 ? 'green' : 'gray'}">&#x2191; Improved: ${data.trendSummary?.improved || 0}</span>
+        <span class="badge ${data.trendSummary?.regressed > 0 ? 'red' : 'gray'}">&#x2193; Regressed: ${data.trendSummary?.regressed || 0}</span>
+        <span class="badge ${data.trendSummary?.mixed > 0 ? 'yellow' : 'gray'}">&#x21c5; Mixed: ${data.trendSummary?.mixed || 0}</span>
+        <span class="badge gray">→ Stable: ${data.trendSummary?.stable || 0}</span>
+    </div>
+    <div style="margin-top:6px;">
+        <a href="/seo/cluster-trends" style="background:#06b6d4; color:#0f172a; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:700; text-decoration:none;">📈 Detalii Trend ↗</a>
+    </div>
+  </div>
+</div>
+
+<h2>📄 Pagini Money — Ownership &amp; Status</h2>
 <table>
   <tr><th>Tier</th><th>Pagina</th><th>Path</th><th>Status</th><th>Link</th></tr>
   ${moneyRows}
@@ -653,6 +672,122 @@ seoRouter.get("/cluster-gaps", async (req: any, res) => {
   ${rowsHtml}
 </table>
 
+</body>
+</html>`);
+});
+
+seoRouter.get("/cluster-trends", async (req: any, res) => {
+  let trendData: any = {};
+  try {
+    const { loadTrendDelta } = await import("../services/overview");
+    const raw = loadTrendDelta();
+    if (raw) trendData = raw;
+  } catch (e: any) { trendData = { error: e.message }; }
+
+  const filterStatus = (req.query.status as string) || "all";
+
+  const statusOrder: any = { regressed: 0, mixed: 1, new: 2, stable: 3, improved: 4, missing: 5 };
+  let clusters: any[] = (trendData.clusters || []).sort(
+    (a: any, b: any) => (statusOrder[a.status] ?? 9) - (statusOrder[b.status] ?? 9)
+  );
+
+  const ownerArrow = (delta: any) => {
+    if (delta === null || delta === undefined) return `<span style="color:#475569" title="Date necunoscute - snapshot anterior fara owner_share">—</span>`;
+    if (delta > 0) return `<span style="color:#22c55e">↑ +${delta}</span>`;
+    if (delta < 0) return `<span style="color:#ef4444">↓ ${delta}</span>`;
+    return `<span style="color:#64748b">→ 0</span>`;
+  };
+  const forbiddenArrow = (delta: any) => {
+    if (delta === null || delta === undefined) return `<span style="color:#475569">—</span>`;
+    if (delta < 0) return `<span style="color:#22c55e">↓ ${delta}</span>`;
+    if (delta > 0) return `<span style="color:#ef4444">↑ +${delta}</span>`;
+    return `<span style="color:#64748b">→ 0</span>`;
+  };
+  const shareDisplay = (val: any) =>
+    val === null || val === undefined
+      ? `<span style="color:#475569">—</span>`
+      : `${(val * 100).toFixed(1)}%`;
+
+  const statusBadge: any = {
+    improved: `<span class="badge green">↑ Improved</span>`,
+    regressed: `<span class="badge red">↓ Regressed</span>`,
+    mixed: `<span class="badge yellow">⇅ Mixed</span>`,
+    stable: `<span class="badge gray">→ Stable</span>`,
+    new: `<span class="badge blue">★ New</span>`,
+    missing: `<span class="badge gray">✕ Missing</span>`,
+  };
+
+  let rowsHtml = "";
+  for (const c of clusters) {
+    if (filterStatus !== "all" && c.status !== filterStatus) continue;
+    rowsHtml += `<tr>
+      <td style="font-weight:600;color:#e2e8f0;font-size:12px;">${c.cluster_id}</td>
+      <td>${statusBadge[c.status] || c.status}</td>
+      <td style="font-family:monospace;font-size:11px;color:#94a3b8;">${c.delta_priority_band || "—"}</td>
+      <td style="text-align:center;">${forbiddenArrow(c.delta_forbidden)}</td>
+      <td style="text-align:center;">${ownerArrow(c.delta_owner_share)}</td>
+      <td style="text-align:center;font-size:11px;">${shareDisplay(c.current?.owner_share)}</td>
+      <td style="text-align:center;font-size:11px;color:#64748b;">${shareDisplay(c.previous?.owner_share)}</td>
+    </tr>`;
+  }
+
+  if (!rowsHtml) rowsHtml = `<tr><td colspan="7" style="padding:20px;color:#64748b;text-align:center;">
+    ${trendData.metadata?.baseline_only
+      ? '⚠️ Baseline only — nu exista snapshot anterior. Ruleaza archiver + analyzer pentru a genera delte.'
+      : 'Niciun cluster pentru filtrul selectat.'}
+  </td></tr>`;
+
+  const baselineNote = trendData.metadata?.baseline_only
+    ? `<div style="background:#1e3a5f;border:1px solid #3b82f6;border-radius:6px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#93c5fd;">
+        ⚠️ <strong>Baseline Only</strong> — Acesta este primul snapshot. Deltele vor fi disponibile dupa cel putin 2 rulari ale arhivatorului in zile diferite.
+       </div>`
+    : `<div style="color:#475569;font-size:12px;margin-bottom:14px;">Snapshot anterior: <strong>${trendData.metadata?.previous_snapshot_date || "—"}</strong> &rarr; Curent: <strong>${trendData.metadata?.current_snapshot_date || "—"}</strong></div>`;
+
+  const statusLinks = ["all","regressed","mixed","stable","improved","new","missing"].map(s =>
+    `<a href="?status=${s}" class="badge ${filterStatus === s ? (s==="regressed"?"red":s==="improved"?"green":"blue") : "gray"}">${s==="all"?"Toate":s}</a>`
+  ).join(" ");
+
+  res.send(`<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level 4.1 — Cluster Trend Delta</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:#0f172a; color:#e2e8f0; font-family:system-ui,-apple-system,sans-serif; padding:20px; }
+h1 { font-size:22px; font-weight:700; color:#06b6d4; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
+th { color:#64748b; text-align:left; padding:6px 8px; border-bottom:1px solid #1e293b; font-size:11px; text-transform:uppercase; }
+td { padding:10px 8px; border-bottom:1px solid #1e293b; vertical-align:middle; }
+tr:hover td { background:#1e293b; }
+.badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:11px; font-weight:600; color:#fff; margin:1px; }
+.badge.green{background:#22c55e;} .badge.red{background:#ef4444;} .badge.yellow{background:#f59e0b;color:#000;} .badge.blue{background:#3b82f6;} .badge.gray{background:#4b5563;}
+.filters { background:#1e293b; padding:12px; border-radius:8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+a.badge:hover { opacity:0.85; }
+</style>
+</head>
+<body>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+  <h1>📈 Level 4.1 — Trend Delta <span class="badge" style="background:#06b6d4;color:#0f172a;">READ-ONLY</span></h1>
+  <a href="/seo" style="font-size:13px;padding:6px 16px;background:#4b5563;color:#fff;border-radius:6px;text-decoration:none;">← Inapoi</a>
+</div>
+${baselineNote}
+<div class="filters">
+  <span style="font-weight:600;color:#94a3b8;">STATUS:</span>
+  ${statusLinks}
+</div>
+<div style="font-size:11px;color:#475569;margin-bottom:8px;">
+  ↑ verde = imbunatatire&nbsp;|&nbsp;↓ rosu = regresie&nbsp;|&nbsp;→ gri = stabil&nbsp;|&nbsp;— = date lipsa (snapshot pre-PR50 fara owner_share)
+</div>
+<table>
+  <tr>
+    <th>Cluster ID</th><th>Status</th><th>Band Tranzitie</th>
+    <th>Δ Forbidden URLs</th><th>Δ Owner Share</th>
+    <th>Owner Share Curent</th><th>Owner Share Anterior</th>
+  </tr>
+  ${rowsHtml}
+</table>
 </body>
 </html>`);
 });

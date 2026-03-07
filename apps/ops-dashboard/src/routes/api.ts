@@ -93,3 +93,56 @@ apiRouter.get("/cluster-gaps", async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+// GET /api/cluster-trends — Level 4.1 Trend Delta (PR #51 contract)
+// Consumă EXCLUSIV seo_trend_delta.json. Nu recalculează trendul.
+apiRouter.get("/cluster-trends", async (req, res) => {
+    try {
+        const { loadTrendDelta } = await import("../services/overview");
+        const raw = loadTrendDelta();
+
+        if (!raw) return res.status(404).json({ error: "No trend delta report found. Run seo_trend_analyzer first." });
+
+        const filterStatus = req.query.status as string;
+        const filterTier = req.query.tier as string;
+        const limitParam = parseInt((req.query.limit as string) || "0");
+        const sortParam = (req.query.sort as string) || "";
+
+        let clusters = [...(raw.clusters || [])];
+
+        // Filter
+        if (filterStatus) clusters = clusters.filter((c: any) => c.status === filterStatus);
+        if (filterTier) clusters = clusters.filter((c: any) =>
+            (c.current?.priority_band || c.previous?.priority_band || "").startsWith(filterTier)
+        );
+
+        // Sort
+        if (sortParam === "owner_share_desc") {
+            clusters.sort((a: any, b: any) => (b.current?.owner_share ?? -1) - (a.current?.owner_share ?? -1));
+        } else if (sortParam === "owner_share_delta_asc") {
+            clusters.sort((a: any, b: any) => (a.delta_owner_share ?? 0) - (b.delta_owner_share ?? 0));
+        } else if (sortParam === "forbidden_delta_desc") {
+            clusters.sort((a: any, b: any) => (b.delta_forbidden ?? 0) - (a.delta_forbidden ?? 0));
+        } else if (sortParam === "status") {
+            const order: any = { regressed: 0, mixed: 1, new: 2, stable: 3, improved: 4, missing: 5 };
+            clusters.sort((a: any, b: any) => (order[a.status] ?? 9) - (order[b.status] ?? 9));
+        }
+
+        // Limit
+        if (limitParam > 0) clusters = clusters.slice(0, limitParam);
+
+        // Summary counts from the full unfiltered data (for dashboard stat awareness)
+        const statusCounts: any = { improved: 0, regressed: 0, stable: 0, mixed: 0, new: 0, missing: 0 };
+        for (const c of (raw.clusters || [])) {
+            if (c.status in statusCounts) statusCounts[c.status]++;
+        }
+
+        res.json({
+            metadata: raw.metadata,
+            summary: statusCounts,
+            clusters,
+        });
+    } catch (err: any) {
+        res.status(500).json({ error: err.message });
+    }
+});

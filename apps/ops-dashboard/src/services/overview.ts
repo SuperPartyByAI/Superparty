@@ -94,6 +94,15 @@ export function loadClusterGaps() {
     } catch { return null; }
 }
 
+// Citim Level 4.1 Trend Delta (PR #51 — seo_trend_delta.json este singurul contract consumat)
+export function loadTrendDelta() {
+    try {
+        const p = path.join(config.reportsDir, "seo_trend_delta.json");
+        if (!fs.existsSync(p)) return null;
+        return JSON.parse(fs.readFileSync(p, "utf-8"));
+    } catch { return null; }
+}
+
 export async function getOverview() {
     const experiments = loadExperiments();
     const recentAudits = loadRecentAudits();
@@ -164,6 +173,21 @@ export async function getOverview() {
         }
     }
 
+    const trendDelta = loadTrendDelta();
+    let trendSummary = {
+        improved: 0, regressed: 0, stable: 0, mixed: 0, new: 0, missing: 0,
+        baselineOnly: true, previousSnapshotDate: "", generatedAt: ""
+    };
+    if (trendDelta) {
+        trendSummary.baselineOnly = !!trendDelta.metadata?.baseline_only;
+        trendSummary.previousSnapshotDate = trendDelta.metadata?.previous_snapshot_date || "";
+        trendSummary.generatedAt = trendDelta.metadata?.generated_at || "";
+        for (const c of (trendDelta.clusters || [])) {
+            const s = c.status as string;
+            if (s in trendSummary) (trendSummary as any)[s]++;
+        }
+    }
+
     return {
         experiments,
         recentAudits,
@@ -176,6 +200,7 @@ export async function getOverview() {
         clusterHealthSummary,
         prioritySummary,
         gapSummary,
+        trendSummary,
         generatedAt: new Date().toISOString(),
     };
 }
