@@ -157,6 +157,8 @@ def select_single_ready_action(plan: dict) -> dict:
       - no ready actions
       - more than one ready action (refuse batch apply)
       - action is Tier A/B, money, pillar
+      - approval_record.decision != 'approved' (redundant gate, do not trust upstream blindly)
+      - approval_record.decided_by is empty
     """
     ready = [a for a in plan.get("plan", []) if a.get("ready_to_apply") is True]
 
@@ -171,7 +173,7 @@ def select_single_ready_action(plan: dict) -> dict:
 
     action = ready[0]
 
-    # Redundant safety guards
+    # Redundant safety guards (do NOT trust upstream to have done these)
     if action.get("tier") == "A":
         raise ApplyError("Tier A action in ready list — blocked")
     if action.get("tier") == "B":
@@ -183,6 +185,18 @@ def select_single_ready_action(plan: dict) -> dict:
     if action.get("action_type") != ACTION_TYPE:
         raise ApplyError(
             f"Unexpected action_type: {action.get('action_type')} — only {ACTION_TYPE} permitted"
+        )
+
+    # Approval record re-check — redundant guard, do NOT trust plan[] snapshot alone
+    approval_record = action.get("approval_record") or {}
+    if approval_record.get("decision") != "approved":
+        raise ApplyError(
+            f"approval_record.decision='{approval_record.get('decision')}' — "
+            "only 'approved' actions may be applied. Blocked."
+        )
+    if not (approval_record.get("decided_by") or "").strip():
+        raise ApplyError(
+            "approval_record.decided_by is empty — operator identity required before apply. Blocked."
         )
 
     return action
@@ -293,6 +307,7 @@ def apply_meta_description_to_file(path: Path, new_description: str) -> dict:
     Returns: { "strategy": str, "chars_written": int }
     Raises ApplyError if:
       - file structure is unsupported
+      - new_description contains quote characters incompatible with detected pattern
       - write fails
     """
     content = path.read_text(encoding="utf-8", errors="replace")
@@ -304,7 +319,33 @@ def apply_meta_description_to_file(path: Path, new_description: str) -> dict:
             "Refusing to inject new markup. blocking_reason=unsupported_file_structure"
         )
 
-    escaped = new_description.replace('"', '\\"')
+    # Quote-safety check: block proposals that would corrupt the detected pattern
+    # frontmatter_prop uses single or double quotes as delimiters
+    # meta_tag uses single or double quotes as content= delimiter
+    if strategy == "frontmatter_prop":
+        fm_match_for_quote = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
+        fm_body = fm_match_for_quote.group(1) if fm_match_for_quote else ""
+        q_match = _RE_FRONTMATTER_DESC.search(fm_body)
+        if q_match:
+            used_quote = q_match.group(2)  # the actual quote char in file (' or ")
+            if used_quote in new_description:
+                raise ApplyError(
+                    f"unsafe_proposal_contains_quote: proposal contains '{used_quote}' which "
+                    f"is used as frontmatter string delimiter. Refusing to write to avoid "
+                    f"file corruption. blocking_reason=unsafe_proposal_contains_quote"
+                )
+    else:  # meta_tag
+        # meta_tag content= is always delimited by the matched quote (group 3)
+        # _RE_META_TAG_DESC group(3) holds the closing quote char
+        tag_match = _RE_META_TAG_DESC.search(content)
+        if tag_match:
+            used_quote = tag_match.group(3)
+            if used_quote in new_description:
+                raise ApplyError(
+                    f"unsafe_proposal_contains_quote: proposal contains '{used_quote}' which "
+                    f"is used as meta tag attribute delimiter. Refusing to write. "
+                    f"blocking_reason=unsafe_proposal_contains_quote"
+                )
 
     if strategy == "frontmatter_prop":
         def _replace_fm(m):

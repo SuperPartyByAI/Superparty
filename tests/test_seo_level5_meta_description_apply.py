@@ -365,3 +365,48 @@ def test_full_flow_produces_rollback_payload(sandbox):
     assert rollback["after"]["meta_description"] == "Descriere dupa apply."
     assert rollback["rollback_mode"] == "single_file_revert"
     assert rollback["action_id"] == "id-rb-flow"
+
+
+# ─── 11. Approval gate re-check guards (PR #58 hardening) ────────────────────
+
+def test_refuses_when_approval_record_decision_not_approved():
+    """select_single_ready_action must reject actions where approval_record.decision != approved."""
+    action = _make_ready_action("id-not-approved")
+    action["approval_record"]["decision"] = "rejected"  # tamper downstream
+    plan = _make_apply_plan([action])
+    with pytest.raises(ApplyError, match="approval_record.decision"):
+        select_single_ready_action(plan)
+
+
+def test_refuses_when_decided_by_empty():
+    """select_single_ready_action must reject actions with empty decided_by."""
+    action = _make_ready_action("id-no-operator")
+    action["approval_record"]["decided_by"] = ""  # operator missing
+    plan = _make_apply_plan([action])
+    with pytest.raises(ApplyError, match="decided_by"):
+        select_single_ready_action(plan)
+
+
+# ─── 12. Quote-safe write guard (PR #58 hardening) ───────────────────────────
+
+def test_refuses_when_proposal_contains_delimiter_quote_frontmatter(tmp_path):
+    """
+    If the file uses double-quote as frontmatter delimiter and the proposal contains
+    a double-quote, apply must block to avoid file corruption.
+    """
+    page = tmp_path / "quote_test.astro"
+    _write(page, '---\ndescription = "Descriere veche."\n---\n')
+    # Proposal contains the same double-quote used as delimiter
+    with pytest.raises(ApplyError, match="unsafe_proposal_contains_quote"):
+        apply_meta_description_to_file(page, 'Descriere cu "ghilimele" duble.')
+
+
+def test_refuses_when_proposal_contains_delimiter_quote_meta_tag(tmp_path):
+    """
+    If the meta_tag uses double-quote as content= delimiter and the proposal contains
+    a double-quote, apply must block.
+    """
+    page = tmp_path / "quote_meta.astro"
+    _write(page, '---\nimport L from "../layouts/Layout.astro";\n---\n<meta name="description" content="Descriere veche." />\n')
+    with pytest.raises(ApplyError, match="unsafe_proposal_contains_quote"):
+        apply_meta_description_to_file(page, 'Propunere cu "ghilimele".')
