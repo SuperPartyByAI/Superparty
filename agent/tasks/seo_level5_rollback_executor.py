@@ -52,6 +52,11 @@ _RE_META_TAG_DESC = re.compile(
     r"""(<meta\s+name=["']description["']\s+content=["'])([^"']{0,500})(["'])""",
     re.IGNORECASE,
 )
+# PR #61: layout_prop — same pattern as apply executor
+_RE_LAYOUT_PROP_DESC = re.compile(
+    r"""([ \t]*description=)(['"])([^'"]{0,500})\2""",
+    re.MULTILINE,
+)
 
 
 class RollbackError(RuntimeError):
@@ -194,6 +199,10 @@ def extract_current_meta_description(path: Path) -> str:
     if m:
         return m.group(3)
 
+    m = _RE_LAYOUT_PROP_DESC.search(content)
+    if m:
+        return m.group(3)
+
     m = _RE_META_TAG_DESC.search(content)
     if m:
         return m.group(2)
@@ -230,6 +239,23 @@ def apply_rollback_to_file(target_path: Path, restore_value: str) -> dict:
         target_path.write_text(new_content, encoding="utf-8")
         return {"strategy": "frontmatter_prop", "matched": True}
 
+    # PR #61: layout_prop — Astro component prop: description="..."
+    m = _RE_LAYOUT_PROP_DESC.search(content)
+    if m:
+        delimiter = m.group(2)
+        if delimiter in restore_value:
+            raise RollbackError(
+                f"unsafe_restore_contains_delimiter: restore value contains "
+                f"'{delimiter}' which is used as layout prop delimiter. Manual edit required."
+            )
+        new_content = _RE_LAYOUT_PROP_DESC.sub(
+            lambda match: f"{match.group(1)}{delimiter}{restore_value}{delimiter}",
+            content,
+            count=1,
+        )
+        target_path.write_text(new_content, encoding="utf-8")
+        return {"strategy": "layout_prop", "matched": True}
+
     # Try meta tag
     m = _RE_META_TAG_DESC.search(content)
     if m:
@@ -248,7 +274,7 @@ def apply_rollback_to_file(target_path: Path, restore_value: str) -> dict:
         return {"strategy": "meta_tag", "matched": True}
 
     raise RollbackError(
-        "unsupported_file_structure: no frontmatter description or meta_tag found. "
+        "unsupported_file_structure: no frontmatter description, layout_prop, or meta_tag found. "
         "Manual edit required."
     )
 

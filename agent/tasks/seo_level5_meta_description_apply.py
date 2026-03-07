@@ -60,6 +60,13 @@ _RE_META_TAG_DESC = re.compile(
     r"""(<meta\s+name=["']description["']\s+content=["'])([^"']{0,500})(["'])""",
     re.IGNORECASE,
 )
+# PR #61: Astro component prop pattern — description="..." inside <Layout .../> or <Layout ...>
+# Matches:  description="Any text here"
+# Used by all petreceri/* and other pages that pass description as a Layout prop.
+_RE_LAYOUT_PROP_DESC = re.compile(
+    r"""([ \t]*description=)(['"])([^'"]{0,500})\2""",
+    re.MULTILINE,
+)
 
 
 class ApplyError(RuntimeError):
@@ -291,12 +298,15 @@ def validate_target_still_matches_plan(action: dict, current_meta: dict) -> list
 
 def _detect_safe_edit_strategy(content: str) -> Optional[str]:
     """
-    Returns 'frontmatter_prop', 'meta_tag', or None if no safe pattern found.
-    Only patterns with explicit description text are safe.
+    Returns 'frontmatter_prop', 'layout_prop', 'meta_tag', or None.
+    Priority: frontmatter_prop > layout_prop > meta_tag.
+    PR #61: added layout_prop for Astro component prop format (description=\"...\").
     """
     fm_match = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
     if fm_match and _RE_FRONTMATTER_DESC.search(fm_match.group(1)):
         return "frontmatter_prop"
+    if _RE_LAYOUT_PROP_DESC.search(content):
+        return "layout_prop"
     if _RE_META_TAG_DESC.search(content):
         return "meta_tag"
     return None
@@ -320,24 +330,31 @@ def apply_meta_description_to_file(path: Path, new_description: str) -> dict:
             "Refusing to inject new markup. blocking_reason=unsupported_file_structure"
         )
 
-    # Quote-safety check: block proposals that would corrupt the detected pattern
-    # frontmatter_prop uses single or double quotes as delimiters
-    # meta_tag uses single or double quotes as content= delimiter
+    # Quote-safety check per strategy
     if strategy == "frontmatter_prop":
         fm_match_for_quote = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
         fm_body = fm_match_for_quote.group(1) if fm_match_for_quote else ""
         q_match = _RE_FRONTMATTER_DESC.search(fm_body)
         if q_match:
-            used_quote = q_match.group(2)  # the actual quote char in file (' or ")
+            used_quote = q_match.group(2)
             if used_quote in new_description:
                 raise ApplyError(
                     f"unsafe_proposal_contains_quote: proposal contains '{used_quote}' which "
                     f"is used as frontmatter string delimiter. Refusing to write to avoid "
                     f"file corruption. blocking_reason=unsafe_proposal_contains_quote"
                 )
+    elif strategy == "layout_prop":
+        # PR #61: layout_prop uses ' or " as delimiter
+        lp_match = _RE_LAYOUT_PROP_DESC.search(content)
+        if lp_match:
+            used_quote = lp_match.group(2)
+            if used_quote in new_description:
+                raise ApplyError(
+                    f"unsafe_proposal_contains_quote: proposal contains '{used_quote}' which "
+                    f"is used as layout prop delimiter. Refusing to write. "
+                    f"blocking_reason=unsafe_proposal_contains_quote"
+                )
     else:  # meta_tag
-        # meta_tag content= is always delimited by the matched quote (group 3)
-        # _RE_META_TAG_DESC group(3) holds the closing quote char
         tag_match = _RE_META_TAG_DESC.search(content)
         if tag_match:
             used_quote = tag_match.group(3)
@@ -352,12 +369,22 @@ def apply_meta_description_to_file(path: Path, new_description: str) -> dict:
         def _replace_fm(m):
             quote = m.group(2)
             return f"{m.group(1)}{quote}{new_description}{quote}{m.group(4)}"
-        # Only replace inside frontmatter block
         fm_match = re.match(r"^(---\s*\n)(.*?)(\n---)", content, re.DOTALL)
         if not fm_match:
             raise ApplyError("frontmatter_prop detected but couldn't re-parse frontmatter")
         new_fm_body = _RE_FRONTMATTER_DESC.sub(_replace_fm, fm_match.group(2))
         new_content = fm_match.group(1) + new_fm_body + fm_match.group(3) + content[fm_match.end():]
+    elif strategy == "layout_prop":
+        # PR #61: replace description=\"old\" with description=\"new\" preserving the quote char
+        lp_match = _RE_LAYOUT_PROP_DESC.search(content)
+        if not lp_match:
+            raise ApplyError("layout_prop detected but couldn't re-parse prop")
+        quote = lp_match.group(2)
+        new_content = _RE_LAYOUT_PROP_DESC.sub(
+            lambda m: f"{m.group(1)}{quote}{new_description}{quote}",
+            content,
+            count=1,
+        )
     else:  # meta_tag
         new_content = _RE_META_TAG_DESC.sub(
             lambda m: f"{m.group(1)}{new_description}{m.group(3)}", content
