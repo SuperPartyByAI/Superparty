@@ -1,0 +1,50 @@
+{
+    "schema_version": "1.0",
+    "mode": "design_boundary_only",
+    "description": "Contract machine-readable pentru Level 5. Defineste ce este permis si ce este interzis. Nicio implementare runtime inclusa in PR #53. Execuția primei actiuni controlate depinde de aprobarea manuala a acestui contract in PR #54.",
+    "allowed_actions": [],
+    "forbidden_actions": [
+        "change_canonical",
+        "change_robots",
+        "change_noindex",
+        "change_registry",
+        "change_cluster_schema",
+        "change_internal_ownership",
+        "modify_pillar_page",
+        "modify_sitemap_policy"
+    ],
+    "low_risk_eligible_actions": [
+        "meta_title_update",
+        "meta_description_update"
+    ],
+    "low_risk_eligible_note": "Actiunile din low_risk_eligible_actions sunt DEFINITE dar nu ACTIVATE. Activarea individuala necesita PR separat cu dry_run_required=true si approval_gate=manual.",
+    "dry_run_required": true,
+    "approval_gate": "manual",
+    "rollback_required": true,
+    "feedback_loop_mode": "observability_only",
+    "feedback_loop_permitted_signals": [
+        "impressions",
+        "clicks",
+        "ctr",
+        "average_position",
+        "owner_share_delta",
+        "forbidden_delta",
+        "trend_status"
+    ],
+    "feedback_loop_forbidden_claims": [
+        "serp_rank_1_claim",
+        "business_outcome_validation_without_real_serp",
+        "auto_interpreted_seo_win"
+    ],
+    "tier_restrictions": {
+        "A": "read_only",
+        "B": "restricted",
+        "C": "low_risk_eligible"
+    },
+    "max_actions_per_run": 0,
+    "requires_human_review_for": [
+        "all_tier_a",
+        "all_money_pages",
+        "all_registry_touches"
+    ]
+}
