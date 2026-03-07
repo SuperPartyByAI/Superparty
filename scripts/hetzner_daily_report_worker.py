@@ -149,6 +149,13 @@ def run_all_reports():
     status_file.parent.mkdir(parents=True, exist_ok=True)
     with open(status_file, "w", encoding="utf-8") as f:
         json.dump(status, f, indent=2)
+        
+    # L6.3: Append the run outcome to the 30-day rotative ledger
+    try:
+        from agent.tasks.seo_level6_report_ledger import append_to_ledger
+        append_to_ledger(status)
+    except Exception as e:
+        log.error(f"Failed to append to ledger: {e}")
     
     return status
 
