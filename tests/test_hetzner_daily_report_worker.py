@@ -76,3 +76,31 @@ def test_run_all_reports_health_fails_priority_skipped(mock_reports, mock_tmp, m
     
     # Assert priority was never even called
     mock_pri.assert_not_called()
+
+@patch("scripts.hetzner_daily_report_worker.run_cluster_health")
+@patch("scripts.hetzner_daily_report_worker.run_business_priority_scoring")
+@patch("scripts.hetzner_daily_report_worker.run_trend_analysis")
+@patch("scripts.hetzner_daily_report_worker.TMP_DIR")
+@patch("scripts.hetzner_daily_report_worker.REPORTS_DIR")
+@patch("scripts.hetzner_daily_report_worker.json.dump")
+@patch("builtins.open")
+def test_worker_propagates_ledger_status_failure(mock_open, mock_dump, mock_reports, mock_tmp, mock_trend, mock_pri, mock_health):
+    mock_tmp.mkdir = MagicMock()
+    mock_reports.parent.mkdir = MagicMock()
+    
+    mock_health.return_value = True
+    mock_pri.return_value = True
+    mock_trend.return_value = True
+    
+    # We want atomic_deploy to return True so the engines succeed
+    with patch("scripts.hetzner_daily_report_worker.atomic_deploy", return_value=True):
+        # We force append_to_ledger to return False
+        with patch("agent.tasks.seo_level6_report_ledger.append_to_ledger", return_value=False):
+            status = run_all_reports()
+    
+    # Assert worker engines ran and succeeded
+    assert status["health"] == "success"
+    assert status["overall_status"] == "success"
+    
+    # Assert ledger failure was correctly logged into the status
+    assert status["ledger_status"] == "failed"

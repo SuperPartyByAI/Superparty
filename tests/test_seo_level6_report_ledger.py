@@ -43,3 +43,29 @@ def test_ledger_rotation_max_entires(tmp_path):
     assert data[0]["timestamp"] == "2026-03-08T10:00:05Z"
     # Last entry should be index 34
     assert data[-1]["timestamp"] == "2026-03-08T10:00:34Z"
+
+def test_ledger_backup_on_corrupt_file(tmp_path):
+    ledger_file = tmp_path / "ledger.json"
+    
+    # Write corrupt JSON
+    ledger_file.write_text("{corrupt: true", encoding="utf-8")
+    
+    status = {
+        "health": "success",
+        "priority": "success",
+        "trend": "success",
+        "overall_status": "success",
+        "run_at": "2026-03-08T10:00:00Z"
+    }
+    
+    res = append_to_ledger(status, ledger_path=ledger_file)
+    assert res is True
+    
+    # Verify backup was created
+    backups = list(tmp_path.glob("ledger.json.corrupt.*.bak"))
+    assert len(backups) == 1
+    
+    # Verify new ledger was started cleanly
+    data = json.loads(ledger_file.read_text(encoding="utf-8"))
+    assert len(data) == 1
+    assert data[0]["status"] == "success"
