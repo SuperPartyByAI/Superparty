@@ -90,6 +90,14 @@ _RE_LAYOUT_PROP_VAR = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 
+# PR #61: Astro Layout prop string literal: description="..."
+# Used by ALL petreceri/*.astro pages: <Layout description="Animatori...">
+# Different from _RE_LAYOUT_PROP_VAR which matches description={...} (JSX expression)
+_RE_LAYOUT_PROP_STR = re.compile(
+    r"""[ \t]description=(['"])([^'"]{0,500})\1""",
+    re.MULTILINE,
+)
+
 
 def _extract_frontmatter_block(content: str) -> Optional[str]:
     """Return the content between the first pair of --- fences, or None."""
@@ -126,18 +134,25 @@ def extract_meta_description_from_file(file_path: Path) -> dict:
             result["source"] = "frontmatter_prop"
             return result
 
-    # 2. Check for inline <meta name="description" content="..."> in the template body
+    # 2. PR #61: Layout prop string literal: description="..."
+    # Priority over meta_tag because it's the primary pattern in this codebase.
+    m = _RE_LAYOUT_PROP_STR.search(content)
+    if m:
+        result["meta_description"] = m.group(2).strip()
+        result["source"] = "layout_prop_str"
+        return result
+
+    # 3. Check for inline <meta name="description" content="..."> in the template body
     m = _RE_META_TAG.search(content)
     if m:
         result["meta_description"] = m.group(1).strip()
         result["source"] = "meta_tag"
         return result
 
-    # 3. Layout prop used with a string literal: description={"actual text here"}
+    # 4. Layout prop used with a JSX expression: description={"actual text here"}
     m = _RE_LAYOUT_PROP_VAR.search(content)
     if m:
         inner = m.group(1).strip()
-        # Only accept if it looks like a string literal (starts with ' or ")
         lit = re.match(r"""['"](.*?)['"]""", inner, re.DOTALL)
         if lit:
             result["meta_description"] = lit.group(1).strip()

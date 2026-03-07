@@ -208,30 +208,104 @@ def description_is_missing_or_weak(current_meta_description: str) -> bool:
 
 def extract_candidate_pool(inputs: dict) -> List[Candidate]:
     """
-    Conservative candidate extraction from existing reports.
-    Derive URLs from health report clusters.
-    Consider only clearly non-money, Tier C, non-pillar URLs.
-    PR #54: current_meta_description left blank (no page-file reads yet).
+    Conservative candidate extraction.
+    Primary: derive URLs from health report clusters (Level 4 report).
+    Fallback (PR #61): when health_clusters is missing/empty, scan src/pages/ directly.
+    Considers only Tier C, non-money, non-pillar URLs.
     """
     health_clusters = (inputs.get("health") or {}).get("clusters", {})
     candidates: List[Candidate] = []
 
-    for _cluster_id, cluster_data in health_clusters.items():
-        urls = cluster_data.get("urls", {}) or {}
-        cluster_is_money = is_money_cluster(cluster_data)
+    if health_clusters:
+        # Primary path: health report clusters available
+        for _cluster_id, cluster_data in health_clusters.items():
+            urls = cluster_data.get("urls", {}) or {}
+            cluster_is_money = is_money_cluster(cluster_data)
 
-        for url, _url_data in urls.items():
+            for url, _url_data in urls.items():
+                tier = infer_tier_from_url(url)
+                pillar = is_pillar_page(url)
+                current_meta_description = ""  # enriched later by extractor
+
+                flags: List[str] = []
+                if tier == "C":
+                    flags.append("tier_c_only")
+                if not cluster_is_money:
+                    flags.append("non_money_page")
+                if not pillar:
+                    flags.append("non_pillar_page")
+                if description_is_missing_or_weak(current_meta_description):
+                    flags.append("description_missing_or_weak")
+
+                score = 0.0
+                if tier == "C":
+                    score += 10
+                if not cluster_is_money:
+                    score += 10
+                if not pillar:
+                    score += 10
+                if "description_missing_or_weak" in flags:
+                    score += 20
+
+                candidates.append(
+                    Candidate(
+                        url=url,
+                        tier=tier,
+                        is_money_page=cluster_is_money,
+                        is_pillar_page=pillar,
+                        current_meta_description=current_meta_description,
+                        reason_flags=flags,
+                        score=score,
+                    )
+                )
+    else:
+        # Fallback (PR #61): no health report — scan src/pages/ directly for .astro files
+        # This is the active path when Level 4 reports are not yet generated.
+        log.info("health_clusters empty — using pages-dir fallback scan (PR #61)")
+        pages_dir = ROOT_DIR / "src" / "pages"
+        try:
+            from agent.tasks.seo_level5_page_metadata_extractor import (
+                extract_meta_description_from_file,
+                url_to_astro_file,
+            )
+            extractor_available = True
+        except ImportError:
+            extractor_available = False
+
+        for astro_file in sorted(pages_dir.rglob("*.astro")):
+            # Skip dynamic routes ([slug].astro) and layout files
+            if "[" in astro_file.name or astro_file.name == "index.astro" and astro_file.parent == pages_dir:
+                continue
+            # Skip non-content files
+            if astro_file.stem.startswith("_"):
+                continue
+
+            # Derive canonical URL from file path relative to pages_dir
+            rel = astro_file.relative_to(pages_dir)
+            if rel.name == "index.astro":
+                url = "/" + "/".join(rel.parts[:-1])
+            else:
+                url = "/" + "/".join(rel.with_suffix("").parts)
+            if not url:
+                url = "/"
+
             tier = infer_tier_from_url(url)
             pillar = is_pillar_page(url)
+            is_money = False  # conservative: no cluster data available
 
-            # PR #54: no page file reads yet — keep blank
+            # Read real meta description via extractor
             current_meta_description = ""
+            if extractor_available:
+                try:
+                    meta_info = extract_meta_description_from_file(astro_file)
+                    current_meta_description = meta_info.get("meta_description") or ""
+                except Exception:
+                    pass
 
             flags: List[str] = []
             if tier == "C":
                 flags.append("tier_c_only")
-            if not cluster_is_money:
-                flags.append("non_money_page")
+            flags.append("non_money_page")  # assumed safe in fallback
             if not pillar:
                 flags.append("non_pillar_page")
             if description_is_missing_or_weak(current_meta_description):
@@ -240,8 +314,7 @@ def extract_candidate_pool(inputs: dict) -> List[Candidate]:
             score = 0.0
             if tier == "C":
                 score += 10
-            if not cluster_is_money:
-                score += 10
+            score += 10  # non_money assumed
             if not pillar:
                 score += 10
             if "description_missing_or_weak" in flags:
@@ -251,13 +324,14 @@ def extract_candidate_pool(inputs: dict) -> List[Candidate]:
                 Candidate(
                     url=url,
                     tier=tier,
-                    is_money_page=cluster_is_money,
+                    is_money_page=is_money,
                     is_pillar_page=pillar,
                     current_meta_description=current_meta_description,
                     reason_flags=flags,
                     score=score,
                 )
             )
+        log.info("Fallback scan found %d raw candidates from pages-dir", len(candidates))
 
     return candidates
 
