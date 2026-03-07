@@ -104,23 +104,30 @@ apiRouter.get("/cluster-trends", async (req, res) => {
         if (!raw) return res.status(404).json({ error: "No trend delta report found. Run seo_trend_analyzer first." });
 
         const filterStatus = req.query.status as string;
-        const filterTier = req.query.tier as string;
+        // NOTE: filtrul `tier` a fost eliminat intenționat în PR #52.
+        // Contractul din PR #51 (seo_trend_delta.json) normalizează `priority_band`, nu `tier`.
+        // Filtrul tier va fi reintroduce corect după extinderea contractului în seo_trend_analyzer.py.
         const limitParam = parseInt((req.query.limit as string) || "0");
         const sortParam = (req.query.sort as string) || "";
 
         let clusters = [...(raw.clusters || [])];
 
-        // Filter
+        // Filter — doar status este suportat în PR #52
         if (filterStatus) clusters = clusters.filter((c: any) => c.status === filterStatus);
-        if (filterTier) clusters = clusters.filter((c: any) =>
-            (c.current?.priority_band || c.previous?.priority_band || "").startsWith(filterTier)
-        );
 
         // Sort
         if (sortParam === "owner_share_desc") {
             clusters.sort((a: any, b: any) => (b.current?.owner_share ?? -1) - (a.current?.owner_share ?? -1));
         } else if (sortParam === "owner_share_delta_asc") {
-            clusters.sort((a: any, b: any) => (a.delta_owner_share ?? 0) - (b.delta_owner_share ?? 0));
+            // null delta_owner_share (pre-PR50 snaphot) → sortat la final, nu comprimat spre 0
+            clusters.sort((a: any, b: any) => {
+                const av = a.delta_owner_share;
+                const bv = b.delta_owner_share;
+                if (av === null && bv === null) return 0;
+                if (av === null) return 1;  // null → end
+                if (bv === null) return -1;
+                return av - bv;
+            });
         } else if (sortParam === "forbidden_delta_desc") {
             clusters.sort((a: any, b: any) => (b.delta_forbidden ?? 0) - (a.delta_forbidden ?? 0));
         } else if (sortParam === "status") {
