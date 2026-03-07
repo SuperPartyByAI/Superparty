@@ -53,6 +53,8 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
                 "total_clicks": 0,
                 "owner_present": False,
                 "owner_impressions": 0,
+                "owner_clicks": 0,
+                "owner_share": 0.0,
                 "supporter_count": 0,
                 "forbidden_count": 0,
                 "unknown_count": 0,
@@ -90,6 +92,7 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
         
         if c_data["urls"][page]["classification"] == "owner":
             c_data["owner_impressions"] += row.get("impressions", 0)
+            c_data["owner_clicks"] += row.get("clicks", 0)
 
     # Compile structured warnings arrays
     for cid, data in health_data.items():
@@ -104,6 +107,10 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
                     "severity": "high" if stats["classification"] == "forbidden" else "medium"
                 })
         data["cannibalization_warnings"] = sorted(warnings, key=lambda x: x["impressions"], reverse=True)
+
+        # Compute owner_share: owner_impressions / total_impressions (0.0 if total = 0)
+        total = data.get("total_impressions", 0)
+        data["owner_share"] = round(data["owner_impressions"] / total, 4) if total > 0 else 0.0
         
     return {
         "metadata": {

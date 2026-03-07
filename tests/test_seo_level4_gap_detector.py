@@ -74,11 +74,46 @@ class TestAnalyzeClusterGap:
         assert "high_unknown_ratio" in result["gap_signals"]
         assert result["opportunity_type"] == "review_registry_mapping"
 
+    def test_weak_owner_via_owner_share_below_threshold(self, default_thresholds, conservative_policy):
+        """Tier B cluster cu owner present dar owner_share < 0.4 trebuie detectat ca weak_owner."""
+        cluster = {
+            "total_impressions": 800,
+            "owner_present": True,
+            "owner_share": 0.25,  # < 0.4 threshold => weak_owner
+            "forbidden_count": 0,
+            "unknown_count": 0,
+            "supporter_count": 3,
+            "cannibalization_warnings": [],
+            "intelligence": {"tier": "B", "importance_score": 60, "risk_score": 1.0}
+        }
+        result = analyze_cluster_gap("test_b_weak_owner", cluster, conservative_policy, default_thresholds)
+        assert result is not None
+        assert "weak_owner" in result["gap_signals"]
+        assert result["opportunity_type"] == "optimize_owner"
+        assert result["confidence"] == "medium"
+        assert result["context"]["owner_share"] == 0.25
+
+    def test_strong_owner_share_does_not_trigger_weak_owner(self, default_thresholds, conservative_policy):
+        """Tier B cu owner_share > 0.4 NU trebuie sa fie weak_owner."""
+        cluster = {
+            "total_impressions": 800,
+            "owner_present": True,
+            "owner_share": 0.75,  # > 0.4 => healthy
+            "forbidden_count": 0,
+            "unknown_count": 0,
+            "supporter_count": 2,
+            "cannibalization_warnings": [],
+            "intelligence": {"tier": "B", "importance_score": 60, "risk_score": 1.0}
+        }
+        result = analyze_cluster_gap("test_b_strong_owner", cluster, conservative_policy, default_thresholds)
+        assert result is None, "Cluster cu owner_share > threshold nu este un gap"
+
     def test_tier_a_conservative_healthy_cluster_returns_none(self, default_thresholds, conservative_policy):
         """Healthy Tier A conservative cluster should NOT be a gap — it is the ideal state."""
         cluster = {
             "total_impressions": 5000,
             "owner_present": True,
+            "owner_share": 0.85,
             "forbidden_count": 0,
             "unknown_count": 0,
             "supporter_count": 3,
@@ -93,6 +128,7 @@ class TestAnalyzeClusterGap:
         cluster = {
             "total_impressions": 500,
             "owner_present": True,
+            "owner_share": 0.8,
             "forbidden_count": 0,
             "unknown_count": 0,
             "supporter_count": 2,
