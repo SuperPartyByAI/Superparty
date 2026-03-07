@@ -57,6 +57,10 @@ class Candidate:
     current_meta_description: str
     reason_flags: List[str]
     score: float
+    # PR #62: True = from health_clusters (proven non-money classification).
+    # False = from pages-dir fallback scan (money status unproven — diagnostic only,
+    # never eligible for apply).
+    health_classified: bool = True
 
 
 def _load_json(path: Path) -> Optional[dict]:
@@ -329,9 +333,10 @@ def extract_candidate_pool(inputs: dict) -> List[Candidate]:
                     current_meta_description=current_meta_description,
                     reason_flags=flags,
                     score=score,
+                    health_classified=False,  # PR #62: unproven money status
                 )
             )
-        log.info("Fallback scan found %d raw candidates from pages-dir", len(candidates))
+        log.info("Fallback scan found %d raw candidates from pages-dir (all diagnostic_only)", len(candidates))
 
     return candidates
 
@@ -347,6 +352,10 @@ def resolve_eligible_candidates(inputs: dict, policy: dict) -> List[Candidate]:
     eligible: List[Candidate] = []
 
     for candidate in pool:
+        # PR #62: pages-dir fallback candidates are diagnostic_only.
+        # Without proven health_clusters classification, money status is unproven — blocked.
+        if not candidate.health_classified:
+            continue
         if candidate.tier in deny_tiers:
             continue
         if candidate.tier not in allow_tiers:
