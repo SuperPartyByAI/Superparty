@@ -427,9 +427,20 @@ def build_action_record(candidate: Candidate, policy: dict) -> dict:
     }
 
 
+from agent.tasks.seo_level6_report_readiness import assert_inputs_ready, ReportReadinessError
+
 def generate_dry_run_report(action_type: str = ACTION_TYPE) -> dict:
     if action_type != ACTION_TYPE:
         raise PolicyValidationError(f"Unsupported action type: {action_type}")
+
+    # [L6.1] Input Integrity & Freshness Gate
+    # Strict fail-closed if source reports are stale, invalid, or missing.
+    try:
+        readiness_status = assert_inputs_ready()
+        log.info(f"Input reports readiness: {readiness_status['status']}")
+    except ReportReadinessError as e:
+        log.error(f"BLOCKED BY REPORTS FRESHNESS GATE: {e}")
+        raise
 
     policy = load_level5_policy()
     validate_action_activation(policy, action_type)
