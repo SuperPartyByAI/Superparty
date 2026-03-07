@@ -210,8 +210,11 @@ def _preflight_checks(action: dict, approval_entry: dict, policy: dict) -> dict[
         # Money / pillar guard (redundant defensive layer — do not rely on upstream)
         "not_money_page": not is_money,
         "not_pillar_page": not is_pillar,
-        # Action-level write guards
-        "write_files_false": activation.get("write_files") is False,
+        # Phase-invariant guards — must be False in ALL phases (apply-plan, apply executor, dry-run)
+        # PR #59: write_files_false REMOVED — apply-plan generator does not control apply executor.
+        # Policy v1.2 sets write_files=True for the apply executor only; plan generator
+        # itself never writes files (applied=0 invariant). Validation is phase-aware:
+        # apply-plan validates that plan is generated (never writes), not that executor cannot write.
         "create_pr_false": activation.get("create_pull_request") is False,
         "commit_changes_false": activation.get("commit_changes") is False,
         # Proposal present

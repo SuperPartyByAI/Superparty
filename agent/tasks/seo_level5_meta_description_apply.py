@@ -594,6 +594,25 @@ def run_single_apply(
         except ValueError:
             rollback_path_str = str(ROLLBACK_PAYLOAD_PATH).replace("\\", "/")
 
+        # PR #59: Fail-closed on post-write verification failure.
+        # Rollback payload is already saved — do NOT delete it, it may aid manual recovery.
+        # applied=0, action goes to blocked[] with explicit blocking_reason.
+        if not after_value_verified:
+            blocked_actions.append({
+                "action_id": action_id,
+                "url": url,
+                "blocking_reason": "post_write_verification_failed",
+                "after_value_verified": False,
+                "rollback_payload_path": rollback_path_str,
+                "rollback_ready": rollback_ready,
+            })
+            raise ApplyError(
+                f"post_write_verification_failed: file '{target_path}' does not contain "
+                "the expected new description after write. "
+                "Rollback payload has been saved. Manual review required. "
+                "blocking_reason=post_write_verification_failed"
+            )
+
         applied_actions.append({
             # Lineage (PR #59)
             "execution_id": str(uuid.uuid4()),
@@ -615,6 +634,7 @@ def run_single_apply(
             "rollback_payload_path": rollback_path_str,
             "rollback_ready": rollback_ready,
         })
+
 
 
     except PolicyApplyError as e:
