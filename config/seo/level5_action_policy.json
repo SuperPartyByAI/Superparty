@@ -1,8 +1,10 @@
 {
-    "schema_version": "1.0",
-    "mode": "design_boundary_only",
-    "description": "Contract machine-readable pentru Level 5. Defineste ce este permis si ce este interzis. Nicio implementare runtime inclusa in PR #53. Execuția primei actiuni controlate depinde de aprobarea manuala a acestui contract in PR #54.",
-    "allowed_actions": [],
+    "schema_version": "1.1",
+    "mode": "controlled_dry_run_only",
+    "description": "PR #54 activeaza EXCLUSIV un executor dry-run pentru meta_description_update. Nu exista apply real, nu exista PR generation, nu exista modificare de fisiere. Orice executie viitoare in afara dry-run necesita PR separat.",
+    "allowed_actions": [
+        "meta_description_update"
+    ],
     "forbidden_actions": [
         "change_canonical",
         "change_robots",
@@ -17,7 +19,7 @@
         "meta_title_update",
         "meta_description_update"
     ],
-    "low_risk_eligible_note": "Actiunile din low_risk_eligible_actions sunt DEFINITE dar nu ACTIVATE. Activarea individuala necesita PR separat cu dry_run_required=true si approval_gate=manual.",
+    "low_risk_eligible_note": "Actiunile din low_risk_eligible_actions sunt candidate de nivel low-risk, dar in PR #54 se activeaza EXCLUSIV meta_description_update si EXCLUSIV in dry-run.",
     "dry_run_required": true,
     "approval_gate": "manual",
     "rollback_required": true,
@@ -41,10 +43,31 @@
         "B": "restricted",
         "C": "low_risk_eligible"
     },
-    "max_actions_per_run": 0,
+    "max_actions_per_run": 1,
     "requires_human_review_for": [
         "all_tier_a",
         "all_money_pages",
         "all_registry_touches"
-    ]
+    ],
+    "action_activation": {
+        "meta_description_update": {
+            "execution_mode": "dry_run_only",
+            "tier_allowlist": [
+                "C"
+            ],
+            "tier_denylist": [
+                "A",
+                "B"
+            ],
+            "money_pages": "forbidden",
+            "pillar_pages": "forbidden",
+            "registry_touches": "forbidden",
+            "max_candidates_per_run": 1,
+            "requires_manual_approval_before_apply": true,
+            "report_only": true,
+            "write_files": false,
+            "create_pull_request": false,
+            "commit_changes": false
+        }
+    }
 }

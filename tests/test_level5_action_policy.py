@@ -1,10 +1,14 @@
 """
-tests/test_level5_action_policy.py — PR #53 Level 5 Design Boundary
-Validates that level5_action_policy.json satisfies all required invariants
-BEFORE any runtime implementation exists.
+tests/test_level5_action_policy.py — PR #54 Level 5 Dry-Run Activation
 
-If these tests fail, PR #54 (first executor) must NOT be opened.
+Valideaza ca policy-ul pentru PR #54:
+- activeaza EXCLUSIV meta_description_update
+- ramane dry-run only
+- nu permite Tier A / Tier B
+- nu permite money pages / pillar pages / registry touches
+- limiteaza executia la max 1 candidat per run
 """
+
 import json
 import pytest
 from pathlib import Path
@@ -22,49 +26,46 @@ def policy():
 # ─── Schema & Mode ────────────────────────────────────────────────────────────
 
 def test_schema_version_present(policy):
-    assert "schema_version" in policy, "schema_version este obligatoriu"
-    assert policy["schema_version"] == "1.0"
+    assert "schema_version" in policy
+    assert policy["schema_version"] == "1.1"
 
 
-def test_mode_is_design_boundary_only(policy):
-    """PR #53 este design boundary ONLY — nicio execuție permisă."""
-    assert policy.get("mode") == "design_boundary_only", \
-        "mode trebuie sa fie 'design_boundary_only' in PR #53"
+def test_mode_is_controlled_dry_run_only(policy):
+    assert policy.get("mode") == "controlled_dry_run_only", (
+        "PR #54 trebuie sa fie controlled_dry_run_only"
+    )
 
 
 # ─── Safety Invariants ────────────────────────────────────────────────────────
 
-def test_allowed_actions_is_empty(policy):
-    """PR #53: allowed_actions trebuie sa fie lista goala — nicio actiune activata."""
-    assert isinstance(policy.get("allowed_actions"), list), "allowed_actions trebuie sa fie o lista"
-    assert len(policy["allowed_actions"]) == 0, \
-        "allowed_actions trebuie sa fie [] in PR #53 — nu se activeaza nicio actiune inca"
+def test_allowed_actions_is_only_meta_description_update(policy):
+    allowed = policy.get("allowed_actions")
+    assert isinstance(allowed, list), "allowed_actions trebuie sa fie lista"
+    assert allowed == ["meta_description_update"], (
+        "PR #54 activeaza EXCLUSIV meta_description_update"
+    )
 
 
-def test_max_actions_per_run_is_zero(policy):
-    """Nicio actiune nu se executa in PR #53."""
-    assert policy.get("max_actions_per_run") == 0, \
-        "max_actions_per_run trebuie sa fie 0 in PR #53"
+def test_max_actions_per_run_is_one(policy):
+    assert policy.get("max_actions_per_run") == 1, (
+        "max_actions_per_run trebuie sa fie 1 in PR #54"
+    )
 
 
 def test_dry_run_required(policy):
-    assert policy.get("dry_run_required") is True, \
-        "dry_run_required trebuie sa fie true"
+    assert policy.get("dry_run_required") is True
 
 
 def test_approval_gate_is_manual(policy):
-    assert policy.get("approval_gate") == "manual", \
-        "approval_gate trebuie sa fie 'manual' — nu 'automatic'"
+    assert policy.get("approval_gate") == "manual"
 
 
 def test_rollback_required(policy):
-    assert policy.get("rollback_required") is True, \
-        "rollback_required trebuie sa fie true"
+    assert policy.get("rollback_required") is True
 
 
 def test_feedback_loop_is_observability_only(policy):
-    assert policy.get("feedback_loop_mode") == "observability_only", \
-        "feedback_loop_mode trebuie sa fie 'observability_only'"
+    assert policy.get("feedback_loop_mode") == "observability_only"
 
 
 # ─── Forbidden Actions ────────────────────────────────────────────────────────
@@ -80,24 +81,27 @@ REQUIRED_FORBIDDEN = [
     "modify_sitemap_policy",
 ]
 
+
 def test_forbidden_actions_present(policy):
     forbidden = policy.get("forbidden_actions", [])
     for action in REQUIRED_FORBIDDEN:
-        assert action in forbidden, f"'{action}' trebuie sa fie explicit in forbidden_actions"
+        assert action in forbidden, f"'{action}' trebuie sa fie in forbidden_actions"
 
 
 # ─── Tier Restrictions ────────────────────────────────────────────────────────
 
 def test_tier_a_is_read_only(policy):
-    """Tier A = read_only este absolut — nicio exceptie permisa."""
     tier_restrictions = policy.get("tier_restrictions", {})
-    assert tier_restrictions.get("A") == "read_only", \
-        "Tier A trebuie sa fie 'read_only' — absolut, fara exceptii"
+    assert tier_restrictions.get("A") == "read_only", (
+        "Tier A trebuie sa ramana read_only"
+    )
 
 
 def test_tier_b_is_restricted(policy):
     tier_restrictions = policy.get("tier_restrictions", {})
-    assert tier_restrictions.get("B") == "restricted"
+    assert tier_restrictions.get("B") == "restricted", (
+        "Tier B nu trebuie activat in PR #54"
+    )
 
 
 def test_tier_c_is_low_risk_eligible(policy):
@@ -113,24 +117,27 @@ REQUIRED_REVIEW_GATES = [
     "all_registry_touches",
 ]
 
+
 def test_human_review_gates_present(policy):
     requires_review = policy.get("requires_human_review_for", [])
     for gate in REQUIRED_REVIEW_GATES:
-        assert gate in requires_review, \
+        assert gate in requires_review, (
             f"'{gate}' trebuie sa fie in requires_human_review_for"
+        )
 
 
 # ─── Feedback Loop Signals ────────────────────────────────────────────────────
 
 REQUIRED_PERMITTED_SIGNALS = [
     "impressions", "clicks", "ctr", "average_position",
-    "owner_share_delta", "forbidden_delta", "trend_status"
+    "owner_share_delta", "forbidden_delta", "trend_status",
 ]
+
 
 def test_permitted_signals_defined(policy):
     signals = policy.get("feedback_loop_permitted_signals", [])
     for sig in REQUIRED_PERMITTED_SIGNALS:
-        assert sig in signals, f"Signal permis '{sig}' lipseste din policy"
+        assert sig in signals, f"Signal permis '{sig}' lipseste"
 
 
 REQUIRED_FORBIDDEN_CLAIMS = [
@@ -139,21 +146,68 @@ REQUIRED_FORBIDDEN_CLAIMS = [
     "auto_interpreted_seo_win",
 ]
 
+
 def test_forbidden_claims_defined(policy):
     claims = policy.get("feedback_loop_forbidden_claims", [])
     for claim in REQUIRED_FORBIDDEN_CLAIMS:
-        assert claim in claims, f"Claim interzis '{claim}' lipseste din policy"
+        assert claim in claims, f"Claim interzis '{claim}' lipseste"
 
 
-# ─── Low-Risk Eligible — definit dar neactivat ───────────────────────────────
+# ─── Low-Risk Eligible / Allowed ─────────────────────────────────────────────
 
-def test_low_risk_eligible_not_in_allowed_actions(policy):
-    """
-    low_risk_eligible_actions sunt descrise in policy dar NU in allowed_actions.
-    Niciun low-risk action nu trebuie sa fie activ in PR #53.
-    """
+def test_low_risk_eligible_contains_meta_title_and_meta_description(policy):
+    eligible = policy.get("low_risk_eligible_actions", [])
+    assert "meta_title_update" in eligible
+    assert "meta_description_update" in eligible
+
+
+def test_only_meta_description_is_activated_now(policy):
     eligible = policy.get("low_risk_eligible_actions", [])
     allowed = policy.get("allowed_actions", [])
-    for action in eligible:
-        assert action not in allowed, \
-            f"'{action}' este low_risk_eligible dar NU trebuie sa fie in allowed_actions in PR #53"
+    assert "meta_description_update" in allowed
+    assert "meta_title_update" in eligible
+    assert "meta_title_update" not in allowed, (
+        "meta_title_update ramane neactivat in PR #54"
+    )
+
+
+# ─── Action Activation Block ──────────────────────────────────────────────────
+
+def test_action_activation_block_exists(policy):
+    activation = policy.get("action_activation", {})
+    assert "meta_description_update" in activation, (
+        "PR #54 trebuie sa defineasca action_activation pentru meta_description_update"
+    )
+
+
+def test_meta_description_update_is_dry_run_only(policy):
+    cfg = policy["action_activation"]["meta_description_update"]
+    assert cfg.get("execution_mode") == "dry_run_only"
+    assert cfg.get("report_only") is True
+    assert cfg.get("write_files") is False
+    assert cfg.get("create_pull_request") is False
+    assert cfg.get("commit_changes") is False
+
+
+def test_meta_description_update_is_tier_c_only(policy):
+    cfg = policy["action_activation"]["meta_description_update"]
+    assert cfg.get("tier_allowlist") == ["C"]
+    assert "A" in cfg.get("tier_denylist", [])
+    assert "B" in cfg.get("tier_denylist", [])
+
+
+def test_meta_description_update_forbids_money_and_pillar_pages(policy):
+    cfg = policy["action_activation"]["meta_description_update"]
+    assert cfg.get("money_pages") == "forbidden"
+    assert cfg.get("pillar_pages") == "forbidden"
+    assert cfg.get("registry_touches") == "forbidden"
+
+
+def test_meta_description_update_requires_manual_approval_before_apply(policy):
+    cfg = policy["action_activation"]["meta_description_update"]
+    assert cfg.get("requires_manual_approval_before_apply") is True
+
+
+def test_meta_description_update_limits_to_one_candidate(policy):
+    cfg = policy["action_activation"]["meta_description_update"]
+    assert cfg.get("max_candidates_per_run") == 1
