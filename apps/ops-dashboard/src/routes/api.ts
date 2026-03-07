@@ -67,3 +67,29 @@ apiRouter.get("/cluster-priority", async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+// GET /api/cluster-gaps — Level 4 Gap Detector Opportunities (Faza 14)
+apiRouter.get("/cluster-gaps", async (req, res) => {
+    try {
+        const { loadClusterGaps } = await import("../services/overview");
+        let data = loadClusterGaps();
+        if (!data) return res.status(404).json({ error: "No gap opportunities report found" });
+
+        const tier = req.query.tier as string;
+        const type = req.query.type as string;
+        const confidence = req.query.confidence as string;
+
+        if (tier || type || confidence) {
+            data.opportunities = (data.opportunities || []).filter((opp: any) => {
+                if (tier && opp.tier !== tier) return false;
+                if (type && opp.opportunity_type !== type) return false;
+                if (confidence && opp.confidence !== confidence) return false;
+                return true;
+            });
+        }
+
+        res.json(data);
+    } catch (err: any) {
+        res.status(500).json({ error: err.message });
+    }
+});

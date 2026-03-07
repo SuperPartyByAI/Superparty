@@ -85,6 +85,15 @@ export function loadClusterPriority() {
     } catch { return null; }
 }
 
+// Citim Level 4 Gap Opportunities (Faza 14)
+export function loadClusterGaps() {
+    try {
+        const p = path.join(config.reportsDir, "seo_gap_opportunities.json");
+        if (!fs.existsSync(p)) return null;
+        return JSON.parse(fs.readFileSync(p, "utf-8"));
+    } catch { return null; }
+}
+
 export async function getOverview() {
     const experiments = loadExperiments();
     const recentAudits = loadRecentAudits();
@@ -137,6 +146,24 @@ export async function getOverview() {
         }
     }
 
+    const clusterGaps = loadClusterGaps();
+    let gapSummary = {
+        high: 0,
+        medium: 0,
+        low: 0,
+        total: 0,
+        generatedAt: ""
+    };
+    if (clusterGaps && clusterGaps.opportunities) {
+        gapSummary.generatedAt = clusterGaps.metadata?.gap_detected_at || "";
+        gapSummary.total = clusterGaps.opportunities.length;
+        for (const opp of clusterGaps.opportunities) {
+            if (opp.confidence === "high") gapSummary.high++;
+            else if (opp.confidence === "medium") gapSummary.medium++;
+            else gapSummary.low++;
+        }
+    }
+
     return {
         experiments,
         recentAudits,
@@ -148,6 +175,7 @@ export async function getOverview() {
         switches,
         clusterHealthSummary,
         prioritySummary,
+        gapSummary,
         generatedAt: new Date().toISOString(),
     };
 }
