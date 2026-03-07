@@ -31,6 +31,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -399,6 +400,120 @@ def save_apply_report(report: dict) -> None:
         json.dump(report, f, indent=2, ensure_ascii=False)
 
 
+# ─── Live approval reconciliation (PR #59) ───────────────────────────────────
+
+def _load_approval_log_live() -> list:
+    """Load the live approval log from disk. Returns [] if absent."""
+    data = _load_json(APPROVAL_LOG_PATH)
+    if data is None:
+        return []
+    if not isinstance(data, list):
+        raise ApplyError(f"approval_log is not a list: {APPROVAL_LOG_PATH}")
+    return data
+
+
+def reconcile_with_live_approval_log(action: dict, approval_record_snapshot: dict) -> dict:
+    """
+    PR #59: Re-verify the selected action against the live seo_level5_approval_log.json.
+    Do NOT trust the plan[] snapshot alone.
+
+    Checks (all must pass):
+      1. Exactly one matching live record by action_id
+      2. decision == 'approved'
+      3. decided_by is non-empty
+      4. action_type matches plan snapshot
+      5. url matches plan snapshot
+      6. proposal_snapshot.before matches plan.before
+      7. proposal_snapshot.proposal matches plan.proposal
+      8. No duplicate 'approved' live records for same action_id
+
+    Returns: the matching live approval record on success.
+    Raises: ApplyError with blocking_reason on any mismatch.
+    """
+    live_log = _load_approval_log_live()
+    action_id = action.get("action_id", "")
+
+    matching = [e for e in live_log if e.get("action_id") == action_id]
+
+    if not matching:
+        raise ApplyError(
+            f"live_approval_record_not_found: no entry in approval_log for action_id='{action_id}'. "
+            "blocking_reason=live_approval_record_not_found"
+        )
+
+    approved_matching = [e for e in matching if e.get("decision") == "approved"]
+
+    if len(approved_matching) == 0:
+        found_decisions = [e.get("decision") for e in matching]
+        raise ApplyError(
+            f"live_approval_decision_not_approved: action_id='{action_id}' found in log "
+            f"but decision={found_decisions}. blocking_reason=live_approval_decision_not_approved"
+        )
+
+    if len(approved_matching) > 1:
+        raise ApplyError(
+            f"live_approval_duplicate: {len(approved_matching)} approved entries found "
+            f"for action_id='{action_id}'. Ambiguous — refusing to apply. "
+            "blocking_reason=live_approval_duplicate"
+        )
+
+    live_record = approved_matching[0]
+
+    # Decided-by must be present
+    if not (live_record.get("decided_by") or "").strip():
+        raise ApplyError(
+            f"live_approval_decided_by_empty: action_id='{action_id}' approved but "
+            "decided_by is empty. blocking_reason=live_approval_decided_by_empty"
+        )
+
+    # decision_id must match the plan snapshot (if snapshot has it)
+    snapshot_decision_id = (approval_record_snapshot or {}).get("decision_id")
+    if snapshot_decision_id and live_record.get("decision_id") != snapshot_decision_id:
+        raise ApplyError(
+            f"live_approval_decision_id_mismatch: plan snapshot decision_id='{snapshot_decision_id}' "
+            f"does not match live record decision_id='{live_record.get('decision_id')}'. "
+            "blocking_reason=live_approval_decision_id_mismatch"
+        )
+
+    # action_type must match
+    if live_record.get("action_type") != action.get("action_type"):
+        raise ApplyError(
+            f"live_approval_action_type_mismatch: plan action_type='{action.get('action_type')}' "
+            f"!= live action_type='{live_record.get('action_type')}'. "
+            "blocking_reason=live_approval_action_type_mismatch"
+        )
+
+    # url must match
+    if live_record.get("url") != action.get("url"):
+        raise ApplyError(
+            f"live_approval_url_mismatch: plan url='{action.get('url')}' "
+            f"!= live url='{live_record.get('url')}'. "
+            "blocking_reason=live_approval_url_mismatch"
+        )
+
+    # proposal_snapshot.before must match plan.before
+    live_snap_before = (live_record.get("proposal_snapshot") or {}).get("before", {})
+    plan_before = action.get("before", {})
+    if live_snap_before != plan_before and live_snap_before:  # only if snapshot exists
+        raise ApplyError(
+            f"live_approval_before_mismatch: proposal_snapshot.before in live log "
+            f"does not match plan.before. "
+            "blocking_reason=live_approval_before_mismatch"
+        )
+
+    # proposal_snapshot.proposal must match plan.proposal
+    live_snap_proposal = (live_record.get("proposal_snapshot") or {}).get("proposal", {})
+    plan_proposal = action.get("proposal", {})
+    if live_snap_proposal != plan_proposal and live_snap_proposal:  # only if snapshot exists
+        raise ApplyError(
+            f"live_approval_proposal_mismatch: proposal_snapshot.proposal in live log "
+            f"does not match plan.proposal. "
+            "blocking_reason=live_approval_proposal_mismatch"
+        )
+
+    return live_record
+
+
 # ─── Main executor ───────────────────────────────────────────────────────────
 
 def run_single_apply(
@@ -417,10 +532,16 @@ def run_single_apply(
         plan = load_apply_plan()
         action = select_single_ready_action(plan)
 
-        url = action.get("url", "")
         action_id = action.get("action_id", "")
+        approval_record_snapshot = action.get("approval_record") or {}
+        plan_id = action.get("plan_id", "")
+        url = action.get("url", "")
         proposed_description = (action.get("proposal") or {}).get("meta_description", "")
         expected_before = (action.get("before") or {}).get("meta_description", "")
+
+        # PR #59: Live approval reconciliation — do NOT trust plan[] snapshot alone
+        live_record = reconcile_with_live_approval_log(action, approval_record_snapshot)
+        decision_id = live_record.get("decision_id", "")
 
         # Resolve target file
         target_path = resolve_target_file(action, pages_dir)
@@ -441,6 +562,12 @@ def run_single_apply(
         # Apply
         write_result = apply_meta_description_to_file(target_path, proposed_description)
 
+        # PR #59: Verify after-value in file (post-write read confirmation)
+        post_write_meta = extract_current_meta_description(target_path)
+        after_value_verified = (
+            post_write_meta.get("meta_description", "").strip() == proposed_description.strip()
+        )
+
         # Build rollback
         rollback = build_rollback_payload(
             target_path,
@@ -448,20 +575,47 @@ def run_single_apply(
             after_description=proposed_description,
         )
         rollback["action_id"] = action_id
+        rollback["plan_id"] = plan_id
+        rollback["decision_id"] = decision_id
         save_rollback_payload(rollback)
 
+        # PR #59: Validate rollback payload coherence
+        rollback_ready = bool(
+            rollback.get("before", {}).get("meta_description") is not None
+            and rollback.get("after", {}).get("meta_description")
+            and rollback.get("file_path")
+            and rollback.get("rollback_mode") == "single_file_revert"
+        )
+
+        try:
+            rollback_path_str = str(
+                ROLLBACK_PAYLOAD_PATH.relative_to(ROOT_DIR)
+            ).replace("\\", "/")
+        except ValueError:
+            rollback_path_str = str(ROLLBACK_PAYLOAD_PATH).replace("\\", "/")
+
         applied_actions.append({
+            # Lineage (PR #59)
+            "execution_id": str(uuid.uuid4()),
+            "plan_id": plan_id,
+            "decision_id": decision_id,
+            "policy_version": policy.get("schema_version", ""),
+            # Action identity
             "action_id": action_id,
             "action_type": ACTION_TYPE,
             "url": url,
             "file_path": str(target_path.relative_to(ROOT_DIR)).replace("\\", "/"),
+            # Before / after
             "before": {"meta_description": expected_before},
             "after": {"meta_description": proposed_description},
             "edit_strategy": write_result["strategy"],
-            "rollback_payload_path": str(
-                ROLLBACK_PAYLOAD_PATH.relative_to(ROOT_DIR)
-            ).replace("\\", "/"),
+            # Post-write verification
+            "after_value_verified": after_value_verified,
+            # Rollback
+            "rollback_payload_path": rollback_path_str,
+            "rollback_ready": rollback_ready,
         })
+
 
     except PolicyApplyError as e:
         log.error("Policy blocked apply: %s", e)

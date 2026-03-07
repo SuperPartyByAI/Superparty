@@ -160,11 +160,13 @@ def test_invalid_policy_empty_allowed_actions_produces_issue():
     assert any("allowed_actions" in i for i in issues)
 
 
-def test_invalid_policy_write_files_true_produces_issue():
+def test_invalid_policy_create_pull_request_true_produces_issue():
+    """PR #59: write_files=True is now valid in policy v1.2.
+    create_pull_request=True remains a hard invariant blocked in ALL phases."""
     policy = dict(_base_policy())
-    policy["action_activation"]["meta_description_update"]["write_files"] = True
+    policy["action_activation"]["meta_description_update"]["create_pull_request"] = True
     issues = validate_policy_for_apply_plan(policy)
-    assert any("write_files" in i for i in issues)
+    assert any("create_pull_request" in i for i in issues)
 
 
 # ─── Approved entries filter ──────────────────────────────────────────────────
