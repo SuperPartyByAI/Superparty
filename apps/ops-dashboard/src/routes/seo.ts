@@ -166,7 +166,7 @@ seoRouter.get("/", async (req: any, res) => {
   </div>
 </div>
 
-<!-- LEVEl 4 INTELLIGENCE SECTION -->
+<!-- Level 4 Intelligence -->
 <div class="status-bar" style="border-left: 4px solid #ef4444; background: #0f172a; border-radius: 4px;">
   <div style="display:flex; flex-direction:column; gap:6px; width: 100%;">
     <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -174,8 +174,27 @@ seoRouter.get("/", async (req: any, res) => {
         <span class="badge gray" style="font-size:10px;">READ-ONLY | Gen: ${(data.prioritySummary?.generatedAt || "").slice(0, 16).replace("T", " ")}</span>
     </div>
     <div style="margin-top:6px; display:flex; gap:12px;">
-        <a href="/seo/cluster-priority" style="background:#ef4444; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">🔥 Top Riscuri & Acțiuni ↗</a>
-        <a href="/seo/cluster-health" style="background:#4b5563; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">📊 Vezi Health Brut ↗</a>
+        <a href="/seo/cluster-priority" style="background:#ef4444; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">🔥 Top Riscuri &amp; Acțiuni ↗</a>
+        <a href="/seo/cluster-health" style="background:#4b5563; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">📊 Health Brut ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Level 4 Gap Detector -->
+<div class="status-bar" style="border-left: 4px solid #a855f7; background: #0f172a; border-radius: 4px; margin-top:8px;">
+  <div style="display:flex; flex-direction:column; gap:6px; width: 100%;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-weight:700; color:#a855f7; text-transform:uppercase; font-size:13px; letter-spacing:1px;">🔍 Level 4 — Gap Detector</span>
+        <span class="badge gray" style="font-size:10px;">READ-ONLY | Gen: ${(data.gapSummary?.generatedAt || "").slice(0, 16).replace("T", " ")}</span>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
+        <span class="badge ${data.gapSummary?.total > 0 ? 'purple' : 'gray'}">Total Gaps: ${data.gapSummary?.total || 0}</span>
+        <span class="badge ${data.gapSummary?.high > 0 ? 'red' : 'gray'}">High Conf: ${data.gapSummary?.high || 0}</span>
+        <span class="badge ${data.gapSummary?.medium > 0 ? 'yellow' : 'gray'}">Medium Conf: ${data.gapSummary?.medium || 0}</span>
+        <span class="badge gray">Low Conf: ${data.gapSummary?.low || 0}</span>
+    </div>
+    <div style="margin-top:6px;">
+        <a href="/seo/cluster-gaps" style="background:#a855f7; color:#fff; padding:4px 12px; border-radius:4px; font-size:12px; font-weight:600; text-decoration:none;">🔍 Vezi Oportunități de Gap ↗</a>
     </div>
   </div>
 </div>
@@ -507,3 +526,133 @@ seoRouter.get("/cluster-priority", async (req: any, res) => {
 </html>`);
 });
 
+seoRouter.get("/cluster-gaps", async (req: any, res) => {
+  let gapData: any = {};
+  try {
+    const { loadClusterGaps } = await import("../services/overview");
+    const raw = loadClusterGaps();
+    if (raw) gapData = raw;
+  } catch (e: any) { gapData = { error: e.message }; }
+
+  const filterTier = (req.query.tier as string) || "all";
+  const filterType = (req.query.type as string) || "all";
+  const filterConf = (req.query.confidence as string) || "all";
+
+  const confidenceOrder: any = { high: 0, medium: 1, low: 2 };
+  const tierOrder: any = { A: 0, B: 1, C: 2 };
+
+  let opportunities: any[] = (gapData.opportunities || []).sort((a: any, b: any) =>
+    (confidenceOrder[a.confidence] ?? 9) - (confidenceOrder[b.confidence] ?? 9) ||
+    (tierOrder[a.tier] ?? 9) - (tierOrder[b.tier] ?? 9)
+  );
+
+  let rowsHtml = "";
+  for (const opp of opportunities) {
+    if (filterTier !== "all" && opp.tier !== filterTier) continue;
+    if (filterType !== "all" && opp.opportunity_type !== filterType) continue;
+    if (filterConf !== "all" && opp.confidence !== filterConf) continue;
+
+    const confColors: any = { high: "red", medium: "yellow", low: "gray" };
+    const typeColors: any = {
+      optimize_owner: "red", add_support: "blue",
+      review_registry_mapping: "yellow", reject_risky_expansion: "purple", defer: "green"
+    };
+
+    const signalsHtml = opp.gap_signals.map((s: string) =>
+      `<span class="badge gray" style="font-size:9px;">${s}</span>`
+    ).join(" ");
+
+    const ctx = opp.context || {};
+    rowsHtml += `
+      <tr>
+        <td style="font-weight:600; color:#e2e8f0;">
+          ${opp.cluster_id}
+          <div style="margin-top:4px;"><span class="badge ${confColors[opp.confidence] || 'gray'}">${opp.confidence.toUpperCase()}</span>
+          <span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:4px;font-size:10px;margin-left:2px;">Tier ${opp.tier}</span></div>
+        </td>
+        <td><span class="badge ${typeColors[opp.opportunity_type] || 'gray'}">${opp.opportunity_type}</span></td>
+        <td style="font-size:10px;">${signalsHtml}</td>
+        <td style="font-size:11px;">
+          <span class="badge ${ctx.owner_present ? 'green' : 'red'}">${ctx.owner_present ? 'DA' : 'NU'}</span><br/>
+          <span style="color:#64748b;">${ctx.total_impressions} impr</span><br/>
+          <span style="color:#64748b;">Unknown ratio: ${ctx.unknown_ratio ?? '—'}</span>
+        </td>
+        <td style="font-size:11px; color:#94a3b8; max-width:280px;">${opp.suggested_action}</td>
+      </tr>`;
+  }
+
+  if (!rowsHtml) rowsHtml = `<tr><td colspan="5" style="padding:20px; color:#64748b; text-align:center;">Nicio oportunitate detectat\u0103 pentru filtrele selectate.</td></tr>`;
+
+  const uniqueTypes = Array.from(new Set((gapData.opportunities || []).map((o: any) => o.opportunity_type).filter(Boolean)));
+  const typeLinks = uniqueTypes.map((t: any) =>
+    `<a href="?type=${t}" class="badge ${filterType === t ? 'blue' : 'gray'}">${t}</a>`
+  ).join(" ");
+
+  res.send(`<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level 4 Gap Detector \u2014 Coverage Opportunities</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f172a; color: #e2e8f0; font-family: system-ui, -apple-system, sans-serif; padding: 20px; }
+  h1 { font-size: 22px; font-weight: 700; color: #a855f7; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  th { color: #64748b; text-align: left; padding: 6px 8px; border-bottom: 1px solid #1e293b; font-size: 11px; text-transform: uppercase; }
+  td { padding: 10px 8px; border-bottom: 1px solid #1e293b; vertical-align: top; }
+  tr:hover td { background: #1e293b; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; color: #fff; margin: 1px; }
+  .badge.green { background: #22c55e; }
+  .badge.red { background: #ef4444; }
+  .badge.yellow { background: #f59e0b; color: #000; }
+  .badge.blue { background: #3b82f6; }
+  .badge.purple { background: #a855f7; }
+  .badge.gray { background: #4b5563; }
+  .filters { background: #1e293b; padding: 12px; border-radius: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom:10px; }
+  a { color: #3b82f6; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+  <h1>\ud83d\udd0d Level 4 \u2014 Gap Detector <span class="badge purple">INTELLIGENCE MODE</span></h1>
+  <a href="/seo" style="font-size:13px; padding:6px 16px; background:#4b5563; color:#fff; border-radius:6px;">\u2190 \u00cenapoi Dashboard</a>
+</div>
+<div style="color:#64748b; font-size:12px; margin-bottom:16px;">Clustere cu acoperire insuficient\u0103, owner lips\u0103/slab sau conflict de URL-uri inclasificate. Sortate: High Conf \u2192 Tier A \u2192 ...</div>
+
+<div class="filters">
+  <div style="font-weight:600; color:#94a3b8; margin-right:8px;">TIER:</div>
+  <a href="?" class="badge ${filterTier === 'all' && filterType === 'all' && filterConf === 'all' ? 'blue' : 'gray'}">Toate</a>
+  <a href="?tier=A" class="badge ${filterTier === 'A' ? 'red' : 'gray'}">Tier A</a>
+  <a href="?tier=B" class="badge ${filterTier === 'B' ? 'blue' : 'gray'}">Tier B</a>
+  <a href="?tier=C" class="badge ${filterTier === 'C' ? 'green' : 'gray'}">Tier C</a>
+</div>
+
+<div class="filters">
+  <div style="font-weight:600; color:#94a3b8; margin-right:8px;">CONFIDENCE:</div>
+  <a href="?confidence=high" class="badge ${filterConf === 'high' ? 'red' : 'gray'}">High</a>
+  <a href="?confidence=medium" class="badge ${filterConf === 'medium' ? 'yellow' : 'gray'}">Medium</a>
+  <a href="?confidence=low" class="badge ${filterConf === 'low' ? 'gray' : 'gray'}">Low</a>
+</div>
+
+<div class="filters">
+  <div style="font-weight:600; color:#94a3b8; margin-right:8px;">TIP OPORTUNITATE:</div>
+  ${typeLinks}
+</div>
+
+<table>
+  <tr>
+    <th>Cluster (ID & Tier)</th>
+    <th>Tip Oportunitate</th>
+    <th>Semnale Detectate</th>
+    <th>Context</th>
+    <th>Ac\u021biune Sugerat\u0103</th>
+  </tr>
+  ${rowsHtml}
+</table>
+
+</body>
+</html>`);
+});
