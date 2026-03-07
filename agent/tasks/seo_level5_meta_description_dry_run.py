@@ -400,6 +400,7 @@ def build_action_record(candidate: Candidate, policy: dict) -> dict:
         "status": "proposed_only",
         "tier": candidate.tier,
         "is_money_page": candidate.is_money_page,
+        "is_pillar_page": candidate.is_pillar_page,
         "url": candidate.url,
         "eligibility": {
             "tier_allowed": candidate.tier == "C",
