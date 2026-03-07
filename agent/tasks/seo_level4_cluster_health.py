@@ -122,11 +122,48 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
         "clusters": health_data
     }
 
-def save_cluster_health_report(health_data: Dict) -> None:
+def save_cluster_health_report(health_data: Dict, out_path: Path = None) -> None:
     """Salvează raportul generat JSON in disk pentru ops.superparty.ro/dashboard."""
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    target_file = out_path if out_path else REPORT_FILE
+    target_file.parent.mkdir(parents=True, exist_ok=True)
     try:
-        REPORT_FILE.write_text(json.dumps(health_data, indent=4), encoding="utf-8")
-        log.info(f"Level 4 Advisory Report saved proactively to {REPORT_FILE}")
+        target_file.write_text(json.dumps(health_data, indent=4), encoding="utf-8")
+        log.info(f"Level 4 Advisory Report saved proactively to {target_file}")
     except Exception as e:
         log.error(f"Failed to save cluster health report: {e}")
+
+def run_cluster_health(out_path: Path = None) -> bool:
+    """
+    Entrypoint de orchestrare pentru Worker-ul Asincron L6.
+    Generează un raport nou pe baza ultimului raw collect GSC.
+    """
+    gsc_dir = REPORT_DIR / "gsc"
+    if not gsc_dir.exists():
+        log.error(f"No GSC raw directory found at {gsc_dir}.")
+        return False
+        
+    gsc_files = list(gsc_dir.glob("collect_*.json"))
+    if not gsc_files:
+        log.error("No GSC collect files found.")
+        return False
+        
+    latest_file = sorted(gsc_files)[-1]
+    log.info(f"Generating health report from fresh raw inputs: {latest_file.name}")
+    
+    try:
+        data = json.loads(latest_file.read_text(encoding="utf-8"))
+        gsc_rows = data.get("rows", []) if isinstance(data, dict) else data
+        
+        report = generate_cluster_health(gsc_rows)
+        report["metadata"]["source_gsc_file"] = latest_file.name
+        
+        save_cluster_health_report(report, out_path=out_path)
+        return True
+    except Exception as e:
+        log.error(f"Error parsing GSC file {latest_file} or generating report: {e}")
+        return False
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    success = run_cluster_health()
+    print(f"Health Generation Run: {success}")

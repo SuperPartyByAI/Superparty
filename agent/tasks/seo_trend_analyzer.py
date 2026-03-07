@@ -203,7 +203,7 @@ def compute_deltas(current_states: dict, previous_states: dict) -> list:
 
 # ─── Runner ────────────────────────────────────────────────────────────────────
 
-def run_trend_analysis(current_date: str = None) -> bool:
+def run_trend_analysis(current_date: str = None, out_path: Path = None) -> bool:
     """
     Main entry point. Loads current + previous snapshots, computes deltas,
     writes seo_trend_delta.json. Returns True on success.
@@ -246,11 +246,12 @@ def run_trend_analysis(current_date: str = None) -> bool:
         "clusters": deltas,
     }
 
-    DELTA_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(DELTA_FILE, "w", encoding="utf-8") as f:
+    target_file = out_path if out_path else DELTA_FILE
+    target_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(target_file, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    log.info(f"Trend delta written → {DELTA_FILE}")
+    log.info(f"Trend delta written → {target_file}")
     print(f"Trend analysis complete: {len(deltas)} clusters, baseline_only={baseline_only}")
     return True
 
