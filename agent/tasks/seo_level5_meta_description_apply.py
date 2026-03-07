@@ -263,7 +263,12 @@ def extract_current_meta_description(path: Path) -> dict:
         if m:
             return {"meta_description": m.group(3).strip(), "source": "frontmatter_prop"}
 
-    # 2. Meta tag
+    # 2. PR #61: Layout prop
+    m = _RE_LAYOUT_PROP_DESC.search(content)
+    if m:
+        return {"meta_description": m.group(3).strip(), "source": "layout_prop"}
+
+    # 3. Meta tag
     m = _RE_META_TAG_DESC.search(content)
     if m:
         return {"meta_description": m.group(2).strip(), "source": "meta_tag"}
