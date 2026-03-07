@@ -24,19 +24,22 @@ REQUIRED_REPORTS = {
         "max_age_hours": 48,
         "required_keys": ["metadata", "clusters"],
         "schema_version": "1.0",
+        "timestamp_key": "generated_at",
     },
     "priority": {
         "filename": "seo_cluster_priority.json",
         "max_age_hours": 48,
-        "required_keys": ["metadata", "priorities"],
-        "schema_version": "1.0",
+        "required_keys": ["metadata", "clusters"],
+        "schema_version": "2.0",
+        "timestamp_key": "priority_generated_at",
         "optional": True, # For now, until L6.2 creates it officially
     },
     "trends": {
         "filename": "seo_trend_delta.json",
         "max_age_hours": 72,
-        "required_keys": ["metadata", "trends"],
-        "schema_version": "1.0",
+        "required_keys": ["metadata", "clusters"],
+        "schema_version": "1.1",
+        "timestamp_key": "generated_at",
         "optional": True, # L6.2
     }
 }
@@ -91,9 +94,14 @@ def validate_report(report_id: str, config: Dict[str, Any], now: Optional[dateti
         )
 
     # Freshness check
-    gen_at_str = meta.get("generated_at")
+    t_key = config.get("timestamp_key", "generated_at")
+    gen_at_str = meta.get(t_key)
     if not gen_at_str:
-        raise ReportReadinessError(f"Missing metadata.generated_at in {config['filename']}")
+        # Some reports like priority might retain generated_at as fallback
+        if t_key != "generated_at" and meta.get("generated_at"):
+             gen_at_str = meta.get("generated_at")
+        else:
+             raise ReportReadinessError(f"Missing metadata.{t_key} in {config['filename']}")
         
     generated_at = _parse_iso_date(gen_at_str)
     age = now - generated_at

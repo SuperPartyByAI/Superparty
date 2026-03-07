@@ -92,3 +92,57 @@ def test_validate_report_success(mock_reports_dir):
     res = validate_report("health", config)
     assert res["status"] == "ready"
     assert "age_hours" in res
+
+def test_priority_timestamp_fallback(mock_reports_dir):
+    config = REQUIRED_REPORTS["priority"]
+    f = mock_reports_dir / config["filename"]
+    
+    valid_date = (datetime.now(timezone.utc) - timedelta(hours=2)).isoformat()
+    
+    data = {
+        "metadata": {
+            "schema_version": "2.0",
+            "generated_at": valid_date # Priority allows fallback to generated_at
+        },
+        "clusters": {}
+    }
+    f.write_text(json.dumps(data))
+    
+    res = validate_report("priority", config)
+    assert res["status"] == "ready"
+
+def test_priority_timestamp_direct(mock_reports_dir):
+    config = REQUIRED_REPORTS["priority"]
+    f = mock_reports_dir / config["filename"]
+    
+    valid_date = (datetime.now(timezone.utc) - timedelta(hours=2)).isoformat()
+    
+    data = {
+        "metadata": {
+            "schema_version": "2.0",
+            "priority_generated_at": valid_date 
+        },
+        "clusters": {}
+    }
+    f.write_text(json.dumps(data))
+    
+    res = validate_report("priority", config)
+    assert res["status"] == "ready"
+
+def test_trends_schema_success(mock_reports_dir):
+    config = REQUIRED_REPORTS["trends"]
+    f = mock_reports_dir / config["filename"]
+    
+    valid_date = (datetime.now(timezone.utc) - timedelta(hours=2)).isoformat()
+    
+    data = {
+        "metadata": {
+            "schema_version": "1.1",
+            "generated_at": valid_date 
+        },
+        "clusters": {}
+    }
+    f.write_text(json.dumps(data))
+    
+    res = validate_report("trends", config)
+    assert res["status"] == "ready"
