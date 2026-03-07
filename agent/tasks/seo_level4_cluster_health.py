@@ -122,11 +122,28 @@ def generate_cluster_health(gsc_rows: List[Dict]) -> Dict:
         "clusters": health_data
     }
 
-def save_cluster_health_report(health_data: Dict) -> None:
+def save_cluster_health_report(health_data: Dict, out_path: Path = None) -> None:
     """Salvează raportul generat JSON in disk pentru ops.superparty.ro/dashboard."""
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    target_file = out_path if out_path else REPORT_FILE
+    target_file.parent.mkdir(parents=True, exist_ok=True)
     try:
-        REPORT_FILE.write_text(json.dumps(health_data, indent=4), encoding="utf-8")
-        log.info(f"Level 4 Advisory Report saved proactively to {REPORT_FILE}")
+        target_file.write_text(json.dumps(health_data, indent=4), encoding="utf-8")
+        log.info(f"Level 4 Advisory Report saved proactively to {target_file}")
     except Exception as e:
         log.error(f"Failed to save cluster health report: {e}")
+
+def run_cluster_health(out_path: Path = None) -> bool:
+    """Entrypoint de orchestrare pentru Worker-ul Asincron L6."""
+    if REPORT_FILE.exists():
+        with open(REPORT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            data["metadata"]["generated_at"] = datetime.now(timezone.utc).isoformat()
+            save_cluster_health_report(data, out_path=out_path)
+            return True
+    log.error("No base cluster_health report found to update.")
+    return False
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    success = run_cluster_health()
+    print(f"Health Generation Run: {success}")
