@@ -51,7 +51,7 @@ Orice status non-`success` din worker semnalizează o decuplare a sistemului L6 
 **Motiv**:
 - Raportul vechi `snapshots` nu reușește să fie arhivat corect.
 - Contract version match fail pe "1.1".
-**Acțiune**: Rulează trend_analyzer manual și verifică console log-ul cu `pytest tests/test_seo_level4_trend_analyzer.py`.
+**Acțiune**: Rulează trend_analyzer manual și verifică console log-ul cu `pytest tests/test_seo_trend_analyzer.py`.
 
 ### Scenariul 4: `ledger_status: failed`
 **Efect**: Rapoartele de sistem s-au generat cu succes și sunt online. Nu e problemă SEO, **este o problemă de Audit Trail**. 
@@ -70,5 +70,5 @@ Primul trigger direct va proba pipeline-ului la roșu în terminalul VPS:
 - [ ] 2. Verifică generarea pe orologia curentă a `reports/superparty/seo_cluster_health.json`. Asigură-te că pe `metadata` ai regimul izolat `source_gsc_file`.
 - [ ] 3. Cheamă Gate-ul L6.1: `python agent/tasks/seo_level6_report_readiness.py` din orice alt job (mock dry-run) pentru a proba că citește `generated_at` din schema nouă și ridică un steag Verde.
 - [ ] 4. Verifică din consolă Ledgere-ul folosind parametrul `--summary` pentru a confirma validitatea înregistrării rotative.
-- [ ] 5. Confirmă funcționarea corectă a `.bak`-ului în cazul corupției (opțional - strică un `seo_reports_ledger.json` intenționat și vezi preluarea imediată a unei file nolă).
+- [ ] 5. Confirmă funcționarea corectă a `.bak`-ului în cazul corupției (opțional - strică un `seo_reports_ledger.json` intenționat și vezi preluarea imediată a unui fișier nou).
 - [ ] 6. Aliniază cron-ul (`crontab -e`) ca ora să pice pe 03:00 UTC conform runbook-ului anex L6.2.
