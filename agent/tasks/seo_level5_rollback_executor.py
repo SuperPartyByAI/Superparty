@@ -366,9 +366,15 @@ def run_execute(pages_dir: Path = PAGES_DIR, operator: str = "ops-manual-rollbac
 
     lineage_issues = validate_lineage_coherence(payload)
     if lineage_issues:
-        print("Lineage issues (non-blocking, continuing with caution):")
+        print(
+            "BLOCKED: lineage coherence check failed. "
+            "Automated rollback requires a fully auditable lineage. "
+            "Use manual rollback (Scenario B/C in runbook) and document in "
+            "seo_level5_rollback_execution.json."
+        )
         for i in lineage_issues:
-            print(f"  WARN: {i}")
+            print(f"  LINEAGE ISSUE: {i}")
+        return False
 
     try:
         target_path = resolve_target_file(payload)

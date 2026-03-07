@@ -346,3 +346,58 @@ def test_verify_only_false_when_file_does_not_contain_before_value(sandbox):
     )
     _write_json(sandbox["rollback_payload_path"], payload)
     assert run_verify_only(pages_dir=sandbox["pages_dir"]) is False
+
+
+# ─── 7. Lineage blocking tests (PR #60 hardening) ────────────────────────────
+
+def test_execute_blocked_when_decision_id_missing_from_approval_log(sandbox):
+    """run_execute must block when decision_id is not found in live approval_log."""
+    page = sandbox["pages_dir"] / "blog" / "lineage-block.astro"
+    _write(page, '---\ndescription = "Descriere noua."\n---\n')
+    payload = _base_payload(
+        file_path="src/pages/blog/lineage-block.astro",
+        action_id="id-lb-001",
+        decision_id="dec-MISSING",
+        after_desc="Descriere noua.",
+    )
+    _write_json(sandbox["rollback_payload_path"], payload)
+    _write_json(sandbox["execution_report_path"], _base_execution_report(
+        action_id="id-lb-001", decision_id="dec-MISSING"
+    ))
+    # approval_log contains a DIFFERENT decision_id
+    _write_json(sandbox["approval_log_path"], _base_approval_log(
+        decision_id="dec-OTHER", action_id="id-lb-001"
+    ))
+
+    result = run_execute(pages_dir=sandbox["pages_dir"])
+    assert result is False
+    # File must be untouched
+    assert "Descriere noua." in page.read_text(encoding="utf-8")
+
+
+def test_execute_blocked_when_plan_id_mismatches_execution_report(sandbox):
+    """run_execute must block when plan_id in payload != plan_id in execution_report."""
+    page = sandbox["pages_dir"] / "blog" / "planid-mismatch.astro"
+    _write(page, '---\ndescription = "Descriere noua mismatch."\n---\n')
+    payload = _base_payload(
+        file_path="src/pages/blog/planid-mismatch.astro",
+        action_id="id-pm-001",
+        plan_id="plan-PAYLOAD",
+        decision_id="dec-pm-001",
+        after_desc="Descriere noua mismatch.",
+    )
+    _write_json(sandbox["rollback_payload_path"], payload)
+    # execution_report has a DIFFERENT plan_id
+    _write_json(sandbox["execution_report_path"], _base_execution_report(
+        action_id="id-pm-001",
+        plan_id="plan-DIFFERENT",
+        decision_id="dec-pm-001",
+    ))
+    _write_json(sandbox["approval_log_path"], _base_approval_log(
+        decision_id="dec-pm-001", action_id="id-pm-001"
+    ))
+
+    result = run_execute(pages_dir=sandbox["pages_dir"])
+    assert result is False
+    # File must be untouched
+    assert "Descriere noua mismatch." in page.read_text(encoding="utf-8")
