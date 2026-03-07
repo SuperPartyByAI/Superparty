@@ -47,8 +47,8 @@ class TestNormalizeClusterState:
         assert states["cluster_a"]["forbidden_count"] == 2
         assert states["cluster_a"]["owner_share"] == 0.625
 
-    def test_owner_share_none_defaults_to_zero(self):
-        """Pre-PR50 health report senza owner_share — trebuie tratat ca 0.0."""
+    def test_owner_share_none_stays_none_not_zero(self):
+        """Pre-PR50 health report fara owner_share trebuie sa ramana None, nu 0.0."""
         health = _make_health({
             "cluster_b": {"forbidden_count": 1}  # fara owner_share
         })
@@ -56,7 +56,8 @@ class TestNormalizeClusterState:
             "cluster_b": {"intelligence": {"priority_band": "B"}}
         })
         states = normalize_cluster_state(health, priority)
-        assert states["cluster_b"]["owner_share"] == 0.0
+        assert states["cluster_b"]["owner_share"] is None, \
+            "owner_share absent in health report trebuie sa fie None, nu 0.0 (evita false semnale)"
 
     def test_handles_cluster_in_priority_but_not_health(self):
         """Cluster prezent în priority dar absent din health — fara crash."""
@@ -80,6 +81,21 @@ class TestComputeDeltas:
         assert deltas[0]["status"] == "stable"
         assert deltas[0]["delta_forbidden"] == 0
         assert deltas[0]["delta_owner_share"] == 0.0
+        # delta_priority_band trebui sa fie uniform X->Y inclusiv cand banda nu se schimba
+        assert deltas[0]["delta_priority_band"] == "B->B"
+
+    def test_pre_pr50_snapshot_owner_share_none_no_false_signal(self):
+        """
+        Snapshot anterior (pre-PR50) fara owner_share (None) comparat cu snapshot curent cu valoare reala.
+        delta_owner_share trebuie sa fie None.
+        Status trebuie derivat exclusiv din delta_forbidden, nu din owner_share necunoscut.
+        """
+        curr = {"cluster_x": {"priority_band": "A", "forbidden_count": 1, "owner_share": 0.7}}
+        prev = {"cluster_x": {"priority_band": "A", "forbidden_count": 1, "owner_share": None}}
+        deltas = compute_deltas(curr, prev)
+        d = deltas[0]
+        assert d["delta_owner_share"] is None, "None in prev => delta_owner_share trebuie None"
+        assert d["status"] == "stable", "Fara change in forbidden si delta_owner_share None => stable"
 
     def test_improved_cluster(self):
         curr = {"cluster_x": {"priority_band": "A", "forbidden_count": 1, "owner_share": 0.7}}

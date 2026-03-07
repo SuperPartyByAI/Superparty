@@ -88,15 +88,16 @@ def normalize_cluster_state(health_data: dict, priority_data: dict) -> dict:
         p = priority_clusters.get(cid, {})
         intel = p.get("intelligence", {})
 
-        owner_share_raw = h.get("owner_share", None)
-        if owner_share_raw is None:
-            # Fallback: if health report pre-dates PR #50 and has no owner_share
-            owner_share_raw = 0.0
+        # owner_share: keep None if absent from health report (pre-PR50 snapshots).
+        # Do NOT fall back to 0.0 — 0.0 means "real zero share", not "unknown".
+        # delta_owner_share will be None if either side is None, preventing false signals.
+        raw_owner_share = h.get("owner_share", None)
+        owner_share = round(float(raw_owner_share), 4) if raw_owner_share is not None else None
 
         states[cid] = {
             "priority_band": intel.get("priority_band", p.get("priority_band", "")),
             "forbidden_count": h.get("forbidden_count", 0),
-            "owner_share": round(float(owner_share_raw), 4),
+            "owner_share": owner_share,
         }
 
     return states
@@ -104,15 +105,32 @@ def normalize_cluster_state(health_data: dict, priority_data: dict) -> dict:
 
 # ─── Delta Engine ───────────────────────────────────────────────────────────────
 
-def _compute_status(delta_owner_share: float, delta_forbidden: int) -> str:
-    """Simple status: improved / regressed / stable."""
-    improved_signals = (delta_owner_share > 0, delta_forbidden < 0)
-    regressed_signals = (delta_owner_share < 0, delta_forbidden > 0)
-    if any(improved_signals) and not any(regressed_signals):
+def _compute_status(delta_owner_share, delta_forbidden: int) -> str:
+    """
+    Status: improved / regressed / stable / mixed.
+    delta_owner_share may be None (pre-PR50 snapshot without owner_share).
+    None = unknown data — excluded from signals to avoid false improved/regressed.
+    Only criteria with valid (non-None) values are evaluated.
+    """
+    improved_signals = []
+    regressed_signals = []
+
+    if delta_owner_share is not None:
+        if delta_owner_share > 0:
+            improved_signals.append(True)
+        elif delta_owner_share < 0:
+            regressed_signals.append(True)
+
+    if delta_forbidden < 0:
+        improved_signals.append(True)
+    elif delta_forbidden > 0:
+        regressed_signals.append(True)
+
+    if improved_signals and not regressed_signals:
         return "improved"
-    if any(regressed_signals) and not any(improved_signals):
+    if regressed_signals and not improved_signals:
         return "regressed"
-    if any(improved_signals) and any(regressed_signals):
+    if improved_signals and regressed_signals:
         return "mixed"
     return "stable"
 
@@ -157,13 +175,18 @@ def compute_deltas(current_states: dict, previous_states: dict) -> list:
 
         # Both present — compute real deltas
         d_forbidden = curr["forbidden_count"] - prev["forbidden_count"]
-        d_owner_share = round(curr["owner_share"] - prev["owner_share"], 4)
 
-        band_transition = (
-            f"{prev['priority_band']}->{curr['priority_band']}"
-            if prev["priority_band"] != curr["priority_band"]
-            else curr["priority_band"]
-        )
+        # delta_owner_share is None if either side is None (schema mismatch pre-PR50).
+        # This prevents false improved/regressed from a schema change, not from SEO reality.
+        curr_share = curr["owner_share"]
+        prev_share = prev["owner_share"]
+        if curr_share is not None and prev_share is not None:
+            d_owner_share = round(curr_share - prev_share, 4)
+        else:
+            d_owner_share = None
+
+        # delta_priority_band: always X->Y format for uniform contract (even if stable: A->A)
+        band_transition = f"{prev['priority_band']}->{curr['priority_band']}"
 
         deltas.append({
             "cluster_id": cid,
