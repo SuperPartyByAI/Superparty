@@ -67,13 +67,15 @@ def _base_policy() -> dict:
 
 
 def _make_action(action_id: str, url: str = "/blog/test", tier: str = "C",
-                 is_money: bool = False, proposal_text: str = "Descriere propusa.") -> dict:
+                 is_money: bool = False, is_pillar: bool = False,
+                 proposal_text: str = "Descriere propusa.") -> dict:
     return {
         "action_id": action_id,
         "action_type": "meta_description_update",
         "status": "proposed_only",
         "tier": tier,
         "is_money_page": is_money,
+        "is_pillar_page": is_pillar,
         "url": url,
         "before": {"meta_description": "Descriere veche."},
         "proposal": {"meta_description": proposal_text},
@@ -316,3 +318,58 @@ def test_invalid_policy_reflected_in_preflight_summary(sandbox):
     plan = generate_apply_plan()
     assert plan["preflight_summary"]["policy_valid"] is False
     assert len(plan["preflight_summary"]["blocking_issues"]) > 0
+
+
+# ─── Pillar page block ────────────────────────────────────────────────────────
+
+def test_blocks_pillar_page_action(sandbox):
+    """not_pillar_page must block even if tier=C and non-money."""
+    action = _make_action("id-pillar", url="/petreceri/ilfov", tier="C",
+                          is_money=False, is_pillar=True)
+    _write_json(sandbox["dry_run_path"], _make_dry_run_report([action]))
+    _write_json(sandbox["approval_log_path"],
+                [_make_approval_entry("id-pillar", url="/petreceri/ilfov")])
+
+
+    plan = generate_apply_plan()
+    assert plan["metadata"]["total_eligible"] == 0
+    assert plan["metadata"]["total_blocked"] == 1
+    assert plan["blocked"][0]["ready_to_apply"] is False
+    assert plan["blocked"][0]["blocking_reason"] == "not_pillar_page"
+
+
+# ─── Policy hard stop ─────────────────────────────────────────────────────────
+
+def test_invalid_policy_blocks_all_plan_entries_via_hard_stop(sandbox):
+    """
+    If policy_valid=False, generate_apply_plan must produce plan[]=[] and move
+    ALL approved entries to blocked[] with blocking_reason='policy_invalid'.
+    A consumer must not be able to read any ready_to_apply=True entry.
+    """
+    bad_policy = dict(_base_policy())
+    bad_policy["tier_restrictions"]["A"] = "enabled"  # makes policy invalid
+    _write_json(sandbox["policy_path"], bad_policy)
+
+    # Two eligble Tier C actions that WOULD pass per-action checks
+    a1 = _make_action("id-p1", url="/blog/p1", tier="C")
+    a2 = _make_action("id-p2", url="/blog/p2", tier="C")
+    _write_json(sandbox["dry_run_path"], _make_dry_run_report([a1, a2]))
+    _write_json(sandbox["approval_log_path"], [
+        _make_approval_entry("id-p1", url="/blog/p1"),
+        _make_approval_entry("id-p2", url="/blog/p2"),
+    ])
+
+    plan = generate_apply_plan()
+
+    # Hard stop: no entry in plan[]
+    assert plan["plan"] == [], "plan[] deve essere vuoto se policy_valid=False"
+    # All entries moved to blocked[]
+    assert len(plan["blocked"]) == 2
+    for entry in plan["blocked"]:
+        assert entry["ready_to_apply"] is False
+        assert entry["blocking_reason"] == "policy_invalid"
+    # Metadata reflects correctly
+    assert plan["metadata"]["total_eligible"] == 0
+    assert plan["metadata"]["total_blocked"] == 2
+    assert plan["metadata"]["applied"] == 0
+    assert plan["preflight_summary"]["policy_valid"] is False

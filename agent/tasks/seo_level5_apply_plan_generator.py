@@ -183,6 +183,7 @@ def _preflight_checks(action: dict, approval_entry: dict, policy: dict) -> dict[
 
     tier = action.get("tier", "")
     is_money = action.get("is_money_page", True)  # default True = safer
+    is_pillar = action.get("is_pillar_page", True)  # default True = safer
 
     return {
         # Decision integrity
@@ -194,8 +195,9 @@ def _preflight_checks(action: dict, approval_entry: dict, policy: dict) -> dict[
         "tier_not_in_denylist": tier not in tier_denylist,
         "tier_in_allowlist": tier in tier_allowlist if tier_allowlist else True,
         "tier_a_not_permitted": tier != "A",
-        # Money / pillar guard
+        # Money / pillar guard (redundant defensive layer — do not rely on upstream)
         "not_money_page": not is_money,
+        "not_pillar_page": not is_pillar,
         # Action-level write guards
         "write_files_false": activation.get("write_files") is False,
         "create_pr_false": activation.get("create_pull_request") is False,
@@ -276,49 +278,75 @@ def generate_apply_plan() -> dict:
     plan_entries: list[dict] = []
     blocked_entries: list[dict] = []
 
-    for approval_entry in approved_entries:
-        action_id = approval_entry.get("action_id", "")
-        action = get_action_from_report(dry_run_report, action_id)
-
-        if action is None:
-            # Action approved but no longer in dry-run report — block it
-            blocked_entries.append({
-                "plan_id": str(uuid.uuid4()),
-                "action_id": action_id,
-                "action_type": approval_entry.get("action_type", ""),
-                "url": approval_entry.get("url", ""),
-                "tier": None,
-                "is_money_page": None,
-                "preflight": {},
-                "ready_to_apply": False,
-                "before": {},
-                "proposal": {},
-                "approval_record": {
-                    "decision_id": approval_entry.get("decision_id"),
-                    "decision": approval_entry.get("decision"),
-                    "decided_by": approval_entry.get("decided_by"),
-                    "decided_at": approval_entry.get("decided_at"),
-                    "notes": approval_entry.get("notes"),
-                },
-                "blocking_reason": "action_id_not_found_in_dry_run_report",
-            })
-            continue
-
-        checks = _preflight_checks(action, approval_entry, policy)
-        all_passed = _checks_all_passed(checks)
-
-        if all_passed:
-            plan_entries.append(
-                _build_plan_entry(action, approval_entry, checks, ready=True)
-            )
-        else:
-            reason = _first_failed_check(checks) or "unknown"
+    # HARD STOP: if policy is invalid, block ALL approved entries immediately.
+    # A consumer must not be able to read plan[] as ready-to-apply when the
+    # policy gate has already failed. This prevents partial-pass states.
+    if not policy_valid:
+        for approval_entry in approved_entries:
+            action_id = approval_entry.get("action_id", "")
+            action = get_action_from_report(dry_run_report, action_id) or {}
             blocked_entries.append(
                 _build_plan_entry(
-                    action, approval_entry, checks, ready=False,
-                    blocking_reason=reason
+                    {
+                        "action_id": action_id,
+                        "action_type": approval_entry.get("action_type", ""),
+                        "url": approval_entry.get("url", ""),
+                        "tier": action.get("tier"),
+                        "is_money_page": action.get("is_money_page"),
+                        "is_pillar_page": action.get("is_pillar_page"),
+                        "before": action.get("before", {}),
+                        "proposal": action.get("proposal", {}),
+                    },
+                    approval_entry,
+                    checks={},
+                    ready=False,
+                    blocking_reason="policy_invalid",
                 )
             )
+    else:
+        for approval_entry in approved_entries:
+            action_id = approval_entry.get("action_id", "")
+            action = get_action_from_report(dry_run_report, action_id)
+
+            if action is None:
+                # Action approved but no longer in dry-run report — block it
+                blocked_entries.append({
+                    "plan_id": str(uuid.uuid4()),
+                    "action_id": action_id,
+                    "action_type": approval_entry.get("action_type", ""),
+                    "url": approval_entry.get("url", ""),
+                    "tier": None,
+                    "is_money_page": None,
+                    "preflight": {},
+                    "ready_to_apply": False,
+                    "before": {},
+                    "proposal": {},
+                    "approval_record": {
+                        "decision_id": approval_entry.get("decision_id"),
+                        "decision": approval_entry.get("decision"),
+                        "decided_by": approval_entry.get("decided_by"),
+                        "decided_at": approval_entry.get("decided_at"),
+                        "notes": approval_entry.get("notes"),
+                    },
+                    "blocking_reason": "action_id_not_found_in_dry_run_report",
+                })
+                continue
+
+            checks = _preflight_checks(action, approval_entry, policy)
+            all_passed = _checks_all_passed(checks)
+
+            if all_passed:
+                plan_entries.append(
+                    _build_plan_entry(action, approval_entry, checks, ready=True)
+                )
+            else:
+                reason = _first_failed_check(checks) or "unknown"
+                blocked_entries.append(
+                    _build_plan_entry(
+                        action, approval_entry, checks, ready=False,
+                        blocking_reason=reason
+                    )
+                )
 
     all_checks_passed = (
         policy_valid
