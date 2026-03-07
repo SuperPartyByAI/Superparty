@@ -1,7 +1,7 @@
 {
-    "schema_version": "1.1",
-    "mode": "controlled_dry_run_only",
-    "description": "PR #54 activeaza EXCLUSIV un executor dry-run pentru meta_description_update. Nu exista apply real, nu exista PR generation, nu exista modificare de fisiere. Orice executie viitoare in afara dry-run necesita PR separat.",
+    "schema_version": "1.2",
+    "mode": "controlled_single_apply",
+    "description": "PR #58 activeaza primul apply real, ultra-restrans: EXCLUSIV meta_description_update, EXCLUSIV Tier C, max 1 actiune per run, cu rollback obligatoriu. write_files=true NUMAI pentru actiunea activata. create_pull_request=false, commit_changes=false.",
     "allowed_actions": [
         "meta_description_update"
     ],
@@ -19,7 +19,6 @@
         "meta_title_update",
         "meta_description_update"
     ],
-    "low_risk_eligible_note": "Actiunile din low_risk_eligible_actions sunt candidate de nivel low-risk, dar in PR #54 se activeaza EXCLUSIV meta_description_update si EXCLUSIV in dry-run.",
     "dry_run_required": true,
     "approval_gate": "manual",
     "rollback_required": true,
@@ -51,7 +50,7 @@
     ],
     "action_activation": {
         "meta_description_update": {
-            "execution_mode": "dry_run_only",
+            "execution_mode": "single_apply_only",
             "tier_allowlist": [
                 "C"
             ],
@@ -64,10 +63,13 @@
             "registry_touches": "forbidden",
             "max_candidates_per_run": 1,
             "requires_manual_approval_before_apply": true,
-            "report_only": true,
-            "write_files": false,
+            "requires_ready_to_apply": true,
+            "requires_approval_decision": "approved",
+            "report_only": false,
+            "write_files": true,
             "create_pull_request": false,
-            "commit_changes": false
+            "commit_changes": false,
+            "rollback_mode": "single_file_revert"
         }
     }
 }
