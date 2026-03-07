@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "schema_version": "1.0",
+    "generated_at": "2026-03-07T20:36:49.074383+00:00",
+    "mode": "apply_plan_only",
+    "policy_version": "1.2",
+    "total_approved": 1,
+    "total_eligible": 1,
+    "total_blocked": 0,
+    "applied": 0
+  },
+  "preflight_summary": {
+    "policy_valid": true,
+    "all_checks_passed": true,
+    "blocking_issues": []
+  },
+  "plan": [
+    {
+      "plan_id": "23c9e4d4-7ac8-4043-ba01-813e0345a6e5",
+      "action_id": "mdesc-dryrun-petreceri-1-decembrie",
+      "action_type": "meta_description_update",
+      "url": "/petreceri/1-decembrie",
+      "tier": "C",
+      "is_money_page": false,
+      "preflight": {
+        "decision_is_approved": true,
+        "decided_by_present": true,
+        "action_type_allowed": true,
+        "tier_not_in_denylist": true,
+        "tier_in_allowlist": true,
+        "tier_a_not_permitted": true,
+        "not_money_page": true,
+        "not_pillar_page": true,
+        "create_pr_false": true,
+        "commit_changes_false": true,
+        "proposal_not_empty": true
+      },
+      "ready_to_apply": true,
+      "before": {
+        "meta_description": "Animatori profesioniști pentru petreceri copii în 1 Decembrie, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
+      },
+      "proposal": {
+        "meta_description": "Descopera informatii utile despre petreceri • 1-decembrie pe SuperParty. Continut clar, relevant si usor de parcurs pentru parinti."
+      },
+      "approval_record": {
+        "decision_id": "ae59a5e9-7fec-4ec4-a4c7-e6a9949b550e",
+        "decision": "approved",
+        "decided_by": "antigravity-precheck",
+        "decided_at": "2026-03-07T20:34:12.377195+00:00",
+        "notes": "Passed automated quote-safety and metadata prechecks."
+      }
+    }
+  ],
+  "blocked": []
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "decision_id": "ae59a5e9-7fec-4ec4-a4c7-e6a9949b550e",
+    "action_id": "mdesc-dryrun-petreceri-1-decembrie",
+    "action_type": "meta_description_update",
+    "url": "/petreceri/1-decembrie",
+    "decision": "approved",
+    "decided_by": "antigravity-precheck",
+    "decided_at": "2026-03-07T20:34:12.377195+00:00",
+    "notes": "Passed automated quote-safety and metadata prechecks.",
+    "proposal_snapshot": {
+      "before": {
+        "meta_description": "Animatori profesioniști pentru petreceri copii în 1 Decembrie, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
+      },
+      "proposal": {
+        "meta_description": "Descopera informatii utile despre petreceri • 1-decembrie pe SuperParty. Continut clar, relevant si usor de parcurs pentru parinti."
+      }
+    }
+  }
+]

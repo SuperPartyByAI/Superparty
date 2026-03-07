@@ -1,0 +1,124 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\ursac\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ursac\Superparty
+collecting ... collected 1 item
+
+tests/test_seo_level4_priority_e2e.py::test_e2e_json_splits_health_and_priority_outputs FAILED [100%]
+
+================================== FAILURES ===================================
+______________ test_e2e_json_splits_health_and_priority_outputs _______________
+
+self = WindowsPath('C:/Users/ursac/Superparty/tests/test_seo_level4_priority_e2e.py')
+
+    def __str__(self):
+        """Return the string representation of the path, suitable for
+        passing to system calls."""
+        try:
+>           return self._str
+                   ^^^^^^^^^
+E           AttributeError: 'WindowsPath' object has no attribute '_str'
+
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:441: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = WindowsPath('C:/Users/ursac/Superparty/tests/test_seo_level4_priority_e2e.py')
+
+    @property
+    def drive(self):
+        """The drive prefix (letter or UNC path), if any."""
+        try:
+>           return self._drv
+                   ^^^^^^^^^
+E           AttributeError: 'WindowsPath' object has no attribute '_drv'
+
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:555: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001AFF3457A70>
+
+    def test_e2e_json_splits_health_and_priority_outputs(monkeypatch):
+        """
+        Test E2E that ensures we don't clobber the health_report and properly
+        produce a NEW priority_report JSON output containing both metadata layers headers.
+        """
+    
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # Mocking reports paths
+            tmp_reports = Path(tmpdir)
+            health_path = tmp_reports / "seo_cluster_health.json"
+            priority_path = tmp_reports / "seo_cluster_priority.json"
+    
+            # Creating a mocked cluster_health file
+            mock_health_data = {
+                "metadata": {
+                    "generated_at": "2026-03-07T00:00:00Z"
+                },
+                "clusters": {
+                    "mock_cluster_a": {
+                        "is_money_cluster": True,
+                        "total_impressions": 1500,
+                        "owner_present": False,
+                        "cannibalization_warnings": []
+                    }
+                }
+            }
+            with open(health_path, "w", encoding="utf-8") as f:
+                json.dump(mock_health_data, f)
+    
+            def mock_reports_dir():
+                return tmp_reports
+    
+            # Instead of patching __file__ paths directly which can be messy in modules,
+            # we can temporarily override the directories computed inside the script
+            monkeypatch.setattr(seo_level4_priority.Path, "parent", property(lambda self: Path(tmpdir) if 'reports' in str(self) else Path(__file__).parent.parent))
+    
+            # A better approach: override the paths inside the function
+            # We define a custom run function or use string substitution if needed.
+            # Let's override the config loaders to not fail
+            def mock_get_weights():
+                 return {
+                    "importance": {
+                        "tier_points": {"A": 100},
+                        "business_priority_points": {"critical": 50},
+                        "is_money_cluster_bonus": 50,
+                        "volume_thresholds": {"high": 1000, "high_bonus": 20, "medium": 100, "medium_bonus": 5}
+                    },
+                    "risk": {
+                        "base_risk": 1.0,
+                        "owner_missing_multiplier": 2.0,
+                        "conflict_multipliers": {"high_severity": 0.5, "medium_severity": 0.2}
+                    },
+                    "priority_bands": {"critical": 300, "high": 150, "medium": 50, "low": 0}
+                }
+    
+            def mock_get_registry():
+                 return {
+                     "mock_cluster_a": {
+                         "risk_tier": "A",
+                         "business_priority": "critical"
+                     }
+                 }
+    
+            monkeypatch.setattr(seo_level4_priority, "load_priority_weights", mock_get_weights)
+            monkeypatch.setattr(seo_level4_priority, "load_registry_policies", mock_get_registry)
+    
+            # Now run custom path manipulation for the test
+>           original_health = seo_level4_priority.Path(__file__).parent.parent.parent / "reports" / "superparty" / "seo_cluster_health.json"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_seo_level4_priority_e2e.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_seo_level4_priority_e2e.py:42: in <lambda>
+    monkeypatch.setattr(seo_level4_priority.Path, "parent", property(lambda self: Path(tmpdir) if 'reports' in str(self) else Path(__file__).parent.parent))
+                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^
+tests\test_seo_level4_priority_e2e.py:42: in <lambda>
+    monkeypatch.setattr(seo_level4_priority.Path, "parent", property(lambda self: Path(tmpdir) if 'reports' in str(self) else Path(__file__).parent.parent))
+                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+=========================== short test summary info ===========================
+FAILED tests/test_seo_level4_priority_e2e.py::test_e2e_json_splits_health_and_priority_outputs
+============================== 1 failed in 0.11s ==============================

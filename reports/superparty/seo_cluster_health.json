@@ -1,0 +1,652 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-07T20:19:04.345476+00:00",
+    "schema_version": "1.0",
+    "source": "static_config_scan_v1",
+    "note": "Generated from query_clusters.json + pages scan. No GSC data needed for Tier C classification.",
+    "clusters_count": 1
+  },
+  "clusters": {
+    "suport_idei_petrecere": {
+      "owner_url": "",
+      "is_money_cluster": false,
+      "tier": "C",
+      "total_impressions": 0,
+      "total_clicks": 0,
+      "owner_present": false,
+      "owner_impressions": 0,
+      "owner_clicks": 0,
+      "owner_share": 0.0,
+      "supporter_count": 104,
+      "forbidden_count": 0,
+      "unknown_count": 0,
+      "urls": {
+        "/petreceri/1-decembrie": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/adunatii-copaceni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/afumati": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/alunisu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bacu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/balaceanca": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/balotesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/baneasa": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/belciugatele": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/berceni-ilfov": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bolintin-deal": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bolintin-vale": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bragadiru": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/branesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/branistari": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/buciumeni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bucuresti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/budeni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/budesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/buftea": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/bulbucata": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/butimanu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/buturugeni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/caciulati": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/calarasi": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/caldararu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/calugareni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/campurelu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/candeasca": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/catelu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/catrunesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cernica": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/chiajna": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/chirculesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/chitila": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ciocanesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ciofliceni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ciorogarla": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ciorogirla": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/clinceni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cocani": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cojasca": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cojesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/colibasi": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/comana": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/copaceni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/corbeanca": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cornetu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cosoba": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/coteni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cozieni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cranguri": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/creata": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cretesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cretuleasca": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/crevedia-mare": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/crevedia": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/crivina": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/cucuieti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dambovita": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dascalu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/decindea": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dimieni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dobreni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dobroesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/domnesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dragomiresti-deal": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/dragomiresti-vale": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/fierbinti-targ": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/fundulea": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ganeasa": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/giurgiu": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/glina": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ialomita": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/iepuresti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ilfov": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/jilava": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/magurele": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/mihai-voda": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/mihailesti": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/moara-vlasiei": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/mogosoaia": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/nuci": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/ordoreanu-vatra-veche": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/otopeni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/pantelimon": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/peris": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/petrachioaia": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/popesti-leordeni": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/prahova": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/racari": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-1": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-2": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-3": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-4": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-5": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/sector-6": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/snagov": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/stefanestii-de-jos": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/teleorman": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/tunari": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/valea-piersicilor": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/vidra": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        },
+        "/petreceri/voluntari": {
+          "classification": "supporter",
+          "is_cannibalizing": false,
+          "impressions": 0,
+          "clicks": 0
+        }
+      },
+      "cannibalization_warnings": []
+    }
+  }
+}

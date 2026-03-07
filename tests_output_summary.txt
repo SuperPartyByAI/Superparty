@@ -1,0 +1,19 @@
+===== 1. PYTEST =====
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\ursac\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ursac\Superparty
+collecting ... collected 8 items
+
+tests/test_seo_enterprise.py::test_resolve_astro_path PASSED             [ 12%]
+tests/test_seo_enterprise.py::test_apply_patch_frontmatter PASSED        [ 25%]
+tests/test_seo_enterprise.py::test_idempotent_replace PASSED             [ 37%]
+tests/test_seo_enterprise.py::test_validator_blocks_bad_content PASSED   [ 50%]
+tests/test_seo_enterprise.py::test_quality_gate PASSED                   [ 62%]
+tests/test_seo_enterprise.py::test_payload_types PASSED                  [ 75%]
+tests/test_seo_enterprise.py::test_insert_when_no_marker PASSED          [ 87%]
+tests/test_seo_enterprise.py::test_required_links_present PASSED         [100%]
+
+============================== 8 passed in 0.49s ==============================
+
+===== 2. BUILD =====

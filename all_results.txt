@@ -1,0 +1,79 @@
+=== py_compile (exit 0) ===
+OK
+
+=== seo_control (exit 1) ===
+=== SEO Control Plane Status ===
+  SEO_FREEZE: 0
+  SEO_FREEZE_APPLY: 0
+  SEO_FREEZE_EXPERIMENTS: 0
+  SEO_PILLAR_LOCK: 0
+  SEO_ALLOWLIST: (gol = toate)
+  SEO_DENYLIST: (gol = niciunul)
+  SEO_TIER_A_ONLY: 0
+
+Traceback (most recent call last):
+  File "C:\Users\ursac\Superparty\agent\tasks\seo_control.py", line 243, in <module>
+    print(f"  {ok} [{tier}] {path}: {result['reason']}")
+  File "C:\Users\ursac\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 2: character maps to <undefined>
+
+
+=== seo_dashboard (exit 1) ===
+Dashboard generat: reports\seo\dashboard.html
+Traceback (most recent call last):
+  File "C:\Users\ursac\Superparty\scripts\seo_dashboard.py", line 276, in <module>
+    build_dashboard()
+  File "C:\Users\ursac\Superparty\scripts\seo_dashboard.py", line 270, in build_dashboard
+    print(f"  Agent status: {agent_status_text}")
+  File "C:\Users\ursac\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 16: character maps to <undefined>
+
+
+=== pytest (exit 0) ===
+============================= test session starts =============================
+collecting ... collected 12 items
+
+tests/test_seo_enterprise.py::test_resolve_astro_path PASSED             [  8%]
+tests/test_seo_enterprise.py::test_apply_patch_frontmatter PASSED        [ 16%]
+tests/test_seo_enterprise.py::test_idempotent_replace PASSED             [ 25%]
+tests/test_seo_enterprise.py::test_validator_blocks_bad_content PASSED   [ 33%]
+tests/test_seo_enterprise.py::test_quality_gate_total_plus_delta PASSED  [ 41%]
+tests/test_seo_enterprise.py::test_payload_types PASSED                  [ 50%]
+tests/test_seo_enterprise.py::test_insert_when_no_marker PASSED          [ 58%]
+tests/test_seo_enterprise.py::test_required_links_present PASSED         [ 66%]
+tests/test_seo_enterprise.py::test_brand_superparty_consistent PASSED    [ 75%]
+tests/test_seo_enterprise.py::test_no_emoji_in_faq_inject PASSED         [ 83%]
+tests/test_seo_enterprise.py::test_db_migrate_adds_missing_columns PASSED [ 91%]
+tests/test_seo_enterprise.py::test_switch_task_sets_a_end_b_start PASSED [100%]
+
+============================= 12 passed in 0.63s ==============================
+
+
+=== premerge (exit 0) ===
+
+[1] Sitemap — host www-only
+  [[92mPASS[0m] No non-www <loc> in sitemap: 0 non-www URLs: []
+  [[92mPASS[0m] Pilon /animatori-petreceri-copii in sitemap: pilon missing from sitemap!
+
+[2] Manifest — indexable policy (Buc/Ilfov strict)
+  [[92mPASS[0m] Pilon animatori-petreceri-copii indexable:true: CRITICAL: pilon is indexable:false!
+  [[92mPASS[0m] No village/hamlet/locality indexable:true: []
+  [[92mPASS[0m] No non-target counties indexable:true: []
+  [[92mPASS[0m] No non-Ilfov town/commune/city indexable:true: []
+
+[3] Sitemap — no noindex URLs
+  [[92mPASS[0m] No noindex paths in sitemap: []
+
+[4] Sitemap — no non-target county slugs
+  [[92mPASS[0m] No non-target slugs in sitemap: []
+
+[5] Canonical host in Astro pages
+  [[92mPASS[0m] No non-www canonical in Astro pages: []
+
+PREMERGE OK — all checks passed.
+
+
