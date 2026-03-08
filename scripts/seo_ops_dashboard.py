@@ -1,10 +1,10 @@
 """
-SEO Ops Dashboard Generator — L6/L7 Observability Layer
+SEO Ops Dashboard Generator — L6/L7 + L5 Audit Trail
 
 Generates a static HTML dashboard at reports/superparty/ops_dashboard.html
-by reading EXCLUSIVELY from the L6/L7 source-of-truth artefacts.
+by reading EXCLUSIVELY from source-of-truth artefacts (read-only).
 
-Sources consumed:
+Sources consumed — L7/L6 Ops Health:
     reports/superparty/gsc_collection_ledger.json      → L7 run history
     reports/superparty/seo_report_worker_status.json   → L6 last run status
     reports/superparty/seo_reports_ledger.json         → L6 run history
@@ -12,6 +12,14 @@ Sources consumed:
     reports/superparty/seo_cluster_priority.json       → freshness
     reports/superparty/seo_trend_delta.json            → freshness + baseline flag
     reports/superparty/gsc/collect_*.json  (latest)   → raw snapshot metadata
+
+Sources consumed — L5 Planning / Apply / Rollback Audit Trail:
+    reports/superparty/seo_level5_dry_run_actions.json → proposals
+    reports/superparty/seo_level5_approval_log.json    → approval decisions
+    reports/superparty/seo_level5_apply_plan.json      → apply plan (ready / blocked)
+    reports/superparty/seo_level5_apply_execution.json → applied changes
+    reports/superparty/seo_level5_rollback_payload.json  → rollback payload
+    reports/superparty/seo_level5_rollback_execution.json → rollback executions
 
 Does NOT touch:
     scripts/seo_dashboard.py     (legacy, untouched)
@@ -43,6 +51,14 @@ HEALTH_JSON = REPORTS / "seo_cluster_health.json"
 PRIORITY_JSON = REPORTS / "seo_cluster_priority.json"
 TREND_JSON = REPORTS / "seo_trend_delta.json"
 GSC_SNAPSHOTS_GLOB = str(REPORTS / "gsc" / "collect_*.json")
+
+# ─── L5 Paths (read-only) ────────────────────────────────────────────────────
+L5_DRY_RUN    = REPORTS / "seo_level5_dry_run_actions.json"
+L5_APPROVAL   = REPORTS / "seo_level5_approval_log.json"
+L5_APPLY_PLAN = REPORTS / "seo_level5_apply_plan.json"
+L5_APPLY_EXEC = REPORTS / "seo_level5_apply_execution.json"
+L5_ROLLBACK_PAYLOAD  = REPORTS / "seo_level5_rollback_payload.json"
+L5_ROLLBACK_EXEC     = REPORTS / "seo_level5_rollback_execution.json"
 
 OUTPUT_HTML = REPORTS / "ops_dashboard.html"
 
@@ -178,6 +194,95 @@ def collect_trend_flags(freshness: dict) -> dict:
     }
 
 
+# ─── L5 Data collectors (strictly read-only) ─────────────────────────────────
+
+def collect_l5_proposals() -> dict:
+    """Parse dry-run proposals from seo_level5_dry_run_actions.json."""
+    raw = _read_json(L5_DRY_RUN)
+    if not raw:
+        return {"available": False, "actions": [], "generated_at": None, "total": 0}
+    actions = raw.get("actions", [])
+    meta = raw.get("metadata", {})
+    return {
+        "available": True,
+        "actions": actions,
+        "generated_at": meta.get("generated_at"),
+        "total": meta.get("total_candidates", len(actions)),
+        "mode": meta.get("mode", "—"),
+    }
+
+
+def collect_l5_approval() -> dict:
+    """Parse approval log and apply plan — schema-aligned to seo_level5_apply_plan_generator.py."""
+    approval_log = _read_json(L5_APPROVAL)
+    if not isinstance(approval_log, list):
+        approval_log = []
+    apply_plan_raw = _read_json(L5_APPLY_PLAN)
+    plan = []
+    blocked = []
+    # Schema: preflight_summary.all_checks_passed, NOT preflight.ready_to_apply
+    all_checks_passed = False
+    policy_valid = False
+    blocking_issues: list = []
+    plan_generated_at = None
+    total_eligible = 0
+    total_blocked_plan = 0
+    if apply_plan_raw and isinstance(apply_plan_raw, dict):
+        meta = apply_plan_raw.get("metadata", {})
+        plan_generated_at = meta.get("generated_at")  # metadata.generated_at
+        total_eligible = meta.get("total_eligible", 0)
+        total_blocked_plan = meta.get("total_blocked", 0)
+        ps = apply_plan_raw.get("preflight_summary", {})
+        all_checks_passed = bool(ps.get("all_checks_passed", False))
+        policy_valid = bool(ps.get("policy_valid", False))
+        blocking_issues = ps.get("blocking_issues", [])
+        plan = apply_plan_raw.get("plan", [])     # plan[].ready_to_apply per entry
+        blocked = apply_plan_raw.get("blocked", [])
+    # Count entries with ready_to_apply=True from plan[]
+    ready_count = sum(1 for e in plan if e.get("ready_to_apply") is True)
+    return {
+        "approval_log": approval_log,
+        "approved": [e for e in approval_log if e.get("decision") == "approved"],
+        "rejected": [e for e in approval_log if e.get("decision") == "rejected"],
+        "plan": plan,
+        "blocked": blocked,
+        "all_checks_passed": all_checks_passed,
+        "policy_valid": policy_valid,
+        "blocking_issues": blocking_issues,
+        "ready_count": ready_count,
+        "total_eligible": total_eligible,
+        "total_blocked_plan": total_blocked_plan,
+        "plan_generated_at": plan_generated_at,
+    }
+
+
+def collect_l5_execution() -> dict:
+    """Parse apply execution and rollback artefacts — schema-aligned to seo_level5_meta_description_apply.py
+    and seo_level5_rollback_executor.py."""
+    apply_exec_raw   = _read_json(L5_APPLY_EXEC)
+    rollback_pay = _read_json(L5_ROLLBACK_PAYLOAD)
+    rollback_exec = _read_json(L5_ROLLBACK_EXEC)
+    # apply_execution schema: {metadata: {generated_at, applied, blocked}, applied_actions: [], blocked_actions: []}
+    applied_actions: list = []
+    blocked_exec_actions: list = []
+    exec_meta: dict = {}
+    if apply_exec_raw and isinstance(apply_exec_raw, dict):
+        exec_meta = apply_exec_raw.get("metadata", {})
+        applied_actions = apply_exec_raw.get("applied_actions", [])
+        blocked_exec_actions = apply_exec_raw.get("blocked_actions", [])
+    return {
+        "exec_meta": exec_meta,
+        "applied_actions": applied_actions,
+        "blocked_exec_actions": blocked_exec_actions,
+        "apply_exec_available": apply_exec_raw is not None,
+        # rollback_payload schema: {action_id, file_path, rollback_mode, before, after, plan_id, decision_id, generated_at}
+        "rollback_payload": rollback_pay,
+        # rollback_execution schema: {rollback_id, reverted, reverted_at, post_rollback_verification,
+        #   original_lineage: {execution_id, plan_id, decision_id, action_id}, ...}
+        "rollback_exec": rollback_exec,
+    }
+
+
 # ─── Verdict engine ──────────────────────────────────────────────────────────
 
 def compute_verdict(l7: dict, l6: dict, freshness: dict) -> str:
@@ -259,7 +364,8 @@ def _history_table(entries: list, cols: list[tuple]) -> str:
     return f"<table class='hist'><tr>{headers}</tr>{rows_html}</table>"
 
 
-def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, trend_flags: dict, verdict: str) -> str:
+def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, trend_flags: dict, verdict: str,
+                l5_proposals: dict | None = None, l5_approval: dict | None = None, l5_execution: dict | None = None) -> str:
     now_str = _now().strftime("%Y-%m-%d %H:%M UTC")
     vc = _VERDICT_COLOR[verdict]
     vl = _VERDICT_LABEL[verdict]
@@ -325,6 +431,122 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
     recent_fails = [e for e in l6.get("history", []) if e.get("status") in ("failed", "partial_failure")][-3:]
     trend_rows.append(_row("Recent L6 failures", str(len(recent_fails)) if recent_fails else "None"))
 
+    # ── F. L5 Proposals ───────────────────────────────────────────────────────
+    l5p = l5_proposals or {}
+    if l5p.get("available"):
+        proposals_rows = [
+            _row("Generated at", html.escape(str(l5p.get("generated_at") or "—")[:19].replace("T", " "))),
+            _row("Mode", html.escape(str(l5p.get("mode", "—")))),
+            _row("Total proposals", html.escape(str(l5p.get("total", 0)))),
+        ]
+        for a in l5p.get("actions", [])[:5]:
+            url_e = html.escape(a.get("url", "—"))
+            before_e = html.escape((a.get("before", {}).get("meta_description") or "(gol)")[:80])
+            proposal_e = html.escape((a.get("proposal", {}).get("meta_description") or "—")[:80])
+            tier_e = html.escape(str(a.get("tier", "—")))
+            status_e = a.get("status", "proposed_only")
+            proposals_rows.append(_row(
+                f"↳ {url_e}",
+                f"Tier {tier_e} | {_pill(status_e)}<br>"
+                f"<span class='dim'>Before:</span> {before_e}<br>"
+                f"<span class='dim'>Proposal:</span> {proposal_e}"
+            ))
+    else:
+        proposals_rows = [_row("Status", '<span class="pill grey">Niciun dry-run disponibil</span>')]
+
+    # ── G. L5 Approval + Apply Plan ───────────────────────────────────────────
+    l5a = l5_approval or {}
+    # metadata.generated_at, preflight_summary.all_checks_passed, plan[].ready_to_apply
+    ready_label = _pill("success") if l5a.get("all_checks_passed") else _pill("warning")
+    policy_label = _pill("success") if l5a.get("policy_valid") else _pill("failed")
+    blocking = l5a.get("blocking_issues", [])
+    approval_rows = [
+        _row("Total decizii în log", html.escape(str(len(l5a.get("approval_log", []))))),
+        _row("Aprobate", html.escape(str(len(l5a.get("approved", []))))),
+        _row("Respinse", html.escape(str(len(l5a.get("rejected", []))))),
+        _row("Apply Plan generat la", html.escape(str(l5a.get("plan_generated_at") or "—")[:19].replace("T", " "))),
+        _row("Policy valid", policy_label),
+        _row("All checks passed", ready_label),
+        _row("Acțiuni eligible (plan[])", html.escape(str(l5a.get("total_eligible", len(l5a.get("plan", [])))))),
+        _row("Acțiuni ready_to_apply", html.escape(str(l5a.get("ready_count", 0)))),
+        _row("Acțiuni blocate (blocked[])", html.escape(str(l5a.get("total_blocked_plan", len(l5a.get("blocked", [])))))),
+    ]
+    if blocking:
+        approval_rows.append(_row("Blocking issues", html.escape(", ".join(str(i) for i in blocking[:3]))))
+    for dec in l5a.get("approved", [])[:3]:
+        url_e = html.escape(dec.get("url", "—"))
+        by_e  = html.escape(dec.get("decided_by", "—"))
+        at_e  = html.escape(str(dec.get("decided_at") or "—")[:19].replace("T", " "))
+        approval_rows.append(_row(f"✓ {url_e}", f"{_pill('success')} by {by_e} la {at_e}"))
+    for dec in l5a.get("rejected", [])[:3]:
+        url_e = html.escape(dec.get("url", "—"))
+        by_e  = html.escape(dec.get("decided_by", "—"))
+        at_e  = html.escape(str(dec.get("decided_at") or "—")[:19].replace("T", " "))
+        approval_rows.append(_row(f"✗ {url_e}", f"{_pill('failed')} by {by_e} la {at_e}"))
+    if not l5a.get("approval_log"):
+        approval_rows.append(_row("Status", '<span class="pill grey">Niciun log de aprobare</span>'))
+    if not l5a.get("plan_generated_at"):
+        approval_rows.append(_row("Apply Plan", '<span class="pill grey">Niciun apply_plan generat</span>'))
+
+    # ── H. L5 Applied / Rollback Audit Trail ─────────────────────────────────
+    # Schema: apply_execution = {metadata, applied_actions: [], blocked_actions: []}
+    # Schema: rollback_execution = {rollback_id, reverted, reverted_at, post_rollback_verification, original_lineage}
+    l5e = l5_execution or {}
+    exec_rows = []
+    exec_meta = l5e.get("exec_meta", {})
+    applied_actions = l5e.get("applied_actions", [])
+    blocked_exec_actions = l5e.get("blocked_exec_actions", [])
+    if l5e.get("apply_exec_available"):
+        exec_rows += [
+            _row("Apply executat la", html.escape(str(exec_meta.get("generated_at") or "—")[:19].replace("T", " "))),
+            _row("Applied count", html.escape(str(exec_meta.get("applied", len(applied_actions))))),
+            _row("Blocked count", html.escape(str(exec_meta.get("blocked", len(blocked_exec_actions))))),
+        ]
+        if applied_actions:
+            # Show last applied action from applied_actions[]
+            last_applied = applied_actions[-1]
+            exec_rows += [
+                _row("↳ URL aplicat", html.escape(str(last_applied.get("url") or "—"))),
+                _row("↳ Execution ID", html.escape(str(last_applied.get("execution_id") or "—"))),
+                _row("↳ File path", html.escape(str(last_applied.get("file_path") or "—"))),
+                _row("↳ Strategy", html.escape(str(last_applied.get("edit_strategy") or "—"))),
+                _row("↳ After verified", _pill("success") if last_applied.get("after_value_verified") else _pill("warning")),
+                _row("↳ Before", html.escape(str((last_applied.get("before") or {}).get("meta_description") or "—")[:80])),
+                _row("↳ After", html.escape(str((last_applied.get("after") or {}).get("meta_description") or "—")[:80])),
+            ]
+        else:
+            exec_rows.append(_row("Applied actions", '<span class="pill grey">applied_actions[] gol</span>'))
+        if blocked_exec_actions:
+            br = blocked_exec_actions[-1].get("blocking_reason", "—")
+            exec_rows.append(_row("↳ Blocat (ultimul)", html.escape(str(br)[:80])))
+    else:
+        exec_rows.append(_row("Apply Execution", '<span class="pill grey">Niciun apply executat</span>'))
+    # rollback_payload: {action_id, file_path, before, after, plan_id, decision_id, generated_at}
+    rollback_pay = l5e.get("rollback_payload")
+    if rollback_pay and isinstance(rollback_pay, dict):
+        exec_rows += [
+            _row("Rollback payload — action_id", html.escape(str(rollback_pay.get("action_id") or "—"))),
+            _row("Rollback payload — plan_id", html.escape(str(rollback_pay.get("plan_id") or "—"))),
+            _row("Rollback payload — file_path", html.escape(str(rollback_pay.get("file_path") or "—"))),
+            _row("Before (pt rollback)", html.escape(str((rollback_pay.get("before") or {}).get("meta_description") or "—")[:80])),
+        ]
+    else:
+        exec_rows.append(_row("Rollback Payload", '<span class="pill grey">Niciun rollback payload</span>'))
+    # rollback_execution: {rollback_id, reverted, reverted_at, post_rollback_verification, original_lineage.*}
+    rollback_exec = l5e.get("rollback_exec")
+    if rollback_exec and isinstance(rollback_exec, dict):
+        lin = rollback_exec.get("original_lineage", {})
+        exec_rows += [
+            _row("Rollback ID", html.escape(str(rollback_exec.get("rollback_id") or "—"))),
+            _row("Reverted", _pill("success") if rollback_exec.get("reverted") else _pill("failed")),
+            _row("Reverted at", html.escape(str(rollback_exec.get("reverted_at") or "—")[:19].replace("T", " "))),
+            _row("Post-rollback verified", _pill("success") if rollback_exec.get("post_rollback_verification") else _pill("warning")),
+            _row("↳ Lineage action_id", html.escape(str(lin.get("action_id") or "—"))),
+            _row("↳ Lineage execution_id", html.escape(str(lin.get("execution_id") or "—"))),
+        ]
+    else:
+        exec_rows.append(_row("Rollback Execution", '<span class="pill grey">Niciun rollback executat</span>'))
+
     sections = (
         _section("A. Source Acquisition — L7", l7_rows) +
         f"<div class='hist-wrap'><h3>Ultimele 5 rulări L7</h3>{l7_hist}</div>" +
@@ -332,7 +554,13 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
         f"<div class='hist-wrap'><h3>Ultimele 5 rulări L6</h3>{l6_hist}</div>" +
         _section("C. Freshness Rapoarte", freshness_rows) +
         _section("D. Latest Raw Snapshot (GSC)", snap_rows) +
-        _section("E. Trend / State Summary", trend_rows)
+        _section("E. Trend / State Summary", trend_rows) +
+        "<hr style='border:1px solid #1e293b;margin:1.5rem 0'>" +
+        "<p style='color:#64748b;font-size:.8rem;margin-bottom:.75rem'>" +
+        "&#8212; Level 5: Planning / Apply / Rollback Audit Trail &#8212;</p>" +
+        _section("F. L5 Proposals (Dry-Run)", proposals_rows) +
+        _section("G. L5 Approval + Apply Plan", approval_rows) +
+        _section("H. L5 Applied / Rollback Audit Trail", exec_rows)
     )
 
     return f"""<!DOCTYPE html>
@@ -394,7 +622,15 @@ def main() -> int:
     trend_flags = collect_trend_flags(freshness)
     verdict = compute_verdict(l7, l6, freshness)
 
-    html_out = render_html(l7, l6, freshness, snapshot, trend_flags, verdict)
+    # L5 Audit Trail — read-only, graceful if artefacts absent
+    l5_proposals = collect_l5_proposals()
+    l5_approval  = collect_l5_approval()
+    l5_execution = collect_l5_execution()
+
+    html_out = render_html(l7, l6, freshness, snapshot, trend_flags, verdict,
+                           l5_proposals=l5_proposals,
+                           l5_approval=l5_approval,
+                           l5_execution=l5_execution)
 
     OUTPUT_HTML.parent.mkdir(parents=True, exist_ok=True)
 
