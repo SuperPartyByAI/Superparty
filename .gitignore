@@ -16,3 +16,9 @@ whole-wind/
 
 # Generated artifacts (not source code)
 reports/seo/dashboard.html
+
+# Security credentials
+credentials.json
+google-credentials.json
+*-service-account.json
+client_secret.json
