@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """
-seo_dashboard.py — Dashboard HTML operațional pentru agentul SEO Superparty.
+⚠️  LEGACY DASHBOARD — NOT SOURCE OF TRUTH FOR L6/L7  ⚠️
+
+Acest script este DEPRECAT ca dashboard principal de ops.
+El citește din artefacte L3/L4 (sqlite experiments, url_states, indexing_manifest)
+și NU urmărește pipeline-ul actual L6/L7 (GSC Collector, Report Worker).
+
+Dashboard-ul PRINCIPAL de ops este:
+    Generator:  python scripts/seo_ops_dashboard.py
+    Output:     reports/superparty/ops_dashboard.html
+    Runbook:    docs/runbooks/seo/ops_dashboard_cutover.md
+
+seo_dashboard.py — Dashboard HTML LEGACY pentru agentul SEO Superparty.
 
 Generează reports/seo/dashboard.html dintr-o singura comanda.
 Afiseaza: status agent, pagini money, experimente, budget, skip reasons, policy drift.

@@ -1,0 +1,18 @@
+[Unit]
+Description=SEO Ops Dashboard — static server for L6/L7 ops_dashboard.html
+Documentation=https://github.com/SuperPartyByAI/Superparty/blob/main/docs/runbooks/seo/ops_dashboard_cutover.md
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/superparty
+ExecStart=/usr/bin/python3 -m http.server 8091 --bind 127.0.0.1 --directory reports/superparty
+Restart=on-failure
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=seo-ops-dashboard
+
+[Install]
+WantedBy=multi-user.target
