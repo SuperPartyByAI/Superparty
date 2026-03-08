@@ -2,6 +2,7 @@ import os
 import logging
 from typing import Dict, Any, Tuple
 import google.auth
+from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import datetime
 
@@ -11,11 +12,19 @@ SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
 def get_gsc_service():
     """
-    Initializes the GSC service using Application Default Credentials.
+    Initializes the GSC service using Application Default Credentials explicitly constrained to Service Accounts.
     Expects GOOGLE_APPLICATION_CREDENTIALS environment variable.
     """
+    if "GOOGLE_APPLICATION_CREDENTIALS" not in os.environ:
+        log.error("GOOGLE_APPLICATION_CREDENTIALS environment variable is completely missing.")
+        raise ValueError("Service Account explicitly required for L7 Cron operations.")
+
     try:
         credentials, project = google.auth.default(scopes=SCOPES)
+        if not isinstance(credentials, service_account.Credentials):
+            log.error("Loaded credentials are not of type ServiceAccountCredentials.")
+            raise ValueError("Only Service Account authentication is allowed. User/ADC rejected.")
+            
         service = build("searchconsole", "v1", credentials=credentials, cache_discovery=False)
         return service
     except Exception as e:
