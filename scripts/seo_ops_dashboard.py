@@ -213,39 +213,72 @@ def collect_l5_proposals() -> dict:
 
 
 def collect_l5_approval() -> dict:
-    """Parse approval log and apply plan."""
+    """Parse approval log and apply plan — schema-aligned to seo_level5_apply_plan_generator.py."""
     approval_log = _read_json(L5_APPROVAL)
     if not isinstance(approval_log, list):
         approval_log = []
     apply_plan_raw = _read_json(L5_APPLY_PLAN)
     plan = []
     blocked = []
-    ready_to_apply = False
+    # Schema: preflight_summary.all_checks_passed, NOT preflight.ready_to_apply
+    all_checks_passed = False
+    policy_valid = False
+    blocking_issues: list = []
     plan_generated_at = None
+    total_eligible = 0
+    total_blocked_plan = 0
     if apply_plan_raw and isinstance(apply_plan_raw, dict):
-        plan = apply_plan_raw.get("plan", [])
+        meta = apply_plan_raw.get("metadata", {})
+        plan_generated_at = meta.get("generated_at")  # metadata.generated_at
+        total_eligible = meta.get("total_eligible", 0)
+        total_blocked_plan = meta.get("total_blocked", 0)
+        ps = apply_plan_raw.get("preflight_summary", {})
+        all_checks_passed = bool(ps.get("all_checks_passed", False))
+        policy_valid = bool(ps.get("policy_valid", False))
+        blocking_issues = ps.get("blocking_issues", [])
+        plan = apply_plan_raw.get("plan", [])     # plan[].ready_to_apply per entry
         blocked = apply_plan_raw.get("blocked", [])
-        ready_to_apply = apply_plan_raw.get("preflight", {}).get("ready_to_apply", False)
-        plan_generated_at = apply_plan_raw.get("generated_at")
+    # Count entries with ready_to_apply=True from plan[]
+    ready_count = sum(1 for e in plan if e.get("ready_to_apply") is True)
     return {
         "approval_log": approval_log,
         "approved": [e for e in approval_log if e.get("decision") == "approved"],
         "rejected": [e for e in approval_log if e.get("decision") == "rejected"],
         "plan": plan,
         "blocked": blocked,
-        "ready_to_apply": ready_to_apply,
+        "all_checks_passed": all_checks_passed,
+        "policy_valid": policy_valid,
+        "blocking_issues": blocking_issues,
+        "ready_count": ready_count,
+        "total_eligible": total_eligible,
+        "total_blocked_plan": total_blocked_plan,
         "plan_generated_at": plan_generated_at,
     }
 
 
 def collect_l5_execution() -> dict:
-    """Parse apply execution and rollback artefacts."""
-    apply_exec   = _read_json(L5_APPLY_EXEC)
+    """Parse apply execution and rollback artefacts — schema-aligned to seo_level5_meta_description_apply.py
+    and seo_level5_rollback_executor.py."""
+    apply_exec_raw   = _read_json(L5_APPLY_EXEC)
     rollback_pay = _read_json(L5_ROLLBACK_PAYLOAD)
     rollback_exec = _read_json(L5_ROLLBACK_EXEC)
+    # apply_execution schema: {metadata: {generated_at, applied, blocked}, applied_actions: [], blocked_actions: []}
+    applied_actions: list = []
+    blocked_exec_actions: list = []
+    exec_meta: dict = {}
+    if apply_exec_raw and isinstance(apply_exec_raw, dict):
+        exec_meta = apply_exec_raw.get("metadata", {})
+        applied_actions = apply_exec_raw.get("applied_actions", [])
+        blocked_exec_actions = apply_exec_raw.get("blocked_actions", [])
     return {
-        "apply_exec":    apply_exec,
+        "exec_meta": exec_meta,
+        "applied_actions": applied_actions,
+        "blocked_exec_actions": blocked_exec_actions,
+        "apply_exec_available": apply_exec_raw is not None,
+        # rollback_payload schema: {action_id, file_path, rollback_mode, before, after, plan_id, decision_id, generated_at}
         "rollback_payload": rollback_pay,
+        # rollback_execution schema: {rollback_id, reverted, reverted_at, post_rollback_verification,
+        #   original_lineage: {execution_id, plan_id, decision_id, action_id}, ...}
         "rollback_exec": rollback_exec,
     }
 
@@ -423,15 +456,23 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
 
     # ── G. L5 Approval + Apply Plan ───────────────────────────────────────────
     l5a = l5_approval or {}
+    # metadata.generated_at, preflight_summary.all_checks_passed, plan[].ready_to_apply
+    ready_label = _pill("success") if l5a.get("all_checks_passed") else _pill("warning")
+    policy_label = _pill("success") if l5a.get("policy_valid") else _pill("failed")
+    blocking = l5a.get("blocking_issues", [])
     approval_rows = [
-        _row("Total decizii", html.escape(str(len(l5a.get("approval_log", []))))),
+        _row("Total decizii în log", html.escape(str(len(l5a.get("approval_log", []))))),
         _row("Aprobate", html.escape(str(len(l5a.get("approved", []))))),
         _row("Respinse", html.escape(str(len(l5a.get("rejected", []))))),
         _row("Apply Plan generat la", html.escape(str(l5a.get("plan_generated_at") or "—")[:19].replace("T", " "))),
-        _row("Ready to apply", _pill("success") if l5a.get("ready_to_apply") else _pill("warning")),
-        _row("Acțiuni în plan", html.escape(str(len(l5a.get("plan", []))))),
-        _row("Acțiuni blocate", html.escape(str(len(l5a.get("blocked", []))))),
+        _row("Policy valid", policy_label),
+        _row("All checks passed", ready_label),
+        _row("Acțiuni eligible (plan[])", html.escape(str(l5a.get("total_eligible", len(l5a.get("plan", [])))))),
+        _row("Acțiuni ready_to_apply", html.escape(str(l5a.get("ready_count", 0)))),
+        _row("Acțiuni blocate (blocked[])", html.escape(str(l5a.get("total_blocked_plan", len(l5a.get("blocked", [])))))),
     ]
+    if blocking:
+        approval_rows.append(_row("Blocking issues", html.escape(", ".join(str(i) for i in blocking[:3]))))
     for dec in l5a.get("approved", [])[:3]:
         url_e = html.escape(dec.get("url", "—"))
         by_e  = html.escape(dec.get("decided_by", "—"))
@@ -444,34 +485,64 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
         approval_rows.append(_row(f"✗ {url_e}", f"{_pill('failed')} by {by_e} la {at_e}"))
     if not l5a.get("approval_log"):
         approval_rows.append(_row("Status", '<span class="pill grey">Niciun log de aprobare</span>'))
+    if not l5a.get("plan_generated_at"):
+        approval_rows.append(_row("Apply Plan", '<span class="pill grey">Niciun apply_plan generat</span>'))
 
     # ── H. L5 Applied / Rollback Audit Trail ─────────────────────────────────
+    # Schema: apply_execution = {metadata, applied_actions: [], blocked_actions: []}
+    # Schema: rollback_execution = {rollback_id, reverted, reverted_at, post_rollback_verification, original_lineage}
     l5e = l5_execution or {}
     exec_rows = []
-    apply_exec = l5e.get("apply_exec")
-    if apply_exec and isinstance(apply_exec, dict):
+    exec_meta = l5e.get("exec_meta", {})
+    applied_actions = l5e.get("applied_actions", [])
+    blocked_exec_actions = l5e.get("blocked_exec_actions", [])
+    if l5e.get("apply_exec_available"):
         exec_rows += [
-            _row("Apply exec ID", html.escape(str(apply_exec.get("execution_id") or "—"))),
-            _row("Applied at", html.escape(str(apply_exec.get("executed_at") or "—")[:19].replace("T", " "))),
-            _row("Status apply", _pill(str(apply_exec.get("status") or "—"))),
-            _row("URL aplicat", html.escape(str(apply_exec.get("url") or "—"))),
+            _row("Apply executat la", html.escape(str(exec_meta.get("generated_at") or "—")[:19].replace("T", " "))),
+            _row("Applied count", html.escape(str(exec_meta.get("applied", len(applied_actions))))),
+            _row("Blocked count", html.escape(str(exec_meta.get("blocked", len(blocked_exec_actions))))),
         ]
+        if applied_actions:
+            # Show last applied action from applied_actions[]
+            last_applied = applied_actions[-1]
+            exec_rows += [
+                _row("↳ URL aplicat", html.escape(str(last_applied.get("url") or "—"))),
+                _row("↳ Execution ID", html.escape(str(last_applied.get("execution_id") or "—"))),
+                _row("↳ File path", html.escape(str(last_applied.get("file_path") or "—"))),
+                _row("↳ Strategy", html.escape(str(last_applied.get("edit_strategy") or "—"))),
+                _row("↳ After verified", _pill("success") if last_applied.get("after_value_verified") else _pill("warning")),
+                _row("↳ Before", html.escape(str((last_applied.get("before") or {}).get("meta_description") or "—")[:80])),
+                _row("↳ After", html.escape(str((last_applied.get("after") or {}).get("meta_description") or "—")[:80])),
+            ]
+        else:
+            exec_rows.append(_row("Applied actions", '<span class="pill grey">applied_actions[] gol</span>'))
+        if blocked_exec_actions:
+            br = blocked_exec_actions[-1].get("blocking_reason", "—")
+            exec_rows.append(_row("↳ Blocat (ultimul)", html.escape(str(br)[:80])))
     else:
         exec_rows.append(_row("Apply Execution", '<span class="pill grey">Niciun apply executat</span>'))
+    # rollback_payload: {action_id, file_path, before, after, plan_id, decision_id, generated_at}
     rollback_pay = l5e.get("rollback_payload")
     if rollback_pay and isinstance(rollback_pay, dict):
         exec_rows += [
-            _row("Rollback payload ID", html.escape(str(rollback_pay.get("plan_id") or "—"))),
-            _row("Before (rollback)", html.escape(str((rollback_pay.get("before") or {}).get("meta_description") or "—")[:80])),
+            _row("Rollback payload — action_id", html.escape(str(rollback_pay.get("action_id") or "—"))),
+            _row("Rollback payload — plan_id", html.escape(str(rollback_pay.get("plan_id") or "—"))),
+            _row("Rollback payload — file_path", html.escape(str(rollback_pay.get("file_path") or "—"))),
+            _row("Before (pt rollback)", html.escape(str((rollback_pay.get("before") or {}).get("meta_description") or "—")[:80])),
         ]
     else:
         exec_rows.append(_row("Rollback Payload", '<span class="pill grey">Niciun rollback payload</span>'))
+    # rollback_execution: {rollback_id, reverted, reverted_at, post_rollback_verification, original_lineage.*}
     rollback_exec = l5e.get("rollback_exec")
     if rollback_exec and isinstance(rollback_exec, dict):
+        lin = rollback_exec.get("original_lineage", {})
         exec_rows += [
-            _row("Rollback exec ID", html.escape(str(rollback_exec.get("execution_id") or "—"))),
-            _row("Rollback at", html.escape(str(rollback_exec.get("executed_at") or "—")[:19].replace("T", " "))),
-            _row("Rollback status", _pill(str(rollback_exec.get("status") or "—"))),
+            _row("Rollback ID", html.escape(str(rollback_exec.get("rollback_id") or "—"))),
+            _row("Reverted", _pill("success") if rollback_exec.get("reverted") else _pill("failed")),
+            _row("Reverted at", html.escape(str(rollback_exec.get("reverted_at") or "—")[:19].replace("T", " "))),
+            _row("Post-rollback verified", _pill("success") if rollback_exec.get("post_rollback_verification") else _pill("warning")),
+            _row("↳ Lineage action_id", html.escape(str(lin.get("action_id") or "—"))),
+            _row("↳ Lineage execution_id", html.escape(str(lin.get("execution_id") or "—"))),
         ]
     else:
         exec_rows.append(_row("Rollback Execution", '<span class="pill grey">Niciun rollback executat</span>'))
