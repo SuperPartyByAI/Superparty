@@ -213,21 +213,29 @@ def collect_l5_proposals() -> dict:
 
 
 def collect_l5_approval() -> dict:
-    """Parse approval log and apply plan — schema-aligned to seo_level5_apply_plan_generator.py."""
+    """Parse approval log and apply plan — schema-aligned to seo_level5_apply_plan_generator.py.
+
+    Returns a flag ``plan_available`` that callers must check BEFORE interpreting
+    ``policy_valid`` or ``all_checks_passed``:
+      plan_available=False → apply_plan artefact absent  (NOT a failure)
+      plan_available=True  → artefact present; read policy_valid and all_checks_passed
+    """
     approval_log = _read_json(L5_APPROVAL)
     if not isinstance(approval_log, list):
         approval_log = []
     apply_plan_raw = _read_json(L5_APPLY_PLAN)
+    # ─ sentinel: absence ≠ failure ───────────────────────────────────────────────
+    plan_available: bool = apply_plan_raw is not None and isinstance(apply_plan_raw, dict)
     plan = []
     blocked = []
-    # Schema: preflight_summary.all_checks_passed, NOT preflight.ready_to_apply
-    all_checks_passed = False
-    policy_valid = False
+    # None → "absent"; False → "present but failed"; True → "present and ok"
+    all_checks_passed: bool | None = None
+    policy_valid: bool | None = None
     blocking_issues: list = []
     plan_generated_at = None
     total_eligible = 0
     total_blocked_plan = 0
-    if apply_plan_raw and isinstance(apply_plan_raw, dict):
+    if plan_available:
         meta = apply_plan_raw.get("metadata", {})
         plan_generated_at = meta.get("generated_at")  # metadata.generated_at
         total_eligible = meta.get("total_eligible", 0)
@@ -241,13 +249,14 @@ def collect_l5_approval() -> dict:
     # Count entries with ready_to_apply=True from plan[]
     ready_count = sum(1 for e in plan if e.get("ready_to_apply") is True)
     return {
+        "plan_available": plan_available,
         "approval_log": approval_log,
         "approved": [e for e in approval_log if e.get("decision") == "approved"],
         "rejected": [e for e in approval_log if e.get("decision") == "rejected"],
         "plan": plan,
         "blocked": blocked,
-        "all_checks_passed": all_checks_passed,
-        "policy_valid": policy_valid,
+        "all_checks_passed": all_checks_passed,   # None=absent, False=failed, True=ok
+        "policy_valid": policy_valid,               # None=absent, False=failed, True=ok
         "blocking_issues": blocking_issues,
         "ready_count": ready_count,
         "total_eligible": total_eligible,
@@ -455,24 +464,52 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
         proposals_rows = [_row("Status", '<span class="pill grey">Niciun dry-run disponibil</span>')]
 
     # ── G. L5 Approval + Apply Plan ───────────────────────────────────────────
+    # Absence ≠ Failure. Stare derivată din plan_available:
+    #   plan_available=False  → N/A  (artefact absent, nu este incident)
+    #   plan_available=True, policy_valid=False  → FAILED
+    #   plan_available=True, all_checks_passed=False  → WARNING
+    #   plan_available=True, all_checks_passed=True   → SUCCESS
     l5a = l5_approval or {}
-    # metadata.generated_at, preflight_summary.all_checks_passed, plan[].ready_to_apply
-    ready_label = _pill("success") if l5a.get("all_checks_passed") else _pill("warning")
-    policy_label = _pill("success") if l5a.get("policy_valid") else _pill("failed")
-    blocking = l5a.get("blocking_issues", [])
-    approval_rows = [
+    _NA_PILL = '<span class="pill grey">N/A</span>'
+
+    def _plan_present_pill(value: bool | None, false_style: str = "failed") -> str:
+        """Return pill for a preflight field, but only when plan is available."""
+        if not l5a.get("plan_available"):
+            return _NA_PILL
+        if value is None:
+            return _NA_PILL
+        return _pill("success") if value else _pill(false_style)
+
+    policy_label      = _plan_present_pill(l5a.get("policy_valid"),     "failed")
+    ready_label       = _plan_present_pill(l5a.get("all_checks_passed"), "warning")
+    blocking          = l5a.get("blocking_issues", [])
+    plan_available    = l5a.get("plan_available", False)
+
+    if plan_available:
+        plan_status_cell = html.escape(str(l5a.get("plan_generated_at") or "—")[:19].replace("T", " "))
+    else:
+        plan_status_cell = '<span class="pill grey">Niciun apply_plan generat</span>'
+
+    approve_stat_rows = [
         _row("Total decizii în log", html.escape(str(len(l5a.get("approval_log", []))))),
         _row("Aprobate", html.escape(str(len(l5a.get("approved", []))))),
         _row("Respinse", html.escape(str(len(l5a.get("rejected", []))))),
-        _row("Apply Plan generat la", html.escape(str(l5a.get("plan_generated_at") or "—")[:19].replace("T", " "))),
+        _row("Apply Plan generat la", plan_status_cell),
         _row("Policy valid", policy_label),
         _row("All checks passed", ready_label),
-        _row("Acțiuni eligible (plan[])", html.escape(str(l5a.get("total_eligible", len(l5a.get("plan", [])))))),
-        _row("Acțiuni ready_to_apply", html.escape(str(l5a.get("ready_count", 0)))),
-        _row("Acțiuni blocate (blocked[])", html.escape(str(l5a.get("total_blocked_plan", len(l5a.get("blocked", [])))))),
     ]
-    if blocking:
-        approval_rows.append(_row("Blocking issues", html.escape(", ".join(str(i) for i in blocking[:3]))))
+    if plan_available:
+        approve_stat_rows += [
+            _row("Acțiuni eligible (plan[])", html.escape(str(l5a.get("total_eligible", len(l5a.get("plan", [])))))),
+            _row("Acțiuni ready_to_apply", html.escape(str(l5a.get("ready_count", 0)))),
+            _row("Acțiuni blocate (blocked[])", html.escape(str(l5a.get("total_blocked_plan", len(l5a.get("blocked", [])))))),
+        ]
+        if blocking:
+            approve_stat_rows.append(_row("Blocking issues", html.escape(", ".join(str(i) for i in blocking[:3]))))
+    else:
+        approve_stat_rows.append(_row("Status plan", '<span class="pill grey">Nu s-a generat încă (nu este incident)</span>'))
+
+    approval_rows: list[str] = approve_stat_rows
     for dec in l5a.get("approved", [])[:3]:
         url_e = html.escape(dec.get("url", "—"))
         by_e  = html.escape(dec.get("decided_by", "—"))
@@ -484,9 +521,7 @@ def render_html(l7: dict, l6: dict, freshness: dict, snapshot: dict | None, tren
         at_e  = html.escape(str(dec.get("decided_at") or "—")[:19].replace("T", " "))
         approval_rows.append(_row(f"✗ {url_e}", f"{_pill('failed')} by {by_e} la {at_e}"))
     if not l5a.get("approval_log"):
-        approval_rows.append(_row("Status", '<span class="pill grey">Niciun log de aprobare</span>'))
-    if not l5a.get("plan_generated_at"):
-        approval_rows.append(_row("Apply Plan", '<span class="pill grey">Niciun apply_plan generat</span>'))
+        approval_rows.append(_row("Approval log", '<span class="pill grey">Niciun log de aprobare</span>'))
 
     # ── H. L5 Applied / Rollback Audit Trail ─────────────────────────────────
     # Schema: apply_execution = {metadata, applied_actions: [], blocked_actions: []}

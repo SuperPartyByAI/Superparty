@@ -307,8 +307,10 @@ class TestCollectL5Approval:
         assert result["approval_log"] == []
         assert result["approved"] == []
         assert result["rejected"] == []
-        assert result["all_checks_passed"] is False
-        assert result["policy_valid"] is False
+        # UX hardening: absence != failure; None signals "not available" (not an error)
+        assert result["plan_available"] is False
+        assert result["all_checks_passed"] is None, "absent plan must return None, not False"
+        assert result["policy_valid"] is None, "absent plan must return None, not False"
         assert result["ready_count"] == 0
         assert result["plan_generated_at"] is None
 
@@ -515,3 +517,173 @@ class TestRenderHtmlL5Sections:
         )
         assert "/petreceri/test" in out
         assert "Meta noua propusa" in out
+
+
+# ─── G section UX hardening tests ─────────────────────────────────────────────
+# Verifies: absence != failure for seo_level5_apply_plan.json
+
+def _make_apply_plan(policy_valid: bool, all_checks_passed: bool, ready: bool = True) -> dict:
+    """Factory for a minimal but schema-valid apply_plan.json payload."""
+    return {
+        "metadata": {
+            "generated_at": "2026-03-08T14:00:00+00:00",
+            "total_eligible": 1 if ready else 0,
+            "total_blocked": 0 if ready else 1,
+        },
+        "preflight_summary": {
+            "all_checks_passed": all_checks_passed,
+            "policy_valid": policy_valid,
+            "blocking_issues": [] if policy_valid else ["policy.mode not allowed"],
+        },
+        "plan": [{"ready_to_apply": ready, "url": "/test"}] if ready else [],
+        "blocked": [] if ready else [{"ready_to_apply": False, "url": "/test", "blocking_reason": "policy_invalid"}],
+    }
+
+
+class TestCollectL5ApprovalPlanAvailable:
+    """Verifies plan_available flag and None-valued policy/checks when absent."""
+
+    def test_absent_plan_sets_plan_available_false(self, tmp_path):
+        """Case 1: apply_plan absent → plan_available=False, policy_valid=None, all_checks_passed=None."""
+        with (
+            patch.object(dash, "L5_APPROVAL", tmp_path / "missing_approval.json"),
+            patch.object(dash, "L5_APPLY_PLAN", tmp_path / "missing_plan.json"),
+        ):
+            result = dash.collect_l5_approval()
+        assert result["plan_available"] is False
+        assert result["policy_valid"] is None, "absence must NOT be reported as False (failure)"
+        assert result["all_checks_passed"] is None, "absence must NOT be reported as False (failure)"
+        assert result["plan_generated_at"] is None
+        assert result["ready_count"] == 0
+
+    def test_present_plan_policy_invalid(self, tmp_path):
+        """Case 2: apply_plan present, policy_valid=False → plan_available=True, policy_valid=False."""
+        f = tmp_path / "apply_plan.json"
+        f.write_text(json.dumps(_make_apply_plan(policy_valid=False, all_checks_passed=False)), encoding="utf-8")
+        f_ap = tmp_path / "approval.json"
+        f_ap.write_text("[]", encoding="utf-8")
+        with (
+            patch.object(dash, "L5_APPROVAL", f_ap),
+            patch.object(dash, "L5_APPLY_PLAN", f),
+        ):
+            result = dash.collect_l5_approval()
+        assert result["plan_available"] is True
+        assert result["policy_valid"] is False
+        assert result["all_checks_passed"] is False
+
+    def test_present_plan_checks_failed(self, tmp_path):
+        """Case 3: apply_plan present, policy valid but all_checks_passed=False → warning."""
+        f = tmp_path / "apply_plan.json"
+        f.write_text(json.dumps(_make_apply_plan(policy_valid=True, all_checks_passed=False, ready=False)), encoding="utf-8")
+        f_ap = tmp_path / "approval.json"
+        f_ap.write_text("[]", encoding="utf-8")
+        with (
+            patch.object(dash, "L5_APPROVAL", f_ap),
+            patch.object(dash, "L5_APPLY_PLAN", f),
+        ):
+            result = dash.collect_l5_approval()
+        assert result["plan_available"] is True
+        assert result["policy_valid"] is True
+        assert result["all_checks_passed"] is False
+
+    def test_present_plan_healthy(self, tmp_path):
+        """Case 4: apply_plan present, all healthy → policy_valid=True, all_checks_passed=True."""
+        f = tmp_path / "apply_plan.json"
+        f.write_text(json.dumps(_make_apply_plan(policy_valid=True, all_checks_passed=True)), encoding="utf-8")
+        f_ap = tmp_path / "approval.json"
+        f_ap.write_text("[]", encoding="utf-8")
+        with (
+            patch.object(dash, "L5_APPROVAL", f_ap),
+            patch.object(dash, "L5_APPLY_PLAN", f),
+        ):
+            result = dash.collect_l5_approval()
+        assert result["plan_available"] is True
+        assert result["policy_valid"] is True
+        assert result["all_checks_passed"] is True
+        assert result["ready_count"] == 1
+
+
+class TestRenderHtmlGSectionAbsenceNotFailure:
+    """render_html section G must show N/A (not FAILED/warning) when apply_plan is absent."""
+
+    @staticmethod
+    def _absent_approval() -> dict:
+        """Simulates collect_l5_approval() output when apply_plan artefact is missing."""
+        return {
+            "plan_available": False,
+            "approval_log": [], "approved": [], "rejected": [],
+            "plan": [], "blocked": [],
+            "all_checks_passed": None,
+            "policy_valid": None,
+            "blocking_issues": [],
+            "ready_count": 0,
+            "total_eligible": 0,
+            "total_blocked_plan": 0,
+            "plan_generated_at": None,
+        }
+
+    def test_absent_plan_renders_na_not_failed_or_warning(self):
+        """Case 5: Absence of apply_plan → N/A pills shown, no false failure alarm."""
+        out = dash.render_html(
+            _l7_ok(), _l6_ok(), _freshness_all_ready(),
+            snapshot=None,
+            trend_flags={"available": True, "baseline_only": False},
+            verdict="GREEN",
+            l5_proposals=None,
+            l5_approval=self._absent_approval(),
+            l5_execution=None,
+        )
+        assert "N/A" in out
+        assert "Niciun apply_plan generat" in out
+        assert "nu este incident" in out
+
+    def test_present_healthy_plan_renders_success_pills(self):
+        """Case 4 (render): Healthy apply_plan → success pills for policy_valid and all_checks_passed."""
+        approval_healthy = {
+            "plan_available": True,
+            "approval_log": [], "approved": [], "rejected": [],
+            "plan": [{"ready_to_apply": True, "url": "/x"}], "blocked": [],
+            "all_checks_passed": True,
+            "policy_valid": True,
+            "blocking_issues": [],
+            "ready_count": 1,
+            "total_eligible": 1,
+            "total_blocked_plan": 0,
+            "plan_generated_at": "2026-03-08T14:00:00+00:00",
+        }
+        out = dash.render_html(
+            _l7_ok(), _l6_ok(), _freshness_all_ready(),
+            snapshot=None,
+            trend_flags={"available": True, "baseline_only": False},
+            verdict="GREEN",
+            l5_proposals=None,
+            l5_approval=approval_healthy,
+            l5_execution=None,
+        )
+        assert out.count("pill green") >= 2  # policy_valid=True + all_checks_passed=True
+
+    def test_present_invalid_policy_renders_failed_and_warning(self):
+        """Case 2+3 (render): Invalid policy → red pill; failed checks → warning pill."""
+        approval_invalid = {
+            "plan_available": True,
+            "approval_log": [], "approved": [], "rejected": [],
+            "plan": [], "blocked": [],
+            "all_checks_passed": False,
+            "policy_valid": False,
+            "blocking_issues": ["policy.mode not allowed"],
+            "ready_count": 0,
+            "total_eligible": 0,
+            "total_blocked_plan": 0,
+            "plan_generated_at": "2026-03-08T14:00:00+00:00",
+        }
+        out = dash.render_html(
+            _l7_ok(), _l6_ok(), _freshness_all_ready(),
+            snapshot=None,
+            trend_flags={"available": True, "baseline_only": False},
+            verdict="GREEN",
+            l5_proposals=None,
+            l5_approval=approval_invalid,
+            l5_execution=None,
+        )
+        assert "pill red" in out     # policy_valid=False → FAILED → pill red
+        assert "pill yellow" in out  # all_checks_passed=False → warning → pill yellow
