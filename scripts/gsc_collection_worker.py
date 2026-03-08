@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 
 from agent.services.gsc_client import fetch_search_analytics, generate_gsc_date_range
 from agent.tasks.seo_level7_gsc_contract import validate_raw_gsc_snapshot, enforce_retention_policy
+from agent.tasks.seo_level7_gsc_ledger import append_to_ledger
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -84,7 +85,8 @@ def main():
             dimensions=["query", "page"]
         )
     except Exception as e:
-        log.error("API Error encountered. Aborting fetch. No data spoofing allowed.")
+        log.error(f"API Error encountered. Aborting fetch. No data spoofing allowed. {e}")
+        append_to_ledger("FAILED", failing_stage="API_FETCH", error_reason=str(e))
         sys.exit(1)
         
     # 3. Transform
@@ -93,6 +95,7 @@ def main():
     # 4. Strict Contract Validation (L7.1)
     if not validate_raw_gsc_snapshot(snapshot):
         log.error("Snapshot failed L7.1 structural validation. Aborting persistence.")
+        append_to_ledger("FAILED", failing_stage="CONTRACT_VALIDATION", error_reason="Snapshot failed L7.1 structural validation")
         sys.exit(1)
         
     # 5. Persist Atomically
@@ -101,11 +104,14 @@ def main():
         log.info(f"Snapshot atomically saved to {final_path}")
     except OSError as e:
         log.error(f"Failed to persist snapshot: {e}")
+        append_to_ledger("FAILED", failing_stage="PERSISTENCE", error_reason=str(e))
         sys.exit(1)
         
     # 6. Retention Policy
     enforce_retention_policy(REPORTS_DIR, max_snapshots=30)
     
+    # 7. Success ledger log
+    append_to_ledger("SUCCESS", row_count=snapshot["metadata"]["row_count"], snapshot_filename=final_path.name)
     log.info("GSC Collector Worker run complete: SUCCESS.")
 
 if __name__ == "__main__":
