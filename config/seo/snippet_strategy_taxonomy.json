@@ -1,46 +1,84 @@
 {
-    "schema_version": "1.0",
-    "_doc": "Taxonomy de strategii pentru meta snippets SuperParty. Fiecare propunere de meta description este etichetata cu una dintre aceste strategii, in ordinea prioritatii semnalelor.",
+    "schema_version": "2.0",
+    "_doc": "Taxonomy v2.0: scoring cumulativ (nu first-match). Fiecare keyword contribuie cu un scor partial. Strategia cu cel mai mare scor total castiga. Tie-breaker: dominant_keyword_family > priority.",
+    "_changelog": {
+        "v2.0": "Adaugat keyword_weight per keyword, dominant_keyword_family, tier_keywords (keywords cu greutate dubla). Schimbat algoritm din first-match la scoring cumulativ.",
+        "v1.0": "Initial taxonomy — first-match pe priority."
+    },
+    "_tie_break_rules": [
+        "1. Strategia cu scor total mai mare castiga.",
+        "2. La scor egal (tie): strategia cu prioritate mai mica (valoare mai MARE) castiga — adica strategiile mai specifice bat cele mai generale.",
+        "3. local_intent bate price_first la tie dacă local_score >= price_score (geoloc >='s specific).",
+        "4. benefits_first bate price_first la tie daca benefits_score >= price_score."
+    ],
     "strategies": {
         "price_first": {
-            "description": "Propunerea pune pretul in prim-plan (primele 40 chars sau cu prioritate vizuala).",
-            "keywords": [
+            "description": "Propunerea este dominata de pret in primul rand — cifre RON/lei explicit, 'de la X RON', pachete cu pret.",
+            "_signal": "Prezenta cifelor de pret directe sau 'de la X RON' in text.",
+            "priority": 1,
+            "tier_keywords": [
                 "lei",
                 "ron",
-                "de la",
-                "pachet",
-                "490",
-                "540",
-                "590",
-                "840",
-                "1290",
+                "de la 350",
+                "de la 490",
+                "de la 500",
+                "de la 700",
+                "350 ron",
+                "490 lei",
                 "pret",
-                "cost",
-                "oferta",
                 "tarif"
             ],
-            "priority": 1,
-            "example": "Pachete animatori petreceri copii de la 490 lei. Transport gratuit. 30 personaje. Suna: 0722 744 377."
+            "keywords": [
+                "pachet",
+                "oferta",
+                "cost",
+                "standard",
+                "premium 90",
+                "vip 120",
+                "min —"
+            ],
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
+            "example": "Pachete animatori de la 490 lei. Standard 60 min, Premium 90 min. Suna: 0722 744 377."
         },
         "benefits_first": {
-            "description": "Propunerea pune beneficiile / calitatea in prim-plan.",
-            "keywords": [
-                "premium",
-                "profesionist",
-                "garantat",
-                "calitate",
-                "experienta",
-                "acreditat",
-                "certificat",
-                "top",
-                "cel mai",
-                "excelent"
-            ],
+            "description": "Propunerea este dominata de beneficii operationale: tipuri de locatii, adaptare varsta, flexibilitate, convenienta.",
+            "_signal": "Cuvinte despre ce face animatorul pentru familie: venim la / adaptam / acoperim / domiciliu / sala / gradinita.",
             "priority": 2,
-            "example": "Animatori profesionisti cu experienta pentru petreceri copii. Costume premium, personaje autentice. Rezerva acum!"
+            "tier_keywords": [
+                "venim la",
+                "domiciliu",
+                "sala de petreceri",
+                "gradinita",
+                "adaptate",
+                "1-12 ani",
+                "1–12 ani",
+                "1 - 12 ani"
+            ],
+            "keywords": [
+                "acoperim",
+                "adaptat",
+                "varstă",
+                "varsta",
+                "flexibil",
+                "locatie",
+                "locatii",
+                "tipuri de"
+            ],
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
+            "example": "Animatori petreceri copii — venim la domiciliu, sala sau gradinita. Programe adaptate 1-12 ani. 0722 744 377."
         },
         "services_list": {
-            "description": "Propunerea enumera serviciile in mod explicit.",
+            "description": "Propunerea enumera serviciile/activitatile explicit.",
+            "_signal": "Lista de activitati separate: baloane, pictura, jocuri, etc.",
+            "priority": 3,
+            "tier_keywords": [
+                "baloane modelate",
+                "pictura pe fata",
+                "face painting",
+                "tatuaje temporare"
+            ],
             "keywords": [
                 "baloane",
                 "pictura",
@@ -51,18 +89,35 @@
                 "vata de zahar",
                 "popcorn",
                 "spectacol",
-                "ursitoare",
-                "face painting"
+                "ursitoare"
             ],
-            "priority": 3,
-            "example": "Animatori petreceri copii: jocuri interactive, baloane modelate, pictura pe fata, tatuaje. Pachet complet. 0722 744 377."
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
+            "example": "Animatori petreceri copii: jocuri interactive, baloane modelate, pictura pe fata. Pachet complet. 0722 744 377."
         },
         "local_intent": {
-            "description": "Propunerea contine explicit locatia / zona geografica.",
+            "description": "Propunerea este dominata de localitate/zona geografica explicita — oras, cartier, zona de livrare.",
+            "_signal": "Prezenta numelui localitatii ca entitate geografica principala, sau a zonelor explicite (Pipera, centrul vechi, etc.).",
+            "priority": 4,
+            "tier_keywords": [
+                "livrăm în",
+                "livram in",
+                "acoperim zona",
+                "zona",
+                "cartier",
+                "cartier specific",
+                "pipera",
+                "centrul vechi",
+                "complexele rezidențiale",
+                "complexele rezidentiale",
+                "vile",
+                "palatele",
+                "vile și palatele",
+                "palatele din zonă"
+            ],
             "keywords": [
                 "bucuresti",
                 "ilfov",
-                "sector",
                 "sector 1",
                 "sector 2",
                 "sector 3",
@@ -76,51 +131,76 @@
                 "corbeanca",
                 "tunari",
                 "magurele",
-                "pantelimon"
+                "pantelimon",
+                "mogosoaia",
+                "mogoșoaia",
+                "jilava",
+                "chitila",
+                "buftea",
+                "dascalu",
+                "dobroesti",
+                "cernica",
+                "branesti"
             ],
-            "priority": 4,
-            "example": "Animatori petreceri copii Bucuresti si Ilfov. Transport gratuit. 30 personaje. Rezerva: 0722 744 377."
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
+            "example": "Animatori petreceri copii Voluntari — livrăm în Pipera, centrul vechi și complexele rezidentiale. 0722 744 377."
         },
         "urgency_soft": {
-            "description": "Propunerea contine un call-to-action cu urgenta blanda (disponibilitate, rezervare).",
+            "description": "Propunerea contine un call-to-action cu urgenta blanda.",
+            "_signal": "Rezerva acum, disponibilitate limitata.",
+            "priority": 5,
+            "tier_keywords": [
+                "rezerva acum",
+                "rezervă acum",
+                "disponibilitate limitata",
+                "locuri limitate"
+            ],
             "keywords": [
                 "rezerva",
-                "rezerva acum",
+                "rezervă",
                 "suna acum",
-                "disponibilitate limitata",
-                "locuri limitate",
                 "program limitat",
-                "booka",
                 "programeaza"
             ],
-            "priority": 5,
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
             "example": "Animatori petreceri copii Bucuresti. Disponibilitate limitata weekend. Rezerva acum: 0722 744 377."
         },
         "family_trust": {
             "description": "Propunerea construieste incredere focusata pe siguranta familiei / copilului.",
+            "_signal": "Siguranta, fericiti, parinti, hipoalergen, aniversare.",
+            "priority": 6,
+            "tier_keywords": [
+                "siguranta copilului",
+                "parinti fericiti",
+                "hipoalergen"
+            ],
             "keywords": [
-                "copii",
-                "parinti",
                 "siguranta",
                 "sigur",
-                "hipoalergen",
-                "profesional",
-                "experienta",
-                "aman",
-                "zile",
+                "parinti",
+                "aniversare",
                 "botez",
-                "aniversare"
+                "aman"
             ],
-            "priority": 6,
-            "example": "Animatori petreceri copii Bucuresti. Parinti multumiti in peste 500 de petreceri. Sigur, profesional. Suna: 0722 744 377."
+            "keyword_weight": 1,
+            "tier_keyword_weight": 2,
+            "example": "Animatori petreceri copii Bucuresti. Parinti fericiti in peste 500 de petreceri. Suna: 0722 744 377."
         },
         "brand_first": {
             "description": "Propunerea pune brandul SuperParty in primele 20 de caractere.",
-            "keywords": [
+            "_signal": "SuperParty in primele 20 caractere.",
+            "priority": 7,
+            "tier_keywords": [
                 "superparty"
             ],
-            "priority": 7,
-            "example": "SuperParty - animatori petreceri copii Bucuresti. 30 personaje premium. Pachete de la 490 lei. 0722 744 377."
+            "keywords": [],
+            "keyword_weight": 1,
+            "tier_keyword_weight": 3,
+            "_positional_check": true,
+            "_positional_chars": 20,
+            "example": "SuperParty - animatori petreceri copii Bucuresti. 30 personaje. 0722 744 377."
         }
     },
     "fallback_strategy": "uncategorized"
