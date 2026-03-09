@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://superparty.ro',
+    site: 'https://www.superparty.ro',
     trailingSlash: 'ignore',
     integrations: [mdx(), tailwind()],
 });

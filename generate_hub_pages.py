@@ -5,6 +5,9 @@ import os
 
 PAGES_DIR = r"C:\Users\ursac\Superparty\src\pages\petreceri"
 
+# Sursa unica pentru origin — aliniata cu src/config/site.ts si astro.config.mjs
+SITE_ORIGIN = 'https://www.superparty.ro'
+
 # ==========================================
 # Template comun pentru hub local
 # ==========================================
@@ -34,7 +37,7 @@ const schema = JSON.stringify({{
       "name": "{title}",
       "provider": {{ "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" }},
       "areaServed": "{h1}",
-      "url": "https://superparty.ro/petreceri/{slug}"
+      "url": "{SITE_ORIGIN}/petreceri/{slug}"
     }},
     {{
       "@type": "FAQPage",
@@ -45,9 +48,9 @@ const schema = JSON.stringify({{
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {{ "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro" }},
-        {{ "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://superparty.ro/animatori-petreceri-copii" }},
-        {{ "@type": "ListItem", "position": 3, "name": "{h1}", "item": "https://superparty.ro/petreceri/{slug}" }}
+        {{ "@type": "ListItem", "position": 1, "name": "Acasă", "item": "{SITE_ORIGIN}" }},
+        {{ "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "{SITE_ORIGIN}/animatori-petreceri-copii" }},
+        {{ "@type": "ListItem", "position": 3, "name": "{h1}", "item": "{SITE_ORIGIN}/petreceri/{slug}" }}
       ]
     }}
   ]
@@ -57,7 +60,7 @@ const schema = JSON.stringify({{
 <Layout
   title="{title} | SuperParty"
   description="{desc}"
-  canonical="https://superparty.ro/petreceri/{slug}"
+  canonical="{SITE_ORIGIN}/petreceri/{slug}"
   robots="index, follow"
   schema={{schema}}
 >
@@ -518,7 +521,7 @@ for slug, data in HUBS.items():
         slug=slug,
         title=data["title"],
         desc=data["desc"],
-        canonical=f"https://superparty.ro/petreceri/{slug}",
+        canonical=f"{SITE_ORIGIN}/petreceri/{slug}",
         h1=data["h1"],
         intro=data["intro"],
         locatii=data["locatii"],
@@ -549,7 +552,7 @@ for loc in ILFOV_LOCALITATI:
         slug=slug,
         title=title,
         desc=desc,
-        canonical=f"https://superparty.ro/petreceri/{slug}",
+        canonical=f"{SITE_ORIGIN}/petreceri/{slug}",
         h1=oras,
         intro=loc["intro"],
         locatii=loc["locatii"],
