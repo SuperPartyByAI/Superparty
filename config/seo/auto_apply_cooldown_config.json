@@ -1,0 +1,14 @@
+{
+    "schema_version": "1.0",
+    "_doc": "Configuratie cooldown dinamic pentru L5 auto-apply. Editabil fara a modifica engine-ul.",
+    "_rules": {
+        "min_reapply_days": "URL nu poate fi reatins mai devreme de aceasta valoare, indiferent de date.",
+        "min_impressions_for_reapply": "Intre min_reapply_days si max_reapply_days, URL necesita minim aceasta valoare de impresii GSC pentru a fi reeligibil.",
+        "max_reapply_days_without_data": "Dupa aceasta perioada, URL poate deveni eligibil chiar si cu date insuficiente, dar este marcat clar ca insufficient_data.",
+        "rollback_cooldown_days": "Dupa un rollback, URL este blocat pentru aceasta durata, indiferent de impresii."
+    },
+    "min_reapply_days": 7,
+    "min_impressions_for_reapply": 80,
+    "max_reapply_days_without_data": 14,
+    "rollback_cooldown_days": 21
+}
