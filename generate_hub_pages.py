@@ -12,7 +12,7 @@ SITE_ORIGIN = 'https://www.superparty.ro'
 # Template comun pentru hub local
 # ==========================================
 def hub_template(slug, title, desc, canonical, h1, intro, locatii, timp_depl, faq_local, cartiere=""):
-    faq_items = "\n".join([
+    faq_items = ",\n".join([
         f"""      {{
         "@type": "Question",
         "name": "{q}",
