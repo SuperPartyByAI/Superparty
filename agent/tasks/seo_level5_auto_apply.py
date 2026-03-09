@@ -61,8 +61,12 @@ EXECUTION_REPORT_PATH    = REPORTS_DIR / "seo_level5_apply_execution.json"
 ROLLBACK_PAYLOAD_PATH    = REPORTS_DIR / "seo_level5_rollback_payload.json"
 STATUS_REPORT_PATH       = REPORTS_DIR / "seo_level5_status.json"
 
+COOLDOWN_CONFIG_PATH     = CONFIG_DIR  / "auto_apply_cooldown_config.json"
+
 ACTION_TYPE = "meta_description_update"
 APPROVED_BY = "system_auto_apply"
+
+# Legacy constant kept for backwards-compat; use load_cooldown_config() at runtime
 COOLDOWN_DAYS = 14
 
 # Edit patterns
@@ -171,35 +175,237 @@ def check_pillar_registry(url: str, registry_path: Path = PILLAR_REGISTRY_PATH) 
     return []
 
 
-# ─── Cooldown guard ──────────────────────────────────────────────────────────
+# ─── Cooldown config loader ──────────────────────────────────────────────────
+
+def load_cooldown_config(
+    config_path: Path = COOLDOWN_CONFIG_PATH,
+) -> dict:
+    """
+    Load dynamic cooldown configuration.
+    Falls back to safe defaults if file missing.
+    """
+    defaults = {
+        "min_reapply_days": 7,
+        "min_impressions_for_reapply": 80,
+        "max_reapply_days_without_data": 14,
+        "rollback_cooldown_days": 21,
+    }
+    data = _load_json(config_path)
+    if not data:
+        return defaults
+    return {
+        "min_reapply_days": data.get("min_reapply_days", defaults["min_reapply_days"]),
+        "min_impressions_for_reapply": data.get("min_impressions_for_reapply", defaults["min_impressions_for_reapply"]),
+        "max_reapply_days_without_data": data.get("max_reapply_days_without_data", defaults["max_reapply_days_without_data"]),
+        "rollback_cooldown_days": data.get("rollback_cooldown_days", defaults["rollback_cooldown_days"]),
+    }
+
+
+# ─── Cooldown guard — dynamic ─────────────────────────────────────────────────
+
+def _get_gsc_impressions_for_url(
+    url: str,
+    gsc_data_path: Optional[Path] = None,
+) -> Optional[int]:
+    """
+    Lookup GSC impressions for a URL from the most recent GSC collect artefact.
+    Returns None if data unavailable or URL not found.
+    """
+    if gsc_data_path is None:
+        gsc_dir = REPORTS_DIR / "gsc"
+        candidates = sorted(gsc_dir.glob("collect_*.json"), reverse=True) if gsc_dir.exists() else []
+        if not candidates:
+            return None
+        gsc_data_path = candidates[0]
+
+    data = _load_json(gsc_data_path)
+    if not data:
+        return None
+    rows = data.get("rows", [])
+    url_norm = url.rstrip("/")
+    for row in rows:
+        row_url = row.get("url", "").rstrip("/")
+        if row_url == url_norm or row_url.endswith(url_norm):
+            return row.get("impressions")
+    return None
+
+
+def _get_last_apply_for_url(
+    url: str,
+    log_entries: list,
+) -> Optional[dict]:
+    """
+    Returns the most recent audit log entry for a URL, or None if never applied.
+    """
+    candidates = [
+        e for e in log_entries
+        if e.get("url") == url
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda e: e.get("applied_at", ""))
+
+
+def _had_recent_rollback(
+    url: str,
+    log_entries: list,
+    rollback_cooldown_days: int,
+) -> bool:
+    """
+    Returns True if the URL has a rollback entry in the audit log
+    within the last rollback_cooldown_days days.
+    """
+    cutoff = datetime.now(timezone.utc) - timedelta(days=rollback_cooldown_days)
+    for entry in log_entries:
+        if entry.get("url") != url:
+            continue
+        # rollback entries have approval_mode="rolled_back" OR rollback_reference in auto_apply log
+        if entry.get("approval_mode") == "rolled_back":
+            applied_str = entry.get("applied_at", "")
+            try:
+                applied_at = datetime.fromisoformat(applied_str)
+                if applied_at.tzinfo is None:
+                    applied_at = applied_at.replace(tzinfo=timezone.utc)
+                if applied_at >= cutoff:
+                    return True
+            except (ValueError, TypeError):
+                continue
+    return False
+
+
+class ReapplyReadiness:
+    """Named result from evaluate_url_reapply_readiness."""
+    BLOCKED = "blocked"
+    ALLOWED = "allowed"
+    ALLOWED_INSUFFICIENT_DATA = "allowed_insufficient_data"  # past max window, data missing
+
+
+def evaluate_url_reapply_readiness(
+    url: str,
+    log_path: Path = AUTO_APPLY_LOG_PATH,
+    config_path: Path = COOLDOWN_CONFIG_PATH,
+    gsc_data_path: Optional[Path] = None,
+) -> dict:
+    """
+    Dynamic cooldown evaluation.
+
+    Returns:
+    {
+      "status": "blocked" | "allowed" | "allowed_insufficient_data",
+      "blocked_reason": str | None,
+      "days_since_apply": float | None,
+      "impressions_found": int | None,
+      "config": dict,
+    }
+
+    Decision tree:
+      1. If URL never applied → ALLOWED
+      2. If rollback within rollback_cooldown_days → BLOCKED: url_in_rollback_cooldown
+      3. If days < min_reapply_days → BLOCKED: url_in_minimum_cooldown_window
+      4. If min_reapply_days <= days < max_reapply_days_without_data:
+           a. impressions >= min_impressions_for_reapply → ALLOWED
+           b. impressions < min_impressions_for_reapply  → BLOCKED: insufficient_impressions_before_reapply
+      5. If days >= max_reapply_days_without_data → ALLOWED_INSUFFICIENT_DATA
+    """
+    cfg = load_cooldown_config(config_path)
+    min_days = cfg["min_reapply_days"]
+    min_impressions = cfg["min_impressions_for_reapply"]
+    max_days = cfg["max_reapply_days_without_data"]
+    rollback_days = cfg["rollback_cooldown_days"]
+
+    log_entries = _load_json(log_path) or []
+    if not isinstance(log_entries, list):
+        log_entries = []
+
+    # 1. Never applied
+    last_entry = _get_last_apply_for_url(url, log_entries)
+    if last_entry is None:
+        return {
+            "status": ReapplyReadiness.ALLOWED,
+            "blocked_reason": None,
+            "days_since_apply": None,
+            "impressions_found": None,
+            "config": cfg,
+        }
+
+    # Compute days since last apply
+    applied_str = last_entry.get("applied_at", "")
+    try:
+        applied_at = datetime.fromisoformat(applied_str)
+        if applied_at.tzinfo is None:
+            applied_at = applied_at.replace(tzinfo=timezone.utc)
+        days_since = (datetime.now(timezone.utc) - applied_at).total_seconds() / 86400
+    except (ValueError, TypeError):
+        days_since = 0.0
+
+    # 2. Rollback cooldown
+    if _had_recent_rollback(url, log_entries, rollback_days):
+        return {
+            "status": ReapplyReadiness.BLOCKED,
+            "blocked_reason": "url_in_rollback_cooldown",
+            "days_since_apply": round(days_since, 2),
+            "impressions_found": None,
+            "config": cfg,
+        }
+
+    # 3. Hard minimum window
+    if days_since < min_days:
+        return {
+            "status": ReapplyReadiness.BLOCKED,
+            "blocked_reason": "url_in_minimum_cooldown_window",
+            "days_since_apply": round(days_since, 2),
+            "impressions_found": None,
+            "config": cfg,
+        }
+
+    # 4. Between min and max window — impressions gate
+    if days_since < max_days:
+        impressions = _get_gsc_impressions_for_url(url, gsc_data_path)
+        if impressions is None or impressions < min_impressions:
+            return {
+                "status": ReapplyReadiness.BLOCKED,
+                "blocked_reason": "insufficient_impressions_before_reapply",
+                "days_since_apply": round(days_since, 2),
+                "impressions_found": impressions,
+                "config": cfg,
+            }
+        return {
+            "status": ReapplyReadiness.ALLOWED,
+            "blocked_reason": None,
+            "days_since_apply": round(days_since, 2),
+            "impressions_found": impressions,
+            "config": cfg,
+        }
+
+    # 5. Past max window — eligible but flag insufficient_data if no impressions
+    impressions = _get_gsc_impressions_for_url(url, gsc_data_path)
+    return {
+        "status": ReapplyReadiness.ALLOWED_INSUFFICIENT_DATA,
+        "blocked_reason": None,
+        "days_since_apply": round(days_since, 2),
+        "impressions_found": impressions,
+        "config": cfg,
+    }
+
 
 def check_url_cooldown(
     url: str,
     log_path: Path = AUTO_APPLY_LOG_PATH,
-    days: int = COOLDOWN_DAYS,
+    days: int = COOLDOWN_DAYS,         # kept for backwards-compat in tests
+    config_path: Path = COOLDOWN_CONFIG_PATH,
+    gsc_data_path: Optional[Path] = None,
 ) -> list:
     """
-    Returns blocker if URL was auto-applied within the last `days` days.
-    Prevents re-applying the same URL too frequently.
+    Wrapper around evaluate_url_reapply_readiness that returns a blocker list.
+    Returns [] if allowed (or allowed_insufficient_data).
+    Returns [blocked_reason] if blocked.
+
+    NOTE: The `days` param is ignored when cooldown_config exists.
+    evaluate_url_reapply_readiness() reads config from file.
     """
-    existing = _load_json(log_path) or []
-    if not isinstance(existing, list):
-        return []
-    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
-    for entry in existing:
-        if entry.get("url") != url:
-            continue
-        applied_str = entry.get("applied_at", "")
-        if not applied_str:
-            continue
-        try:
-            applied_at = datetime.fromisoformat(applied_str)
-            if applied_at.tzinfo is None:
-                applied_at = applied_at.replace(tzinfo=timezone.utc)
-            if applied_at >= cutoff:
-                return [f"url_in_cooldown_last_{days}_days"]
-        except (ValueError, TypeError):
-            continue
+    result = evaluate_url_reapply_readiness(url, log_path, config_path, gsc_data_path)
+    if result["status"] == ReapplyReadiness.BLOCKED:
+        return [result["blocked_reason"]]
     return []
 
 
@@ -445,6 +651,7 @@ def generate_status_report(
     log_path: Path = AUTO_APPLY_LOG_PATH,
     rollback_path: Path = ROLLBACK_PAYLOAD_PATH,
     status_path: Path = STATUS_REPORT_PATH,
+    cooldown_config_path: Path = COOLDOWN_CONFIG_PATH,
 ) -> dict:
     """
     Generate a read-only ops visibility report.
@@ -452,6 +659,8 @@ def generate_status_report(
     """
     enabled = activation_source != "disabled"
     log_entries = _load_json(log_path) or []
+    cfg = load_cooldown_config(cooldown_config_path)
+
     last_apply = None
     if isinstance(log_entries, list) and log_entries:
         last = log_entries[-1]
@@ -464,21 +673,29 @@ def generate_status_report(
             "activation_source": last.get("activation_source"),
         }
 
-    # Cooldown active URLs (applied in last 14 days)
-    cutoff = datetime.now(timezone.utc) - timedelta(days=COOLDOWN_DAYS)
+    # Cooldown active URLs (based on dynamic config: min 7 days)
+    min_day_cutoff = datetime.now(timezone.utc) - timedelta(days=cfg["min_reapply_days"])
     cooldown_urls = []
+    rollback_cooldown_urls = []
+    rollback_cutoff = datetime.now(timezone.utc) - timedelta(days=cfg["rollback_cooldown_days"])
     if isinstance(log_entries, list):
         seen = set()
+        rollback_seen = set()
         for entry in log_entries:
             url = entry.get("url", "")
             applied_str = entry.get("applied_at", "")
-            if url in seen:
-                continue
             try:
                 applied_at = datetime.fromisoformat(applied_str)
                 if applied_at.tzinfo is None:
                     applied_at = applied_at.replace(tzinfo=timezone.utc)
-                if applied_at >= cutoff:
+                # Rollback cooldown
+                if (entry.get("approval_mode") == "rolled_back"
+                        and url not in rollback_seen
+                        and applied_at >= rollback_cutoff):
+                    rollback_cooldown_urls.append(url)
+                    rollback_seen.add(url)
+                # Minimum window cooldown
+                if url not in seen and applied_at >= min_day_cutoff:
                     cooldown_urls.append(url)
                     seen.add(url)
             except (ValueError, TypeError):
@@ -492,14 +709,22 @@ def generate_status_report(
             "enabled": enabled,
             "source": activation_source,
         },
+        "cooldown_config": {
+            "min_reapply_days": cfg["min_reapply_days"],
+            "min_impressions_for_reapply": cfg["min_impressions_for_reapply"],
+            "max_reapply_days_without_data": cfg["max_reapply_days_without_data"],
+            "rollback_cooldown_days": cfg["rollback_cooldown_days"],
+        },
         "last_apply": last_apply,
         "cooldown_active_urls": cooldown_urls,
+        "rollback_cooldown_urls": rollback_cooldown_urls,
         "rollback_available": rollback_available,
         "last_run_blocked_reason": last_run_blocked_reason,
         "policy_version": policy.get("schema_version", "unknown"),
     }
     _write_json(status_path, report)
     return report
+
 
 
 # ─── Main entry point ─────────────────────────────────────────────────────────
