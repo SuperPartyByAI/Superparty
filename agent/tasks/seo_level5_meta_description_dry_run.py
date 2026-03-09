@@ -375,20 +375,36 @@ def resolve_eligible_candidates(inputs: dict, policy: dict) -> List[Candidate]:
 
 def build_meta_description_proposal(candidate: Candidate) -> dict:
     """
-    Deterministic placeholder proposal.
-    Keep PR #54 simple and predictable — no LLM, no free-form generation.
+    LLM-based proposal with deterministic fallback.
+
+    AI runs ONLY here — approval, apply-plan, apply, and rollback are untouched.
+
+    Returns:
+        dict with keys:
+          meta_description: str  — the proposed text (LLM or deterministic)
+          proposal_source:  str  — "llm" | "deterministic_fallback" (additive, schema-safe)
     """
+    # Attempt LLM generation (returns None on any failure)
+    try:
+        from agent.tasks.seo_level5_llm_proposal import build_llm_meta_description
+        llm_text = build_llm_meta_description(candidate)
+    except Exception as exc:
+        log.warning("LLM proposal import/call failed: %s — using deterministic fallback", exc)
+        llm_text = None
+
+    if llm_text:
+        return {"meta_description": llm_text, "proposal_source": "llm"}
+
+    # Deterministic fallback — unchanged from PR #54
     url_slug = candidate.url.strip("/").replace("/", " • ")
     if not url_slug:
         url_slug = "superparty"
-
     proposed = (
         f"Descopera informatii utile despre {url_slug} pe SuperParty. "
         f"Continut clar, relevant si usor de parcurs pentru parinti."
     )
-    # Keep bounded conservatively
     proposed = proposed[:160].rstrip()
-    return {"meta_description": proposed}
+    return {"meta_description": proposed, "proposal_source": "deterministic_fallback"}
 
 
 def build_action_record(candidate: Candidate, policy: dict) -> dict:
