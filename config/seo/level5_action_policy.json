@@ -73,8 +73,8 @@
         }
     },
     "auto_apply_config": {
-        "enabled": false,
-        "_comment": "OFF BY DEFAULT. Seteaza enabled=true doar dupa review explicit. Cand enabled=false, comportamentul este identic cu schema_version 1.2.",
+        "enabled": true,
+        "_comment": "ACTIVAT pentru smoke test controlat Tier C (2026-03-09). Set enabled=false pentru a reveni la modul manual.",
         "mode": "controlled_single_auto_apply",
         "auto_apply_actions_allowlist": [
             "meta_description_update"

@@ -1,0 +1,496 @@
+[
+  {
+    "auto_apply_id": "cd318c5d-bfa0-4c6c-a922-1b523bd894c0",
+    "action_id": "0f1915d7-d9f9-4c42-a182-7198c567afe6",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:13.973860+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "9de140e8-dafb-461d-ae3f-a9921b2f9415",
+    "action_id": "553ab355-b375-4c64-a349-957418964200",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:14.042480+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "5f23467e-c739-49de-96ea-bacc907b278e",
+    "action_id": "642f9b34-bfc9-42a8-99ab-c2c96e771fe4",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:14.242721+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "32827906-a20b-4d6e-b4c1-ad1da7de41b0",
+    "action_id": "3abdf374-bb90-42c0-8e4a-da6cff858035",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:14.373707+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "27c60f36-c9a1-4862-8137-76459eb46a3e",
+    "action_id": "142c877a-e9bd-4010-87e1-a77979801724",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:14.457511+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "c8589c73-e061-4db1-8b26-8122ceeca2bf",
+    "action_id": "7d08eccb-389f-491b-86c0-1fced50f7a3a",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:13:14.503095+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "c1ba8e4c-eddd-4b42-83ee-81ccf050a970",
+    "action_id": "f442512a-5488-406b-810c-a4b51c7ae160",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.464681+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "aff3816d-b643-4218-9ccf-e56ad4a88a34",
+    "action_id": "7f901628-87d1-4082-a05b-ea61463d04f8",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.490168+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "503a82ee-11ba-420c-8262-1475096ab064",
+    "action_id": "950d08fe-ee0a-4bbf-b3b2-18fb1bdf501d",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.583123+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "a03636f7-dfbe-466f-bfe6-5fcd956dff0c",
+    "action_id": "bf19e135-fb03-4b34-baed-dd5923a0cd0a",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.673678+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "7f9d5417-d52c-4665-b225-8becd3cc722d",
+    "action_id": "36db753d-a927-4cd7-9e3f-d3e305bf22ee",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.773682+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "e8cb291e-15a4-4f5d-b17a-61800ff9166a",
+    "action_id": "2afd5218-e11f-44e1-8a34-00cf5b73af74",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:14:51.846007+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "42468011-7f20-425a-b512-3e29376bd00c",
+    "action_id": "26a8ad43-48d2-4097-bce3-bbba710ff219",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.141303+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "67e72e4a-8374-44e2-8e30-bbd6a44e37aa",
+    "action_id": "9ea6f869-f581-4927-96f2-c658f61a3c91",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.174234+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "298de78c-3b70-4509-8345-eb5c9e2ef8e1",
+    "action_id": "b257597d-1c9b-4482-91d6-923dbee373f7",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.274423+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "1ef0c03c-09f4-4505-a727-a60b9c73250b",
+    "action_id": "8221aa14-c4df-4787-9030-9d2702a5a255",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.354262+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "772c57b4-a753-4185-9efb-861068957f0f",
+    "action_id": "c87198bf-95e7-4a7d-8bac-d44c8aa18ce4",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.440011+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "bd162c43-7f27-4ed1-bdef-6bcee3a679aa",
+    "action_id": "286e132d-0326-46ba-822e-5ccf387abe9d",
+    "url": "/test/page",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "layout_prop",
+    "before": {
+      "meta_description": "Descriere veche de test pentru pagina."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii Bucuresti. Costume premium, 30 personaje. Pachete de la 490 lei. Suna: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T16:17:02.503170+00:00",
+    "policy_version": "1.3"
+  },
+  {
+    "auto_apply_id": "c163b5af-c8bf-479b-b050-4a0596276ba5",
+    "action_id": "a1f2c3d4-e5f6-7890-abcd-ef1234567891",
+    "url": "/animatori-petreceri-copii",
+    "approved_by": "system_auto_apply",
+    "approval_mode": "auto_applied",
+    "proposal_source": "deterministic_fallback",
+    "auto_apply_reason": [
+      "tier_c_eligible",
+      "valid_proposal",
+      "file_match_ok",
+      "single_candidate_only",
+      "not_money_page",
+      "not_pillar_page"
+    ],
+    "strategy": "frontmatter_prop",
+    "before": {
+      "meta_description": "Animatori profesioniști pentru petreceri copii în București și Ilfov. Costume premium, 30+ personaje. Pachete de la 490 lei. Transport gratuit în București. Rezervă: 0722 744 377."
+    },
+    "after": {
+      "meta_description": "Animatori petreceri copii București - 30 personaje, costume premium. Pachete 490-1290 lei, transport gratuit. Jocuri, baloane, pictură pe față. Rezervă: 0722 744 377."
+    },
+    "rollback_reference": "seo_level5_rollback_payload.json",
+    "applied_at": "2026-03-09T19:48:33.285283+00:00",
+    "policy_version": "1.3"
+  }
+]
