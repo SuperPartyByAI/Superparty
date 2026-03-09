@@ -12,6 +12,71 @@
             "permanent": true
         },
         {
+            "source": "/animatori-petreceri",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/animatori-petreceri/",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/balonase-modelate",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/balonase-modelate/",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/vata-de-zahar",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/vata-de-zahar/",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/popcorn-masina",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/popcorn-masina/",
+            "destination": "/vata-de-zahar-si-popcorn",
+            "permanent": true
+        },
+        {
+            "source": "/animatoare-botez",
+            "destination": "/ursitoare-botez",
+            "permanent": true
+        },
+        {
+            "source": "/animatoare-botez/",
+            "destination": "/ursitoare-botez",
+            "permanent": true
+        },
+        {
+            "source": "/blog",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/blog/",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/arie-acoperire/",
+            "destination": "/arie-acoperire",
+            "permanent": true
+        },
+        {
             "source": "/animatori-petreceri-copii/",
             "destination": "/animatori-petreceri-copii",
             "permanent": true
@@ -69,6 +134,17 @@
             "permanent": true
         },
         {
+            "source": "/",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "s"
+                }
+            ],
+            "destination": "/",
+            "permanent": true
+        },
+        {
             "source": "/wp-content/plugins/:path*",
             "destination": "/",
             "permanent": true
@@ -80,6 +156,11 @@
         },
         {
             "source": "/wp-content/cache/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/wp-content/:path*",
             "destination": "/",
             "permanent": true
         },
