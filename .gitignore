@@ -1,24 +1,37 @@
-node_modules/
+# .gitignore — SuperParty
+
+# Runtime override files (NEVER commit)
+config/seo/auto_apply_runtime_override.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
 dist/
+build/
+.eggs/
+
+# Node
+node_modules/
 .astro/
-*.env
-.DS_Store
-.vercel
-.env*.local
 
-whole-wind/
-.env.agent
-.env.agent.local
-
-.env.agent.*
+# Env
+.env
 .env.local
-*.bak
+.env.*
 
-# Generated artifacts (not source code)
-reports/seo/dashboard.html
+# OS
+.DS_Store
+Thumbs.db
 
-# Security credentials
-credentials.json
-google-credentials.json
-*-service-account.json
-client_secret.json
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Reports (generated, do not commit; except audit trail)
+reports/superparty/seo_level5_status.json

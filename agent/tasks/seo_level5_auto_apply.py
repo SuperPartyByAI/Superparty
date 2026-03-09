@@ -1,41 +1,37 @@
 """
-SEO Level 5 — Controlled Single Auto-Apply Engine (PR #86)
+SEO Level 5 — Controlled Single Auto-Apply Engine (PR #88 Hardening)
 
 Executa auto-apply pentru exact 1 actiune meta_description_update pe Tier C,
-NUMAI daca feature flag auto_apply_config.enabled=true in policy.
+NUMAI daca feature flag este activ.
 
-Cand feature flag este OFF (default), aceasta functie returneaza None si
-comportamentul este identic cu schema_version 1.2 (manual approval required).
+## Activare feature flag (ordinea de prioritate):
+  1. config/seo/auto_apply_runtime_override.json  (neversioned, in .gitignore)
+     → daca fisierul exista si are "enabled": true → ACTIVAT
+  2. config/seo/level5_action_policy.json
+     → daca auto_apply_config.enabled: true → ACTIVAT
+  3. Altfel → DEZACTIVAT (default safe)
+
+## Oprire instant:
+  - Seteaza "enabled": false in auto_apply_runtime_override.json
+  - SAU sterge fisierul auto_apply_runtime_override.json
+  - SAU seteaza auto_apply_config.enabled: false in policy
 
 CONSTRAINTS — acest modul NICIODATA:
   - Nu aplica actiuni pe Tier A sau Tier B
   - Nu aplica actiuni pe money pages sau pillar pages
+  - Nu aplica actiuni pe URL-uri din pillar_pages_registry.json
   - Nu aplica alt action_type decat meta_description_update
   - Nu creeaza commits sau pull requests
   - Nu aplica mai mult de 1 candidat per run
   - Nu introduce auto-learning sau feedback loop autonom
   - Nu ocoleste rollback_required
+  - Nu aplica acelasi URL mai des de 1× la 14 zile (cooldown guard)
 
 OUTPUTS:
   reports/superparty/seo_level5_auto_apply_log.json  (append-only audit trail)
   reports/superparty/seo_level5_apply_execution.json (standard execution report)
   reports/superparty/seo_level5_rollback_payload.json
-
-Schema audit trail per intrare:
-{
-  "auto_apply_id": str,         # uuid unic
-  "action_id": str,
-  "url": str,
-  "approved_by": "system_auto_apply",
-  "approval_mode": "auto_applied",
-  "proposal_source": "llm" | "deterministic_fallback" | "unknown",
-  "auto_apply_reason": [str],   # conditii care au trecut
-  "before": {"meta_description": str},
-  "after": {"meta_description": str},
-  "rollback_reference": str,    # path relativ la rollback payload
-  "applied_at": str,            # ISO8601 UTC
-  "policy_version": str
-}
+  reports/superparty/seo_level5_status.json          (ops visibility read-only)
 """
 
 from __future__ import annotations
@@ -44,7 +40,7 @@ import json
 import logging
 import re
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -56,18 +52,22 @@ REPORTS_DIR = ROOT_DIR / "reports" / "superparty"
 PAGES_DIR   = ROOT_DIR / "src" / "pages"
 
 POLICY_PATH              = CONFIG_DIR  / "level5_action_policy.json"
+OVERRIDE_PATH            = CONFIG_DIR  / "auto_apply_runtime_override.json"
+PILLAR_REGISTRY_PATH     = CONFIG_DIR  / "pillar_pages_registry.json"
 DRY_RUN_REPORT_PATH      = REPORTS_DIR / "seo_level5_dry_run_actions.json"
 APPLY_PLAN_PATH          = REPORTS_DIR / "seo_level5_apply_plan.json"
 AUTO_APPLY_LOG_PATH      = REPORTS_DIR / "seo_level5_auto_apply_log.json"
 EXECUTION_REPORT_PATH    = REPORTS_DIR / "seo_level5_apply_execution.json"
 ROLLBACK_PAYLOAD_PATH    = REPORTS_DIR / "seo_level5_rollback_payload.json"
+STATUS_REPORT_PATH       = REPORTS_DIR / "seo_level5_status.json"
 
 ACTION_TYPE = "meta_description_update"
 APPROVED_BY = "system_auto_apply"
+COOLDOWN_DAYS = 14
 
-# Reuse safe edit patterns from apply module (same logic, no duplication of logic)
+# Edit patterns
 _RE_FRONTMATTER_DESC = re.compile(
-    r"""^( *description\s*=\s*)(['"])(.*?)\2(\s*;?\s*)$""",
+    r"""^( *description\s*=\s*)(['"'])(.*?)\2(\s*;?\s*)$""",
     re.MULTILINE,
 )
 _RE_META_TAG_DESC = re.compile(
@@ -110,15 +110,97 @@ def load_policy() -> dict:
     return data
 
 
-# ─── Feature flag ────────────────────────────────────────────────────────────
+def load_pillar_registry(registry_path: Path = PILLAR_REGISTRY_PATH) -> list:
+    """Load list of pillar page URLs from registry. Returns empty list if missing."""
+    data = _load_json(registry_path)
+    if not data:
+        return []
+    return data.get("pillar_pages", [])
 
-def check_auto_apply_enabled(policy: dict) -> bool:
+
+# ─── Feature flag — override-first resolution ────────────────────────────────
+
+def get_activation_source(
+    policy: dict,
+    override_path: Path = OVERRIDE_PATH,
+) -> str:
     """
-    Returns True ONLY if auto_apply_config.enabled is explicitly true.
-    Any other value (including missing) returns False.
+    Returns the source of the activation decision:
+      "override_file"  — override file exists and has enabled=true
+      "policy"         — policy has auto_apply_config.enabled=true (no override)
+      "disabled"       — both sources have enabled=false or override missing
     """
+    override = _load_json(override_path)
+    if override is not None:
+        if override.get("enabled", False) is True:
+            return "override_file"
+        else:
+            return "disabled"  # override file exists but disabled → short-circuit
+    # No override file → fall through to policy
     cfg = policy.get("auto_apply_config", {})
-    return cfg.get("enabled", False) is True
+    if cfg.get("enabled", False) is True:
+        return "policy"
+    return "disabled"
+
+
+def check_auto_apply_enabled(
+    policy: dict,
+    override_path: Path = OVERRIDE_PATH,
+) -> bool:
+    """
+    Returns True ONLY if activation source is not 'disabled'.
+    Override file takes priority over policy.
+    """
+    return get_activation_source(policy, override_path) != "disabled"
+
+
+# ─── Pillar registry guard ───────────────────────────────────────────────────
+
+def check_pillar_registry(url: str, registry_path: Path = PILLAR_REGISTRY_PATH) -> list:
+    """
+    Returns blockers if URL is in pillar registry.
+    This guard runs independently of is_pillar_page field in the action plan,
+    closing the vulnerability where a plan incorrectly marks a pillar page as non-pillar.
+    """
+    pillar_urls = load_pillar_registry(registry_path)
+    # Normalize: compare without trailing slash
+    url_norm = url.rstrip("/")
+    for p in pillar_urls:
+        if p.rstrip("/") == url_norm:
+            return ["pillar_page_in_registry"]
+    return []
+
+
+# ─── Cooldown guard ──────────────────────────────────────────────────────────
+
+def check_url_cooldown(
+    url: str,
+    log_path: Path = AUTO_APPLY_LOG_PATH,
+    days: int = COOLDOWN_DAYS,
+) -> list:
+    """
+    Returns blocker if URL was auto-applied within the last `days` days.
+    Prevents re-applying the same URL too frequently.
+    """
+    existing = _load_json(log_path) or []
+    if not isinstance(existing, list):
+        return []
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    for entry in existing:
+        if entry.get("url") != url:
+            continue
+        applied_str = entry.get("applied_at", "")
+        if not applied_str:
+            continue
+        try:
+            applied_at = datetime.fromisoformat(applied_str)
+            if applied_at.tzinfo is None:
+                applied_at = applied_at.replace(tzinfo=timezone.utc)
+            if applied_at >= cutoff:
+                return [f"url_in_cooldown_last_{days}_days"]
+        except (ValueError, TypeError):
+            continue
+    return []
 
 
 # ─── Eligibility ──────────────────────────────────────────────────────────────
@@ -126,14 +208,12 @@ def check_auto_apply_enabled(policy: dict) -> bool:
 def validate_auto_apply_eligibility(action: dict, policy: dict) -> list:
     """
     Returns list of blockers. Empty list = eligible.
-    Checks: flag, action_type, tier, money_page, pillar_page.
+    Checks: action_type, tier, money_page, pillar_page (from plan).
+    NOTE: feature flag check is done BEFORE calling this function in run_controlled_auto_apply.
+    NOTE: pillar_registry check is separate (check_pillar_registry).
     """
     blockers = []
     cfg = policy.get("auto_apply_config", {})
-
-    if not check_auto_apply_enabled(policy):
-        blockers.append("auto_apply_disabled")
-        return blockers  # short-circuit
 
     allowlist_actions = cfg.get("auto_apply_actions_allowlist", [])
     tier_allowlist    = cfg.get("auto_apply_tier_allowlist", [])
@@ -247,8 +327,6 @@ def apply_description_to_file(file_path: Path, new_desc: str) -> dict:
     """
     content = file_path.read_text(encoding="utf-8")
 
-    # Guard: no unsafe quotes against the delimiter
-    # (reuse same logic as seo_level5_meta_description_apply.py)
     def _safe_write(pattern, new_text, group_idx_text, content):
         m = pattern.search(content)
         if m:
@@ -314,6 +392,7 @@ def build_auto_apply_record(
     after_desc: str,
     strategy: str,
     auto_apply_reason: list,
+    activation_source: str = "policy",
 ) -> dict:
     """Build the audit trail record for one auto-apply."""
     return {
@@ -323,6 +402,7 @@ def build_auto_apply_record(
         "approved_by": APPROVED_BY,
         "approval_mode": "auto_applied",
         "proposal_source": action.get("proposal_source", "unknown"),
+        "activation_source": activation_source,
         "auto_apply_reason": auto_apply_reason,
         "strategy": strategy,
         "before": {"meta_description": before_desc},
@@ -355,12 +435,82 @@ def build_rollback_payload(
     }
 
 
+# ─── Status report ────────────────────────────────────────────────────────────
+
+def generate_status_report(
+    policy: dict,
+    activation_source: str,
+    last_run_blocked_reason: Optional[str] = None,
+    override_path: Path = OVERRIDE_PATH,
+    log_path: Path = AUTO_APPLY_LOG_PATH,
+    rollback_path: Path = ROLLBACK_PAYLOAD_PATH,
+    status_path: Path = STATUS_REPORT_PATH,
+) -> dict:
+    """
+    Generate a read-only ops visibility report.
+    Writes to seo_level5_status.json.
+    """
+    enabled = activation_source != "disabled"
+    log_entries = _load_json(log_path) or []
+    last_apply = None
+    if isinstance(log_entries, list) and log_entries:
+        last = log_entries[-1]
+        last_apply = {
+            "url": last.get("url"),
+            "applied_at": last.get("applied_at"),
+            "proposal_source": last.get("proposal_source"),
+            "strategy": last.get("strategy"),
+            "auto_apply_id": last.get("auto_apply_id"),
+            "activation_source": last.get("activation_source"),
+        }
+
+    # Cooldown active URLs (applied in last 14 days)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=COOLDOWN_DAYS)
+    cooldown_urls = []
+    if isinstance(log_entries, list):
+        seen = set()
+        for entry in log_entries:
+            url = entry.get("url", "")
+            applied_str = entry.get("applied_at", "")
+            if url in seen:
+                continue
+            try:
+                applied_at = datetime.fromisoformat(applied_str)
+                if applied_at.tzinfo is None:
+                    applied_at = applied_at.replace(tzinfo=timezone.utc)
+                if applied_at >= cutoff:
+                    cooldown_urls.append(url)
+                    seen.add(url)
+            except (ValueError, TypeError):
+                continue
+
+    rollback_available = rollback_path.exists()
+
+    report = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "activation": {
+            "enabled": enabled,
+            "source": activation_source,
+        },
+        "last_apply": last_apply,
+        "cooldown_active_urls": cooldown_urls,
+        "rollback_available": rollback_available,
+        "last_run_blocked_reason": last_run_blocked_reason,
+        "policy_version": policy.get("schema_version", "unknown"),
+    }
+    _write_json(status_path, report)
+    return report
+
+
 # ─── Main entry point ─────────────────────────────────────────────────────────
 
 def run_controlled_auto_apply(
     pages_dir: Path = PAGES_DIR,
     policy_path: Path = POLICY_PATH,
     apply_plan_path: Path = APPLY_PLAN_PATH,
+    override_path: Path = OVERRIDE_PATH,
+    pillar_registry_path: Path = PILLAR_REGISTRY_PATH,
+    log_path: Path = AUTO_APPLY_LOG_PATH,
 ) -> Optional[bool]:
     """
     Entry point for controlled single auto-apply.
@@ -370,37 +520,81 @@ def run_controlled_auto_apply(
       True   — apply successful
       False  — blocked by a guardrail; no file modified
     """
+    import agent.tasks.seo_level5_auto_apply as _self_mod
+
     policy = _load_json(policy_path)
     if not policy:
         log.error("Policy not found: %s", policy_path)
         return False
 
-    # ── Feature flag check ────────────────────────────────────────────────────
-    if not check_auto_apply_enabled(policy):
-        log.info("auto_apply_config.enabled=false — skipping auto-apply (flag OFF)")
+    # ── Feature flag check (override-first) ──────────────────────────────────
+    activation_source = get_activation_source(policy, override_path)
+    if activation_source == "disabled":
+        log.info("auto_apply disabled (source: policy+override) — skipping (flag OFF)")
+        generate_status_report(policy, activation_source, last_run_blocked_reason="flag_off",
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return None  # Sentinel: flag OFF, no action
 
-    log.info("auto_apply_config.enabled=true — checking eligibility")
+    log.info("auto_apply enabled (source: %s) — checking eligibility", activation_source)
 
     # ── Load plan ─────────────────────────────────────────────────────────────
     plan = _load_json(apply_plan_path)
     if not plan:
         log.warning("Apply plan not found: %s", apply_plan_path)
+        generate_status_report(policy, activation_source, last_run_blocked_reason="no_apply_plan",
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return False
 
     # ── Candidate count ───────────────────────────────────────────────────────
     count_blockers = validate_candidate_count(plan, policy)
     if count_blockers:
         log.warning("Auto-apply blocked (candidate count): %s", count_blockers)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(count_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return False
 
     candidates = [a for a in plan.get("plan", []) if a.get("ready_to_apply") is True]
     action = candidates[0]  # exactly 1 at this point
+    action_url = action.get("url", "")
+
+    # ── Pillar registry guard (independent of plan's is_pillar_page) ──────────
+    registry_blockers = check_pillar_registry(action_url, pillar_registry_path)
+    if registry_blockers:
+        log.warning("Auto-apply blocked (pillar registry): %s — url=%s", registry_blockers, action_url)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(registry_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
+        return False
+
+    # ── Cooldown guard ────────────────────────────────────────────────────────
+    cooldown_blockers = check_url_cooldown(action_url, log_path=log_path)
+    if cooldown_blockers:
+        log.warning("Auto-apply blocked (cooldown): %s — url=%s", cooldown_blockers, action_url)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(cooldown_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
+        return False
 
     # ── Eligibility ───────────────────────────────────────────────────────────
     eligibility_blockers = validate_auto_apply_eligibility(action, policy)
     if eligibility_blockers:
         log.warning("Auto-apply blocked (eligibility): %s", eligibility_blockers)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(eligibility_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return False
 
     # ── Proposal validity ─────────────────────────────────────────────────────
@@ -408,12 +602,22 @@ def run_controlled_auto_apply(
     proposal_blockers = validate_proposal(proposal_desc)
     if proposal_blockers:
         log.warning("Auto-apply blocked (proposal): %s", proposal_blockers)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(proposal_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return False
 
     # ── File state (drift check) ──────────────────────────────────────────────
     file_blockers = validate_file_state(action, pages_dir)
     if file_blockers:
         log.warning("Auto-apply blocked (file drift): %s", file_blockers)
+        generate_status_report(policy, activation_source,
+                               last_run_blocked_reason=str(file_blockers),
+                               override_path=override_path, log_path=log_path,
+                               rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                               status_path=_self_mod.STATUS_REPORT_PATH)
         return False
 
     # ── All guards passed — execute ───────────────────────────────────────────
@@ -425,6 +629,8 @@ def run_controlled_auto_apply(
         "single_candidate_only",
         "not_money_page",
         "not_pillar_page",
+        "not_in_pillar_registry",
+        "not_in_cooldown",
     ]
 
     try:
@@ -437,7 +643,6 @@ def run_controlled_auto_apply(
 
     # ── Rollback payload ──────────────────────────────────────────────────────
     rollback = build_rollback_payload(target_file, before_desc, proposal_desc, action.get("action_id", ""))
-    import agent.tasks.seo_level5_auto_apply as _self_mod
     _write_json(_self_mod.ROLLBACK_PAYLOAD_PATH, rollback)
 
     # ── Audit trail ───────────────────────────────────────────────────────────
@@ -448,8 +653,9 @@ def run_controlled_auto_apply(
         after_desc=proposal_desc,
         strategy=strategy,
         auto_apply_reason=auto_apply_reason,
+        activation_source=activation_source,
     )
-    append_auto_apply_log(record, log_path=_self_mod.AUTO_APPLY_LOG_PATH)
+    append_auto_apply_log(record, log_path=log_path)
 
     # ── Execution report ──────────────────────────────────────────────────────
     execution_report = {
@@ -457,6 +663,7 @@ def run_controlled_auto_apply(
             "schema_version": policy.get("schema_version", "1.3"),
             "approval_mode": "auto_applied",
             "approved_by": APPROVED_BY,
+            "activation_source": activation_source,
             "applied": 1,
             "create_pull_request": False,
             "commit_changes": False,
@@ -479,9 +686,15 @@ def run_controlled_auto_apply(
     }
     _write_json(_self_mod.EXECUTION_REPORT_PATH, execution_report)
 
+    # ── Status report ─────────────────────────────────────────────────────────
+    generate_status_report(policy, activation_source, last_run_blocked_reason=None,
+                           override_path=override_path, log_path=log_path,
+                           rollback_path=_self_mod.ROLLBACK_PAYLOAD_PATH,
+                           status_path=_self_mod.STATUS_REPORT_PATH)
+
     log.info(
-        "Auto-apply SUCCESS: url=%s strategy=%s auto_apply_id=%s",
-        action.get("url"), strategy, record["auto_apply_id"],
+        "Auto-apply SUCCESS: url=%s strategy=%s auto_apply_id=%s activation_source=%s",
+        action.get("url"), strategy, record["auto_apply_id"], activation_source,
     )
     return True
 
