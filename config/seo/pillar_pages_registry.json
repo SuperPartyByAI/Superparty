@@ -1,0 +1,18 @@
+{
+    "schema_version": "1.0",
+    "_doc": "Registro de pagini pilon SuperParty. URL-urile din aceasta lista sunt blocate de guardrail-ul L5 auto-apply indiferent de valoarea is_pillar_page din planul de actiune.",
+    "pillar_pages": [
+        "/animatori-petreceri-copii",
+        "/arcade-baloane",
+        "/baloane-cu-heliu",
+        "/decoratiuni-baloane",
+        "/piniata",
+        "/ursitoare-botez",
+        "/vata-de-zahar-si-popcorn",
+        "/mos-craciun-de-inchiriat",
+        "/contact",
+        "/galerie",
+        "/recenzii",
+        "/arie-acoperire"
+    ]
+}

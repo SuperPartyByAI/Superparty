@@ -73,8 +73,8 @@
         }
     },
     "auto_apply_config": {
-        "enabled": true,
-        "_comment": "ACTIVAT pentru smoke test controlat Tier C (2026-03-09). Set enabled=false pentru a reveni la modul manual.",
+        "enabled": false,
+        "_comment": "OFF BY DEFAULT. Activare controlata prin auto_apply_runtime_override.json (neversioned, in .gitignore). NU schimba direct in acest fisier pentru rollout live.",
         "mode": "controlled_single_auto_apply",
         "auto_apply_actions_allowlist": [
             "meta_description_update"
