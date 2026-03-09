@@ -1,7 +1,7 @@
 {
-    "schema_version": "1.2",
+    "schema_version": "1.3",
     "mode": "controlled_single_apply",
-    "description": "PR #58 activeaza primul apply real, ultra-restrans: EXCLUSIV meta_description_update, EXCLUSIV Tier C, max 1 actiune per run, cu rollback obligatoriu. write_files=true NUMAI pentru actiunea activata. create_pull_request=false, commit_changes=false.",
+    "description": "PR #85 adauga auto_apply_config bloc pentru modul optional controlled_single_auto_apply. Calea manuala ramane neschimbata: approval_gate=manual, requires_manual_approval_before_apply=true. Auto-apply este OFF by default si necesita activare explicita prin auto_apply_config.enabled=true.",
     "allowed_actions": [
         "meta_description_update"
     ],
@@ -71,5 +71,31 @@
             "commit_changes": false,
             "rollback_mode": "single_file_revert"
         }
+    },
+    "auto_apply_config": {
+        "enabled": false,
+        "_comment": "OFF BY DEFAULT. Seteaza enabled=true doar dupa review explicit. Cand enabled=false, comportamentul este identic cu schema_version 1.2.",
+        "mode": "controlled_single_auto_apply",
+        "auto_apply_actions_allowlist": [
+            "meta_description_update"
+        ],
+        "auto_apply_tier_allowlist": [
+            "C"
+        ],
+        "auto_apply_tier_denylist": [
+            "A",
+            "B"
+        ],
+        "auto_apply_max_candidates": 1,
+        "auto_apply_money_pages": "forbidden",
+        "auto_apply_pillar_pages": "forbidden",
+        "auto_apply_requires_valid_proposal": true,
+        "auto_apply_requires_file_match": true,
+        "auto_apply_approved_by_label": "system_auto_apply",
+        "rollback_required": true,
+        "feedback_loop_mode": "observability_only",
+        "create_pull_request": false,
+        "commit_changes": false,
+        "approval_mode_label": "auto_applied"
     }
 }

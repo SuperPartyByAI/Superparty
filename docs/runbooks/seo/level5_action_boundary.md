@@ -134,4 +134,69 @@ Sunt **explicit interzise** felătoarele formulări sau comportamente:
 
 ---
 
-*Document de Design Boundary — Level 5 | PR #53 | 2026-03-07 | Read-Only*
+
+*Document de Design Boundary — Level 5 | Actualizat PR #85 | 2026-03-09 | Read-Only*
+
+---
+
+## 10. Modul Controlled Single Auto-Apply (PR #85)
+
+> **Activare:** exclusiv prin `auto_apply_config.enabled: true` în `level5_action_policy.json`.
+> **Default:** `enabled: false` — comportament identic cu schema_version 1.2.
+
+### Condiții stricte pentru eligibilitate auto-apply
+
+Toate condițiile trebuie să fie îndeplinite simultan:
+
+| # | Condiție | Blocker dacă nu trece |
+|---|---|---|
+| 1 | `auto_apply_config.enabled: true` (feature flag explicit) | Auto-apply nu rulează |
+| 2 | Exact 1 candidat eligibil Tier C în dry-run | Blocat — max 1 per run |
+| 3 | Proposal valid (lungime 140–160 ch, fără HTML/ghilimele/newline) | Blocat |
+| 4 | Pagina NU este `is_money_page` | Blocat |
+| 5 | Pagina NU este `is_pillar_page` | Blocat |
+| 6 | Before-state fișier corespunde exact planului | Blocat — drift detection |
+| 7 | `action_type` în `auto_apply_actions_allowlist` (doar `meta_description_update`) | Blocat |
+| 8 | Tier în `auto_apply_tier_allowlist` (doar `C`) | Blocat |
+
+### Audit Trail Obligatoriu
+
+Fiecare auto-apply scrie în `seo_level5_auto_apply_log.json` (append-only):
+
+```json
+{
+  "auto_apply_id": "uuid",
+  "approved_by": "system_auto_apply",
+  "approval_mode": "auto_applied",
+  "proposal_source": "llm | deterministic_fallback",
+  "auto_apply_reason": ["tier_c_eligible", "valid_proposal", "file_match_ok"],
+  "before": {"meta_description": "..."},
+  "after": {"meta_description": "..."},
+  "rollback_reference": "seo_level5_rollback_payload.json",
+  "applied_at": "ISO8601",
+  "policy_version": "1.3"
+}
+```
+
+### Status distinct în execution report
+
+| Valoare `approval_mode` | Semnificație |
+|---|---|
+| `proposed_only` | Dry-run propunere, nicio aplicare |
+| `manually_approved` | Aprobat manual de operator |
+| `auto_applied` | Aplicat automat (feature flag ON) |
+| `rolled_back` | Reverted de rollback executor |
+
+### Ce NU este modul auto-apply
+
+- NU este batch apply (max 1 candidat per run)
+- NU este feedback loop cu auto-learning
+- NU atinge Tier A, Tier B, money pages sau pillar pages
+- NU schimbă canonical, robots, noindex sau sitemap
+- NU activează `meta_title_update` (neactivat)
+- NU emite claim-uri de tip „SEO win confirmat automat"
+
+### Oprire instant
+
+Setează `auto_apply_config.enabled: false` în `level5_action_policy.json`.
+Nicio altă modificare necesară.
