@@ -1,0 +1,25 @@
+{
+    "plan_id": "l5-smoke-2026-03-09-animatori",
+    "generated_at": "2026-03-09T21:40:00+00:00",
+    "schema_version": "1.3",
+    "plan": [
+        {
+            "action_id": "a1f2c3d4-e5f6-7890-abcd-ef1234567891",
+            "plan_id": "l5-smoke-2026-03-09-animatori",
+            "action_type": "meta_description_update",
+            "url": "/animatori-petreceri-copii",
+            "tier": "C",
+            "is_money_page": false,
+            "is_pillar_page": false,
+            "ready_to_apply": true,
+            "proposal_source": "deterministic_fallback",
+            "before": {
+                "meta_description": "Animatori profesioniști pentru petreceri copii în București și Ilfov. Costume premium, 30+ personaje. Pachete de la 490 lei. Transport gratuit în București. Rezervă: 0722 744 377."
+            },
+            "proposal": {
+                "meta_description": "Animatori petreceri copii București - 30 personaje, costume premium. Pachete 490-1290 lei, transport gratuit. Jocuri, baloane, pictură pe față. Rezervă: 0722 744 377."
+            }
+        }
+    ],
+    "blocked": []
+}
