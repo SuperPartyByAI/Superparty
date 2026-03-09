@@ -30,6 +30,11 @@ const cleanReviews = pageReviews.map((t: any) => ({
 const isHold = entry.data.indexStatus === 'hold';
 const robotsProp = isHold ? 'noindex, follow' : 'index, follow';
 
+// Canonical fallback: if not set in frontmatter, generate from slug
+// This fixes GSC "Duplicate without user-selected canonical" for all /petreceri/ pages
+const canonicalUrl = entry.data.canonical ?? `https://www.superparty.ro/petreceri/${entry.slug}`;
+
+
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -73,7 +78,7 @@ const waUrl = `https://wa.me/${PHONE_E164}?text=${waText}`;
   title={entry.data.title} 
   description={entry.data.description} 
   robots={robotsProp} 
-  canonical={entry.data.canonical}
+  canonical={canonicalUrl}
   schema={JSON.stringify(schemaData)}>
 	
   <div class="relative bg-white pt-10 pb-20 lg:pt-16 lg:pb-28">
