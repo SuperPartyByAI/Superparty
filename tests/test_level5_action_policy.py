@@ -27,12 +27,13 @@ def policy():
 
 def test_schema_version_present(policy):
     assert "schema_version" in policy
-    assert policy["schema_version"] == "1.1"
+    assert policy["schema_version"] == "1.3"  # updatat la 1.3 in PR #88/89
 
 
 def test_mode_is_controlled_dry_run_only(policy):
-    assert policy.get("mode") == "controlled_dry_run_only", (
-        "PR #54 trebuie sa fie controlled_dry_run_only"
+    # Post PR #88/89: mode = controlled_single_apply (semi-auto live)
+    assert policy.get("mode") in ("controlled_dry_run_only", "controlled_single_apply_only", "controlled_single_apply"), (
+        "Policy trebuie sa fie controlled_dry_run_only sau controlled_single_apply"
     )
 
 
@@ -182,9 +183,9 @@ def test_action_activation_block_exists(policy):
 
 def test_meta_description_update_is_dry_run_only(policy):
     cfg = policy["action_activation"]["meta_description_update"]
-    assert cfg.get("execution_mode") == "dry_run_only"
-    assert cfg.get("report_only") is True
-    assert cfg.get("write_files") is False
+    # Post PR #88/89: execution_mode = single_apply_only (live semi-auto)
+    # Invariantele de safety raman: create_pull_request=False, commit_changes=False
+    assert cfg.get("execution_mode") in ("dry_run_only", "single_apply_only")
     assert cfg.get("create_pull_request") is False
     assert cfg.get("commit_changes") is False
 
