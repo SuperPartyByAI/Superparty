@@ -8,6 +8,9 @@ export interface Props {
 }
 const { title, description = 'SuperParty - Animatori petreceri copii Bucuresti. Personaje costumate, baloane, decoratiuni. Rezerva: 0722 744 377', robots, schema, canonical } = Astro.props;
 
+const finalCanonical = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const finalRobots = robots || "index, follow";
+
 const GA4_ID = import.meta.env.PUBLIC_GA4_ID || '';
 const WA_TEXT = encodeURIComponent('Bună! Vreau să rezerv animatori pentru petrecerea copilului meu.\nData: \nLocalitate/Sector: \nVârsta copilului: \nNr. copii: \nPachet dorit (opțional): ');
 const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
@@ -19,8 +22,8 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  {robots && <meta name="robots" content={robots} />}
-  {canonical && <link rel="canonical" href={canonical} />}
+  <meta name="robots" content={finalRobots} />
+  <link rel="canonical" href={finalCanonical} />
   {schema && <script type="application/ld+json" set:html={schema} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
