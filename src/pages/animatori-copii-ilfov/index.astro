@@ -1,0 +1,27 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Hero from '../../../components/Hero.astro';
+import Services from '../../../components/Services.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import Contact from '../../../components/Contact.astro';
+
+// SUPERPARTY FLAGSHIP DIFFERENTIATION
+const title = "Animatori petreceri copii Ilfov | Superparty (#1) Peste 10.000 de evenimente";
+const description = "Indiferent în ce localitate din județul Ilfov te afli, echipa Superparty aduce distracția la tine. Alege din peste 100 de animatori și personaje pentru un eveniment memorabil.";
+---
+
+<Layout title={title} description={description} canonical={`https://www.superparty.ro/${W3_ROUTE}/`}>
+  <Hero 
+    title="Animatori petreceri copii Ilfov"
+    subtitle="Din București direct la tine în județ, cu toată recuzita și magia Superparty!"
+    ctaText="Rezervă Acum"
+    ctaLink="#contact"
+    image="/images/animatori-ilfov-hero.jpg"
+  />
+  <Services 
+    title="Pachete complete pentru județul Ilfov"
+    description="Venim pregătiți cu sonorizare, baloane, face painting și jocuri interactive adaptate locațiilor indoor sau în aer liber."
+  />
+  <Testimonials />
+  <Contact />
+</Layout>
