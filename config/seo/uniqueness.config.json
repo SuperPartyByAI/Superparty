@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "policy": "strict_multi_site_differentiation",
+  "thresholds": {
+    "title_similarity_max": 0.70,
+    "meta_description_similarity_max": 0.75,
+    "body_paragraph_exact_match_allowed": false,
+    "faq_block_similarity_max": 0.50,
+    "cta_block_similarity_max": 0.60,
+    "full_page_body_similarity_max": 0.55
+  },
+  "allowlist": [
+    "brand_names",
+    "domain_names",
+    "city_names",
+    "county_names",
+    "target_keywords",
+    "legal_privacy_terms",
+    "phone_numbers",
+    "email_addresses",
+    "physical_addresses",
+    "schema_primitives"
+  ],
+  "fail_conditions": [
+    "body_overlap_exceeds_threshold",
+    "title_overlap_exceeds_threshold",
+    "faq_overlap_exceeds_threshold",
+    "is_placeholder_draft",
+    "missing_canonical",
+    "missing_robots_tag"
+  ],
+  "enforcement": {
+    "action_on_fail": "noindex_and_exclude_sitemap",
+    "block_build": false
+  }
+}
