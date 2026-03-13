@@ -11,7 +11,7 @@ SITE_ORIGIN = 'https://www.superparty.ro'
 # ==========================================
 # Template comun pentru hub local
 # ==========================================
-def hub_template(slug, title, desc, canonical, h1, intro, locatii, timp_depl, faq_local, cartiere=""):
+def hub_template(slug, title, desc, canonical, h1, intro, locatii, timp_depl, faq_local, cartiere="", robots="noindex, follow"):
     faq_items = ",\n".join([
         f"""      {{
         "@type": "Question",
@@ -61,7 +61,7 @@ const schema = JSON.stringify({{
   title="{title} | SuperParty"
   description="{desc}"
   canonical="{SITE_ORIGIN}/petreceri/{slug}"
-  robots="index, follow"
+  robots="{robots}"
   schema={{schema}}
 >
 <style>
