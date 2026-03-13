@@ -11,7 +11,9 @@ SITE_ORIGIN = 'https://www.superparty.ro'
 # ==========================================
 # Template comun pentru hub local
 # ==========================================
-def hub_template(slug, title, desc, canonical, h1, intro, locatii, timp_depl, faq_local, cartiere="", robots="noindex, follow"):
+def hub_template(slug, title, desc, canonical, h1, intro, locatii, timp_depl, faq_local, cartiere="", allow_index=False):
+    # Daca allow_index este False, forțăm noindex pentru a preveni Thin Content/Doorway Pages
+    robots = "index, follow" if allow_index else "noindex, follow"
     faq_items = ",\n".join([
         f"""      {{
         "@type": "Question",
@@ -517,6 +519,10 @@ ILFOV_LOCALITATI = [
 generated = []
 
 for slug, data in HUBS.items():
+    # Toate Hub-urile generice momentan sunt non-indexabile pana cand se adauga continut unic real per sector/judet.
+    # Ex: review-uri unice per locatie, numere de telefon diferite, detalii textuale ce nu sunt sablonizate 95%.
+    is_unique = data.get("is_unique_enough", False)
+    
     content = hub_template(
         slug=slug,
         title=data["title"],
@@ -526,7 +532,8 @@ for slug, data in HUBS.items():
         intro=data["intro"],
         locatii=data["locatii"],
         timp_depl=data["timp_depl"],
-        faq_local=data["faq_local"]
+        faq_local=data["faq_local"],
+        allow_index=is_unique
     )
     filepath = os.path.join(PAGES_DIR, f"{slug}.astro")
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -548,6 +555,10 @@ for loc in ILFOV_LOCALITATI:
         (f"Există taxă de deplasare pentru {oras}?", f"Depinde de distanță — contactați-ne cu adresa exactă din {oras} pentru o ofertă completă inclusiv transport.")
     ]
     
+    # Implicit toate paginile Ilfov generate automat sunt Thin Content (același text, doar numele orasului schimbat). 
+    # Le punem pe "noindex" pana cand cineva pune text extins manual, review-uri din Bragadiru/Chiajna etc.
+    is_unique = loc.get("is_unique_enough", False)
+    
     content = hub_template(
         slug=slug,
         title=title,
@@ -557,7 +568,8 @@ for loc in ILFOV_LOCALITATI:
         intro=loc["intro"],
         locatii=loc["locatii"],
         timp_depl=loc["timp"],
-        faq_local=faq_local
+        faq_local=faq_local,
+        allow_index=is_unique
     )
     
     filepath = os.path.join(PAGES_DIR, f"{slug}.astro")
