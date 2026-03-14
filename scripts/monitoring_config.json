@@ -1,0 +1,38 @@
+{
+  "superparty": {
+    "brand": "Superparty",
+    "role": "flagship broad commercial owner",
+    "base_url": "https://www.superparty.ro",
+    "monitored_pages": [
+      {"path": "/", "priority": "high"},
+      {"path": "/animatori-petreceri-copii/", "priority": "critical", "expected_robots": "index, follow", "expected_h1": "Animatori Petreceri Copii", "is_owner_page": true},
+      {"path": "/sitemap.xml", "priority": "high", "is_sitemap": true}
+    ]
+  },
+  "animatopia": {
+    "brand": "Animatopia",
+    "role": "mascot / themed / emotional / family-friendly",
+    "base_url": "https://www.animatopia.ro",
+    "monitored_pages": [
+      {"path": "/", "priority": "high"},
+      {"path": "/mascote-si-personaje/", "priority": "critical", "expected_robots": "index, follow"},
+      {"path": "/petreceri-tematice/", "priority": "critical", "expected_robots": "index, follow"},
+      {"path": "/petreceri-acasa/", "priority": "critical", "expected_robots": "index, follow"},
+      {"path": "/sitemap.xml", "priority": "high", "is_sitemap": true}
+    ]
+  },
+  "wowparty": {
+    "brand": "WowParty",
+    "role": "practical / pricing / packages / quick-booking",
+    "base_url": "https://www.wowparty.ro",
+    "monitored_pages": [
+      {"path": "/", "priority": "high"},
+      {"path": "/servicii/", "priority": "critical"},
+      {"path": "/pachete/", "priority": "critical"},
+      {"path": "/faq/", "priority": "medium"},
+      {"path": "/despre-noi/", "priority": "medium"},
+      {"path": "/contact/", "priority": "medium"},
+      {"path": "/sitemap.xml", "priority": "high", "is_sitemap": true}
+    ]
+  }
+}
