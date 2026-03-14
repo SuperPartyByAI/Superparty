@@ -7,5 +7,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://www.superparty.ro',
     trailingSlash: 'ignore',
-    integrations: [mdx(), tailwind(), sitemap()],
+    integrations: [
+        mdx(),
+        tailwind(),
+        sitemap({
+            filter: (page) => !page.includes('/petreceri/'),
+        }),
+    ],
 });
