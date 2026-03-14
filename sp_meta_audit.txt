@@ -1,0 +1,112 @@
+=== index.astro ===
+  Title: SuperParty — Animatori Petreceri Copii București & Ilfov
+  Description: Animatori profesioniști pentru petreceri copii în București și Ilfov. 8.000+ pet...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Animatori 
+       Petreceri Copii  
+      București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== contact\index.astro ===
+  Title: Contact SuperParty București | 0722 744 377
+  Description: Contacteaza SuperParty pentru petreceri copii in Bucuresti. Suntem disponibili 7...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Contactează  SuperParty
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== galerie.astro ===
+  Title: Galerie SuperParty — Fotografii Reale Animatori & Petreceri Copii
+  Description: Galerie foto reală: animatori petreceri copii, personaje costumate, decorațiuni ...
+  Robots: DEFAULT (index)
+  Canonical: https://www.superparty.ro/galerie/
+  H1: Galerie  SuperParty
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== animatori-petreceri-copii\index.astro ===
+  Title: Animatori petreceri copii București & Ilfov | Superparty (#1) Peste 10.000 de evenimente
+  Description: Liderii în animatori petreceri copii din București și Ilfov. Alege experiența pr...
+  Robots: noindex, follow
+  Canonical: MISSING
+  H1: Animatori Petreceri Copii
+  Schema.org: NO
+  Draft markers: ⚠️ YES
+  Placeholder CTAs: ⚠️ YES
+
+=== arcade-baloane\index.astro ===
+  Title: Arcadă Baloane București – Montaj la Locație, Culori Personalizate | SuperParty
+  Description: Arcadă din baloane pentru petreceri copii și botezuri în București. Dimensiuni 1...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Arcade  Baloane  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== baloane-cu-heliu\index.astro ===
+  Title: Baloane cu Heliu București – Cifre, Litere, Personaje, Folie | SuperParty
+  Description: Baloane cu heliu latex și folie pentru petreceri copii în București. Cifre, lite...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Baloane cu  Heliu  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== decoratiuni-baloane\index.astro ===
+  Title: Decoratiuni Baloane București | SuperParty
+  Description: Decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti. Arcade, a...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Decoratiuni  Baloane  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== mos-craciun-de-inchiriat\index.astro ===
+  Title: Moș Crăciun de Închiriat București | SuperParty
+  Description: Mos Craciun autentic pentru acasa, birouri si gradinite. Cadouri si surprize cop...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Moș Crăciun  de Închiriat  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== piniata\index.astro ===
+  Title: Piniată Petreceri Copii București – Unicorn, Supereroi, Personalizate | SuperParty
+  Description: Piniată colorată, plină de surprize, pentru orice petrecere copii. Unicorn, stel...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Piniată  Petreceri  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== ursitoare-botez\index.astro ===
+  Title: Ursitoare Botez București | SuperParty
+  Description: Ursitoare profesioniste pentru botez in Bucuresti si Ilfov. Ceremonii elegante s...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Ursitoare  Botez  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+
+=== vata-de-zahar-si-popcorn\index.astro ===
+  Title: Vată de Zahăr și Popcorn pentru Petreceri | SuperParty
+  Description: Masini de vata de zahar si popcorn pentru petreceri copii in Bucuresti. Inchirie...
+  Robots: DEFAULT (index)
+  Canonical: MISSING
+  H1: Vată de Zahăr și  Popcorn  București
+  Schema.org: NO
+  Draft markers: clean
+  Placeholder CTAs: clean
+

@@ -1,0 +1,10 @@
+[OK] 200  SP Homepage           https://www.superparty.ro/
+[FAIL] 404  SP Sitemap            https://www.superparty.ro/sitemap-index.xml
+[OK] 200  SP Sitemap alt        https://www.superparty.ro/sitemap.xml
+[OK] 200  SP Money Page         https://www.superparty.ro/animatori-petreceri-copii
+[OK] 200  AN Homepage           https://www.animatopia.ro/
+[FAIL] 404  AN Sitemap            https://www.animatopia.ro/sitemap-index.xml
+[OK] 200  WP Homepage           https://www.wowparty.ro/
+[FAIL] 404  WP /servicii          https://www.wowparty.ro/servicii/
+[FAIL] 404  WP /pachete           https://www.wowparty.ro/pachete/
+[OK] 200  WP Sitemap            https://www.wowparty.ro/sitemap-index.xml

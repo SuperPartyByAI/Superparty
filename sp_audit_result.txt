@@ -1,0 +1,16 @@
+Total .astro: 132
+WITH noindex: 120
+WITHOUT noindex (INDEXABLE): 12
+
+  arcade-baloane\index.astro
+  baloane-cu-heliu\index.astro
+  contact\index.astro
+  decoratiuni-baloane\index.astro
+  galerie.astro
+  index.astro
+  mos-craciun-de-inchiriat\index.astro
+  petreceri\adunatii-copaceni.astro
+  petreceri\calarasi.astro
+  piniata\index.astro
+  ursitoare-botez\index.astro
+  vata-de-zahar-si-popcorn\index.astro

@@ -1,0 +1,212 @@
+
+============================================================
+SUPERPARTY
+============================================================
+
+  [OK] 200  Homepage              https://www.superparty.ro/
+    Title: SuperParty — Animatori Petreceri Copii București &amp; Ilfov
+    Desc: Animatori profesioniști pentru petreceri copii în București și Ilfov. 
+    Canon: https://www.superparty.ro/
+    Robots: index, follow
+    H1: Animatori Petreceri Copii
+București
+    Schema: NO
+
+  [OK] 200  Money Page            https://www.superparty.ro/animatori-petreceri-copii/
+    Title: Animatori petreceri copii București &amp; Ilfov | Superparty (#1) Pest
+    Desc: Liderii în animatori petreceri copii din București și Ilfov. Alege exp
+    Canon: https://www.superparty.ro/animatori-petreceri-copii/
+    Robots: noindex, follow
+    H1: Animatori Petreceri Copii
+    Schema: NO
+
+  [OK] 200  Contact               https://www.superparty.ro/contact/
+    Title: Contact SuperParty București | 0722 744 377
+    Desc: Contacteaza SuperParty pentru petreceri copii in Bucuresti. Suntem dis
+    Canon: https://www.superparty.ro/contact/
+    Robots: index, follow
+    H1: Contactează SuperParty
+    Schema: NO
+
+  [OK] 200  Galerie               https://www.superparty.ro/galerie/
+    Title: Galerie SuperParty — Fotografii Reale Animatori &amp; Petreceri Copii
+    Desc: Galerie foto reală: animatori petreceri copii, personaje costumate, de
+    Canon: https://www.superparty.ro/galerie/
+    Robots: index, follow
+    H1: Galerie SuperParty
+    Schema: NO
+
+  [OK] 200  Arcade Baloane        https://www.superparty.ro/arcade-baloane/
+    Title: Arcadă Baloane București – Montaj la Locație, Culori Personalizate | S
+    Desc: Arcadă din baloane pentru petreceri copii și botezuri în București. Di
+    Canon: https://www.superparty.ro/arcade-baloane/
+    Robots: index, follow
+    H1: Arcade Baloane București
+    Schema: NO
+
+  [OK] 200  Baloane Heliu         https://www.superparty.ro/baloane-cu-heliu/
+    Title: Baloane cu Heliu București – Cifre, Litere, Personaje, Folie | SuperPa
+    Desc: Baloane cu heliu latex și folie pentru petreceri copii în București. C
+    Canon: https://www.superparty.ro/baloane-cu-heliu/
+    Robots: index, follow
+    H1: Baloane cu Heliu București
+    Schema: NO
+
+  [OK] 200  Decoratiuni           https://www.superparty.ro/decoratiuni-baloane/
+    Title: Decoratiuni Baloane București | SuperParty
+    Desc: Decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti.
+    Canon: https://www.superparty.ro/decoratiuni-baloane/
+    Robots: index, follow
+    H1: Decoratiuni Baloane București
+    Schema: NO
+
+  [OK] 200  Mos Craciun           https://www.superparty.ro/mos-craciun-de-inchiriat/
+    Title: Moș Crăciun de Închiriat București | SuperParty
+    Desc: Mos Craciun autentic pentru acasa, birouri si gradinite. Cadouri si su
+    Canon: https://www.superparty.ro/mos-craciun-de-inchiriat/
+    Robots: index, follow
+    H1: Moș Crăciun de Închiriat București
+    Schema: NO
+
+  [OK] 200  Piniata               https://www.superparty.ro/piniata/
+    Title: Piniată Petreceri Copii București – Unicorn, Supereroi, Personalizate 
+    Desc: Piniată colorată, plină de surprize, pentru orice petrecere copii. Uni
+    Canon: https://www.superparty.ro/piniata/
+    Robots: index, follow
+    H1: Piniată Petreceri București
+    Schema: NO
+
+  [OK] 200  Ursitoare             https://www.superparty.ro/ursitoare-botez/
+    Title: Ursitoare Botez București | SuperParty
+    Desc: Ursitoare profesioniste pentru botez in Bucuresti si Ilfov. Ceremonii 
+    Canon: https://www.superparty.ro/ursitoare-botez/
+    Robots: index, follow
+    H1: Ursitoare Botez București
+    Schema: NO
+
+  [OK] 200  Vata Popcorn          https://www.superparty.ro/vata-de-zahar-si-popcorn/
+    Title: Vată de Zahăr și Popcorn pentru Petreceri | SuperParty
+    Desc: Masini de vata de zahar si popcorn pentru petreceri copii in Bucuresti
+    Canon: https://www.superparty.ro/vata-de-zahar-si-popcorn/
+    Robots: index, follow
+    H1: Vată de Zahăr și Popcorn București
+    Schema: NO
+
+  [OK] 200  Sitemap               https://www.superparty.ro/sitemap.xmlURLs: 11
+
+  [OK] 200  Robots                https://www.superparty.ro/robots.txtUser-agent: *
+Allow: /
+
+# Block hold/noindex pages from crawling
+Disallow: /api/
+
+Sitemap: https://www.superparty.ro/sitemap.xml
+
+============================================================
+ANIMATOPIA
+============================================================
+
+  [OK] 200  Homepage              https://www.animatopia.ro/
+    Title: Animatopia — Personaje și Mascote la Petreceri Copii București | Exper
+    Desc: Personaje de basm la petrecerea copilului tău! Elsa, Spiderman, PAW Pa
+    Canon: https://www.animatopia.ro/
+    Robots: index, follow
+    H1: Personaje de Basm la Petrecerea Ta în București
+    Schema: NO
+
+  [OK] 200  Mascote               https://www.animatopia.ro/mascote-si-personaje/
+    Title: Mascote și Personaje la Petreceri Copii București | Animatopia
+    Desc: Alege personajul preferat al copilului tău din 100+ mascote costumate:
+    Canon: https://www.animatopia.ro/mascote-si-personaje/
+    Robots: index, follow
+    H1: 100+ Personaje Costumate
+pentru Petrecerea Copilul
+    Schema: NO
+
+  [OK] 200  Tematice              https://www.animatopia.ro/petreceri-tematice/
+    Title: Petreceri Tematice pentru Copii București — Frozen, Superhero, Prințes
+    Desc: Petreceri tematice complete: de la Frozen la Superhero, de la Prințese
+    Canon: https://www.animatopia.ro/petreceri-tematice/
+    Robots: index, follow
+    H1: Petreceri Tematice pentru Copii
+    Schema: NO
+
+  [OK] 200  Acasa                 https://www.animatopia.ro/petreceri-acasa/
+    Title: Petreceri Acasă pentru Copii București — Animatori la Domiciliu | Anim
+    Desc: Petrecere acasă, fără stresul sălii! Animatopia aduce mascota, jocuril
+    Canon: https://www.animatopia.ro/petreceri-acasa/
+    Robots: index, follow
+    H1: Petrecerea PerfectăChiar la Tine Acasă
+    Schema: NO
+
+  [OK] 200  Blog                  https://www.animatopia.ro/blog/
+    Title: Blog Animatopia — Articole despre Petreceri Copii Bucuresti
+    Desc: Animatori profesionisti pentru petreceri copii in Bucuresti si Ilfov. 
+    Canon: https://www.animatopia.ro/blog/
+    Robots: index, follow
+    H1: Ghidul Complet al Animatiei pentru Copii
+    Schema: NO
+
+  [OK] 200  Sitemap               https://www.animatopia.ro/sitemap.xmlURLs: 170
+
+  [OK] 200  Robots                https://www.animatopia.ro/robots.txtUser-agent: *
+Allow: /
+
+Sitemap: https://www.animatopia.ro/sitemap.xml
+
+============================================================
+WOWPARTY
+============================================================
+
+  [OK] 200  Homepage              https://www.wowparty.ro/
+    Title: WowParty — Petreceri Copii și Animatori la un Buget Corect
+    Desc: Rezervă o petrecere de neuitat pentru copilul tău. Pachete all-inclusi
+    Canon: https://www.wowparty.ro/
+    Robots: index, follow
+    H1: Petreceri de Vis, Fără Bătăi de Cap!
+    Schema: NO
+
+  [OK] 200  Servicii              https://www.wowparty.ro/servicii/
+    Title: Servicii Animatori: Jocuri, Face Painting, Baloane | WowParty
+    Desc: Alege printre serviciile noastre diversificate de divertisment: animat
+    Canon: https://www.wowparty.ro/servicii/
+    Robots: index, follow
+    H1: Serviciile Noastre pentru Petreceri
+    Schema: NO
+
+  [OK] 200  Pachete               https://www.wowparty.ro/pachete/
+    Title: Pachete și Prețuri Animatori Petreceri Copii | WowParty
+    Desc: Alege pachetul potrivit pentru bugetul tău. Prețuri transparente și se
+    Canon: https://www.wowparty.ro/pachete/
+    Robots: index, follow
+    H1: Oferta Noastră de Prețuri
+    Schema: NO
+
+  [OK] 200  FAQ                   https://www.wowparty.ro/faq/
+    Title: Întrebări Frecvente Petreceri Copii | WowParty
+    Desc: Tot ce trebuie să știi despre rezervarea unei petreceri WowParty. Cite
+    Canon: https://www.wowparty.ro/faq/
+    Robots: index, follow
+    H1: Întrebări Frecvente (FAQ)
+    Schema: NO
+
+  [OK] 200  Despre Noi            https://www.wowparty.ro/despre-noi/
+    Title: Despre Noi | Echipa WowParty
+    Desc: Află povestea WowParty și de ce suntem o alegere fiabilă pentru organi
+    Canon: https://www.wowparty.ro/despre-noi/
+    Robots: index, follow
+    H1: Despre Noi
+    Schema: NO
+
+  [OK] 200  Contact               https://www.wowparty.ro/contact/
+    Title: Contact și Rezervări Animatori | WowParty
+    Desc: Contactează-ne astăzi pentru rezervarea pachetului pentru petrecerea c
+    Canon: https://www.wowparty.ro/contact/
+    Robots: index, follow
+    H1: Hai să vorbim!
+    Schema: NO
+
+  [OK] 200  Sitemap               https://www.wowparty.ro/sitemap-index.xmlURLs: 1
+
+  [OK] 200  Robots                https://www.wowparty.ro/robots.txtAllow: /
+Sitemap: https://www.wowparty.ro/sitemap.xml

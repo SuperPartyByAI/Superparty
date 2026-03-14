@@ -1,0 +1,6 @@
+[OK] 200  SP /sitemap.xml            https://www.superparty.ro/sitemap.xml | 11 URLs
+[FAIL] 404  SP /sitemap-0.xml          https://www.superparty.ro/sitemap-0.xml
+[FAIL] 404  SP /sitemap-index.xml      https://www.superparty.ro/sitemap-index.xml
+[OK] 200  AN /sitemap.xml            https://www.animatopia.ro/sitemap.xml | 170 URLs
+[FAIL] 404  AN /sitemap-0.xml          https://www.animatopia.ro/sitemap-0.xml
+[FAIL] 404  AN /sitemap-index.xml      https://www.animatopia.ro/sitemap-index.xml

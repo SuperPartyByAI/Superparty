@@ -1,0 +1,12 @@
+[OK] 200  https://www.wowparty.ro/
+[FAIL] 404  https://www.wowparty.ro/servicii
+[FAIL] 404  https://www.wowparty.ro/servicii/
+[FAIL] 404  https://www.wowparty.ro/pachete
+[FAIL] 404  https://www.wowparty.ro/pachete/
+[FAIL] 404  https://www.wowparty.ro/faq
+[FAIL] 404  https://www.wowparty.ro/faq/
+[FAIL] 404  https://www.wowparty.ro/despre-noi
+[FAIL] 404  https://www.wowparty.ro/despre-noi/
+[FAIL] 404  https://www.wowparty.ro/contact
+[FAIL] 404  https://www.wowparty.ro/contact/
+[FAIL] 404  https://www.wowparty.ro/sitemap.xml

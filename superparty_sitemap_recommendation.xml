@@ -166,11 +166,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animator-pikachu-pokemon-petreceri-copii-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animator-pirat-petreceri-copii-bucuresti-vanatoare-comori</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -201,27 +196,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animator-superman-dc-petreceri-copii-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animator-superman-petreceri-copii-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animator-winx-club-stella-petreceri-copii-bucuresti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/animator-woody-toy-story-petreceri-copii-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-botez-bucuresti-ghid</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -317,11 +297,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-alba-ca-zapada-tunari</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-ariel-1-decembrie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -456,11 +431,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-batman-moara-vlasiei</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-batman-nuci</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -551,22 +521,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-bumblebee-moara-vlasiei</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-bumblebee-pantelimon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-bumblebee-sector-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-bumblebee-sector-6</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -841,6 +796,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-cluj-napoca-superparty</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-colentina-bucuresti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1006,7 +966,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-iron-man-1-decembrie</loc>
+    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-iasi-superparty</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1057,11 +1017,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-iron-man-jilava</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-iron-man-moara-vlasiei</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1816,22 +1771,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-spider-man-sector-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-spider-man-sector-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-spider-man-sector-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-spider-man-sector-6</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1901,27 +1841,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-ursul-sector-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-ursul-sector-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/animatori-petreceri-copii-ursul-sector-4</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/arcade-baloane-petreceri-bucuresti-modele-preturi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/arcade-baloane-petreceri-copii-bucuresti-preturi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2036,36 +1956,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-4-ani-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-5-ani-bucuresti-2025</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-6-ani-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-7-ani-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-8-ani-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/idei-petrecere-copil-9-ani-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/intrebari-frecvente-animatori-petreceri-copii-faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2101,17 +1991,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/petrecere-botez-cu-animatori-bucuresti-ghid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/petrecere-copii-zero-stres-parinti-sfaturi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/petrecere-craciun-copii-mos-craciun-bucuresti</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://superparty.ro/petreceri/petrecere-craciun-revelion-copii-bucuresti-superparty</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2142,11 +2032,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/petrecere-paste-copii-animatori-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/petrecere-sala-vs-acasa-bucuresti-comparatie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2336,11 +2221,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://superparty.ro/petreceri/petrecere-tematica-pokemon-pikachu-bucuresti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://superparty.ro/petreceri/petrecere-tematica-roblox-copii-bucuresti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2417,11 +2297,6 @@
   </url>
   <url>
     <loc>https://superparty.ro/petreceri/rezervare-animatori-petreceri-din-timp-importanta</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://superparty.ro/petreceri/sala-vs-acasa-petrecere-copil-bucuresti-comparatie</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
