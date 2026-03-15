@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - feat/autonomous-seo-agent
+      - main
+  pull_request:
+    branches:
+      - feat/autonomous-seo-agent
+      - main
+
+jobs:
+  test:
+    name: Test & Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Lint (flake8)
+        run: flake8 agent/ tests/ --max-line-length=120 --ignore=E501,W503
+
+      - name: Run tests
+        run: python -m pytest tests/ -q --tb=short
+
+      - name: Validate JSON-LD schemas
+        run: python -m agent.seo_agent.validate_jsonld
+
