@@ -20,10 +20,19 @@ from __future__ import annotations
 import json
 import logging
 import os
+import pathlib
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from typing import Optional
+
+# Auto-load .env from project root
+try:
+    from dotenv import load_dotenv
+    _env_path = pathlib.Path(__file__).resolve().parent.parent / ".env"
+    load_dotenv(_env_path, override=True)
+except ImportError:
+    pass  # dotenv not installed — use system env vars
 
 try:
     from fastapi import FastAPI, HTTPException, Query
