@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Agent Dashboard</title>
+  <style>
+    :root {
+      --bg-primary: #0f0f23;
+      --bg-secondary: #1a1a2e;
+      --bg-card: #16213e;
+      --bg-card-hover: #1a2744;
+      --text-primary: #e0e6ed;
+      --text-secondary: #8892a4;
+      --accent: #00d4ff;
+      --accent-glow: rgba(0, 212, 255, 0.15);
+      --green: #00e676;
+      --yellow: #ffd740;
+      --red: #ff5252;
+      --border: rgba(255,255,255,0.06);
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+    /* ── Header ─── */
+    .header {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 16px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .header h1 { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .header .health { margin-left: auto; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+    .health-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .health-dot.ok { background: var(--green); box-shadow: 0 0 8px var(--green); }
+    .health-dot.err { background: var(--red); box-shadow: 0 0 8px var(--red); }
+
+    /* ── Tabs ─── */
+    .tabs {
+      display: flex; gap: 2px; padding: 12px 24px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+    .tab {
+      padding: 10px 20px; cursor: pointer;
+      color: var(--text-secondary); font-size: 13px; font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab:hover { color: var(--text-primary); }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Grid ─── */
+    .content { padding: 20px 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 4px 20px var(--accent-glow); }
+    .stat-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .stat-value { font-size: 28px; font-weight: 700; }
+    .stat-value.green { color: var(--green); }
+    .stat-value.yellow { color: var(--yellow); }
+    .stat-value.red { color: var(--red); }
+
+    /* ── Tables ─── */
+    .table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .table-title {
+      padding: 16px 20px;
+      font-weight: 600; font-size: 15px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; padding: 10px 16px; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+    td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    tr:hover td { background: var(--bg-card-hover); }
+
+    /* ── Badges ─── */
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+    }
+    .badge-frozen { background: rgba(255,82,82,0.15); color: var(--red); }
+    .badge-active { background: rgba(0,230,118,0.15); color: var(--green); }
+    .badge-pending { background: rgba(255,215,64,0.15); color: var(--yellow); }
+    .badge-approved { background: rgba(0,212,255,0.15); color: var(--accent); }
+    .badge-merged { background: rgba(0,230,118,0.15); color: var(--green); }
+    .badge-rejected { background: rgba(255,82,82,0.15); color: var(--red); }
+    .badge-reverted { background: rgba(255,152,0,0.15); color: #ff9800; }
+
+    /* ── Buttons ─── */
+    .btn {
+      border: none; padding: 6px 14px; border-radius: 6px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-approve { background: rgba(0,230,118,0.15); color: var(--green); }
+    .btn-approve:hover { background: rgba(0,230,118,0.3); }
+    .btn-reject { background: rgba(255,82,82,0.15); color: var(--red); }
+    .btn-reject:hover { background: rgba(255,82,82,0.3); }
+    .btn-revert { background: rgba(255,152,0,0.15); color: #ff9800; }
+    .btn-revert:hover { background: rgba(255,152,0,0.3); }
+    .btn-freeze { background: rgba(0,212,255,0.15); color: var(--accent); }
+    .btn-freeze:hover { background: rgba(0,212,255,0.3); }
+    .btn-group { display: flex; gap: 6px; }
+
+    /* ── Alert Feed ─── */
+    .alert-item {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .alert-body { flex: 1; }
+    .alert-action { font-weight: 600; font-size: 13px; }
+    .alert-actor { color: var(--text-secondary); font-size: 12px; }
+    .alert-time { color: var(--text-secondary); font-size: 11px; white-space: nowrap; }
+
+    /* ── Panel Hidden ─── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── Loading ─── */
+    .loading {
+      text-align: center; padding: 40px;
+      color: var(--text-secondary); font-size: 14px;
+    }
+    .spin { animation: spin 1s linear infinite; display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <span style="font-size:24px;">🔭</span>
+    <h1>SEO Agent Dashboard</h1>
+    <div class="health">
+      <span class="health-dot" id="healthDot"></span>
+      <span id="healthText">connecting...</span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-panel="overview">Overview</div>
+    <div class="tab" data-panel="sites">Sites</div>
+    <div class="tab" data-panel="prs">PR Queue</div>
+    <div class="tab" data-panel="alerts">Alerts</div>
+  </div>
+
+  <div class="content">
+    <!-- Overview Panel -->
+    <div class="panel active" id="panel-overview">
+      <div class="grid" id="statsGrid"></div>
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-title">Recent Activity</div>
+        <div id="recentAlerts" class="loading"><span class="spin">⏳</span> Loading...</div>
+      </div>
+    </div>
+
+    <!-- Sites Panel -->
+    <div class="panel" id="panel-sites">
+      <div class="table-wrap">
+        <div class="table-title">
+          All Sites
+          <span id="siteCount" style="font-size:12px;color:var(--text-secondary);"></span>
+        </div>
+        <table>
+          <thead><tr><th>Domain</th><th>Brand</th><th>Environment</th><th>Status</th><th>Freeze Until</th><th>Actions</th></tr></thead>
+          <tbody id="sitesBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PR Queue Panel -->
+    <div class="panel" id="panel-prs">
+      <div class="table-wrap">
+        <div class="table-title">
+          PR Queue
+          <span id="prCount" style="font-size:12px;color:var(--text-secondary);"></span>
+        </div>
+        <table>
+          <thead><tr><th>Branch</th><th>Site</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead>
+          <tbody id="prsBody"></tbody>
+        </table>
+        <div id="prsEmpty" style="display:none;" class="loading">No PRs in queue</div>
+      </div>
+    </div>
+
+    <!-- Alerts Panel -->
+    <div class="panel" id="panel-alerts">
+      <div class="table-wrap">
+        <div class="table-title">Audit Log</div>
+        <div id="alertsFeed"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API = 'http://localhost:8000';
+
+    // ── Tabs ───
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // ── API helpers ───
+    async function get(path) {
+      const r = await fetch(API + path);
+      if (!r.ok) throw new Error(r.statusText);
+      return r.json();
+    }
+    async function post(path, body) {
+      const r = await fetch(API + path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      return r.json();
+    }
+
+    function timeAgo(iso) {
+      if (!iso) return '—';
+      const diff = Date.now() - new Date(iso).getTime();
+      const mins = Math.floor(diff / 60000);
+      if (mins < 60) return mins + 'm ago';
+      const hrs = Math.floor(mins / 60);
+      if (hrs < 24) return hrs + 'h ago';
+      return Math.floor(hrs / 24) + 'd ago';
+    }
+
+    function statusBadge(status) {
+      const cls = { pending: 'pending', approved: 'approved', merged: 'merged', rejected: 'rejected', reverted: 'reverted' };
+      return `<span class="badge badge-${cls[status] || 'pending'}">${status || 'unknown'}</span>`;
+    }
+
+    // ── Load data ───
+    async function loadHealth() {
+      try {
+        const d = await get('/api/health');
+        const dot = document.getElementById('healthDot');
+        const txt = document.getElementById('healthText');
+        if (d.status === 'ok') {
+          dot.className = 'health-dot ok';
+          txt.textContent = 'Connected';
+        } else {
+          dot.className = 'health-dot err';
+          txt.textContent = 'Degraded';
+        }
+      } catch {
+        document.getElementById('healthDot').className = 'health-dot err';
+        document.getElementById('healthText').textContent = 'Offline';
+      }
+    }
+
+    async function loadStats() {
+      try {
+        const [sites, prs, alerts, embeddings] = await Promise.all([
+          get('/api/sites'), get('/api/prs'), get('/api/alerts'), get('/api/embeddings/stats'),
+        ]);
+        const frozen = sites.sites.filter(s => s.is_frozen).length;
+        const pending = prs.prs.filter(p => p.status === 'pending').length;
+
+        document.getElementById('statsGrid').innerHTML = `
+          <div class="stat-card">
+            <div class="stat-label">Sites</div>
+            <div class="stat-value">${sites.total}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Frozen</div>
+            <div class="stat-value ${frozen > 0 ? 'yellow' : 'green'}">${frozen}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">PRs Pending</div>
+            <div class="stat-value ${pending > 0 ? 'yellow' : 'green'}">${pending}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total PRs</div>
+            <div class="stat-value">${prs.total}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Embeddings</div>
+            <div class="stat-value">${embeddings.total}</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Audit Entries</div>
+            <div class="stat-value">${alerts.total}</div>
+          </div>
+        `;
+      } catch (e) {
+        document.getElementById('statsGrid').innerHTML = `<div class="loading">Failed to load stats: ${e.message}</div>`;
+      }
+    }
+
+    async function loadSites() {
+      try {
+        const d = await get('/api/sites');
+        document.getElementById('siteCount').textContent = `(${d.total})`;
+        document.getElementById('sitesBody').innerHTML = d.sites.map(s => `
+          <tr>
+            <td><strong>${s.domain}</strong></td>
+            <td>${s.brand || '—'}</td>
+            <td>${s.environment || 'production'}</td>
+            <td>${s.is_frozen
+              ? '<span class="badge badge-frozen">🧊 Frozen</span>'
+              : '<span class="badge badge-active">Active</span>'}</td>
+            <td>${s.freeze_until ? new Date(s.freeze_until).toLocaleDateString() + (s.freeze_remaining_hours ? ' (' + Math.round(s.freeze_remaining_hours) + 'h left)' : '') : '—'}</td>
+            <td>
+              <button class="btn btn-freeze" onclick="toggleFreeze('${s.domain}', ${s.is_frozen})">
+                ${s.is_frozen ? 'Unfreeze' : 'Freeze'}
+              </button>
+            </td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        document.getElementById('sitesBody').innerHTML = `<tr><td colspan="6" class="loading">Error: ${e.message}</td></tr>`;
+      }
+    }
+
+    async function loadPRs() {
+      try {
+        const d = await get('/api/prs');
+        document.getElementById('prCount').textContent = `(${d.total})`;
+        if (d.total === 0) {
+          document.getElementById('prsEmpty').style.display = 'block';
+          return;
+        }
+        document.getElementById('prsBody').innerHTML = d.prs.map(p => `
+          <tr>
+            <td><code style="font-size:12px;">${p.branch_name || '—'}</code></td>
+            <td>${p.site_id ? p.site_id.slice(0,8) + '...' : '—'}</td>
+            <td>${statusBadge(p.status)}</td>
+            <td>${timeAgo(p.created_at)}</td>
+            <td>
+              <div class="btn-group">
+                ${p.status === 'pending' ? `
+                  <button class="btn btn-approve" onclick="prAction('approve', '${p.id}')">✓ Approve</button>
+                  <button class="btn btn-reject" onclick="prAction('reject', '${p.id}')">✗ Reject</button>
+                ` : ''}
+                ${p.status === 'approved' || p.status === 'merged' ? `
+                  <button class="btn btn-revert" onclick="prAction('revert', '${p.id}')">↩ Revert</button>
+                ` : ''}
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        document.getElementById('prsBody').innerHTML = `<tr><td colspan="5" class="loading">Error: ${e.message}</td></tr>`;
+      }
+    }
+
+    async function loadAlerts() {
+      try {
+        const d = await get('/api/alerts');
+        if (d.total === 0) {
+          document.getElementById('alertsFeed').innerHTML = '<div class="loading">No audit entries yet</div>';
+          document.getElementById('recentAlerts').innerHTML = '<div class="loading">No recent activity</div>';
+          return;
+        }
+        const renderItem = a => {
+          const icons = { approve_pr: '✅', reject_pr: '❌', revert_pr: '↩️', set_freeze: '🧊', clear_freeze: '🔓', canary_deploy: '🐤' };
+          return `
+            <div class="alert-item">
+              <span class="alert-icon">${icons[a.action] || '📋'}</span>
+              <div class="alert-body">
+                <div class="alert-action">${a.action}</div>
+                <div class="alert-actor">${a.actor || 'system'}</div>
+              </div>
+              <span class="alert-time">${timeAgo(a.created_at)}</span>
+            </div>
+          `;
+        };
+        document.getElementById('alertsFeed').innerHTML = d.alerts.map(renderItem).join('');
+        document.getElementById('recentAlerts').innerHTML = d.alerts.slice(0, 5).map(renderItem).join('');
+      } catch (e) {
+        document.getElementById('alertsFeed').innerHTML = `<div class="loading">Error: ${e.message}</div>`;
+        document.getElementById('recentAlerts').innerHTML = `<div class="loading">Error: ${e.message}</div>`;
+      }
+    }
+
+    // ── Actions ───
+    async function prAction(type, prId) {
+      if (!confirm(`${type.toUpperCase()} this PR?`)) return;
+      await post(`/api/action/${type}-pr`, { pr_id: prId, actor: 'dashboard-user' });
+      loadPRs(); loadAlerts(); loadStats();
+    }
+
+    async function toggleFreeze(domain, isFrozen) {
+      const until = isFrozen ? null : prompt('Freeze until (YYYY-MM-DD):', '2026-04-01');
+      if (!isFrozen && !until) return;
+      const freezeUntil = until ? new Date(until + 'T23:59:59Z').toISOString() : null;
+      await post('/api/action/freeze', { domain, freeze_until: freezeUntil, actor: 'dashboard-user' });
+      loadSites(); loadAlerts(); loadStats();
+    }
+
+    // ── Init ───
+    loadHealth(); loadStats(); loadSites(); loadPRs(); loadAlerts();
+    setInterval(loadHealth, 30000);
+    setInterval(loadStats, 60000);
+  </script>
+</body>
+</html>
