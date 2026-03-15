@@ -42,13 +42,6 @@ jobs:
       - name: Run tests
         run: python -m pytest tests/ -q --tb=short
 
-      - name: JSON-LD smoke check
-        run: |
-          python -c "
-          from agent.seo_agent.template_engine import OwnerPageData, generate_combined_jsonld, validate_jsonld
-          data = OwnerPageData(brand='Test', domain='t.ro', path='/t', phone='+40', head_term='test', h1='Test')
-          jsonld = generate_combined_jsonld(data)
-          ok, errs = validate_jsonld(jsonld)
-          assert ok, f'JSON-LD validation failed: {errs}'
-          print('JSON-LD smoke check PASS')
-          "
+      - name: Validate JSON-LD schemas
+        run: python -m agent.seo_agent.validate_jsonld
+

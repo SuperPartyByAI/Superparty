@@ -1,0 +1,162 @@
+name: Canary Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_site:
+        description: 'Target site domain (e.g. animatopia.ro)'
+        required: true
+        default: 'animatopia.ro'
+        type: choice
+        options:
+          - animatopia.ro
+          - wowparty.ro
+      head_term:
+        description: 'Head term for owner page'
+        required: true
+        default: 'animatori petreceri copii'
+      dry_run:
+        description: 'Dry run (no actual deploy)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  # ── Step 1: Tests must pass ─────────────────────────────────────────
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest tests/ -q --tb=short
+
+  # ── Step 2: JSON-LD validation ──────────────────────────────────────
+  validate:
+    name: Validate JSON-LD
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - name: Run JSON-LD validator
+        run: python -m agent.seo_agent.validate_jsonld
+
+  # ── Step 3: Freeze check ────────────────────────────────────────────
+  freeze-check:
+    name: Check Freeze Window
+    runs-on: ubuntu-latest
+    needs: validate
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - name: Check freeze for ${{ inputs.target_site }}
+        run: python -m agent.seo_agent.check_freeze_ci ${{ inputs.target_site }}
+
+  # ── Step 4: Canary deploy (requires environment approval) ───────────
+  deploy:
+    name: Deploy to Canary
+    runs-on: ubuntu-latest
+    needs: freeze-check
+    environment: canary  # Requires manual approval in GitHub Settings
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+
+      - name: Generate canary PR
+        run: |
+          python -c "
+          from agent.seo_agent.pr_generator import PRRequest, generate_pr
+          req = PRRequest(
+              site_domain='${{ inputs.target_site }}',
+              head_term='${{ inputs.head_term }}',
+              slug='${{ inputs.head_term }}'.replace(' ', '-'),
+              description='Canary deploy via CI',
+          )
+          result = generate_pr(req, repo_dir='.', dry_run=${{ inputs.dry_run == true && 'True' || 'False' }})
+          print(f'Branch: {result.branch_name}')
+          print(f'Success: {result.success}')
+          if result.error:
+              print(f'Error: {result.error}')
+              exit(1)
+          "
+
+      - name: Log audit entry
+        run: |
+          python -c "
+          import json, datetime
+          entry = {
+              'actor': 'github-actions',
+              'action': 'canary_deploy',
+              'payload': {
+                  'site': '${{ inputs.target_site }}',
+                  'head_term': '${{ inputs.head_term }}',
+                  'dry_run': ${{ inputs.dry_run == true && 'True' || 'False' }},
+                  'triggered_by': '${{ github.actor }}',
+                  'run_id': '${{ github.run_id }}',
+                  'timestamp': datetime.datetime.now().isoformat(),
+              }
+          }
+          print(json.dumps(entry, indent=2))
+          "
+
+  # ── Step 5: Post-deploy monitor ────────────────────────────────────
+  monitor:
+    name: Initial Health Check
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: ${{ inputs.dry_run == false }}
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+
+      - name: Run initial health check
+        run: |
+          python -c "
+          from agent.seo_agent.daily_report import generate_report
+          report = generate_report(
+              site_url='sc-domain:${{ inputs.target_site }}',
+              query='${{ inputs.head_term }}',
+              day_number=0,
+              output_dir='reports/canary',
+          )
+          print(f'Verdict: {report[\"verdict\"]}')
+          if report['verdict'] == 'critical':
+              print('⚠️ CRITICAL — consider rollback')
+              exit(1)
+          "
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canary-report
+          path: reports/canary/
