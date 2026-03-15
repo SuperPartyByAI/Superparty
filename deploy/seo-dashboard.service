@@ -1,0 +1,15 @@
+[Unit]
+Description=SEO Agent Dashboard (FastAPI)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/superparty
+ExecStart=/usr/bin/python3 -m uvicorn dashboard.api:app --host 127.0.0.1 --port 8092
+Restart=always
+RestartSec=5
+EnvironmentFile=/srv/superparty/.env.agent
+
+[Install]
+WantedBy=multi-user.target
