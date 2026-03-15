@@ -48,6 +48,7 @@ app = FastAPI(
     title="SEO Agent Dashboard",
     description="Operational dashboard for autonomous SEO agent",
     version="1.0.0",
+    root_path="/dashboard",
 )
 
 app.add_middleware(
@@ -301,21 +302,21 @@ def health():
 
 @app.get("/", response_class=HTMLResponse)
 def root():
-    """Redirect to frontend or show status."""
-    return """
+    """Serve the dashboard frontend."""
+    html_path = pathlib.Path(__file__).resolve().parent / "index.html"
+    if html_path.exists():
+        return HTMLResponse(html_path.read_text(encoding="utf-8"))
+    return HTMLResponse("""
     <html>
     <head><title>SEO Agent Dashboard</title></head>
     <body style="font-family:system-ui;max-width:600px;margin:40px auto;color:#e0e0e0;background:#1a1a2e;">
       <h1 style="color:#00d4ff;">🔭 SEO Agent Dashboard API</h1>
-      <p>API is running. Connect the React frontend on <code>:5173</code></p>
+      <p>API is running. Place index.html in dashboard/ for the full UI.</p>
       <ul>
         <li><a href="/api/health" style="color:#00d4ff;">/api/health</a></li>
         <li><a href="/api/sites" style="color:#00d4ff;">/api/sites</a></li>
-        <li><a href="/api/prs" style="color:#00d4ff;">/api/prs</a></li>
-        <li><a href="/api/metrics" style="color:#00d4ff;">/api/metrics</a></li>
-        <li><a href="/api/alerts" style="color:#00d4ff;">/api/alerts</a></li>
         <li><a href="/docs" style="color:#00d4ff;">/docs</a> (Swagger UI)</li>
       </ul>
     </body>
     </html>
-    """
+    """)
