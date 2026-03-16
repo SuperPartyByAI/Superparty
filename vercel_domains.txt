@@ -1,0 +1,41 @@
+﻿npx : Fetching Domains under and
+reis-projects-ae1c2ce2
+At line:1 char:83
++ ... ASX0nbghV"; npx -y vercel 
+domains ls --token $env:VERCEL_T
+OKEN 2>&1 | ...
++                 ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo          : N 
+   otSpecified: (Fetching Doma  
+  in...ojects-ae1c2ce2:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorId : N 
+   ativeCommandError
+ 
+> 4 Domains found under andreis-
+projects-ae1c2ce2 [241ms]
+ 
+  Domain                     Reg
+istrar           Nameservers    
+     Expiration Date    Creator 
+            Age     
+  wowparty.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      2d      
+  superparty.ro              Thi
+rd Party         Vercel         
+     -                  superpar
+tybyai      14d     
+  animatopia.ro              Thi
+rd Party         Vercel         
+     -                  superpar
+tybyai      14d     
+  superpartybyai.ro          Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      121d    
+ 
+
