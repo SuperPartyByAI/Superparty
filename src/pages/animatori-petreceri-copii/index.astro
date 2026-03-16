@@ -1,52 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const combinedSchema = JSON.stringify([
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SuperParty",
-    "url": "https://www.superparty.ro/animatori-petreceri-copii",
-    "description": "Animatori petreceri copii în București și Ilfov — personaje costumate, jocuri interactive, pictură pe față, confetti party. 10.000+ evenimente.",
-    "telephone": "+40722744377",
-    "areaServed": [
-      {"@type": "City", "name": "București"},
-      {"@type": "AdministrativeArea", "name": "Ilfov"}
-    ],
-    "priceRange": "490-1290 RON",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "1498"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Pachete Animatori Petreceri Copii",
-      "itemListElement": [
-        {"@type": "Offer", "name": "Super 1", "price": "490", "priceCurrency": "RON", "description": "1 Personaj, 2 ore: jocuri, baloane, pictură pe față, mini disco"},
-        {"@type": "Offer", "name": "Super 3", "price": "840", "priceCurrency": "RON", "description": "2 Personaje, 2 ore + confetti party"},
-        {"@type": "Offer", "name": "Super 7", "price": "1290", "priceCurrency": "RON", "description": "1 Animator + 4 Ursitoare botez, 3 ore"}
-      ]
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "Ce acoperire geografică aveți?", "acceptedAnswer": {"@type": "Answer", "text": "Acoperim complet Bucureștiul (toate sectoarele) și județul Ilfov, fără taxe ascunse de transport în zona limitrofă."}},
-      {"@type": "Question", "name": "Materialele folosite la face painting sunt sigure?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Folosim exclusiv culori profesionale, hipoalergenice, certificate la nivel european (ex: Snazaroo, Diamond FX), care se îndepărtează ușor cu apă și săpun."}},
-      {"@type": "Question", "name": "Cum mă asigur că personajul ales vine la petrecere?", "acceptedAnswer": {"@type": "Answer", "text": "La Superparty semnăm un contract clar. Personajul confirmat și actorul care i se potrivește vizual sunt blocați pentru evenimentul dvs."}}
-    ]
-  }
-]);
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Ce acoperire geografică aveți?", "acceptedAnswer": {"@type": "Answer", "text": "Acoperim complet Bucureștiul (toate sectoarele) și județul Ilfov, fără taxe ascunse de transport în zona limitrofă."}},
+    {"@type": "Question", "name": "Materialele folosite la face painting sunt sigure?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Folosim exclusiv culori profesionale, hipoalergenice, certificate la nivel european (ex: Snazaroo, Diamond FX), care se îndepărtează ușor cu apă și săpun."}},
+    {"@type": "Question", "name": "Cum mă asigur că personajul ales vine la petrecere?", "acceptedAnswer": {"@type": "Answer", "text": "La Superparty semnăm un contract clar. Personajul confirmat și actorul care i se potrivește vizual sunt blocați pentru evenimentul dvs."}}
+  ]
+});
 ---
 
 <Layout 
   robots="index, follow"
   title="Animatori petreceri copii București & Ilfov | Superparty (#1) Peste 10.000 de evenimente"
-  description="Animatori petreceri copii București — SuperParty: 50+ personaje costumate, jocuri interactive, confetti party. De la 490 lei. 10.000+ evenimente, rating 5.0 ⭐. Sună: 0722 744 377"
+  description="Liderii în animatori petreceri copii din București și Ilfov. Alege experiența premium Superparty: peste 50 de personaje, costume impecabile, actori profesioniști și distracție garantată. Rezervă acum echipa #1!"
   canonical="https://www.superparty.ro/animatori-petreceri-copii"
-  schema={combinedSchema}
+  schema={faqSchema}
 >
   <main>
     {/* HERO: flagship_authority */}
