@@ -208,6 +208,31 @@
             "source": "/comments/feed/",
             "destination": "/",
             "permanent": true
+        },
+        {
+            "source": "/category/:path*",
+            "destination": "/blog",
+            "permanent": true
+        },
+        {
+            "source": "/tag/:path*",
+            "destination": "/blog",
+            "permanent": true
+        },
+        {
+            "source": "/author/:path*",
+            "destination": "/blog",
+            "permanent": true
+        },
+        {
+            "source": "/page/:path*",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/portfolio/:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
         }
     ]
 }
