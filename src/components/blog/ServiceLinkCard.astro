@@ -1,0 +1,42 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  image?: string;
+}
+
+const { title, description, href, image } = Astro.props;
+---
+
+<a href={href} class="not-prose block group relative bg-white dark:bg-gray-800 rounded-2xl p-6 border border-purple-100 dark:border-purple-900/30 shadow-sm hover:shadow-md transition-all duration-300 mt-8 mb-8 overflow-hidden transform hover:-translate-y-1 text-decoration-none">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent dark:from-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  
+  <div class="relative flex items-center gap-6">
+    {image && (
+      <div class="hidden sm:block shrink-0">
+        <img src={image} alt={title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      </div>
+    )}
+    
+    <div class="flex-1">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </span>
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">Serviciu Recomandat</span>
+      </div>
+      
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors m-0 p-0 line-clamp-1">{title}</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed m-0 p-0 line-clamp-2">{description}</p>
+    </div>
+    
+    <div class="shrink-0 text-purple-600 dark:text-purple-400 transform group-hover:translate-x-2 transition-transform duration-300">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </div>
+  </div>
+</a>

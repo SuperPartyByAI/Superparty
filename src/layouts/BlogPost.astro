@@ -1,0 +1,86 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, author } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Generate strict Article JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL
+  },
+  "headline": title,
+  "description": description,
+  "image": heroImage ? new URL(heroImage, Astro.site).toString() : "https://www.superparty.ro/favicon.svg",
+  "author": {
+    "@type": "Organization", // or Person, using Organization to match Superparty's E-E-A-T
+    "name": author || "Echipa Superparty",
+    "url": "https://www.superparty.ro/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SuperParty",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.superparty.ro/favicon.svg"
+    }
+  },
+  "datePublished": pubDate ? new Date(pubDate).toISOString() : new Date().toISOString(),
+  "dateModified": updatedDate ? new Date(updatedDate).toISOString() : (pubDate ? new Date(pubDate).toISOString() : new Date().toISOString())
+};
+---
+
+<Layout title={`${title} | SuperParty Blog`} description={description} canonical={canonicalURL} schema={JSON.stringify(articleSchema)}>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 font-semibold text-sm uppercase tracking-wide mb-6">
+        Ghid pentru Părinți
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
+        {title}
+      </h1>
+      
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        {description}
+      </p>
+      
+      <div class="flex items-center justify-center gap-4 mt-8 text-sm text-gray-500 dark:text-gray-400">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+          <span class="font-medium text-gray-900 dark:text-white">{author}</span>
+        </div>
+        <span>•</span>
+        <time datetime={pubDate ? new Date(pubDate).toISOString() : ''}>
+          {pubDate && new Date(pubDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </div>
+    </header>
+
+    {heroImage && (
+      <figure class="mb-16 aspect-[21/9] overflow-hidden rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800">
+        <img src={heroImage} alt={title} class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" loading="eager" />
+      </figure>
+    )}
+
+    <!-- Typography Prose injected safely for MDX content -->
+    <div class="prose prose-lg md:prose-xl prose-purple dark:prose-invert max-w-none 
+                prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white
+                prose-a:text-purple-600 hover:prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline
+                prose-img:rounded-2xl prose-img:shadow-md
+                prose-strong:text-gray-900 dark:prose-strong:text-white
+                prose-blockquote:border-purple-500 prose-blockquote:bg-purple-50 dark:prose-blockquote:bg-purple-900/10 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
+                mb-24">
+      <slot />
+    </div>
+    
+  </article>
+</Layout>

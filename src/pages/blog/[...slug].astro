@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const now = new Date();
+  
+  // DRIP-FEED LOGIC: Only generate paths for articles published today or in the past
+  const publishedPosts = posts.filter(post => !post.data.pubDate || new Date(post.data.pubDate) <= now);
+  
+  return publishedPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>

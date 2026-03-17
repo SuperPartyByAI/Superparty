@@ -1,8 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const schemaData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://www.superparty.ro/decoratiuni-baloane",
+  "name": "Decoratiuni Baloane București - SuperParty",
+  "description": "Servicii decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti. Arcade, aranjamente, decor tematic.",
+  "mainEntity": {
+    "@type": "Service",
+    "name": "Decoratiuni Baloane",
+    "serviceType": "Decoratiuni petreceri",
+    "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
+    "areaServed": [{"@type":"Place","name":"București"},{"@type":"Place","name":"Ilfov"}]
+  }
+});
 ---
 <Layout title="Decoratiuni Baloane București | SuperParty" description="Decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti. Arcade, aranjamente, decor tematic. Rezerva: 0722 744 377."
-  canonical="https://www.superparty.ro/decoratiuni-baloane">
+  canonical="https://www.superparty.ro/decoratiuni-baloane"
+  schema={schemaData}>
   <section style="padding:6rem 0 3rem;">
     <div class="container">
       <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Decoratiuni <span style="color:var(--primary);">Baloane</span> București</h1>

@@ -1,11 +1,11 @@
 ---
+import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout 
   title="Animatori petreceri copii Voluntari | Superparty (#1) Peste 10.000 de evenimente"
   description="Liderii în animatori petreceri copii aduc magia 100% Superparty direct la tine acasă în Voluntari. Fără taxe ascunse de transport, cele mai spectaculoase personaje."
-  robots="noindex, follow"
   canonical="https://www.superparty.ro/animatori-copii-voluntari/"
 >
   <main class="offline-generation-draft">
@@ -44,6 +44,55 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </main>
+
+<!-- LOCAL_HUB_UTIL_INJECT -->
+<section class="py-12 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Ghid Utilitar: Petreceri în Voluntari</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Logistică & Deplasare</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Pentru Voluntari și Pipera, deplasarea cu auto propriu a animatorilor este standard. Curțile mari permit o instalare rapidă a mașinii de baloane de săpun direct la destinație.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Top Parcuri Recomandate</div>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+<li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Pădurea Băneasa</span></li><li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Parcurile Ansamblurilor Rezidențiale</span></li><li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Grădina proprie</span></li>        </ul>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Săli & Restaurante</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Dacă doriți un eveniment premium, vă putem sugera locații exclusiviste de tip mansion sau clubhouse din ansamblurile locale.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Experiență Locală Verificată</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Echipa Superparty a susținut nenumărate evenimente în zona Voluntari. Cunoaștem specificul grădinițelor și afterschool-urilor locale, iar animatorii noștri își adaptează mereu spectacolul în funcție de suprafața disponibilă (fie că e apartament, cort sau curte deschisă).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- ── UPSELL SECTION ────────────────────────────────────────────────── -->
+      <div class="mt-16 mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">✨ Fă petrecerea cu adevărat memorabilă! Adaugă și:</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <ServiceLinkCard 
+            title="Închiriere Aparat Vată de Zahăr" 
+            description="Porții nelimitate și operator uman inclus. Oferă aroma copilăriei invitaților tăi!"
+            href="/vata-de-zahar-si-popcorn/" 
+            image="https://www.superparty.ro/hero1.jpg"
+          />
+          <ServiceLinkCard 
+            title="Decorațiuni & Arcade Baloane" 
+            description="Intrări spectaculoase și fundaluri perfecte pentru poze de neuitat. Montaj gratuit!"
+            href="/arcade-baloane/" 
+            image="https://www.superparty.ro/hero2.jpg"
+          />
+        </div>
+      </div>
+
+
 </Layout>
 
 <style>
@@ -60,3 +109,103 @@ import Layout from '../../layouts/Layout.astro';
   .cta-strong-bottom { background: #1a202c; color: white; padding: 6rem 0; }
   .cta-strong-bottom h2 { color: white; }
 </style>
+
+
+<!-- LOCAL_HUB_INJECT_START -->
+<section class="py-16 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+      Organizarea Petrecerilor în Voluntari
+    </h2>
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <p>Superparty este principalul furnizor de servicii de divertisment pentru copii în inima comunității din Voluntari. Fie că planificați o petrecere restrânsă acasă, o aniversare spectaculoasă la curte, sau o ieșire cu zeci de copii în spații deschise precum Pădurea Băneasa, zona Pipera, curți spațioase, echipa noastră cunoaște perfect logistica și specificul zonei.</p>
+      <p>Am adus zâmbete la sute de petreceri în locații renumite, profitând la maximum de vibrația unică a zonei: petreceri în curte, grădină, aer liber, ansambluri rezidențiale. De la spectacole de magie interactivă la show-uri complexe cu mascotele Disney, ne asigurăm că fiecare moment este sigur, captivant și, mai ales, lipsit de stres pentru părinți.</p>
+    </div>
+    <div class="mt-12">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Întrebări Frecvente Specifice Zonei</h3>
+      <dl class="space-y-6">
+        <div>
+          <dt class="text-lg font-semibold text-gray-900 dark:text-white">Q: Aplicați taxă de deplasare pentru Voluntari / Pipera?</dt>
+          <dd class="mt-2 text-gray-600 dark:text-gray-300">A: Deplasarea în Voluntari este inclusă în preț, nu avem taxe ascunse de transport.</dd>
+        </div>
+        <div>
+          <dt class="text-lg font-semibold text-gray-900 dark:text-white">Q: Dacă petrecerea e în curte și plouă, animatorul se adaptează în casă?</dt>
+          <dd class="mt-2 text-gray-600 dark:text-gray-300">A: Sigur! Tot personalul nostru vine pregătit pentru interior și exterior.</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="mt-12 bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Ce spun Părinții din Voluntari</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <blockquote class="italic text-gray-600 dark:text-gray-300">
+          "Am comandat pachetul cu Spider-Man pentru petrecerea celui mic în aer liber. Totul la superlativ, multă energie!"
+          <footer class="mt-4 font-semibold text-gray-900 dark:text-white">— Mihai D.</footer>
+        </blockquote>
+        <blockquote class="italic text-gray-600 dark:text-gray-300">
+          "Am avut o petrecere mare în curte și animatorii au știut cum să țină peste 20 de copii ocupați cu jocuri și trucuri magice."
+          <footer class="mt-4 font-semibold text-gray-900 dark:text-white">— Robert S.</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LOCAL_HUB_INJECT_END -->
+
+
+<!-- LOCAL_HUB_INJECT_V2_START -->
+<section class="py-16 bg-white dark:bg-gray-900 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
+          Lideri în Organizarea de Petreceri în Voluntari
+        </h2>
+        <div class="space-y-4 text-lg text-gray-600 dark:text-gray-300">
+          <p>Experiența ne-a învățat că fiecare comunitate are un ritm propriu. În Voluntari, dinamica familiilor este una specială, orientată spre evenimente de calitate, sigure și memorabile. Fie că sunteți în căutarea unei soluții complete pentru o aniversare restrânsă acasă, fie că plănuiți un eveniment amplu în aer liber, folosind spații cunoscute din zonă precum Pădurea Băneasa, zona Pipera, curți spațioase, suntem partenerul dumneavoastră de încredere.</p>
+          <p>Alegând serviciile Superparty, optați pentru o echipă care cunoaște pulsul acestei locații: petreceri în curte, grădină, aer liber, ansambluri rezidențiale. Nu mai pierdeți timpul căutând soluții de compromis. Noi aducem magia, logistica, costumele impecabile, boxa profesională și, mai presus de toate, experiența necesară pentru a gestiona grupurile de copii, permițându-vă să savurați evenimentul alături de invitații adulți fără niciun stres organizatoric.</p>
+        </div>
+      </div>
+      <div class="bg-purple-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Top Întrebări Frecvente (Voluntari)</h3>
+        <dl class="space-y-6">
+          <div class="border-b border-purple-100 pb-4 last:border-0 last:pb-0">
+            <dt class="text-lg font-semibold text-gray-900 dark:text-white">Aplicați taxă de deplasare pentru Voluntari / Pipera?</dt>
+            <dd class="mt-2 text-gray-600 dark:text-gray-300">Deplasarea în Voluntari este inclusă în preț, nu avem taxe ascunse de transport.</dd>
+          </div>
+          <div class="border-b border-purple-100 pb-4 last:border-0 last:pb-0">
+            <dt class="text-lg font-semibold text-gray-900 dark:text-white">Dacă petrecerea e în curte și plouă, animatorul se adaptează în casă?</dt>
+            <dd class="mt-2 text-gray-600 dark:text-gray-300">Sigur! Tot personalul nostru vine pregătit pentru interior și exterior.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="mt-16">
+      <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8 text-center">Recenzii Verificate din Comunitatea Voluntari</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100">
+          <div class="flex text-yellow-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="italic text-gray-600 dark:text-gray-300 mb-4">"Am comandat pachetul cu Spider-Man pentru petrecerea celui mic în aer liber. Totul la superlativ, multă energie!"</p>
+          <footer class="font-semibold text-gray-900 dark:text-white">— Mihai D.</footer>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100">
+          <div class="flex text-yellow-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="italic text-gray-600 dark:text-gray-300 mb-4">"Am avut o petrecere mare în curte și animatorii au știut cum să țină peste 20 de copii ocupați cu jocuri și trucuri magice."</p>
+          <footer class="font-semibold text-gray-900 dark:text-white">— Robert S.</footer>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100">
+          <div class="flex text-yellow-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="italic text-gray-600 dark:text-gray-300 mb-4">"Locația noastră a fost destul de mică, dar s-au adaptat perfect. Baloanele modelabile au fost senzația zilei."</p>
+          <footer class="font-semibold text-gray-900 dark:text-white">— Cristina B.</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LOCAL_HUB_INJECT_V2_END -->
+

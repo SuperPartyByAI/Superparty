@@ -1,4 +1,5 @@
 ---
+import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -48,7 +49,6 @@ const schema = JSON.stringify({
   title="Animatori Petreceri Copii Tunari | SuperParty | SuperParty"
   description="Animatori profesioniști pentru petreceri copii în Tunari, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/tunari"
-  robots="noindex, follow"
   schema={schema}
 >
 <style>
@@ -179,5 +179,27 @@ const schema = JSON.stringify({
     </div>
   </div>
 </section>
+
+
+
+      <!-- ── UPSELL SECTION ────────────────────────────────────────────────── -->
+      <div class="mt-16 mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">✨ Fă petrecerea cu adevărat memorabilă! Adaugă și:</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <ServiceLinkCard 
+            title="Închiriere Aparat Vată de Zahăr" 
+            description="Porții nelimitate și operator uman inclus. Oferă aroma copilăriei invitaților tăi!"
+            href="/vata-de-zahar-si-popcorn/" 
+            image="https://www.superparty.ro/hero1.jpg"
+          />
+          <ServiceLinkCard 
+            title="Decorațiuni & Arcade Baloane" 
+            description="Intrări spectaculoase și fundaluri perfecte pentru poze de neuitat. Montaj gratuit!"
+            href="/arcade-baloane/" 
+            image="https://www.superparty.ro/hero2.jpg"
+          />
+        </div>
+      </div>
+
 
 </Layout>

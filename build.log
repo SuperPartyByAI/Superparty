@@ -1,0 +1,63 @@
+﻿
+> superparty-astro@1.0.0 build
+> astro build
+
+npm : (node:8432) Warning: To load 
+an ES module, set "type": "module" 
+in the package.json or use the .mjs
+ extension.
+At line:1 char:1
++ npm run build 2>&1 | Out-File -Fi
+lePath build.log -Encoding utf8
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotS 
+   pecified: ((node:8432) War....  
+  mjs extension.:String) [], Rem   
+ oteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+(Use `node --trace-warnings ...` to
+ show where the warning was created
+)
+02:10:56 [types] Generated 1.28s
+02:10:56 [build] output: "static"
+02:10:56 [build] directory: C:\Users\ursac\Superparty\dist\
+02:10:56 [build] Collecting build info...
+02:10:56 [build] ✓ Completed in 1.38s.
+02:10:56 [build] Building static entrypoints...
+
+[1m[33mwarn[39m[22m - The `cont
+ent` option in your Tailwind CSS co
+nfiguration is missing or empty.
+[1m[33mwarn[39m[22m - Configure
+ your content sources or your gener
+ated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://t
+ailwindcss.com/docs/content-configu
+ration
+02:11:09 [ERROR] [vite] [31mx[39m
+ Build failed in 12.65s
+[@mdx-js/rollup] Unexpected charact
+er `!` (U+0021) before name, expect
+ed a character that can start a nam
+e, such as a letter, `$`, or `_` (n
+ote: to create a comment in MDX, us
+e `{/* text */}`)
+file: C:/Users/ursac/Superparty/src
+/content/seo-articles/animatori-pet
+receri-copii-alba-ca-zapada-sector-
+1.mdx:42:2
+  Location:
+    C:/Users/ursac/Superparty/src/c
+ontent/seo-articles/animatori-petre
+ceri-copii-alba-ca-zapada-sector-1.
+mdx:42:2
+  Stack trace:
+    at Object.transform (file:///C:
+/Users/ursac/Superparty/node_module
+s/.pnpm/@astrojs+mdx@3.1.9_astro@4.
+16.19_@types+node@24.12.0_rollup@4.
+59.0_typescript@5.9.3_/node_modules
+/@astrojs/mdx/dist/vite-plugin-mdx.
+js:51:15)

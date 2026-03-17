@@ -13,6 +13,20 @@ const seoArticlesCollection = defineCollection({
     }),
 });
 
+const blogCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.date().optional(),
+        updatedDate: z.date().optional(),
+        heroImage: z.string().optional(),
+        author: z.string().default('Echipa Superparty'),
+        tags: z.array(z.string()).default([]),
+    }),
+});
+
 export const collections = {
     'seo-articles': seoArticlesCollection,
+    'blog': blogCollection,
 };

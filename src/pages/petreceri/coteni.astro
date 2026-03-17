@@ -1,4 +1,5 @@
 ---
+import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const schema = JSON.stringify({
@@ -32,7 +33,6 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  robots="noindex, follow"
   title="Animatori Petreceri Copii Coteni | SuperParty"
   description="Animatori profesioniști pentru petreceri copii în Coteni (comună/sat, ~25 km de București). Costume premium, pachete de la 490 lei. Rezervă: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/coteni"
@@ -164,4 +164,26 @@ const schema = JSON.stringify({
     </div>
   </div>
 </section>
+
+
+      <!-- ── UPSELL SECTION ────────────────────────────────────────────────── -->
+      <div class="mt-16 mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">✨ Fă petrecerea cu adevărat memorabilă! Adaugă și:</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <ServiceLinkCard 
+            title="Închiriere Aparat Vată de Zahăr" 
+            description="Porții nelimitate și operator uman inclus. Oferă aroma copilăriei invitaților tăi!"
+            href="/vata-de-zahar-si-popcorn/" 
+            image="https://www.superparty.ro/hero1.jpg"
+          />
+          <ServiceLinkCard 
+            title="Decorațiuni & Arcade Baloane" 
+            description="Intrări spectaculoase și fundaluri perfecte pentru poze de neuitat. Montaj gratuit!"
+            href="/arcade-baloane/" 
+            image="https://www.superparty.ro/hero2.jpg"
+          />
+        </div>
+      </div>
+
+
 </Layout>

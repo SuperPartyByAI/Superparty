@@ -1,0 +1,72 @@
+﻿
+> superparty-astro@1.0.0 build
+> astro build
+
+npm : (node:6168) Warning: To load 
+an ES module, set "type": "module" 
+in the package.json or use the .mjs
+ extension.
+At line:1 char:1
++ npm run build > build_log2.txt 2>
+&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo          : NotSp
+eci    fied: ((node:6168) War....mj
+s exte    nsion.:String) [], Remote
+Exception
+    + FullyQualifiedErrorId : Nativ
+eCo    mmandError
+ 
+(Use `node --trace-warnings ...` to
+ show where the warning was created
+)
+03:39:21 [types] Generated 1.21s
+03:39:21 [build] output: "static"
+03:39:21 [build] directory: C:\Users\ursac\Superparty\dist\
+03:39:21 [build] Collecting build info...
+03:39:21 [build] ✓ Completed in 1.31s.
+03:39:21 [build] Building static entrypoints...
+03:39:22 [ERROR] [vite] [31mx[39m
+ Build failed in 1.21s
+
+[1m[33mwarn[39m[22m - The `cont
+ent` option in your Tailwind CSS co
+nfiguration is missing or empty.
+[1m[33mwarn[39m[22m - Configure
+ your content sources or your gener
+ated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://t
+ailwindcss.com/docs/content-configu
+ration
+[CompilerError] [astro:build] The c
+losing frontmatter fence (---) is m
+issing an opening fence
+file: C:/Users/ursac/Superparty/src
+/pages/arcade-baloane/index.astro:9
+:1
+  Hint:
+    Add --- at the beginning of you
+r file before any import statements
+ or code
+  Location:
+    C:/Users/ursac/Superparty/src/p
+ages/arcade-baloane/index.astro:9:1
+  Stack trace:
+    at handleCompileResultErrors (f
+ile:///C:/Users/ursac/Superparty/no
+de_modules/.pnpm/astro@4.16.19_@typ
+es+node@24.12.0_rollup@4.59.0_types
+cript@5.9.3/node_modules/astro/dist
+/core/compile/compile.js:65:11)
+    at async compileAstro (file:///
+C:/Users/ursac/Superparty/node_modu
+les/.pnpm/astro@4.16.19_@types+node
+@24.12.0_rollup@4.59.0_typescript@5
+.9.3/node_modules/astro/dist/vite-p
+lugin-astro/compile.js:13:23)
+    at async transform (file:///C:/
+Users/ursac/Superparty/node_modules
+/.pnpm/rollup@4.59.0/node_modules/r
+ollup/dist/es/shared/node-entry.js:
+21269:16)

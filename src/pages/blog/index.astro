@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const now = new Date();
+
+// DRIP-FEED: Filter out future articles, then sort descending
+const posts = allPosts
+  .filter(post => !post.data.pubDate || new Date(post.data.pubDate) <= now)
+  .sort((a, b) => {
+    const dateA = a.data.pubDate ? new Date(a.data.pubDate).valueOf() : 0;
+    const dateB = b.data.pubDate ? new Date(b.data.pubDate).valueOf() : 0;
+    return dateB - dateA;
+  });
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const desc = "Află sfaturi, trucuri și idei senzaționale despre organizarea petrecerilor pentru copii din București și Ilfov. Echipa SuperParty îți oferă ghidul perfect pentru o aniversare de neuitat.";
+---
+
+<Layout title="Blog SuperParty | Idei și Sfaturi pentru Petreceri Copii" description={desc} canonical={canonicalURL}>
+  <main class="w-full bg-gray-50 dark:bg-gray-900 py-16 lg:py-24 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
+          Blog SuperParty
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+          Ghidul părinților relaxați pentru petreceri spectaculoase. Sfaturi, trenduri și inspirație pentru o zi de naștere complet lipsită de stres.
+        </p>
+      </div>
+      
+      {posts.length === 0 ? (
+        <div class="text-center py-20 bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+          <p class="text-xl text-gray-500 dark:text-gray-400 font-medium">Lucrăm cu drag la primele articole spectaculoase. Revino în curând!</p>
+        </div>
+      ) : (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="group flex flex-col bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-decoration-none">
+              <div class="relative overflow-hidden aspect-[4/3] bg-gray-100 dark:bg-gray-900">
+                {post.data.heroImage ? (
+                  <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-gray-300 dark:text-gray-700 text-6xl">🎉</div>
+                )}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="flex flex-col flex-1 p-8">
+                <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <span class="font-medium text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-3 py-1 rounded-full uppercase tracking-wider text-xs">
+                    {post.data.tags && post.data.tags.length > 0 ? post.data.tags[0] : 'Sfat Util'}
+                  </span>
+                  •
+                  <time datetime={post.data.pubDate ? new Date(post.data.pubDate).toISOString() : ''}>
+                    {post.data.pubDate && new Date(post.data.pubDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </time>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors line-clamp-2">
+                  {post.data.title}
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6 flex-1">
+                  {post.data.description}
+                </p>
+                
+                <div class="mt-auto flex items-center font-bold text-purple-600 dark:text-purple-400 group-hover:text-purple-700 transition-colors">
+                  Citește Articolul
+                  <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+      
+    </div>
+  </main>
+</Layout>

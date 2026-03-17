@@ -1,0 +1,57 @@
+﻿
+> superparty-astro@1.0.0 build
+> astro build
+
+npm : (node:4168) Warning: To load 
+an ES module, set "type": "module" 
+in the package.json or use the .mjs
+ extension.
+At line:1 char:1
++ npm run build > build_log.txt 2>&
+1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo          : NotS 
+   pecified: ((node:4168) War....  
+  mjs extension.:String) [], Rem   
+ oteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+(Use `node --trace-warnings ...` to
+ show where the warning was created
+)
+03:37:48 [types] Generated 1.18s
+03:37:48 [build] output: "static"
+03:37:48 [build] directory: C:\Users\ursac\Superparty\dist\
+03:37:48 [build] Collecting build info...
+03:37:48 [build] ✓ Completed in 1.31s.
+03:37:48 [build] Building static entrypoints...
+
+[1m[33mwarn[39m[22m - The `cont
+ent` option in your Tailwind CSS co
+nfiguration is missing or empty.
+[1m[33mwarn[39m[22m - Configure
+ your content sources or your gener
+ated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://t
+ailwindcss.com/docs/content-configu
+ration
+03:37:54 [ERROR] [vite] [31mx[39m
+ Build failed in 5.93s
+Could not resolve "../../components
+/FAQ.astro" from "src/pages/baloane
+-cu-heliu/index.astro"
+file: C:/Users/ursac/Superparty/src
+/pages/baloane-cu-heliu/index.astro
+  Stack trace:
+    at getRollupError (file:///C:/U
+sers/ursac/Superparty/node_modules/
+.pnpm/rollup@4.59.0/node_modules/ro
+llup/dist/es/shared/parseAst.js:402
+:41)
+    at ModuleLoader.handleInvalidRe
+solvedId (file:///C:/Users/ursac/Su
+perparty/node_modules/.pnpm/rollup@
+4.59.0/node_modules/rollup/dist/es/
+shared/node-entry.js:21710:24)

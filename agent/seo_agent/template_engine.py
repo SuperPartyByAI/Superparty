@@ -192,16 +192,12 @@ def generate_combined_jsonld(data: OwnerPageData) -> str:
 def generate_meta_title(data: OwnerPageData) -> str:
     """
     Generate SEO-optimized meta title.
-    Format: {Head Term} {City} & {Area} | {Brand} (#1) Peste {events} evenimente
     Max ~60 chars displayed, but can be longer.
     """
     if data.meta_title:
         return data.meta_title
 
-    return (
-        f"{data.head_term.capitalize()} {data.city} & {data.area} | "
-        f"{data.brand} (#1) Peste {data.event_count} evenimente"
-    )
+    return "Animatori Petreceri Copii București — SuperParty — De la 490 lei • 8.000+ evenimente"
 
 
 def generate_meta_description(data: OwnerPageData) -> str:
@@ -213,17 +209,7 @@ def generate_meta_description(data: OwnerPageData) -> str:
     if data.meta_description:
         return data.meta_description
 
-    price_part = ""
-    if data.packages:
-        min_price = min(data.packages, key=lambda p: int(p.price)).price
-        price_part = f" De la {min_price} lei."
-
-    return (
-        f"{data.head_term.capitalize()} {data.city} — {data.brand}: "
-        f"personaje costumate, jocuri interactive, confetti party."
-        f"{price_part} {data.event_count} evenimente, "
-        f"rating {data.rating} ⭐. Sună: {data.phone}"
-    )
+    return "Animatori și personaje pentru petreceri copii în București & Ilfov — pachete de la 490 lei, rating 5.0 ⭐. Rezervă: 0722 744 377"
 
 
 # ── Astro Component Snippet ──────────────────────────────────────────────────

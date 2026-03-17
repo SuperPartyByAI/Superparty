@@ -1,0 +1,90 @@
+{
+    "regions": {
+        "sector-1": {
+            "parks": [
+                "Parcul Herăstrău",
+                "Kiseleff",
+                "Domenii",
+                "Băneasa"
+            ],
+            "vibe": "apartamente elegante, case de epocă, locații exclusiviste",
+            "faqs": [
+                {
+                    "q": "Există taxă de parcare pentru venirea animatorilor în zona Herăstrău?",
+                    "a": "Nu, animatorul își gestionează singur parcarea fără costuri ascunse pentru dumneavoastră."
+                },
+                {
+                    "q": "Puteți organiza petrecerea la un restaurant din Sectorul 1?",
+                    "a": "Absolut! Colaborăm des cu locații partenere și restaurante din Dorobanți sau Băneasa."
+                }
+            ],
+            "reviews": [
+                {
+                    "author": "Maria T. (Băneasa)",
+                    "text": "Un super Batman a venit la petrecerea fiului meu acasă, în nordul capitalei. Recomand!"
+                }
+            ]
+        },
+        "voluntari": {
+            "parks": [
+                "Pădurea Băneasa",
+                "zona Pipera",
+                "curți spațioase"
+            ],
+            "vibe": "petreceri în curte, grădină, aer liber, ansambluri rezidențiale",
+            "faqs": [
+                {
+                    "q": "Aplicați taxă de deplasare pentru Voluntari / Pipera?",
+                    "a": "Deplasarea în Voluntari este inclusă în preț, nu avem taxe ascunse de transport."
+                },
+                {
+                    "q": "Dacă petrecerea e în curte și plouă, animatorul se adaptează în casă?",
+                    "a": "Sigur! Tot personalul nostru vine pregătit pentru interior și exterior."
+                }
+            ],
+            "reviews": [
+                {
+                    "author": "Andrei V. (Voluntari)",
+                    "text": "Am făcut petrecerea în curte, a ieșit senzație cu toate costumele."
+                }
+            ]
+        }
+    },
+    "reviews": [
+        {
+            "author": "Irina M.",
+            "text": "Super spectacol cu Elsa! Actorii au fost minunați, fetița mea a fost in al nouălea cer.",
+            "location_tag": "sector-1"
+        },
+        {
+            "author": "Mihai D.",
+            "text": "Am comandat pachetul cu Spider-Man pentru petrecerea celui mic în aer liber. Totul la superlativ, multă energie!",
+            "location_tag": "voluntari"
+        },
+        {
+            "author": "Elena C.",
+            "text": "Costume de nota 10 și o interacțiune foarte naturală cu copiii. Cei mici au stat lipiți de mascote.",
+            "location_tag": "sector-3"
+        },
+        {
+            "author": "Robert S.",
+            "text": "Am avut o petrecere mare în curte și animatorii au știut cum să țină peste 20 de copii ocupați cu jocuri și trucuri magice.",
+            "location_tag": "ilfov"
+        },
+        {
+            "author": "Andreea P.",
+            "text": "Punctuali, comunicativi și plini de viață. Recomand cu drag echipa Superparty pentru evenimente reușite!",
+            "location_tag": "sector-6"
+        },
+        {
+            "author": "Cristina B.",
+            "text": "Locația noastră a fost destul de mică, dar s-au adaptat perfect. Baloanele modelabile au fost senzația zilei.",
+            "location_tag": "bucuresti"
+        },
+        {
+            "author": "Alexandru N.",
+            "text": "Copiii nu voiau să îi mai lase să plece. O experiență de neuitat pentru ziua băiețelului meu.",
+            "location_tag": "corbeanca"
+        }
+    ]
+}

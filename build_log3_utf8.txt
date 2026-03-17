@@ -1,0 +1,50 @@
+﻿
+> superparty-astro@1.0.0 build
+> astro build
+
+npm : (node:12092) Warning: To load an 
+ES module, set "type": "module" in the 
+package.json or use the .mjs extension.
+At line:1 char:1
++ npm run build > build_log3.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpeci 
+   fied: ((node:12092) Wa....mjs exte  
+  nsion.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCo 
+   mmandError
+ 
+(Use `node --trace-warnings ...` to sho
+w where the warning was created)
+03:40:23 [types] Generated 1.29s
+03:40:23 [build] output: "static"
+03:40:23 [build] directory: C:\Users\ursac\Superparty\dist\
+03:40:23 [build] Collecting build info...
+03:40:23 [build] ✓ Completed in 1.38s.
+03:40:23 [build] Building static entrypoints...
+
+[1m[33mwarn[39m[22m - The `content`
+ option in your Tailwind CSS configurat
+ion is missing or empty.
+[1m[33mwarn[39m[22m - Configure you
+r content sources or your generated CSS
+ will be missing styles.
+[1m[33mwarn[39m[22m - https://tailw
+indcss.com/docs/content-configuration
+03:40:29 [ERROR] [vite] [31mx[39m Bui
+ld failed in 5.33s
+Could not resolve "../components/FAQ.as
+tro" from "src/pages/arcade-baloane/ind
+ex.astro"
+file: C:/Users/ursac/Superparty/src/pag
+es/arcade-baloane/index.astro
+  Stack trace:
+    at getRollupError (file:///C:/Users
+/ursac/Superparty/node_modules/.pnpm/ro
+llup@4.59.0/node_modules/rollup/dist/es
+/shared/parseAst.js:402:41)
+    at ModuleLoader.handleInvalidResolv
+edId (file:///C:/Users/ursac/Superparty
+/node_modules/.pnpm/rollup@4.59.0/node_
+modules/rollup/dist/es/shared/node-entr
+y.js:21710:24)

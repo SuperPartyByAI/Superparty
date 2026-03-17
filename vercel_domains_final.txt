@@ -1,0 +1,93 @@
+﻿npx : Fetching Domains under and
+reis-projects-ae1c2ce2
+At line:1 char:83
++ ... ASX0nbghV"; npx -y vercel 
+domains ls --token $env:VERCEL_T
+OKEN 2>&1 | ...
++                 ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo          : N 
+   otSpecified: (Fetching Doma  
+  in...ojects-ae1c2ce2:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorId : N 
+   ativeCommandError
+ 
+> 17 Domains found under andreis
+-projects-ae1c2ce2 [324ms]
+ 
+  Domain                     Reg
+istrar           Nameservers    
+     Expiration Date    Creator 
+            Age     
+  ursitoaremagice.ro         Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      3m      
+  universeparty.ro           Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      3m      
+  teraparty.ro               Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      3m      
+  clubuldisney.ro            Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      3m      
+  youparty.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      4m      
+  kassia.ro                  Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      4m      
+  petreceritematice.ro       Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      4m      
+  playparty.ro               Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  planetparty.ro             Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  partymania.ro              Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  joyparty.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  divertix.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  123party.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      5m      
+  wowparty.ro                Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      2d      
+  superparty.ro              Thi
+rd Party         Vercel         
+     -                  superpar
+tybyai      14d     
+  animatopia.ro              Thi
+rd Party         Vercel         
+     -                  superpar
+tybyai      14d     
+  superpartybyai.ro          Thi
+rd Party         Third Party    
+     -                  superpar
+tybyai      121d    
+ 
+

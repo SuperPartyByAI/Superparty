@@ -1,0 +1,48 @@
+---
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export interface Props {
+  items: FaqItem[];
+  title?: string;
+}
+
+const { items, title = "Întrebări Frecvente" } = Astro.props;
+
+// Generate FAQPage JSON-LD
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<div class="my-12 not-prose">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">{title}</h3>
+  
+  <dl class="space-y-6">
+    {items.map((item) => (
+      <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+        <dt class="text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-start">
+          <span class="text-purple-600 dark:text-purple-500 mr-3 flex-shrink-0">Q:</span>
+          {item.q}
+        </dt>
+        <dd class="text-gray-600 dark:text-gray-300 ml-7 leading-relaxed flex items-start">
+          <span class="text-gray-400 dark:text-gray-500 mr-3 flex-shrink-0 font-semibold">A:</span>
+          {item.a}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</div>

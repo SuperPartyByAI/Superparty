@@ -1,19 +1,62 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQ from '../../components/blog/FAQ.astro';
+
+const faqs = [
+  {q: "Cât durează montajul unei arcade din baloane?", a: "Timpul de asamblare este de aproximativ 45–60 minute. Echipa noastră vine cu minim o oră înaintea evenimentului, asigurându-se că accesul în locație (fie apartament sau curte în Ilfov/București) permite instalarea structurii de 2-3 metri."},
+  {q: "Ce se întâmplă dacă plouă / bate vântul la petrecerea din curte?", a: "Pentru petrecerile în aer liber (curte/grădină), baza arcadei este dublu lestată (greutăți cu apă/nisip). Recomandăm poziționarea structurii lângă un perete sau foișor pentru protecție suplimentară la intemperii."},
+  {q: "Pot personaliza culorile arcadei de baloane?", a: "Da! Utilizăm exclusiv baloane premium (Qualatex / Gemar). Culorile pot respecta orice tematică: botez, majorat, corporate sau nuanțele personajului Superparty preferat."},
+];
 ---
-<Layout title="Arcadă Baloane București – Montaj la Locație, Culori Personalizate | SuperParty" description="Arcadă din baloane pentru petreceri copii și botezuri în București. Dimensiuni 1–5 m, culori la alegere, montaj rapid la locație. Transport inclus. Sună: 0722 744 377."
-  canonical="https://www.superparty.ro/arcade-baloane">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Arcade <span style="color:var(--primary);">Baloane</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Arcurile din baloane sunt elementul "wow" al oricărei petreceri! Cream arcade impresionante la intrare sau in sala, personalizate in culorile si tema petrecerii tale.</p>
-      <div style="background:var(--dark-2); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; margin-bottom:2rem;">
-        <h2 style="color:var(--primary); margin-bottom:1rem;">Ce includem:</h2>
-        <ul style="list-style:none; color:var(--text-muted);">
-          {['🎈 Arcade cu dimensiuni la alegere (1-5 metri)','🎨 Culori personalizate pentru tema petrecerii','⚡ Montaj rapid la locatie','🌟 Baloane premium rezistente','✅ Transport inclus in bucuresti'].map(f => <li style="padding:0.5rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">{f}</li>)}
+
+<Layout 
+  title="Arcade Baloane Petreceri & Botez | Decorațiuni București-Ilfov"
+  description="Decorațiuni spectaculoase cu arcade din baloane pentru botez, petreceri copii și majorat. Montaj asigurat în București și Ilfov. Alegeți culorile perfecte!"
+  canonical="https://www.superparty.ro/arcade-baloane/"
+>
+
+  <section class="py-16 bg-white dark:bg-gray-900 mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl mb-4">
+          Arcade și <span class="text-orange-500">Decorațiuni Baloane</span>
+        </h1>
+        <p class="text-xl text-gray-500 dark:text-gray-400">
+          Intrări spectaculoase și fundaluri perfecte pentru fotografii memorabile la botezuri, aniversări sau majorate în București și Ilfov.
+        </p>
+      </div>
+
+      <img src="https://www.superparty.ro/hero2.jpg" alt="Arcada baloane botez" class="w-full h-96 object-cover rounded-2xl shadow-xl mb-12" />
+
+      <div class="prose prose-orange prose-lg dark:prose-invert mx-auto mb-16">
+        <h2>Detaliile Care Formează Magia</h2>
+        <p>
+          O petrecere impecabilă din București sau ansamblurile rezidențiale din Ilfov începe de la felul în care invitații sunt întâmpinați. Arcadele din baloane nu sunt doar un element de decor; sunt poarta de intrare în atmosfera de poveste. Noi folosim strict structuri metalice modulare, rezistente, care suportă arcade voluminoase ce maschează perfect ușile duble de restaurant sau porțile înalte de curte.
+        </p>
+        
+        <h3>Logistica și Montajul (Ce Trebuie Să Știe Părinții)</h3>
+        <p>
+          Nu umflăm baloanele la fața locului din plămâni! Echipa noastră vine cu compresoare electrice (vă rugăm să ne asigurați acces la o priză de 220V pentru ~15 minute). Baloanele sunt grupate în ghirlande organice încă din duba noastră de transport, iar la locație facem asamblarea finală pe cadrul metalic.
+        </p>
+        <ul>
+            <li><strong>Mărime:</strong> Arcade standard (2.5m x 2.2m) sau variante asimetrice organice (jumătate de cerc).</li>
+            <li><strong>Transport:</strong> Asigurat pentru toate sectoarele din București. Pentru comunele din județul Ilfov (Corbeanca, Voluntari, Bragadiru, etc.) se aplică taxa standard de transport.</li>
+            <li><strong>Demontare:</strong> Cadrul metalic ne aparține. Va fi preluat a doua zi sau la finalul evenimentului, dar baloanele vă rămân dumneavoastră spre amuzamentul copiilor!</li>
         </ul>
       </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Comanda Arcada</a>
+
+      <div class="bg-orange-50 dark:bg-gray-800 rounded-2xl p-8 mb-16 text-center border border-orange-100 dark:border-gray-700">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Adaugă Culoare Evenimentului Tău!</h3>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Pachetele pot fi personalizate integral cromatic.</p>
+        <a href="tel:+40722744377" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full text-white bg-orange-600 hover:bg-orange-700 shadow-lg transform transition hover:scale-105">
+           📞 Solicită Ofertă Decorațiuni 
+        </a>
+      </div>
+
+      <FAQ title="Întrebări Frecvente despre Arcadele de Baloane" items={faqs} />
+
     </div>
   </section>
+
 </Layout>

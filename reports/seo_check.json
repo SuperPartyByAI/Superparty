@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://animatopia.ro/",
+    "x_robots_tag": null,
+    "meta_robots": "<meta name=\"robots\" content=\"index, follow\">",
+    "canonical": "<link rel=\"canonical\" href=\"https://www.superparty.ro/\">"
+  },
+  {
+    "url": "https://animatopia.ro/animatori-petreceri-copii/",
+    "x_robots_tag": null,
+    "meta_robots": "<meta name=\"robots\" content=\"index, follow\">",
+    "canonical": "<link rel=\"canonical\" href=\"https://www.superparty.ro/animatori-petreceri-copii\">"
+  },
+  {
+    "url": "https://www.superparty.ro/",
+    "x_robots_tag": null,
+    "meta_robots": "<meta name=\"robots\" content=\"index, follow\">",
+    "canonical": "<link rel=\"canonical\" href=\"https://www.superparty.ro/\">"
+  }
+]

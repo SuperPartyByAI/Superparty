@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Testimonials from '../components/Testimonials.astro';
 import PhotoSlider from '../components/PhotoSlider.astro';
+import GoogleReviewWidget from '../components/GoogleReviewWidget.astro';
 import { heroImages, productImages } from '../data/gallery_images';
 
 const currentYear = new Date().getFullYear();
@@ -75,6 +76,13 @@ const benefits = [
       </a>
       <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn-wa" id="hero-wa-cta">
         💬 WhatsApp
+      </a>
+    </div>
+
+    <!-- SEO Internal Link -->
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="/animatori-petreceri-copii/" style="color: white; text-decoration: underline; font-weight: 500; font-size: 1.1rem; opacity: 0.9;">
+        Animatori petreceri copii — Pachete de la 490 lei
       </a>
     </div>
 
@@ -186,6 +194,9 @@ const benefits = [
 
 <!-- ── TESTIMONIALE ────────────────────────────────────────────────────── -->
 <Testimonials count={9} title="Ce spun părinții" showLink={true} />
+
+<!-- ── WIDGET RECENZII GOOGLE MAPS ───────────────────────────────────── -->
+<GoogleReviewWidget />
 
 <!-- ── CTA FINAL ──────────────────────────────────────────────────────── -->
 <section class="cta-section">

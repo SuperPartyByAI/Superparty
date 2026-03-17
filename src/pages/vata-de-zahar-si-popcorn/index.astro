@@ -1,26 +1,62 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQ from '../../components/blog/FAQ.astro';
+
+const faqs = [
+  {q: "Operatorul este inclus în prețul închirierii?", a: "Da! Atât mașina de vată de zahăr, cât și cea de popcorn vin cu un operator uman dedicat, echipat corespunzător (pălărie, șorț, mănuși). Acesta se opcupă de prepare, servire și interacțiunea cu copiii."},
+  {q: "Ce consum termic / electric necesită aparatele?", a: "Ambele mașini sunt echipamente profesionale. Necesită conectarea la o priză standard (220V). Mașina de vată de zahăr consumă în jur de 1.2kW la încălzire. Ne ocupăm noi de prelungitoare dacă priza este la maxim 15 metri distanță, dar avem nevoie ca locația să suporte acest consum tehnic fără a sări siguranțele."},
+  {q: "Pentru câți copii ajung ingredientele din pachetul standard?", a: "Pachetele de închiriere vin cu un număr NELIMITAT de porții pe ora contractată. Produsul este preparat continuu, astfel încât toți cei 20, 30 sau 50 de copii (și adulții pofticioși!) de la petrecerea din Ilfov sau București se vor putea satura."},
+];
 ---
-<Layout title="Vată de Zahăr și Popcorn pentru Petreceri | SuperParty" description="Masini de vata de zahar si popcorn pentru petreceri copii in Bucuresti. Inchiriere si servire. Rezerva: 0722 744 377."
-  canonical="https://www.superparty.ro/vata-de-zahar-si-popcorn">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Vată de Zahăr și <span style="color:var(--primary);">Popcorn</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Completam petrecerea cu gustări de neuitat! Masini profesionale de vată de zahăr si popcorn, servite direct la petrecerea ta de catre personalul nostru.</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin-bottom:3rem;">
-        {[
-          ['🍭', 'Vată de Zahăr', 'Clasica si colorata, adora de toti copiii', 'Roz, albastra, mixta'],
-          ['🍿', 'Popcorn', 'Proaspat si aromat, dulce sau sarat', 'Clasic, caramel, dulce'],
-        ].map(([icon, name, desc, variants]) => (
-          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; text-align:center;">
-            <p style="font-size:3rem; margin-bottom:1rem;">{icon}</p>
-            <h3 style="font-weight:700; margin-bottom:0.5rem;">{name}</h3>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">{desc}</p>
-            <p style="color:var(--primary); font-size:0.85rem; font-weight:600;">{variants}</p>
-          </div>
-        ))}
+
+<Layout 
+  title="Închiriere Aparat Vată de Zahăr și Popcorn | Petreceri Copii București"
+  description="Mașină profesională de vată de zahăr și aparat de popcorn de închiriat pentru botezuri și petreceri în București-Ilfov. Include operator și porții nelimitate!"
+  canonical="https://www.superparty.ro/vata-de-zahar-si-popcorn/"
+>
+
+  <section class="py-16 bg-white dark:bg-gray-900 mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl mb-4">
+          Aparat <span class="text-pink-500">Vată de Zahăr</span> și <span class="text-yellow-500">Popcorn</span>
+        </h1>
+        <p class="text-xl text-gray-500 dark:text-gray-400">
+          Transformă-ți evenimentul într-un parc de distracții! Mirosurile copilăriei preparate live la petrecerea ta din București și Ilfov.
+        </p>
       </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Masina</a>
+
+      <img src="https://www.superparty.ro/hero1.jpg" alt="Aparat vată de zahăr și popcorn la petrecere copii" class="w-full h-96 object-cover rounded-2xl shadow-xl mb-12" />
+
+      <div class="prose prose-pink prose-lg dark:prose-invert mx-auto mb-16">
+        <h2>Răsfățul Suprem Care Completează Orice Petrecere</h2>
+        <p>
+          Baloanele decorează, animatorii se ocupă de atmosferă, iar mașina de vată de zahăr rezolvă spectacolul culinar live! Gustările preparate proaspăt oferă pauza binemeritată după ore întregi de sărituri și jocuri alergate.
+        </p>
+        
+        <h3>Detalii Organizaționale și Montaj</h3>
+        <p>
+          Fie că organizați botezul bebelușului la un restaurant din Herăstrău sau o zi de naștere în curtea casei din Pipera, echipamentele noastre tip "cart" (cărucior vintage) arată absolut impecabil pe cameră, generând poze excelente. 
+        </p>
+        <ul>
+            <li><strong>Spațiul Necesar:</strong> Cărucioarele ocupă aproximativ un metru pătrat. Nu instalăm lângă boxe audio sau zone cu risc de stropire cu apă (margine de piscină).</li>
+            <li><strong>Servire Live:</strong> Aparatul de vată prepară pufuleții roz sub ochii fascinați ai prichindeilor, în timp ce mirosul inconfundabil de unt topit de la floricelele de popcorn atrage imediat atenția adulților.</li>
+            <li><strong>Curățenie:</strong> Cuva mașinii de vată de zahăr reține granulele perfect. Operatorul nostru preia zona impecabilă și o părăsește la fel de curată la final.</li>
+        </ul>
+      </div>
+
+      <div class="bg-pink-50 dark:bg-gray-800 rounded-2xl p-8 mb-16 text-center border border-pink-100 dark:border-gray-700">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Porții Nelimitate Pentru Toți Invitații!</h3>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Contactează-ne pentru a bloca data și a rezerva echipamentele.</p>
+        <a href="tel:+40722744377" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full text-white bg-pink-600 hover:bg-pink-700 shadow-lg transform transition hover:scale-105">
+           📞 Rezervă Aparat Vată / Popcorn
+        </a>
+      </div>
+
+      <FAQ title="Logistica Serviciilor" items={faqs} />
+
     </div>
   </section>
+
 </Layout>

@@ -1,19 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQ from '../../components/blog/FAQ.astro';
+
+const faqs = [
+  {q: "Cât timp plutesc baloanele cu heliu comandate?", a: "Baloanele noastre din latex sunt tratate cu gel special Hi-Float înainte de a fi umflate, ceea ce le extinde durata de plutire de la 8 ore la 3-5 zile! Baloanele din folie (cifre/personaje) pot pluti confortabil peste o săptămână."},
+  {q: "Asigurați livrare la domiciliu în București sau Ilfov?", a: "Da, livrăm aranjamentele gata umflate direct la domiciliu, restaurant sau locul de joacă. Vă rugăm să aveți în vedere că pentru baloanele voluminoase folosim dube speciale (nu intră într-o mașină mică), motiv pentru care programăm livrările cu mare precizie."},
+  {q: "Pot ridica eu baloanele de la sediu?", a: "Absolut! Ne găsiți sediul pregătit pentru ridicare. Țineți totuși cont de volum: 30 de baloane standard cu heliu ocupă integral bancheta din spate a unui autoturism tip sedan."},
+];
 ---
-<Layout title="Baloane cu Heliu București – Cifre, Litere, Personaje, Folie | SuperParty" description="Baloane cu heliu latex și folie pentru petreceri copii în București. Cifre, litere, personaje favorite, stele. Livrare la locație. Rezervă rapid: 0722 744 377."
-  canonical="https://www.superparty.ro/baloane-cu-heliu">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Baloane cu <span style="color:var(--primary);">Heliu</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Balonele cu heliu adauga o nota festiva oricarel petreceri! Oferim baloane latex si folie in forme diverse, personaje, cifre si litere — perfecte pentru poze si atmosfera!</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:3rem;">
-        {['🎈 Baloane Latex Rotunde','⭐ Baloane Folie Stele','🔢 Baloane Cifre','🔤 Baloane Litere','👑 Baloane Personaje','🦋 Baloane Forme Diverse'].map(b => (
-          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:12px; padding:1rem; text-align:center; font-weight:600;">{b}</div>
-        ))}
+
+<Layout 
+  title="Baloane cu Heliu București & Ilfov | Livrare Rapidă pentru Petreceri"
+  description="Baloane cu heliu premium (latex tratat Hi-Float și folie) pentru copii, botezuri și majorate. Livrăm rapid direct la locația petrecerii în București și Ilfov."
+  canonical="https://www.superparty.ro/baloane-cu-heliu/"
+>
+
+  <section class="py-16 bg-white dark:bg-gray-900 mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl mb-4">
+          Baloane cu <span class="text-blue-500">Heliu</span>
+        </h1>
+        <p class="text-xl text-gray-500 dark:text-gray-400">
+          Buchete spectaculoase, baloane Jumbo și cifre aniversare. Ridicăm atmosfera la orice petrecere din București și Ilfov!
+        </p>
       </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Comanda Baloane</a>
-      <p style="color:var(--text-muted); font-size:0.95rem; margin-top:1.5rem;">Adaugă și <a href="/animatori-petreceri-copii/" style="color:var(--primary); font-weight:600;">animatori petreceri copii</a> — pachete complete cu personaje de la 490 lei.</p>
+
+      <img src="https://www.superparty.ro/hero2.jpg" alt="Baloane cu heliu petrecere" class="w-full h-96 object-cover rounded-2xl shadow-xl mb-12" />
+
+      <div class="prose prose-blue prose-lg dark:prose-invert mx-auto mb-16">
+        <h2>Fericirea Care Plutește</h2>
+        <p>
+          Nimic nu transmite mesajul de "Sărbătoare!" mai repede decât un buchet impresionant de baloane cu heliu plutind deasupra invitaților. Fie că e vorba de un botez intim într-un restaurant din Pipera sau de aniversarea unui puști îndrăgostit de Spider-Man în Sectorul 3, baloanele noastre schimbă instantaneu decorul.
+        </p>
+        
+        <h3>Logistica Nostră (Detalii Utile)</h3>
+        <p>
+          Spre deosebire de buteliile mici din comerț care dezumflă baloanele în câteva ore, noi folosim heliu profesional și tratăm baloanele din latex pentru durabilitate maximă.
+        </p>
+        <ul>
+            <li><strong>Transportul Voluminos:</strong> Nu trebuie să vă chinuiți să înghesuiți 50 de baloane în mașina personală ignorând vizibilitatea în trafic. Flota noastră livrează oriunde în Capitală și județul limitrof.</li>
+            <li><strong>Varietate:</strong> Dispunem de sute de modele – de la chrom, pastel sau macaron până la baloane din folie gigant cu personajele Avengers, Prințesele Disney sau cifre de 1 metru înălțime.</li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-gray-800 rounded-2xl p-8 mb-16 text-center border border-blue-100 dark:border-gray-700">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Alege Combinațiile Preferate!</h3>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Realizăm buchete personalizate cu greutăți asortate la bază, gata să fie savurate vizual.</p>
+        <a href="tel:+40722744377" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full text-white bg-blue-600 hover:bg-blue-700 shadow-lg transform transition hover:scale-105">
+           📞 Comandă Baloane cu Heliu
+        </a>
+      </div>
+
+      <FAQ title="Întrebări Frecvente despre Heliu" items={faqs} />
+
     </div>
   </section>
+
 </Layout>

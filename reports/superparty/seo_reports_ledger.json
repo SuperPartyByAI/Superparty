@@ -1,0 +1,38 @@
+[
+  {
+    "run_id": "fa206de2-67c1-47c1-8362-f496794b9003",
+    "timestamp": "2026-03-15T09:54:06.093417+00:00",
+    "status": "failed",
+    "failing_stage": "health",
+    "health_status": "failed",
+    "priority_status": "skipped",
+    "trend_status": "failed"
+  },
+  {
+    "run_id": "29610834-cde5-4e4e-aa65-577210eff11f",
+    "timestamp": "2026-03-15T11:06:24.243841+00:00",
+    "status": "failed",
+    "failing_stage": "health",
+    "health_status": "failed",
+    "priority_status": "skipped",
+    "trend_status": "failed"
+  },
+  {
+    "run_id": "a6f7098d-48f5-4ab2-ab45-7e7a81850ad2",
+    "timestamp": "2026-03-15T11:12:12.269151+00:00",
+    "status": "failed",
+    "failing_stage": "health",
+    "health_status": "failed",
+    "priority_status": "skipped",
+    "trend_status": "failed"
+  },
+  {
+    "run_id": "cea6aa28-2765-475c-9ed7-9c3bc1bfd276",
+    "timestamp": "2026-03-15T11:58:44.476793+00:00",
+    "status": "failed",
+    "failing_stage": "health",
+    "health_status": "failed",
+    "priority_status": "skipped",
+    "trend_status": "failed"
+  }
+]
