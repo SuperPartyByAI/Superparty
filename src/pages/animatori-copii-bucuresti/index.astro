@@ -1,4 +1,5 @@
 ---
+import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 // OFFLINE WAVE 1 DRAFT - SUPERPARTY (FLAGSHIP)
 // Status: planned/offline_generation
 // Generation Spec: money_geo_generation_spec_v1
@@ -8,10 +9,10 @@
 // Families: flagship_authority, flagship_trust, commercial_authority, structured_detailed, scale_social_proof, premium_packages, strong_conversion
 
 import Layout from '../../layouts/Layout.astro';
+import FlagshipLink from '../../components/FlagshipLink.astro';
 ---
 
 <Layout 
-  robots="noindex, follow"
   title="Animatori petreceri copii București | Superparty (#1) Peste 10.000 de evenimente"
   description="Liderii în animatori petreceri copii din București. Alege experiența premium Superparty: peste 50 de personaje, costume impecabile, actori profesioniști și distracție garantată. Rezervă acum echipa #1!"
 >
@@ -27,6 +28,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
       </div>
     </section>
+
+    <FlagshipLink />
+
 
     {/* CONTENT: commercial_authority */}
     <section class="content-commercial-authority">
@@ -126,6 +130,28 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </main>
+
+
+      <!-- ── UPSELL SECTION ────────────────────────────────────────────────── -->
+      <div class="mt-16 mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">✨ Fă petrecerea cu adevărat memorabilă! Adaugă și:</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <ServiceLinkCard 
+            title="Închiriere Aparat Vată de Zahăr" 
+            description="Porții nelimitate și operator uman inclus. Oferă aroma copilăriei invitaților tăi!"
+            href="/vata-de-zahar-si-popcorn/" 
+            image="https://www.superparty.ro/hero1.jpg"
+          />
+          <ServiceLinkCard 
+            title="Decorațiuni & Arcade Baloane" 
+            description="Intrări spectaculoase și fundaluri perfecte pentru poze de neuitat. Montaj gratuit!"
+            href="/arcade-baloane/" 
+            image="https://www.superparty.ro/hero2.jpg"
+          />
+        </div>
+      </div>
+
+
 </Layout>
 
 <style>

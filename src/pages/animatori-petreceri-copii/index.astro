@@ -23,9 +23,9 @@ const combinedSchema = JSON.stringify([
       "@type": "OfferCatalog",
       "name": "Pachete Animatori Petreceri Copii",
       "itemListElement": [
-        {"@type": "Offer", "name": "Super 1", "price": "490", "priceCurrency": "RON", "description": "1 Personaj, 2 ore: jocuri, baloane, pictură pe față, mini disco"},
-        {"@type": "Offer", "name": "Super 3", "price": "840", "priceCurrency": "RON", "description": "2 Personaje, 2 ore + confetti party"},
-        {"@type": "Offer", "name": "Super 7", "price": "1290", "priceCurrency": "RON", "description": "1 Animator + 4 Ursitoare botez, 3 ore"}
+        {"@type": "Offer", "name": "Super 1", "price": "490", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "1 Personaj, 2 ore: jocuri, baloane, pictură pe față, mini disco"},
+        {"@type": "Offer", "name": "Super 3", "price": "840", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "2 Personaje, 2 ore + confetti party"},
+        {"@type": "Offer", "name": "Super 7", "price": "1290", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "1 Animator + 4 Ursitoare botez, 3 ore"}
       ]
     }
   },
@@ -33,9 +33,14 @@ const combinedSchema = JSON.stringify([
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "Ce acoperire geografică aveți?", "acceptedAnswer": {"@type": "Answer", "text": "Acoperim complet Bucureștiul (toate sectoarele) și județul Ilfov, fără taxe ascunse de transport în zona limitrofă."}},
-      {"@type": "Question", "name": "Materialele folosite la face painting sunt sigure?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Folosim exclusiv culori profesionale, hipoalergenice, certificate la nivel european (ex: Snazaroo, Diamond FX), care se îndepărtează ușor cu apă și săpun."}},
-      {"@type": "Question", "name": "Cum mă asigur că personajul ales vine la petrecere?", "acceptedAnswer": {"@type": "Answer", "text": "La Superparty semnăm un contract clar. Personajul confirmat și actorul care i se potrivește vizual sunt blocați pentru evenimentul dvs."}}
+      {"@type": "Question", "name": "Cât costă un animator pentru o petrecere de copii în București?", "acceptedAnswer": {"@type": "Answer", "text": "Prețurile Superparty pornesc de la 490 lei pentru pachetul Super 1 (1 personaj, 2 ore) și ajung la 1290 lei pentru pachetul Super 7 (animator + 4 ursitoare botez, 3 ore). Transportul în București și Ilfov este inclus."}},
+      {"@type": "Question", "name": "Cu cât timp înainte trebuie să rezerv animatorul?", "acceptedAnswer": {"@type": "Answer", "text": "Recomandăm rezervarea cu minim 2 săptămâni înainte, mai ales pentru weekend. În sezon (mai–septembrie) locurile se ocupă rapid. Sunați la 0722 744 377 pentru a verifica disponibilitatea."}},
+      {"@type": "Question", "name": "Ce zone din București acoperiți?", "acceptedAnswer": {"@type": "Answer", "text": "Acoperim toate cele 6 sectoare din București și județul Ilfov (Voluntari, Otopeni, Pantelimon, Bragadiru, Chiajna, Popești-Leordeni și alte localități) fără taxe de transport."}},
+      {"@type": "Question", "name": "Ce personaje aveți disponibile?", "acceptedAnswer": {"@type": "Answer", "text": "Avem peste 50 de personaje: supereroi (Spider-Man, Batman, Capitanul America), prințese (Elsa, Rapunzel, Cenușăreasa), personaje din desene (Minnie Mouse, Sonic, PAW Patrol), clovni, și altele. Costumele sunt licențiate și de înaltă calitate."}},
+      {"@type": "Question", "name": "Ce include programul unui animator la petrecere?", "acceptedAnswer": {"@type": "Answer", "text": "Programul standard include: jocuri interactive adaptate vârstei, modelare baloane, pictură pe față (face painting), mini disco cu coregrafii, diplome magnetice pentru copii și surprize tematice. Durata: 2–3 ore."}},
+      {"@type": "Question", "name": "Materialele folosite la face painting sunt sigure?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Folosim exclusiv culori profesionale, hipoalergenice, certificate european (Snazaroo, Diamond FX), care se îndepărtează ușor cu apă și săpun. Sunt sigure pentru pielea sensibilă a copiilor."}},
+      {"@type": "Question", "name": "Cum mă asigur că personajul ales vine la petrecere?", "acceptedAnswer": {"@type": "Answer", "text": "La Superparty semnăm un contract clar. Personajul confirmat și actorul care i se potrivește vizual sunt blocați pentru evenimentul dvs. Nu facem asocieri pe ultima sută de metri."}},
+      {"@type": "Question", "name": "Faceți și animație pentru botezuri?", "acceptedAnswer": {"@type": "Answer", "text": "Da! Pachetul Super 7 include 1 animator și 4 ursitoare pentru botez, 3 ore de program complet. Ursitoarele creează atmosfera tradițională autentică, iar animatorul se ocupă de copiii invitați."}}
     ]
   }
 ]);
@@ -43,146 +48,330 @@ const combinedSchema = JSON.stringify([
 
 <Layout 
   robots="index, follow"
-  title="Animatori petreceri copii București & Ilfov | Superparty (#1) Peste 10.000 de evenimente"
+  title="Animatori petreceri copii București & Ilfov | Superparty — Peste 10.000 de evenimente"
   description="Animatori petreceri copii București — SuperParty: 50+ personaje costumate, jocuri interactive, confetti party. De la 490 lei. 10.000+ evenimente, rating 5.0 ⭐. Sună: 0722 744 377"
   canonical="https://www.superparty.ro/animatori-petreceri-copii"
   schema={combinedSchema}
 >
   <main>
-    {/* HERO: flagship_authority */}
+    {/* HERO */}
     <section class="hero-flagship">
       <div class="container">
-        <h1>Animatori Petreceri Copii</h1>
-        <p class="subtitle_authority">Echipa #1 din București și Ilfov. Peste 10.000 de părinți ne-au ales pentru magia autentică a petrecerilor premium.</p>
+        <h1>Animatori Petreceri Copii București</h1>
+        <p class="subtitle_authority">Echipa #1 din București și Ilfov. Peste <strong>10.000 de petreceri</strong> realizate din 2018 — magie autentică garantată contractual.</p>
         <div class="cta-strong-conversion">
           <a href="/contact" class="btn btn-primary btn-large">Verifică Disponibilitatea Acum</a>
-          <p class="urgency-text">Locurile pentru weekend se epuizează rapid!</p>
+          <p class="urgency-text">⚡ Locurile pentru weekend se epuizează rapid!</p>
+        </div>
+        <div class="hero-trust">
+          <span>⭐ 5.0/5 din 1498 recenzii</span>
+          <span>•</span>
+          <span>📍 București + Ilfov</span>
+          <span>•</span>
+          <span>🎭 50+ personaje</span>
         </div>
       </div>
     </section>
 
-    {/* CONTENT: commercial_authority */}
+    {/* DE CE SUPERPARTY */}
     <section class="content-commercial-authority">
       <div class="container">
-        <h2>De ce Superparty este standardul în animația pentru copii?</h2>
-        <p>Alegerea animatorilor potriviți face diferența dintre o petrecere oarecare și un eveniment memorabil. Din 2018, am ridicat standardele industriei de divertisment pentru copii:</p>
-        <ul>
-          <li><strong>Actori profesioniști:</strong> Echipa noastră este formată din tineri talentați, cu experiență pe scenă și iubire pentru copii.</li>
-          <li><strong>Peste 50 de personaje impecabile:</strong> Investim masiv în costume licențiate, aducând la viață exact eroii de pe micile ecrane.</li>
-          <li><strong>Programe interactive unice:</strong> Fiecare participare include jocuri adaptate vârstei, modelaj baloane premium și face painting profesional.</li>
+        <h2>De ce Superparty este alegerea nr. 1 pentru animatori petreceri copii în București?</h2>
+        <p>Când vorbim de animatori pentru petreceri copii în București, diferența dintre o experiență memorabilă și una mediocră se face din detalii. Din 2018, Superparty a ridicat standardele industriei de entertainment pentru copii, devenind compania cu cele mai multe recenzii de 5 stele din București.</p>
+        <ul class="benefits-list">
+          <li><strong>Actori profesioniști, nu amatori:</strong> Selectăm riguros fiecare animator — tineri cu experiență pe scenă, pasionați de lucrul cu copiii, capabili să mențină energia petrecerii timp de 2–3 ore fără pauze.</li>
+          <li><strong>Peste 50 de personaje premium:</strong> Investim continuu în costume licențiate de înaltă calitate. Aducem la viață exact eroii preferați ai copilului tău — de la Elsa și Spider-Man până la PAW Patrol și Sonic.</li>
+          <li><strong>Program interactiv unic:</strong> Nu facem show pasiv. Fiecare petrecere include jocuri adaptate vârstei, modelare baloane în forme complexe, face painting profesional, mini disco și surprize tematice.</li>
+          <li><strong>Garanție contractuală:</strong> Singurii din București care oferă garanție 100% scrisă în contract — dacă copiii nu s-au distrat, nu plătești.</li>
+          <li><strong>Transport gratuit:</strong> În tot Bucureștiul și județul Ilfov, fără costuri ascunse.</li>
         </ul>
       </div>
     </section>
 
-    {/* OFFER: pachete reale SuperParty */}
+    {/* PERSONAJE */}
+    <section class="personaje-section">
+      <div class="container">
+        <h2>Personajele Noastre — 50+ Costume Premium</h2>
+        <p>Avem cel mai mare catalog de personaje din București. Indiferent ce super-erou sau prințesă visează copilul tău, îl aducem la petrecere în costume autentice, impecabile:</p>
+        <div class="personaje-grid">
+          <div class="personaj-category">
+            <h3>🦸 Supereroi</h3>
+            <ul>
+              <li>Spider-Man</li>
+              <li>Batman</li>
+              <li>Capitanul America</li>
+              <li>Iron Man</li>
+              <li>Wonder Woman</li>
+              <li>Thor</li>
+            </ul>
+          </div>
+          <div class="personaj-category">
+            <h3>👸 Prințese & Personaje Disney</h3>
+            <ul>
+              <li>Elsa (Frozen)</li>
+              <li>Rapunzel</li>
+              <li>Cenușăreasa</li>
+              <li>Minnie Mouse</li>
+              <li>Ariel (Mica Sirenă)</li>
+              <li>Albă ca Zăpada</li>
+            </ul>
+          </div>
+          <div class="personaj-category">
+            <h3>🎮 Desene Animate</h3>
+            <ul>
+              <li>Sonic the Hedgehog</li>
+              <li>PAW Patrol (Chase)</li>
+              <li>Bluey</li>
+              <li>Peppa Pig</li>
+              <li>Pikachu</li>
+              <li>Stitch</li>
+            </ul>
+          </div>
+          <div class="personaj-category">
+            <h3>🎪 Clasice & Speciale</h3>
+            <ul>
+              <li>Clovn profesionist</li>
+              <li>Magician</li>
+              <li>Ursitoare botez</li>
+              <li>Moș Crăciun</li>
+              <li>Zâna Merișor</li>
+              <li>Personaj personalizat</li>
+            </ul>
+          </div>
+        </div>
+        <p class="personaje-note">Nu găsești personajul preferat? <a href="/contact">Întreabă-ne</a> — avem soluții pentru orice temă de petrecere.</p>
+      </div>
+    </section>
+
+    {/* PACHETE */}
     <section class="offer-premium-packages">
       <div class="container">
-        <h2>Pachete Premium pentru Evenimente Excepționale</h2>
+        <h2>Pachete Animatori Petreceri Copii — Prețuri Clare, Fără Surprize</h2>
         <div class="packages-grid">
           <div class="package-card">
             <h3>Super 1</h3>
-            <p>Pachetul esențial — un animator, 2 ore de distracție.</p>
+            <p class="package-subtitle">Pachetul esențial — distracție garantată.</p>
             <ul>
               <li>1 Personaj la alegere</li>
               <li>2 Ore: jocuri, baloane, pictură pe față</li>
               <li>Mini disco și coregrafii</li>
-              <li>Diplome magnetice + transport gratuit</li>
+              <li>Diplome magnetice pentru copii</li>
+              <li>Transport gratuit (Buc + Ilfov)</li>
             </ul>
             <span class="price">490 lei</span>
+            <a href="/contact" class="btn btn-secondary">Rezervă</a>
           </div>
           <div class="package-card premium-highlight">
-            <h3>Super 3 ⭐ (Cel mai ales)</h3>
-            <p>Doi animatori, confetti party, distracție maximă.</p>
+            <div class="badge">Cel mai ales ⭐</div>
+            <h3>Super 3</h3>
+            <p class="package-subtitle">Doi animatori, confetti party, distracție maximă.</p>
             <ul>
               <li>2 Personaje costumate simultan</li>
               <li>2 Ore: jocuri, baloane, pictură pe față</li>
               <li>Confetti party la tort</li>
-              <li>Tatuaje temporare + diplome + transport gratuit</li>
+              <li>Tatuaje temporare + diplome</li>
+              <li>Transport gratuit (Buc + Ilfov)</li>
             </ul>
             <span class="price">840 lei</span>
+            <a href="/contact" class="btn btn-primary">Rezervă Acum</a>
           </div>
           <div class="package-card">
             <h3>Super 7 🎭</h3>
-            <p>Spectacol complet cu ursitoare pentru botez.</p>
+            <p class="package-subtitle">Spectacol complet pentru botez sau petrecere mare.</p>
             <ul>
               <li>1 Animator + 4 Ursitoare botez</li>
               <li>3 Ore de program complet</li>
               <li>Spectacol ursitoare + jocuri interactive</li>
-              <li>Baloane, pictură pe față + transport gratuit</li>
+              <li>Baloane, pictură pe față</li>
+              <li>Transport gratuit (Buc + Ilfov)</li>
             </ul>
             <span class="price">1290 lei</span>
+            <a href="/contact" class="btn btn-secondary">Rezervă</a>
           </div>
         </div>
       </div>
     </section>
 
-    {/* PROOF: scale_social_proof */}
+    {/* ZONE ACOPERITE */}
+    <section class="zone-acoperite">
+      <div class="container">
+        <h2>Animatori Petreceri Copii — Zone Acoperite în București și Ilfov</h2>
+        <p>Superparty deservește <strong>toate sectoarele din București</strong> și <strong>întreg județul Ilfov</strong>, fără taxe suplimentare de transport:</p>
+        <div class="zone-grid">
+          <div class="zone-col">
+            <h3>București — toate sectoarele</h3>
+            <ul>
+              <li><a href="/animatori-copii-sector-1">Animatori copii Sector 1</a></li>
+              <li><a href="/animatori-copii-sector-2">Animatori copii Sector 2</a></li>
+              <li><a href="/animatori-copii-sector-3">Animatori copii Sector 3</a></li>
+              <li><a href="/animatori-copii-sector-4">Animatori copii Sector 4</a></li>
+              <li><a href="/animatori-copii-sector-5">Animatori copii Sector 5</a></li>
+              <li><a href="/animatori-copii-sector-6">Animatori copii Sector 6</a></li>
+            </ul>
+          </div>
+          <div class="zone-col">
+            <h3>Ilfov și zona limitrofă</h3>
+            <ul>
+              <li><a href="/animatori-copii-voluntari">Animatori copii Voluntari</a></li>
+              <li><a href="/animatori-copii-otopeni">Animatori copii Otopeni</a></li>
+              <li><a href="/animatori-copii-pantelimon">Animatori copii Pantelimon</a></li>
+              <li><a href="/animatori-copii-bragadiru">Animatori copii Bragadiru</a></li>
+              <li><a href="/animatori-copii-chiajna">Animatori copii Chiajna</a></li>
+              <li><a href="/animatori-copii-popesti-leordeni">Animatori copii Popești-Leordeni</a></li>
+              <li><a href="/animatori-copii-ilfov">Toată zona Ilfov</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* SOCIAL PROOF */}
     <section class="proof-scale">
       <div class="container">
-        <h2>Mii de zâmbete. 0 Misiuni Eșuate.</h2>
+        <h2>10.000+ Petreceri. 1498 Recenzii de 5 Stele. 0 Misiuni Eșuate.</h2>
         <div class="stats-row">
-          <div class="stat"><span>10.000+</span> Evenimente</div>
-          <div class="stat"><span>15+</span> Ani Experiență cumulată</div>
-          <div class="stat"><span>5.0/5</span> Rating din sute de recenzii</div>
+          <div class="stat"><span>10.000+</span> Petreceri</div>
+          <div class="stat"><span>50+</span> Personaje</div>
+          <div class="stat"><span>5.0/5</span> Rating</div>
+          <div class="stat"><span>8+</span> Ani Activitate</div>
         </div>
-        <blockquote class="testimonial-authority">
-          "Absolut impecabili. De la modul în care actorii au intrat în rol până la energia menținută 2 ore, Superparty arată de ce sunt lideri și nu doar niște amatori în costume." - <em>Raluca M., Corporatist & Mamă</em>
-        </blockquote>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card">
+            <p>„Absolut impecabili. De la modul în care actorii au intrat în rol până la energia menținută 2 ore, Superparty arată de ce sunt lideri. Copilul meu încă vorbește despre Elsa care a venit la petrecerea lui!"</p>
+            <cite>— Raluca M., Sector 1</cite>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>„Am angajat animatori de la Superparty pentru botezul fiicei mele și a fost incredibil. Ursitoarele au creat o atmosferă magică, iar animatorul a ținut copiii în priză toată seara. Recomand cu toată inima!"</p>
+            <cite>— Andrei C., Voluntari</cite>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>„A treia oară când apelăm la Superparty și de fiecare dată au depășit așteptările. Spider-Man a venit exact la timp, în costum impecabil, și a făcut show 2 ore fără pauză. Bravo!"</p>
+            <cite>— Monica P., Sector 3</cite>
+          </blockquote>
+        </div>
+        <p class="reviews-cta">
+          <a href="/recenzii">Vezi toate cele 1498 recenzii →</a>
+        </p>
       </div>
     </section>
 
-    {/* FAQ: structured_detailed */}
+    {/* FAQ */}
     <section class="faq-structured">
       <div class="container">
-        <h2>Întrebări Frecvente (Tratate cu Profesionalism)</h2>
-        <details>
-          <summary>Ce acoperire geografică aveți?</summary>
-          <p>Acoperim complet Bucureștiul (toate sectoarele) și județul Ilfov (fără taxe ascunse de transport în zona limitrofă).</p>
+        <h2>Întrebări Frecvente despre Animatorii pentru Petreceri Copii</h2>
+        
+        <details open>
+          <summary>Cât costă un animator pentru o petrecere de copii în București?</summary>
+          <p>Prețurile Superparty pornesc de la <strong>490 lei</strong> pentru pachetul Super 1 (1 personaj, 2 ore) și ajung la <strong>1290 lei</strong> pentru pachetul Super 7 (animator + 4 ursitoare botez, 3 ore). Transportul în București și Ilfov este inclus în toate pachetele.</p>
         </details>
+
         <details>
-          <summary>Materialele folosite la face painting sunt sigure?</summary>
-          <p>Da. Folosim exclusiv culori profesionale, hipoalergenice, certificate la nivel european (ex: Snazaroo, Diamond FX), care se îndepărtează ușor cu apă și săpun.</p>
+          <summary>Cu cât timp înainte trebuie să rezerv animatorul?</summary>
+          <p>Recomandăm rezervarea cu <strong>minim 2 săptămâni</strong> înainte, mai ales pentru weekenduri. În sezonul de vârf (mai–septembrie) și în preajma sărbătorilor, locurile se ocupă cu 4–6 săptămâni înainte. Sunați la <a href="tel:+40722744377">0722 744 377</a> pentru a verifica disponibilitatea.</p>
         </details>
+
         <details>
-          <summary>Cum mă asigur că personajul ales vine la petrecere?</summary>
-          <p>La Superparty semnăm un contract clar. Personajul confirmat și actorul care i se potrivește vizual sunt blocați pentru evenimentul dvs. Nu facem asocieri pe ultima sută de metri.</p>
+          <summary>Ce zone din București și Ilfov acoperiți?</summary>
+          <p>Acoperim <strong>toate cele 6 sectoare din București</strong> și întreg <strong>județul Ilfov</strong> (Voluntari, Otopeni, Pantelimon, Bragadiru, Chiajna, Popești-Leordeni și alte localități). Transportul este gratuit pentru toate aceste zone.</p>
+        </details>
+
+        <details>
+          <summary>Ce personaje aveți disponibile?</summary>
+          <p>Avem <strong>peste 50 de personaje</strong>: supereroi (Spider-Man, Batman, Capitanul America, Iron Man, Wonder Woman), prințese Disney (Elsa, Rapunzel, Cenușăreasa, Ariel), personaje din desene (Sonic, PAW Patrol, Bluey, Pikachu), plus clovni, magicieni și ursitoare. Costumele sunt licențiate și de înaltă calitate.</p>
+        </details>
+
+        <details>
+          <summary>Ce include programul unui animator la petrecere?</summary>
+          <p>Programul standard include: <strong>jocuri interactive</strong> adaptate vârstei copiilor, <strong>modelare baloane</strong> în forme complexe, <strong>pictură pe față</strong> (face painting), <strong>mini disco</strong> cu coregrafii, <strong>diplome magnetice</strong> pentru fiecare copil și surprize tematice. Durata: 2–3 ore în funcție de pachet.</p>
+        </details>
+
+        <details>
+          <summary>Materialele folosite la face painting sunt sigure pentru copii?</summary>
+          <p>Da, absolut. Folosim exclusiv culori <strong>profesionale, hipoalergenice</strong>, certificate la nivel european (Snazaroo, Diamond FX). Se îndepărtează ușor cu apă și săpun și sunt testate dermatologic. Pot fi folosite pe pielea sensibilă a copiilor de la 2 ani.</p>
+        </details>
+
+        <details>
+          <summary>Cum mă asigur că personajul ales vine sigur la petrecere?</summary>
+          <p>La Superparty <strong>semnăm un contract</strong> pentru fiecare eveniment. Personajul confirmat și actorul care i se potrivește fizic sunt blocați pentru data dvs. imediat după plata avansului. Nu facem modificări de ultim moment.</p>
+        </details>
+
+        <details>
+          <summary>Faceți și animație pentru botezuri?</summary>
+          <p>Da! Pachetul <strong>Super 7</strong> este dedicat botezurilor și include 1 animator + 4 ursitoare, 3 ore de program complet. Ursitoarele creează atmosfera tradițională autentică, iar animatorul se ocupă de copiii invitați în paralel. Este cel mai complet spectacol disponibil.</p>
         </details>
       </div>
     </section>
 
-    {/* CTA: strong_conversion */}
+    {/* CTA FINAL */}
     <section class="cta-strong-bottom">
       <div class="container text-center">
-        <h2>Transformă ziua copilului tău în evenimentul anului!</h2>
-        <p>Alege calitatea, alege Superparty. Data ta de petrecere ar putea fi ocupată curând.</p>
+        <h2>Rezervă Animatorul Perfect pentru Petrecerea Copilului Tău</h2>
+        <p>Locurile pentru weekend se ocupă rapid. Asigură-ți data acum — verificare disponibilitate gratuită și fără obligații.</p>
         <a href="tel:+40722744377" class="btn btn-primary btn-massive">Sună Acum: 0722 744 377</a>
-        <p class="guarantee-text">Garanție 100% Superparty: Dacă copiii nu s-au distrat, nu plătești.</p>
+        <p class="guarantee-text">✅ Garanție 100% Superparty: Dacă copiii nu s-au distrat, nu plătești.</p>
+        <p class="or-text">— sau —</p>
+        <a href="/contact" class="btn btn-outline">Trimite o cerere online</a>
       </div>
     </section>
   </main>
 </Layout>
 
 <style>
-  /* Base structural placeholders - do not deploy live without the global CSS sync */
-  .main { font-family: 'Inter', sans-serif; color: #2D3748; }
-  .hero-flagship { background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 100%); color: white; padding: 6rem 2rem; text-align: center; }
-  .hero-flagship h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
-  .subtitle_authority { font-size: 1.25rem; font-weight: 400; opacity: 0.9; max-width: 800px; margin: 0 auto 2rem; }
-  .btn-primary { background-color: #F6E05E; color: #744210; padding: 1rem 2.5rem; border-radius: 99px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: all 0.3s; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(246, 224, 94, 0.4); }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-  .content-commercial-authority, .offer-premium-packages, .proof-scale, .faq-structured { padding: 5rem 0; }
-  .content-commercial-authority { background: #f7fafc; }
-  h2 { font-size: 2.25rem; color: #1a202c; margin-bottom: 2rem; text-align: center; }
-  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-  .package-card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
-  .premium-highlight { border: 2px solid #3182ce; position: relative; transform: scale(1.05); }
-  .price { display: block; font-size: 1.5rem; font-weight: bold; color: #3182ce; margin-top: 1.5rem; }
-  .stats-row { display: flex; justify-content: center; gap: 4rem; margin-bottom: 3rem; text-align: center; }
-  .stat span { display: block; font-size: 3rem; font-weight: 900; color: #2b6cb0; }
-  .testimonial-authority { font-size: 1.25rem; font-style: italic; text-align: center; max-width: 800px; margin: 0 auto; border-left: 4px solid #3182ce; padding-left: 2rem; color: #4a5568; }
-  details { background: white; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem; padding: 1rem; }
-  summary { font-weight: 600; cursor: pointer; color: #2d3748; }
-  .cta-strong-bottom { background: #1a202c; color: white; padding: 6rem 0; }
+  .hero-flagship { background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 100%); color: white; padding: 5rem 2rem; text-align: center; }
+  .hero-flagship h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+  .subtitle_authority { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 2rem; }
+  .hero-trust { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; opacity: 0.85; font-size: 0.95rem; }
+  .hero-trust span { white-space: nowrap; }
+  .btn-primary { background: #F6E05E; color: #744210; padding: 1rem 2.5rem; border-radius: 99px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: all 0.3s; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(246,224,94,0.4); }
+  .btn-secondary { background: white; color: #2b6cb0; border: 2px solid #2b6cb0; padding: 0.75rem 2rem; border-radius: 99px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
+  .btn-outline { color: white; border: 2px solid white; padding: 0.75rem 2rem; border-radius: 99px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .urgency-text { margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.8; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .content-commercial-authority { background: #f7fafc; padding: 5rem 0; }
+  .personaje-section, .zone-acoperite, .proof-scale { padding: 5rem 0; }
+  .offer-premium-packages { background: #f7fafc; padding: 5rem 0; }
+  .faq-structured { padding: 5rem 0; background: white; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); color: #1a202c; margin-bottom: 1.5rem; text-align: center; }
+  h3 { font-size: 1.25rem; color: #2d3748; margin-bottom: 1rem; }
+  .benefits-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
+  .benefits-list li { padding: 0.75rem 0 0.75rem 2rem; position: relative; border-bottom: 1px solid #e2e8f0; }
+  .benefits-list li::before { content: "✓"; position: absolute; left: 0; color: #38a169; font-weight: bold; }
+  .personaje-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .personaj-category { background: #f7fafc; border-radius: 12px; padding: 1.5rem; }
+  .personaj-category ul { list-style: none; padding: 0; margin: 0; }
+  .personaj-category ul li { padding: 0.3rem 0; color: #4a5568; }
+  .personaje-note { text-align: center; margin-top: 2rem; color: #4a5568; }
+  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .package-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column; }
+  .package-card ul { list-style: none; padding: 0; flex: 1; }
+  .package-card ul li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; color: #4a5568; }
+  .package-card ul li::before { content: "→"; position: absolute; left: 0; color: #3182ce; }
+  .premium-highlight { border: 2px solid #3182ce; position: relative; }
+  .badge { background: #3182ce; color: white; padding: 0.25rem 1rem; border-radius: 99px; font-size: 0.8rem; font-weight: bold; display: inline-block; margin-bottom: 1rem; }
+  .price { display: block; font-size: 1.75rem; font-weight: 900; color: #2b6cb0; margin: 1rem 0; }
+  .package-subtitle { color: #718096; font-size: 0.95rem; margin-bottom: 1rem; }
+  .zone-acoperite { background: #f7fafc; }
+  .zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .zone-col ul { list-style: none; padding: 0; }
+  .zone-col ul li { padding: 0.4rem 0; }
+  .zone-col ul li a { color: #3182ce; text-decoration: none; }
+  .zone-col ul li a:hover { text-decoration: underline; }
+  .stats-row { display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; text-align: center; flex-wrap: wrap; }
+  .stat span { display: block; font-size: 2.5rem; font-weight: 900; color: #2b6cb0; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+  .testimonial-card { background: #f7fafc; border-left: 4px solid #3182ce; padding: 1.5rem; border-radius: 8px; margin: 0; font-style: italic; color: #4a5568; }
+  .testimonial-card cite { display: block; margin-top: 1rem; font-style: normal; font-weight: 600; color: #2d3748; }
+  .reviews-cta { text-align: center; }
+  .reviews-cta a { color: #3182ce; font-weight: 600; }
+  details { background: white; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem; padding: 1.25rem; }
+  summary { font-weight: 600; cursor: pointer; color: #2d3748; font-size: 1.05rem; }
+  details p { margin-top: 1rem; color: #4a5568; line-height: 1.7; }
+  .cta-strong-bottom { background: #1a202c; color: white; padding: 5rem 0; }
   .cta-strong-bottom h2 { color: white; }
+  .cta-strong-bottom p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+  .guarantee-text { font-size: 0.95rem; margin-top: 1rem !important; }
+  .or-text { margin: 1.5rem 0 !important; }
+  .text-center { text-align: center; }
+  .btn-massive { font-size: 1.3rem; padding: 1.25rem 3rem; }
 </style>

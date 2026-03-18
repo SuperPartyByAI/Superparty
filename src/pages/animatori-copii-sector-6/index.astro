@@ -1,4 +1,5 @@
 ---
+import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 // OFFLINE WAVE 1 DRAFT - SUPERPARTY (FLAGSHIP)
 // Status: planned/offline_generation
 // Generation Spec: money_geo_generation_spec_v1
@@ -8,10 +9,10 @@
 // Families: flagship_authority, flagship_trust, commercial_authority, structured_detailed, scale_social_proof, premium_packages, strong_conversion
 
 import Layout from '../../layouts/Layout.astro';
+import FlagshipLink from '../../components/FlagshipLink.astro';
 ---
 
 <Layout 
-  robots="noindex, follow"
   title="Animatori petreceri copii Sector 6 | Superparty (#1) Peste 10.000 de evenimente"
   description="Liderii în animatori petreceri copii din Sector 6. Alege experiența premium Superparty: peste 50 de personaje, costume impecabile, actori profesioniști și distracție garantată. Rezervă acum echipa #1!"
 >
@@ -27,6 +28,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
       </div>
     </section>
+
+    <FlagshipLink />
+
 
     {/* CONTENT: commercial_authority */}
     <section class="content-commercial-authority">
@@ -126,6 +130,55 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </main>
+
+<!-- LOCAL_HUB_UTIL_INJECT -->
+<section class="py-12 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Ghid Utilitar: Petreceri în Sector 6</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Logistică & Deplasare</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Știm că Militari Residence sau Prelungirea Ghencea necesită planificare la ore de vârf. Deplasarea echipei noastre este mereu calibrată după Waze, pentru a nu întârzia tăierea tortului.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Top Parcuri Recomandate</div>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+<li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Parcul Drumul Taberei (Moghioroș)</span></li><li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Parcul Crângași</span></li><li class="flex items-start"><span class="text-purple-500 mr-2">✓</span><span>Liniei</span></li>        </ul>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Săli & Restaurante</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Sălile de petreceri din Drumul Taberei și mall-urile din vestul Capitalei sunt destinații noastre zilnice.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-purple-600 dark:text-purple-400 font-semibold mb-3 flex items-center">Experiență Locală Verificată</div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Echipa Superparty a susținut nenumărate evenimente în zona Sector 6. Cunoaștem specificul grădinițelor și afterschool-urilor locale, iar animatorii noștri își adaptează mereu spectacolul în funcție de suprafața disponibilă (fie că e apartament, cort sau curte deschisă).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- ── UPSELL SECTION ────────────────────────────────────────────────── -->
+      <div class="mt-16 mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">✨ Fă petrecerea cu adevărat memorabilă! Adaugă și:</h2>
+        <div class="grid gap-6 md:grid-cols-2 text-left">
+          <ServiceLinkCard 
+            title="Închiriere Aparat Vată de Zahăr" 
+            description="Porții nelimitate și operator uman inclus. Oferă aroma copilăriei invitaților tăi!"
+            href="/vata-de-zahar-si-popcorn/" 
+            image="https://www.superparty.ro/hero1.jpg"
+          />
+          <ServiceLinkCard 
+            title="Decorațiuni & Arcade Baloane" 
+            description="Intrări spectaculoase și fundaluri perfecte pentru poze de neuitat. Montaj gratuit!"
+            href="/arcade-baloane/" 
+            image="https://www.superparty.ro/hero2.jpg"
+          />
+        </div>
+      </div>
+
+
 </Layout>
 
 <style>
