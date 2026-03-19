@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-03-19T02:17:13.061Z",
+  "errors": [],
+  "warnings": [],
+  "info": [
+    {
+      "cat": "PAGES",
+      "msg": "Total pagini Astro: 132"
+    },
+    {
+      "cat": "PAGES",
+      "msg": "Fără title: 0"
+    },
+    {
+      "cat": "PAGES",
+      "msg": "Fără description: 0"
+    },
+    {
+      "cat": "PAGES",
+      "msg": "Fără <h1>: 0"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Total articole: 499"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Indexabile (unice): 156"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Cu noindex: 343"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Grupuri duplicate NEPROTEJATE (fără noindex): 0"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Fără title: 0"
+    },
+    {
+      "cat": "ARTICLES",
+      "msg": "Conținut < 300 chars: 0"
+    },
+    {
+      "cat": "COMPONENTS",
+      "msg": "Total componente: 5"
+    },
+    {
+      "cat": "COMPONENTS",
+      "msg": "Componente goale/minimale: 0"
+    },
+    {
+      "cat": "SCHEMA",
+      "msg": "robots în schema: DA"
+    },
+    {
+      "cat": "SCHEMA",
+      "msg": "indexStatus în schema: DA"
+    },
+    {
+      "cat": "SCHEMA",
+      "msg": "canonical în schema: DA"
+    },
+    {
+      "cat": "SCRIPTS",
+      "msg": "Total scripts: 30"
+    },
+    {
+      "cat": "INTERNAL_LINKS",
+      "msg": "Pagini locale cu FlagshipLink: 14/14"
+    },
+    {
+      "cat": "FLAGSHIP",
+      "msg": "Cuvinte flagship: 1345"
+    },
+    {
+      "cat": "FLAGSHIP",
+      "msg": "FAQ entries: 8"
+    },
+    {
+      "cat": "FLAGSHIP",
+      "msg": "Linkuri interne spre locale: 13"
+    },
+    {
+      "cat": "CONFIG",
+      "msg": "vercel.json: OK (redirects)"
+    },
+    {
+      "cat": "CONFIG",
+      "msg": "astro.config.mjs: OK"
+    }
+  ]
+}

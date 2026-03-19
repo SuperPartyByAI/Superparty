@@ -10,6 +10,7 @@ const seoArticlesCollection = defineCollection({
         keywords: z.string().optional(),
         indexStatus: z.enum(['ready', 'revise', 'hold']).optional(),
         canonical: z.string().optional(),
+        robots: z.string().optional(),
     }),
 });
 

@@ -26,9 +26,10 @@ const cleanReviews = pageReviews.map((t: any) => ({
   event:    normalizeReview(t.event || ''),
 }));
 
-// READY logic: if indexStatus is 'hold' -> noindex
+// READY logic: noindex if indexStatus === 'hold' OR robots frontmatter contains 'noindex'
 const isHold = entry.data.indexStatus === 'hold';
-const robotsProp = isHold ? 'noindex, follow' : 'index, follow';
+const hasRobotsNoindex = typeof entry.data.robots === 'string' && entry.data.robots.includes('noindex');
+const robotsProp = (isHold || hasRobotsNoindex) ? 'noindex, nofollow' : 'index, follow';
 
 // Canonical fallback: if not set in frontmatter, generate from slug
 // This fixes GSC "Duplicate without user-selected canonical" for all /petreceri/ pages
