@@ -1,0 +1,339 @@
+﻿Scanez 145 pagini...
+
+Pagini cu continut suficient: 137
+
+Analizez 9316 perechi...
+  500/9316 perechi verificate...
+  1000/9316 perechi verificate...
+  1500/9316 perechi verificate...
+  2000/9316 perechi verificate...
+  2500/9316 perechi verificate...
+  3000/9316 perechi verificate...
+  3500/9316 perechi verificate...
+  4000/9316 perechi verificate...
+  4500/9316 perechi verificate...
+  5000/9316 perechi verificate...
+  5500/9316 perechi verificate...
+  6000/9316 perechi verificate...
+  6500/9316 perechi verificate...
+  7000/9316 perechi verificate...
+  7500/9316 perechi verificate...
+  8000/9316 perechi verificate...
+  8500/9316 perechi verificate...
+  9000/9316 perechi verificate...
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  REZULTATE AUDIT DUPLICATE ΓÇö TOT SITE-UL
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+  Pagini analizate:  137
+  Perechi verificate: 9316
+  DUPLICATE (>20%):   5427
+  APROAPE (15-20%):   40
+
+
+  Γ¥î PAGINI CU CONTINUT DUPLICAT:
+
+  97.8%  petreceri/candeasca.astro
+         <-> petreceri/cojesti.astro
+         (555 vs 555 cuvinte)
+
+  96.5%  petreceri/caldararu.astro
+         <-> petreceri/domnesti.astro
+         (542 vs 545 cuvinte)
+
+  96.5%  petreceri/glina.astro
+         <-> petreceri/petrachioaia.astro
+         (545 vs 547 cuvinte)
+
+  96.4%  petreceri/sector-4.astro
+         <-> petreceri/sector-6.astro
+         (552 vs 551 cuvinte)
+
+  96.3%  petreceri/candeasca.astro
+         <-> petreceri/cranguri.astro
+         (555 vs 555 cuvinte)
+
+  96.3%  petreceri/cojesti.astro
+         <-> petreceri/cranguri.astro
+         (555 vs 555 cuvinte)
+
+  96.2%  petreceri/crivina.astro
+         <-> petreceri/moara-vlasiei.astro
+         (550 vs 573 cuvinte)
+
+  96.2%  petreceri/dobroesti.astro
+         <-> petreceri/stefanestii-de-jos.astro
+         (541 vs 546 cuvinte)
+
+  96.2%  petreceri/ganeasa.astro
+         <-> petreceri/glina.astro
+         (547 vs 545 cuvinte)
+
+  96.1%  petreceri/sector-1.astro
+         <-> petreceri/sector-3.astro
+         (557 vs 554 cuvinte)
+
+  96.0%  petreceri/sector-2.astro
+         <-> petreceri/sector-4.astro
+         (552 vs 552 cuvinte)
+
+  95.8%  petreceri/dragomiresti-deal.astro
+         <-> petreceri/dragomiresti-vale.astro
+         (551 vs 549 cuvinte)
+
+  95.8%  petreceri/cretesti.astro
+         <-> petreceri/domnesti.astro
+         (542 vs 545 cuvinte)
+
+  95.8%  petreceri/ciocanesti.astro
+         <-> petreceri/valea-piersicilor.astro
+         (549 vs 571 cuvinte)
+
+  95.8%  petreceri/ciofliceni.astro
+         <-> petreceri/snagov.astro
+         (555 vs 553 cuvinte)
+
+  95.8%  petreceri/ganeasa.astro
+         <-> petreceri/petrachioaia.astro
+         (547 vs 547 cuvinte)
+
+  95.8%  petreceri/ciofliceni.astro
+         <-> petreceri/glina.astro
+         (555 vs 545 cuvinte)
+
+  95.8%  petreceri/glina.astro
+         <-> petreceri/peris.astro
+         (545 vs 552 cuvinte)
+
+  95.7%  petreceri/bulbucata.astro
+         <-> petreceri/calugareni.astro
+         (562 vs 562 cuvinte)
+
+  95.7%  petreceri/campurelu.astro
+         <-> petreceri/iepuresti.astro
+         (555 vs 558 cuvinte)
+
+  95.6%  petreceri/buturugeni.astro
+         <-> petreceri/colibasi.astro
+         (551 vs 554 cuvinte)
+
+  95.5%  petreceri/1-decembrie.astro
+         <-> petreceri/stefanestii-de-jos.astro
+         (543 vs 546 cuvinte)
+
+  95.5%  petreceri/cretesti.astro
+         <-> petreceri/dragomiresti-vale.astro
+         (542 vs 549 cuvinte)
+
+  95.4%  petreceri/caldararu.astro
+         <-> petreceri/cretesti.astro
+         (542 vs 542 cuvinte)
+
+  95.4%  petreceri/cretesti.astro
+         <-> petreceri/dobroesti.astro
+         (542 vs 541 cuvinte)
+
+  95.4%  petreceri/stefanestii-de-jos.astro
+         <-> petreceri/tunari.astro
+         (546 vs 550 cuvinte)
+
+  95.4%  petreceri/balaceanca.astro
+         <-> petreceri/stefanestii-de-jos.astro
+         (543 vs 546 cuvinte)
+
+  95.4%  petreceri/ciocanesti.astro
+         <-> petreceri/vidra.astro
+         (549 vs 549 cuvinte)
+
+  95.4%  petreceri/dascalu.astro
+         <-> petreceri/petrachioaia.astro
+         (548 vs 547 cuvinte)
+
+  95.4%  petreceri/dimieni.astro
+         <-> petreceri/valea-piersicilor.astro
+         (546 vs 571 cuvinte)
+
+  95.4%  petreceri/ciofliceni.astro
+         <-> petreceri/peris.astro
+         (555 vs 552 cuvinte)
+
+  95.4%  petreceri/ciorogirla.astro
+         <-> petreceri/glina.astro
+         (570 vs 545 cuvinte)
+
+  95.3%  petreceri/branistari.astro
+         <-> petreceri/cucuieti.astro
+         (549 vs 548 cuvinte)
+
+  95.1%  petreceri/cernica.astro
+         <-> petreceri/tunari.astro
+         (541 vs 550 cuvinte)
+
+  95.1%  petreceri/cretesti.astro
+         <-> petreceri/dragomiresti-deal.astro
+         (542 vs 551 cuvinte)
+
+  95.1%  petreceri/cernica.astro
+         <-> petreceri/stefanestii-de-jos.astro
+         (541 vs 546 cuvinte)
+
+  95.1%  petreceri/ciorogarla.astro
+         <-> petreceri/clinceni.astro
+         (548 vs 552 cuvinte)
+
+  95.1%  petreceri/berceni-ilfov.astro
+         <-> petreceri/ciocanesti.astro
+         (575 vs 549 cuvinte)
+
+  95.1%  petreceri/berceni-ilfov.astro
+         <-> petreceri/vidra.astro
+         (575 vs 549 cuvinte)
+
+  95.1%  petreceri/chiajna.astro
+         <-> petreceri/ciorogirla.astro
+         (548 vs 570 cuvinte)
+
+  ... si inca 5387 perechi similare
+
+  CLUSTERIZARE (grupuri de pagini similare):
+
+  Cluster 1 (103 pagini similare intre ele):
+    - petreceri/1-decembrie.astro
+    - petreceri/adunatii-copaceni.astro
+    - petreceri/afumati.astro
+    - petreceri/alunisu.astro
+    - petreceri/bacu.astro
+    - petreceri/balaceanca.astro
+    - petreceri/balotesti.astro
+    - petreceri/baneasa.astro
+    - petreceri/belciugatele.astro
+    - petreceri/berceni-ilfov.astro
+    - petreceri/bolintin-deal.astro
+    - petreceri/bolintin-vale.astro
+    - petreceri/branesti.astro
+    - petreceri/branistari.astro
+    - petreceri/buciumeni.astro
+    - petreceri/bucuresti.astro
+    - petreceri/budeni.astro
+    - petreceri/budesti.astro
+    - petreceri/buftea.astro
+    - petreceri/bulbucata.astro
+    - petreceri/butimanu.astro
+    - petreceri/buturugeni.astro
+    - petreceri/caciulati.astro
+    - petreceri/calarasi.astro
+    - petreceri/caldararu.astro
+    - petreceri/calugareni.astro
+    - petreceri/campurelu.astro
+    - petreceri/candeasca.astro
+    - petreceri/catelu.astro
+    - petreceri/catrunesti.astro
+    - petreceri/cernica.astro
+    - petreceri/chiajna.astro
+    - petreceri/chirculesti.astro
+    - petreceri/chitila.astro
+    - petreceri/ciocanesti.astro
+    - petreceri/ciofliceni.astro
+    - petreceri/ciorogarla.astro
+    - petreceri/ciorogirla.astro
+    - petreceri/clinceni.astro
+    - petreceri/cocani.astro
+    - petreceri/cojasca.astro
+    - petreceri/cojesti.astro
+    - petreceri/colibasi.astro
+    - petreceri/comana.astro
+    - petreceri/copaceni.astro
+    - petreceri/corbeanca.astro
+    - petreceri/cornetu.astro
+    - petreceri/cosoba.astro
+    - petreceri/coteni.astro
+    - petreceri/cozieni.astro
+    - petreceri/cranguri.astro
+    - petreceri/creata.astro
+    - petreceri/cretesti.astro
+    - petreceri/cretuleasca.astro
+    - petreceri/crevedia-mare.astro
+    - petreceri/crevedia.astro
+    - petreceri/crivina.astro
+    - petreceri/cucuieti.astro
+    - petreceri/dambovita.astro
+    - petreceri/dascalu.astro
+    - petreceri/decindea.astro
+    - petreceri/dimieni.astro
+    - petreceri/dobreni.astro
+    - petreceri/dobroesti.astro
+    - petreceri/domnesti.astro
+    - petreceri/dragomiresti-deal.astro
+    - petreceri/dragomiresti-vale.astro
+    - petreceri/fierbinti-targ.astro
+    - petreceri/fundulea.astro
+    - petreceri/ganeasa.astro
+    - petreceri/giurgiu.astro
+    - petreceri/glina.astro
+    - petreceri/ialomita.astro
+    - petreceri/iepuresti.astro
+    - petreceri/ilfov.astro
+    - petreceri/jilava.astro
+    - petreceri/magurele.astro
+    - petreceri/mihai-voda.astro
+    - petreceri/mihailesti.astro
+    - petreceri/moara-vlasiei.astro
+    - petreceri/mogosoaia.astro
+    - petreceri/nuci.astro
+    - petreceri/ordoreanu-vatra-veche.astro
+    - petreceri/otopeni.astro
+    - petreceri/pantelimon.astro
+    - petreceri/peris.astro
+    - petreceri/petrachioaia.astro
+    - petreceri/popesti-leordeni.astro
+    - petreceri/prahova.astro
+    - petreceri/racari.astro
+    - petreceri/sector-1.astro
+    - petreceri/sector-2.astro
+    - petreceri/sector-3.astro
+    - petreceri/sector-4.astro
+    - petreceri/sector-5.astro
+    - petreceri/sector-6.astro
+    - petreceri/snagov.astro
+    - petreceri/stefanestii-de-jos.astro
+    - petreceri/teleorman.astro
+    - petreceri/tunari.astro
+    - petreceri/valea-piersicilor.astro
+    - petreceri/vidra.astro
+    - petreceri/voluntari.astro
+
+  Cluster 2 (14 pagini similare intre ele):
+    - animatori-copii-bragadiru/index.astro
+    - animatori-copii-bucuresti/index.astro
+    - animatori-copii-chiajna/index.astro
+    - animatori-copii-ilfov/index.astro
+    - animatori-copii-otopeni/index.astro
+    - animatori-copii-pantelimon/index.astro
+    - animatori-copii-popesti-leordeni/index.astro
+    - animatori-copii-sector-1/index.astro
+    - animatori-copii-sector-2/index.astro
+    - animatori-copii-sector-3/index.astro
+    - animatori-copii-sector-4/index.astro
+    - animatori-copii-sector-5/index.astro
+    - animatori-copii-sector-6/index.astro
+    - animatori-copii-voluntari/index.astro
+
+  Cluster 3 (13 pagini similare intre ele):
+    - petreceri/aviatiei.astro
+    - petreceri/berceni.astro
+    - petreceri/colentina.astro
+    - petreceri/crangasi.astro
+    - petreceri/dorobanti.astro
+    - petreceri/dristor.astro
+    - petreceri/drumul-taberei.astro
+    - petreceri/floreasca.astro
+    - petreceri/giulesti.astro
+    - petreceri/militari.astro
+    - petreceri/pantelimon-cartier.astro
+    - petreceri/tineretului.astro
+    - petreceri/titan.astro
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  VERDICT: Γ¥î 5427 PERECHI CU DUPLICATE (necesita fix)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
