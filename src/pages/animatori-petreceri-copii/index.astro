@@ -19,11 +19,17 @@ const combinedSchema = JSON.stringify([
       "ratingValue": "5.0",
       "reviewCount": "1498"
     },
-    "hasOfferCatalog": {
+    "review": [
+      {"@type": "Review", "author": {"@type": "Person", "name": "Andreea M."}, "datePublished": "2026-02-15", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Animatoarele de la SuperParty au fost extraordinare! Fetita mea a avut petrecere cu tema Elsa si toti copiii au fost incantati. Recomand cu caldura!"},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Mihai P."}, "datePublished": "2026-01-28", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Am angajat animatori Spider-Man si Batman pentru ziua fiului meu de 6 ani. Profesionisti, punctuali si cu costume impecabile."},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Cristina V."}, "datePublished": "2025-12-20", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "A treia petrecere cu SuperParty si de fiecare data la acelasi nivel inalt. Pachetul Super 3 este perfect."},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Roxana D."}, "datePublished": "2025-11-10", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "SuperParty au transformat petrecerea fiicei mele intr-o amintire de vis! Animatoarea Minnie Mouse a fost adorabila!"},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Alexandru B."}, "datePublished": "2025-10-05", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Am ales pachetul Super 7 pentru botezul fiului nostru. Totul a decurs impecabil, fara stres."}
+    ],
+                    "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Pachete Animatori Petreceri Copii",
-      "itemListElement": [
-        {"@type": "Offer", "name": "Super 1", "price": "490", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "1 Personaj, 2 ore: jocuri, baloane, pictură pe față, mini disco"},
+      "itemListElement": [{"@type": "Offer", "name": "Super 1", "price": "490", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "1 Personaj, 2 ore: jocuri, baloane, pictură pe față, mini disco"},
         {"@type": "Offer", "name": "Super 3", "price": "840", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "2 Personaje, 2 ore + confetti party"},
         {"@type": "Offer", "name": "Super 7", "price": "1290", "priceCurrency": "RON", "priceValidUntil": "2027-12-31", "description": "1 Animator + 4 Ursitoare botez, 3 ore"}
       ]
