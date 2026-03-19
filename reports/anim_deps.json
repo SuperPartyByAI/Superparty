@@ -1,0 +1,74 @@
+[
+  {
+    "url": "animatopia-df5gam0fv-andreis-projects-ae1c2ce2.vercel.app",
+    "state": "READY",
+    "creator": "superpartybyai",
+    "meta": {
+      "githubCommitAuthorName": "Ursache Andrei",
+      "githubCommitAuthorEmail": "ursache.andrei1995@gmail.com",
+      "githubCommitMessage": "fix(ci): add write permissions to canary workflow for git push",
+      "githubCommitOrg": "SuperPartyByAI",
+      "githubCommitRef": "feat/autonomous-seo-agent",
+      "githubCommitRepo": "Superparty",
+      "githubCommitSha": "28d8df5b8a84c3e670b05f0d9c7aca41f774985d",
+      "githubDeployment": "1",
+      "githubOrg": "SuperPartyByAI",
+      "githubRepo": "Superparty",
+      "gitDirty": "1"
+    }
+  },
+  {
+    "url": "animatopia-i72yv0b3m-andreis-projects-ae1c2ce2.vercel.app",
+    "state": "READY",
+    "creator": "superpartybyai",
+    "meta": {
+      "githubCommitAuthorName": "Ursache Andrei",
+      "githubCommitAuthorEmail": "ursache.andrei1995@gmail.com",
+      "githubCommitMessage": "fix(ci): add write permissions to canary workflow for git push",
+      "githubCommitOrg": "SuperPartyByAI",
+      "githubCommitRef": "feat/autonomous-seo-agent",
+      "githubCommitRepo": "Superparty",
+      "githubCommitSha": "28d8df5b8a84c3e670b05f0d9c7aca41f774985d",
+      "githubDeployment": "1",
+      "githubOrg": "SuperPartyByAI",
+      "githubRepo": "Superparty",
+      "gitDirty": "1"
+    }
+  },
+  {
+    "url": "animatopia-2xhjnqn93-andreis-projects-ae1c2ce2.vercel.app",
+    "state": "READY",
+    "creator": "superpartybyai",
+    "meta": {
+      "githubCommitAuthorName": "Ursache Andrei",
+      "githubCommitAuthorEmail": "ursache.andrei1995@gmail.com",
+      "githubCommitMessage": "fix(ci): add write permissions to canary workflow for git push",
+      "githubCommitOrg": "SuperPartyByAI",
+      "githubCommitRef": "feat/autonomous-seo-agent",
+      "githubCommitRepo": "Superparty",
+      "githubCommitSha": "28d8df5b8a84c3e670b05f0d9c7aca41f774985d",
+      "githubDeployment": "1",
+      "githubOrg": "SuperPartyByAI",
+      "githubRepo": "Superparty",
+      "gitDirty": "1"
+    }
+  },
+  {
+    "url": "animatopia-6l7wqsr0q-andreis-projects-ae1c2ce2.vercel.app",
+    "state": "READY",
+    "creator": "superpartybyai",
+    "meta": {
+      "githubCommitAuthorName": "Ursache Andrei",
+      "githubCommitAuthorEmail": "ursache.andrei1995@gmail.com",
+      "githubCommitMessage": "fix(ci): add write permissions to canary workflow for git push",
+      "githubCommitOrg": "SuperPartyByAI",
+      "githubCommitRef": "feat/autonomous-seo-agent",
+      "githubCommitRepo": "Superparty",
+      "githubCommitSha": "28d8df5b8a84c3e670b05f0d9c7aca41f774985d",
+      "githubDeployment": "1",
+      "githubOrg": "SuperPartyByAI",
+      "githubRepo": "Superparty",
+      "gitDirty": "1"
+    }
+  }
+]

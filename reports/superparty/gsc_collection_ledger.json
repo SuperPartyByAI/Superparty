@@ -1,0 +1,98 @@
+[
+  {
+    "run_id": "5a2db12c-7fe0-497b-919e-5fff9da7dad8",
+    "collected_at": "2026-03-15T09:54:24.299520+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "API_FETCH",
+    "error_reason": "Google Cloud Quota Exceeded"
+  },
+  {
+    "run_id": "6d511077-7399-46d9-9d0c-c2af22d4f1a4",
+    "collected_at": "2026-03-15T09:54:24.312049+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "CONTRACT_VALIDATION",
+    "error_reason": "Snapshot failed L7.1 structural validation"
+  },
+  {
+    "run_id": "15fc4bb5-bea8-4ae6-ab0e-f1b8102a03a6",
+    "collected_at": "2026-03-15T09:54:24.327360+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "PERSISTENCE",
+    "error_reason": "Permission Denied"
+  },
+  {
+    "run_id": "b46c15de-f772-46b9-bae4-16567751772d",
+    "collected_at": "2026-03-15T11:06:41.389337+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "API_FETCH",
+    "error_reason": "Google Cloud Quota Exceeded"
+  },
+  {
+    "run_id": "c529d6c6-af5b-4c61-a02e-db790e35d428",
+    "collected_at": "2026-03-15T11:06:41.406845+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "CONTRACT_VALIDATION",
+    "error_reason": "Snapshot failed L7.1 structural validation"
+  },
+  {
+    "run_id": "faf222a7-f5d1-4675-bd12-a4cc1e73e3a2",
+    "collected_at": "2026-03-15T11:06:41.420044+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "PERSISTENCE",
+    "error_reason": "Permission Denied"
+  },
+  {
+    "run_id": "35e2117b-f2a7-412e-8734-6da9b509eca3",
+    "collected_at": "2026-03-15T11:12:28.803845+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "API_FETCH",
+    "error_reason": "Google Cloud Quota Exceeded"
+  },
+  {
+    "run_id": "c8b2f675-bdb8-4fb8-88b4-d9ac9f6b5ff7",
+    "collected_at": "2026-03-15T11:12:28.814363+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "CONTRACT_VALIDATION",
+    "error_reason": "Snapshot failed L7.1 structural validation"
+  },
+  {
+    "run_id": "1fc35ad1-228d-43f9-80d6-2da55845acb6",
+    "collected_at": "2026-03-15T11:12:28.831189+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "PERSISTENCE",
+    "error_reason": "Permission Denied"
+  },
+  {
+    "run_id": "b417c773-e174-48c1-a7b9-3baa447dc91b",
+    "collected_at": "2026-03-15T11:59:03.174125+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "API_FETCH",
+    "error_reason": "Google Cloud Quota Exceeded"
+  },
+  {
+    "run_id": "ee6d0d12-fdcd-4075-8c4e-40c2eb1378a1",
+    "collected_at": "2026-03-15T11:59:03.193152+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "CONTRACT_VALIDATION",
+    "error_reason": "Snapshot failed L7.1 structural validation"
+  },
+  {
+    "run_id": "2563cd6f-9691-4422-a5f7-99c1038bab47",
+    "collected_at": "2026-03-15T11:59:03.214189+00:00",
+    "status": "FAILED",
+    "property": "sc-domain:superparty.ro",
+    "failing_stage": "PERSISTENCE",
+    "error_reason": "Permission Denied"
+  }
+]

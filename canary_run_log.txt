@@ -1,0 +1,1050 @@
+﻿Run Tests	Set up job	∩╗┐2026-03-15T12:42:40.0816421Z Current runner version: '2.332.0'
+Run Tests	Set up job	2026-03-15T12:42:40.0850088Z ##[group]Runner Image Provisioner
+Run Tests	Set up job	2026-03-15T12:42:40.0851247Z Hosted Compute Agent
+Run Tests	Set up job	2026-03-15T12:42:40.0852051Z Version: 20260213.493
+Run Tests	Set up job	2026-03-15T12:42:40.0853190Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Run Tests	Set up job	2026-03-15T12:42:40.0854215Z Build Date: 2026-02-13T00:28:41Z
+Run Tests	Set up job	2026-03-15T12:42:40.0855238Z Worker ID: {f125bd7d-2116-45ff-9610-b49ffac619fc}
+Run Tests	Set up job	2026-03-15T12:42:40.0856366Z Azure Region: centralus
+Run Tests	Set up job	2026-03-15T12:42:40.0857129Z ##[endgroup]
+Run Tests	Set up job	2026-03-15T12:42:40.0859430Z ##[group]Operating System
+Run Tests	Set up job	2026-03-15T12:42:40.0860436Z Ubuntu
+Run Tests	Set up job	2026-03-15T12:42:40.0861138Z 24.04.3
+Run Tests	Set up job	2026-03-15T12:42:40.0861797Z LTS
+Run Tests	Set up job	2026-03-15T12:42:40.0862765Z ##[endgroup]
+Run Tests	Set up job	2026-03-15T12:42:40.0863528Z ##[group]Runner Image
+Run Tests	Set up job	2026-03-15T12:42:40.0864281Z Image: ubuntu-24.04
+Run Tests	Set up job	2026-03-15T12:42:40.0865103Z Version: 20260302.42.1
+Run Tests	Set up job	2026-03-15T12:42:40.0866661Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Run Tests	Set up job	2026-03-15T12:42:40.0869200Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Run Tests	Set up job	2026-03-15T12:42:40.0870574Z ##[endgroup]
+Run Tests	Set up job	2026-03-15T12:42:40.0872198Z ##[group]GITHUB_TOKEN Permissions
+Run Tests	Set up job	2026-03-15T12:42:40.0875200Z Contents: read
+Run Tests	Set up job	2026-03-15T12:42:40.0876076Z Metadata: read
+Run Tests	Set up job	2026-03-15T12:42:40.0876811Z Packages: read
+Run Tests	Set up job	2026-03-15T12:42:40.0877530Z ##[endgroup]
+Run Tests	Set up job	2026-03-15T12:42:40.0880926Z Secret source: Actions
+Run Tests	Set up job	2026-03-15T12:42:40.0882110Z Prepare workflow directory
+Run Tests	Set up job	2026-03-15T12:42:40.1485003Z Prepare all required actions
+Run Tests	Set up job	2026-03-15T12:42:40.1542018Z Getting action download info
+Run Tests	Set up job	2026-03-15T12:42:40.4470170Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Run Tests	Set up job	2026-03-15T12:42:40.5806718Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Run Tests	Set up job	2026-03-15T12:42:40.7289846Z Complete job name: Run Tests
+Run Tests	Run actions/checkout@v4	∩╗┐2026-03-15T12:42:40.7848275Z ##[group]Run actions/checkout@v4
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7849168Z with:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7849646Z   repository: SuperPartyByAI/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7850472Z   token: ***
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7850935Z   ssh-strict: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7851375Z   ssh-user: git
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7851838Z   persist-credentials: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7852316Z   clean: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7853101Z   sparse-checkout-cone-mode: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7853649Z   fetch-depth: 1
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7854113Z   fetch-tags: false
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7854541Z   show-progress: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7854989Z   lfs: false
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7855413Z   submodules: false
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7855847Z   set-safe-directory: true
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7856663Z env:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7857299Z   SUPABASE_URL: ***
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7859306Z   SUPABASE_KEY: ***
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.7859794Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.8918088Z Syncing repository: SuperPartyByAI/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.8920360Z ##[group]Getting Git version info
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.8921259Z Working directory is '/home/runner/work/Superparty/Superparty'
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.8922416Z [command]/usr/bin/git version
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.8983765Z git version 2.53.0
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9007699Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9020137Z Temporarily overriding HOME='/home/runner/work/_temp/91014001-844d-4197-aa5b-519c7af6b9ee' before making global git config changes
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9021452Z Adding repository directory to the temporary git global config as a safe directory
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9034234Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9068325Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9071213Z ##[group]Initializing the repository
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9075308Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9174069Z hint: Using 'master' as the name for the initial branch. This default branch name
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9175229Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9176332Z hint: to use in all of your new repositories, which will suppress this warning,
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9177093Z hint: call:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9177843Z hint:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9178424Z hint: 	git config --global init.defaultBranch <name>
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9179041Z hint:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9179664Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9180531Z hint: 'development'. The just-created branch can be renamed via this command:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9181169Z hint:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9181667Z hint: 	git branch -m <name>
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9182266Z hint:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9183019Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9184059Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9188029Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9218051Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9218930Z ##[group]Disabling automatic garbage collection
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9221389Z [command]/usr/bin/git config --local gc.auto 0
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9245483Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9246246Z ##[group]Setting up auth
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9251793Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9276037Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9569380Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9595790Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9771699Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9797961Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:40.9985190Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:41.0014201Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:41.0015064Z ##[group]Fetching the repository
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:41.0022168Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +35fab386d052f2b2f2b7cf309adcfd7f85688623:refs/remotes/origin/main
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8408917Z From https://github.com/SuperPartyByAI/Superparty
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8410501Z  * [new ref]         35fab386d052f2b2f2b7cf309adcfd7f85688623 -> origin/main
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8441696Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8443061Z ##[group]Determining the checkout info
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8444464Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8449325Z [command]/usr/bin/git sparse-checkout disable
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8486081Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8508481Z ##[group]Checking out the ref
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:42.8512875Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:43.0311047Z Switched to a new branch 'main'
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:43.0312272Z branch 'main' set up to track 'origin/main'.
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:43.0333594Z ##[endgroup]
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:43.0371356Z [command]/usr/bin/git log -1 --format=%H
+Run Tests	Run actions/checkout@v4	2026-03-15T12:42:43.0390715Z 35fab386d052f2b2f2b7cf309adcfd7f85688623
+Run Tests	Run actions/setup-python@v4	∩╗┐2026-03-15T12:42:43.0619753Z ##[group]Run actions/setup-python@v4
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0620290Z with:
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0620645Z   python-version: 3.12
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0621026Z   check-latest: false
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0621568Z   token: ***
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0621931Z   update-environment: true
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0622346Z   allow-prereleases: false
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0622999Z env:
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0623450Z   SUPABASE_URL: ***
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0625438Z   SUPABASE_KEY: ***
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.0625792Z ##[endgroup]
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.2233379Z ##[group]Installed versions
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.2325984Z Successfully set up CPython (3.12.12)
+Run Tests	Run actions/setup-python@v4	2026-03-15T12:42:43.2327508Z ##[endgroup]
+Run Tests	Run pip install -r requirements-dev.txt	∩╗┐2026-03-15T12:42:43.2426808Z ##[group]Run pip install -r requirements-dev.txt
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2427551Z [36;1mpip install -r requirements-dev.txt[0m
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2466084Z shell: /usr/bin/bash -e {0}
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2466587Z env:
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2467165Z   SUPABASE_URL: ***
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2469113Z   SUPABASE_KEY: ***
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2469585Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2470281Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2470975Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2471605Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2472269Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2473167Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:43.2473713Z ##[endgroup]
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.0500234Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.1412274Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.1792886Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.1911014Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.2624606Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.2750375Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.3407812Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.3537125Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.3864713Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.3982394Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.4320927Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.4440437Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.4724867Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.4841845Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.5182003Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.5295237Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.5529683Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.5640405Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.5888835Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.6086685Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.6485751Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.6596223Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.6911106Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.7023638Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.7297080Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.7404472Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.7911833Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.8034904Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.8289257Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.8395884Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.8719064Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:44.8828623Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.0930865Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.1065988Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.1369544Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.1476962Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.3207613Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.3316271Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.3589201Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.3696261Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.4055075Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.4164687Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.4579967Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.4686732Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.5808706Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.5921662Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.6226716Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.6339582Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.6687559Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.6798405Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.7093129Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.7200767Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.8598670Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.8712664Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.8946810Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.9052457Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.9377865Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.9488501Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.9655872Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:45.9985373Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.0111299Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.0239032Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.0362761Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.0489567Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.0621847Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1326800Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 217.8 MB/s  0:00:00
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1437263Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1573694Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1708392Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1838992Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.1983920Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2116944Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2281346Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2424111Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2552989Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2686387Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2823030Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.2953051Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3079018Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3211087Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3345774Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3534658Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 264.5 MB/s  0:00:00
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3647246Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3779583Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.3910024Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.4038993Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.4170952Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.4306100Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.4378231Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 199.4 MB/s  0:00:00
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.4490488Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:46.5403166Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:49.1573953Z 
+Run Tests	Run pip install -r requirements-dev.txt	2026-03-15T12:42:49.1601866Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Run Tests	Run python -m pytest tests/ -q --tb=short	∩╗┐2026-03-15T12:42:49.3929539Z ##[group]Run python -m pytest tests/ -q --tb=short
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3929908Z [36;1mpython -m pytest tests/ -q --tb=short[0m
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3959435Z shell: /usr/bin/bash -e {0}
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3959695Z env:
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3960367Z   SUPABASE_URL: ***
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3961724Z   SUPABASE_KEY: ***
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3961979Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3962375Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3962983Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3963335Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3963672Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3964018Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:49.3964413Z ##[endgroup]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:50.9707316Z ........................................................................ [ 10%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.0770023Z ........................................................................ [ 21%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.1576838Z ........................................................................ [ 32%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.2381026Z ........................................................................ [ 43%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.3056177Z ........................................................................ [ 53%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.4003662Z ........................................................................ [ 64%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.4690202Z ........................................................................ [ 75%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.5398180Z ........................................................................ [ 86%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:51.6154197Z ........................................................................ [ 97%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:52.0233209Z ...................                                                      [100%]
+Run Tests	Run python -m pytest tests/ -q --tb=short	2026-03-15T12:42:52.0234093Z 667 passed in 2.32s
+Run Tests	Post Run actions/setup-python@v4	∩╗┐2026-03-15T12:42:52.1025906Z Post job cleanup.
+Run Tests	Post Run actions/checkout@v4	∩╗┐2026-03-15T12:42:52.2574873Z Post job cleanup.
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3455436Z [command]/usr/bin/git version
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3488861Z git version 2.53.0
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3527365Z Temporarily overriding HOME='/home/runner/work/_temp/efddd180-d569-4861-9553-2aa568de36df' before making global git config changes
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3528256Z Adding repository directory to the temporary git global config as a safe directory
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3541140Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3574388Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3603473Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3800497Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3819261Z http.https://github.com/.extraheader
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3830874Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.3858421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.4040970Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Run Tests	Post Run actions/checkout@v4	2026-03-15T12:42:52.4070131Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Run Tests	Complete job	∩╗┐2026-03-15T12:42:52.4341243Z Cleaning up orphan processes
+Run Tests	Complete job	2026-03-15T12:42:52.4554957Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Validate JSON-LD	Set up job	∩╗┐2026-03-15T12:42:56.4838371Z Current runner version: '2.332.0'
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4865073Z ##[group]Runner Image Provisioner
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4866044Z Hosted Compute Agent
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4866580Z Version: 20260213.493
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4867273Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4867945Z Build Date: 2026-02-13T00:28:41Z
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4868602Z Worker ID: {4f9c9338-03ea-4792-8700-85a1abb9c6a7}
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4869344Z Azure Region: northcentralus
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4869956Z ##[endgroup]
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4871329Z ##[group]Operating System
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4872001Z Ubuntu
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4872502Z 24.04.3
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4872952Z LTS
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4873511Z ##[endgroup]
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4873998Z ##[group]Runner Image
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4874544Z Image: ubuntu-24.04
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4875003Z Version: 20260309.50.1
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4876219Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4877908Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4878830Z ##[endgroup]
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4879850Z ##[group]GITHUB_TOKEN Permissions
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4881995Z Contents: read
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4882580Z Metadata: read
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4883108Z Packages: read
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4883662Z ##[endgroup]
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4885676Z Secret source: Actions
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.4887076Z Prepare workflow directory
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.5311057Z Prepare all required actions
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.5365734Z Getting action download info
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.8641306Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Validate JSON-LD	Set up job	2026-03-15T12:42:56.9879763Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Validate JSON-LD	Set up job	2026-03-15T12:42:57.1769775Z Complete job name: Validate JSON-LD
+Validate JSON-LD	Run actions/checkout@v4	∩╗┐2026-03-15T12:42:57.2466653Z ##[group]Run actions/checkout@v4
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2467559Z with:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2467971Z   repository: SuperPartyByAI/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2468632Z   token: ***
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2469001Z   ssh-strict: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2469391Z   ssh-user: git
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2469777Z   persist-credentials: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2470222Z   clean: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2470612Z   sparse-checkout-cone-mode: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2471074Z   fetch-depth: 1
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2471452Z   fetch-tags: false
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2471838Z   show-progress: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2472237Z   lfs: false
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2472588Z   submodules: false
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2472979Z   set-safe-directory: true
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.2473607Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3551584Z Syncing repository: SuperPartyByAI/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3553545Z ##[group]Getting Git version info
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3554272Z Working directory is '/home/runner/work/Superparty/Superparty'
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3555284Z [command]/usr/bin/git version
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3630020Z git version 2.53.0
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3656172Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3670340Z Temporarily overriding HOME='/home/runner/work/_temp/6379cc09-4720-4e0b-a0a1-a35450cf1860' before making global git config changes
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3671714Z Adding repository directory to the temporary git global config as a safe directory
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3683804Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3723531Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3727318Z ##[group]Initializing the repository
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3731215Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3841803Z hint: Using 'master' as the name for the initial branch. This default branch name
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3843191Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3844166Z hint: to use in all of your new repositories, which will suppress this warning,
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3845330Z hint: call:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3846106Z hint:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3847015Z hint: 	git config --global init.defaultBranch <name>
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3847625Z hint:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3848193Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3849141Z hint: 'development'. The just-created branch can be renamed via this command:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3849873Z hint:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3850253Z hint: 	git branch -m <name>
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3850697Z hint:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3851610Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3852693Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3858016Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3891144Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3891865Z ##[group]Disabling automatic garbage collection
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3895510Z [command]/usr/bin/git config --local gc.auto 0
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3924127Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3924805Z ##[group]Setting up auth
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3931545Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.3962355Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4312504Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4342292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4578026Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4613681Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4875252Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4913800Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4923011Z ##[group]Fetching the repository
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:57.4925312Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +35fab386d052f2b2f2b7cf309adcfd7f85688623:refs/remotes/origin/main
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4674392Z From https://github.com/SuperPartyByAI/Superparty
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4679137Z  * [new ref]         35fab386d052f2b2f2b7cf309adcfd7f85688623 -> origin/main
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4711343Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4712431Z ##[group]Determining the checkout info
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4713969Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4720731Z [command]/usr/bin/git sparse-checkout disable
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4768044Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4798208Z ##[group]Checking out the ref
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.4802690Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.7319120Z Switched to a new branch 'main'
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.7320686Z branch 'main' set up to track 'origin/main'.
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.7361144Z ##[endgroup]
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.7401152Z [command]/usr/bin/git log -1 --format=%H
+Validate JSON-LD	Run actions/checkout@v4	2026-03-15T12:42:59.7425291Z 35fab386d052f2b2f2b7cf309adcfd7f85688623
+Validate JSON-LD	Run actions/setup-python@v4	∩╗┐2026-03-15T12:42:59.7656470Z ##[group]Run actions/setup-python@v4
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7656882Z with:
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7657106Z   python-version: 3.12
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7657367Z   check-latest: false
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7657741Z   token: ***
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7657986Z   update-environment: true
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7658248Z   allow-prereleases: false
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.7658499Z ##[endgroup]
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.9376294Z ##[group]Installed versions
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.9480284Z Successfully set up CPython (3.12.13)
+Validate JSON-LD	Run actions/setup-python@v4	2026-03-15T12:42:59.9481527Z ##[endgroup]
+Validate JSON-LD	Run pip install -r requirements-dev.txt	∩╗┐2026-03-15T12:42:59.9599094Z ##[group]Run pip install -r requirements-dev.txt
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9599614Z [36;1mpip install -r requirements-dev.txt[0m
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9662039Z shell: /usr/bin/bash -e {0}
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9662359Z env:
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9662661Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9663152Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9663620Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9664009Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9664405Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9664808Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:42:59.9665149Z ##[endgroup]
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.0566220Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.1124569Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.1328449Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.1383282Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.1940916Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.1974495Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2283322Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2315610Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2478958Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2510233Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2654863Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2686256Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2808112Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.2836968Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3040581Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3093327Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3211527Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3242805Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3363873Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3395689Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3650158Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3684134Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3835209Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.3865404Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4016300Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4047913Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4469915Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4502148Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4634787Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4669531Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4871730Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.4902690Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.6628700Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.6663301Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.6870705Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.6902106Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8338199Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8373157Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8530392Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8561933Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8830172Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.8862425Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.9218994Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:01.9251858Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0149266Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0183342Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0336598Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0368536Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0590108Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0620738Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0814685Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.0843750Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2027054Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2062419Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2185612Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2215450Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2422980Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2455121Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2539750Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2622382Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2672527Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2728436Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2777294Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2830363Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.2894247Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3507745Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 249.7 MB/s  0:00:00
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3542747Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3604612Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3663979Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3714640Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3780158Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3840308Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3895759Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.3959637Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4021711Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4075412Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4143916Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4198635Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4249128Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4322099Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4386870Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4584662Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 239.3 MB/s  0:00:00
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4616545Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4672628Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4720374Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4771583Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4827177Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4877493Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4960790Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 165.9 MB/s  0:00:00
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.4989342Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:02.5976998Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:05.3417755Z 
+Validate JSON-LD	Run pip install -r requirements-dev.txt	2026-03-15T12:43:05.3448652Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Validate JSON-LD	Run JSON-LD validator	∩╗┐2026-03-15T12:43:05.5536644Z ##[group]Run python -m agent.seo_agent.validate_jsonld
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5537068Z [36;1mpython -m agent.seo_agent.validate_jsonld[0m
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5588864Z shell: /usr/bin/bash -e {0}
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5589269Z env:
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5589502Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5589917Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5590318Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5590661Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5591013Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5591358Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.5591652Z ##[endgroup]
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.6162313Z Validating all template engine scenarios...
+Validate JSON-LD	Run JSON-LD validator	2026-03-15T12:43:05.6163293Z Γ£à JSON-LD VALIDATION PASSED ΓÇö all schemas valid
+Validate JSON-LD	Post Run actions/setup-python@v4	∩╗┐2026-03-15T12:43:05.6298155Z Post job cleanup.
+Validate JSON-LD	Post Run actions/checkout@v4	∩╗┐2026-03-15T12:43:05.7962129Z Post job cleanup.
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.8920202Z [command]/usr/bin/git version
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.8957101Z git version 2.53.0
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9000328Z Temporarily overriding HOME='/home/runner/work/_temp/c2864667-2eb0-438b-991a-c14e1b0a2d2b' before making global git config changes
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9001598Z Adding repository directory to the temporary git global config as a safe directory
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9006296Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9043171Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9076616Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9390283Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9418549Z http.https://github.com/.extraheader
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9431248Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9468298Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9770050Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Validate JSON-LD	Post Run actions/checkout@v4	2026-03-15T12:43:05.9806933Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Validate JSON-LD	Complete job	∩╗┐2026-03-15T12:43:06.0187471Z Cleaning up orphan processes
+Validate JSON-LD	Complete job	2026-03-15T12:43:06.0470501Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Check Freeze Window	Set up job	∩╗┐2026-03-15T12:43:10.5240089Z Current runner version: '2.332.0'
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5279132Z ##[group]Runner Image Provisioner
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5280494Z Hosted Compute Agent
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5281638Z Version: 20260213.493
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5282759Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5283967Z Build Date: 2026-02-13T00:28:41Z
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5285374Z Worker ID: {d21c932c-e57c-492b-b940-c90e25061b73}
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5286714Z Azure Region: centralus
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5287667Z ##[endgroup]
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5290300Z ##[group]Operating System
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5291402Z Ubuntu
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5292219Z 24.04.3
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5293136Z LTS
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5294044Z ##[endgroup]
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5294943Z ##[group]Runner Image
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5296055Z Image: ubuntu-24.04
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5297036Z Version: 20260302.42.1
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5299084Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5302165Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5303908Z ##[endgroup]
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5305949Z ##[group]GITHUB_TOKEN Permissions
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5308920Z Contents: read
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5310011Z Metadata: read
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5310955Z Packages: read
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5311882Z ##[endgroup]
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5314860Z Secret source: Actions
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5316268Z Prepare workflow directory
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5840720Z Prepare all required actions
+Check Freeze Window	Set up job	2026-03-15T12:43:10.5879335Z Getting action download info
+Check Freeze Window	Set up job	2026-03-15T12:43:10.9096249Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Check Freeze Window	Set up job	2026-03-15T12:43:11.0819976Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Check Freeze Window	Set up job	2026-03-15T12:43:11.3032377Z Complete job name: Check Freeze Window
+Check Freeze Window	Run actions/checkout@v4	∩╗┐2026-03-15T12:43:11.3665608Z ##[group]Run actions/checkout@v4
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3666464Z with:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3666883Z   repository: SuperPartyByAI/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3667564Z   token: ***
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3667958Z   ssh-strict: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3668572Z   ssh-user: git
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3669000Z   persist-credentials: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3669472Z   clean: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3669883Z   sparse-checkout-cone-mode: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3670361Z   fetch-depth: 1
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3670754Z   fetch-tags: false
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3671168Z   show-progress: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3671572Z   lfs: false
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3671950Z   submodules: false
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3672366Z   set-safe-directory: true
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3673032Z env:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3673570Z   SUPABASE_URL: ***
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3675755Z   SUPABASE_KEY: ***
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.3676158Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4745143Z Syncing repository: SuperPartyByAI/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4747030Z ##[group]Getting Git version info
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4747850Z Working directory is '/home/runner/work/Superparty/Superparty'
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4749142Z [command]/usr/bin/git version
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4839641Z git version 2.53.0
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4865661Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4879883Z Temporarily overriding HOME='/home/runner/work/_temp/ff71630a-fe70-43c9-943a-99b86c024000' before making global git config changes
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4881444Z Adding repository directory to the temporary git global config as a safe directory
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4892420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4936555Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4940790Z ##[group]Initializing the repository
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.4944353Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5094401Z hint: Using 'master' as the name for the initial branch. This default branch name
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5095810Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5097007Z hint: to use in all of your new repositories, which will suppress this warning,
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5097727Z hint: call:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5098363Z hint:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5099033Z hint: 	git config --global init.defaultBranch <name>
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5100025Z hint:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5100744Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5101645Z hint: 'development'. The just-created branch can be renamed via this command:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5102362Z hint:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5102731Z hint: 	git branch -m <name>
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5103176Z hint:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5103758Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5105002Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5111031Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5147849Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5148869Z ##[group]Disabling automatic garbage collection
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5152232Z [command]/usr/bin/git config --local gc.auto 0
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5180469Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5181212Z ##[group]Setting up auth
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5187580Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5219635Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5651550Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5686432Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5945988Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.5979854Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.6221988Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.6257361Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.6258348Z ##[group]Fetching the repository
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:11.6266699Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +35fab386d052f2b2f2b7cf309adcfd7f85688623:refs/remotes/origin/main
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3430435Z From https://github.com/SuperPartyByAI/Superparty
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3431645Z  * [new ref]         35fab386d052f2b2f2b7cf309adcfd7f85688623 -> origin/main
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3467386Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3468463Z ##[group]Determining the checkout info
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3470039Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3475450Z [command]/usr/bin/git sparse-checkout disable
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3519064Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3549404Z ##[group]Checking out the ref
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.3553833Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.5996725Z Switched to a new branch 'main'
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.6000070Z branch 'main' set up to track 'origin/main'.
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.6040316Z ##[endgroup]
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.6078150Z [command]/usr/bin/git log -1 --format=%H
+Check Freeze Window	Run actions/checkout@v4	2026-03-15T12:43:13.6102057Z 35fab386d052f2b2f2b7cf309adcfd7f85688623
+Check Freeze Window	Run actions/setup-python@v4	∩╗┐2026-03-15T12:43:13.6402565Z ##[group]Run actions/setup-python@v4
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6403848Z with:
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6404697Z   python-version: 3.12
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6405681Z   check-latest: false
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6406937Z   token: ***
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6407848Z   update-environment: true
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6409090Z   allow-prereleases: false
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6410737Z env:
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6412380Z   SUPABASE_URL: ***
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6419281Z   SUPABASE_KEY: ***
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.6420327Z ##[endgroup]
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.8165996Z ##[group]Installed versions
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.8763116Z Successfully set up CPython (3.12.12)
+Check Freeze Window	Run actions/setup-python@v4	2026-03-15T12:43:13.8766258Z ##[endgroup]
+Check Freeze Window	Run pip install -r requirements-dev.txt	∩╗┐2026-03-15T12:43:13.8909426Z ##[group]Run pip install -r requirements-dev.txt
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.8910983Z [36;1mpip install -r requirements-dev.txt[0m
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9023191Z shell: /usr/bin/bash -e {0}
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9024205Z env:
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9025341Z   SUPABASE_URL: ***
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9031045Z   SUPABASE_KEY: ***
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9032163Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9033917Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9035662Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9037217Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9038924Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9040543Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:13.9041895Z ##[endgroup]
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.3048302Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.3988715Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.4365373Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.4534397Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.5156519Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.5321504Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.5834346Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.6000286Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.6295110Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.6456266Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.6768896Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.6930828Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.7205339Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.7366957Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.7742048Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.7903395Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.8159158Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.8317711Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.8600660Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.8761181Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.9245560Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.9407739Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.9731333Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:17.9890488Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.0199009Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.0362213Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.0936920Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.1100046Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.1363768Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.1527300Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.1903197Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.2066434Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.4417840Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.4585048Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.4958302Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.5120366Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.7037003Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.7203951Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.7537105Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.7697523Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.8135505Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.8295892Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.8789717Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:18.8950053Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.0121847Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.0288396Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.0649479Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.0810240Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.1187176Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.1348518Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.1704775Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.1865114Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.3389345Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.3552229Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.3817622Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.3976896Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.4341068Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.4504619Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.4719760Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.5233950Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.5440465Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.5641455Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.5826108Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.6021513Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.6209974Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.7342462Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 134.8 MB/s  0:00:00
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.7503572Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.7699682Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.7897332Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.8084438Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.8278188Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.8478675Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.8676264Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.8882564Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.9091505Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.9275443Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.9465662Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.9666011Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:19.9853538Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.0069235Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.0262836Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.0544607Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 164.3 MB/s  0:00:00
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.0708343Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.0905393Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1094657Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1284594Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1490859Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1696138Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1785732Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 154.1 MB/s  0:00:00
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.1946409Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:20.3205464Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:23.1591217Z 
+Check Freeze Window	Run pip install -r requirements-dev.txt	2026-03-15T12:43:23.1621963Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Check Freeze Window	Check freeze for animatopia.ro	∩╗┐2026-03-15T12:43:23.4028426Z ##[group]Run python -m agent.seo_agent.check_freeze_ci animatopia.ro
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4028983Z [36;1mpython -m agent.seo_agent.check_freeze_ci animatopia.ro[0m
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4080187Z shell: /usr/bin/bash -e {0}
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4080425Z env:
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4080831Z   SUPABASE_URL: ***
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4082145Z   SUPABASE_KEY: ***
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4082419Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4082843Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4083244Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4083610Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4083968Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4084330Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:23.4084636Z ##[endgroup]
+Check Freeze Window	Check freeze for animatopia.ro	2026-03-15T12:43:24.2301293Z Γ£à FREEZE CHECK PASSED: animatopia.ro: no freeze set
+Check Freeze Window	Post Run actions/setup-python@v4	∩╗┐2026-03-15T12:43:24.2472740Z Post job cleanup.
+Check Freeze Window	Post Run actions/checkout@v4	∩╗┐2026-03-15T12:43:24.4167708Z Post job cleanup.
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5108538Z [command]/usr/bin/git version
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5145436Z git version 2.53.0
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5190099Z Temporarily overriding HOME='/home/runner/work/_temp/c6651ca3-fcc0-4b26-bffa-a252f211c7d3' before making global git config changes
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5191530Z Adding repository directory to the temporary git global config as a safe directory
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5196749Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5234806Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5269134Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5520202Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5542337Z http.https://github.com/.extraheader
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5554466Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5586434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5827723Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Freeze Window	Post Run actions/checkout@v4	2026-03-15T12:43:24.5861166Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Freeze Window	Complete job	∩╗┐2026-03-15T12:43:24.6209621Z Cleaning up orphan processes
+Check Freeze Window	Complete job	2026-03-15T12:43:24.6510082Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Deploy to Canary	Set up job	∩╗┐2026-03-15T12:43:29.2490392Z Current runner version: '2.332.0'
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2517118Z ##[group]Runner Image Provisioner
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2517989Z Hosted Compute Agent
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2518594Z Version: 20260213.493
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2519274Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2519979Z Build Date: 2026-02-13T00:28:41Z
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2520652Z Worker ID: {60858074-740d-42b7-babc-2d02fb9a424f}
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2521368Z Azure Region: northcentralus
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2522096Z ##[endgroup]
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2523559Z ##[group]Operating System
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2524230Z Ubuntu
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2524722Z 24.04.3
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2525258Z LTS
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2525821Z ##[endgroup]
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2526342Z ##[group]Runner Image
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2526996Z Image: ubuntu-24.04
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2527493Z Version: 20260302.42.1
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2528536Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2530268Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2531191Z ##[endgroup]
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2532799Z ##[group]GITHUB_TOKEN Permissions
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2534921Z Contents: read
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2535606Z Metadata: read
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2536101Z Packages: read
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2536625Z ##[endgroup]
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2538754Z Secret source: Actions
+Deploy to Canary	Set up job	2026-03-15T12:43:29.2539745Z Prepare workflow directory
+Deploy to Canary	Set up job	2026-03-15T12:43:29.3070758Z Prepare all required actions
+Deploy to Canary	Set up job	2026-03-15T12:43:29.3110741Z Getting action download info
+Deploy to Canary	Set up job	2026-03-15T12:43:29.6233088Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Deploy to Canary	Set up job	2026-03-15T12:43:29.8011319Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Deploy to Canary	Set up job	2026-03-15T12:43:30.0132178Z Complete job name: Deploy to Canary
+Deploy to Canary	Run actions/checkout@v4	∩╗┐2026-03-15T12:43:30.0793392Z ##[group]Run actions/checkout@v4
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0794282Z with:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0794709Z   repository: SuperPartyByAI/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0795410Z   token: ***
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0795802Z   ssh-strict: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0796211Z   ssh-user: git
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0796609Z   persist-credentials: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0797062Z   clean: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0797470Z   sparse-checkout-cone-mode: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0797957Z   fetch-depth: 1
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0798347Z   fetch-tags: false
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0798753Z   show-progress: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0799159Z   lfs: false
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0799566Z   submodules: false
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0799974Z   set-safe-directory: true
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0800594Z env:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0801133Z   SUPABASE_URL: ***
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0803694Z   SUPABASE_KEY: ***
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.0804121Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2028788Z Syncing repository: SuperPartyByAI/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2033937Z ##[group]Getting Git version info
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2034888Z Working directory is '/home/runner/work/Superparty/Superparty'
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2037434Z [command]/usr/bin/git version
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2175706Z git version 2.53.0
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2215790Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2233577Z Temporarily overriding HOME='/home/runner/work/_temp/cccae940-4ea2-4bc0-91fd-d9e170f3c97a' before making global git config changes
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2235982Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2249569Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2308845Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2312439Z ##[group]Initializing the repository
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2316978Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2441158Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2442692Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2444396Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2445664Z hint: call:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2446333Z hint:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2447148Z hint: 	git config --global init.defaultBranch <name>
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2448219Z hint:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2449155Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2450191Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2450910Z hint:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2451301Z hint: 	git branch -m <name>
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2451749Z hint:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2452617Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2453839Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2459639Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2499061Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2499922Z ##[group]Disabling automatic garbage collection
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2504956Z [command]/usr/bin/git config --local gc.auto 0
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2539106Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2539798Z ##[group]Setting up auth
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2549114Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2589407Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.2999775Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3037411Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3296566Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3330382Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3582985Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3619270Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3620572Z ##[group]Fetching the repository
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:30.3629568Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +35fab386d052f2b2f2b7cf309adcfd7f85688623:refs/remotes/origin/main
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3268827Z From https://github.com/SuperPartyByAI/Superparty
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3270094Z  * [new ref]         35fab386d052f2b2f2b7cf309adcfd7f85688623 -> origin/main
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3305989Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3307055Z ##[group]Determining the checkout info
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3308848Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3313869Z [command]/usr/bin/git sparse-checkout disable
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3360127Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3388794Z ##[group]Checking out the ref
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.3392992Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.5853397Z Switched to a new branch 'main'
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.5855383Z branch 'main' set up to track 'origin/main'.
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.5898059Z ##[endgroup]
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.5939974Z [command]/usr/bin/git log -1 --format=%H
+Deploy to Canary	Run actions/checkout@v4	2026-03-15T12:43:32.5965580Z 35fab386d052f2b2f2b7cf309adcfd7f85688623
+Deploy to Canary	Run actions/setup-python@v4	∩╗┐2026-03-15T12:43:32.6276432Z ##[group]Run actions/setup-python@v4
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6277723Z with:
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6278583Z   python-version: 3.12
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6279586Z   check-latest: false
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6280853Z   token: ***
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6281765Z   update-environment: true
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6283238Z   allow-prereleases: false
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6284534Z env:
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6285701Z   SUPABASE_URL: ***
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6291899Z   SUPABASE_KEY: ***
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.6293012Z ##[endgroup]
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.8009983Z ##[group]Installed versions
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.8128805Z Successfully set up CPython (3.12.12)
+Deploy to Canary	Run actions/setup-python@v4	2026-03-15T12:43:32.8130928Z ##[endgroup]
+Deploy to Canary	Run pip install -r requirements-dev.txt	∩╗┐2026-03-15T12:43:32.8259420Z ##[group]Run pip install -r requirements-dev.txt
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8260978Z [36;1mpip install -r requirements-dev.txt[0m
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8325744Z shell: /usr/bin/bash -e {0}
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8326756Z env:
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8327894Z   SUPABASE_URL: ***
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8333599Z   SUPABASE_KEY: ***
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8334713Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8336462Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8338224Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8339801Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8341413Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8343301Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:32.8344665Z ##[endgroup]
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.5762994Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.6308342Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.6520698Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.6552468Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.6972505Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7007024Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7315811Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7350655Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7523809Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7555909Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7705772Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7739660Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7865533Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.7899404Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8086640Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8121308Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8245022Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8278988Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8409242Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8443000Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8710525Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8756824Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8904846Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.8936469Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9096536Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9128560Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9521207Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9552994Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9731023Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9764252Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9948403Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:35.9979899Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.1739032Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.1786970Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.1991467Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.2028023Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.3469864Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.3504250Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.3657924Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.3693168Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.3971873Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.4016622Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.4359039Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.4394657Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.5363791Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.5411809Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.7513117Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.7549600Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.8025534Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.8060430Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.9878430Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:36.9918490Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.1872909Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.1958225Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.2986951Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.3021388Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.3453509Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.3485003Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.5417214Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.5838263Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.5913996Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.5991755Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.6299758Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.6370624Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:37.6743372Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0394969Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 40.1 MB/s  0:00:00
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0432298Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0495578Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0554580Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0611028Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0681038Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0735488Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0788210Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0854320Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0917013Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.0972839Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1041030Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1096332Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1150732Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1212365Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1273823Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1477261Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 235.4 MB/s  0:00:00
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1515088Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1580664Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1639232Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1696776Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1763989Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1819285Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.1904804Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 165.5 MB/s  0:00:00
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.2045743Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:38.3042511Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:41.1393595Z 
+Deploy to Canary	Run pip install -r requirements-dev.txt	2026-03-15T12:43:41.1430851Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Deploy to Canary	Generate canary PR	∩╗┐2026-03-15T12:43:41.3939790Z ##[group]Run python -c "
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3940101Z [36;1mpython -c "[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3940443Z [36;1mfrom agent.seo_agent.pr_generator import PRRequest, generate_pr[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3940821Z [36;1mreq = PRRequest([0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3941062Z [36;1m    site_domain='animatopia.ro',[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3941358Z [36;1m    head_term='animatori petreceri copii',[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3941713Z [36;1m    slug='animatori petreceri copii'.replace(' ', '-'),[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3942316Z [36;1m    description='Canary deploy via CI',[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3942580Z [36;1m)[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3942838Z [36;1mresult = generate_pr(req, repo_dir='.', dry_run=False)[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3943194Z [36;1mprint(f'Branch: {result.branch_name}')[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3943502Z [36;1mprint(f'Success: {result.success}')[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3943794Z [36;1mif result.error:[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3944023Z [36;1m    print(f'Error: {result.error}')[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3944273Z [36;1m    exit(1)[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3944481Z [36;1m"[0m
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3996501Z shell: /usr/bin/bash -e {0}
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3996742Z env:
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3997166Z   SUPABASE_URL: ***
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3998543Z   SUPABASE_KEY: ***
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3998809Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3999233Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.3999641Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.4000008Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.4000364Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.4000734Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.4001052Z ##[endgroup]
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.5845216Z Branch: agent/seo/animatopia-owner-animatori-petreceri-copii-202603151243
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.5846211Z Success: False
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.5846834Z Error: git push failed: remote: Permission to SuperPartyByAI/Superparty.git denied to github-actions[bot].
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.5848240Z fatal: unable to access 'https://github.com/SuperPartyByAI/Superparty/': The requested URL returned error: 403
+Deploy to Canary	Generate canary PR	2026-03-15T12:43:41.5950696Z ##[error]Process completed with exit code 1.
+Deploy to Canary	Post Run actions/checkout@v4	∩╗┐2026-03-15T12:43:41.6071896Z Post job cleanup.
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7037587Z [command]/usr/bin/git version
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7074663Z git version 2.53.0
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7119387Z Temporarily overriding HOME='/home/runner/work/_temp/8e346c80-bfc2-49ff-83fc-7a4e79997a30' before making global git config changes
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7120798Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7126303Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7166414Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7203244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7455094Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7478317Z http.https://github.com/.extraheader
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7491302Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7523116Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7763001Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to Canary	Post Run actions/checkout@v4	2026-03-15T12:43:41.7798127Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to Canary	Complete job	∩╗┐2026-03-15T12:43:41.8149106Z Cleaning up orphan processes
+Deploy to Canary	Complete job	2026-03-15T12:43:41.8437927Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

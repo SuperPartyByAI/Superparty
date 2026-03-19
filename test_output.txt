@@ -1,0 +1,47 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\ursac\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ursac\Superparty
+collecting ... collected 39 items
+
+tests/test_rules_engine.py::TestCheckFreeze::test_no_freeze_allows PASSED [  2%]
+tests/test_rules_engine.py::TestCheckFreeze::test_expired_freeze_allows PASSED [  5%]
+tests/test_rules_engine.py::TestCheckFreeze::test_active_freeze_denies PASSED [  7%]
+tests/test_rules_engine.py::TestCheckFreeze::test_superparty_freeze_until_march_21 PASSED [ 10%]
+tests/test_rules_engine.py::TestCheckFreeze::test_superparty_after_freeze_allows PASSED [ 12%]
+tests/test_rules_engine.py::TestOwnerUniqueness::test_no_existing_owners_allows PASSED [ 15%]
+tests/test_rules_engine.py::TestOwnerUniqueness::test_same_site_owner_allows PASSED [ 17%]
+tests/test_rules_engine.py::TestOwnerUniqueness::test_different_site_owner_denies PASSED [ 20%]
+tests/test_rules_engine.py::TestOwnerUniqueness::test_nested_domain_format PASSED [ 23%]
+tests/test_rules_engine.py::TestCanaryEnforcement::test_no_canary_required_allows PASSED [ 25%]
+tests/test_rules_engine.py::TestCanaryEnforcement::test_canary_site_always_allowed PASSED [ 28%]
+tests/test_rules_engine.py::TestCanaryEnforcement::test_non_canary_blocked_when_canary_incomplete PASSED [ 30%]
+tests/test_rules_engine.py::TestCanaryEnforcement::test_non_canary_allowed_when_canary_completed PASSED [ 33%]
+tests/test_rules_engine.py::TestInternalLinks::test_sufficient_links_allows PASSED [ 35%]
+tests/test_rules_engine.py::TestInternalLinks::test_exact_minimum_allows PASSED [ 38%]
+tests/test_rules_engine.py::TestInternalLinks::test_insufficient_links_denies PASSED [ 41%]
+tests/test_rules_engine.py::TestInternalLinks::test_zero_links_denies PASSED [ 43%]
+tests/test_rules_engine.py::TestCanonicalPattern::test_correct_canonical_allows PASSED [ 46%]
+tests/test_rules_engine.py::TestCanonicalPattern::test_wrong_canonical_denies PASSED [ 48%]
+tests/test_rules_engine.py::TestHomepageProtection::test_non_homepage_during_freeze_allows PASSED [ 51%]
+tests/test_rules_engine.py::TestHomepageProtection::test_homepage_during_freeze_denies PASSED [ 53%]
+tests/test_rules_engine.py::TestHomepageProtection::test_homepage_without_freeze_allows PASSED [ 56%]
+tests/test_rules_engine.py::TestEvaluateAll::test_happy_path_all_pass PASSED [ 58%]
+tests/test_rules_engine.py::TestEvaluateAll::test_frozen_site_blocks_everything PASSED [ 61%]
+tests/test_rules_engine.py::TestEvaluateAll::test_duplicate_owner_blocks PASSED [ 64%]
+tests/test_rules_engine.py::TestEvaluateAll::test_multiple_violations_all_reported PASSED [ 66%]
+tests/test_rules_engine.py::TestOwnerMapper::test_seed_data_loaded PASSED [ 69%]
+tests/test_rules_engine.py::TestOwnerMapper::test_get_owner_returns_correct_site PASSED [ 71%]
+tests/test_rules_engine.py::TestOwnerMapper::test_get_owner_for_site PASSED [ 74%]
+tests/test_rules_engine.py::TestOwnerMapper::test_get_all_owners_for_site PASSED [ 76%]
+tests/test_rules_engine.py::TestOwnerMapper::test_is_term_owned_by_other PASSED [ 79%]
+tests/test_rules_engine.py::TestOwnerMapper::test_register_new_term_succeeds PASSED [ 82%]
+tests/test_rules_engine.py::TestOwnerMapper::test_register_duplicate_term_fails PASSED [ 84%]
+tests/test_rules_engine.py::TestOwnerMapper::test_no_conflicts_in_seed_data PASSED [ 87%]
+tests/test_rules_engine.py::TestOwnerMapper::test_conflict_detection_works PASSED [ 89%]
+tests/test_rules_engine.py::TestOwnerMapper::test_ownership_report PASSED [ 92%]
+tests/test_rules_engine.py::TestRuleResult::test_default_is_allowed PASSED [ 94%]
+tests/test_rules_engine.py::TestRuleResult::test_deny_changes_allowed PASSED [ 97%]
+tests/test_rules_engine.py::TestRuleResult::test_multiple_denials PASSED [100%]
+
+============================= 39 passed in 0.10s ==============================

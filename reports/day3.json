@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-16",
+  "site": "superparty.ro",
+  "head_term": "animatori petreceri copii",
+  "owner_share": 13.6,
+  "owner_impressions": 61,
+  "homepage_impressions": 388,
+  "owner_clicks": 1,
+  "homepage_clicks": 0,
+  "owner_ctr": 1.64,
+  "homepage_ctr": 0.0,
+  "owner_position": 14.1,
+  "homepage_position": 12.8,
+  "verdict": "critical",
+  "alerts": [
+    "CRITICAL: owner_share = 13.6% (below 30% threshold)",
+    "WARNING: Clicks dropped 66.7% (baseline 3 → current 1)"
+  ],
+  "day": 3,
+  "baseline": {
+    "date": "2026-03-14",
+    "owner_impressions": 223,
+    "homepage_impressions": 354,
+    "owner_clicks": 3,
+    "homepage_clicks": 0,
+    "owner_ctr": 0.013,
+    "homepage_ctr": 0.0,
+    "owner_position": 12.8,
+    "homepage_position": 12.7,
+    "owner_share": 38.6
+  },
+  "trend": {
+    "owner_share_delta": -25.0,
+    "direction": "DOWN",
+    "impr_delta": -162,
+    "clicks_delta": -2
+  }
+}

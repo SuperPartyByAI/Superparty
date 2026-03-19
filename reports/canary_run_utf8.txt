@@ -1,0 +1,1407 @@
+﻿Run Tests	UNKNOWN STEP	∩╗┐2026-03-15T12:54:44.7472494Z Current runner version: '2.332.0'
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7496898Z ##[group]Runner Image Provisioner
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7498001Z Hosted Compute Agent
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7498588Z Version: 20260213.493
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7499195Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7500359Z Build Date: 2026-02-13T00:28:41Z
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7501066Z Worker ID: {ce8b4f6f-343c-4ca5-bb50-5df67b46fb82}
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7501741Z Azure Region: westcentralus
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7502343Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7503767Z ##[group]Operating System
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7504392Z Ubuntu
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7504931Z 24.04.3
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7505411Z LTS
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7505867Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7506408Z ##[group]Runner Image
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7506973Z Image: ubuntu-24.04
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7507508Z Version: 20260302.42.1
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7508731Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7510722Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7511672Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7512786Z ##[group]GITHUB_TOKEN Permissions
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7515024Z Contents: write
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7515577Z Metadata: read
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7516096Z PullRequests: write
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7516747Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7518815Z Secret source: Actions
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.7519923Z Prepare workflow directory
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.8046732Z Prepare all required actions
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:44.8084383Z Getting action download info
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.1735776Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.3039844Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.4799739Z Complete job name: Run Tests
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5454945Z ##[group]Run actions/checkout@v4
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5455796Z with:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5456219Z   repository: SuperPartyByAI/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5456899Z   token: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5457292Z   ssh-strict: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5457731Z   ssh-user: git
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5458179Z   persist-credentials: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5458669Z   clean: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5459061Z   sparse-checkout-cone-mode: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5459809Z   fetch-depth: 1
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5460202Z   fetch-tags: false
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5460601Z   show-progress: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5461010Z   lfs: false
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5461379Z   submodules: false
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5461789Z   set-safe-directory: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5462477Z env:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5463013Z   SUPABASE_URL: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5465105Z   SUPABASE_KEY: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.5465498Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6592157Z Syncing repository: SuperPartyByAI/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6593951Z ##[group]Getting Git version info
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6594671Z Working directory is '/home/runner/work/Superparty/Superparty'
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6595654Z [command]/usr/bin/git version
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6686348Z git version 2.53.0
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6713626Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6730146Z Temporarily overriding HOME='/home/runner/work/_temp/f888b26c-96fa-4c22-8b88-52d6d64f00ae' before making global git config changes
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6732532Z Adding repository directory to the temporary git global config as a safe directory
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6744372Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6786447Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6790695Z ##[group]Initializing the repository
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6795833Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6914467Z hint: Using 'master' as the name for the initial branch. This default branch name
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6915855Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6917064Z hint: to use in all of your new repositories, which will suppress this warning,
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6918289Z hint: call:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6918877Z hint:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6919616Z hint: 	git config --global init.defaultBranch <name>
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6920621Z hint:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6921637Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6923281Z hint: 'development'. The just-created branch can be renamed via this command:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6924594Z hint:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6925315Z hint: 	git branch -m <name>
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6926159Z hint:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6927187Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6928929Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6932903Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6968720Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6970150Z ##[group]Disabling automatic garbage collection
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.6974049Z [command]/usr/bin/git config --local gc.auto 0
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7004253Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7005464Z ##[group]Setting up auth
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7012122Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7044923Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7447578Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7479081Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7711764Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.7744101Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.8018532Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.8055824Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.8056996Z ##[group]Fetching the repository
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:45.8066156Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e3380d9bc011524ef41265077d7ee8203bedd69:refs/remotes/origin/main
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8562361Z From https://github.com/SuperPartyByAI/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8564295Z  * [new ref]         5e3380d9bc011524ef41265077d7ee8203bedd69 -> origin/main
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8597557Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8598849Z ##[group]Determining the checkout info
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8600891Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8607048Z [command]/usr/bin/git sparse-checkout disable
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8652963Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8684452Z ##[group]Checking out the ref
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:48.8687442Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1160087Z Switched to a new branch 'main'
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1161609Z branch 'main' set up to track 'origin/main'.
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1204565Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1245773Z [command]/usr/bin/git log -1 --format=%H
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1270469Z 5e3380d9bc011524ef41265077d7ee8203bedd69
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1570421Z ##[group]Run actions/setup-python@v4
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1571605Z with:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1572440Z   python-version: 3.12
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1573397Z   check-latest: false
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1574578Z   token: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1575464Z   update-environment: true
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1576502Z   allow-prereleases: false
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1577755Z env:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1578851Z   SUPABASE_URL: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1584258Z   SUPABASE_KEY: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.1585162Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3331292Z ##[group]Installed versions
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3432630Z Successfully set up CPython (3.12.12)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3435423Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3577474Z ##[group]Run pip install -r requirements-dev.txt
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3578897Z [36;1mpip install -r requirements-dev.txt[0m
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3643415Z shell: /usr/bin/bash -e {0}
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3644381Z env:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3645499Z   SUPABASE_URL: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3650488Z   SUPABASE_KEY: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3651556Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3653144Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3654744Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3656175Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3657648Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3659108Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:49.3660440Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.7367847Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.8378426Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.8790116Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.8980115Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.9645628Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:51.9835499Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.0375000Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.0564956Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.0863858Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.1050482Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.1387841Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.1579085Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.1871263Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.2064954Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.2441184Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.2635900Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.2915731Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.3103137Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.3397827Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.3584237Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.4018907Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.4209959Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.4520084Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.4707174Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.5010450Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.5197197Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.5753158Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.5945083Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.6231210Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.6425228Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.6828424Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.7018336Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.9456932Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:52.9647752Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.0020362Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.0207921Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.2226045Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.2416342Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.2737961Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.2924164Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.3353005Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.3540067Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.4043660Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.4231625Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.5448888Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.5647507Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.6030659Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.6218225Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.6605119Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.6792652Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.7143080Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.7329990Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.8918257Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.9107958Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.9381508Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.9567911Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:53.9950635Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.0143146Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.0390225Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.0998239Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.1207472Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.1418941Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.1626980Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.1833912Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.2046589Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.3251843Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 127.7 MB/s  0:00:00
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.3442544Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.3659928Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.3876542Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.4084668Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.4302096Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.4514654Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.4728921Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.4948014Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.5162523Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.5374978Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.5587617Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.5827913Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.6038925Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.6253729Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.6473110Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.6777091Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 154.2 MB/s  0:00:00
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.6966612Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.7183840Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.7397765Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.7611970Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.7829733Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.8046511Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.8134941Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 158.7 MB/s  0:00:00
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.8320065Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:54.9393768Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:57.7799675Z 
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:57.7831458Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0610499Z ##[group]Run python -m pytest tests/ -q --tb=short
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0610888Z [36;1mpython -m pytest tests/ -q --tb=short[0m
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0663628Z shell: /usr/bin/bash -e {0}
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0663850Z env:
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0664259Z   SUPABASE_URL: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0665682Z   SUPABASE_KEY: ***
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0665946Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0666345Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0666739Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0667099Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0667450Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0667799Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Run Tests	UNKNOWN STEP	2026-03-15T12:54:58.0668104Z ##[endgroup]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.2471637Z ........................................................................ [ 10%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.3717770Z ........................................................................ [ 21%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.4747622Z ........................................................................ [ 32%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.5835497Z ........................................................................ [ 43%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.6715641Z ........................................................................ [ 53%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.7936657Z ........................................................................ [ 64%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.8830073Z ........................................................................ [ 75%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:00.9715727Z ........................................................................ [ 86%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.0699913Z ........................................................................ [ 97%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.4618836Z ...................                                                      [100%]
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.4620045Z 667 passed in 2.91s
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.5267225Z Post job cleanup.
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.6960682Z Post job cleanup.
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8054471Z [command]/usr/bin/git version
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8105730Z git version 2.53.0
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8164622Z Temporarily overriding HOME='/home/runner/work/_temp/208ec9d8-97d4-4fc3-880b-f3fd4c70ad0a' before making global git config changes
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8165999Z Adding repository directory to the temporary git global config as a safe directory
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8171135Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8211862Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8248565Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8506445Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8529796Z http.https://github.com/.extraheader
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8544209Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8576633Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8842448Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.8883424Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.9274105Z Cleaning up orphan processes
+Run Tests	UNKNOWN STEP	2026-03-15T12:55:01.9558729Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Validate JSON-LD	UNKNOWN STEP	∩╗┐2026-03-15T12:55:07.4802113Z Current runner version: '2.332.0'
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4825361Z ##[group]Runner Image Provisioner
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4826181Z Hosted Compute Agent
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4826819Z Version: 20260213.493
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4827413Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4828147Z Build Date: 2026-02-13T00:28:41Z
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4828753Z Worker ID: {5bdfa71a-cc88-4214-8536-51d64ec29232}
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4829792Z Azure Region: westus3
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4830499Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4831943Z ##[group]Operating System
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4832670Z Ubuntu
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4833151Z 24.04.3
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4833601Z LTS
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4834102Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4834614Z ##[group]Runner Image
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4835139Z Image: ubuntu-24.04
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4835728Z Version: 20260302.42.1
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4836911Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4838450Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4839316Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4840816Z ##[group]GITHUB_TOKEN Permissions
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4842657Z Contents: write
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4843191Z Metadata: read
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4843784Z PullRequests: write
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4844345Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4846366Z Secret source: Actions
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.4847203Z Prepare workflow directory
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.5184272Z Prepare all required actions
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.5222337Z Getting action download info
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:07.9223565Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.0864089Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.2695063Z Complete job name: Validate JSON-LD
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3396208Z ##[group]Run actions/checkout@v4
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3397062Z with:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3397476Z   repository: SuperPartyByAI/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3398149Z   token: ***
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3398536Z   ssh-strict: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3398916Z   ssh-user: git
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3399310Z   persist-credentials: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3399932Z   clean: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3400334Z   sparse-checkout-cone-mode: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3400811Z   fetch-depth: 1
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3401191Z   fetch-tags: false
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3401587Z   show-progress: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3401991Z   lfs: false
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3402353Z   submodules: false
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3402741Z   set-safe-directory: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.3403413Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4473818Z Syncing repository: SuperPartyByAI/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4475472Z ##[group]Getting Git version info
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4476247Z Working directory is '/home/runner/work/Superparty/Superparty'
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4477189Z [command]/usr/bin/git version
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4591078Z git version 2.53.0
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4620341Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4634382Z Temporarily overriding HOME='/home/runner/work/_temp/ceda895e-648f-4fd0-8789-f7406e780d6f' before making global git config changes
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4635847Z Adding repository directory to the temporary git global config as a safe directory
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4647083Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4689183Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4692483Z ##[group]Initializing the repository
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4696433Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4858830Z hint: Using 'master' as the name for the initial branch. This default branch name
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4860184Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4861124Z hint: to use in all of your new repositories, which will suppress this warning,
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4862092Z hint: call:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4862489Z hint:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4863428Z hint: 	git config --global init.defaultBranch <name>
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4864379Z hint:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4864935Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4865829Z hint: 'development'. The just-created branch can be renamed via this command:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4866529Z hint:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4866899Z hint: 	git branch -m <name>
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4867358Z hint:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4867942Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4869172Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4874599Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4912812Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4914031Z ##[group]Disabling automatic garbage collection
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4917823Z [command]/usr/bin/git config --local gc.auto 0
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4947413Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4948601Z ##[group]Setting up auth
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4954984Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.4987358Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.5409886Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.5446284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.5710329Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.5750593Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.6001834Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.6036874Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.6038314Z ##[group]Fetching the repository
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:08.6046823Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e3380d9bc011524ef41265077d7ee8203bedd69:refs/remotes/origin/main
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8860781Z From https://github.com/SuperPartyByAI/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8862602Z  * [new ref]         5e3380d9bc011524ef41265077d7ee8203bedd69 -> origin/main
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8900702Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8901984Z ##[group]Determining the checkout info
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8903694Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8907973Z [command]/usr/bin/git sparse-checkout disable
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8953394Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8985094Z ##[group]Checking out the ref
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:10.8989874Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1430642Z Switched to a new branch 'main'
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1432541Z branch 'main' set up to track 'origin/main'.
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1471736Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1512854Z [command]/usr/bin/git log -1 --format=%H
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1536488Z 5e3380d9bc011524ef41265077d7ee8203bedd69
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1842419Z ##[group]Run actions/setup-python@v4
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1843550Z with:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1844347Z   python-version: 3.12
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1845261Z   check-latest: false
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1846436Z   token: ***
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1847283Z   update-environment: true
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1848298Z   allow-prereleases: false
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.1849241Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3555109Z ##[group]Installed versions
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3662789Z Successfully set up CPython (3.12.12)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3665372Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3807487Z ##[group]Run pip install -r requirements-dev.txt
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3808827Z [36;1mpip install -r requirements-dev.txt[0m
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3876954Z shell: /usr/bin/bash -e {0}
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3877882Z env:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3878861Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3880733Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3882309Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3883719Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3885144Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3886564Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:11.3887763Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:13.9661103Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.0471274Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.0801657Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.0922874Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.1549870Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.1672698Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.2143909Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.2269401Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.2528160Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.2647942Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.2904328Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.3031114Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.3263153Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.3384203Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.3690614Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.3810800Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.4031696Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.4154078Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.4403410Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.4527378Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.4900714Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.5026513Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.5295622Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.5425946Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.5704817Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.5825644Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.6330530Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.6453105Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.6702497Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.6826195Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.7147839Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.7272582Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.9410427Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.9536751Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.9853963Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:14.9976499Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.1722071Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.1851399Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.2146562Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.2267448Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.2636952Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.2756032Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.3178139Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.3297887Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.4351921Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.4477063Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.4776888Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.4898470Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.5226074Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.5346900Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.5644439Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.5781839Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.7163481Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.7286465Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.7515247Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.7634924Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.7976454Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.8098226Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.8282374Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.8673782Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.8832062Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.8988052Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.9158555Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.9309911Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:15.9462059Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.0341952Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 174.0 MB/s  0:00:00
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.0463628Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.0621476Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.0775061Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.0920521Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1078802Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1243778Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1392065Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1560283Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1721685Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.1874526Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2036619Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2192412Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2347819Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2501636Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2658778Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.2886167Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 208.5 MB/s  0:00:00
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3007266Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3164493Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3321863Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3476280Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3630137Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3784920Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.3879676Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 139.3 MB/s  0:00:00
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.4000241Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:16.5060015Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.3024643Z 
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.3055323Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5364370Z ##[group]Run python -m agent.seo_agent.validate_jsonld
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5364752Z [36;1mpython -m agent.seo_agent.validate_jsonld[0m
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5416395Z shell: /usr/bin/bash -e {0}
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5416778Z env:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5417018Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5417470Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5417871Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5418211Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5418563Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5418914Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.5419205Z ##[endgroup]
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.6003733Z Validating all template engine scenarios...
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.6004690Z Γ£à JSON-LD VALIDATION PASSED ΓÇö all schemas valid
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.6130205Z Post job cleanup.
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.7784464Z Post job cleanup.
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8726469Z [command]/usr/bin/git version
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8764025Z git version 2.53.0
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8808008Z Temporarily overriding HOME='/home/runner/work/_temp/8e79a0ae-6360-4a0f-ba34-da19b988602e' before making global git config changes
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8809446Z Adding repository directory to the temporary git global config as a safe directory
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8814883Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8852604Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.8887022Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9137972Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9159822Z http.https://github.com/.extraheader
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9172465Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9203786Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9441074Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9474168Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:19.9820120Z Cleaning up orphan processes
+Validate JSON-LD	UNKNOWN STEP	2026-03-15T12:55:20.0111153Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Check Freeze Window	UNKNOWN STEP	∩╗┐2026-03-15T12:55:24.9981769Z Current runner version: '2.332.0'
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0004777Z ##[group]Runner Image Provisioner
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0005586Z Hosted Compute Agent
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0006293Z Version: 20260213.493
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0006913Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0007580Z Build Date: 2026-02-13T00:28:41Z
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0008324Z Worker ID: {c1929ab4-ba52-4189-8fab-178ea2cd155f}
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0009019Z Azure Region: westcentralus
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0009527Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0011006Z ##[group]Operating System
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0011614Z Ubuntu
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0012168Z 24.04.3
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0012964Z LTS
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0013483Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0014085Z ##[group]Runner Image
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0014629Z Image: ubuntu-24.04
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0015156Z Version: 20260309.50.1
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0016376Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0017952Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0018980Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0020087Z ##[group]GITHUB_TOKEN Permissions
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0022237Z Contents: write
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0023245Z Metadata: read
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0023737Z PullRequests: write
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0024349Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0026477Z Secret source: Actions
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0027397Z Prepare workflow directory
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0551917Z Prepare all required actions
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.0589983Z Getting action download info
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.4378751Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.5687930Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.7466708Z Complete job name: Check Freeze Window
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8101687Z ##[group]Run actions/checkout@v4
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8102525Z with:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8103149Z   repository: SuperPartyByAI/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8103849Z   token: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8104249Z   ssh-strict: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8104664Z   ssh-user: git
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8105084Z   persist-credentials: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8105554Z   clean: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8105980Z   sparse-checkout-cone-mode: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8106470Z   fetch-depth: 1
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8106880Z   fetch-tags: false
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8107303Z   show-progress: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8107740Z   lfs: false
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8108132Z   submodules: false
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8108563Z   set-safe-directory: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8109251Z env:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8109794Z   SUPABASE_URL: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8112073Z   SUPABASE_KEY: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.8112493Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9192543Z Syncing repository: SuperPartyByAI/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9194540Z ##[group]Getting Git version info
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9195282Z Working directory is '/home/runner/work/Superparty/Superparty'
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9196275Z [command]/usr/bin/git version
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9268341Z git version 2.53.0
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9295305Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9311192Z Temporarily overriding HOME='/home/runner/work/_temp/64cdcf3b-5a2a-481f-9416-e8616773cab1' before making global git config changes
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9313797Z Adding repository directory to the temporary git global config as a safe directory
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9318402Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9358732Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9363315Z ##[group]Initializing the repository
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9367172Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9472000Z hint: Using 'master' as the name for the initial branch. This default branch name
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9473401Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9474708Z hint: to use in all of your new repositories, which will suppress this warning,
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9475412Z hint: call:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9475772Z hint:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9476414Z hint: 	git config --global init.defaultBranch <name>
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9477416Z hint:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9477997Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9478871Z hint: 'development'. The just-created branch can be renamed via this command:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9479576Z hint:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9479955Z hint: 	git branch -m <name>
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9480393Z hint:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9480966Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9482465Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9487582Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9521369Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9522105Z ##[group]Disabling automatic garbage collection
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9525550Z [command]/usr/bin/git config --local gc.auto 0
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9555365Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9556051Z ##[group]Setting up auth
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9561744Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9592443Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9939986Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:25.9969799Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0198090Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0228095Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0478179Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0516195Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0517452Z ##[group]Fetching the repository
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:26.0526613Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e3380d9bc011524ef41265077d7ee8203bedd69:refs/remotes/origin/main
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3397343Z From https://github.com/SuperPartyByAI/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3399065Z  * [new ref]         5e3380d9bc011524ef41265077d7ee8203bedd69 -> origin/main
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3434057Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3435391Z ##[group]Determining the checkout info
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3437442Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3442211Z [command]/usr/bin/git sparse-checkout disable
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3487670Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3518401Z ##[group]Checking out the ref
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.3521966Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.5981644Z Switched to a new branch 'main'
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.5984030Z branch 'main' set up to track 'origin/main'.
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6025825Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6067354Z [command]/usr/bin/git log -1 --format=%H
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6091944Z 5e3380d9bc011524ef41265077d7ee8203bedd69
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6395984Z ##[group]Run actions/setup-python@v4
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6397205Z with:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6398066Z   python-version: 3.12
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6399057Z   check-latest: false
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6400285Z   token: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6401179Z   update-environment: true
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6402236Z   allow-prereleases: false
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6403642Z env:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6404775Z   SUPABASE_URL: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6410150Z   SUPABASE_KEY: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.6411081Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8131156Z ##[group]Installed versions
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8229217Z Successfully set up CPython (3.12.13)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8230301Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8340844Z ##[group]Run pip install -r requirements-dev.txt
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8341404Z [36;1mpip install -r requirements-dev.txt[0m
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8403347Z shell: /usr/bin/bash -e {0}
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8403686Z env:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8404148Z   SUPABASE_URL: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8405683Z   SUPABASE_KEY: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8406033Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8406545Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8407073Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8407544Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8408026Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8408489Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:28.8408881Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.5502382Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.6506153Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.6924120Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.7111972Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.7820861Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.8008805Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.8587336Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.8775109Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.9089797Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.9279287Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.9600471Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:30.9806175Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.0091421Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.0283757Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.0665769Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.0855960Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.1137155Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.1326596Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.1630861Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.1831694Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.2234474Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.2421278Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.2740118Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.2927471Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.3255691Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.3445637Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.4065397Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.4253950Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.4536942Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.4728697Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.5118780Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.5307939Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.7775390Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.7963086Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.8340232Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:31.8527440Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.0541661Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.0729262Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.1053877Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.1239615Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.1673033Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.1858958Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.2349973Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.2539917Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.3764067Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.3952490Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.4347889Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.4531744Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.4936126Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.5122944Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.5475440Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.5660743Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.7192341Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.7380903Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.7655731Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.7841929Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.8236159Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.8421298Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.8663252Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.9262989Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.9468838Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.9679881Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:32.9885618Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.0093243Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.0303170Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.1615461Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 116.5 MB/s  0:00:00
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.1820329Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.2036818Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.2250490Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.2463584Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.2685242Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.2895561Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.3103637Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.3320755Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.3531319Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.3742342Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.3955535Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.4164365Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.4372114Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.4587685Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.4801428Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.5087273Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 163.6 MB/s  0:00:00
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.5277922Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.5492524Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.5699913Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.5912532Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.6127645Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.6349324Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.6435700Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 162.2 MB/s  0:00:00
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.6623077Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:33.7625629Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.5550805Z 
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.5581469Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8158965Z ##[group]Run python -m agent.seo_agent.check_freeze_ci animatopia.ro
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8159477Z [36;1mpython -m agent.seo_agent.check_freeze_ci animatopia.ro[0m
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8210991Z shell: /usr/bin/bash -e {0}
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8211228Z env:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8211615Z   SUPABASE_URL: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8213228Z   SUPABASE_KEY: ***
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8213512Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8213939Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8214340Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8214706Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8215069Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8215439Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:36.8215756Z ##[endgroup]
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.7101474Z Γ£à FREEZE CHECK PASSED: animatopia.ro: no freeze set
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.7266778Z Post job cleanup.
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.8912300Z Post job cleanup.
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9871460Z [command]/usr/bin/git version
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9909080Z git version 2.53.0
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9953413Z Temporarily overriding HOME='/home/runner/work/_temp/5daf33f3-2624-43dc-9c45-3ac74e07a619' before making global git config changes
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9954676Z Adding repository directory to the temporary git global config as a safe directory
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9959353Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:37.9997471Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0033156Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0288025Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0310635Z http.https://github.com/.extraheader
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0323685Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0356562Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0598466Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0631057Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.0977554Z Cleaning up orphan processes
+Check Freeze Window	UNKNOWN STEP	2026-03-15T12:55:38.1291871Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Deploy to Canary	UNKNOWN STEP	∩╗┐2026-03-15T12:55:42.9794768Z Current runner version: '2.332.0'
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9831799Z ##[group]Runner Image Provisioner
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9833290Z Hosted Compute Agent
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9834289Z Version: 20260213.493
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9835317Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9836557Z Build Date: 2026-02-13T00:28:41Z
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9837654Z Worker ID: {4768b6d7-60c6-425d-a142-93fcb1156047}
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9838834Z Azure Region: eastus
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9839850Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9842429Z ##[group]Operating System
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9843585Z Ubuntu
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9844442Z 24.04.3
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9845273Z LTS
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9846313Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9847252Z ##[group]Runner Image
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9848263Z Image: ubuntu-24.04
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9849109Z Version: 20260302.42.1
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9851125Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9854062Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9855738Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9857830Z ##[group]GITHUB_TOKEN Permissions
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9860774Z Contents: write
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9862173Z Metadata: read
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9863144Z PullRequests: write
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9864723Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9867790Z Secret source: Actions
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:42.9869206Z Prepare workflow directory
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.0645662Z Prepare all required actions
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.0706152Z Getting action download info
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.2594963Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.4325673Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.6590717Z Complete job name: Deploy to Canary
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7259810Z ##[group]Run actions/checkout@v4
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7260652Z with:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7261079Z   repository: SuperPartyByAI/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7262037Z   token: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7262432Z   ssh-strict: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7262839Z   ssh-user: git
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7263248Z   persist-credentials: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7263695Z   clean: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7264098Z   sparse-checkout-cone-mode: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7264574Z   fetch-depth: 1
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7264971Z   fetch-tags: false
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7265381Z   show-progress: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7265806Z   lfs: false
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7266182Z   submodules: false
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7266593Z   set-safe-directory: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7267344Z env:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7267918Z   SUPABASE_URL: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7269997Z   SUPABASE_KEY: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.7270395Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8414104Z Syncing repository: SuperPartyByAI/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8417429Z ##[group]Getting Git version info
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8418684Z Working directory is '/home/runner/work/Superparty/Superparty'
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8420431Z [command]/usr/bin/git version
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8499747Z git version 2.53.0
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8527952Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8544748Z Temporarily overriding HOME='/home/runner/work/_temp/b3f2c141-6dd9-4dec-83a7-a9fb0cce4d9f' before making global git config changes
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8547110Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8561472Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8603905Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8607938Z ##[group]Initializing the repository
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8613394Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8740071Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8741779Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8744264Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8745502Z hint: call:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8746105Z hint:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8746884Z hint: 	git config --global init.defaultBranch <name>
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8747793Z hint:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8748366Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8749263Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8749961Z hint:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8750349Z hint: 	git branch -m <name>
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8750789Z hint:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8751608Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8753145Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8758392Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8795412Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8796186Z ##[group]Disabling automatic garbage collection
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8799302Z [command]/usr/bin/git config --local gc.auto 0
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8830423Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8831157Z ##[group]Setting up auth
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8837491Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.8869219Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9231091Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9263642Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9515826Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9553022Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9838572Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9883999Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9885268Z ##[group]Fetching the repository
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:43.9895864Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e3380d9bc011524ef41265077d7ee8203bedd69:refs/remotes/origin/main
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7741172Z From https://github.com/SuperPartyByAI/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7743163Z  * [new ref]         5e3380d9bc011524ef41265077d7ee8203bedd69 -> origin/main
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7822709Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7823591Z ##[group]Determining the checkout info
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7825208Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7830757Z [command]/usr/bin/git sparse-checkout disable
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7874565Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7901519Z ##[group]Checking out the ref
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:45.7906722Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0407365Z Switched to a new branch 'main'
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0409220Z branch 'main' set up to track 'origin/main'.
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0448699Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0490161Z [command]/usr/bin/git log -1 --format=%H
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0516898Z 5e3380d9bc011524ef41265077d7ee8203bedd69
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0833894Z ##[group]Run actions/setup-python@v4
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0835144Z with:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0836464Z   python-version: 3.12
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0838040Z   check-latest: false
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0839961Z   token: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0841692Z   update-environment: true
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0843267Z   allow-prereleases: false
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0845169Z env:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0847016Z   SUPABASE_URL: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0854840Z   SUPABASE_KEY: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.0855818Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.2666016Z ##[group]Installed versions
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3127600Z Successfully set up CPython (3.12.12)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3128673Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3255912Z ##[group]Run pip install -r requirements-dev.txt
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3256592Z [36;1mpip install -r requirements-dev.txt[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3367140Z shell: /usr/bin/bash -e {0}
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3367510Z env:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3368164Z   SUPABASE_URL: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3369874Z   SUPABASE_KEY: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3370250Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3370833Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3371585Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3372106Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3372651Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3373171Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:46.3373590Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.2381117Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.2944249Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3152203Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3183906Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3590041Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3624168Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3923668Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.3958296Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4105296Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4137261Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4289398Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4321537Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4442093Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4473830Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4662709Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4695024Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4846280Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.4878127Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5001195Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5033848Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5298057Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5333245Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5483474Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5514666Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5684014Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.5717431Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6099445Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6133010Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6264808Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6296899Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6492263Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.6523163Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.8219230Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.8256738Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.8471479Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.8505831Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.9955978Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:49.9993287Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0170334Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0201845Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0463066Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0494709Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0838270Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.0870054Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.1783011Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.1820872Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.1976571Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.2007180Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.2242280Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.2274087Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.2485088Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.2525680Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.3744801Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.3780069Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.3908744Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.3940460Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4164017Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4196315Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4289912Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4374459Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4432759Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4488780Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4539184Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4604984Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.4662885Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5306234Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 237.7 MB/s  0:00:00
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5341991Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5405943Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5465741Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5524743Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5594745Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5654842Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5715363Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5783895Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5850363Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5912031Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.5975507Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6034509Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6089567Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6156074Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6222755Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6444731Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 217.8 MB/s  0:00:00
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6479410Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6543927Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6617774Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6674181Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6733093Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6902520Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6925605Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 125.9 MB/s  0:00:00
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.6959361Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:50.8100589Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.6610149Z 
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.6642261Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8974183Z ##[group]Run python -c "
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8974490Z [36;1mpython -c "[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8974831Z [36;1mfrom agent.seo_agent.pr_generator import PRRequest, generate_pr[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8975211Z [36;1mreq = PRRequest([0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8975455Z [36;1m    site_domain='animatopia.ro',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8975760Z [36;1m    head_term='animatori petreceri copii',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8976121Z [36;1m    slug='animatori petreceri copii'.replace(' ', '-'),[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8976476Z [36;1m    description='Canary deploy via CI',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8976732Z [36;1m)[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8976986Z [36;1mresult = generate_pr(req, repo_dir='.', dry_run=False)[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8977339Z [36;1mprint(f'Branch: {result.branch_name}')[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8977633Z [36;1mprint(f'Success: {result.success}')[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8977915Z [36;1mif result.error:[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8978154Z [36;1m    print(f'Error: {result.error}')[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8978449Z [36;1m    exit(1)[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.8978638Z [36;1m"[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9030127Z shell: /usr/bin/bash -e {0}
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9030365Z env:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9030780Z   SUPABASE_URL: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9032347Z   SUPABASE_KEY: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9032634Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9033073Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9033495Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9033862Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9034223Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9034589Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:53.9034917Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4499373Z Branch: agent/seo/animatopia-owner-animatori-petreceri-copii-202603151255
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4500124Z Success: True
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4637889Z ##[group]Run python -c "
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4638178Z [36;1mpython -c "[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4638392Z [36;1mimport json, datetime[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4638616Z [36;1mentry = {[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4638858Z [36;1m    'actor': 'github-actions',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4639123Z [36;1m    'action': 'canary_deploy',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4639374Z [36;1m    'payload': {[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4639597Z [36;1m        'site': 'animatopia.ro',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4639895Z [36;1m        'head_term': 'animatori petreceri copii',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4640195Z [36;1m        'dry_run': False,[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4640458Z [36;1m        'triggered_by': 'SuperPartyByAI',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4640732Z [36;1m        'run_id': '23110787771',[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4641043Z [36;1m        'timestamp': datetime.datetime.now().isoformat(),[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4641746Z [36;1m    }[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4641951Z [36;1m}[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4642184Z [36;1mprint(json.dumps(entry, indent=2))[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4642425Z [36;1m"[0m
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4692086Z shell: /usr/bin/bash -e {0}
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4692315Z env:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4692713Z   SUPABASE_URL: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4694091Z   SUPABASE_KEY: ***
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4694364Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4694772Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4695183Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4695543Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4695896Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4696250Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4696549Z ##[endgroup]
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4952063Z {
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4953156Z   "actor": "github-actions",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4953685Z   "action": "canary_deploy",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4954190Z   "payload": {
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4954611Z     "site": "animatopia.ro",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4955154Z     "head_term": "animatori petreceri copii",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4955735Z     "dry_run": false,
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4956191Z     "triggered_by": "SuperPartyByAI",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4956722Z     "run_id": "23110787771",
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4957132Z     "timestamp": "2026-03-15T12:55:54.494967"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4957471Z   }
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.4957674Z }
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.5049550Z Post job cleanup.
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.6755544Z Post job cleanup.
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7718013Z [command]/usr/bin/git version
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7755248Z git version 2.53.0
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7800396Z Temporarily overriding HOME='/home/runner/work/_temp/b79a6075-63bf-466a-9ce2-82b79a7b8d76' before making global git config changes
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7802025Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7807530Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7847880Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.7883671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8139496Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8162432Z http.https://github.com/.extraheader
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8175397Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8207831Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8452206Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8486001Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.8842612Z Cleaning up orphan processes
+Deploy to Canary	UNKNOWN STEP	2026-03-15T12:55:54.9134537Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Initial Health Check	UNKNOWN STEP	∩╗┐2026-03-15T12:55:58.2351419Z Current runner version: '2.332.0'
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2385443Z ##[group]Runner Image Provisioner
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2386436Z Hosted Compute Agent
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2387079Z Version: 20260213.493
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2387705Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2388455Z Build Date: 2026-02-13T00:28:41Z
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2389169Z Worker ID: {419bfae3-9665-453c-90a6-27c45dc1cd3e}
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2389879Z Azure Region: northcentralus
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2390461Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2392495Z ##[group]Operating System
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2393117Z Ubuntu
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2393614Z 24.04.3
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2394135Z LTS
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2394629Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2395445Z ##[group]Runner Image
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2396109Z Image: ubuntu-24.04
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2396668Z Version: 20260302.42.1
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2397829Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2399418Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2400348Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2401522Z ##[group]GITHUB_TOKEN Permissions
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2403593Z Contents: write
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2404347Z Metadata: read
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2405170Z PullRequests: write
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2405762Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2407981Z Secret source: Actions
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2408732Z Prepare workflow directory
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2948364Z Prepare all required actions
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.2986743Z Getting action download info
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.6512624Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.7747374Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:58.8902453Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.1207275Z Complete job name: Initial Health Check
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2000397Z ##[group]Run actions/checkout@v4
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2001836Z with:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2002652Z   repository: SuperPartyByAI/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2004024Z   token: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2004782Z   ssh-strict: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2005736Z   ssh-user: git
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2006550Z   persist-credentials: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2007452Z   clean: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2008258Z   sparse-checkout-cone-mode: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2009243Z   fetch-depth: 1
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2010032Z   fetch-tags: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2010844Z   show-progress: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2011663Z   lfs: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2012404Z   submodules: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2013209Z   set-safe-directory: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2014338Z env:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2015645Z   SUPABASE_URL: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2020630Z   SUPABASE_KEY: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2021463Z   GSC_SERVICE_ACCOUNT_JSON: 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.2022383Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3206495Z Syncing repository: SuperPartyByAI/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3209189Z ##[group]Getting Git version info
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3210557Z Working directory is '/home/runner/work/Superparty/Superparty'
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3212680Z [command]/usr/bin/git version
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3277313Z git version 2.53.0
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3309446Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3325833Z Temporarily overriding HOME='/home/runner/work/_temp/36adcac0-f5ea-466e-b698-ce6e46ee8e68' before making global git config changes
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3329274Z Adding repository directory to the temporary git global config as a safe directory
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3340031Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3381622Z Deleting the contents of '/home/runner/work/Superparty/Superparty'
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3385735Z ##[group]Initializing the repository
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3390117Z [command]/usr/bin/git init /home/runner/work/Superparty/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3487218Z hint: Using 'master' as the name for the initial branch. This default branch name
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3490813Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3493785Z hint: to use in all of your new repositories, which will suppress this warning,
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3496676Z hint: call:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3497831Z hint:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3499305Z hint: 	git config --global init.defaultBranch <name>
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3501192Z hint:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3503012Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3506100Z hint: 'development'. The just-created branch can be renamed via this command:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3508551Z hint:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3509975Z hint: 	git branch -m <name>
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3511378Z hint:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3513431Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3517346Z Initialized empty Git repository in /home/runner/work/Superparty/Superparty/.git/
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3522889Z [command]/usr/bin/git remote add origin https://github.com/SuperPartyByAI/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3547707Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3550396Z ##[group]Disabling automatic garbage collection
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3552574Z [command]/usr/bin/git config --local gc.auto 0
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3583993Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3585934Z ##[group]Setting up auth
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3590443Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3623493Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.3968530Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4005621Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4248118Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4286020Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4527781Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4565398Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4567814Z ##[group]Fetching the repository
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:55:59.4577407Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e3380d9bc011524ef41265077d7ee8203bedd69:refs/remotes/origin/main
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5437670Z From https://github.com/SuperPartyByAI/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5439588Z  * [new ref]         5e3380d9bc011524ef41265077d7ee8203bedd69 -> origin/main
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5518006Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5518878Z ##[group]Determining the checkout info
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5520793Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5526840Z [command]/usr/bin/git sparse-checkout disable
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5570403Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5597787Z ##[group]Checking out the ref
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.5602553Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8038051Z Switched to a new branch 'main'
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8038849Z branch 'main' set up to track 'origin/main'.
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8080203Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8120107Z [command]/usr/bin/git log -1 --format=%H
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8144347Z 5e3380d9bc011524ef41265077d7ee8203bedd69
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8383406Z ##[group]Run actions/setup-python@v4
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8383967Z with:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8384235Z   python-version: 3.12
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8384806Z   check-latest: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8385614Z   token: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8385897Z   update-environment: true
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8386228Z   allow-prereleases: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8386523Z env:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8386885Z   SUPABASE_URL: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8388429Z   SUPABASE_KEY: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8388722Z   GSC_SERVICE_ACCOUNT_JSON: 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:01.8389037Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0106963Z ##[group]Installed versions
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0202134Z Successfully set up CPython (3.12.12)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0203261Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0323718Z ##[group]Run pip install -r requirements-dev.txt
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0324375Z [36;1mpip install -r requirements-dev.txt[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0388786Z shell: /usr/bin/bash -e {0}
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0389133Z env:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0389643Z   SUPABASE_URL: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0391236Z   SUPABASE_KEY: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0391535Z   GSC_SERVICE_ACCOUNT_JSON: 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0391935Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0392498Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0393036Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0393538Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0394033Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0394526Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:02.0395201Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.4528819Z Collecting pytest>=9.0 (from -r requirements-dev.txt (line 2))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.5094012Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.5325979Z Collecting flake8>=7.0 (from -r requirements-dev.txt (line 3))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.5361805Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.5788561Z Collecting google-api-python-client>=2.100 (from -r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.5824649Z   Downloading google_api_python_client-2.192.0-py3-none-any.whl.metadata (7.0 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6132422Z Collecting google-auth>=2.20 (from -r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6165530Z   Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6308313Z Collecting iniconfig>=1.0.1 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6340127Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6493727Z Collecting packaging>=22 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6528562Z   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6645860Z Collecting pluggy<2,>=1.5 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6677649Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6856943Z Collecting pygments>=2.7.2 (from pytest>=9.0->-r requirements-dev.txt (line 2))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.6931106Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7027649Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7064850Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7202859Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7235835Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7507943Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8>=7.0->-r requirements-dev.txt (line 3))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7543483Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7688362Z Collecting httplib2<1.0.0,>=0.19.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7720225Z   Downloading httplib2-0.31.2-py3-none-any.whl.metadata (2.2 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7872838Z Collecting google-auth-httplib2<1.0.0,>=0.2.0 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.7905238Z   Downloading google_auth_httplib2-0.3.0-py3-none-any.whl.metadata (3.1 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8316645Z Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8353046Z   Downloading google_api_core-2.30.0-py3-none-any.whl.metadata (3.1 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8479538Z Collecting uritemplate<5,>=3.0.1 (from google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8513723Z   Downloading uritemplate-4.2.0-py3-none-any.whl.metadata (2.6 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8699919Z Collecting pyasn1-modules>=0.2.1 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:04.8733497Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.0401520Z Collecting cryptography>=38.0.3 (from google-auth>=2.20->-r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.0438535Z   Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.0641340Z Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.0673895Z   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl.metadata (9.4 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2086990Z Collecting protobuf<7.0.0,>=4.25.8 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2123145Z   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2274402Z Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2310320Z   Downloading proto_plus-1.27.1-py3-none-any.whl.metadata (2.2 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2565381Z Collecting requests<3.0.0,>=2.20.0 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2600938Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2923135Z Collecting pyparsing<4,>=3.1 (from httplib2<1.0.0,>=0.19.0->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.2961677Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.3861815Z Collecting charset_normalizer<4,>=2 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.3901473Z   Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (39 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4052015Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4084641Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4310069Z Collecting urllib3<3,>=1.21.1 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4346528Z   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4539141Z Collecting certifi>=2017.4.17 (from requests<3.0.0,>=2.20.0->google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0,>=1.31.5->google-api-python-client>=2.100->-r requirements-dev.txt (line 4))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.4576677Z   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.5822068Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.5858887Z   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.5982756Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6017079Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6228302Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=2.20->-r requirements-dev.txt (line 5))
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6266172Z   Downloading pyasn1-0.6.2-py3-none-any.whl.metadata (8.4 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6357244Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6449427Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6507466Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6565391Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6623660Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6677486Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.6731410Z Downloading google_api_python_client-2.192.0-py3-none-any.whl (14.8 MB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7296200Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 14.8/14.8 MB 272.9 MB/s  0:00:00
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7333573Z Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7401262Z Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7462323Z Downloading google_auth_httplib2-0.3.0-py3-none-any.whl (9.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7526054Z Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7598251Z Downloading httplib2-0.31.2-py3-none-any.whl (91 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7655383Z Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7708944Z Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7775140Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7833607Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7886939Z Downloading charset_normalizer-3.4.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.7945915Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8002871Z Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8054889Z Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8110385Z Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8177358Z Downloading cryptography-46.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8390188Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 4.5/4.5 MB 227.8 MB/s  0:00:00
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8426631Z Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8491562Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8547877Z Downloading packaging-26.0-py3-none-any.whl (74 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8618253Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8681249Z Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8737935Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8825992Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.2/1.2 MB 161.6 MB/s  0:00:00
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.8859310Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:05.9910470Z Installing collected packages: urllib3, uritemplate, pyparsing, pygments, pyflakes, pycparser, pycodestyle, pyasn1, protobuf, pluggy, packaging, mccabe, iniconfig, idna, charset_normalizer, certifi, requests, pytest, pyasn1-modules, proto-plus, httplib2, googleapis-common-protos, flake8, cffi, cryptography, google-auth, google-auth-httplib2, google-api-core, google-api-python-client
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.7433991Z 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.7466090Z Successfully installed certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 flake8-7.3.0 google-api-core-2.30.0 google-api-python-client-2.192.0 google-auth-2.49.1 google-auth-httplib2-0.3.0 googleapis-common-protos-1.73.0 httplib2-0.31.2 idna-3.11 iniconfig-2.3.0 mccabe-0.7.0 packaging-26.0 pluggy-1.6.0 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycodestyle-2.14.0 pycparser-3.0 pyflakes-3.4.0 pygments-2.19.2 pyparsing-3.3.2 pytest-9.0.2 requests-2.32.5 uritemplate-4.2.0 urllib3-2.6.3
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9956971Z ##[group]Run python -c "
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9957266Z [36;1mpython -c "[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9957590Z [36;1mfrom agent.seo_agent.daily_report import generate_report[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9958001Z [36;1mreport = generate_report([0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9958292Z [36;1m    site_url='sc-domain:animatopia.ro',[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9958606Z [36;1m    query='animatori petreceri copii',[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9958885Z [36;1m    day_number=0,[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9959123Z [36;1m    output_dir='reports/canary',[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9959396Z [36;1m)[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9959616Z [36;1mprint(f'Verdict: {report[\"verdict\"]}')[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9959919Z [36;1mif report['verdict'] == 'critical':[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9960225Z [36;1m    print('ΓÜá∩╕Å CRITICAL ΓÇö consider rollback')[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9960507Z [36;1m    exit(1)[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:09.9960705Z [36;1m"[0m
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0010818Z shell: /usr/bin/bash -e {0}
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0011114Z env:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0011616Z   SUPABASE_URL: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0013034Z   SUPABASE_KEY: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0013259Z   GSC_SERVICE_ACCOUNT_JSON: 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0013669Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0014110Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0014527Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0014896Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0015486Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0015890Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.0016210Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7773623Z No GSC credentials ΓÇö returning stub data
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7778767Z 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7779185Z ============================================================
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7779832Z   DAY 0 REPORT ΓÇö superparty.ro ΓÇö 2026-03-15
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7780317Z ============================================================
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7780853Z   owner_share:  38.6% Γåæ (+0.0pp vs Day 2)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7781272Z   impressions:  owner=223 | homepage=354
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7781660Z   clicks:       owner=3 | homepage=0
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7782042Z   CTR:          owner=1.30% | homepage=0.00%
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7782465Z   avg position: owner=12.8 | homepage=12.7
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7782872Z   verdict:      WARNING
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7783332Z   ΓÜá WARNING: owner_share = 38.6% (below 60% target)
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7783840Z ============================================================
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7784145Z 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.7784257Z Verdict: warning
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8112187Z ##[group]Run actions/upload-artifact@v4
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8112468Z with:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8112651Z   name: canary-report
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8112863Z   path: reports/canary/
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8113073Z   if-no-files-found: warn
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8113295Z   compression-level: 6
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8113500Z   overwrite: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8113700Z   include-hidden-files: false
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8113924Z env:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8114254Z   SUPABASE_URL: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8115903Z   SUPABASE_KEY: ***
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8116116Z   GSC_SERVICE_ACCOUNT_JSON: 
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8116422Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8116843Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8117252Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8117798Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8118190Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8118591Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:10.8118901Z ##[endgroup]
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.0350140Z With the provided path, there will be 2 files uploaded
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.0357054Z Artifact name is valid!
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.0358278Z Root directory input is valid!
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.1512896Z Beginning upload of artifact content to blob storage
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.2678074Z Uploaded bytes 782
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.2994284Z Finished uploading artifact content to blob storage!
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.2998050Z SHA256 digest of uploaded artifact zip is f3bd3737e44666970a4576fbbf4108a368499eb01f099c164bcc4d57e0f52d90
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.2999503Z Finalizing artifact upload
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.4137205Z Artifact canary-report.zip successfully finalized. Artifact ID 5931544386
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.4138876Z Artifact canary-report has been successfully uploaded! Final size is 782 bytes. Artifact ID is 5931544386
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.4144499Z Artifact download URL: https://github.com/SuperPartyByAI/Superparty/actions/runs/23110787771/artifacts/5931544386
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.4282250Z Post job cleanup.
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.6067657Z Post job cleanup.
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7065637Z [command]/usr/bin/git version
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7109678Z git version 2.53.0
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7158088Z Temporarily overriding HOME='/home/runner/work/_temp/86c88eb0-1967-4d18-936b-96a9ace49928' before making global git config changes
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7160549Z Adding repository directory to the temporary git global config as a safe directory
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7165808Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Superparty/Superparty
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7212144Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7254496Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7518266Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7542770Z http.https://github.com/.extraheader
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7555775Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7588892Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7836436Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.7869876Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.8230115Z Cleaning up orphan processes
+Initial Health Check	UNKNOWN STEP	2026-03-15T12:56:11.8519077Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v4, actions/upload-artifact@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

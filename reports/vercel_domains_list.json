@@ -1,0 +1,565 @@
+[
+  {
+    "boughtAt": null,
+    "createdAt": 1773589121153,
+    "expiresAt": null,
+    "id": "QmVRi8R53nxrjqPjHMp1rcXK83uojmssdR4Vz9DdQa5rzR",
+    "name": "ursitoaremagice.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849432,
+    "verificationRecord": "oETSBSG7gm"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589116276,
+    "expiresAt": null,
+    "id": "Qmec4eFopWYtFM3ZEazYcrK11gbvUdmCh2swefTBitF42x",
+    "name": "universeparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "K5hSMszUTn"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589111369,
+    "expiresAt": null,
+    "id": "QmNVCfRZH41mUk3jC3SAV22YjJqGp6TSjBKDQohEcsL3bx",
+    "name": "teraparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "SgFatQAPB7"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589106084,
+    "expiresAt": null,
+    "id": "Qmbgiod9SFaW6qy6xff7JudSoTT4hEgdXcHycxtNhLy6bm",
+    "name": "clubuldisney.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "Ud4WVoQWif"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589101003,
+    "expiresAt": null,
+    "id": "QmeErWznuYhkRJmqwB3gQGCk5jdnhuNbkETA1xE8xQR7Aw",
+    "name": "youparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "CDvN6weLN9"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589095668,
+    "expiresAt": null,
+    "id": "QmXs1Z4NNHemWx2TkeXtxMf4MHNLAtzvUHYjgoCL6ikZYp",
+    "name": "kassia.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "PJhVjtBJA7"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589090225,
+    "expiresAt": null,
+    "id": "QmPQoTuSMJNFE3AY28K1odDwXFHNLJ6V7nHiP752jSsYgH",
+    "name": "petreceritematice.ro",
+    "renew": false,
+    "serviceType": "external",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns2.hosterion.net",
+      "ns1.hosterion.com",
+      "ns2.hosterion.com",
+      "ns1.hosterion.net"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": null,
+    "verificationRecord": "DsvN5CkFBy"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589026624,
+    "expiresAt": null,
+    "id": "QmUk7udLZA5ZVgVEcWxvkCVV7cHziVdkEHPP7G6NfUwVkP",
+    "name": "playparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "AX4JcBMhTV"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589021926,
+    "expiresAt": null,
+    "id": "Qmb5y1hSyXNbBRkYTYxoKiDvVziBeoqogDUCA4Stxyk5BQ",
+    "name": "planetparty.ro",
+    "renew": false,
+    "serviceType": "external",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.hosterion.com",
+      "ns2.hosterion.com",
+      "ns2.hosterion.net",
+      "ns1.hosterion.net"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": null,
+    "verificationRecord": "9Eori2JQ3f"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589016068,
+    "expiresAt": null,
+    "id": "QmfYSibJC7HVhUr1Hc2d9VFZNuW3p7GjbCBVhg5EVWu6uy",
+    "name": "partymania.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "p3umzFY7DV"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589011057,
+    "expiresAt": null,
+    "id": "QmXRRFFZH84e76wiUPAGnJW2fAAcetKu8kzgQXfmvbEeac",
+    "name": "joyparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "7vXycQTRdR"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589006081,
+    "expiresAt": null,
+    "id": "QmUexUP688TJ8mLCmvwUm9ECyo8GXG1AaRauMja2SXCQvc",
+    "name": "divertix.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "2XmSBgbYn4"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773589001199,
+    "expiresAt": null,
+    "id": "QmWDvr3ZMXdvaoajW3tVUCM4xw9SFdMYs9LDW3eCEg9Wpp",
+    "name": "123party.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "LPUb7GTMAK"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1773393437352,
+    "expiresAt": null,
+    "id": "QmWn16VJQdrjq8qg8MtQVdupEJ6cS5p3MQbv6TT3gqhKBJ",
+    "name": "wowparty.ro",
+    "renew": false,
+    "serviceType": "external",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns2.hosterion.com",
+      "ns1.hosterion.com",
+      "ns1.hosterion.net",
+      "ns2.hosterion.net"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": 1773393444542,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": null,
+    "verificationRecord": "ws53vc5QEf"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1772369382301,
+    "expiresAt": null,
+    "id": "QmVRBoDAR5nqyeSb526WhFsfTCMdotoY95kFgL13diKn8y",
+    "name": "superparty.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "intendedNameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": true,
+    "configVerifiedAt": 1772371837283,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "kbtrTJLaJo"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1772340345040,
+    "expiresAt": null,
+    "id": "QmTndAwXM8dU9ivVNhSLJpZPL1RtxG3EFwAKsfGNc3YRKZ",
+    "name": "animatopia.ro",
+    "renew": false,
+    "serviceType": "zeit.world",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.hosterion.com",
+      "ns1.hosterion.net",
+      "ns2.hosterion.com",
+      "ns2.hosterion.net"
+    ],
+    "intendedNameservers": [],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": false,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": 1773608849433,
+    "verificationRecord": "K8RkyqcevL"
+  },
+  {
+    "boughtAt": null,
+    "createdAt": 1763141430077,
+    "expiresAt": null,
+    "id": "QmesiC4e8yfNs8R8uFtKxgcrkV3fCdeJi1FvVyHY4bgHtA",
+    "name": "superpartybyai.ro",
+    "renew": false,
+    "serviceType": "external",
+    "transferredAt": null,
+    "userId": "9cjVREGeIrqBxQKS7Isy8b1Q",
+    "teamId": "team_gjJrKuzifRErrP5r41D6suvF",
+    "cdnEnabled": true,
+    "verified": true,
+    "nameservers": [
+      "ns1.dns-parking.com",
+      "ns2.dns-parking.com"
+    ],
+    "intendedNameservers": [],
+    "creator": {
+      "id": "9cjVREGeIrqBxQKS7Isy8b1Q",
+      "customerId": null,
+      "email": "superpartybyai@gmail.com",
+      "username": "superpartybyai"
+    },
+    "zone": false,
+    "configVerifiedAt": null,
+    "txtVerifiedAt": null,
+    "nsVerifiedAt": null,
+    "verificationRecord": "3dmErREz6F"
+  }
+]
