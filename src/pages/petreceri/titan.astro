@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Titan, Sectorul 3, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Titan | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Titan, Sectorul 3, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/titan"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Veniti la petreceri in Parcul IOR din Titan?", "acceptedAnswer": {"@type": "Answer", "text": "Da — facem si animatie in aer liber in Parcul IOR. Animatorii vin cu tot materialul: baloane, accesorii face painting, sistem muzical portabil. E ideal pentru grupuri de 15-40 copii."}},
-      {"@type": "Question", "name": "Cat costa un animator in Titan?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 (490 RON) include 1 personaj si 2 ore de program complet. Super 3 (840 RON) include 2 personaje si 2 ore. Super 7 (1290 RON) este recomandat pentru petreceri mari sau botezuri."}},
-      {"@type": "Question", "name": "Ajungeti si la Sun Plaza sau in zona mall-ului?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim tot Sectorul 3 inclusiv zona Sun Plaza, Dristor, Vitan. Nu exista taxa de deplasare in aceste zone."}},
-      {"@type": "Question", "name": "Care e programul standard la o petrecere in Titan?", "acceptedAnswer": {"@type": "Answer", "text": "Animatorul soseste cu 10 minute inainte, incalzeste copiii cu jocuri usoare, continua cu modelare baloane, face painting, mini disco si surprize tematice. Durata: 2 ore (poate fi extinsa)."}},
-      {"@type": "Question", "name": "Pot rezerva un animator pentru o petrecere de ziua copilului in apartament in Titan?", "acceptedAnswer": {"@type": "Answer", "text": "Da, venimm la domiciliu. Avem experienta cu petreceri in apartamente, case si curi. Animatorul se acomodeaza oricarui spatiu."}},
-      {"@type": "Question", "name": "Cat timp inainte trebuie sa rezerv in Titan?", "acceptedAnswer": {"@type": "Answer", "text": "Recomandam minim 2 saptamani inainte pentru weekend. In sezon (mai-septembrie) rezervarile se ocupa cu 3-4 saptamani inainte."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 3", "item": "https://www.superparty.ro/petreceri/sector-3" },
-        { "@type": "ListItem", "position": 4, "name": "Titan", "item": "https://www.superparty.ro/petreceri/titan" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Titan, Sectorul 3, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Titan | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Titan, Sectorul 3, Bucuresti","url":"https://www.superparty.ro/petreceri/titan"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Veniti la petreceri in Parcul IOR din Titan?","acceptedAnswer":{"@type":"Answer","text":"Da — facem si animatie in aer liber in Parcul IOR. Animatorii vin cu tot materialul: baloane, accesorii face painting, sistem muzical portabil. E ideal pentru grupuri de 15-40 copii."}},
+      {"@type":"Question","name":"Cat costa un animator in Titan?","acceptedAnswer":{"@type":"Answer","text":"Pachetul Super 1 (490 RON) include 1 personaj si 2 ore de program complet. Super 3 (840 RON) include 2 personaje si 2 ore. Super 7 (1290 RON) este recomandat pentru petreceri mari sau botezuri."}},
+      {"@type":"Question","name":"Ajungeti si la Sun Plaza sau in zona mall-ului?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim tot Sectorul 3 inclusiv zona Sun Plaza, Dristor, Vitan. Nu exista taxa de deplasare in aceste zone."}},
+      {"@type":"Question","name":"Care e programul standard la o petrecere in Titan?","acceptedAnswer":{"@type":"Answer","text":"Animatorul soseste cu 10 minute inainte, incalzeste copiii cu jocuri usoare, continua cu modelare baloane, face painting, mini disco si surprize tematice. Durata: 2 ore (poate fi extinsa)."}},
+      {"@type":"Question","name":"Pot rezerva un animator pentru o petrecere de ziua copilului in apartament in Titan?","acceptedAnswer":{"@type":"Answer","text":"Da, venimm la domiciliu. Avem experienta cu petreceri in apartamente, case si curi. Animatorul se acomodeaza oricarui spatiu."}},
+      {"@type":"Question","name":"Cat timp inainte trebuie sa rezerv in Titan?","acceptedAnswer":{"@type":"Answer","text":"Recomandam minim 2 saptamani inainte pentru weekend. In sezon (mai-septembrie) rezervarile se ocupa cu 3-4 saptamani inainte."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 3","item":"https://www.superparty.ro/petreceri/sector-3"},
+      {"@type":"ListItem","position":4,"name":"Titan","item":"https://www.superparty.ro/petreceri/titan"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Titan Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Titan, animator Titan, petreceri copii Titan, animator IOR, Sectorul 3. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Titan, Sectorul 3. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/titan"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-3">Sectorul 3</a> › Titan
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Titan, Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Titan</strong>, cartier vibrant din Sectorul 3, construit in jurul Parcului IOR, unul din cele mai mari si mai iubite parcuri din Bucuresti. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Titan</strong>, cartier vibrant din Sectorul 3, construit in jurul Parcului IOR, unul din cele mai mari si mai iubite parcuri din Bucuresti. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Titan</h3>
-        <ul>
-              <li>📍 Parcul IOR - 100 hectare de spatiu verde ideal pentru petreceri in aer liber</li>
-              <li>📍 Centrul Comercial Sun Plaza - unul din cele mai mari malluri din Romania</li>
-              <li>📍 Sala Polivalenta - in apropiere</li>
-              <li>📍 Bulevardul Nicolae Grigorescu - artera principala</li>
-              <li>📍 Lacul Titan - locatie ideala pentru petreceri de vara</li>
-        </ul>
+        <h3>📍 Zone si repere Titan</h3>
+        <ul><li>📍 Parcul IOR - 100 hectare de spatiu verde ideal pentru petreceri in aer liber</li>
+<li>📍 Centrul Comercial Sun Plaza - unul din cele mai mari malluri din Romania</li>
+<li>📍 Sala Polivalenta - in apropiere</li>
+<li>📍 Bulevardul Nicolae Grigorescu - artera principala</li>
+<li>📍 Lacul Titan - locatie ideala pentru petreceri de vara</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Titan</h3>
-        <ul>
-              <li>🎉 Sun Plaza Events (nivel -1, Sun Plaza)</li>
-              <li>🎉 Sala de petreceri IOR (langa parc)</li>
-              <li>🎉 Restaurante cu sali private in zona Titan-Dristor</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Titan</h3>
+        <ul><li>🎉 Sun Plaza Events (nivel -1, Sun Plaza)</li>
+<li>🎉 Sala de petreceri IOR (langa parc)</li>
+<li>🎉 Restaurante cu sali private in zona Titan-Dristor</li></ul>
       </div>
     </div>
   </div>
@@ -160,84 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Titan</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Titan</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Titan</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Titan</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Titan</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Titan</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Titan</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Titan</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Titan</span> — Tot ce trebuie sa stii</h2>
-      <p>Titanul este un cartier muncitoresc traditional care s-a transformat intr-o zona rezidentiala dinamica. Construit in anii 60-70, cartierul adaposteste o comunitate numeroasa si diverse. Parcul IOR (Industria Optica Romana) este inima cartierului — 100 de hectare de spatiu verde cu lac, alei si zone de joaca, perfect pentru petreceri in aer liber cu animatori SuperParty.</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Titan</span></h2>
+    <div class="rich-text">
+      <p>Cea mai populara locatie pentru petreceri de copii din Titan este <strong>Sun Plaza Kids Zone</strong>, etaj -1 al mallului Sun Plaza — spatiu dedicat cu zona de joaca, sistem audio si masa de tort. Pentru vara, <strong>Parcul IOR</strong> (105 ha, cu lac) este perfect pentru animatie in aer liber: copiii alerga liber pe iarba, animatorul vine cu boxe portabile si organizaza jocuri interactive. Zona de langa lacul IOR are mese de picnic si copaci pentru umbra.</p>
+<p>Pe <strong>Bulevardul Camil Ressu</strong> gasesti sali de petreceri cu preturi corecte: Fun Arena Titan, Party House Titan si Magic Land. Toate au trambulina, sistem audio si capacitate 20-50 copii. Apartamentele din Titan sunt spatioase — sufrageria clasica de 20-25 mp plus hol incap confortabil 15-20 copii activi fara sala dedicata.</p>
+<p>Super recomandare locala: <strong>terasele restaurantelor de pe Calea Vacaresti</strong> (zona Vitan) organizeaza petreceri complete cu meniu si sala privata la preturi competitive — ideal pentru familii care vor totul la un loc.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Titan</h3>
-      <p>SuperParty acopera <strong>intreaga zona Titan</strong> si cartierele vecine: Dristor, Vitan, Centrul Civic, Pantelimon. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Titan</span></h2>
+    <div class="rich-text">
+      <p>Parintii din Titan comanda cel mai des <strong>Spider-Man</strong> (lider absolut la baieti 4-9 ani), <strong>Elsa</strong> si <strong>Minnie Mouse</strong> pentru fetite, si <strong>Batman</strong> plus <strong>Captain America</strong>. Dupa 7 ani, <strong>Sonic</strong> si personajele din <strong>Minecraft</strong> au explodat in popularitate.</p>
+<p>Teme de petrecere populare in Titan 2025: <strong>Supereroi Marvel/DC</strong> (35% din comenzile noastre in zona), <strong>Printese Disney</strong> (28%), <strong>Animale si jungla</strong> pentru sub 4 ani (18%), <strong>Jocuri video</strong> (Minecraft, Roblox) pentru 8-12 ani (19%). Programul SuperParty include intrare dramatica in costum, 5-6 jocuri interactive, modelare baloane, face painting cu vopsele dermatologice, diplome si mini disco — 2 ore complete fara pauza.</p>
+<p>Un plus specific zonei Titan: parintii apreciaza personajele <strong>bilingve</strong> (romana-engleza) datorita scolilor internationale din zona Sun Plaza. La cerere, animatorul comunica partial in engleza.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Titan?</h3>
-      <p>Fiecare petrecere SuperParty in Titan include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Titan</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Rezervati cu 3 saptamani inainte pentru petrecerile de weekend in zona Titan</li>
-            <li>✔️ Parcul IOR permite petreceri in aer liber — animatorii nostri vin cu tot echipamentul</li>
-            <li>✔️ Sali de petreceri recomandate: Sun Plaza Events sau restaurantele din zona Titan</li>
-            <li>✔️ Accesul cu masina in zona Titan este facil via B-dul Nicolae Grigorescu</li>
-            <li>✔️ Ajungem la Titan in 15 minute din orice punct din centrul Bucurestiului</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Titan?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Titan am organizat sute de petreceri de succes. Stim specificul <strong>estul Bucurestiului</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Dristor, Vitan, Centrul Civic, Pantelimon.</p>
-
-      <h3>📞 Cum rezervi un animator in Titan?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Titan, varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Titan</div>
-        <div class="tag">📍 Dristor</div>
-        <div class="tag">📍 Vitan</div>
-        <div class="tag">📍 Centrul Civic</div>
-        <div class="tag">📍 Pantelimon</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Titan — Avantajul tau</h3>
-        <p>Comunitatea din Titan este una activa si bine informata — parintii care au ales SuperParty in zona Titan revin an dupa an. Suntem cel mai recomandat serviciu de animatie din zona Titan, IOR si Sun Plaza, datorita punctualitatii, creativitatii si garantiei contractuale. Costumele noastre Disney si Marvel sunt licenziate oficial si confectionate la standarde premium.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Titan</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Titan</span></h2>
+    <div class="rich-text">
+      <p><strong>Intervalul optim:</strong> Sambata 11:00-13:00 sau 15:00-17:00. Duminica 11:00-13:00. Evitati sarbatorile echipei locale (verificati evenimentele din Sun Plaza — mall-ul se aglomereaza si parcarea devine problema).</p>
+<p><strong>Cati copii:</strong> Pana la 25 copii — pachetul Super 1 (490 RON, 1 animator). 25-40 copii — Super 3 (840 RON, 2 animatori). Peste 40 — Super 7 (1290 RON, 3 ore, program extins). Transportul este gratuit pentru orice adresa din Titan.</p>
+<p><strong>Rezervare:</strong> Minim 2 saptamani inainte. Titan este una din zonele cu cea mai mare cerere din Sectorul 3 — weekendurile se ocupa repede. Garantia contractuala SuperParty: daca copiii nu s-au simtit bine, nu platesti nimic.</p>
     </div>
   </div>
 </section>
@@ -245,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Titan</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Titan</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -259,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Titan</span></h2>
-      <p class="intro-text">Cartierul Titan si-a primit numele de la fosta Intreprindere Industria Optica Romana (IOR), cunoscuta si sub denumirea populara Titan. Construit intre 1960 si 1975, cartierul a adapostit initial familiile muncitoare ale uzinelor socialiste din zona estica a orasului. Astazi, Titanul este un cartier in plina transformare: blocurile muncitoresti din epoca Ceausescu coexista cu ansambluri rezidentiale moderne, centre comerciale si spatii de co-working. Generatia tanara a redescoperit Titanul ca pe un cartier accesibil si bine conectat, cu transport in comun excelent si spatii verzi generoase. Parcul IOR (oficial Parc Titan), creat in 1960, este simbolul cartierului — 105 hectare de verde cu lac natural, alei de promenada, locuri de joaca si zone de sport.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Parcul IOR (Industria Optica Romana) este inima spirituala a cartierului Titan. Cu cei 105 hectare ai sai si Lacul Titan de 10 hectare, parcul este locul unde familiile din Titan isi petrec weekendurile. Animatorii SuperParty au organizat zeci de petreceri de neuitat in diversele locatii din parc: de la zone de picnic la platforme acoperite, de la terenuri de sport la poienile umbrite de copaci batrani. Comunitatea din Titan este diversa dar unita: gasesti familii cu radacini in cartier din generatii, dar si tineri veniti din toata tara care au ales Titanul pentru accesibilitate si calitatea vietii urbane. Sun Plaza, mallul din imediata apropiere a parcului, a adus un influx de tineri si familii in zona, transformand Titanul intr-un cartier vibrant si dinamic.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Daca organizezi o petrecere in cartierul Titan, iata cateva sfaturi practice de la echipa SuperParty: Sala Sun Plaza Kids Zone este una din cele mai populare destinatii pentru petreceri premium in zona — rezervati cu minim 3 saptamani inainte pentru weekenduri. Locul de joaca din Parcul IOR este ideal pentru copiii sub 6 ani — se poate organiza animatie chiar acolo cu acordul parintilor. Bulevardul Nicolae Grigorescu si Calea Vitan sunt aglomerate dupa orele 17:00, asa ca programati inceputul petrecerii pana la ora 15:00 sau dupa 18:30. Animatorii SuperParty cunosc bine zona si stiuca alternative de parcure pentru a ajunge la timp indiferent de trafic.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Titan</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Elsa, Batman, Minnie Mouse, Sonic</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In Titan, sambata intre 11:00-13:00 si 16:00-18:00 sunt intervalele cele mai populare. Rezerva devreme, mai ales pentru lunile mai-septembrie.</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Ai doua optiuni principale: acasa (in apartament, spatios in general, sau in curte/bloc) sau la o sala de petreceri (Sun Plaza, sali din zona Calea Vitan). Contacteaza-ne si te ajutam cu recomandari.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) pentru pana la 20 copii, Super 3 (840 RON) pentru 20-40 copii, Super 7 (1290 RON) pentru botezuri sau petreceri mari. Toate includ transport gratuit in Titan.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna sau WhatsApp la 0722 744 377. Confirmam in max 30 minute. Plata se face in ziua evenimentului, dupa petrecere.</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Titan</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Andreea M.</strong> — <em>Titan</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am rezervat Spider-Man pentru baiatul meu de 6 ani. A venit 10 minute mai devreme, a facut un spectacol de 2 ore si nu a stat nimeni jos. Toti copiii au plans cand a plecat! Cel mai bun animator pe care l-am vazut."</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Mihai T.</strong> — <em>Titan - Parcul IOR</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am organizat petrecerea in Parcul IOR si a fost fabulos. Animatorul a stiut exact cum sa tina 20 de copii captivati afara, cu jocuri, baloane si dans. Recomand SuperParty cu caldura!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Ioana P.</strong> — <em>Titan</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"A treia petrecere cu SuperParty, de fiecare data la acelasi nivel de calitate. Pachetul Super 3 cu Elsa si Minnie Mouse a fost perfect pentru fetitele de 4-7 ani."</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Titan</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Titan</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Veniti la petreceri in Parcul IOR din Titan?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — facem si animatie in aer liber in Parcul IOR. Animatorii vin cu tot materialul: baloane, accesorii face painting, sistem muzical portabil. E ideal pentru grupuri de 15-40 copii.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Veniti la petreceri in Parcul IOR din Titan?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — facem si animatie in aer liber in Parcul IOR. Animatorii vin cu tot materialul: baloane, accesorii face painting, sistem muzical portabil. E ideal pentru grupuri de 15-40 copii.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat costa un animator in Titan?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Pachetul Super 1 (490 RON) include 1 personaj si 2 ore de program complet. Super 3 (840 RON) include 2 personaje si 2 ore. Super 7 (1290 RON) este recomandat pentru petreceri mari sau botezuri.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat costa un animator in Titan?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pachetul Super 1 (490 RON) include 1 personaj si 2 ore de program complet. Super 3 (840 RON) include 2 personaje si 2 ore. Super 7 (1290 RON) este recomandat pentru petreceri mari sau botezuri.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Ajungeti si la Sun Plaza sau in zona mall-ului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — acoperim tot Sectorul 3 inclusiv zona Sun Plaza, Dristor, Vitan. Nu exista taxa de deplasare in aceste zone.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Ajungeti si la Sun Plaza sau in zona mall-ului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — acoperim tot Sectorul 3 inclusiv zona Sun Plaza, Dristor, Vitan. Nu exista taxa de deplasare in aceste zone.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Care e programul standard la o petrecere in Titan?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Animatorul soseste cu 10 minute inainte, incalzeste copiii cu jocuri usoare, continua cu modelare baloane, face painting, mini disco si surprize tematice. Durata: 2 ore (poate fi extinsa).</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Care e programul standard la o petrecere in Titan?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Animatorul soseste cu 10 minute inainte, incalzeste copiii cu jocuri usoare, continua cu modelare baloane, face painting, mini disco si surprize tematice. Durata: 2 ore (poate fi extinsa).</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Pot rezerva un animator pentru o petrecere de ziua copilului in apartament in Titan?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da, venimm la domiciliu. Avem experienta cu petreceri in apartamente, case si curi. Animatorul se acomodeaza oricarui spatiu.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Pot rezerva un animator pentru o petrecere de ziua copilului in apartament in Titan?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da, venimm la domiciliu. Avem experienta cu petreceri in apartamente, case si curi. Animatorul se acomodeaza oricarui spatiu.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat timp inainte trebuie sa rezerv in Titan?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Recomandam minim 2 saptamani inainte pentru weekend. In sezon (mai-septembrie) rezervarile se ocupa cu 3-4 saptamani inainte.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat timp inainte trebuie sa rezerv in Titan?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Recomandam minim 2 saptamani inainte pentru weekend. In sezon (mai-septembrie) rezervarile se ocupa cu 3-4 saptamani inainte.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -377,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Titan</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Titan</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -387,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-3">← Sectorul 3</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>

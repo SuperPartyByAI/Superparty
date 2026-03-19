@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Aviației, Sectorul 1, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Aviației | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Aviației, Sectorul 1, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/aviatiei"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Veniti la Promenada Mall pentru petreceri?", "acceptedAnswer": {"@type": "Answer", "text": "Avem experienta cu petrecerile in zona Promenada Mall. Lucram cu sali private din incinta sau in restaurantele din mall."}},
-      {"@type": "Question", "name": "Animatorii comunica si in engleza pentru famliiile de expati din Pipera?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem animatori bilingvi (romana/engleza) disponibili pentru petrecerile in zona Pipera, Aviatorilor, Baneasa unde sunt multi expati."}},
-      {"@type": "Question", "name": "Ce pachete preferati familiile din Aviatorilor/Pipera?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetele premium sunt cele mai alese: Super 3 (840 RON) si Super 7 (1290 RON). Acestea includ 2+ personaje si 2-3 ore de program complet."}},
-      {"@type": "Question", "name": "Cat costa un animator pentru o villa party in Pipera?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetele raman aceleasi: 490 / 840 / 1290 RON. Indiferent de locatie (vila, apartament sau sala), pretul pachetului nu se schimba."}},
-      {"@type": "Question", "name": "Aveti experienta cu petreceri tematice sofisticate in Aviatorilor?", "acceptedAnswer": {"@type": "Answer", "text": "Da — facem petreceri tematice complete: decor, personaj coordonat, jocuri tematice. Contactati-ne pentru pachete custom."}},
-      {"@type": "Question", "name": "Exista taxa de deplasare din Aviatorilor pana la Voluntari sau Pipera (Ilfov)?", "acceptedAnswer": {"@type": "Answer", "text": "Nu — acoperim toata zona Aviatorilor, Pipera si Voluntari fara taxa suplimentara de transport."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 1", "item": "https://www.superparty.ro/petreceri/sector-1" },
-        { "@type": "ListItem", "position": 4, "name": "Aviației", "item": "https://www.superparty.ro/petreceri/aviatiei" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Aviației, Sectorul 1, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Aviației | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Aviației, Sectorul 1, Bucuresti","url":"https://www.superparty.ro/petreceri/aviatiei"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Veniti la Promenada Mall pentru petreceri?","acceptedAnswer":{"@type":"Answer","text":"Avem experienta cu petrecerile in zona Promenada Mall. Lucram cu sali private din incinta sau in restaurantele din mall."}},
+      {"@type":"Question","name":"Animatorii comunica si in engleza pentru famliiile de expati din Pipera?","acceptedAnswer":{"@type":"Answer","text":"Da — avem animatori bilingvi (romana/engleza) disponibili pentru petrecerile in zona Pipera, Aviatorilor, Baneasa unde sunt multi expati."}},
+      {"@type":"Question","name":"Ce pachete preferati familiile din Aviatorilor/Pipera?","acceptedAnswer":{"@type":"Answer","text":"Pachetele premium sunt cele mai alese: Super 3 (840 RON) si Super 7 (1290 RON). Acestea includ 2+ personaje si 2-3 ore de program complet."}},
+      {"@type":"Question","name":"Cat costa un animator pentru o villa party in Pipera?","acceptedAnswer":{"@type":"Answer","text":"Pachetele raman aceleasi: 490 / 840 / 1290 RON. Indiferent de locatie (vila, apartament sau sala), pretul pachetului nu se schimba."}},
+      {"@type":"Question","name":"Aveti experienta cu petreceri tematice sofisticate in Aviatorilor?","acceptedAnswer":{"@type":"Answer","text":"Da — facem petreceri tematice complete: decor, personaj coordonat, jocuri tematice. Contactati-ne pentru pachete custom."}},
+      {"@type":"Question","name":"Exista taxa de deplasare din Aviatorilor pana la Voluntari sau Pipera (Ilfov)?","acceptedAnswer":{"@type":"Answer","text":"Nu — acoperim toata zona Aviatorilor, Pipera si Voluntari fara taxa suplimentara de transport."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 1","item":"https://www.superparty.ro/petreceri/sector-1"},
+      {"@type":"ListItem","position":4,"name":"Aviației","item":"https://www.superparty.ro/petreceri/aviatiei"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Aviației Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Aviației, animator Aviatorilor, petreceri copii Pipera, animator Promenada, Sectorul 1 nord. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Aviației, Sectorul 1. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/aviatiei"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-1">Sectorul 1</a> › Aviației
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Aviației, Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Aviației</strong>, cartier de nord al Bucurestiului cu comunitate internationala si corporatista, zone rezidentiale premium si hub-ul de afaceri Pipera, cu standarde ridicate pentru servicii de animatie. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Aviației</strong>, cartier de nord al Bucurestiului cu comunitate internationala si corporatista, zone rezidentiale premium si hub-ul de afaceri Pipera, cu standarde ridicate pentru servicii de animatie. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Aviației</h3>
-        <ul>
-              <li>📍 Promenada Mall - mall premium cu entertainment</li>
-              <li>📍 Parcul Herastrau - la 5 minute (cel mai mare parc din Bucuresti)</li>
-              <li>📍 Turnuri Pipera - zona de business premium</li>
-              <li>📍 Soseaua Nordului - zona de restaurante de lux</li>
-              <li>📍 Aeroportul Baneasa (fostul aeroport, acum inchis) - reper geografic</li>
-        </ul>
+        <h3>📍 Zone si repere Aviației</h3>
+        <ul><li>📍 Promenada Mall - mall premium cu entertainment</li>
+<li>📍 Parcul Herastrau - la 5 minute (cel mai mare parc din Bucuresti)</li>
+<li>📍 Turnuri Pipera - zona de business premium</li>
+<li>📍 Soseaua Nordului - zona de restaurante de lux</li>
+<li>📍 Aeroportul Baneasa (fostul aeroport, acum inchis) - reper geografic</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Aviației</h3>
-        <ul>
-              <li>🎉 Promenada Events (in cadrul mallului)</li>
-              <li>🎉 Restaurante premium in zona Aviatorilor (Crystal Palace, Fratelli)</li>
-              <li>🎉 Vile private cu gradina in zona Pipera/Aviatie</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Aviației</h3>
+        <ul><li>🎉 Promenada Events (in cadrul mallului)</li>
+<li>🎉 Restaurante premium in zona Aviatorilor (Crystal Palace, Fratelli)</li>
+<li>🎉 Vile private cu gradina in zona Pipera/Aviatie</li></ul>
       </div>
     </div>
   </div>
@@ -160,84 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Aviației</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Aviației</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Aviației</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Aviației</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Aviației</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Aviației</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Aviației</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Aviației</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Aviației</span> — Tot ce trebuie sa stii</h2>
-      <p>Aviatorilor-Pipera este o zona cu o concentratie impresionanta de companii multinationale, expati si familii romane cu venituri superioare. Proximitatea fata de mallul Promenada si fata de Parcul Herastrau face din aceasta zona una din cele mai atragatoare pentru petreceri memorabile. Familiile din Aviatori apreciaza in mod special calitatea echipamentelor, profesionalismul echipei si punctualitatea — toate garantate contractual de SuperParty.</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Aviației</span></h2>
+    <div class="rich-text">
+      <p>Zona Aviatorilor-Pipera are cele mai moderne locatii pentru petreceri de copii din nordul Capitalei. <strong>Promenada Mall</strong> (lifestyle mall premium) are sala events disponibila pentru rezervare si restaurante cu sali private elegante — destinatia indoor nr. 1 din zona.</p>
+<p><strong>Vilele cu gradina din Pipera</strong> sunt destinatia de top pentru petreceri private vara — gradini spatioase cu zona verde, terasa si uneori piscina. SuperParty are experienta cu zeci de petreceri la vile din aceasta zona si stie cum sa organizeze programul pentru maximum de impact.</p>
+<p><strong>Parcul Herastrau</strong> (186 ha, la 5-10 minute) este optiunea naturala premium pentru petreceri mari. <strong>Hotelurile din zona Nord</strong> (Novotel, Intercontinental) accepta petreceri private pentru copii cu animator extern — avem experienta cu aceste locatii si cu clientii internationali.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Aviației</h3>
-      <p>SuperParty acopera <strong>intreaga zona Aviației</strong> si cartierele vecine: Pipera, Floreasca, Baneasa, Voluntari (Ilfov). Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Aviației</span></h2>
+    <div class="rich-text">
+      <p>Zona Aviatorilor-Pipera este internationala — multi expati, romani cu experienta in strainatate. <strong>Personaje universale top:</strong> Elsa, Spider-Man, Iron Man, Rapunzel. <strong>Cerere specifica expati:</strong> Peppa Pig (familii britanice), Bluey (australieni si UK), PJ Masks (francofoni), personaje Netflix internationale.</p>
+<p><strong>Animatori bilingvi</strong> disponibili la cerere — jocurile, cantecele si ghicitorile pot fi desfasurate in engleza, romana sau mixt. Ideal pentru petrecerile mixte romano-internationale. Rezervati animatorul bilingv cu minim 3 saptamani inainte.</p>
+<p><strong>Teme premium cerute in Pipera:</strong> Science & Discovery Party (experiente stiintifice wow), Art Attack premium (pictura, sculptura in argila), Chef Party (copiii gatesc pizza sau prajituri), Treasure Hunt tematic cu povestire si costumatii.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Aviației?</h3>
-      <p>Fiecare petrecere SuperParty in Aviației include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Aviației</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Zona Aviatorilor are o cerere mare pentru pachete premium (Super 3 si Super 7)</li>
-            <li>✔️ Multi clienti din zona sunt expati — avem animatori care comunica si in engleza</li>
-            <li>✔️ Promenada Mall are spatii de events excellente pentru petreceri 30+ copii</li>
-            <li>✔️ Traficul din Pipera poate fi aglomerat dupa 17:00 — planificati petrecerea inainte sau dupa orele de varf</li>
-            <li>✔️ Avem experienta cu petreceri la vile private din zona Pipera si Aviatiei</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Aviației?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Aviației am organizat sute de petreceri de succes. Stim specificul <strong>nordul Bucurestiului, Sectorul 1</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Pipera, Floreasca, Baneasa, Voluntari (Ilfov).</p>
-
-      <h3>📞 Cum rezervi un animator in Aviației?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Aviației, varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Aviației</div>
-        <div class="tag">📍 Pipera</div>
-        <div class="tag">📍 Floreasca</div>
-        <div class="tag">📍 Baneasa</div>
-        <div class="tag">📍 Voluntari (Ilfov)</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Aviatiei — Avantajul tau</h3>
-        <p>Zona Aviatorilor-Pipera este cea mai internationala din Capitala — si SuperParty este pregatit pentru astepat international. Avem animatori bilingvi, costume premium licentiate oficial Disney si Marvel, si un nivel de profesionalism pe masura asteptarilor cele mai exigente. Suntem alegerea numarul 1 a familiilor de expati din zona Pipera-Promenada.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Aviatiei</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Aviației</span></h2>
+    <div class="rich-text">
+      <p><strong>Trafic Pipera:</strong> Zona este aglomerata 16-20 in zilele lucratoare. Petrecerile de sambata sau duminica, sau dupa 19:00 in saptamana, evita complet embouteillage-ul. Animatorul pleaca cu rezerva de 45 min pentru a fi sigur ca ajunge la timp.</p>
+<p><strong>Acces la complexe/vile:</strong> Comunicati-ne cu 24h inainte codul de acces sau datele de intrare in complex. Animatorul ajunge cu 10 min inainte, direct la usa.</p>
+<p><strong>Pachete recomandate:</strong> Super 3 (2 personaje, 840 RON) sau Super 7 (3 ore, 1290 RON). Familiile din Pipera prefera calitate maxima fara compromis. Optional: fotograf profesional la cerere (partener SuperParty). Rezerva: 0722 744 377.</p>
     </div>
   </div>
 </section>
@@ -245,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Aviației</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Aviației</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -259,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Aviatiei</span></h2>
-      <p class="intro-text">Zona Aviatorilor-Pipera a trecut printr-o transformare radicala dupa 1990: de la periferie cu teren industrial si agricol neutilizat, la cel mai important hub de afaceri international al Capitalei. Turnurile din Pipera, cu sute de birouri de companii multinationale, au creat un ora in oras in nordul Capitalei. Odata cu birourile au venit si locuintele rezidentiale premium, mallul Promenada (inaugurat in 2013) si restaurantele si cafenelele de renume international. Zona este astazi locul cu cel mai mare numar de expati din Capitala, iar petrecerile de copii din acesta zona au deseori un caracter international pronuntat.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Mallul Promenada este un mall lifestyle de referinta al nordului Capitalei — proiectat dupa modelul mall-urilor europene moderne, cu terasa, evenimente culturale periodice si o zona de entertainment extinsa cu restaurante de top. SuperParty a organizat animatie la diverse evenimente in Promenada si stie cum sa lucreze in spatii premium cu standarde ridicate. Familiile din Aviatorilor-Pipera apreciaza mai ales personajele internationale bine executate: Spider-Man, Elsa, Batman, Captain America — si programele tematice sofisticate. Animatorii nostri bilingvi (romana-engleza) sunt o optiune populara si apreciata de familiile de expati din aceasta zona.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Sfaturi pentru petreceri in Aviatorilor-Pipera: Traficul din zona Pipera poate fi intens intre 16:00-19:00 — planificati petrecerea dimineata sau seara tarziu pentru a evita ambuteiajele. Promenada Mall are spatii de events disponibile — contactati departamentul lor cu 4-6 saptamani inainte. Vilele din zona Pipera au adesea gradini spatioase — perfecte pentru petreceri mari de 30-50 de copii cu animatie SuperParty. Rezervati optic un animator bilingv cu cel putin 3 saptamani inainte pentru familiile de expati.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Aviatiei</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Elsa, Rapunzel, Spider-Man, Batman, personaje custom bilingve</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In Aviatorilor-Pipera, weekendurile sunt pline. Rezerva cu 3-4 saptamani inainte pentru stagiunile populare (iarna — Craciun, primavara — 1 Iunie, vara).</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Vilele cu gradina sunt preferate in Pipera. Promenada Mall are spatii events. Parcul Herastrau (la 5 minute) este o optiune premium pentru petreceri in aer liber.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 3 (840 RON) sau Super 7 (1290 RON) sunt preferatele in Aviatorilor. Avem optional animatori bilingvi pentru familii de expati.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Pentru animatori bilingvi sau pachete custom, contactati-ne cu cel putin 3 saptamani inainte.</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Aviatiei</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Jennifer S.</strong> — <em>Pipera (expat)</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"The Disney princess was absolutely amazing and even spoke a few words of English. My daughter and all her friends were enchanted for 2 full hours. Truly professional service!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Radu A.</strong> — <em>Aviatorilor</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am organizat o petrecere cu 35 de copii la Promenada Mall. Animatorii au gestionat perfect intreaga sala fara nicio problema. Bravo echipei SuperParty!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Ana-Maria V.</strong> — <em>Aviatiei</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Costum Elsa de calitate cinema, animator abil, entuziast si plin de energie pozitiva. Exact ce ne doream pentru petrecerea fetitei noastre in aceasta zona."</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Aviației</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Aviației</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Veniti la Promenada Mall pentru petreceri?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Avem experienta cu petrecerile in zona Promenada Mall. Lucram cu sali private din incinta sau in restaurantele din mall.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Veniti la Promenada Mall pentru petreceri?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Avem experienta cu petrecerile in zona Promenada Mall. Lucram cu sali private din incinta sau in restaurantele din mall.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Animatorii comunica si in engleza pentru famliiile de expati din Pipera?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — avem animatori bilingvi (romana/engleza) disponibili pentru petrecerile in zona Pipera, Aviatorilor, Baneasa unde sunt multi expati.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Animatorii comunica si in engleza pentru famliiile de expati din Pipera?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — avem animatori bilingvi (romana/engleza) disponibili pentru petrecerile in zona Pipera, Aviatorilor, Baneasa unde sunt multi expati.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Ce pachete preferati familiile din Aviatorilor/Pipera?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Pachetele premium sunt cele mai alese: Super 3 (840 RON) si Super 7 (1290 RON). Acestea includ 2+ personaje si 2-3 ore de program complet.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Ce pachete preferati familiile din Aviatorilor/Pipera?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pachetele premium sunt cele mai alese: Super 3 (840 RON) si Super 7 (1290 RON). Acestea includ 2+ personaje si 2-3 ore de program complet.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat costa un animator pentru o villa party in Pipera?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Pachetele raman aceleasi: 490 / 840 / 1290 RON. Indiferent de locatie (vila, apartament sau sala), pretul pachetului nu se schimba.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat costa un animator pentru o villa party in Pipera?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pachetele raman aceleasi: 490 / 840 / 1290 RON. Indiferent de locatie (vila, apartament sau sala), pretul pachetului nu se schimba.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Aveti experienta cu petreceri tematice sofisticate in Aviatorilor?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — facem petreceri tematice complete: decor, personaj coordonat, jocuri tematice. Contactati-ne pentru pachete custom.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Aveti experienta cu petreceri tematice sofisticate in Aviatorilor?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — facem petreceri tematice complete: decor, personaj coordonat, jocuri tematice. Contactati-ne pentru pachete custom.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Exista taxa de deplasare din Aviatorilor pana la Voluntari sau Pipera (Ilfov)?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Nu — acoperim toata zona Aviatorilor, Pipera si Voluntari fara taxa suplimentara de transport.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Exista taxa de deplasare din Aviatorilor pana la Voluntari sau Pipera (Ilfov)?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Nu — acoperim toata zona Aviatorilor, Pipera si Voluntari fara taxa suplimentara de transport.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -377,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Aviației</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Aviației</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -387,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-1">← Sectorul 1</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>

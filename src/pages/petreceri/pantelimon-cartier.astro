@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Pantelimon (Cartier), Sectorul 2, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Pantelimon (Cartier) | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Pantelimon (Cartier), Sectorul 2, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/pantelimon-cartier"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Acoperiti cartierul Pantelimon din Sectorul 2 (nu Ilfov)?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim AMBELE Pantelimon: cartierul din Sectorul 2 (Bucuresti) si comuna Pantelimon din Ilfov. Va rugam sa specificati adresa exacta."}},
-      {"@type": "Question", "name": "Cat costa un animator in cartierul Pantelimon S2?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 (490 RON, 2 ore, 1 personaj). Transport gratuit in cartierul Pantelimon, Sectorul 2."}},
-      {"@type": "Question", "name": "Exista sali de petreceri recomandate in Pantelimon cartier?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Centrul Comercial Pantelimon are o zona de events, iar pe Soseaua Pantelimon gasiti mai multe restaurante cu sali private. Va putem recomanda in functie de buget."}},
-      {"@type": "Question", "name": "Veniti si la blocuri din zona Pantelimon?", "acceptedAnswer": {"@type": "Answer", "text": "Da — facem petreceri in apartamente, curti de bloc sau in orice spatiu disponibil din cartierul Pantelimon."}},
-      {"@type": "Question", "name": "Aveti animatori care cunosc cartierul Pantelimon?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem animatori familiari cu zona. Stiim sa ajungem rapid si fara confuzii intre Pantelimon S2 si Pantelimon Ilfov."}},
-      {"@type": "Question", "name": "Organizati si petreceri de gradinita/scoala in Pantelimon?", "acceptedAnswer": {"@type": "Answer", "text": "Da — facem si programe pentru colective mari (clase, grupe de gradinita). Contactati-ne pentru pachete speciale."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 2", "item": "https://www.superparty.ro/petreceri/sector-2" },
-        { "@type": "ListItem", "position": 4, "name": "Pantelimon (Cartier)", "item": "https://www.superparty.ro/petreceri/pantelimon-cartier" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Pantelimon (Cartier), Sectorul 2, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Pantelimon (Cartier) | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Pantelimon (Cartier), Sectorul 2, Bucuresti","url":"https://www.superparty.ro/petreceri/pantelimon-cartier"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Acoperiti cartierul Pantelimon din Sectorul 2 (nu Ilfov)?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim AMBELE Pantelimon: cartierul din Sectorul 2 (Bucuresti) si comuna Pantelimon din Ilfov. Va rugam sa specificati adresa exacta."}},
+      {"@type":"Question","name":"Cat costa un animator in cartierul Pantelimon S2?","acceptedAnswer":{"@type":"Answer","text":"Pachetul Super 1 (490 RON, 2 ore, 1 personaj). Transport gratuit in cartierul Pantelimon, Sectorul 2."}},
+      {"@type":"Question","name":"Exista sali de petreceri recomandate in Pantelimon cartier?","acceptedAnswer":{"@type":"Answer","text":"Da — Centrul Comercial Pantelimon are o zona de events, iar pe Soseaua Pantelimon gasiti mai multe restaurante cu sali private. Va putem recomanda in functie de buget."}},
+      {"@type":"Question","name":"Veniti si la blocuri din zona Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Da — facem petreceri in apartamente, curti de bloc sau in orice spatiu disponibil din cartierul Pantelimon."}},
+      {"@type":"Question","name":"Aveti animatori care cunosc cartierul Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Da — avem animatori familiari cu zona. Stiim sa ajungem rapid si fara confuzii intre Pantelimon S2 si Pantelimon Ilfov."}},
+      {"@type":"Question","name":"Organizati si petreceri de gradinita/scoala in Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Da — facem si programe pentru colective mari (clase, grupe de gradinita). Contactati-ne pentru pachete speciale."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 2","item":"https://www.superparty.ro/petreceri/sector-2"},
+      {"@type":"ListItem","position":4,"name":"Pantelimon (Cartier)","item":"https://www.superparty.ro/petreceri/pantelimon-cartier"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Pantelimon (Cartier) Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Pantelimon (Cartier), animator Pantelimon Sectorul 2, petreceri copii Pantelimon cartier, animator Soseaua Pantelimon. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Pantelimon (Cartier), Sectorul 2. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/pantelimon-cartier"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-2">Sectorul 2</a> › Pantelimon (Cartier)
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Pantelimon (Cartier), Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Pantelimon (Cartier)</strong>, cartier dens din estul Bucurestiului, Sectorul 2, diferit de comuna Pantelimon din Ilfov, cu o comunitate numeroasa si o cerere mare pentru servicii de animatie accesibile. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Pantelimon (Cartier)</strong>, cartier dens din estul Bucurestiului, Sectorul 2, diferit de comuna Pantelimon din Ilfov, cu o comunitate numeroasa si o cerere mare pentru servicii de animatie accesibile. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Pantelimon (Cartier)</h3>
-        <ul>
-              <li>📍 Soseaua Pantelimon - artera principala</li>
-              <li>📍 Centrul Comercial Pantelimon - mall local</li>
-              <li>📍 Parcul Plumbuita - spatiu verde in apropiere</li>
-              <li>📍 Lacul Pantelimon - locatie de relaxare</li>
-              <li>📍 Spitalul Clinic Pantelimon - reper major al zonei</li>
-        </ul>
+        <h3>📍 Zone si repere Pantelimon (Cartier)</h3>
+        <ul><li>📍 Soseaua Pantelimon - artera principala</li>
+<li>📍 Centrul Comercial Pantelimon - mall local</li>
+<li>📍 Parcul Plumbuita - spatiu verde in apropiere</li>
+<li>📍 Lacul Pantelimon - locatie de relaxare</li>
+<li>📍 Spitalul Clinic Pantelimon - reper major al zonei</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Pantelimon (Cartier)</h3>
-        <ul>
-              <li>🎉 Sala de petreceri la Centrul Comercial Pantelimon</li>
-              <li>🎉 Restaurante cu sali private pe Soseaua Pantelimon</li>
-              <li>🎉 Centrul de events Pantelimon Fun Center</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Pantelimon (Cartier)</h3>
+        <ul><li>🎉 Sala de petreceri la Centrul Comercial Pantelimon</li>
+<li>🎉 Restaurante cu sali private pe Soseaua Pantelimon</li>
+<li>🎉 Centrul de events Pantelimon Fun Center</li></ul>
       </div>
     </div>
   </div>
@@ -160,84 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Pantelimon (Cartier)</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Pantelimon (Cartier)</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Pantelimon (Cartier)</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Pantelimon (Cartier)</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Pantelimon (Cartier)</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Pantelimon (Cartier)</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Pantelimon (Cartier)</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Pantelimon (Cartier)</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Pantelimon (Cartier)</span> — Tot ce trebuie sa stii</h2>
-      <p>Cartierul Pantelimon (din Sectorul 2) este adesea confundat cu comuna Pantelimon din Ilfov — in realitate sunt doua locatii diferite. Sectorul 2 - cartierul Pantelimon - este o zona rezidentiala densa cu mii de familii si o cerere constanta pentru animatori de calitate. Accesul via Soseaua Pantelimon este direct si clar. SuperParty acopera ambele zone: cartierul Pantelimon (Bucuresti, Sectorul 2) si comuna Pantelimon (Ilfov).</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+    <div class="rich-text">
+      <p><strong>Centrul Comercial Pantelimon</strong> are restaurante cu sali mici de 20-40 persoane in zona adiacenta — optiunea populara pentru petrecerile de interior din cartier. Pe <strong>Soseaua Pantelimon</strong> gasesti sali de petreceri accesibile: Restaurant Pantelimon Garden, Bistro Estival, Salon Events Pantelimon — cu 20-30% mai ieftine decat zonele centrale la aceeasi calitate.</p>
+<p><strong>Scolile si gradinitele</strong> din cartier au sali de sport disponibile pentru petreceri de sfarsit de an sau 1 Iunie — SuperParty a animat zeci de astfel de evenimente in zona Pantelimon S2.</p>
+<p><strong>Lacul Pantelimon</strong> (comuna Pantelimon, Ilfov, 10 minute auto) are zona verde cu mese amenajate si locuri de joaca — SuperParty acopera AMBELE Pantelimon (S2 si Ilfov). In cartierul S2, apartamentele spatioase din era comunista sunt perfecte pentru petreceri de 15-25 copii acasa.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Pantelimon (Cartier)</h3>
-      <p>SuperParty acopera <strong>intreaga zona Pantelimon (Cartier)</strong> si cartierele vecine: Colentina, Fundeni, Dobroiesti, Iancului. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+    <div class="rich-text">
+      <p><strong>Personaje top in Pantelimon S2:</strong> Spider-Man (nr. 1 constant), Batman, Elsa, Minnie Mouse, PAW Patrol. Tendinte 2025: <strong>Sonic the Hedgehog</strong> (film Sonic 3) — explozie la baieti 5-9 ani; <strong>Miraculous Ladybug</strong> cerere mare la fetite 5-8 ani; <strong>Bluey</strong> domina 2-4 ani.</p>
+<p>Parintii din cartierul Pantelimon apreciaza <strong>transparenta preturilor</strong> (nicio taxa ascunsa), <strong>punctualitatea</strong> (animatorul ajunge la ora exacta), si <strong>calitatea baloanelor modelate</strong> — cel mai fotografiat moment al petrecerii SuperParty.</p>
+<p>Programul standard 2 ore: jocuri interactive 45 min, baloane 15 min, face painting 30 min, mini disco+tort 25 min, fotografii si goodbye 5 min. Exact ce promitem, exact ce livram — fiabil si predictibil.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Pantelimon (Cartier)?</h3>
-      <p>Fiecare petrecere SuperParty in Pantelimon (Cartier) include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Pantelimon (Cartier)</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Specificati intotdeauna adresa exacta — cartierul Pantelimon S2 vs comuna Pantelimon Ilfov sunt diferite</li>
-            <li>✔️ Zona are o densitate mare de familii cu copii — cererea este ridicata</li>
-            <li>✔️ Pachetul Super 1 este cel mai ales in cartierul Pantelimon</li>
-            <li>✔️ Rezervati cu 2 saptamani inainte pentru weekenduri</li>
-            <li>✔️ Accesul via Soseaua Pantelimon este clar si fara confuzii</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Pantelimon (Cartier)?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Pantelimon (Cartier) am organizat sute de petreceri de succes. Stim specificul <strong>estul Bucurestiului, Sectorul 2</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Colentina, Fundeni, Dobroiesti, Iancului.</p>
-
-      <h3>📞 Cum rezervi un animator in Pantelimon (Cartier)?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Pantelimon (Cartier), varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Pantelimon (Cartier)</div>
-        <div class="tag">📍 Colentina</div>
-        <div class="tag">📍 Fundeni</div>
-        <div class="tag">📍 Dobroiesti</div>
-        <div class="tag">📍 Iancului</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Pantelimon — Avantajul tau</h3>
-        <p>Cartierul Pantelimon din Sectorul 2 (distinct de comuna Pantelimon din Ilfov pe care o acoperim si noi) este o zona cu o cerere in crestere pentru servicii de calitate. SuperParty este activ in ambele zone Pantelimon — garantam aceleasi standarde de calitate si aceleasi preturi indiferent daca esti pe Soseaua Pantelimon Sector 2 sau in comuna din Ilfov.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Pantelimon</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+    <div class="rich-text">
+      <p><strong>Adresa clara:</strong> Specificati intotdeauna "Pantelimon, Sectorul 2, Bucuresti" — diferit de comuna Pantelimon Ilfov. Stim diferenta si nu exista niciodata confuzie in echipa SuperParty.</p>
+<p><strong>Acces:</strong> Soseaua Pantelimon se conecteaza direct la Bulevardul Nicolae Grigorescu — acces usor din orice zona a Capitalei. Trafic dens 7-9 si 17-19 — petrecerile de 11:00 sau 15:00 evita aglomeratia.</p>
+<p><strong>Buget estimat petrecere Pantelimon S2:</strong> Sala (optional): 0-400 RON. Animator Super 1: 490 RON. Tort + gustari: 300-550 RON. <strong>Total: 790-1440 RON</strong> pentru o petrecere completa. Rezerva rapida: 0722 744 377 — confirmam in 30 minute!</p>
     </div>
   </div>
 </section>
@@ -245,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -259,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Pantelimon</span></h2>
-      <p class="intro-text">Cartierul Pantelimon (Sectorul 2 Bucuresti) este un cartier cu densitate mare de populatie, construit majoritar in deceniile 7-8 ale secolului trecut ca o extensie estica planificata a Capitalei. Nu trebuie confundat cu comuna Pantelimon din judetul Ilfov — cele doua sunt entitati administrative complet diferite, desi se invecineaza geografic pe Soseaua Pantelimon. Soseaua Pantelimon, artera principala, face legatura intre centrul orasului si zona metropolitana estica a Capitalei. Cartierul a platit tribut tranzitiei economice post-comuniste — mai multe fabrici din zona au inchis, dar in locul lor au aparut centre comerciale, piete agro-alimentare si servicii comunitare.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Centrul Comercial Pantelimon, desi mai mic decat mallurile centrale, este un hub de activitate comerciala importanta al cartierului si punctul de intalnire informal al comunitatii locale. Lacul Pantelimon (din vecina comuna Pantelimon, Ilfov) este accesibil in 10 minute auto si este o destinatie de weekend apreciata de familiile din cartier. SuperParty acopera AMBELE zone Pantelimon — cartierul din Sectorul 2 Bucuresti si comuna din Ilfov — asa ca indiferent de adresa ta exacta, te acoperim fara costuri suplimentare.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Sfaturi pentru petreceri in cartierul Pantelimon (S2): Specificati intotdeauna clar adresa exacta, inclusiv sectorul — Pantelimon S2 Bucuresti vs Pantelimon Ilfov sunt locatii diferite la 5 km distanta una de cealalta. Soseaua Pantelimon poate fi aglomerata in ore de varf (7:00-9:00, 17:00-19:00). Petrecerile de vineri seara (18:00-20:00) sunt populare si bine primite in zona. Sali de petreceri la preturi accesibile se gasesc din abundenta pe Soseaua Pantelimon.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Pantelimon</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Minnie Mouse, Sonic</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In cartierul Pantelimon S2, weekendurile sunt populate. Sambata 11:00-13:00 si 15:00-17:00 sunt intervalele cele mai cerute. Rezerva cu 2 saptamani inainte.</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Apartamentele din Pantelimon S2 sunt spatioase, tipice epocii comuniste. Sali de petreceri accesibile pe Soseaua Pantelimon. Lac ul Pantelimon (Ilfov, 10 min) pentru petreceri in aer liber.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) este cel mai ales in cartierul Pantelimon. Transport gratuit in Pantelimon S2 si Pantelimon Ilfov.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Specificati adresa exacta pentru a confirma ca esti in cartierul Pantelimon S2 sau in comuna Pantelimon Ilfov.</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Pantelimon</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Loredana T.</strong> — <em>Pantelimon Sectorul 2</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Animatoarea Elsa a ajuns la timp, a stiut adresa exacta fara nicio confuzie cu Pantelimon Ilfov. Program impecabil de 2 ore. Fetita mea a dormit cu costumul de Elsa pe ea in seara aceea!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Ion P.</strong> — <em>Soseaua Pantelimon</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Prima petrecere cu animatori cu adevarat profesionisti. Am ales SuperParty si nu am regretat nicio secunda. Revin pentru fiecare aniversare a copilului!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Carmen S.</strong> — <em>Pantelimon Sectorul 2</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am organizat pentru 20 de copii in sala blocului nostru. Spider-Man a facut un show de toata frumusetea. Copiii au vorbit saptamani intregi despre aceasta petrecere!"</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Acoperiti cartierul Pantelimon din Sectorul 2 (nu Ilfov)?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — acoperim AMBELE Pantelimon: cartierul din Sectorul 2 (Bucuresti) si comuna Pantelimon din Ilfov. Va rugam sa specificati adresa exacta.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Acoperiti cartierul Pantelimon din Sectorul 2 (nu Ilfov)?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — acoperim AMBELE Pantelimon: cartierul din Sectorul 2 (Bucuresti) si comuna Pantelimon din Ilfov. Va rugam sa specificati adresa exacta.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat costa un animator in cartierul Pantelimon S2?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Pachetul Super 1 (490 RON, 2 ore, 1 personaj). Transport gratuit in cartierul Pantelimon, Sectorul 2.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat costa un animator in cartierul Pantelimon S2?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pachetul Super 1 (490 RON, 2 ore, 1 personaj). Transport gratuit in cartierul Pantelimon, Sectorul 2.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Exista sali de petreceri recomandate in Pantelimon cartier?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — Centrul Comercial Pantelimon are o zona de events, iar pe Soseaua Pantelimon gasiti mai multe restaurante cu sali private. Va putem recomanda in functie de buget.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Exista sali de petreceri recomandate in Pantelimon cartier?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — Centrul Comercial Pantelimon are o zona de events, iar pe Soseaua Pantelimon gasiti mai multe restaurante cu sali private. Va putem recomanda in functie de buget.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Veniti si la blocuri din zona Pantelimon?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — facem petreceri in apartamente, curti de bloc sau in orice spatiu disponibil din cartierul Pantelimon.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Veniti si la blocuri din zona Pantelimon?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — facem petreceri in apartamente, curti de bloc sau in orice spatiu disponibil din cartierul Pantelimon.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Aveti animatori care cunosc cartierul Pantelimon?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — avem animatori familiari cu zona. Stiim sa ajungem rapid si fara confuzii intre Pantelimon S2 si Pantelimon Ilfov.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Aveti animatori care cunosc cartierul Pantelimon?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — avem animatori familiari cu zona. Stiim sa ajungem rapid si fara confuzii intre Pantelimon S2 si Pantelimon Ilfov.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Organizati si petreceri de gradinita/scoala in Pantelimon?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — facem si programe pentru colective mari (clase, grupe de gradinita). Contactati-ne pentru pachete speciale.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Organizati si petreceri de gradinita/scoala in Pantelimon?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — facem si programe pentru colective mari (clase, grupe de gradinita). Contactati-ne pentru pachete speciale.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -377,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -387,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-2">← Sectorul 2</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>

@@ -1,0 +1,278 @@
+// rebuild_cartiere_clean.mjs — Regenereaza toate paginile cu continut 100% petreceri copii
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { cartiereData } from './cartiere_data.mjs';
+import { partyData } from './party_data.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const pagesDir = path.join(__dirname, '../src/pages/petreceri');
+
+function slug2name(s) {
+  return s.replace(/-cartier$/, '').split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+}
+
+function buildPage(c) {
+  const pd = partyData[c.slug] || {};
+  const faqSchema = c.faq.map(([q, a]) =>
+    `      {"@type":"Question","name":${JSON.stringify(q)},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify(a)}}}`
+  ).join(',\n');
+  const landmarksHtml = c.landmarks.map(l => `<li>📍 ${l}</li>`).join('\n');
+  const saliHtml = c.sali.map(s => `<li>🎉 ${s}</li>`).join('\n');
+  const faqHtml = c.faq.map(([q, a]) => `
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ ${q}</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">${a}</p>
+        </div>
+      </div>`).join('\n');
+
+  return `---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('seo-articles');
+const hubArticles = allArticles.filter(article =>
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('${c.slug.replace(/-cartier/, '')}') ||
+    article.slug.toLowerCase().includes('sector-${c.sector}') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
+).slice(0, 12);
+
+const schema = JSON.stringify({
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"${c.name}, Sectorul ${c.sector}, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii ${c.name} | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"${c.name}, Sectorul ${c.sector}, Bucuresti","url":"https://www.superparty.ro/petreceri/${c.slug}"},
+    {"@type":"FAQPage","mainEntity":[
+${faqSchema}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul ${c.sector}","item":"https://www.superparty.ro/petreceri/${c.sectorSlug}"},
+      {"@type":"ListItem","position":4,"name":"${c.name}","item":"https://www.superparty.ro/petreceri/${c.slug}"}
+    ]}
+  ]
+});
+---
+
+<Layout
+  title="Animatori Petreceri Copii ${c.name} Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in ${c.name}, Sectorul ${c.sector}. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
+  canonical="https://www.superparty.ro/petreceri/${c.slug}"
+  schema={schema}
+>
+<style>
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
+</style>
+
+<section class="hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/${c.sectorSlug}">Sectorul ${c.sector}</a> › ${c.name}
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">${c.name}, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>${c.name}</strong>, ${c.desc}. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Zone si repere ${c.name}</h3>
+        <ul>${landmarksHtml}</ul>
+      </div>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
+        <ul>
+          <li>🚗 ~${c.time}</li>
+          <li>🚍 ${c.transport}</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in ${c.name}</li>
+          <li><a href="/petreceri/${c.sectorSlug}" style="color:var(--primary)">→ Toate zonele Sector ${c.sector}</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎉 Sali recomandate ${c.name}</h3>
+        <ul>${saliHtml}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in ${c.name}</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in ${c.name}</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in ${c.name}</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in ${c.name}</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">${c.name}</span></h2>
+    <div class="rich-text">
+      ${pd.venues || `<p>SuperParty organizeaza petreceri de copii la domiciliu, in sali dedicate sau in spatii verzi din zona ${c.name}, Sectorul ${c.sector}. Contactati-ne pentru recomandari personalizate.</p>`}
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">${c.name}</span></h2>
+    <div class="rich-text">
+      ${pd.themes || `<p>SuperParty dispune de 50+ personaje: Spider-Man, Elsa, Batman, Minnie Mouse, PAW Patrol si multe altele. Contactati-ne pentru disponibilitate in zona ${c.name}.</p>`}
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">${c.name}</span></h2>
+    <div class="rich-text">
+      ${pd.orga || `<p>Suna la 0722 744 377, confiram disponibilitatea in 30 minute si trimitem contractul. Plata dupa petrecere cu garantie contractuala completa.</p>`}
+    </div>
+  </div>
+</section>
+
+{hubArticles.length > 0 && (
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">${c.name}</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
+    <div class="art-grid">
+      {hubArticles.map(article => (
+        <a href={'/petreceri/' + article.slug} class="art-card">
+          <h3>{article.data.title}</h3>
+          <p>{article.data.description?.slice(0,100)}...</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+)}
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">${c.name}</span></h2>
+    <div class="faq-list">
+${faqHtml}
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Rezerva animator în <span style="color:var(--primary)">${c.name}</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
+        <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
+        <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+      </div>
+      <nav class="nav-links">
+        <a href="/petreceri/${c.sectorSlug}">← Sectorul ${c.sector}</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+</Layout>`;
+}
+
+let generated = 0;
+for (const c of cartiereData) {
+  const fp = path.join(pagesDir, `${c.slug}.astro`);
+  const content = buildPage(c);
+  fs.writeFileSync(fp, content, 'utf-8');
+  generated++;
+}
+console.log(`Regenerate: ${generated} pagini`);
+
+// Verifica cuvinte
+console.log('\nVerificare cuvinte text vizibil:');
+let min = Infinity, max = 0, allOk = true;
+for (const c of cartiereData) {
+  const fp = path.join(pagesDir, `${c.slug}.astro`);
+  let raw = fs.readFileSync(fp, 'utf-8');
+  raw = raw.replace(/^---[\s\S]*?---/m, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/\{[^}]*\}/g, ' ');
+  const wc = raw.split(/\s+/).filter(w => w.length > 2).length;
+  if (wc < min) min = wc;
+  if (wc > max) max = wc;
+  if (wc < 1500) allOk = false;
+  console.log(`  ${wc >= 1500 ? 'OK ' : 'LOW'} ${c.slug.padEnd(25)}: ${wc} cuvinte`);
+}
+console.log(`\nMin: ${min} | Max: ${max} | ${allOk ? 'TOATE OK 1500+' : 'UNELE SUB 1500'}`);

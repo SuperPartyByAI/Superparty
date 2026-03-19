@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Dristor, Sectorul 3, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Dristor | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Dristor, Sectorul 3, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/dristor"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Acoperiti zona Dristor complet?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim tot cartierul Dristor, de la intersectia cu Calea Vacaresti pana la limita cu Titan si Dudestu. Transport inclus in orice punct."}},
-      {"@type": "Question", "name": "Veniti si la petreceri in Vitan Mall?", "acceptedAnswer": {"@type": "Answer", "text": "Lucram cu locatii din zona Vitan Mall. Coordonati cu sala si cu noi in avans pentru o petrecere perfecta."}},
-      {"@type": "Question", "name": "Care sunt orele de disponibilitate in Dristor?", "acceptedAnswer": {"@type": "Answer", "text": "In zilele de saptamana dupa 15:00, iar in weekend de la 10:00. Va rugam sa rezervati cu 2 saptamani inainte."}},
-      {"@type": "Question", "name": "Cat costa un animator in zona Dristor?", "acceptedAnswer": {"@type": "Answer", "text": "De la 490 RON (Super 1, 2 ore, 1 personaj). Fara taxa de deplasare in Dristor, Vitan sau Titan."}},
-      {"@type": "Question", "name": "Puteti face si o petrecere surpriza in Dristor?", "acceptedAnswer": {"@type": "Answer", "text": "Da! Coordonati cu noi in secret, noi sosim direct in costum la usa fara sa anuntam copilul. Efect garantat!"}},
-      {"@type": "Question", "name": "Aveti experienta cu petrecerile din apartamentele mai mici din Dristor?", "acceptedAnswer": {"@type": "Answer", "text": "Da — stim sa facem un program excelent chiar si in spatii mai mici. Animatorul adapteaza jocurile in functie de spatiul disponibil."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 3", "item": "https://www.superparty.ro/petreceri/sector-3" },
-        { "@type": "ListItem", "position": 4, "name": "Dristor", "item": "https://www.superparty.ro/petreceri/dristor" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Dristor, Sectorul 3, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Dristor | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Dristor, Sectorul 3, Bucuresti","url":"https://www.superparty.ro/petreceri/dristor"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Acoperiti zona Dristor complet?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim tot cartierul Dristor, de la intersectia cu Calea Vacaresti pana la limita cu Titan si Dudestu. Transport inclus in orice punct."}},
+      {"@type":"Question","name":"Veniti si la petreceri in Vitan Mall?","acceptedAnswer":{"@type":"Answer","text":"Lucram cu locatii din zona Vitan Mall. Coordonati cu sala si cu noi in avans pentru o petrecere perfecta."}},
+      {"@type":"Question","name":"Care sunt orele de disponibilitate in Dristor?","acceptedAnswer":{"@type":"Answer","text":"In zilele de saptamana dupa 15:00, iar in weekend de la 10:00. Va rugam sa rezervati cu 2 saptamani inainte."}},
+      {"@type":"Question","name":"Cat costa un animator in zona Dristor?","acceptedAnswer":{"@type":"Answer","text":"De la 490 RON (Super 1, 2 ore, 1 personaj). Fara taxa de deplasare in Dristor, Vitan sau Titan."}},
+      {"@type":"Question","name":"Puteti face si o petrecere surpriza in Dristor?","acceptedAnswer":{"@type":"Answer","text":"Da! Coordonati cu noi in secret, noi sosim direct in costum la usa fara sa anuntam copilul. Efect garantat!"}},
+      {"@type":"Question","name":"Aveti experienta cu petrecerile din apartamentele mai mici din Dristor?","acceptedAnswer":{"@type":"Answer","text":"Da — stim sa facem un program excelent chiar si in spatii mai mici. Animatorul adapteaza jocurile in functie de spatiul disponibil."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 3","item":"https://www.superparty.ro/petreceri/sector-3"},
+      {"@type":"ListItem","position":4,"name":"Dristor","item":"https://www.superparty.ro/petreceri/dristor"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Dristor Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Dristor, animator Dristor, petreceri copii Dristor, animator Vitan, Sectorul 3 est. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Dristor, Sectorul 3. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/dristor"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-3">Sectorul 3</a> › Dristor
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Dristor, Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Dristor</strong>, cartier central-estic din Sectorul 3, cu acces facil via metrou, Centrul Comercial Vitan in apropiere si o comunitate activa cu cerere ridicata pentru animatori profesionisti. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Dristor</strong>, cartier central-estic din Sectorul 3, cu acces facil via metrou, Centrul Comercial Vitan in apropiere si o comunitate activa cu cerere ridicata pentru animatori profesionisti. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Dristor</h3>
-        <ul>
-              <li>📍 Centrul Comercial Vitan Mall - la 900 de metri</li>
-              <li>📍 Statiile de metrou Dristor 1 si Dristor 2 pe M2</li>
-              <li>📍 Parcul Titan (IOR) - la 10 minute</li>
-              <li>📍 Bulevardul Camil Ressu - artera principala</li>
-              <li>📍 Centrul Civic - la 12 minute</li>
-        </ul>
+        <h3>📍 Zone si repere Dristor</h3>
+        <ul><li>📍 Centrul Comercial Vitan Mall - la 900 de metri</li>
+<li>📍 Statiile de metrou Dristor 1 si Dristor 2 pe M2</li>
+<li>📍 Parcul Titan (IOR) - la 10 minute</li>
+<li>📍 Bulevardul Camil Ressu - artera principala</li>
+<li>📍 Centrul Civic - la 12 minute</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Dristor</h3>
-        <ul>
-              <li>🎉 Sala de petreceri Vitan Kids Club</li>
-              <li>🎉 Restaurante cu sali private pe B-dul Camil Ressu</li>
-              <li>🎉 Spatii events in zona Dristor-Vitan</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Dristor</h3>
+        <ul><li>🎉 Sala de petreceri Vitan Kids Club</li>
+<li>🎉 Restaurante cu sali private pe B-dul Camil Ressu</li>
+<li>🎉 Spatii events in zona Dristor-Vitan</li></ul>
       </div>
     </div>
   </div>
@@ -160,84 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Dristor</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Dristor</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Dristor</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Dristor</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Dristor</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Dristor</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Dristor</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Dristor</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Dristor</span> — Tot ce trebuie sa stii</h2>
-      <p>Dristor este un cartier strategic pozitionat la intersectia dintre centrul Bucurestiului si zona Titan-Vitan. Doua statii de metro M2 il fac extrem de accesibil. Comunitatea din Dristor este mixta — familii tinere care au ales zona pentru accesibilitate si preturi rezonabile, alaturi de locatari mai vechi cu radacini adanci in cartier. Dristor este un cartier in care oamenii se cunosc si recomandarea este cel mai important factor de alegere al unui serviciu.</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Dristor</span></h2>
+    <div class="rich-text">
+      <p><strong>Vitan Mall</strong> (10 minute din centrul Dristorului) are sala events disponibila pentru petreceri si restaurante cu sali private. Este destinatia populara pentru petrecerile cu buget mediu-ridicat din zona Dristor-Vitan.</p>
+<p>Pe <strong>Bulevardul Camil Ressu</strong> si in zona <strong>Piata Dristor</strong>: Family Garden Dristor, Restaurant Bistro Vitan, Salon Events Camil Ressu — sali 30-60 persoane, accesibile si bine dotate. Sali dedicate copiilor: Kids Planet Dristor (trambulina, zona moale), FunBox Vitan (labirint, popice, masa de tort) — ambele accepta animatori externi.</p>
+<p>Vara, <strong>Parcul Titan (IOR)</strong> (10 minute) este optiunea naturala de top — 105 ha cu lac si locuri de joaca. Doua statii de metrou M2 (Dristor 1, Dristor 2) fac accesul usor pentru invitatii din toata Capitala.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Dristor</h3>
-      <p>SuperParty acopera <strong>intreaga zona Dristor</strong> si cartierele vecine: Vitan, Titan, Centrul Civic, Dudestu. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Dristor</span></h2>
+    <div class="rich-text">
+      <p><strong>Personaje vedeta in Dristor:</strong> Spider-Man (dominant), Batman, Elsa, Sonic, Minnie Mouse. <strong>Nou 2025:</strong> Gabby's Dollhouse (fetite 3-6 ani), personaje Anime si Genshin Impact pentru 9+ ani — cerere in crestere puternica.</p>
+<p>Copiii din Dristor sunt <strong>competitivi si energici</strong> — jocurile cu punctaj si clasamente functioneaza extraordinary. Stafetele cu echipe colorate, concursul de karaoke si Freeze Dance cu muzica TikTok pentru 7+ ani sunt activitatile cu cel mai mare succes. Baloane modelate cu cereri creative: animatorul face fata oricarei comenzi, de la sabie la balena.</p>
+<p>Animatia surpriza este extrem de populara in Dristor: animatorul suna la usa direct in costum, fara anunt prealabil — reactia copilului este de neuitat si garantat distribuita pe WhatsApp de toti parintii prezenti.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Dristor?</h3>
-      <p>Fiecare petrecere SuperParty in Dristor include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Dristor</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Dristor are doua statii de metro M2 — ajungem foarte rapid</li>
-            <li>✔️ Vitan Mall are o zona de events excelenta pentru petreceri copii</li>
-            <li>✔️ Animatorii nostri cunosc bine zona Dristor-Vitan-Titan</li>
-            <li>✔️ Recomandati-ne prietenilor si primiti o reducere la urmatoarea petrecere</li>
-            <li>✔️ Pachetul Super 1 este cel mai ales in zona Dristor</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Dristor?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Dristor am organizat sute de petreceri de succes. Stim specificul <strong>estul central al Bucurestiului, Sectorul 3</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Vitan, Titan, Centrul Civic, Dudestu.</p>
-
-      <h3>📞 Cum rezervi un animator in Dristor?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Dristor, varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Dristor</div>
-        <div class="tag">📍 Vitan</div>
-        <div class="tag">📍 Titan</div>
-        <div class="tag">📍 Centrul Civic</div>
-        <div class="tag">📍 Dudestu</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Dristor — Avantajul tau</h3>
-        <p>Dristor este un cartier de comunitate, unde recomandarea directa este cel mai important factor de decizie. SuperParty a castigat increderea parintilor din Dristor-Vitan prin consecventa livrarii la cel mai inalt nivel — de la cel mai mic pachet pana la cel mai complex eveniment. Doua statii de metro M2 ne aduc rapid la orice adresa din zona.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Dristor</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Dristor</span></h2>
+    <div class="rich-text">
+      <p><strong>Acces si transport:</strong> Doua statii M2 (Dristor 1, Dristor 2) fac zona accesibila din toata Capitala. Vitan Mall are parcare gratuita — indicati aceasta optiune invitatilor. Traficul pe Bulevardul Camil Ressu se aglomereaza dupa 17:00.</p>
+<p><strong>Interval recomandat:</strong> Sambata 11:00-13:00 sau 15:00-17:00. Duminica 11:00-13:00. Dristor este zona cu una din cele mai mari cereri din Sectorul 3 — rezervati cu 10-14 zile inainte.</p>
+<p><strong>Garantia SuperParty:</strong> Plata se face dupa petrecere. Daca copiii nu s-au simtit bine, nu platesti. Rezerva: 0722 744 377 (telefon sau WhatsApp) — raspundem in 30 minute.</p>
     </div>
   </div>
 </section>
@@ -245,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Dristor</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Dristor</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -259,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Dristor</span></h2>
-      <p class="intro-text">Dristor isi datoreaza existenta ca cartier distinct pozitionarii sale strategice la intersectia a doua importante artere istorice: Calea Vacaresti (legatura sudica cu centrul) si Bulevardul Camil Ressu (legatura cu zona estica Titan-Pantetelimon). Cartierul a fost construit in etape multiple, cu blocuri din deceniile 6 si 8, iar caracterul sau este mixt si greu de categorisit — nici central nici periferic, nici muncitoresc nici burghez. Aceasta pozitionare intermediara face din Dristor un cartier cu o identitate proprie, coerent si autentic. Doua statii de metrou M2 (Dristor 1 si Dristor 2) il conecteaza excelent cu restul Capitalei.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Centrul Comercial Vitan Mall (la 900 de metri de centrul cartierului Dristor) este destinatia comerciala principala a zonei si gazduieste periodic activitati pentru copii. Platformele de petreceri Vitan Kids Club si restaurantele cu sali private din zona Dristor-Vitan sunt printre cele mai solicitate locatii pentru petreceri de copii din Sectorul 3. SuperParty are relatii solide cu multiple sali de petreceri din aceasta zona si poate recomanda cel mai potrivit spatiu in functie de bugetul si numarul de copii invitati.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Sfaturi pentru petreceri in Dristor: Cele doua statii de metrou M2 (Dristor 1 si Dristor 2) fac accesul pentru invitati extrem de facil din orice zona a Capitalei. Zona Vitan Mall are parcare generoasa gratuita disponibila pe toata durata petrecerii — indicati invitatilor parcarea de la mall. Apartamentele din Dristor sunt in general spatioase, tipice blocurilor din era 70-80 de ani — suficient loc pentru 15-25 de copii activi. Contactati-ne cu 10 zile inainte pentru disponibilitate — Dristor este zona cu una din cele mai ridicate cereri din Sectorul 3 est.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Dristor</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Minnie, Sonic</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In Dristor, sambata este cea mai populara. Intervalele 11:00-13:00 si 15:00-17:00 sunt cele mai cerute. Rezerva cu 10-14 zile inainte.</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Vitan Mall are zona events comoda. Apartamentele din Dristor sunt spatioase (tipic desi de 70 ani). Parcul Titan (10 minute) pentru petreceri in aer liber.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) sau Super 3 (840 RON) sunt optime in Dristor. Ruta rapida via metrou M2. Transport gratuit in Dristor, Vitan, Titan.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377 sau WhatsApp. Confirmam in 30 minute. Garantam punctualitate si program de calitate.</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Dristor</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Mirela P.</strong> — <em>Dristor</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Venit exact la ora stabilita, program de 2 ore la nivel maxim. Copiii au adorat Elsa si nu mai voiau sa plece nici dupa 3 ore. Recomand cu toata caldura!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Bogdan C.</strong> — <em>Vitan Mall</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am rezervat sala la Vitan si animatia SuperParty in aceeasi zi. Coordonarea a fost perfecta de ambele parti. Revin pentru petrecerea de 7 ani!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Florina V.</strong> — <em>Dristor</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Spider-Man a ajuns la usa si copilul meu a inghitat in sec de surpriza. Dupa-aia a ris si sariat 2 ore continuu. Recomand din tot sufletul!"</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Dristor</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Dristor</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Acoperiti zona Dristor complet?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — acoperim tot cartierul Dristor, de la intersectia cu Calea Vacaresti pana la limita cu Titan si Dudestu. Transport inclus in orice punct.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Acoperiti zona Dristor complet?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — acoperim tot cartierul Dristor, de la intersectia cu Calea Vacaresti pana la limita cu Titan si Dudestu. Transport inclus in orice punct.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Veniti si la petreceri in Vitan Mall?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Lucram cu locatii din zona Vitan Mall. Coordonati cu sala si cu noi in avans pentru o petrecere perfecta.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Veniti si la petreceri in Vitan Mall?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Lucram cu locatii din zona Vitan Mall. Coordonati cu sala si cu noi in avans pentru o petrecere perfecta.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Care sunt orele de disponibilitate in Dristor?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">In zilele de saptamana dupa 15:00, iar in weekend de la 10:00. Va rugam sa rezervati cu 2 saptamani inainte.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Care sunt orele de disponibilitate in Dristor?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">In zilele de saptamana dupa 15:00, iar in weekend de la 10:00. Va rugam sa rezervati cu 2 saptamani inainte.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat costa un animator in zona Dristor?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">De la 490 RON (Super 1, 2 ore, 1 personaj). Fara taxa de deplasare in Dristor, Vitan sau Titan.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat costa un animator in zona Dristor?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">De la 490 RON (Super 1, 2 ore, 1 personaj). Fara taxa de deplasare in Dristor, Vitan sau Titan.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Puteti face si o petrecere surpriza in Dristor?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da! Coordonati cu noi in secret, noi sosim direct in costum la usa fara sa anuntam copilul. Efect garantat!</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Puteti face si o petrecere surpriza in Dristor?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da! Coordonati cu noi in secret, noi sosim direct in costum la usa fara sa anuntam copilul. Efect garantat!</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Aveti experienta cu petrecerile din apartamentele mai mici din Dristor?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — stim sa facem un program excelent chiar si in spatii mai mici. Animatorul adapteaza jocurile in functie de spatiul disponibil.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Aveti experienta cu petrecerile din apartamentele mai mici din Dristor?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — stim sa facem un program excelent chiar si in spatii mai mici. Animatorul adapteaza jocurile in functie de spatiul disponibil.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -377,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Dristor</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Dristor</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -387,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-3">← Sectorul 3</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>
