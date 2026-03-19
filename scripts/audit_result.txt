@@ -1,0 +1,157 @@
+﻿=================================================================
+  AUDIT RELEVANTA CONTINUT ΓÇö Pagini Cartiere Bucuresti
+=================================================================
+
+≡ƒôè 1. CUVINTE + DENSITATE KEYWORDS PRINCIPALE:
+
+  Titan                 
+    ΓÜá∩╕Å  Cuvinte: 1342
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.17%)
+    Γ£à "titan": 56x
+    ≡ƒÆ░ "RON": 9x  |  "animator": 7x
+
+  Drumul Taberei        
+    ΓÜá∩╕Å  Cuvinte: 1321
+    ΓÜá∩╕Å  "animatori petreceri copii": 4x (0.24%)
+    Γ£à "drumul taberei": 64x
+    ≡ƒÆ░ "RON": 8x  |  "animator": 5x
+
+  Militari              
+    ΓÜá∩╕Å  Cuvinte: 1250
+    ΓÜá∩╕Å  "animatori petreceri copii": 4x (0.25%)
+    Γ£à "militari": 69x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 5x
+
+  Berceni               
+    ΓÜá∩╕Å  Cuvinte: 1231
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "berceni": 65x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 4x
+
+  Floreasca             
+    ΓÜá∩╕Å  Cuvinte: 1239
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "floreasca": 65x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 6x
+
+  Colentina             
+    ΓÜá∩╕Å  Cuvinte: 1241
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "colentina": 74x
+    ≡ƒÆ░ "RON": 8x  |  "animator": 4x
+
+  Rahova                
+    ΓÜá∩╕Å  Cuvinte: 1190
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.20%)
+    Γ£à "rahova": 50x
+    ≡ƒÆ░ "RON": 6x  |  "animator": 6x
+
+  Crangasi              
+    ΓÜá∩╕Å  Cuvinte: 1204
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "crangasi": 71x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 5x
+
+  Tineretului           
+    ΓÜá∩╕Å  Cuvinte: 1274
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.18%)
+    Γ£à "tineretului": 63x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 6x
+
+  Avia╚¢iei              
+    ΓÜá∩╕Å  Cuvinte: 1265
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "avia╚¢iei": 23x
+    ≡ƒÆ░ "RON": 8x  |  "animator": 7x
+
+  Doroban╚¢i             
+    ΓÜá∩╕Å  Cuvinte: 1254
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "doroban╚¢i": 23x
+    ≡ƒÆ░ "RON": 8x  |  "animator": 5x
+
+  Dristor               
+    ΓÜá∩╕Å  Cuvinte: 1227
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "dristor": 65x
+    ≡ƒÆ░ "RON": 6x  |  "animator": 5x
+
+  Giule╚Öti              
+    ΓÜá∩╕Å  Cuvinte: 1216
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    Γ£à "giule╚Öti": 23x
+    ≡ƒÆ░ "RON": 7x  |  "animator": 5x
+
+  Pantelimon (Cartier)  
+    ΓÜá∩╕Å  Cuvinte: 1229
+    ΓÜá∩╕Å  "animatori petreceri copii": 3x (0.19%)
+    ΓÜá∩╕Å  "pantelimon (cartier)": 0x
+    ≡ƒÆ░ "RON": 5x  |  "animator": 5x
+
+
+≡ƒôè 2. SIMILARITATE INTRE PAGINI (Jaccard - TREBUIE < 20%):
+
+  Top 10 cele mai similare perechi:
+  Γ¥î Colentina            <-> Pantelimon (Cartier) | 53.4%
+  Γ¥î Drumul Taberei       <-> Crangasi             | 53.1%
+  Γ¥î Crangasi             <-> Pantelimon (Cartier) | 52.5%
+  Γ¥î Dristor              <-> Pantelimon (Cartier) | 52.3%
+  Γ¥î Tineretului          <-> Dristor              | 51.9%
+  Γ¥î Drumul Taberei       <-> Pantelimon (Cartier) | 51.7%
+  Γ¥î Berceni              <-> Crangasi             | 51.3%
+  Γ¥î Berceni              <-> Pantelimon (Cartier) | 51.1%
+  Γ¥î Berceni              <-> Rahova               | 51.0%
+  Γ¥î Floreasca            <-> Avia╚¢iei             | 50.8%
+
+  Top 5 cele mai DIFERITE:
+  Γ£à Avia╚¢iei             <-> Giule╚Öti             | 42.1%
+  Γ£à Titan                <-> Doroban╚¢i            | 42.7%
+  Γ£à Titan                <-> Giule╚Öti             | 43.4%
+  Γ£à Doroban╚¢i            <-> Giule╚Öti             | 43.5%
+  Γ£à Militari             <-> Doroban╚¢i            | 43.7%
+
+≡ƒôè 3. UNICITATE FATA DE PAGINA FLAGSHIP (animatori-petreceri-copii):
+
+  Γ£à Titan                  vs flagship: 16.2% similar
+  Γ£à Drumul Taberei         vs flagship: 15.2% similar
+  Γ£à Militari               vs flagship: 15.5% similar
+  Γ£à Berceni                vs flagship: 15.2% similar
+  Γ£à Floreasca              vs flagship: 16.0% similar
+  Γ£à Colentina              vs flagship: 15.7% similar
+  Γ£à Rahova                 vs flagship: 15.3% similar
+  Γ£à Crangasi               vs flagship: 14.9% similar
+  Γ£à Tineretului            vs flagship: 15.2% similar
+  Γ£à Avia╚¢iei               vs flagship: 15.1% similar
+  Γ£à Doroban╚¢i              vs flagship: 15.3% similar
+  Γ£à Dristor                vs flagship: 15.5% similar
+  Γ£à Giule╚Öti               vs flagship: 14.5% similar
+  Γ£à Pantelimon (Cartier)   vs flagship: 16.2% similar
+
+≡ƒôè 4. ELEMENTE SEO OBLIGATORII PER PAGINA:
+
+  Γ£à Titan                 : OK complet
+  Γ£à Drumul Taberei        : OK complet
+  Γ£à Militari              : OK complet
+  Γ£à Berceni               : OK complet
+  Γ£à Floreasca             : OK complet
+  Γ£à Colentina             : OK complet
+  Γ£à Rahova                : OK complet
+  Γ£à Crangasi              : OK complet
+  Γ£à Tineretului           : OK complet
+  Γ£à Avia╚¢iei              : OK complet
+  Γ£à Doroban╚¢i             : OK complet
+  Γ£à Dristor               : OK complet
+  Γ£à Giule╚Öti              : OK complet
+  Γ£à Pantelimon (Cartier)  : OK complet
+
+=================================================================
+  SUMAR FINAL
+=================================================================
+  ≡ƒôä Pagini analizate: 14
+  ≡ƒô¥ Cuvinte medii: 1249
+  ≡ƒöù Perechi analizate: 91
+  Γ¥î Perechi similare (>20%): 91/91
+  ≡ƒôê Max similaritate: 53.4% (Colentina <-> Pantelimon (Cartier))
+
+  Γ¥î 91 perechi necesita imbunatatire!
+=================================================================

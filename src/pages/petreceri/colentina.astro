@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Colentina, Sectorul 2, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Colentina | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Colentina, Sectorul 2, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/colentina"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Acoperiti toata zona Colentina, inclusiv Fundeni?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim intreaga Soseaua Colentina de la intrare pana la Fundeni si dincolo. Nu exista taxa de deplasare in aceasta zona."}},
-      {"@type": "Question", "name": "Veniti la petreceri langa lacurile din Colentina?", "acceptedAnswer": {"@type": "Answer", "text": "Da — facem animatie si in aer liber. Lacul Fundeni si parcurile din Colentina sunt locatii populare pentru petreceri de vara cu animatori."}},
-      {"@type": "Question", "name": "Ce pachete sunt disponibile in Colentina?", "acceptedAnswer": {"@type": "Answer", "text": "Toate pachetele: Super 1 (490 RON), Super 3 (840 RON) si Super 7 (1290 RON). Alegeti in functie de numarul de copii si durata dorita."}},
-      {"@type": "Question", "name": "Cum ajungeti cel mai usor in Colentina?", "acceptedAnswer": {"@type": "Answer", "text": "Animatorii nostri se deplaseaza cu masina proprie direct la adresa ta. Soseaua Colentina este bine acoperita de toate rutele noastre."}},
-      {"@type": "Question", "name": "Exista sali de petreceri recomandate in Colentina?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem relatii cu mai multe sali din zona Colentina si Fundeni. Contactati-ne si va putem recomanda in functie de buget si numarul de copii."}},
-      {"@type": "Question", "name": "Cat dureaza un program de animatie standard in Colentina?", "acceptedAnswer": {"@type": "Answer", "text": "Programul standard dureaza 2 ore (pachetul Super 1 sau Super 3). Poate fi extins la 3 ore cu pachetul Super 7 sau la cerere."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 2", "item": "https://www.superparty.ro/petreceri/sector-2" },
-        { "@type": "ListItem", "position": 4, "name": "Colentina", "item": "https://www.superparty.ro/petreceri/colentina" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Colentina, Sectorul 2, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Colentina | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Colentina, Sectorul 2, Bucuresti","url":"https://www.superparty.ro/petreceri/colentina"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Acoperiti toata zona Colentina, inclusiv Fundeni?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim intreaga Soseaua Colentina de la intrare pana la Fundeni si dincolo. Nu exista taxa de deplasare in aceasta zona."}},
+      {"@type":"Question","name":"Veniti la petreceri langa lacurile din Colentina?","acceptedAnswer":{"@type":"Answer","text":"Da — facem animatie si in aer liber. Lacul Fundeni si parcurile din Colentina sunt locatii populare pentru petreceri de vara cu animatori."}},
+      {"@type":"Question","name":"Ce pachete sunt disponibile in Colentina?","acceptedAnswer":{"@type":"Answer","text":"Toate pachetele: Super 1 (490 RON), Super 3 (840 RON) si Super 7 (1290 RON). Alegeti in functie de numarul de copii si durata dorita."}},
+      {"@type":"Question","name":"Cum ajungeti cel mai usor in Colentina?","acceptedAnswer":{"@type":"Answer","text":"Animatorii nostri se deplaseaza cu masina proprie direct la adresa ta. Soseaua Colentina este bine acoperita de toate rutele noastre."}},
+      {"@type":"Question","name":"Exista sali de petreceri recomandate in Colentina?","acceptedAnswer":{"@type":"Answer","text":"Da — avem relatii cu mai multe sali din zona Colentina si Fundeni. Contactati-ne si va putem recomanda in functie de buget si numarul de copii."}},
+      {"@type":"Question","name":"Cat dureaza un program de animatie standard in Colentina?","acceptedAnswer":{"@type":"Answer","text":"Programul standard dureaza 2 ore (pachetul Super 1 sau Super 3). Poate fi extins la 3 ore cu pachetul Super 7 sau la cerere."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 2","item":"https://www.superparty.ro/petreceri/sector-2"},
+      {"@type":"ListItem","position":4,"name":"Colentina","item":"https://www.superparty.ro/petreceri/colentina"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Colentina Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Colentina, animator Colentina, petreceri copii Colentina, animator Fundeni, Sectorul 2 est. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Colentina, Sectorul 2. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/colentina"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-2">Sectorul 2</a> › Colentina
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Colentina, Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Colentina</strong>, cartier traditional din estul Bucurestiului, se intinde de-a lungul Soselei Colentina pana la Fundeni, cu lacuri, parc si o comunitate numeroasa si stabila. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Colentina</strong>, cartier traditional din estul Bucurestiului, se intinde de-a lungul Soselei Colentina pana la Fundeni, cu lacuri, parc si o comunitate numeroasa si stabila. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Colentina</h3>
-        <ul>
-              <li>📍 Lacul Colentina (Lacul Fundeni) - 56 hectare de apa, ideal pentru petreceri de vara</li>
-              <li>📍 Parcul Plumbuita - spatiu verde cu manastire</li>
-              <li>📍 Soseaua Colentina - artera principala a cartierului</li>
-              <li>📍 Spitalul Fundeni - reper major al zonei</li>
-              <li>📍 Lacul Tei si Lacul Plumbuita - alte locatii naturale</li>
-        </ul>
+        <h3>📍 Zone si repere Colentina</h3>
+        <ul><li>📍 Lacul Colentina (Lacul Fundeni) - 56 hectare de apa, ideal pentru petreceri de vara</li>
+<li>📍 Parcul Plumbuita - spatiu verde cu manastire</li>
+<li>📍 Soseaua Colentina - artera principala a cartierului</li>
+<li>📍 Spitalul Fundeni - reper major al zonei</li>
+<li>📍 Lacul Tei si Lacul Plumbuita - alte locatii naturale</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Colentina</h3>
-        <ul>
-              <li>🎉 Sala de petreceri Colentrend (Soseaua Colentina)</li>
-              <li>🎉 Restaurante cu sali private in zona Fundeni</li>
-              <li>🎉 Casa de cultura Colentina pentru evenimente mai mari</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Colentina</h3>
+        <ul><li>🎉 Sala de petreceri Colentrend (Soseaua Colentina)</li>
+<li>🎉 Restaurante cu sali private in zona Fundeni</li>
+<li>🎉 Casa de cultura Colentina pentru evenimente mai mari</li></ul>
       </div>
     </div>
   </div>
@@ -160,85 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Colentina</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Colentina</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Colentina</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Colentina</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Colentina</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Colentina</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Colentina</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Colentina</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Colentina</span> — Tot ce trebuie sa stii</h2>
-      <p>Colentina este unul din cele mai lungi cartiere din Bucuresti — Soseaua Colentina se intinde pe aproape 10 km, de la Stefan cel Mare pana la Fundeni. De-a lungul acestei artere se gasesc blocuri din era comunista, case interbelice, restaurante si spatii verzi. Lantul de lacuri Colentina (format din 16 lacuri artificiale) este cea mai importanta trasatura naturala a cartierului si ofera posibilitati excelente pentru petreceri in aer liber.</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Colentina</span></h2>
+    <div class="rich-text">
+      <p><strong>Lantul de lacuri Colentina</strong> (16 lacuri pe 15 km) ofera cele mai frumoase locatii naturale de vara pentru petreceri de copii din estul Capitalei. <strong>Lacul Fundeni</strong> si <strong>Lacul Colentina</strong> au zone verzi accesibile, cu mese de picnic si locuri de joaca — SuperParty organizeaza animatii acolo direct, cu echipament portabil.</p>
+<p>Pe <strong>Soseaua Colentina</strong> gasesti sali de petreceri la preturi corecte: Wonderland Kids Events, Fun Forest Colentina, Big Kids Club — trambulina, sistem audio, masa de tort, capacitate 20-60 copii. Preturile sunt cu 20-30% mai mici decat in zone centrale la aceeasi dotare.</p>
+<p>Restaurantele cu curti mari din zona <strong>Fundeni</strong> si <strong>Dobroesti</strong> sunt excelente mai-septembrie — mancarea grill plus animatia SuperParty creeaza petreceri complete si memorabile. Animatorii nostri din zona ajung in 5-10 minute la orice adresa de pe Soseaua Colentina.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Colentina</h3>
-      <p>SuperParty acopera <strong>intreaga zona Colentina</strong> si cartierele vecine: Fundeni, Fentari, Stefan cel Mare, Dobroiesti, Pantelimon. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Colentina</span></h2>
+    <div class="rich-text">
+      <p><strong>Top personaje in Colentina:</strong> Spider-Man (dominant absolut), Batman, Elsa, Minnie Mouse, Captain America. Surpriza 2025: <strong>Masha si Ursul</strong> are revenire spectaculoasa la 2-4 ani; <strong>PAW Patrol</strong> explozie la 3-5 ani; <strong>Sonic</strong> stabil la baieti 6-9 ani.</p>
+<p>Copiii din Colentina se implica exceptional in <strong>stafete si jocuri de echipa</strong> — recomandati variante cu 3-4 echipe si punctaj vizibil. Modelarea baloanelor este momentul cel mai asteptat si fotografiat. Petrecerile la lac vara aduc activitati bonus: curse cu obstacole pe iarba, vanatorea de comori in parc, dans cu muzica portabila.</p>
+<p><strong>Budget estimat petrecere Colentina:</strong> Sala 2h: 300-500 RON. Animator Super 1: 490 RON. Tort + gustari: 300-500 RON. Total: 1090-1490 RON pentru petrecere completa si memorabila.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Colentina?</h3>
-      <p>Fiecare petrecere SuperParty in Colentina include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Colentina</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Indicati-ne adresa exacta din Colentina — cartierul este intins pe 10 km</li>
-            <li>✔️ Lacul Fundeni si Lacul Colentina sunt perfecte pentru petreceri in aer liber in sezon</li>
-            <li>✔️ Tramvaiele si autobuzele deservesc bine toata Soseaua Colentina</li>
-            <li>✔️ Zona Fundeni are restaurante excelente cu sali private pentru petreceri</li>
-            <li>✔️ Avem animatori disponibili in toata zona Colentina, fara taxa de deplasare</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Colentina?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Colentina am organizat sute de petreceri de succes. Stim specificul <strong>estul Bucurestiului, Sectorul 2</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Fundeni, Fentari, Stefan cel Mare, Dobroiesti, Pantelimon.</p>
-
-      <h3>📞 Cum rezervi un animator in Colentina?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Colentina, varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Colentina</div>
-        <div class="tag">📍 Fundeni</div>
-        <div class="tag">📍 Fentari</div>
-        <div class="tag">📍 Stefan cel Mare</div>
-        <div class="tag">📍 Dobroiesti</div>
-        <div class="tag">📍 Pantelimon</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Colentina — Avantajul tau</h3>
-        <p>Soseaua Colentina, cu lungimea ei de 10 km, este una din cele mai lungi zone acoperite de SuperParty in Sectorul 2. Cunoastem fiecare sector al Colentinei si ajungem rapid la orice adresa, de la intrarea in zona si pana la Fundeni. Lantul de lacuri Colentina este cadrul natural perfect pentru petrecerile noastre de vara.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Colentina</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Colentina</span></h2>
+    <div class="rich-text">
+      <p><strong>Adresa exacta:</strong> Colentina se intinde pe 10 km — specificati adresa completa la rezervare. Zona Fundeni si Dobroesti la capat sunt mai departate, dar acoperim fara taxa suplimentara.</p>
+<p><strong>Sezonul ideal:</strong> Mai-septembrie pentru exterior (lac, parc). Octombrie-aprilie pentru interior (sala sau acasa). Septembrie si mai sunt perfecte — temperatura optima si copiii au energie dupa vacanta de vara.</p>
+<p><strong>Numar copii:</strong> Pana la 25 — Super 1 (490 RON). 25-40 — Super 3 (840 RON). Garantia contractuala SuperParty: daca copiii nu s-au simtit bine, nu platesti. Rezerva: 0722 744 377.</p>
     </div>
   </div>
 </section>
@@ -246,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Colentina</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Colentina</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -260,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Colentina</span></h2>
-      <p class="intro-text">Colentina isi datoreaza identitatea lantului de lacuri artificiale creat pe raul Colentina: 16 lacuri intinse pe 15 km, de la Baneasa pana la Cernica, formeaza un colier de apa care da specificul natural al cartierului. Soseaua Colentina, cu cei 10 km ai sai, este cea mai lunga artera a Sectorului 2 si coloana vertebrala a intregii zone. Zona a fost initial industriala — combinatele de pe Colentina au dat caracterul muncitoresc vechi al cartierului. Dupa 1990, industria a disparut treptat, iar zonele dezafectate au fost reconvertite in ansambluri rezidentiale, parcuri si spatii comerciale, transformand treptat Colentina intr-un cartier rezidential de talie medie.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Manastirea Plumbuita, ascunsa intr-un parc verde de la limita cartierului, este unul din putinele monumente istorice ale Colentinei si o destinatie surprinzatoare intr-un cartier urban. Lacul Fundeni (parte din lantul lacurilor Colentina) este destinatia de weekend a miilor de familii din zona si imprejurimi. SuperParty organizeaza frecvent petreceri in aer liber in parcurile si zonele verzi ale Colentinei. Stim exact care sunt parcelele publice potrivite pentru activitati si care sunt restrictiile pentru organizarea de evenimente — petrecerile noastre decurg intotdeauna fara probleme administrative.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Sfaturi pentru o petrecere reusita in Colentina: Specificati adresa exacta — Colentina este intinsa pe 10 km si Dobroesti sau Fundeni la capat sunt mai departate. Sali de petreceri accesibile ca pret se gasesc din abundenta pe toata Soseaua Colentina. Petrecerile in aer liber la lacurile din Colentina (Lacul Fundeni, Lacul Colentina) sunt o optiune excelenta din mai pana in septembrie. Tramvaiele si autobuzele care circula pe Soseaua Colentina sunt bine distribuite — invitatii pot folosi transportul public usor.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Colentina</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Minnie, Sonic</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In Colentina, weekendurile sunt cele mai populare. Intervalele 11:00-13:00 si 15:00-17:00 sunt ideale. Rezerva cu 2 saptamani inainte.</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Apartamentele de pe Soseaua Colentina sunt in general spatioase. Lacul Fundeni si Lacul Colentina sunt excelente pentru petreceri in aer liber mai-septembrie.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) sau Super 3 (840 RON) sunt cele mai alese in Colentina. Transport gratuit pe toata Soseaua Colentina si Fundeni.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Specificati adresa exacta din Colentina pentru o estimare precisa a timpului de deplasare.</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Colentina</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Nicu B.</strong> — <em>Colentina</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Animatorul a ajuns din timp perfect la adresa noastra de pe Soseaua Colentina. Program de 2 ore impecabil, copiii au adorat Batman. Rezerv din nou pentru botezul baiatului!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Simona R.</strong> — <em>Fundeni</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am organizat la Lacul Fundeni. Batman a facut jocuri cu 25 de copii timp de 2 ore, cu energie constanta. Toti parintii au ramas incantati. Recomand 100% SuperParty!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Catalin P.</strong> — <em>Colentina</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Serviciu excelent, pret corect, zero bataie de cap. Asta e SuperParty pe scurt. Vom reveni cu siguranta pentru fiecare petrecere a copilului nostru!"</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Colentina</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Colentina</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Acoperiti toata zona Colentina, inclusiv Fundeni?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — acoperim intreaga Soseaua Colentina de la intrare pana la Fundeni si dincolo. Nu exista taxa de deplasare in aceasta zona.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Acoperiti toata zona Colentina, inclusiv Fundeni?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — acoperim intreaga Soseaua Colentina de la intrare pana la Fundeni si dincolo. Nu exista taxa de deplasare in aceasta zona.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Veniti la petreceri langa lacurile din Colentina?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — facem animatie si in aer liber. Lacul Fundeni si parcurile din Colentina sunt locatii populare pentru petreceri de vara cu animatori.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Veniti la petreceri langa lacurile din Colentina?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — facem animatie si in aer liber. Lacul Fundeni si parcurile din Colentina sunt locatii populare pentru petreceri de vara cu animatori.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Ce pachete sunt disponibile in Colentina?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Toate pachetele: Super 1 (490 RON), Super 3 (840 RON) si Super 7 (1290 RON). Alegeti in functie de numarul de copii si durata dorita.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Ce pachete sunt disponibile in Colentina?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Toate pachetele: Super 1 (490 RON), Super 3 (840 RON) si Super 7 (1290 RON). Alegeti in functie de numarul de copii si durata dorita.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cum ajungeti cel mai usor in Colentina?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Animatorii nostri se deplaseaza cu masina proprie direct la adresa ta. Soseaua Colentina este bine acoperita de toate rutele noastre.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cum ajungeti cel mai usor in Colentina?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Animatorii nostri se deplaseaza cu masina proprie direct la adresa ta. Soseaua Colentina este bine acoperita de toate rutele noastre.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Exista sali de petreceri recomandate in Colentina?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — avem relatii cu mai multe sali din zona Colentina si Fundeni. Contactati-ne si va putem recomanda in functie de buget si numarul de copii.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Exista sali de petreceri recomandate in Colentina?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — avem relatii cu mai multe sali din zona Colentina si Fundeni. Contactati-ne si va putem recomanda in functie de buget si numarul de copii.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat dureaza un program de animatie standard in Colentina?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Programul standard dureaza 2 ore (pachetul Super 1 sau Super 3). Poate fi extins la 3 ore cu pachetul Super 7 sau la cerere.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat dureaza un program de animatie standard in Colentina?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Programul standard dureaza 2 ore (pachetul Super 1 sau Super 3). Poate fi extins la 3 ore cu pachetul Super 7 sau la cerere.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -378,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Colentina</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Colentina</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -388,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-2">← Sectorul 2</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>

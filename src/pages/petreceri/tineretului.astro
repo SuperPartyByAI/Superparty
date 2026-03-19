@@ -12,100 +12,77 @@ const hubArticles = allArticles.filter(article =>
 ).slice(0, 12);
 
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "SuperParty — Animatori Petreceri Copii",
-      "telephone": "+40722744377",
-      "url": "https://www.superparty.ro",
-      "areaServed": { "@type": "Place", "name": "Tineretului, Sectorul 4, Bucuresti" },
-      "priceRange": "490-1290 RON",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
-    },
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Tineretului | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Tineretului, Sectorul 4, Bucuresti",
-      "url": "https://www.superparty.ro/petreceri/tineretului"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-      {"@type": "Question", "name": "Faceti animatie in Parcul Tineretului?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Parcul Tineretului este una din locatiile noastre preferate! Animatorul vine cu tot echipamentul si face un program de 2 ore in aer liber. Ideal pentru grupuri de 20-50 copii."}},
-      {"@type": "Question", "name": "Cat costa un animator pentru o petrecere la Parcul Tineretului?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 (490 RON) este perfect pentru petreceri in aer liber de pana la 20 copii. Super 3 (840 RON) cu 2 personaje este recomandat pentru 30+ copii."}},
-      {"@type": "Question", "name": "Ce activitati include animatia in parc la Tineretului?", "acceptedAnswer": {"@type": "Answer", "text": "In parc: jocuri interactive in echipe, tras cu leaganul de personaj, stafete tematice, dans, mini disco, baloane colorate. Plus face painting si diplome magnetice pentru toti copiii."}},
-      {"@type": "Question", "name": "E nevoie de autorizatie pentru animatia in Parcul Tineretului?", "acceptedAnswer": {"@type": "Answer", "text": "Nu este nevoie de autorizatie pentru grupuri mici (sub 50 persoane) intr-o zona verde publica. Va recomandam sa verificati si cu administratia parcului."}},
-      {"@type": "Question", "name": "Cat de aproape de statia de metrou Timpuri Noi faceti petreceri?", "acceptedAnswer": {"@type": "Answer", "text": "Acoperim toata zona Timpuri Noi, Tineretului, Berceni si Vacaresti. Animatorul vine cu masina proprie direct la locatia ta."}},
-      {"@type": "Question", "name": "Aveti animatori disponibili duminica dimineata in Tineretului?", "acceptedAnswer": {"@type": "Answer", "text": "Da — pornim de la 10:00 dimineata in orice zi. Duminica dimineata in Parcul Tineretului este de altfel very populara."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sectorul 4", "item": "https://www.superparty.ro/petreceri/sector-4" },
-        { "@type": "ListItem", "position": 4, "name": "Tineretului", "item": "https://www.superparty.ro/petreceri/tineretului" }
-      ]
-    }
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"LocalBusiness","name":"SuperParty — Animatori Petreceri Copii","telephone":"+40722744377","url":"https://www.superparty.ro","areaServed":{"@type":"Place","name":"Tineretului, Sectorul 4, Bucuresti"},"priceRange":"490-1290 RON","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"1498"}},
+    {"@type":"Service","name":"Animatori Petreceri Copii Tineretului | SuperParty","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Tineretului, Sectorul 4, Bucuresti","url":"https://www.superparty.ro/petreceri/tineretului"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Faceti animatie in Parcul Tineretului?","acceptedAnswer":{"@type":"Answer","text":"Da — Parcul Tineretului este una din locatiile noastre preferate! Animatorul vine cu tot echipamentul si face un program de 2 ore in aer liber. Ideal pentru grupuri de 20-50 copii."}},
+      {"@type":"Question","name":"Cat costa un animator pentru o petrecere la Parcul Tineretului?","acceptedAnswer":{"@type":"Answer","text":"Pachetul Super 1 (490 RON) este perfect pentru petreceri in aer liber de pana la 20 copii. Super 3 (840 RON) cu 2 personaje este recomandat pentru 30+ copii."}},
+      {"@type":"Question","name":"Ce activitati include animatia in parc la Tineretului?","acceptedAnswer":{"@type":"Answer","text":"In parc: jocuri interactive in echipe, tras cu leaganul de personaj, stafete tematice, dans, mini disco, baloane colorate. Plus face painting si diplome magnetice pentru toti copiii."}},
+      {"@type":"Question","name":"E nevoie de autorizatie pentru animatia in Parcul Tineretului?","acceptedAnswer":{"@type":"Answer","text":"Nu este nevoie de autorizatie pentru grupuri mici (sub 50 persoane) intr-o zona verde publica. Va recomandam sa verificati si cu administratia parcului."}},
+      {"@type":"Question","name":"Cat de aproape de statia de metrou Timpuri Noi faceti petreceri?","acceptedAnswer":{"@type":"Answer","text":"Acoperim toata zona Timpuri Noi, Tineretului, Berceni si Vacaresti. Animatorul vine cu masina proprie direct la locatia ta."}},
+      {"@type":"Question","name":"Aveti animatori disponibili duminica dimineata in Tineretului?","acceptedAnswer":{"@type":"Answer","text":"Da — pornim de la 10:00 dimineata in orice zi. Duminica dimineata in Parcul Tineretului este de altfel very populara."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Acasa","item":"https://www.superparty.ro"},
+      {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://www.superparty.ro/animatori-petreceri-copii"},
+      {"@type":"ListItem","position":3,"name":"Sectorul 4","item":"https://www.superparty.ro/petreceri/sector-4"},
+      {"@type":"ListItem","position":4,"name":"Tineretului","item":"https://www.superparty.ro/petreceri/tineretului"}
+    ]}
   ]
 });
 ---
 
 <Layout
   title="Animatori Petreceri Copii Tineretului Bucuresti | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Tineretului, animator Tineretului, petreceri copii Tineretului, animator Parcul Tineretului, Sectorul 4. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
+  description="Animatori profesionisti pentru petreceri copii in Tineretului, Sectorul 4. 50+ personaje, pachete 490-1290 RON, transport gratuit. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/tineretului"
   schema={schema}
 >
 <style>
-  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
-  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
-  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .sec { padding:3.5rem 0; }
-  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
-  .card ul { list-style:none; padding:0; margin:0; }
-  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
-  .card li:last-child { border:0; }
-  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
-  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
-  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
-  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
-  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
-  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
-  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
-  .breadcrumb a { color:var(--primary); text-decoration:none; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
-  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
-  .text-section { max-width:780px; }
-  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
-  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
-  @media(max-width:600px) { .btns { flex-direction:column; } }
+  .hero{padding:4.5rem 0 3rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 60%)}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .hero .lead{color:var(--text-muted);font-size:1.05rem;max-width:650px;line-height:1.8;margin-bottom:2rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .sec{padding:3.5rem 0}.sec-alt{padding:3.5rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.6rem;font-weight:800;margin-bottom:.5rem}.sec-sub{color:var(--text-muted);margin-bottom:2rem}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.5rem}
+  .card h3{font-weight:700;margin-bottom:.8rem;font-size:1rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);line-height:1.5}
+  .card li:last-child{border:0}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .pkg{background:var(--dark-3);border:2px solid rgba(255,107,53,.2);border-radius:18px;padding:2rem;text-align:center}
+  .pkg.featured{border-color:var(--primary);background:rgba(255,107,53,.08)}
+  .pkg-title{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+  .pkg-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0}
+  .pkg-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+  .pkg-badge{background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .art-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+  .art-card:hover{border-color:var(--primary)}
+  .art-card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.4rem}
+  .art-card p{font-size:.82rem;color:var(--text-muted)}
+  .faq-list{display:flex;flex-direction:column;gap:1rem;max-width:780px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.4rem}
+  .faq-item h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+  .faq-item p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+  .breadcrumb{font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem}
+  .breadcrumb a{color:var(--primary);text-decoration:none}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:20px;padding:3rem 2rem;text-align:center}
+  .cta-box h2{font-size:1.7rem;font-weight:800;margin-bottom:1rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:2rem}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;font-size:.9rem}
+  .nav-links a{color:var(--primary);font-weight:600;text-decoration:none}
+  .rich-text{max-width:780px}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem}
+  .rich-text strong{color:var(--text)}
+  @media(max-width:600px){.btns{flex-direction:column}}
 </style>
 
 <section class="hero">
@@ -114,7 +91,7 @@ const schema = JSON.stringify({
       <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-4">Sectorul 4</a> › Tineretului
     </nav>
     <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Tineretului, Bucuresti</span></h1>
-    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Tineretului</strong>, cartier central din Sectorul 4, renumit pentru Parcul Tineretului — unul din cele mai mari si mai frecventate parcuri din Bucuresti, cu o comunitate activa si tanara. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri copii din <strong>Tineretului</strong>, cartier central din Sectorul 4, renumit pentru Parcul Tineretului — unul din cele mai mari si mai frecventate parcuri din Bucuresti, cu o comunitate activa si tanara. Peste 10.000 de petreceri din 2018, garantie contractuala unica in piata, 1498 de recenzii de 5 stele.</p>
     <div class="btns">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
@@ -126,14 +103,12 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="grid-3">
       <div class="card">
-        <h3>📍 Repere si locatii in Tineretului</h3>
-        <ul>
-              <li>📍 Parcul Tineretului - 210 hectare, cel mai mare parc al Sectorului 4</li>
-              <li>📍 Sala Polivalenta - arena de 15.000 de locuri in apropiere</li>
-              <li>📍 Lacul Tineretului - 14 hectare in centrul parcului</li>
-              <li>📍 Centrul Comercial Vitan Mall - la 10 minute</li>
-              <li>📍 Biblioteca Nationala - la 5 minute</li>
-        </ul>
+        <h3>📍 Zone si repere Tineretului</h3>
+        <ul><li>📍 Parcul Tineretului - 210 hectare, cel mai mare parc al Sectorului 4</li>
+<li>📍 Sala Polivalenta - arena de 15.000 de locuri in apropiere</li>
+<li>📍 Lacul Tineretului - 14 hectare in centrul parcului</li>
+<li>📍 Centrul Comercial Vitan Mall - la 10 minute</li>
+<li>📍 Biblioteca Nationala - la 5 minute</li></ul>
       </div>
       <div class="card">
         <h3>⏱ Acces si transport</h3>
@@ -146,13 +121,10 @@ const schema = JSON.stringify({
         </ul>
       </div>
       <div class="card">
-        <h3>🎉 Sali recomandate in Tineretului</h3>
-        <ul>
-              <li>🎉 Sala de petreceri in zona Parcului Tineretului</li>
-              <li>🎉 Restaurante cu gradini private (vedere spre parc)</li>
-              <li>🎉 Centrul de events Timpuri Noi (zona industriala transformata)</li>
-          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
-        </ul>
+        <h3>🎉 Sali recomandate Tineretului</h3>
+        <ul><li>🎉 Sala de petreceri in zona Parcului Tineretului</li>
+<li>🎉 Restaurante cu gradini private (vedere spre parc)</li>
+<li>🎉 Centrul de events Timpuri Noi (zona industriala transformata)</li></ul>
       </div>
     </div>
   </div>
@@ -160,84 +132,64 @@ const schema = JSON.stringify({
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Tineretului</span></h2>
-    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <h2 class="sec-title">Pachete animatori <span style="color:var(--primary)">disponibile in Tineretului</span></h2>
+    <p class="sec-sub">Preturi garantate contractual. Fara taxe ascunse.</p>
     <div class="pkg-grid">
       <div class="pkg">
         <div class="pkg-title">Super 1</div>
         <div class="pkg-price">490 RON</div>
-        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Tineretului</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 personaj costumat · 2 ore<br>Jocuri, baloane, face painting, mini disco<br>Transport gratuit in Tineretului</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg featured">
         <div class="pkg-badge">⭐ CEL MAI ALES</div>
         <div class="pkg-title">Super 3</div>
         <div class="pkg-price">840 RON</div>
-        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Tineretului</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">2 personaje costumati · 2 ore<br>Jocuri duble, baloane complexe, diplome<br>Transport gratuit in Tineretului</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
       <div class="pkg">
         <div class="pkg-title">Super 7</div>
         <div class="pkg-price">1290 RON</div>
-        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Tineretului</div>
-        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+        <div class="pkg-desc">1 animator + 4 ursitoare · 3 ore<br>Botez sau aniversare mare<br>Transport gratuit in Tineretului</div>
+        <div style="margin-top:1rem"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;padding:.7rem 1.5rem">📞 Rezerva</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
-      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:.9rem">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">→ Toate detaliile pachetelor pe pagina principala</a>
     </p>
   </div>
 </section>
 
 <section class="sec">
   <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Tineretului</span> — Tot ce trebuie sa stii</h2>
-      <p>Tineretului este unul din cartierele cu cel mai usor acces la spatii verzi din Bucuresti. Parcul Tineretului, cu cei 210 hectare ai sai si Lacul Tineretului de 14 hectare, este cel mai prietenos mediu urban pentru petrecerile de copii. Statuia Cainelui si Izvorul Minunilor sunt puncte de reper iubite de copii. Proximitatea fata de centru (10 minute de metrou) si multitudinea de restaurante cu sali private fac din Tineretului una din destinatiile preferate pentru petreceri.</p>
+    <h2 class="sec-title">Locatii pentru petreceri copii în <span style="color:var(--primary)">Tineretului</span></h2>
+    <div class="rich-text">
+      <p><strong>Parcul Tineretului</strong> (210 ha) este cea mai buna locatie de petrecere in aer liber din Sectorul 4. SuperParty stie exact care zone sunt optime: <strong>zona langa Lacul Tineretului</strong> (iarba, copaci, locuri de joaca moderne, coordonate 44.4196°N 26.0975°E) este favorita pentru grupuri de 15-40 copii. Zona dinspre intrarea Str. Tineretului este mai ferita de traficul pietonal.</p>
+<p>Pentru interior: <strong>Vitan Mall</strong> (5 minute) are sala events si restaurante cu sali private. Pe <strong>Bulevardul Tineretului</strong>: FunKids Tineretului, Party World, Sunshine Events — sali bine dotate cu trambulina, zona moale si capacitate 25-60 copii. Zona <strong>Timpuri Noi</strong> are spatii reconvertite cu atmosfera unica.</p>
+<p>Metrou M1+M3 statia Timpuri Noi la 7 minute de mers spre parc — invitatii ajung din toata Capitala rapid si fara costuri de parcare.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🗺️ Zone acoperite in Tineretului</h3>
-      <p>SuperParty acopera <strong>intreaga zona Tineretului</strong> si cartierele vecine: Berceni, Timpuri Noi, Centrul Civic, Vacaresti. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Personaje si teme populare în <span style="color:var(--primary)">Tineretului</span></h2>
+    <div class="rich-text">
+      <p>Parintii din zona Tineretului sunt tineri (25-35 ani), activi digital si la curent cu trendurile. Cererile reflecta asta: <strong>Roblox Party</strong> (7-10 ani), <strong>Encanto</strong> (Mirabel, Luisa — fetite 6-9 ani), <strong>Among Us</strong> (8-12 ani). Clasicele Spider-Man, Batman si Elsa raman in top.</p>
+<p>In Parcul Tineretului, activitatile in aer liber sunt vedeta: <strong>vanatoarea de comori tematica</strong> (animatorul ascunde 5 indicii in parc, copiii rezolva ghicitori pentru comoara), <strong>stafete cu echipe</strong>, <strong>Freeze Dance</strong> cu muzica moderna, <strong>Limbo</strong>. Spatiul mare permite jocuri care nu sunt posibile in sala.</p>
+<p>Petreceri cu doua grupe de varsta (3-5 ani si 8-11 ani) sunt frecvente in zona — SuperParty adapteaza programul pentru a tine toate varstele captivate simultan, fara ca cei mari sa se plictiseasca sau cei mici sa fie coplesiti.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>🎭 Ce include programul de animatie in Tineretului?</h3>
-      <p>Fiecare petrecere SuperParty in Tineretului include un program complet structurat in mai etape:</p>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
-        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
-        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
-        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
-        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
-        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
-      </ul>
-
-      <h3>💡 Sfaturi pentru o petrecere perfecta in Tineretului</h3>
-      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
-            <li>✔️ Parcul Tineretului este perfect pentru petreceri de 30+ copii in aer liber</li>
-            <li>✔️ Rezervati un animator pentru 11:00 sau 15:00 — orele ideale pentru petreceri in parc</li>
-            <li>✔️ Zona Timpuri Noi are spatii de events moderne si interesante</li>
-            <li>✔️ Metroul M1+M3 face accesul extrem de facil din orice zona a Bucurestiului</li>
-            <li>✔️ Animatorii SuperParty au experienta cu petreceri in Parcul Tineretului</li>
-      </ul>
-
-      <h3>🌟 De ce SuperParty in Tineretului?</h3>
-      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
-      <p>In Tineretului am organizat sute de petreceri de succes. Stim specificul <strong>sudul central al Bucurestiului, Sectorul 4</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Berceni, Timpuri Noi, Centrul Civic, Vacaresti.</p>
-
-      <h3>📞 Cum rezervi un animator in Tineretului?</h3>
-      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Tineretului, varsta copilului si numarul aproximativ de copii.</p>
-
-      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <div class="tag">📍 Tineretului</div>
-        <div class="tag">📍 Berceni</div>
-        <div class="tag">📍 Timpuri Noi</div>
-        <div class="tag">📍 Centrul Civic</div>
-        <div class="tag">📍 Vacaresti</div>
-      </div>
-    
-      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
-        <h3 style="margin-top:0;">💪 SuperParty in Tineretului — Avantajul tau</h3>
-        <p>Zona Tineretului-Timpuri Noi este una dintre cele mai bine conectate zone din Sectorul 4 — metroul M1+M3 aduce invitati din toata Capitala in 15-20 de minute. Parcul Tineretului este cel mai mare spatiu de joaca din zona de sud a Capitalei si cadrul ideal pentru petrecerile cu animatori SuperParty in aer liber. Avem experienta specifica cu organizarea de petreceri in parc.</p>
-        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Tineretului</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
-      </div>
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-title">Cum organizezi petrecerea perfecta în <span style="color:var(--primary)">Tineretului</span></h2>
+    <div class="rich-text">
+      <p><strong>Punct de intalnire:</strong> Parcul este imens — trimite coordonate GPS invitatilor, nu doar "la parc". Recomandam: langa Lacul Tineretului, intrarea dinspre Str. Tineretului. Animatorul ajunge exact la ora rezervata la locatia specificata.</p>
+<p><strong>Backup plan pentru ploaie:</strong> Verificati meteo cu 24h inainte. Avem sali de backup in zona — sunati-ne si mutam petrecerea in interior fara penalizare. Va anuntam cu 12h inainte de orice modificare de plan.</p>
+<p><strong>Parcare:</strong> Str. Tineretului nr. 1 are parcare. Alternativ, metrou M1+M3 statia Timpuri Noi (7 min). Rezervare: 0722 744 377, minim 2 saptamani inainte pentru weekenduri.</p>
     </div>
   </div>
 </section>
@@ -245,11 +197,11 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Tineretului</span></h2>
-    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
+    <h2 class="sec-title">Idei petreceri copii <span style="color:var(--primary)">Tineretului</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
+        <a href={'/petreceri/' + article.slug} class="art-card">
           <h3>{article.data.title}</h3>
           <p>{article.data.description?.slice(0,100)}...</p>
         </a>
@@ -259,117 +211,52 @@ const schema = JSON.stringify({
 </section>
 )}
 
-
-<section class="sec">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Tineretului</span></h2>
-      <p class="intro-text">Zona Tineretului isi datoreaza numele parcului urban creat in 1965 pe un teren viran din sudul Capitalei. Parcul Tineretului, cu 210 hectare, a fost conceput din start ca cel mai mare spatiu verde al Sectorului 4 si ca o contributie importanta la sistemul de parcuri al Capitalei. Zona rezidentiala din jurul parcului s-a dezvoltat simultan, aducand familii tinere de muncitori si tehnicieni in apartamentele construite rapid de statul socialist. Astazi, cartierul Tineretului beneficiaza de o pozitionare excelenta: la 10 minute de centrul Capitalei via metrou, cu acces direct la unul din cele mai frumoase parcuri din Bucuresti si cu multiple optiuni de transport public.</p>
-      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
-      <p>Parcul Tineretului gazduieste anual festivaluri de street food, targuri de Craciun si numeroase evenimente culturale si sportive. Sala Polivalenta, cu o capacitate de 15.000 de locuri, este la 5 minute de Parc si este una din cele mai importante arene de spectacole ale Capitalei. SuperParty organizeaza frecvent petreceri de copii in Parcul Tineretului — stim exact care sectoare sunt cele mai potrivite pentru animatii, unde se pot parca masinile si care este cel mai bun traseu de acces in functie de zona din care vin invitatii.</p>
-      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
-      <p>Sfaturi pentru petreceri in zona Tineretului: Parcul Tineretului este imens (210 ha) — stabiliti un punct de intalnire clar si comunicat tuturor invitatilor. Zona de langa Lacul Tineretului este cea mai populara pentru petreceri in aer liber. In zilele cu spectacole la Sala Polivalenta, traficul este aglomerat — verificati programul arenei inainte de a stabili data petrecerii. Metroul M1+M3 de la statia Timpuri Noi este la 5-7 minute de parc si aduce invitati din toata Capitala rapid si eficient.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <div class="text-section">
-      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Tineretului</span></h2>
-      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Sonic, Mighty Morphin</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
-      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
-
-      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
-      <p><strong>Pasul 1 — Alege data si ora.</strong> In Tineretului, sambata si duminica sunt cele mai populate. Intervalul 11:00-13:00 in Parcul Tineretului este preferat pentru petreceri in aer liber.</p>
-<p><strong>Pasul 2 — Alege locatia.</strong> Parcul Tineretului (210 ha) este destinatia numarul 1 in zona. Restaurantele din zona au sali private perfecte. Acasa, apartamentele sun comparabile cu restul Sectorului 4.</p>
-<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) pentru pana la 20 copii in parc. Super 3 (840 RON) cu 2 personaje pentru grupuri mai mari. Transport gratuit in tot Sectorul 4.</p>
-<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Pentru petreceri in Parcul Tineretului, specificati zona exacta unde veti fi (langa lac, la locul de joaca, etc.).</p>
-
-      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
-      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
-      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec-alt">
-  <div class="container">
-    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Tineretului</span></h2>
-    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
-    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
-<div class="review-card">
-        <div class="rc-meta"><strong>Daniela M.</strong> — <em>Tineretului - Parc</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Parcul Tineretului, 15 copii, Batman si Spider-Man intr-un duo incredibil. O nebunie de petrecere! Animatorii au stiut perfect cum sa gestioneze copiii in spatiu deschis."</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Robert G.</strong> — <em>Tineretului</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Am rezervat pentru 11:00 in parc si pana la 13:00 copiii nu voiau sa plece acasa. Asta spune absolut tot despre calitatea animatiei SuperParty!"</p>
-      </div>
-<div class="review-card">
-        <div class="rc-meta"><strong>Lavinia C.</strong> — <em>Timpuri Noi</em> &nbsp;⭐⭐⭐⭐⭐</div>
-        <p class="rc-text">"Elsa a sosit la usa exact la ora 16:00, costum impecabil. Fetita mea a innebunit de bucurie. Cele 2 ore au zburat. Revin cu siguranta pentru fiecare aniversare!"</p>
-      </div>
-    </div>
-    <style>
-      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
-      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
-      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
-    </style>
-    <p style="margin-top:1.5rem;text-align:center;">
-      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
-    </p>
-  </div>
-</section>
-
 <section class="sec" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
-    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Tineretului</span></h2>
+    <h2 class="sec-title">Intrebari frecvente — animatori <span style="color:var(--primary)">Tineretului</span></h2>
     <div class="faq-list">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Faceti animatie in Parcul Tineretului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — Parcul Tineretului este una din locatiile noastre preferate! Animatorul vine cu tot echipamentul si face un program de 2 ore in aer liber. Ideal pentru grupuri de 20-50 copii.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Faceti animatie in Parcul Tineretului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — Parcul Tineretului este una din locatiile noastre preferate! Animatorul vine cu tot echipamentul si face un program de 2 ore in aer liber. Ideal pentru grupuri de 20-50 copii.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat costa un animator pentru o petrecere la Parcul Tineretului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Pachetul Super 1 (490 RON) este perfect pentru petreceri in aer liber de pana la 20 copii. Super 3 (840 RON) cu 2 personaje este recomandat pentru 30+ copii.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat costa un animator pentru o petrecere la Parcul Tineretului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pachetul Super 1 (490 RON) este perfect pentru petreceri in aer liber de pana la 20 copii. Super 3 (840 RON) cu 2 personaje este recomandat pentru 30+ copii.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Ce activitati include animatia in parc la Tineretului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">In parc: jocuri interactive in echipe, tras cu leaganul de personaj, stafete tematice, dans, mini disco, baloane colorate. Plus face painting si diplome magnetice pentru toti copiii.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Ce activitati include animatia in parc la Tineretului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">In parc: jocuri interactive in echipe, tras cu leaganul de personaj, stafete tematice, dans, mini disco, baloane colorate. Plus face painting si diplome magnetice pentru toti copiii.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ E nevoie de autorizatie pentru animatia in Parcul Tineretului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Nu este nevoie de autorizatie pentru grupuri mici (sub 50 persoane) intr-o zona verde publica. Va recomandam sa verificati si cu administratia parcului.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ E nevoie de autorizatie pentru animatia in Parcul Tineretului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Nu este nevoie de autorizatie pentru grupuri mici (sub 50 persoane) intr-o zona verde publica. Va recomandam sa verificati si cu administratia parcului.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Cat de aproape de statia de metrou Timpuri Noi faceti petreceri?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Acoperim toata zona Timpuri Noi, Tineretului, Berceni si Vacaresti. Animatorul vine cu masina proprie direct la locatia ta.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Cat de aproape de statia de metrou Timpuri Noi faceti petreceri?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Acoperim toata zona Timpuri Noi, Tineretului, Berceni si Vacaresti. Animatorul vine cu masina proprie direct la locatia ta.</p>
         </div>
+      </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">❓ Aveti animatori disponibili duminica dimineata in Tineretului?</h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Da — pornim de la 10:00 dimineata in orice zi. Duminica dimineata in Parcul Tineretului este de altfel very populara.</p>
-          </div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">❓ Aveti animatori disponibili duminica dimineata in Tineretului?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Da — pornim de la 10:00 dimineata in orice zi. Duminica dimineata in Parcul Tineretului este de altfel very populara.</p>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -377,9 +264,9 @@ const schema = JSON.stringify({
 <section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Tineretului</span></h2>
-      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
-      <div class="btns" style="justify-content:center;">
+      <h2>Rezerva animator în <span style="color:var(--primary)">Tineretului</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Garantie contractuala: daca copiii nu s-au simtit bine, nu platesti!</p>
+      <div class="btns" style="justify-content:center">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
@@ -387,7 +274,6 @@ const schema = JSON.stringify({
         <a href="/petreceri/sector-4">← Sectorul 4</a>
         <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
         <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
-        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
       </nav>
     </div>
   </div>
