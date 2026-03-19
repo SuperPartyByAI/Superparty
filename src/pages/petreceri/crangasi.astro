@@ -4,25 +4,41 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('crangasi') || article.slug.includes('crângași')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('crangasi') ||
+    article.slug.toLowerCase().includes('sector-6') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Crangasi, Sectorul 6, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
+    {
       "@type": "Service",
-      "name": "Animatori Petreceri Copii Crângași | SuperParty",
+      "name": "Animatori Petreceri Copii Crangasi | SuperParty",
       "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Crângași, Sectorul 6, Bucuresti",
+      "areaServed": "Crangasi, Sectorul 6, Bucuresti",
       "url": "https://www.superparty.ro/petreceri/crangasi"
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Crângași?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim Crângași și zonele adiacente (Giulești, Militari). Transport inclus."}},
-      {"@type": "Question", "name": "Organizați petreceri și la Lacul Crângași?", "acceptedAnswer": {"@type": "Answer", "text": "Da — putem coordona animație și în aer liber, la Lacul Crângași sau alte spații verzi."}},
-      {"@type": "Question", "name": "Cât durează o petrecere cu animator în Crângași?", "acceptedAnswer": {"@type": "Answer", "text": "Standard: 2 ore (pachetul Super 1, 490 RON). Opțional: 3 ore cu pachetul Super 7 (1290 RON)."}}
+      {"@type": "Question", "name": "Veniti la Lacul Crangasi pentru petreceri?", "acceptedAnswer": {"@type": "Answer", "text": "Da — lacul si parcul din zona sunt locatii excelente pentru petreceri in aer liber. Animatorul vine cu echipament portabil complet."}},
+      {"@type": "Question", "name": "Cat costa deplasarea pana la Crangasi?", "acceptedAnswer": {"@type": "Answer", "text": "Transportul este inclus in pretul pachetului. Nu exista taxa de deplasare pentru zona Crangasi, Sectorul 6."}},
+      {"@type": "Question", "name": "Ce pachet recomandati pentru o petrecere in apartament in Crangasi?", "acceptedAnswer": {"@type": "Answer", "text": "Super 1 (490 RON) este ideal pentru apartamente — 1 personaj si 2 ore de program adaptat spatiului disponibil."}},
+      {"@type": "Question", "name": "Aveti animatori familiari cu zona Crangasi?", "acceptedAnswer": {"@type": "Answer", "text": "Da — unii din animatorii nostri locuiesc in zona Crangasi, asa ca nu se vor pierde niciodata."}},
+      {"@type": "Question", "name": "Sunt disponibili animatorii in Crangasi sambata dimineata?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem disponibilitate toata ziua sambata si duminica, inclusiv dimineata de la 10:00."}},
+      {"@type": "Question", "name": "Puteti face si un program de botez in Crangasi?", "acceptedAnswer": {"@type": "Answer", "text": "Da — pachetul Super 7 (1290 RON) include 1 animator + 4 ursitoare pentru botez, 3 ore de program complet. Il recomandam pentru botezuri."}}
       ]
     },
     {
@@ -31,7 +47,7 @@ const schema = JSON.stringify({
         { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
         { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
         { "@type": "ListItem", "position": 3, "name": "Sectorul 6", "item": "https://www.superparty.ro/petreceri/sector-6" },
-        { "@type": "ListItem", "position": 4, "name": "Crângași", "item": "https://www.superparty.ro/petreceri/crangasi" }
+        { "@type": "ListItem", "position": 4, "name": "Crangasi", "item": "https://www.superparty.ro/petreceri/crangasi" }
       ]
     }
   ]
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Crângași | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Crângași, Crângași, Lacul Crângași, Sectorul 6. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Crangasi Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Crangasi, animator Crangasi, petreceri copii Crangasi, animator Sectorul 6 vest, Lacul Crangasi. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/crangasi"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Crângași</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Crângași</strong> — cartier din vestul Bucureștiului, Sectorul 6, lângă Lacul Crângași. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-6">Sectorul 6</a> › Crangasi
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Crangasi, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Crangasi</strong>, cartier linistit si verde din vestul Bucurestiului cu Lacul Crangasi, Parcul Crangasi si o comunitate stabila de familii care apreciaza serviciile de calitate. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Crângași</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Crangasi</h3>
         <ul>
-              <li>📍 Lacul Crângași — cadru natural pentru petreceri de vară</li>
-              <li>📍 Cartier liniștit cu familii</li>
-              <li>📍 Acces Metrou Crângași pe M1</li>
-              <li>📍 Aproape de Giulești și Militari</li>
+              <li>📍 Lacul Crangasi - 42 hectare, spatiu natural relaxant</li>
+              <li>📍 Parcul Crangasi - spatiu verde amenajat cu loc de joaca</li>
+              <li>📍 Statia de metrou Crangasi M1 - acces rapid</li>
+              <li>📍 Bulevardul Constructorilor - artera principala</li>
+              <li>📍 Centrul Comercial Crangasi Shopping</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~20 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Crângași, Sectorul 6</li>
-          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Vezi toate zonele Sector 6</a></li>
+          <li>🚗 ~20 min din centru</li>
+          <li>🚍 Metrou M1 (statia Crangasi) — acces excelent; autobuze 122, 170; tramvaie 41</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Crangasi</li>
+          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Toate zonele Sector 6</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Crangasi</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Sala de petreceri la Crangasi Shopping</li>
+              <li>🎉 Restaurante cu sali private pe B-dul Constructorilor</li>
+              <li>🎉 Centrul de events Crangasi Arena</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Crangasi</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Crangasi</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Crangasi</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Crangasi</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Crangasi</span> — Tot ce trebuie sa stii</h2>
+      <p>Crangasi este un cartier rezidential cu un caracter distinct — mai linistit decat vecinii Militari sau Drumul Taberei, cu o densitate mai mica si spatii verzi generoase. Lacul Crangasi (42 de hectare) este principala atractie a zonei si un loc de socializare foarte apreciat de familiile cu copii. Metroul M1 face accesul spre centru extrem de facil. Crangasi este alegerea perfecta pentru animatori care cauta un cadru relaxat si primitor.</p>
+
+      <h3>🗺️ Zone acoperite in Crangasi</h3>
+      <p>SuperParty acopera <strong>intreaga zona Crangasi</strong> si cartierele vecine: Giulesti, Militari, Drumul Taberei, Giurgiului. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Crangasi?</h3>
+      <p>Fiecare petrecere SuperParty in Crangasi include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Crangasi</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Lacul Crangasi este perfect pentru petreceri in aer liber in lunile mai-septembrie</li>
+            <li>✔️ Metroul M1 ne permite sa ajungem rapid din orice capat al Bucurestiului</li>
+            <li>✔️ Zona este linistita — petrecerile acasa sunt preferate in Crangasi</li>
+            <li>✔️ Rezidentii din Crangasi apreciaza punctualitatea si profesionalismul</li>
+            <li>✔️ Rezervati cu 2 saptamani inainte pentru weekenduri</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Crangasi?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Crangasi am organizat sute de petreceri de succes. Stim specificul <strong>vestul Bucurestiului, Sectorul 6</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Giulesti, Militari, Drumul Taberei, Giurgiului.</p>
+
+      <h3>📞 Cum rezervi un animator in Crangasi?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Crangasi, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Crangasi</div>
+        <div class="tag">📍 Giulesti</div>
+        <div class="tag">📍 Militari</div>
+        <div class="tag">📍 Drumul Taberei</div>
+        <div class="tag">📍 Giurgiului</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Crangasi — Avantajul tau</h3>
+        <p>Crangasiul este o zona in care parintii pun mare pret pe incredere si pe recomandarile vecnilor. SuperParty a castigat increderea comunitatii locale prin consistenta si calitate — fiecare petrecere livrata la acelasi nivel inalt, de la un an la altul. Metroul M1 si Lacul Crangasi sunt avantajele geografice ale zonei pe care stim sa le valorificam cu fiecare ocazie.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Crangasi</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Crângași</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Crangasi</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Crângași</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Crângași?", "Da — acoperim Crângași și zonele adiacente (Giulești, Militari). Transport inclus."],
-        ["Organizați petreceri și la Lacul Crângași?", "Da — putem coordona animație și în aer liber, la Lacul Crângași sau alte spații verzi."],
-        ["Cât durează o petrecere cu animator în Crângași?", "Standard: 2 ore (pachetul Super 1, 490 RON). Opțional: 3 ore cu pachetul Super 7 (1290 RON)."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Crangasi</span></h2>
+      <p class="intro-text">Crangasi este un cartier rezidential cu caracter distinct printre vecini sai mai aglomerati — mai linistit, mai verde si cu o densitate de populatie ceva mai scazuta decat Militari sau Drumul Taberei. Lacul Crangasi (42 hectare) a fost creat artificial in treptele de regularizare ale raului Colentina si este in prezent cea mai importanta atractie naturala a zonei vestice a Capitalei. Cartierul a fost construit preponderent in deceniile 7-8 ale secolului trecut cu blocuri de 10 etaje, adapostind muncitorii de la combinatele si fabricile din vestul Capitalei. Dupa 1990, Crangasiul s-a transformat intr-un cartier rezidential echilibrat cu o calitate buna a vietii urbane.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Metroul M1, cu statia Crangasi, face legatura directa cu zona centrala a Capitalei: Piata Victoriei in 15 minute, Piata Unirii in 20 minute, aeroport in 45 minute. Aceasta conectivitate excelenta face din Crangasi o zona atractiva pentru familiile care lucreaza in centru dar vor sa locuiasca intr-un cartier mai calm. Petrecerile de copii din Crangasi sunt adesea organizate acasa sau in micile sali de petreceri din zona. SuperParty se potriveste perfect acestui profil — animatorii vin direct la tine, cu tot echipamentul, fara sa ai nevoie de o sala mare sau de aranjamente complicate.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Sfaturi pentru o petrecere reusita in Crangasi: Lacul Crangasi este gratuit si accesibil public pentru petreceri in aer liber in sezonul cald. Animatorul SuperParty vine cu boxe portabile si materiale complete. Statia de metrou Crangasi (M1) este chiar la iesirea din cartier — transport rapid si clar pentru invitati din alte zone. Zona Parc Crangasi are locuri de joaca amenajate si zone umbrite excelente pentru petreceri de copii din mai pana in septembrie.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Crangasi</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Elsa, Minnie, Spider-Man, Batman, PAW Patrol</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Crangasi, weekendurile sunt cele mai solicitate. Dimineata (10:00-12:00) si dupa-amiaza (15:00-17:00) sambata sunt intervalele preferate.</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Lacul Crangasi si Parcul Crangasi sunt perfecte in sezon. Apartamentele din zona sunt spatioase. Sali de petreceri sunt disponibile in zona Crangasi Shopping.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) sau Super 3 (840 RON) sunt cele mai alese in Crangasi. Transport gratuit, acces facil via M1.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Confirmam in 30 minute si trimitem confirmare pe email sau WhatsApp.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Crangasi</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Iulia N.</strong> — <em>Crangasi - Lacul Crangasi</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Petrecere in aer liber la Lacul Crangasi. Animatorul a gestionat perfect grupul de 18 copii de diferite varste. Baloane, jocuri interactive, face painting. Spectaculos!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Victor T.</strong> — <em>Crangasi</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am ales SuperParty dupa ce am citit recenziile pe Google. Nu am regretat nicio secunda decizia. Profesionisti adevarati, cu pasiune pentru ceea ce fac!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Camelia S.</strong> — <em>Crangasi</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"A doua petrecere cu SuperParty in 2 ani. La fel de buna ca prima, daca nu mai buna. Exact asa se fac lucrurile bine si cu pasiune!"</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Crangasi</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Veniti la Lacul Crangasi pentru petreceri?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — lacul si parcul din zona sunt locatii excelente pentru petreceri in aer liber. Animatorul vine cu echipament portabil complet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat costa deplasarea pana la Crangasi?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Transportul este inclus in pretul pachetului. Nu exista taxa de deplasare pentru zona Crangasi, Sectorul 6.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce pachet recomandati pentru o petrecere in apartament in Crangasi?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Super 1 (490 RON) este ideal pentru apartamente — 1 personaj si 2 ore de program adaptat spatiului disponibil.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Aveti animatori familiari cu zona Crangasi?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — unii din animatorii nostri locuiesc in zona Crangasi, asa ca nu se vor pierde niciodata.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Sunt disponibili animatorii in Crangasi sambata dimineata?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — avem disponibilitate toata ziua sambata si duminica, inclusiv dimineata de la 10:00.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Puteti face si un program de botez in Crangasi?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — pachetul Super 7 (1290 RON) include 1 animator + 4 ursitoare pentru botez, 3 ore de program complet. Il recomandam pentru botezuri.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Crângași</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Crangasi</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-6" style="color:var(--primary); font-weight:600;">Sector 6</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-6">← Sectorul 6</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>

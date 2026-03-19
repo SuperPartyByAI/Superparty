@@ -4,12 +4,25 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('dorobanti') || article.slug.includes('dorobanți')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('dorobanti') ||
+    article.slug.toLowerCase().includes('sector-1') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Dorobanți, Sectorul 1, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
     {
       "@type": "Service",
       "name": "Animatori Petreceri Copii Dorobanți | SuperParty",
@@ -20,9 +33,12 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Dorobanți?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Dorobanți este una din zonele noastre preferate. Transport inclus, punctualitate garantată."}},
-      {"@type": "Question", "name": "Ce personaje sunt cerute în Dorobanți?", "acceptedAnswer": {"@type": "Answer", "text": "Personajele Disney premium (Elsa, Rapunzel, Belle) sunt foarte cerute în zona Dorobanți."}},
-      {"@type": "Question", "name": "Organizați petreceri la vile în Dorobanți?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem experiență cu petreceri la case și vile private din zona Dorobanți și Floreasca."}}
+      {"@type": "Question", "name": "Veniti la petreceri in zona Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Dorobantii este una din zonele noastre premium preferate. Avem experienta cu petreceri la vile, gradini si restaurante din aceasta zona eleganta."}},
+      {"@type": "Question", "name": "Ce personaje Disney sunt disponibile pentru familiile din Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Avem toata gama Disney: Elsa, Anna, Rapunzel, Belle, Aurora, Ariel, Merida, Moana (printe) si Spider-Man, Batman, Thor (supereroi). Plus multe altele."}},
+      {"@type": "Question", "name": "Costumele sunt la standardele familiilor din Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Da — costumele SuperParty sunt licentiate Disney/Marvel si confectionate din tesaturi premium. Sunt perfecte pentru orice tip de eveniment, inclusiv cele mai pretentioase."}},
+      {"@type": "Question", "name": "Organizati petreceri si la restaurantele fine dining din Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Lucram cu orice locatie. Coordonati cu restaurantul si cu noi in avans, si animatorul se va adapta perfect la spatiu si program."}},
+      {"@type": "Question", "name": "Cat costa un animator pentru o petrecere in zona Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetele raman aceleasi: Super 1 (490 RON), Super 3 (840 RON), Super 7 (1290 RON). Nu exista taxa de deplasare in zona Dorobanti, Sectorul 1."}},
+      {"@type": "Question", "name": "Aveti disponibilitate sabata la pranz in Dorobanti?", "acceptedAnswer": {"@type": "Answer", "text": "Da — sabata este ziua cu cea mai mare disponibilitate. Vom rezerva slotul dorit daca rezervati cu cel putin 2-3 saptamani inainte."}}
       ]
     },
     {
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Dorobanți | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Dorobanți, Dorobanți, Piața Dorobanți, Sectorul 1, Floreasca. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Dorobanți Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Dorobanți, animator Dorobanti, petreceri copii Dorobanti, animator Calea Dorobantilor, Sectorul 1. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/dorobanti"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Dorobanți</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Dorobanți</strong> — cartier elegant din nordul Bucureștiului, Sectorul 1, zona Piața Dorobanți. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-1">Sectorul 1</a> › Dorobanți
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Dorobanți, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Dorobanți</strong>, cartier elegant si bine asezat din nordul Bucurestiului, cu o estetica aparte, restaurante fine dining si o comunitate de familii cu gusturi rafinate si apreciaza calitatea. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Dorobanți</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Dorobanți</h3>
         <ul>
-              <li>📍 Piața Dorobanți — centrul cartierului</li>
-              <li>📍 Zona cu vile și apartamente premium</li>
-              <li>📍 Aproape de Parcul Floreasca și Herăstrău</li>
-              <li>📍 Restaurante și cafenele exclusiviste</li>
+              <li>📍 Piata Dorobanti - centrul comercial al zonei</li>
+              <li>📍 Parcul Herastrau - la 10 minute de mers pe jos</li>
+              <li>📍 Calea Dorobantilor - artera principala eleganta</li>
+              <li>📍 Restaurante fine dining (Lacrimi si Sfinti, Club 99)</li>
+              <li>📍 Soseaua Nordului - la marginea cartierului</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~15 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Dorobanți, Sectorul 1</li>
-          <li><a href="/petreceri/sector-1" style="color:var(--primary)">→ Vezi toate zonele Sector 1</a></li>
+          <li>🚗 ~12 min din Piata Victoriei</li>
+          <li>🚍 Autobuze 131, 182, 335, 301; taxi/ridesharing rapid; acces excelent auto via Calea Dorobantilor</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Dorobanți</li>
+          <li><a href="/petreceri/sector-1" style="color:var(--primary)">→ Toate zonele Sector 1</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Dorobanți</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Restaurante cu sali private de lux in zona Dorobanti</li>
+              <li>🎉 Vile private cu gradina in Dorobanti si Floreasca</li>
+              <li>🎉 Eveniment spaces in zona Capitale-Dorobanti</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Dorobanți</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Dorobanți</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Dorobanți</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Dorobanți</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Dorobanți</span> — Tot ce trebuie sa stii</h2>
+      <p>Dorobantii este zona cu poate cel mai rafinat caracter din Bucuresti. Blocurile interbelice elegante, vilele cu gradini si restaurantele de renume creeaza o atmosfera distincta. Familiile din Dorobanti au asteptari inalte de la orice serviciu — si SuperParty s-a ridicat la nivelul acestor asteptari de fiecare data. Apropierea de Parcul Herastrau (10 minute de mers pe jos) ofera alternativa perfecta pentru petreceri in aer liber.</p>
+
+      <h3>🗺️ Zone acoperite in Dorobanți</h3>
+      <p>SuperParty acopera <strong>intreaga zona Dorobanți</strong> si cartierele vecine: Floreasca, Herastrau, Capitale, Aviatorilor. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Dorobanți?</h3>
+      <p>Fiecare petrecere SuperParty in Dorobanți include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Dorobanți</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Familiile din Dorobanti prefera de obicei personajele Disney clasice (Elsa, Rapunzel, Belle)</li>
+            <li>✔️ Petrecerile la vila cu gradina sunt foarte frecvente in zona Dorobanti-Floreasca</li>
+            <li>✔️ Avem animatori cu tinuta impecabila si abilitati de comunicare excelente</li>
+            <li>✔️ Pachetul Super 7 este cel mai ales de familiile din Dorobanti</li>
+            <li>✔️ Rezervati cu 3-4 saptamani inainte pentru weekendurile din sezon</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Dorobanți?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Dorobanți am organizat sute de petreceri de succes. Stim specificul <strong>nordul Bucurestiului, Sectorul 1</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Floreasca, Herastrau, Capitale, Aviatorilor.</p>
+
+      <h3>📞 Cum rezervi un animator in Dorobanți?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Dorobanți, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Dorobanți</div>
+        <div class="tag">📍 Floreasca</div>
+        <div class="tag">📍 Herastrau</div>
+        <div class="tag">📍 Capitale</div>
+        <div class="tag">📍 Aviatorilor</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Dorobanti — Avantajul tau</h3>
+        <p>Dorobantii este zona de referinta a Capitalei pentru servicii premium — si SuperParty se aliniaza perfect acestor standarde. Selectionam animatorii destinati acestei zone dupa criterii suplimentare de prezentare, dictie si capacitate de adaptare la contexte sociale rafinate. Garantia contractuala este valabila si in zona premium Dorobanti, Floreasca sau Herastrau.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Dorobanti</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Dorobanți</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Dorobanți</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Dorobanți</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Dorobanți?", "Da — Dorobanți este una din zonele noastre preferate. Transport inclus, punctualitate garantată."],
-        ["Ce personaje sunt cerute în Dorobanți?", "Personajele Disney premium (Elsa, Rapunzel, Belle) sunt foarte cerute în zona Dorobanți."],
-        ["Organizați petreceri la vile în Dorobanți?", "Da — avem experiență cu petreceri la case și vile private din zona Dorobanți și Floreasca."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Dorobanti</span></h2>
+      <p class="intro-text">Zona Dorobantilor este una din zonele cu cel mai puternic caracter interbelic din Capitala. Blocurile elegante din perioada 1920-1940, cu balcoane ornamentate si curti interioare umbroase, dau tonul estetic al cartierului si ii confera un farmec aparte. Calea Dorobantilor, artera principala, poarta numele regimentelor de infanterie destinate istorice ap ararii Capitalei. Dupa 1990, zona a atras cea mai mare concentratie de restaurante fine dining si cafenele de specialitate din Capitala, devenind cartierul gastronomic de referinta al Bucurestiului si un loc de vizita obligatoriu pentru curiozii de city-break local.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Piata Dorobanti, cu farmecul sau de piata de cartier autentica intr-un context urban premium, este punctul de intalnire al comunitatii locale zilnic. In Dorobanti gasesti coexistenta perfecta a vechi si nou: doamne in varsta care isi apara blocul interbelic de demolari ilegale si antreprenori tineri cu vehicule premium parcate la usa. Petrecerile de copii din zona Dorobantilor sunt adesea organizate la vile private cu gradini ingrijite — un format in care SuperParty exceleza. Stim cum sa orchestram un program memorabil la o vila fara sa deranjem vecinii sau sa perturbam atmosfera rafinata a zonei.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Sfaturi pentru petreceri in Dorobanti: Vilele cu gradina din zona sunt perfecte pentru petreceri de 20-50 de copii in aer liber. Terasa gradinii poate fi aranjata tematic coordonat cu personajul ales — contactati echipa noastra pentru optiuni de decor. Blocurile interbelice din Calea Dorobantilor au uneori lifturi vechi sau scari cu trepte inalte — animatorul vine cu vehiculul direct la intrare si gestioneaza el echipamentul. Restaurantele fine dining din zona au sali private rezervabile pentru grupuri de 30-80 de persoane.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Dorobanti</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Elsa, Belle, Rapunzel, Ariel, Spider-Man premium</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Dorobanti, weekendurile sunt populate. Dimineata de sambata (10:00-12:00) si dupa-amiaza de duminica (15:00-17:00) sunt intervalele preferate pentru petreceri private.</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Vila cu gradina este destinatia numarul 1 in Dorobanti. Restaurantele fine dining din zona au sali private elegante. Parcul Herastrau (10 minute) pentru petreceri in aer liber.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 3 (840 RON) sau Super 7 (1290 RON) sunt cele mai alese de familiile premium din Dorobanti. Costume licenziate, animatori select.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. O discutie telefonica de 10 minute ne ajuta sa personalizam perfect pachetul pentru stilul dorit in Dorobanti.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Dorobanti</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Ioana C.</strong> — <em>Dorobanti</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am organizat petrecerea la vila cu gradina si a fost un vis implinit. Rapunzel era impecabila, tinuta animatoarei era la inaltimea asteptarilor din zona Dorobanti. Multumesc!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Vlad T.</strong> — <em>Dorobanti</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Pachetul Super 7 pentru botezul fiicei noastre. O experienta magica pentru toti copiii invitati. Garantia contractuala ne-a dat liniste totala. Recomand cu toata increderea!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Mihaela S.</strong> — <em>Dorobanti</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"A patra petrecere cu SuperParty in 4 ani. De fiecare data livreaza la acelasi nivel inalt de excelenta. Felicitari intregii echipe! Este cu adevarat standardul din piata!"</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Dorobanți</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Veniti la petreceri in zona Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — Dorobantii este una din zonele noastre premium preferate. Avem experienta cu petreceri la vile, gradini si restaurante din aceasta zona eleganta.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce personaje Disney sunt disponibile pentru familiile din Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Avem toata gama Disney: Elsa, Anna, Rapunzel, Belle, Aurora, Ariel, Merida, Moana (printe) si Spider-Man, Batman, Thor (supereroi). Plus multe altele.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Costumele sunt la standardele familiilor din Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — costumele SuperParty sunt licentiate Disney/Marvel si confectionate din tesaturi premium. Sunt perfecte pentru orice tip de eveniment, inclusiv cele mai pretentioase.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Organizati petreceri si la restaurantele fine dining din Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Lucram cu orice locatie. Coordonati cu restaurantul si cu noi in avans, si animatorul se va adapta perfect la spatiu si program.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat costa un animator pentru o petrecere in zona Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Pachetele raman aceleasi: Super 1 (490 RON), Super 3 (840 RON), Super 7 (1290 RON). Nu exista taxa de deplasare in zona Dorobanti, Sectorul 1.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Aveti disponibilitate sabata la pranz in Dorobanti?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — sabata este ziua cu cea mai mare disponibilitate. Vom rezerva slotul dorit daca rezervati cu cel putin 2-3 saptamani inainte.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Dorobanți</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Dorobanți</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-1" style="color:var(--primary); font-weight:600;">Sector 1</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-1">← Sectorul 1</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>

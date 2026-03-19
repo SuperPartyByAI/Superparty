@@ -4,12 +4,25 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('berceni') || article.slug.includes('berceni')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('berceni') ||
+    article.slug.toLowerCase().includes('sector-4') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Berceni, Sectorul 4, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
     {
       "@type": "Service",
       "name": "Animatori Petreceri Copii Berceni | SuperParty",
@@ -20,9 +33,12 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim tot Berceni, de la Piața Berceni până la limita cu Jilava."}},
-      {"@type": "Question", "name": "Cât costă un animator în Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "De la 490 RON pachetul Super 1 (1 personaj, 2 ore). Transport gratuit în tot Sectorul 4."}},
-      {"@type": "Question", "name": "Veniți și la case cu curte în Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Da — organizăm animație atât în săli de petreceri cât și la domiciliu, în curte sau apartament."}}
+      {"@type": "Question", "name": "Veniti in Berceni pentru petreceri de copii?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Berceni este o zona pe care o acoperim in totalitate. De la Piata Berceni pana la limita cu Jilava, suntem disponibili fara taxa de deplasare."}},
+      {"@type": "Question", "name": "Ce pachet este recomandat in Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 (490 RON, 1 personaj, 2 ore) este cel mai ales in Berceni. Super 3 (840 RON) este excelent pentru petreceri cu 20+ copii."}},
+      {"@type": "Question", "name": "Veniti si la case cu curte in Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Berceni are si zone cu case. Facem animatie la curte, gradina sau in garaj transformat in sala de petreceri. Animatorul vine cu tot echipamentul."}},
+      {"@type": "Question", "name": "Cat timp dureaza deplasarea la Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Intre 15-25 minute din centrul Bucurestiului, in functie de trafic. Animatorul soseste cu 10 minute inainte de inceperea programului."}},
+      {"@type": "Question", "name": "Exista animatori disponibili sambata si duminica in Berceni?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dar rezervati devreme. Weekendurile sunt cele mai solicitate — recomandam rezervare cu 2-3 saptamani inainte."}},
+      {"@type": "Question", "name": "Aveti personaje mai speciale, nu doar Spider-Man si Elsa?", "acceptedAnswer": {"@type": "Answer", "text": "Avem 50+ personaje: Mos Craciun, Elsa, Rapunzel, Belle, Ariel, Batman, Captain America, Iron Man, Spider-Man, Sonic, PAW Patrol, Minnie, Winnie, Clown, si altele."}}
       ]
     },
     {
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Berceni | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Berceni, Berceni, Sectorul 4, Olteniței. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Berceni Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Berceni, animator Berceni, petreceri copii Berceni, animator Sectorul 4, Oltenitei. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/berceni"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Berceni</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Berceni</strong> — cartier din sudul Bucureștiului, Sectorul 4, cu numeroase familii și cerere mare pentru animatori. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-4">Sectorul 4</a> › Berceni
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Berceni, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Berceni</strong>, cartier traditional din sudul Bucurestiului, Sectorul 4, cu o comunitate stabila si cu multa cerere pentru servicii de animatie accesibile si de calitate. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Berceni</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Berceni</h3>
         <ul>
-              <li>📍 Parcul Tineretului — în apropiere</li>
-              <li>📍 Piața Berceni — centrul cartierului</li>
-              <li>📍 Numeroase blocuri și case cu curte pentru petreceri</li>
-              <li>📍 Acces via Șoseaua Olteniței</li>
+              <li>📍 Piata Berceni - centrul comercial al cartierului</li>
+              <li>📍 Parcul Tineretului - in apropiere (5 min)</li>
+              <li>📍 Soseaua Oltenitei - artera principala</li>
+              <li>📍 Calea Vacaresti - acces spre centru</li>
+              <li>📍 Complexele rezidentiale noi din Berceni</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~20 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Berceni, Sectorul 4</li>
-          <li><a href="/petreceri/sector-4" style="color:var(--primary)">→ Vezi toate zonele Sector 4</a></li>
+          <li>🚗 ~20 min din centru</li>
+          <li>🚍 Autobuze 232, 337, 168, 232; acces via Soseaua Oltenitei sau Calea Vacaresti</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Berceni</li>
+          <li><a href="/petreceri/sector-4" style="color:var(--primary)">→ Toate zonele Sector 4</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Berceni</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Sala de petreceri Berceni Events (Soseaua Oltenitei)</li>
+              <li>🎉 Restaurante cu sali private pe Calea Vacaresti</li>
+              <li>🎉 Centrul de evenimente Family Park Berceni</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Berceni</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Berceni</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Berceni</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Berceni</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Berceni</span> — Tot ce trebuie sa stii</h2>
+      <p>Berceni este un cartier cu caracter rezidential puternic, construit preponderent in era comunista cu blocuri de 8-10 etaje. In ultimii ani, frontiera cu Jilava si Berceni-Ilfov s-a estompat — numeroase ansambluri rezidentiale noi au aparut in zona, aducand familii tinere cu copii mici. Parcul Tineretului, desi la limita cu Sectorul 4, este accesibil rapid din Berceni si ofera cadrul perfect pentru petreceri de vara in aer liber.</p>
+
+      <h3>🗺️ Zone acoperite in Berceni</h3>
+      <p>SuperParty acopera <strong>intreaga zona Berceni</strong> si cartierele vecine: Tineretului, Oltenisei, Jilava, Berceni-Ilfov. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Berceni?</h3>
+      <p>Fiecare petrecere SuperParty in Berceni include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Berceni</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Berceni are o multime de sali de petreceri la preturi accesibile</li>
+            <li>✔️ Parcul Tineretului este la 5 minute — ideal pentru petreceri de vara</li>
+            <li>✔️ Accesul via Soseaua Oltenitei permite deplasare rapida</li>
+            <li>✔️ Familiile din Berceni apreciaza raportul calitate-pret — pachetul Super 1 este cel mai ales</li>
+            <li>✔️ Avem experienta cu sali de blocuri din Berceni pentru petreceri mai mici</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Berceni?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Berceni am organizat sute de petreceri de succes. Stim specificul <strong>sudul Bucurestiului</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Tineretului, Oltenisei, Jilava, Berceni-Ilfov.</p>
+
+      <h3>📞 Cum rezervi un animator in Berceni?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Berceni, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Berceni</div>
+        <div class="tag">📍 Tineretului</div>
+        <div class="tag">📍 Oltenisei</div>
+        <div class="tag">📍 Jilava</div>
+        <div class="tag">📍 Berceni-Ilfov</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Berceni — Avantajul tau</h3>
+        <p>In Berceni, SuperParty este recomandat de parinti la parinti prin retele sociale si grupuri de WhatsApp de cartier. Popularitatea noastra in zona se datoreaza simplu: facem ceea ce promitem, la timp si la calitate garantata contractual. Parcul Tineretului si spatiile verzi din zona Soseaua Oltenitei sunt locatiile noastre preferate pentru petreceri de vara.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Berceni</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Berceni</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Berceni</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Berceni</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Berceni?", "Da — acoperim tot Berceni, de la Piața Berceni până la limita cu Jilava."],
-        ["Cât costă un animator în Berceni?", "De la 490 RON pachetul Super 1 (1 personaj, 2 ore). Transport gratuit în tot Sectorul 4."],
-        ["Veniți și la case cu curte în Berceni?", "Da — organizăm animație atât în săli de petreceri cât și la domiciliu, în curte sau apartament."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Berceni</span></h2>
+      <p class="intro-text">Berceni este unul din cartierele traditionale ale Sectorului 4, construit preponderent dupa 1970 ca o extensie sudica planificata a Capitalei. Soseaua Oltenitei, artera principala, reprezinta frontiera informala a cartierului spre exterior. In ultimii 15 ani, granita dintre Berceni si Jilava s-a estompat treptat — ansambluri rezidentiale noi au aparut pe fostele terenuri agricole, aducand mii de familii tinere in proximitatea cartierului. Berceni de astazi este un cartier mixt: blocuri socialiste vechi convietuiesc cu rezidentialul modern privat, iar diversitatea demografica este in continua crestere. Proximitatea fata de Aeroportul Henri Coanda (30 min) atrage si expati sau familii cu mobilitate internationala.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Piata Berceni, cu pietele sale agro-alimentare si magazinele de proximitate, ramane centrul social si comercial al cartierului. Parcul Tineretului, aflat chiar la limita nordica cu Sectorul 4, este destinatia preferata a familiilor din Berceni pentru weekend-uri. SuperParty a organizat numeroase petreceri de ziua in Parcul Tineretului pentru copiii din Berceni — este un spatiu enorm, cu lac artificial, locuri de joaca si zone umbrite de arbori maturi, perfect pentru petreceri in aer liber cu 20-50 de copii. Stim fiecare zona a parcului si organizat petreceri perfecte in toate anotimpurile.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Sfaturi pentru o petrecere reusita in Berceni: Soseaua Oltenitei poate fi aglomerata in orele de varf (17:00-19:00). Petrecerile incepute la 14:00 sau 16:00 sunt optime. Casele cu curti din zona Vacaresti-Berceni sunt perfecte pentru petreceri mari de vara. Animatorul SuperParty vine cu boxe portabile si materiale complete — nu aveti nevoie de niciun echipament suplimentar. Parcul Tineretului nu necesita rezervare pentru grupuri sub 50 de persoane — sunati-ne si organizam o petrecere de vis in parc.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Berceni</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Rapunzel, Minnie Mouse</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Berceni, sambata este cea mai populara zi. Intervalele 11:00-13:00 si 15:00-17:00 sunt cele mai cerute. Rezerva cu 2 saptamani inainte.</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Apartamentele din Berceni sunt in general spatioase. Parcul Tineretului (la 5 minute) este ideal pentru petreceri in aer liber. Sali de petreceri sunt disponibile pe Soseaua Oltenitei.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) este cel mai ales in Berceni. Super 3 (840 RON) pentru grupuri mai mari. Nicio taxa de deplasare in Sectorul 4.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Confirmam disponibilitatea si trimitem contract in 24 de ore.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Berceni</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Dorina T.</strong> — <em>Berceni - Parcul Tineretului</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am organizat in Parcul Tineretului. Animatorul a gestionat perfect 20 de copii afara, cu jocuri de echipa si baloane. A stiut exact cum sa captiveze copiii in aer liber. Multumesc!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Gabi R.</strong> — <em>Berceni</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Pachetul Super 1 a depasit total asteptarile noastre. 2 ore de program complet cu Elsa, baloane in forma de personaje Disney, face painting. Copiii au ramas cu gura cascata!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Monica P.</strong> — <em>Berceni</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Prima petrecere cu SuperParty. Nu va fi ultima. Profesional, punctual, creativ si plin de energie. Exact ce isi dorea copilul meu!"</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Berceni</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Veniti in Berceni pentru petreceri de copii?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — Berceni este o zona pe care o acoperim in totalitate. De la Piata Berceni pana la limita cu Jilava, suntem disponibili fara taxa de deplasare.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce pachet este recomandat in Berceni?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Pachetul Super 1 (490 RON, 1 personaj, 2 ore) este cel mai ales in Berceni. Super 3 (840 RON) este excelent pentru petreceri cu 20+ copii.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Veniti si la case cu curte in Berceni?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — Berceni are si zone cu case. Facem animatie la curte, gradina sau in garaj transformat in sala de petreceri. Animatorul vine cu tot echipamentul.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat timp dureaza deplasarea la Berceni?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Intre 15-25 minute din centrul Bucurestiului, in functie de trafic. Animatorul soseste cu 10 minute inainte de inceperea programului.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Exista animatori disponibili sambata si duminica in Berceni?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da, dar rezervati devreme. Weekendurile sunt cele mai solicitate — recomandam rezervare cu 2-3 saptamani inainte.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Aveti personaje mai speciale, nu doar Spider-Man si Elsa?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Avem 50+ personaje: Mos Craciun, Elsa, Rapunzel, Belle, Ariel, Batman, Captain America, Iron Man, Spider-Man, Sonic, PAW Patrol, Minnie, Winnie, Clown, si altele.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Berceni</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Berceni</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-4" style="color:var(--primary); font-weight:600;">Sector 4</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-4">← Sectorul 4</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>
