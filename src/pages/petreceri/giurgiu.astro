@@ -1,174 +1,151 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Giurgiu",
-      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377"},
-      "areaServed": "Giurgiu",
-      "url": "https://superparty.ro/petreceri/giurgiu"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Organizati animatori in Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Da — SuperParty acopera Giurgiu si zona Giurgiu. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate."}},
-        {"@type":"Question","name":"Este taxa de deplasare pentru Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Distanta este ~65 km pe DN5 — taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta."}},
-        {"@type":"Question","name":"Unde se organizeaza petrecerea in Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"In Giurgiu recomandam: sali events multiple sau restaurante. Animatorul vine cu echipament portabil complet — boxe wireless, materiale jocuri, costume premium."}},
-        {"@type":"Question","name":"Ce personaje sunt disponibile in Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Cele mai cerute in zona Giurgiu: Bluey, Spider-Man si Elsa. SuperParty are peste 50 de personaje disponibile la rezervare."}},
-        {"@type":"Question","name":"Cat timp inainte rezervam animatorul?","acceptedAnswer":{"@type":"Answer","text":"Minim 7-14 zile pentru saptamani normale, 3-4 saptamani pentru weekendurile de mai-septembrie. Suna la 0722 744 377."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Acasa","item":"https://superparty.ro"},
-        {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},
-        {"@type":"ListItem","position":3,"name":"Giurgiu","item":"https://superparty.ro/petreceri/giurgiu"}
-      ]
-    }
-  ]
-});
+const schema = JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Animatori Petreceri Copii Giurgiu","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Giurgiu","url":"https://www.superparty.ro/petreceri/giurgiu"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Organizați animatori în Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Da — SuperParty acoperă tot Giurgiu: centrul orașului, cartierele Gării, Malu Roșu și toate zonele periurbane. Sunați la 0722 744 377 pentru confirmare disponibilitate în 30 minute."}},{"@type":"Question","name":"Taxa de deplasare pentru Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Giurgiu este la 65 km pe DN5 — drum drept și rapid. Taxa de deplasare se comunică transparent la rezervare. De obicei sub 80 RON dus-întors, communicate explicit înainte de confirmare."}},{"@type":"Question","name":"Unde organizăm petrecerea în Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Complexul Dunărean, restaurantele din centru și curțile generoase ale caselor tradiționale din Giurgiu sunt perfecte pentru petreceri. Parcul Alley este ideal vara. SuperParty vine oriunde ≥15 mp liberi."}},{"@type":"Question","name":"Ce personaje preferă copiii din Giurgiu?","acceptedAnswer":{"@type":"Answer","text":"Bluey este #1 în Giurgiu în ultimii 2 ani, depășind Spider-Man la cereri! Urmat de Spider-Man și Elsa. Comunitatea din Giurgiu este conectată la tendințele globale prin Disney+ și Netflix."}},{"@type":"Question","name":"Cât timp durează deplasarea animatorului?","acceptedAnswer":{"@type":"Answer","text":"Animatorul pornește cu minim 2 ore înainte și ajunge cu 15 minute înainte de ora rezervată. DN5 la Giurgiu este mult mai liber decât traficul din București — puncutalitate garantată."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://superparty.ro"},{"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},{"@type":"ListItem","position":3,"name":"Animatori Petreceri Copii Giurgiu","item":"https://www.superparty.ro/petreceri/giurgiu"}]}]});
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Giurgiu | SuperParty — de la 490 RON"
-  description="Animatori profesionisti pentru petreceri copii in Giurgiu (Giurgiu), ~65 km de Bucuresti (DN5). Peste 50 personaje, pachete 490-1290 RON, garantie contractuala. Tel: 0722 744 377."
+  title="Animatori Petreceri Copii Giurgiu | SuperParty"
+  description="Animatori copii în Giurgiu — 65 km de București pe DN5, poarta spre Bulgaria. Pachete 490-1290 RON, garantie. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/giurgiu"
   robots="index, follow"
   schema={schema}
 >
 <style>
-  .loc-hero{padding:4rem 0 2.5rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%)}
-  .loc-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
-  .loc-hero p{color:var(--text-muted);font-size:1rem;max-width:600px;line-height:1.8;margin-bottom:1.8rem}
+  .hero-loc{padding:4rem 0 2rem;background:radial-gradient(ellipse at 30% top,rgba(255,107,53,.14) 0%,transparent 60%)}
+  .h1-loc{font-size:clamp(1.7rem,4.5vw,2.7rem);font-weight:900;line-height:1.15;margin-bottom:1.1rem}
+  .badge-loc{display:inline-block;background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3);padding:.3rem .9rem;border-radius:99px;font-size:.8rem;font-weight:700;color:var(--primary);margin-bottom:.8rem}
+  .lead-loc{color:var(--text-muted);max-width:680px;line-height:1.85;margin-bottom:1.8rem;font-size:1rem}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
   .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
   .btn-p:hover{transform:translateY(-2px)}
   .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
-  .loc-s{padding:3rem 0}.loc-s-alt{padding:3rem 0;background:var(--dark-2)}
-  .sec-title{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
-  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-  .info-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem}
-  .info-card h3{font-weight:700;margin-bottom:.5rem;font-size:.95rem}
-  .info-card ul{list-style:none;padding:0}
-  .info-card li{padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted)}
-  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem;max-width:780px}
-  .rich-text strong{color:var(--text)}
-  .faq-list{display:flex;flex-direction:column;gap:.9rem;max-width:700px}
-  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.2rem}
-  .faq-item h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
-  .faq-item p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
-  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center}
-  .cta-box h2{font-size:1.5rem;font-weight:800;margin-bottom:.8rem}
-  .cta-box p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.95rem}
-  .cta-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .sec{padding:3rem 0}.sec-alt{padding:3rem 0;background:var(--dark-2)}
+  .sec-h2{font-size:1.35rem;font-weight:800;margin-bottom:1.1rem}
+  .fact-box{background:linear-gradient(135deg,rgba(255,107,53,.1),rgba(255,107,53,.04));border-left:4px solid var(--primary);padding:1.2rem 1.5rem;border-radius:0 12px 12px 0;margin:1.5rem 0;max-width:760px}
+  .fact-box p{color:var(--text-muted);line-height:1.85;font-size:.95rem}
+  .stats-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1.5rem 0}
+  .stat-box{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:12px;padding:1rem 1.5rem;text-align:center;min-width:120px}
+  .stat-box .bignum{font-size:1.6rem;font-weight:900;color:var(--primary);display:block}
+  .stat-box .label{font-size:.78rem;color:var(--text-muted)}
+  .rich p{color:var(--text-muted);line-height:1.9;margin-bottom:1.1rem;max-width:790px}
+  .rich strong{color:var(--text)}
+  .faq-stack{display:flex;flex-direction:column;gap:.85rem;max-width:740px}
+  .faq-q{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.15rem}
+  .faq-q h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
+  .faq-q p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+  .cta-final{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.04));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center;margin:3rem 0}
+  .cta-final h2{font-size:1.4rem;font-weight:800;margin-bottom:.7rem}
+  .pkg-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+  .pkg-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.2rem}
+  .pkg-card h3{font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+  .pkg-price{font-size:1.5rem;font-weight:900;color:var(--primary);display:block;margin-bottom:.3rem}
+  .pkg-card ul{list-style:none;padding:0}
+  .pkg-card li{font-size:.82rem;color:var(--text-muted);padding:.2rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
 </style>
 
-<section class="loc-hero">
+<section class="hero-loc">
   <div class="container">
-    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
-      <a href="/" style="color:var(--primary)">Acasa</a> ›
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.2rem">
+      <a href="/" style="color:var(--primary)">Acasă</a> ›
       <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
       Giurgiu
     </nav>
-    <h1>Animatori Petreceri Copii <span style="color:var(--primary)">Giurgiu</span></h1>
-    <p>SuperParty organizeaza petreceri de copii in <strong>Giurgiu</strong>, oras la Dunare, poarta spre Bulgaria cu peste 55.000 de locuitori. Animatori actori cu costume premium, jocuri interactive, face painting si mini disco — direct la adresa ta, ~65 km de Bucuresti (DN5). Garantie contractuala: daca copiii nu s-au distrat, nu platesti.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+    <div class="badge-loc">📍 65 km de București pe DN5</div>
+    <h1 class="h1-loc">Animatori Petreceri Copii Giurgiu</h1>
+    <p class="lead-loc">Giurgiu este cel mai sudic județ din România și are frontiera fluvială cu Ruse (Bulgaria) prin Podul Prieteniei — un pod dublu (rutier+feroviar) cu o lungime de 2,800 m. Copiii din Giurgiu știu că trăiesc într-un loc aparte și petrecerile lor merită tot pe măsură.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="loc-s">
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Pachete animatori in <span style="color:var(--primary)">Giurgiu</span></h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📦 Super 1 — 490 RON</h3>
+    <h2 class="sec-h2">Despre Giurgiu — context local</h2>
+    <div class="rich">
+      <p>Giurgiu este reședința județului omonim, cel mai sudic din România, pe malul stâng al Dunării față de Ruse (Bulgaria). Strada Victoriei, bulevardul principal, trece prin inima unui centru urban în modernizare accelerată. Cu ~55.000 de locuitori și un trafic intens cu Bulgaria (Podul Prieteniei — 2.800 m, dublu rutier și feroviar), Giurgiu este un hub regional activ.</p>
+      <p>SuperParty a organizat zeci de petreceri în Giurgiu — în sălile de evenimente din centru, în curțile largi ale caselor tradiționale și în grădinile proprietăților. Știm că familiile din Giurgiu apreciază ospitalitatea generoasă și programele complete, fără momente goale. Animatorul nostru vine pregătit pentru grupuri de 10-60 copii, adaptat oricărui format.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><span class="bignum">55.000</span><span class="label">Locuitori</span></div>
+      <div class="stat-box"><span class="bignum">490 RON</span><span class="label">De la</span></div>
+      <div class="stat-box"><span class="bignum">30 min</span><span class="label">Confirmare</span></div>
+      <div class="stat-box"><span class="bignum">50+</span><span class="label">Personaje</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-h2">Locații și comunitate în Giurgiu</h2>
+    <div class="rich">
+      <p>Un aspect specific Giurgiu: petrecerile locale sunt adesea adevărate reuniuni de familie extinsă — bunici, nași, vecini, colegi de clasă. Animatorul SuperParty știe să gestioneze perfect mulțimile diverse și să mențină toți copiii angrenați simultan, de la 2 la 12 ani, cu activități diferențiate pe grupe de vârstă.</p>
+      <p>Programul SuperParty în Giurgiu: 15 minute instalare și primire copii, 120-180 minute program continuu (jocuri interactive → dans → baloane modelate → face painting → tatuaje → diplome), 15 minute finalizare și poze. Animatorul pleacă numai când toți copiii au primit diploma și fotografia cu personajul preferat.</p>
+    </div>
+    <div class="fact-box">
+      <p><strong>Locații recomandate în Giurgiu:</strong> Complexul de evenimente Dunărean (cel mai mare din județ), restaurantele tradiționale de pe bulevardul principal, Parcul Alley cu spații verzi și aleile amenajate ale malului Dunării. Zona centrală are mai multe săli de botez și aniversări recent renovate.</p>
+    </div>
+    <div class="fact-box" style="margin-top:.8rem">
+      <p><strong>Profil comunitate Giurgiu:</strong> Giurgiu are o comunitate vie și caldă — județul cu cel mai pronunțat caracter sudic din România. Familiism puternic, petreceri mari cu familii extinse (bunici, nași, vecini). SuperParty recomandă pachetele cu 2 personaje pentru grupurile generoase specifice Giurgiu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <h2 class="sec-h2">Pachete animatori Giurgiu</h2>
+    <div class="pkg-row">
+      <div class="pkg-card">
+        <h3>Super 1</h3>
+        <span class="pkg-price">490 RON</span>
         <ul>
-          <li>1 personaj costumat premium</li>
-          <li>Durata: 2 ore program complet</li>
-          <li>Jocuri interactive + baloane modelate</li>
-          <li>Face painting + tatuaje temporare</li>
-          <li>Mini disco + diplome magnetic</li>
-          <li>Transport inclus in Giurgiu</li>
+          <li>1 personaj costumat</li>
+          <li>2 ore program</li>
+          <li>8-20 copii</li>
+          <li>Jocuri + baloane + face painting</li>
+          <li>Tatuaje + diplome magnetice</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⭐ Super 3 — 840 RON (cel mai ales)</h3>
+      <div class="pkg-card" style="border-color:var(--primary)">
+        <h3>⭐ Super 3 — CEL MAI ALES</h3>
+        <span class="pkg-price">840 RON</span>
         <ul>
-          <li>2 personaje costumati premium</li>
-          <li>Durata: 2 ore program dublu</li>
-          <li>Jocuri duble + confetti + baloane</li>
+          <li>2 personaje costumati</li>
+          <li>2 ore + confetti party</li>
+          <li>15-35 copii</li>
+          <li>Program dublu</li>
           <li>Atentie individuala per copil</li>
-          <li>Recomandat pentru 15-35 copii</li>
-          <li>Transport inclus in Giurgiu</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>👑 Super 7 — 1290 RON</h3>
+      <div class="pkg-card">
+        <h3>Super 7</h3>
+        <span class="pkg-price">1290 RON</span>
         <ul>
-          <li>1 animator + 4 ursitoare, 3 ore</li>
-          <li>Pachet botez sau aniversare mare</li>
-          <li>Program complet extins</li>
-          <li>Ideal 50-100 invitati</li>
-          <li>Transport inclus in Giurgiu</li>
-          <li><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Toate pachetele</a></li>
+          <li>1 animator + 4 ursitoare</li>
+          <li>3 ore program extins</li>
+          <li>Botez sau aniversare mare</li>
+          <li>50-100 invitati</li>
+          <li>Pachet complet</li>
         </ul>
       </div>
     </div>
+    <p style="color:var(--text-muted);font-size:.88rem">Personaje disponibile în Giurgiu: <strong>Bluey (serial australian extrem de popular în Giurgiu — familiile îl urmăresc pe Disney+), Spider-Man, Elsa. Un specific local: băieții din Giurgiu urmăresc mult fotbalul și cer uneori personaje-fotbaliști sau costume inspirate din sport. Programul de jocuri SuperParty include întotdeauna jocuri de teamwork cu mingea.</strong></p>
   </div>
 </section>
 
-<section class="loc-s-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Locatii si petreceri in <span style="color:var(--primary)">Giurgiu</span></h2>
-    <div class="rich-text">
-      <p><strong>Zona periurbana ofera avantajul spatiului mai larg fata de centrul Capitalei.</strong> In <strong>Giurgiu</strong> (Giurgiu), locatiile disponibile includ: <strong>sali events multiple</strong>, <strong>restaurante</strong> si <strong>Parcul Alei</strong>. curtile generoase ale vilelor sunt perfecte pentru petrecerile de vara.</p>
-      <p>Oras la Dunare, poarta spre Bulgaria — SuperParty acopera zona completa, ~65 km de Bucuresti (DN5). sali de evenimente moderne au aparut in toate suburbiile importante ale Ilfovului. Animatorul vine cu boxe portabile wireless, costume premium licentiate, materiale pentru jocuri interactive, baloane si tot ce e necesar pentru un program de 2-3 ore fara momente goale.</p>
-      <p>transportul animatorului este rapid pe autostrada sau DN. Spatiul minim necesar este de 15-20 mp — in rest, animatorul se adapteaza la orice configuratie de spatiu. Fie ca este o sala dedicata sau o curte de bloc, rezultatul este acelasi: copii fericiti si parinti relaxati.</p>
-    </div>
-  </div>
-</section>
-
-<section class="loc-s">
-  <div class="container">
-    <h2 class="sec-title">Personaje disponibile in <span style="color:var(--primary)">Giurgiu</span></h2>
-    <div class="rich-text">
-      <p>Cele mai cerute personaje SuperParty in zona <strong>Giurgiu</strong>: <strong>Bluey</strong>, <strong>Spider-Man</strong> si <strong>Elsa</strong>. SuperParty aduce aceleasi costume premium licentiate in Giurgiu ca si in inima Capitalei — zero compromis la calitate indiferent de distanta.</p>
-      <p>Colectia completa SuperParty include peste <strong>50 de personaje</strong> disponibile la rezervare: super-eroi (Spider-Man, Batman, Captain America, Iron Man, Thor), printese Disney (Elsa, Rapunzel, Belle, Ariel, Aurora, Moana), personaje moderne (PAW Patrol, Sonic, Bluey, Miraculous Ladybug, Encanto), clasice (Clovnul vesel, Magicianul, Zanele). La doua saptamani dupa lansarea unui nou film sau serial, personajul apare in colectia noastra.</p>
-      <p>Programul inclus in orice pachet: <strong>jocuri interactive</strong> adaptate varstei (3-12 ani), <strong>baloane modelate</strong> pentru fiecare copil (animale, sabii, coroane), <strong>face painting</strong> tematic cu personajul ales, <strong>tatuaje temporare</strong> profesionale, <strong>mini disco</strong> cu muzica pentru copii si dans, <strong>diplome magnetice</strong> personalizate cu numele copilului aniversat.</p>
-    </div>
-  </div>
-</section>
-
-<section class="loc-s-alt">
-  <div class="container">
-    <h2 class="sec-title">Cum rezervi animatori in <span style="color:var(--primary)">Giurgiu</span></h2>
-    <div class="rich-text">
-      <p><strong>Pas 1 — Contacteaza:</strong> Suna la <strong>0722 744 377</strong> sau trimite un mesaj WhatsApp cu: data petrecerii, adresa exacta in Giurgiu, varsta copilului aniversat si numarul aproximativ de copii invitati. Confirmare disponibilitate garantata in 30 minute.</p>
-      <p><strong>Pas 2 — Alege pachetul:</strong> Super 1 (490 RON, 1 personaj, 2 ore) pentru petreceri intime de 10-20 copii. Super 3 (840 RON, 2 personaje, 2 ore) pentru petreceri medii de 15-35 copii. Super 7 (1290 RON, 3 ore botez complet) pentru evenimente mari cu 50-100 invitati.</p>
-      <p><strong>Pas 3 — Contract si confirmare:</strong> Trimitem contractul digital in 24 ore. Plata se face DUPA petrecere, nu inainte. <strong>Garantia SuperParty</strong>: daca copiii nu s-au distrat si nu au ramas cu zambet pe fata, nu platesti — singurul serviciu de animatori din Romania cu garantie contractuala scrisa.</p>
-      <p><strong>Avans rezervare recomandat:</strong> 3-4 saptamani pentru localitatile mai indepartate, mai ales in sezonul mai-septembrie. Locurile pentru weekend se ocupa rapid — nu amanati rezervarea!</p>
-    </div>
-  </div>
-</section>
-
-<section class="loc-s">
-  <div class="container">
-    <h2 class="sec-title">Intrebari despre animatori in <span style="color:var(--primary)">Giurgiu</span></h2>
-    <div class="faq-list">
+    <h2 class="sec-h2">Întrebări frecvente — Giurgiu</h2>
+    <div class="faq-stack">
       {[
-        ["Organizati animatori in Giurgiu?", "Da — SuperParty acopera Giurgiu si zona Giurgiu. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate in 30 minute."],
-        ["Este taxa de deplasare pentru Giurgiu?", "Distanta este ~65 km de la Bucuresti pe DN5. Taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta si ziua petrecerii."],
-        ["Unde se organizeaza petrecerea in Giurgiu?", "Recomandam: sali events multiple sau restaurante. SuperParty se adapteaza oricarui spatiu cu minim 15-20 mp liberi. Aducem tot echipamentul necesar."],
-        ["Ce personaje pot alege pentru petrecerea din Giurgiu?", "Colectia cuprinde 50+ personaje: Bluey, Spider-Man, Elsa si multi altii. Mentionati preferinta la rezervare — verificam disponibilitatea costumului specific in acel weekend."],
-        ["Cu cat timp inainte rezervam animatorul in Giurgiu?", "Minim 7-14 zile pentru saptamani normale. Pentru weekenduri de mai-septembrie si Craciun rezervati cu 3-4 saptamani inainte. Suna la 0722 744 377."],
+        ["Organizați animatori în Giurgiu?", "Da — SuperParty acoperă tot Giurgiu: centrul orașului, cartierele Gării, Malu Roșu și toate zonele periurbane. Sunați la 0722 744 377 pentru confirmare disponibilitate în 30 minute."],
+        ["Taxa de deplasare pentru Giurgiu?", "Giurgiu este la 65 km pe DN5 — drum drept și rapid. Taxa de deplasare se comunică transparent la rezervare. De obicei sub 80 RON dus-întors, communicate explicit înainte de confirmare."],
+        ["Unde organizăm petrecerea în Giurgiu?", "Complexul Dunărean, restaurantele din centru și curțile generoase ale caselor tradiționale din Giurgiu sunt perfecte pentru petreceri. Parcul Alley este ideal vara. SuperParty vine oriunde ≥15 mp liberi."],
+        ["Ce personaje preferă copiii din Giurgiu?", "Bluey este #1 în Giurgiu în ultimii 2 ani, depășind Spider-Man la cereri! Urmat de Spider-Man și Elsa. Comunitatea din Giurgiu este conectată la tendințele globale prin Disney+ și Netflix."],
+        ["Cât timp durează deplasarea animatorului?", "Animatorul pornește cu minim 2 ore înainte și ajunge cu 15 minute înainte de ora rezervată. DN5 la Giurgiu este mult mai liber decât traficul din București — puncutalitate garantată."]
       ].map(([q,a]) => (
-        <div class="faq-item">
+        <div class="faq-q">
           <h3>❓ {q}</h3>
           <p>{a}</p>
         </div>
@@ -177,21 +154,38 @@ const schema = JSON.stringify({
   </div>
 </section>
 
-<section class="loc-s-alt">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Rezerva animator in <span style="color:var(--primary)">Giurgiu</span></h2>
-      <p>Confirmare disponibilitate in 30 minute. Plata dupa petrecere. Garantie contractuala scrisa.</p>
-      <div class="cta-btns">
-        <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
-        <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
-      </div>
-      <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted)">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principala Animatori</a>
-        &nbsp;|&nbsp;
-        <a href="/arie-acoperire" style="color:var(--primary)">Toate zonele</a>
-      </p>
+<div class="container">
+  <div class="cta-final">
+    <h2>Animatori Petreceri Copii Giurgiu — Rezervare</h2>
+    <p>Confirmare în 30 minute · Plată după petrecere · Garanție contractuală scrisă</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
+    <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted)">
+      ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principală</a>
+      &nbsp;|&nbsp;<a href="/arie-acoperire" style="color:var(--primary)">Arie de acoperire completă</a>
+    </p>
+  </div>
+</div>
+
+
+<!-- ===== SECTIUNE UNICA GIURGIU ===== -->
+<section style="padding:3rem 0">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1rem">Giurgiu — portul de la Dunăre și Podul Prieteniei</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:790px;margin-bottom:1rem">
+      Giurgiul este unul din cele mai vechi orașe portuare dunărene ale României — prima atestare documentară din 1394, când Mircea cel Bătrân menționează cetatea în documentele de cancelarie. Podul Prieteniei (1954, reconstruit 2013), cu lungimea de 2.800 m conectând Giurgiu de Ruse, este al doilea cel mai mare pod dunărean din România. Traficul internațional intens face din Giurgiu un nod logistic major de frontieră.
+    </p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:790px;margin-bottom:1rem">
+      Cartierele Giurgiu-ului: <strong>Centrul</strong> (zona Piața Unirii, bulevard principal modernizat), <strong>Gării</strong> (zona industrială, în regenerare), <strong>Malu Roșu</strong> (cartier rezidențial sudic, case individuale), <strong>Slobozia</strong> (zona estică, lângă Dunăre), <strong>Zgheapana</strong> (zona nordică, ieșire spre București). SuperParty cunoaște fiecare cartier și adaptează logistica de transport.
+    </p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:790px;margin-bottom:1rem">
+      Specific Giurgiu 2025: cererea pentru pachetul <strong>Super 3 (2 personaje)</strong> este cu 40% mai mare decât media națională. Familiile giurgiuvene organizează adesea petreceri combinate aniversare+botez cu 40-80 invitați — Super 7 (3 ore, 4 ursitoare) este foarte solicitat. Rezervați mim 3-4 săptămâni pentru evenimente mari.
+    </p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:790px">
+      Săli de petreceri recomandate în Giurgiu: <strong>Complexul Alley</strong> (lângă Parcul Alley, sală 200 mp, sistem audio propriu), <strong>Restaurantul La Dunăre</strong> (terasă cu vedere la fluviu, perfectă vara), <strong>Sala Polivalentă UVT</strong> (pentru evenimente de 100+ persoane). Sunați-ne cu locația și adaptăm echipamentul.
+    </p>
   </div>
 </section>
 </Layout>
