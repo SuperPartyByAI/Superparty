@@ -1,38 +1,55 @@
 ---
-
-const svcSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Decorațiuni Baloane Petreceri",
-      "description": "Decorațiuni baloane profesionale pentru petreceri copii și evenimente în București și Ilfov. SuperParty.",
-      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377", "url": "https://www.superparty.ro"}
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro"},
-        {"@type": "ListItem", "position": 2, "name": "Decorațiuni Baloane Petreceri", "item": "https://superparty.ro/decoratiuni-baloane"}
-      ]
-    }
-  ]
-});
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout schema={svcSchema} title="Decoratiuni Baloane București | SuperParty" description="Decoratiuni din baloane pentru petreceri copii si adulti in Bucuresti. Arcade, aranjamente, decor tematic. Rezerva: 0722 744 377."
-  canonical="https://www.superparty.ro/decoratiuni-baloane">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Decoratiuni <span style="color:var(--primary);">Baloane</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Transformam orice spatiu cu decoratiuni spectaculoase din baloane! Arcade, coloane, aranjamente de masa, tafturi si decor tematic complet pentru petreceri de neuitat.</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:3rem;">
-        {['🎀 Arcade Baloane','🎈 Baloane Heliu','🎊 Coloane Baloane','💐 Aranjamente Masa','🏰 Decor Tematic','🌈 Baloane Latex'].map(s => (
-          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:12px; padding:1rem; text-align:center; font-weight:600;">{s}</div>
-        ))}
-      </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Comanda Decoratiuni</a>
-      <p style="color:var(--text-muted); font-size:0.95rem; margin-top:1.5rem;">Completează petrecerea cu <a href="/animatori-petreceri-copii/" style="color:var(--primary); font-weight:600;">animatori petreceri copii</a> — personaje costumate, jocuri și distracție garantată.</p>
+
+<Layout
+  title="Decorațiuni Baloane Petreceri Copii | SuperParty București"
+  description="Decorațiuni din baloane pentru petreceri copii: coloane, arcade, centrepiese, garland wall. Montaj la locație în București. SuperParty 0722 744 377."
+  canonical="https://www.superparty.ro/decoratiuni-baloane"
+  robots="index, follow"
+>
+
+<section style="padding:4rem 0 2rem">
+  <div class="container">
+    <h1 style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:1rem">Decorațiuni Baloane <span style="color:var(--primary)">Petreceri Copii</span></h1>
+    <p style="color:var(--text-muted);line-height:1.85;max-width:680px;margin-bottom:1.8rem">Decorațiunile din baloane sunt elementul vizual care transformă orice sală sau curte într-un decor de vis. SuperParty oferă decorațiuni complete — coloane, arcade, garland wall, centrepiese — toate montate la locație de echipa noastră.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none">📞 Comandă: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<section style="padding:3rem 0;background:var(--dark-2)">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Servicii de decorațiuni disponibile</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem">
+      <div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🏛️</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">️ Coloane din baloane</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">150-250 RON/buc</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Coloane spiralate de 1.8-2.5m înălțime. Perechi la intrare sau aleea de acces. Efect consistent și elegant</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🌈</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Garland Wall (Balloon Wall)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">400-700 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Perete decorativ 2x2m din baloane organice. Fundalul perfect pentru zona foto — fotografii profesionale incluse</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🎂</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Centerpice masă tort</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">200-300 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Aranjament central spectaculos pe masa tortului — inaltime 80-120cm, tematic cu personajul petrecerii</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🏠</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Decorare completă sală</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">800-1500 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Pachet complet: arcade + coloane + centerpice + baloane heliu. Transformăm orice sală în poveste</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:3rem 0">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Procesul de decorare — de la idee la realizare</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Pasul 1: Consultație gratuită — ne trimiți pe WhatsApp o fotografie cu sala, culorile temei și personajul ales. Raspundem cu propunere vizuală în 24 ore. Pasul 2: Confirmare și contract — stabilim ora de montaj (de obicei cu 90-120 minute înainte de petrecere).</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Pasul 3: Montaj profesional — echipa SuperParty vine la sală cu toate materialele. Nu ai nevoie de nimic — nici pompe, nici suporturi, nici scotch. Montăm de la zero. Pasul 4: Fotografii de prezentare — înainte de sosirea invitaților, facem fotografii cu întreaga decorare pentru albumul tău.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px">SuperParty a decorat peste 3.000 de săli de petreceri în București și Ilfov din 2015. Cunoaștem cele mai bune tehnici pentru fiecare tip de sală — înaltă, joasă, cu stâlpi, fără stâlpi, în aer liber sau interior. Trimite-ne fotografiile și lăsăm noi restul.</p>
+  </div>
+</section>
+
+<section style="padding:2.5rem 0">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.04));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2rem;text-align:center">
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.7rem">Rezervă acum — confirmare în 30 minute</h2>
+      <p style="color:var(--text-muted);margin-bottom:1.2rem;font-size:.92rem">Spune-ne data și adresa — îți confirmăm disponibilitatea rapid.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.8rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">📞 0722 744 377</a>
+        <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.8rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
+      </div>
+      <p style="margin-top:1rem;font-size:.83rem;color:var(--text-muted)">← <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> &nbsp;|&nbsp; <a href="/" style="color:var(--primary)">Acasă</a></p>
+    </div>
+  </div>
+</section>
+
 </Layout>

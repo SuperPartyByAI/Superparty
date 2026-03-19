@@ -1,45 +1,55 @@
 ---
-
-const svcSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Vată de Zahăr și Popcorn Petreceri",
-      "description": "Mașini profesionale vată de zahăr și popcorn pentru petreceri copii în București și Ilfov. SuperParty.",
-      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377", "url": "https://www.superparty.ro"}
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro"},
-        {"@type": "ListItem", "position": 2, "name": "Vată de Zahăr și Popcorn Petreceri", "item": "https://superparty.ro/vata-de-zahar-si-popcorn"}
-      ]
-    }
-  ]
-});
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout schema={svcSchema} title="Vată de Zahăr și Popcorn pentru Petreceri | SuperParty" description="Masini de vata de zahar si popcorn pentru petreceri copii in Bucuresti. Inchiriere si servire. Rezerva: 0722 744 377."
-  canonical="https://www.superparty.ro/vata-de-zahar-si-popcorn">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Vată de Zahăr și <span style="color:var(--primary);">Popcorn</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Completam petrecerea cu gustări de neuitat! Masini profesionale de vată de zahăr si popcorn, servite direct la petrecerea ta de catre personalul nostru.</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin-bottom:3rem;">
-        {[
-          ['🍭', 'Vată de Zahăr', 'Clasica si colorata, adora de toti copiii', 'Roz, albastra, mixta'],
-          ['🍿', 'Popcorn', 'Proaspat si aromat, dulce sau sarat', 'Clasic, caramel, dulce'],
-        ].map(([icon, name, desc, variants]) => (
-          <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; text-align:center;">
-            <p style="font-size:3rem; margin-bottom:1rem;">{icon}</p>
-            <h3 style="font-weight:700; margin-bottom:0.5rem;">{name}</h3>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">{desc}</p>
-            <p style="color:var(--primary); font-size:0.85rem; font-weight:600;">{variants}</p>
-          </div>
-        ))}
-      </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Masina</a>
+
+<Layout
+  title="Vată de Zahăr și Popcorn Petreceri Copii | SuperParty București"
+  description="Mașini de vată de zahăr și popcorn pentru petreceri copii în București. Chirie mașini, operator inclus, consumabile nelimitate. SuperParty 0722 744 377."
+  canonical="https://www.superparty.ro/vata-de-zahar-si-popcorn"
+  robots="index, follow"
+>
+
+<section style="padding:4rem 0 2rem">
+  <div class="container">
+    <h1 style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:1rem">Vată de Zahăr și Popcorn <span style="color:var(--primary)">Petreceri Copii</span></h1>
+    <p style="color:var(--text-muted);line-height:1.85;max-width:680px;margin-bottom:1.8rem">Stația de vată de zahăr și popcorn este un magnet pentru copii la orice petrecere — și un deliciu pentru părinți. SuperParty oferă mașini profesionale cu operator inclus pentru durata petrecerii tale.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none">📞 Comandă: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<section style="padding:3rem 0;background:var(--dark-2)">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Pachete disponibile</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem">
+      <div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🍭</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Vată de Zahăr (2 ore)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">280 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Mașina profesională + operator + zahăr colorat nelimitat. 200+ porții posibile. Culorile la alegere</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🍿</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Popcorn (2 ore)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">250 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Aparat popcorn profesional + operator + porumb și unt nelimitat. Variante: sarat, dulce, caramel</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🎪</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Combo Vată + Popcorn (2 ore)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">450 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Ambele mașini + operator pentru fiecare. Stația dublă care face senzație la orice petrecere mare</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">⏰</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">Extensie orar (1h)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">120 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Adaugă o oră extra la orice pachet. Recomandat pentru petreceri cu 40+ invitați sau programe lungi</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:3rem 0">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Detalii tehnice și logistice</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Mașinile noastre de vată de zahăr și popcorn sunt utilizate în standard eveniment — nu mașini de plastic ieftine, ci aparate profesionale cu producție de 50-80 de porții/oră. Curățate și dezinfectate după fiecare utilizare. Conform normelor ANSVSA pentru alimente la evenimente.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Vata de zahăr colorată disponibilă în: roz clasic, albastru, violet, curcubeu, roșu, galben, verde. Combinăm culorile cu tema petrecerii — vată albastră pentru Frozen, roșie pentru Spider-Man, galbenă pentru Pikachu. Popcornul se oferă în pungi personalizate cu numele copilului (opțional, 20 RON extra).</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px">Suprafața necesară: 1,5 x 1,5m pentru fiecare mașină + spațiu de așteptare 1m. Priza electrică standard 220V necesară (incluzând cu extensie de 5m). Functioneaza atât în interior (sală cu ventilație) cât și exterior (vreme fără ploaie). Operatorul este responsabil de curățenie în zona stației — lăsăm totul impecabil.</p>
+  </div>
+</section>
+
+<section style="padding:2.5rem 0">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.04));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2rem;text-align:center">
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.7rem">Rezervă acum — confirmare în 30 minute</h2>
+      <p style="color:var(--text-muted);margin-bottom:1.2rem;font-size:.92rem">Spune-ne data și adresa — îți confirmăm disponibilitatea rapid.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.8rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">📞 0722 744 377</a>
+        <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.8rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
+      </div>
+      <p style="margin-top:1rem;font-size:.83rem;color:var(--text-muted)">← <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> &nbsp;|&nbsp; <a href="/" style="color:var(--primary)">Acasă</a></p>
+    </div>
+  </div>
+</section>
+
 </Layout>
