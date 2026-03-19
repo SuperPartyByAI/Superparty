@@ -4,12 +4,25 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('militari') || article.slug.includes('militari')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('militari') ||
+    article.slug.toLowerCase().includes('sector-6') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Militari, Sectorul 6, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
     {
       "@type": "Service",
       "name": "Animatori Petreceri Copii Militari | SuperParty",
@@ -20,9 +33,12 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Militari?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim tot Militari, de la Militari Shopping până la Militari Residence și Bd. Iuliu Maniu."}},
-      {"@type": "Question", "name": "Ce personaje sunt populare în Militari?", "acceptedAnswer": {"@type": "Answer", "text": "Cele mai cerute: Spider-Man, Elsa, Batman, Minnie Mouse. Avem 50+ personaje disponibile."}},
-      {"@type": "Question", "name": "Există taxă de deplasare în Militari?", "acceptedAnswer": {"@type": "Answer", "text": "Nu — transportul este inclus în pachet pentru zona Militari, Sectorul 6."}}
+      {"@type": "Question", "name": "Veniti la Militari Residence pentru petreceri?", "acceptedAnswer": {"@type": "Answer", "text": "Da — Militari Residence este una din destinatiile noastre frecvente. Avem experienta cu regulamentul de acces al complexului si coordonam cu administratia."}},
+      {"@type": "Question", "name": "Cat costa un animator in Militari?", "acceptedAnswer": {"@type": "Answer", "text": "De la 490 RON (Super 1, 2 ore, 1 personaj costumat). Transport gratuit in toata zona Militari, Sectorul 6."}},
+      {"@type": "Question", "name": "Ce personaje recomandati pentru copiii din Militari?", "acceptedAnswer": {"@type": "Answer", "text": "Depinde de varsta: 2-4 ani — Minnie Mouse, Elsa; 4-7 ani — Spider-Man, Batman, Rapunzel; 7-10 ani — Sonic, PAW Patrol. Avem 50+ personaje."}},
+      {"@type": "Question", "name": "Sunt disponibili animatorii in Militari in weekend?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dar rezervati cu 2-3 saptamani inainte. Militari si Militari Residence sunt printre cele mai solicitate zone ale noastre."}},
+      {"@type": "Question", "name": "Puteti organiza petreceri in apartamentele din Militari Residence?", "acceptedAnswer": {"@type": "Answer", "text": "Da — vindem la domiciliu in apartamente, sali de bloc sau in spatiile comune ale complexului. Animatorul se adapteaza oricarui spatiu."}},
+      {"@type": "Question", "name": "Faceti si decoratiuni pentru petreceri in Militari?", "acceptedAnswer": {"@type": "Answer", "text": "Ne ocupam cu animatia propriu-zisa (personaje, jocuri, face painting, baloane). Pentru decoratiuni vi si aranjamente va recomandam parteneri specializati."}}
       ]
     },
     {
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Militari | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Militari, Militari, Militari Residence, Sectorul 6. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Militari Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Militari, animator Militari, petreceri copii Militari, animator Militari Residence, Sectorul 6. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/militari"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Militari</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Militari</strong> — cartier mare din Sectorul 6, cu Centrul Comercial Militari Shopping și numeroase zone rezidențiale. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-6">Sectorul 6</a> › Militari
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Militari, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Militari</strong>, cartier mare si dinamic din vestul Bucurestiului cu o comunitate tanara si o cerere in crestere pentru servicii premium de animatie. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Militari</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Militari</h3>
         <ul>
-              <li>📍 Militari Shopping Center — zonă comercială populară</li>
-              <li>📍 Complexe rezidențiale noi (Militari Residence)</li>
-              <li>📍 Acces via Splaiul Independenței și Bd. Iuliu Maniu</li>
-              <li>📍 Comunitate tânără cu mulți copii de vârstă petreceri</li>
+              <li>📍 Militari Residence - cel mai mare ansamblu rezidential din Romania (30.000+ locatari)</li>
+              <li>📍 Militari Shopping Center - mall cu zona de entertainment</li>
+              <li>📍 Parcul Militar - spatiu verde central</li>
+              <li>📍 Bulevardul Iuliu Maniu - artera principala</li>
+              <li>📍 Splaiul Independentei - acces spre centru</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~18 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Militari, Sectorul 6</li>
-          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Vezi toate zonele Sector 6</a></li>
+          <li>🚗 ~20 min din centru</li>
+          <li>🚍 RATB autobuze 105, 122, 178, 336, 385; metrou indirect via Politehnica pe M1</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Militari</li>
+          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Toate zonele Sector 6</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Militari</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Sala de petreceri din Militari Shopping</li>
+              <li>🎉 Events Militari Residence Community Center</li>
+              <li>🎉 Restaurante private pe B-dul Iuliu Maniu</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Militari</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Militari</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Militari</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Militari</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Militari</span> — Tot ce trebuie sa stii</h2>
+      <p>Militari este un cartier in plina expansiune rezidentiala — Militari Residence, cu cei 30.000+ locatari ai sai, este cel mai mare ansamblu rezidential din Romania. Cartierul combina blocurile socialiste vechi cu noile ansambluri moderne, creand o comunitate mixta dar energica. Familiara si cu putini copii de varsta scolara, zona Militari reprezinta una din cele mai active piete pentru animatori petreceri copii din Sectorul 6.</p>
+
+      <h3>🗺️ Zone acoperite in Militari</h3>
+      <p>SuperParty acopera <strong>intreaga zona Militari</strong> si cartierele vecine: Drumul Taberei, Crangasi, Giulesti, Regie. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Militari?</h3>
+      <p>Fiecare petrecere SuperParty in Militari include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Militari</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Militari Residence are propria sala de evenimente comunitara — excelenta pentru petreceri</li>
+            <li>✔️ Zona Militari are multi copii mici — cererea pentru animatori este ridicata</li>
+            <li>✔️ Cel mai bun acces este via Bulevardul Iuliu Maniu sau Splaiul Independentei</li>
+            <li>✔️ Avem animatori familiare cu specificul Militari Residence</li>
+            <li>✔️ Complexul are reg strict de acces — anuntati administratia cu 24h inainte</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Militari?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Militari am organizat sute de petreceri de succes. Stim specificul <strong>vestul Bucurestiului, Sectorul 6</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Drumul Taberei, Crangasi, Giulesti, Regie.</p>
+
+      <h3>📞 Cum rezervi un animator in Militari?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Militari, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Militari</div>
+        <div class="tag">📍 Drumul Taberei</div>
+        <div class="tag">📍 Crangasi</div>
+        <div class="tag">📍 Giulesti</div>
+        <div class="tag">📍 Regie</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Militari — Avantajul tau</h3>
+        <p>Militari Residence este complexul nostru preferat din Sectorul 6 — avem experienta specifica cu regulamentele de interior si cu organizarea de petreceri in spatiile comunitare. Indiferent daca locuiti in blocurile socialiste de pe Iuliu Maniu sau in ansamblurile noi, SuperParty ajunge la tine cu aceleasi standarde de calitate si acelasi entuziasm.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Militari</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Militari</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Militari</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Militari</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Militari?", "Da — acoperim tot Militari, de la Militari Shopping până la Militari Residence și Bd. Iuliu Maniu."],
-        ["Ce personaje sunt populare în Militari?", "Cele mai cerute: Spider-Man, Elsa, Batman, Minnie Mouse. Avem 50+ personaje disponibile."],
-        ["Există taxă de deplasare în Militari?", "Nu — transportul este inclus în pachet pentru zona Militari, Sectorul 6."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Militari</span></h2>
+      <p class="intro-text">Militari este un cartier cu doua fete distincte: Militari vechi, construit in era comunista cu blocuri inalte pe Bulevardul Iuliu Maniu, si Militari Rezidence, cel mai mare ansamblu rezidential privat construit dupa 2000 in Romania. Militari Residence adaposteste peste 30.000 de locatari si a creat practic un nou cartier in interiorul cartierului vechi creat de stat. Aceasta dualitate face ca Militari sa aiba una din cele mai diverse populatii din Capitala — de la familii care locuiesc de 30 de ani in blocurile socialiste pana la tineri profesionisti care au achizitionat apartamente in complexele privatr moderne. Bulevardul Iuliu Maniu, cu accesul sau facil spre autostrada de vest, este una din arterele cele mai circulate ale Capitalei.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Centrul Comercial Militari Shopping este inima comerciala a cartierului si gazduieste periodic activitati pentru copii, inclusiv zone de joaca si animatie la evenimente speciale. SuperParty colaboreaza cu mai multe spatii din apropierea Militari Shopping pentru organizarea de petreceri de copii. Comunitatea din Militari Residence este deosebit de activa — organizatia de locatari coordoneaza frecvent evenimente comunitare, inclusiv petreceri de Craciun si Halloween, iar SuperParty a participat la mai multe astfel de sarbatori organizand animatie pentru copiii rezidentilor din complex.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Pentru petrecerile in Militari Residence: anuntati administratia complexului cu 48 de ore inainte daca petrecerea are loc in spatiile comune sau in curtea blocului. Accesul cu masina in complex este controlat de gardieni — asigurati-va ca animatorul are acces programat cu vehiculul sau. Apartamentele din Militari Residence sunt moderne si spatioase, perfecte pentru petreceri cu 20-30 de copii. Daca preferati o sala de petreceri cu specific, zona Bulevardul Iuliu Maniu dispune de mai multe optiuni la preturi rezonabile.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Militari</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Elsa, Batman, Captain America, PAW Patrol</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Militari si Militari Residence, duminica dimineata (10:00-12:00) si sambata dupa-amiaza (15:00-17:00) sunt cele mai populare intervale.</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Militari Residence are spatii comunitare disponibile (verifica cu administratia). Militari Shopping are si zona events. Acasa in apartament este intotdeauna o optiune.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) sau Super 3 (840 RON) sunt cele mai alese in Militari. Super 7 (1290 RON) pentru botezuri. Transport gratuit in tot Sectorul 6.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377. Daca petrecerea este in Militari Residence, anunta si administratia complexului cu 48h inainte.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Militari</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Bogdan C.</strong> — <em>Militari Residence</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Foarte bravo! Au coordonat cu administratia blocului, au pus boxele la volumul acceptabil si au facut o petrecere extraordinara in sala comunitara. Recomand tuturor vecinilor!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Elena M.</strong> — <em>Militari</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Spider-Man a impresionat toti copiii. 30 de minute mai tarziu toti copiii din scara stiau ca a venit Spider-Man in bloc. Superb! Cel mai bun serviciu de animatie din Militari!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Florina A.</strong> — <em>Militari Shopping</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am rezervat sala si animatorul in acelasi timp. Coordonarea a fost perfecta, zero bataie de cap. Baiatul meu vorbeste si acum despre Batman dupa 3 saptamani!"</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Militari</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Veniti la Militari Residence pentru petreceri?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — Militari Residence este una din destinatiile noastre frecvente. Avem experienta cu regulamentul de acces al complexului si coordonam cu administratia.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat costa un animator in Militari?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">De la 490 RON (Super 1, 2 ore, 1 personaj costumat). Transport gratuit in toata zona Militari, Sectorul 6.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce personaje recomandati pentru copiii din Militari?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Depinde de varsta: 2-4 ani — Minnie Mouse, Elsa; 4-7 ani — Spider-Man, Batman, Rapunzel; 7-10 ani — Sonic, PAW Patrol. Avem 50+ personaje.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Sunt disponibili animatorii in Militari in weekend?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da, dar rezervati cu 2-3 saptamani inainte. Militari si Militari Residence sunt printre cele mai solicitate zone ale noastre.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Puteti organiza petreceri in apartamentele din Militari Residence?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — vindem la domiciliu in apartamente, sali de bloc sau in spatiile comune ale complexului. Animatorul se adapteaza oricarui spatiu.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Faceti si decoratiuni pentru petreceri in Militari?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Ne ocupam cu animatia propriu-zisa (personaje, jocuri, face painting, baloane). Pentru decoratiuni vi si aranjamente va recomandam parteneri specializati.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Militari</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Militari</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-6" style="color:var(--primary); font-weight:600;">Sector 6</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-6">← Sectorul 6</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>

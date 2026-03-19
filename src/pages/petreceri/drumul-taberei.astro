@@ -4,12 +4,25 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('drumul-taberei') || article.slug.includes('drumul-taberei')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('drumul-taberei') ||
+    article.slug.toLowerCase().includes('sector-6') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Drumul Taberei, Sectorul 6, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
     {
       "@type": "Service",
       "name": "Animatori Petreceri Copii Drumul Taberei | SuperParty",
@@ -20,9 +33,12 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim tot Drumul Taberei și cartierele vecine (Militari, Crângași). Transport inclus."}},
-      {"@type": "Question", "name": "Cât durează un program de animație în Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Programele durează 2-3 ore. Pachetul Super 1 (490 RON) = 2 ore, Super 3 (840 RON) = 2 ore cu 2 personaje."}},
-      {"@type": "Question", "name": "Aveți animatori disponibili în weekend în Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dar rezervările de weekend se ocupă rapid. Recomandăm rezervarea cu min. 2 săptămâni înainte."}}
+      {"@type": "Question", "name": "Acoperiti intreaga zona Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim toate cartierele din Drumul Taberei: de la intrarea pe Bulevardul Timisoara pana la Ghencea si de la Marginea cartierului pana la Rahova. Transport inclus."}},
+      {"@type": "Question", "name": "Cat costa un animator in Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetele noastre pornesc de la 490 RON (Super 1, 2 ore, 1 personaj). Pentru petreceri mari avem Super 3 (840 RON) si Super 7 (1290 RON). Nicio taxa de deplasare in zona."}},
+      {"@type": "Question", "name": "Faceti animatie in Parcul Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Da! Parcul Drumul Taberei este unul din locurile noastre preferate pentru petreceri in aer liber. Animatorii vin cu echipament portabil complet."}},
+      {"@type": "Question", "name": "Este metro M5 accesibil pentru echipamentul animatorilor?", "acceptedAnswer": {"@type": "Answer", "text": "Animatorii nostri se deplaseaza cu masina proprie, nu cu metroul. Ajungem direct la adresa ta cu tot echipamentul."}},
+      {"@type": "Question", "name": "Aveti disponibilitate in weekend in Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dar zonele populare ca Drumul Taberei se ocupa rapid. Va rugam sa rezervati cu minim 3 saptamani inainte pentru weekend."}},
+      {"@type": "Question", "name": "Ce personaje sunt cele mai cerute in Drumul Taberei?", "acceptedAnswer": {"@type": "Answer", "text": "Top personaje cerute: Spider-Man, Elsa, Batman, Minnie Mouse, Rapunzel, Sonic. Avem 50+ personaje disponibile."}}
       ]
     },
     {
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Drumul Taberei | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Drumul Taberei, Drumul Taberei, Sectorul 6, Militari. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Drumul Taberei Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Drumul Taberei, animator Drumul Taberei, petreceri copii Drumul Taberei, animator Sectorul 6. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/drumul-taberei"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Drumul Taberei</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Drumul Taberei</strong> — unul din cele mai mari cartiere din București, Sectorul 6, cu zeci de săli de petreceri. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-6">Sectorul 6</a> › Drumul Taberei
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Drumul Taberei, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Drumul Taberei</strong>, unul din cele mai mari cartiere din Bucuresti, cu o comunitate de peste 150.000 de locuitori si o cerere constanta si ridicata pentru servicii de animatie. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Drumul Taberei</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Drumul Taberei</h3>
         <ul>
-              <li>📍 Parcul Drumul Taberei — perfect pentru petreceri în aer liber</li>
-              <li>📍 Metrou M5 — acces facil</li>
-              <li>📍 Centrul Comercial Plaza România în apropiere</li>
-              <li>📍 Comunitate numeroasă cu cerere mare pentru animatori</li>
+              <li>📍 Parcul Drumul Taberei - 55 hectare cu lac, locuri de joaca si spatii verzi</li>
+              <li>📍 Centrul Comercial Plaza Romania - in apropiere</li>
+              <li>📍 Pasajul Unirii - acces rapid spre centru prin M5</li>
+              <li>📍 Biblioteca Judeteana - reper cultural important</li>
+              <li>📍 Lacul Morii - spatiu natural mare la marginea cartierului</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~20 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Drumul Taberei, Sectorul 6</li>
-          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Vezi toate zonele Sector 6</a></li>
+          <li>🚗 ~20-25 min din centru</li>
+          <li>🚍 Metrou M5 (statiile Drumul Taberei, Orizont, Raul Doamnei), numeroase linii de autobuze</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Drumul Taberei</li>
+          <li><a href="/petreceri/sector-6" style="color:var(--primary)">→ Toate zonele Sector 6</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Drumul Taberei</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Sala de petreceri Noblesse Events (zona Drumul Taberei)</li>
+              <li>🎉 Restaurante cu sali private pe B-dul Timisoara</li>
+              <li>🎉 Sala Sporturilor Drumul Taberei pentru petreceri mai mari</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Drumul Taberei</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Drumul Taberei</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Drumul Taberei</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Drumul Taberei</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Drumul Taberei</span> — Tot ce trebuie sa stii</h2>
+      <p>Drumul Taberei este al doilea cel mai populat cartier din Bucuresti si unul din cele mai active din punct de vedere familial. Construit in anii 60-80 ca ansamblu de locuinte, cartierul si-a pastratat caracterul de comunitate stransa. Parcul Drumul Taberei cu cei 55 de hectare ai sai este principalul spatiu de socializare al cartierului. Metro M5 (inaugurata in 2020) a revolutionat accesul spre centru aducand Drumul Taberei la 15 minute de Piata Unirii.</p>
+
+      <h3>🗺️ Zone acoperite in Drumul Taberei</h3>
+      <p>SuperParty acopera <strong>intreaga zona Drumul Taberei</strong> si cartierele vecine: Militari, Crangasi, Ghencea, Rahova. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Drumul Taberei?</h3>
+      <p>Fiecare petrecere SuperParty in Drumul Taberei include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Drumul Taberei</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Zona Drumul Taberei are o densitate mare de sali de petreceri — avem experieneta cu cele mai bune</li>
+            <li>✔️ Metroul M5 ne permite sa ajungem rapid din orice punct al Bucurestiului</li>
+            <li>✔️ Petrecerile in Parcul Drumul Taberei sunt populare in sezon (mai-septembrie)</li>
+            <li>✔️ Weekend-urile sunt foarte aglomerate — rezervati cu 3 saptamani inainte</li>
+            <li>✔️ Avem animatori care locuiesc in zona Drumul Taberei — timpi de raspuns foarte scurti</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Drumul Taberei?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Drumul Taberei am organizat sute de petreceri de succes. Stim specificul <strong>vestul Bucurestiului</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Militari, Crangasi, Ghencea, Rahova.</p>
+
+      <h3>📞 Cum rezervi un animator in Drumul Taberei?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Drumul Taberei, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Drumul Taberei</div>
+        <div class="tag">📍 Militari</div>
+        <div class="tag">📍 Crangasi</div>
+        <div class="tag">📍 Ghencea</div>
+        <div class="tag">📍 Rahova</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Drumul Taberei — Avantajul tau</h3>
+        <p>In cartierul Drumul Taberei avem una din cele mai mari densitati de parinti multumiti din Capitala. Metroul M5 faciliteaza accesul animatorilor din orice zona a Capitalei la orice adresa de pe Bulevardul Timisoara sau strazile din Drumul Taberei. Garantia contractuala SuperParty este valabila si in aceasta zona fara nicio exceptie.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Drumul Taberei</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Drumul Taberei</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Drumul Taberei</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Drumul Taberei</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Drumul Taberei?", "Da — acoperim tot Drumul Taberei și cartierele vecine (Militari, Crângași). Transport inclus."],
-        ["Cât durează un program de animație în Drumul Taberei?", "Programele durează 2-3 ore. Pachetul Super 1 (490 RON) = 2 ore, Super 3 (840 RON) = 2 ore cu 2 personaje."],
-        ["Aveți animatori disponibili în weekend în Drumul Taberei?", "Da, dar rezervările de weekend se ocupă rapid. Recomandăm rezervarea cu min. 2 săptămâni înainte."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Drumul Taberei</span></h2>
+      <p class="intro-text">Drumul Taberei este unul din cartierele simbol ale Bucurestiului socialist, construit intre 1959 si 1974 ca o extensie planificata a orasului spre vest. Numele vine de la un sat medieval care exista in aceasta zona inainte de urbanizare accelerata. Cartierul a adapostit initial muncitori si familii de clasa medie, si a ramas fidel acestui caracter pana in prezent. Inaugurarea liniei de metrou M5 Drumul Taberei in 2020 a revolutionat accesul la transport in comun si a adus un nou val de tineri si familii in zona, atrasi de raportul excelent calitate-pret al locuintelor. Cu o populatie de peste 150.000 de locuitori, Drumul Taberei este al doilea cel mai populat cartier din Bucuresti si are o cerere constanta si ridicata pentru animatori petreceri copii.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Parcul Drumul Taberei, cu 55 de hectare de spatiu verde si Lacul Morii in apropriere, este cel mai important spatiu public al cartierului. In fiecare weekend, parcul se umple de familii, alergatori, ciclisti si grupuri de prieteni. Animatorii SuperParty sunt prezenti frecvent in Parcul Drumul Taberei pentru petreceri de ziua in aer liber, in special in perioada mai-septembrie. Stim exact ce zone sunt cele mai potrivite si cum sa organizam un program care sa tina copiii captivati timp de 2 ore in aer liber. Inaugurarea M5 a activat si mai mult viata comunitara a cartierului — noi spatii comerciale si restaurante au aparut de-o parte si de alta a statiilor de metrou.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Sfaturi practice pentru o petrecere de succes in Drumul Taberei: Mall-ul Plaza Romania are o zona de petreceri copii care poate fi rezervata — contactati-i cu 4 saptamani inainte. Zona din jurul statiei Drumul Taberei (M5) este cea mai accesibila din tot cartierul pentru invitati din alte zone ale Capitalei. Evitati petrecerile sambata intre 14:00-16:00 in parc — este cel mai aglomerat interval al saptamanii. Daca organizati acasa, apartamentele din Drumul Taberei sunt in general spatioase cu suficient loc pentru 15-20 de copii activi.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Drumul Taberei</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Minnie Mouse, Rapunzel</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Drumul Taberei, sambata si duminica sunt cele mai ocupate. Rezerva cu 3 saptamani inainte pentru weekenduri in sezon (mai-septembrie).</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Blocurile din Drumul Taberei au sali comune sau curti amenajate perfecte pentru petreceri. Alternativ, Parcul Drumul Taberei este ideal pentru petreceri in aer liber.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) este cel mai ales in zona Drumul Taberei. Super 3 (840 RON) pentru petreceri cu 25+ copii. Toate includ transport gratuit via M5.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377 sau messaj WhatsApp. Raspundem in 30 de minute si trimitem confirmare scrisa.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Drumul Taberei</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Cristina V.</strong> — <em>Drumul Taberei</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Batman a ajuns exact la ora 15:00 cum am stabilit. Programul de 2 ore a fost excelent, copiii nu s-au putut opri din ras si sariat. Serviciu cu adevarat profesionist!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Alexandru N.</strong> — <em>Drumul Taberei - Parc</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am organizat in Parcul Drumul Taberei si a fost o petrecere de vis. 25 de copii, 2 ore de animatie non-stop. Toti parintii au cerut numarul animatorului la final."</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Ramona S.</strong> — <em>Drumul Taberei</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Costumul Elsa era impecabil - copiii au crezut ca e chiar Elsa din film. Revin cu siguranta pentru petrecerea de 7 ani a fetitei mele!"</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Drumul Taberei</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Acoperiti intreaga zona Drumul Taberei?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — acoperim toate cartierele din Drumul Taberei: de la intrarea pe Bulevardul Timisoara pana la Ghencea si de la Marginea cartierului pana la Rahova. Transport inclus.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat costa un animator in Drumul Taberei?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Pachetele noastre pornesc de la 490 RON (Super 1, 2 ore, 1 personaj). Pentru petreceri mari avem Super 3 (840 RON) si Super 7 (1290 RON). Nicio taxa de deplasare in zona.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Faceti animatie in Parcul Drumul Taberei?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da! Parcul Drumul Taberei este unul din locurile noastre preferate pentru petreceri in aer liber. Animatorii vin cu echipament portabil complet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Este metro M5 accesibil pentru echipamentul animatorilor?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Animatorii nostri se deplaseaza cu masina proprie, nu cu metroul. Ajungem direct la adresa ta cu tot echipamentul.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Aveti disponibilitate in weekend in Drumul Taberei?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da, dar zonele populare ca Drumul Taberei se ocupa rapid. Va rugam sa rezervati cu minim 3 saptamani inainte pentru weekend.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce personaje sunt cele mai cerute in Drumul Taberei?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Top personaje cerute: Spider-Man, Elsa, Batman, Minnie Mouse, Rapunzel, Sonic. Avem 50+ personaje disponibile.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Drumul Taberei</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Drumul Taberei</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-6" style="color:var(--primary); font-weight:600;">Sector 6</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-6">← Sectorul 6</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>

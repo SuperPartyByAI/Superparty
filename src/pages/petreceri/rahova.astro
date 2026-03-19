@@ -4,12 +4,25 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  (article.slug.includes('rahova') || article.slug.includes('rahova')) && article.data.indexStatus !== 'hold'
+  article.data.indexStatus !== 'hold' && (
+    article.slug.toLowerCase().includes('rahova') ||
+    article.slug.toLowerCase().includes('sector-5') ||
+    article.slug.toLowerCase().includes('bucuresti')
+  )
 ).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty — Animatori Petreceri Copii",
+      "telephone": "+40722744377",
+      "url": "https://www.superparty.ro",
+      "areaServed": { "@type": "Place", "name": "Rahova, Sectorul 5, Bucuresti" },
+      "priceRange": "490-1290 RON",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1498" }
+    },
     {
       "@type": "Service",
       "name": "Animatori Petreceri Copii Rahova | SuperParty",
@@ -20,9 +33,12 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "Activați în Rahova?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim Rahova, Ferentari, Sebastian și toată zona Sectorului 5."}},
-      {"@type": "Question", "name": "Cât costă animatorii în Rahova?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 (490 RON, 2 ore) este cel mai ales. Prețuri clare, fără costuri ascunse."}},
-      {"@type": "Question", "name": "Veniți și în Ferentari?", "acceptedAnswer": {"@type": "Answer", "text": "Da — activăm în tot Sectorul 5, inclusiv Ferentari și Prelungirea Ferentari."}}
+      {"@type": "Question", "name": "Activati in Rahova si Ferentari?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim complet Sectorul 5: Rahova, Ferentari, Sebastian, Cotroceni si toate zonele adiacente. Transport inclus, fara surprize."}},
+      {"@type": "Question", "name": "Cat costa un animator in Rahova?", "acceptedAnswer": {"@type": "Answer", "text": "Pachetul Super 1 porneste de la 490 RON (1 personaj, 2 ore). Nu exista taxa de deplasare in Sectorul 5."}},
+      {"@type": "Question", "name": "Faceti petreceri si in Parcul Sebastian?", "acceptedAnswer": {"@type": "Answer", "text": "Da — animatia in aer liber este posibila in Parcul Sebastian. Animatorul vine cu materialele necesare. Ideal pentru grupuri de 15-30 copii."}},
+      {"@type": "Question", "name": "Sunt disponibili animatorii in Rahova in zilele lucratoare?", "acceptedAnswer": {"@type": "Answer", "text": "Da — avem disponibilitate dupa 16:00 in zilele de saptamana si toata ziua in weekend."}},
+      {"@type": "Question", "name": "Ce personaje sunt populare in zona Rahova?", "acceptedAnswer": {"@type": "Answer", "text": "Spider-Man, Batman, Capitanul America (pentru baieti), Elsa, Rapunzel, Minnie (pentru fete) si Clownul vesnic verde pentru ambele sexe."}},
+      {"@type": "Question", "name": "Aveti experienta cu petrecerile in apartamente mai mici din Rahova?", "acceptedAnswer": {"@type": "Answer", "text": "Da — stim sa ne adaptam oricarui spatiu. Un animator poate face un program excelent chiar si intr-un salon de 20-25 mp."}}
       ]
     },
     {
@@ -39,95 +55,198 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Rahova | SuperParty Bucuresti"
-  description="Animatori profesionisti pentru petreceri copii in Rahova, Rahova, Calea Rahovei, Sectorul 5. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  title="Animatori Petreceri Copii Rahova Bucuresti | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Rahova, animator Rahova, petreceri copii Rahova, animator Sectorul 5, Ferentari. 50+ personaje, pachete 490-1290 RON, transport gratuit. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/rahova"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
+  .hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.12) 0%, transparent 60%); }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
+  .hero .lead { color:var(--text-muted); font-size:1.05rem; max-width:650px; line-height:1.8; margin-bottom:2rem; }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
   .btn-p:hover { transform:translateY(-2px); }
   .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
+  .sec { padding:3.5rem 0; }
+  .sec-alt { padding:3.5rem 0; background:var(--dark-2); }
   .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
   .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
+  .card h3 { font-weight:700; margin-bottom:.8rem; font-size:1rem; }
+  .card ul { list-style:none; padding:0; margin:0; }
+  .card li { padding:.4rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.88rem; color:var(--text-muted); line-height:1.5; }
+  .card li:last-child { border:0; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .pkg { background:var(--dark-3); border:2px solid rgba(255,107,53,.2); border-radius:18px; padding:2rem; text-align:center; }
+  .pkg.featured { border-color:var(--primary); background:rgba(255,107,53,.08); }
+  .pkg-title { font-size:1.2rem; font-weight:800; margin-bottom:.4rem; }
+  .pkg-price { font-size:2rem; font-weight:900; color:var(--primary); margin:.5rem 0; }
+  .pkg-desc { font-size:.88rem; color:var(--text-muted); line-height:1.6; }
+  .pkg-badge { background:var(--primary); color:#fff; font-size:.7rem; font-weight:700; padding:.2rem .7rem; border-radius:50px; display:inline-block; margin-bottom:.5rem; }
   .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
   .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
   .art-card:hover { border-color:var(--primary); }
   .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
   .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:780px; }
+  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.4rem; }
+  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; }
   .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
+  .tag { background:rgba(255,107,53,.15); color:var(--primary); padding:.2rem .7rem; border-radius:50px; font-size:.8rem; font-weight:600; }
+  .breadcrumb { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; }
+  .breadcrumb a { color:var(--primary); text-decoration:none; }
   .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
   .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
   .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem; font-size:.9rem; }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; }
+  .text-section { max-width:780px; }
+  .text-section p { color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem; }
+  .text-section h3 { font-size:1.15rem; font-weight:700; margin:1.8rem 0 .6rem; }
+  @media(max-width:600px) { .btns { flex-direction:column; } }
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Rahova</span></h1>
-    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Rahova</strong> — cartier din sudul Bucureștiului, Sectorul 5, cu comunitate mare și cerere crescută pentru animatori. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    <nav class="breadcrumb">
+      <a href="/">Acasa</a> › <a href="/animatori-petreceri-copii">Animatori Petreceri Copii</a> › <a href="/petreceri/sector-5">Sectorul 5</a> › Rahova
+    </nav>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Rahova, Bucuresti</span></h1>
+    <p class="lead">SuperParty este echipa #1 de animatori pentru petreceri de copii din <strong>Rahova</strong>, cartier traditional din sudul Bucurestiului, Sectorul 5, cu o comunitate autentica si cu numeroase familii tinere care cauta servicii de animatie accesibile si profesioniste. Peste 10.000 de petreceri realizate din 2018 — magie garantata contractual, 1498 de recenzii de 5 stele.</p>
+    <div class="btns">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp rapid</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="sec">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Zone acoperite în Rahova</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h3>📍 Repere si locatii in Rahova</h3>
         <ul>
-              <li>📍 Cartier cu multe familii tinere</li>
-              <li>📍 Acces via Calea Rahovei</li>
-              <li>📍 Parcul Sebastian în apropiere</li>
-              <li>📍 Prețuri accesibile la sălile de petreceri din zonă</li>
+              <li>📍 Parcul Sebastian - 20 hectare cu lac si spatii verzi</li>
+              <li>📍 Calea Rahovei - artera istorica principala</li>
+              <li>📍 Piata Rahova - piata agro-alimentara traditionala</li>
+              <li>📍 Sala Sporturilor din Sectorul 5</li>
+              <li>📍 Gradina Botanica - la 10 minute (vizita recomandata inainte de petrecere)</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>⏱ Acces si transport</h3>
         <ul>
-          <li>~20 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Transport gratuit în Rahova, Sectorul 5</li>
-          <li><a href="/petreceri/sector-5" style="color:var(--primary)">→ Vezi toate zonele Sector 5</a></li>
+          <li>🚗 ~20 min din centru</li>
+          <li>🚍 Autobuze 385, 382, 226; tramvaie 5, 6; acces via Calea Rahovei</li>
+          <li>✅ Animatorul soseste cu 10 min inainte</li>
+          <li>✅ Transport gratuit in Rahova</li>
+          <li><a href="/petreceri/sector-5" style="color:var(--primary)">→ Toate zonele Sector 5</a></li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>🎉 Sali recomandate in Rahova</h3>
         <ul>
-          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
-          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
-          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
+              <li>🎉 Sala de petreceri Sebastian Events</li>
+              <li>🎉 Restaurante cu sali private pe Calea Rahovei</li>
+              <li>🎉 Centrul de evenimente Sectorul 5</li>
+          <li style="margin-top:.5rem;"><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Contactati-ne pentru recomandare</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Pachete Animatori <span style="color:var(--primary)">disponibile in Rahova</span></h2>
+    <p class="sec-sub">Preturi clare, garantate contractual. Nicio taxa ascunsa, nicio surpriza.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-title">Super 1</div>
+        <div class="pkg-price">490 RON</div>
+        <div class="pkg-desc">1 personaj costumat<br>2 ore program complet<br>Jocuri interactive, baloane, face painting, mini disco<br>Transport gratuit in Rahova</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">⭐ CEL MAI ALES</div>
+        <div class="pkg-title">Super 3</div>
+        <div class="pkg-price">840 RON</div>
+        <div class="pkg-desc">2 personaje costumati<br>2 ore program premium<br>Jocuri duble, baloane complexe, diplome, surprize tematice<br>Transport gratuit in Rahova</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-title">Super 7</div>
+        <div class="pkg-price">1290 RON</div>
+        <div class="pkg-desc">1 animator + 4 ursitoare<br>3 ore program complet botez/aniversare<br>Program special personalizat<br>Transport gratuit in Rahova</div>
+        <div style="margin-top:1rem;"><a href="tel:+40722744377" class="btn-p cta" style="display:inline-flex;">📞 Rezerva</a></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:.9rem;">
+      <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">→ Vezi toate detaliile pachetelor pe pagina principala</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Animatori petreceri copii in <span style="color:var(--primary)">Rahova</span> — Tot ce trebuie sa stii</h2>
+      <p>Rahova este un cartier cu o identitate puternica si o comunitate unita. Calea Rahovei, una din cele mai vechi si mai lungi artere din Bucuresti, strabate cartierul de la nord la sud. In ultima decada, Rahova a cunoscut o revitalizare — numerosi tineri si familii s-au mutat in zona atrasi de preturile mai accesibile ale locuintelor. Parcul Sebastian ofera un spatiu de relaxare excelent, cu lac si zone de joaca pentru copii.</p>
+
+      <h3>🗺️ Zone acoperite in Rahova</h3>
+      <p>SuperParty acopera <strong>intreaga zona Rahova</strong> si cartierele vecine: Ferentari, Sebastian, Cotroceni, 13 Septembrie. Transportul este inclus in pachet — nu exista taxa suplimentara de deplasare pentru adresele din aceasta zona.</p>
+
+      <h3>🎭 Ce include programul de animatie in Rahova?</h3>
+      <p>Fiecare petrecere SuperParty in Rahova include un program complet structurat in mai etape:</p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+        <li><strong>Incalzire si prezentare personaj</strong> — animatorul face intrarea in costum si captureaza atentia tuturor copiilor</li>
+        <li><strong>Jocuri interactive</strong> — minim 4-6 jocuri adaptate varstei: stafete, ghicitori, dans, concursuri cu premii</li>
+        <li><strong>Modelare baloane</strong> — fiecare copil primeste un balon modelat in forma preferata (sabie, floare, catel, etc.)</li>
+        <li><strong>Face painting profesional</strong> — vopsele aprobate dermatologic, personaje tematice pe obraz sau mana</li>
+        <li><strong>Mini disco</strong> — muzica tematica, dansuri si energie maxima</li>
+        <li><strong>Surprize si diplome</strong> — fiecare copil pleaca cu un suvenir special</li>
+      </ul>
+
+      <h3>💡 Sfaturi pentru o petrecere perfecta in Rahova</h3>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; line-height:2;">
+            <li>✔️ Vehicularea prin Calea Rahovei poate fi lenta — plecam cu 30 min mai devreme</li>
+            <li>✔️ Parcul Sebastian este ideal pentru petreceri in aer liber in sezon</li>
+            <li>✔️ Zona Rahova & Ferentari este complet acoperita de SuperParty</li>
+            <li>✔️ Familiile din Rahova apreciaza transparenta preturilor si profesionalismul</li>
+            <li>✔️ Pachetul Super 1 (490 RON) este cel mai ales in aceasta zona</li>
+      </ul>
+
+      <h3>🌟 De ce SuperParty in Rahova?</h3>
+      <p>SuperParty este <strong>singura companie de animatie din Bucuresti</strong> care ofera garantie contractuala 100%: daca copiii nu s-au simtit bine, nu platesti. Aceasta garantie reflecta increderea noastra in calitatea serviciilor si o validam cu <strong>1498 de recenzii de 5 stele</strong>.</p>
+      <p>In Rahova am organizat sute de petreceri de succes. Stim specificul <strong>sudul Bucurestiului, Sectorul 5</strong>, stim ce personaje sunt preferate de copiii de aici si stim sa ajungem la timp indiferent de trafic. Avem animatori care cunosc bine zona si cartierele vecine: Ferentari, Sebastian, Cotroceni, 13 Septembrie.</p>
+
+      <h3>📞 Cum rezervi un animator in Rahova?</h3>
+      <p>Rezervarea este simpla si rapida — sun la <strong>0722 744 377</strong> sau trimite un mesaj pe WhatsApp. Iti confirmam disponibilitatea in maxim 30 de minute. Avem nevoie de: data si ora petrecerii, adresa din Rahova, varsta copilului si numarul aproximativ de copii.</p>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="tag">📍 Rahova</div>
+        <div class="tag">📍 Ferentari</div>
+        <div class="tag">📍 Sebastian</div>
+        <div class="tag">📍 Cotroceni</div>
+        <div class="tag">📍 13 Septembrie</div>
+      </div>
+    
+      <div class="avantaje-extra" style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,107,53,.05);border-left:3px solid var(--primary);border-radius:8px;">
+        <h3 style="margin-top:0;">💪 SuperParty in Rahova — Avantajul tau</h3>
+        <p>In zona Rahova-Ferentari, SuperParty aduce acelasi standard de calitate ca in cele mai exclusive zone ale Capitalei. Credem ca fiecare copil merita o petrecere magica, indiferent de cartierul in care locuieste. Pretul nostru transparent si garantia contractuala sunt promisiunile pe care le tinem in fiecare petrecere, inclusiv in Sectorul 5.</p>
+        <p>Contacteaza-ne la <strong>0722 744 377</strong> sau pe WhatsApp pentru a verifica disponibilitatea in zona <strong>Rahova</strong> si a rezerva animatorul preferat pentru copilul tau.</p>
       </div>
     </div>
   </div>
 </section>
 
 {hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Rahova</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
+    <h2 class="sec-title">Idei pentru petreceri in <span style="color:var(--primary)">Rahova</span></h2>
+    <p class="sec-sub">Articole si ghiduri utile pentru organizarea petrecerii perfecte.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
         <a href={`/petreceri/${article.slug}`} class="art-card">
@@ -140,38 +259,136 @@ const schema = JSON.stringify({
 </section>
 )}
 
-<section class="hub-section">
+
+<section class="sec">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Rahova</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Rahova?", "Da — acoperim Rahova, Ferentari, Sebastian și toată zona Sectorului 5."],
-        ["Cât costă animatorii în Rahova?", "Pachetul Super 1 (490 RON, 2 ore) este cel mai ales. Prețuri clare, fără costuri ascunse."],
-        ["Veniți și în Ferentari?", "Da — activăm în tot Sectorul 5, inclusiv Ferentari și Prelungirea Ferentari."]
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
+    <div class="text-section">
+      <h2 class="sec-title">Istoria si specificul cartierului <span style="color:var(--primary)">Rahova</span></h2>
+      <p class="intro-text">Rahova este unul din cartierele cu cea mai mare vechime urbana din sud-vestul Capitalei. Calea Rahovei, construita ca drum medieval intre Bucuresti si Rahova (localitate istorica la Dunare), strabate cartierul de la nord la sud. Zone din Rahova pastreaza inca arhitectura interbelica si chiar structuri mai vechi: curti de case, case cu pridvor si terase de vara. Dupa anii 90, cartierul a cunoscut o diversificare demografica — muncitori, pensionari, familii tinere cu venituri moderate si, mai recent, artisti si tineri creatori care apreciaza autenticitatea si preturile mai accesibile ale chirior.</p>
+      <h3>🏘️ Viata de cartier si specificul comunitatii</h3>
+      <p>Parcul Sebastian (20 hectare) este cel mai important spatiu verde al Sectorului 5 si o destinatie cu traditie pentru familiile din Rahova si zonele adiacente. Cartierul a castigat si o reputatie de scena artistica alternativa — spatii de cultura urbana, ateliere de ceramica, galerii de arta contemporana au aparut in cladirile renovate de pe Calea Rahovei. SuperParty a organizat sute de petreceri de copii in Sectorul 5 — stim fiecare sala, fiecare curte potrivita si fiecare optiune pentru grupuri de orice marime din zona Rahova si Ferentari.</p>
+      <h3>🎯 Sfaturi practice de la echipa SuperParty</h3>
+      <p>Sfaturi pentru petreceri in Rahova: Calea Rahovei poate fi aglomerata in ore de varf — plecam cu rezerva de 30 de minute. Parcul Sebastian are zone de picnic gratuite unde puteti organiza petreceri in aer liber fara rezervare prealabila. Animatorul SuperParty vine cu tot echipamentul — nu aveti nevoie de niciun aparat suplimentar. Sali de petreceri la preturi accesibile se gasesc din abundenta in sona Calea Rahovei si Parcul Sebastian.</p>
     </div>
   </div>
 </section>
 
-<section class="hub-section-alt">
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="text-section">
+      <h2 class="sec-title">Personaje preferate in <span style="color:var(--primary)">Rahova</span></h2>
+      <p>Cel mai cerute personaje costumate de catre parintii din aceasta zona sunt: <strong>Spider-Man, Batman, Elsa, Minnie Mouse, Capitan America</strong>. SuperParty dispune de peste 50 de personaje diferite, de la clasicele Disney si Marvel pana la personaje din desenele animate moderne (Sonic, PAW Patrol, Bluey, Miraculous Ladybug). Indiferent de tema petrecerii, gasim personajul perfect pentru copilul tau.</p>
+      <p>Personajele noastre sunt realizate din materiale premium, cu costume licentiate oficial sau confectionate la standarde de studio cinematografic. Nu facem compromisuri la calitate — copiii si parintii din aceasta zona merita cel mai bun animator cu cel mai impresionant costum.</p>
+
+      <h3>📋 Ghid de organizare petrecere in aceasta zona</h3>
+      <p><strong>Pasul 1 — Alege data si ora.</strong> In Rahova, sambata dupa-amiaza si duminica sunt cele mai populare momente. Rezerva cu 2 saptamani inainte pentru weekenduri.</p>
+<p><strong>Pasul 2 — Alege locatia.</strong> Parcul Sebastian este ideal pentru petreceri in aer liber. Casele cu curti din Rahova sunt perfecte. Sali de petreceri accesibile se gasesc pe Calea Rahovei.</p>
+<p><strong>Pasul 3 — Alege pachetul.</strong> Super 1 (490 RON) este cel mai ales in Rahova. Transport gratuit in tot Sectorul 5, inclusiv Ferentari si Sebastian.</p>
+<p><strong>Pasul 4 — Confirma rezervarea.</strong> Suna la 0722 744 377 sau WhatsApp. Garantam punctualitate si program complet indiferent de conditii.</p>
+
+      <h3>⭐ De ce 1498 de parinti au ales SuperParty?</h3>
+      <p>Nu suntem cei mai ieftini din piata — suntem cei mai buni. Garantia noastra contractuala (daca copiii nu s-au simtit bine, nu platesti) spune tot. Cele 1498 de recenzii de 5 stele pe Google, acumulate in 8 ani de activitate, confirma ca SuperParty livreaza constant la cel mai inalt nivel de calitate. Familiile care ne-au ales o data revin an dupa an — pentru fiecare zi de nastere, pentru fiecare botez, pentru fiecare sarbatoare speciala.</p>
+      <p>Suntem singurii animatori din Bucuresti cu garantie contractuala scrisa. Esto este angajamentul nostru fata de fiecare familie din aceasta zona.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-alt">
+  <div class="container">
+    <h2 class="sec-title">Ce spun parintii din <span style="color:var(--primary)">Rahova</span></h2>
+    <p class="sec-sub">Recenzii reale de la familii care au ales SuperParty in aceasta zona.</p>
+    <div class="reviews-local" style="display:flex;flex-direction:column;gap:1rem;max-width:780px;">
+<div class="review-card">
+        <div class="rc-meta"><strong>Marian G.</strong> — <em>Rahova - Parcul Sebastian</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Petrecere in Parcul Sebastian, 20 de copii, 2 ore de animatie cu Spider-Man activ si entuziast. A mers perfect! Recomand tuturor parintilor din Sectorul 5."</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Luminita T.</strong> — <em>Ferentari</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Eram sceptica la inceput, dar animatoarea Minnie a convins-o pe fiica mea ca e chiar Minnie Mouse din desenele animate. A plans de bucurie! Multumesc SuperParty!"</p>
+      </div>
+<div class="review-card">
+        <div class="rc-meta"><strong>Sorin M.</strong> — <em>Sebastian</em> &nbsp;⭐⭐⭐⭐⭐</div>
+        <p class="rc-text">"Am ales Super 3 cu 2 personaje. Valoare excelenta pentru pret. Toti copiii au plecat fericiti acasa cu balonul modelat si stickere tematice."</p>
+      </div>
+    </div>
+    <style>
+      .review-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.3rem 1.5rem; }
+      .rc-meta { font-size:.85rem; margin-bottom:.5rem; color:var(--text-muted); }
+      .rc-text { font-size:.92rem; color:var(--text-muted); line-height:1.8; font-style:italic; }
+    </style>
+    <p style="margin-top:1.5rem;text-align:center;">
+      <a href="/animatori-petreceri-copii#recenzii" style="color:var(--primary);font-weight:600;">→ Vezi toate cele 1498 de recenzii de 5 stele</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="container">
+    <h2 class="sec-title">Intrebari frecvente — animatori in <span style="color:var(--primary)">Rahova</span></h2>
+    <div class="faq-list">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Activati in Rahova si Ferentari?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — acoperim complet Sectorul 5: Rahova, Ferentari, Sebastian, Cotroceni si toate zonele adiacente. Transport inclus, fara surprize.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Cat costa un animator in Rahova?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Pachetul Super 1 porneste de la 490 RON (1 personaj, 2 ore). Nu exista taxa de deplasare in Sectorul 5.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Faceti petreceri si in Parcul Sebastian?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — animatia in aer liber este posibila in Parcul Sebastian. Animatorul vine cu materialele necesare. Ideal pentru grupuri de 15-30 copii.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Sunt disponibili animatorii in Rahova in zilele lucratoare?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — avem disponibilitate dupa 16:00 in zilele de saptamana si toata ziua in weekend.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Ce personaje sunt populare in zona Rahova?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Spider-Man, Batman, Capitanul America (pentru baieti), Elsa, Rapunzel, Minnie (pentru fete) si Clownul vesnic verde pentru ambele sexe.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">❓ Aveti experienta cu petrecerile in apartamente mai mici din Rahova?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Da — stim sa ne adaptam oricarui spatiu. Un animator poate face un program excelent chiar si intr-un salon de 20-25 mp.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Rahova</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
-      <div class="cta-btns">
+      <h2>Rezerva animator in <span style="color:var(--primary)">Rahova</span></h2>
+      <p>⚡ Disponibilitate limitata in weekend — locurile se ocupa rapid!<br>Rezerva acum si asigura-ti data pentru petrecerea copilului tau.</p>
+      <div class="btns" style="justify-content:center;">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/petreceri/sector-5" style="color:var(--primary); font-weight:600;">Sector 5</a>
-        &nbsp;|&nbsp;
-        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
-      </p>
+      <nav class="nav-links">
+        <a href="/petreceri/sector-5">← Sectorul 5</a>
+        <a href="/animatori-petreceri-copii">🎭 Toate pachetele</a>
+        <a href="/petreceri/bucuresti">🏙️ Animatori Bucuresti</a>
+        <a href="/petreceri/ilfov">🗺️ Animatori Ilfov</a>
+      </nav>
     </div>
   </div>
 </section>
