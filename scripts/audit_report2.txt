@@ -1,0 +1,53 @@
+﻿≡ƒöì AUDIT COMPLET SUPERPARTY.RO
+
+Scanez... (poate dura 20-30 secunde)
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ                    REZULTAT AUDIT COMPLET                       Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+Pagini Astro scanate:   132
+Articole MDX scanate:   499
+ERORI CRITICE:          5
+AVERTISMENTE:           2
+
+ΓòÉΓòÉΓòÉΓòÉ ≡ƒö┤ ERORI CRITICE ΓòÉΓòÉΓòÉΓòÉ
+
+[DUPLICATE_UNPROTECTED] ΓÇö 5 erori:
+  Γ¥î animatori-petreceri-copii-alba-ca-zapada-glina.mdx: 3 articole duplicate f─âr─â noindex
+  Γ¥î animatori-petreceri-copii-ariel-branesti.mdx: 2 articole duplicate f─âr─â noindex
+  Γ¥î animatori-petreceri-copii-batman-sector-1.mdx: 2 articole duplicate f─âr─â noindex
+  Γ¥î animatori-petreceri-copii-bumblebee-cornetu.mdx: 2 articole duplicate f─âr─â noindex
+  Γ¥î animatori-petreceri-copii-bumblebee-domnesti.mdx: 2 articole duplicate f─âr─â noindex
+
+ΓòÉΓòÉΓòÉΓòÉ ≡ƒƒí AVERTISMENTE ΓòÉΓòÉΓòÉΓòÉ
+
+[PAGE_META] ΓÇö 2 warnings:
+  ΓÜá∩╕Å  arie-acoperire.astro: Lips─â title tag
+  ΓÜá∩╕Å  arie-acoperire.astro: Lips─â description
+
+ΓòÉΓòÉΓòÉΓòÉ Γä╣∩╕Å  INFO GENERAL ΓòÉΓòÉΓòÉΓòÉ
+  [PAGES] Total pagini Astro: 132
+  [PAGES] F─âr─â title: 1
+  [PAGES] F─âr─â description: 1
+  [PAGES] F─âr─â <h1>: 0
+  [ARTICLES] Total articole: 499
+  [ARTICLES] Indexabile (unice): 178
+  [ARTICLES] Cu noindex: 321
+  [ARTICLES] Grupuri duplicate NEPROTEJATE (f─âr─â noindex): 22
+  [ARTICLES] F─âr─â title: 0
+  [ARTICLES] Con╚¢inut < 300 chars: 0
+  [COMPONENTS] Total componente: 5
+  [COMPONENTS] Componente goale/minimale: 0
+  [SCHEMA] robots ├«n schema: DA
+  [SCHEMA] indexStatus ├«n schema: DA
+  [SCHEMA] canonical ├«n schema: DA
+  [SCRIPTS] Total scripts: 28
+  [INTERNAL_LINKS] Pagini locale cu FlagshipLink: 14/14
+  [FLAGSHIP] Cuvinte flagship: 1345
+  [FLAGSHIP] FAQ entries: 8
+  [FLAGSHIP] Linkuri interne spre locale: 13
+  [CONFIG] vercel.json: OK (redirects)
+  [CONFIG] astro.config.mjs: OK
+
+Γ£à Raport salvat ├«n: scripts/audit_report.json
