@@ -1,44 +1,7 @@
 {
-  "timestamp": "2026-03-19T01:38:25.258Z",
-  "errors": [
-    {
-      "cat": "DUPLICATE_UNPROTECTED",
-      "file": "\\src\\content\\seo-articles\\animatori-petreceri-copii-alba-ca-zapada-glina.mdx",
-      "msg": "3 articole duplicate fără noindex"
-    },
-    {
-      "cat": "DUPLICATE_UNPROTECTED",
-      "file": "\\src\\content\\seo-articles\\animatori-petreceri-copii-ariel-branesti.mdx",
-      "msg": "2 articole duplicate fără noindex"
-    },
-    {
-      "cat": "DUPLICATE_UNPROTECTED",
-      "file": "\\src\\content\\seo-articles\\animatori-petreceri-copii-batman-sector-1.mdx",
-      "msg": "2 articole duplicate fără noindex"
-    },
-    {
-      "cat": "DUPLICATE_UNPROTECTED",
-      "file": "\\src\\content\\seo-articles\\animatori-petreceri-copii-bumblebee-cornetu.mdx",
-      "msg": "2 articole duplicate fără noindex"
-    },
-    {
-      "cat": "DUPLICATE_UNPROTECTED",
-      "file": "\\src\\content\\seo-articles\\animatori-petreceri-copii-bumblebee-domnesti.mdx",
-      "msg": "2 articole duplicate fără noindex"
-    }
-  ],
-  "warnings": [
-    {
-      "cat": "PAGE_META",
-      "file": "\\src\\pages\\arie-acoperire.astro",
-      "msg": "Lipsă title tag"
-    },
-    {
-      "cat": "PAGE_META",
-      "file": "\\src\\pages\\arie-acoperire.astro",
-      "msg": "Lipsă description"
-    }
-  ],
+  "timestamp": "2026-03-19T02:17:13.061Z",
+  "errors": [],
+  "warnings": [],
   "info": [
     {
       "cat": "PAGES",
@@ -46,11 +9,11 @@
     },
     {
       "cat": "PAGES",
-      "msg": "Fără title: 1"
+      "msg": "Fără title: 0"
     },
     {
       "cat": "PAGES",
-      "msg": "Fără description: 1"
+      "msg": "Fără description: 0"
     },
     {
       "cat": "PAGES",
@@ -62,15 +25,15 @@
     },
     {
       "cat": "ARTICLES",
-      "msg": "Indexabile (unice): 178"
+      "msg": "Indexabile (unice): 156"
     },
     {
       "cat": "ARTICLES",
-      "msg": "Cu noindex: 321"
+      "msg": "Cu noindex: 343"
     },
     {
       "cat": "ARTICLES",
-      "msg": "Grupuri duplicate NEPROTEJATE (fără noindex): 22"
+      "msg": "Grupuri duplicate NEPROTEJATE (fără noindex): 0"
     },
     {
       "cat": "ARTICLES",
@@ -102,7 +65,7 @@
     },
     {
       "cat": "SCRIPTS",
-      "msg": "Total scripts: 28"
+      "msg": "Total scripts: 30"
     },
     {
       "cat": "INTERNAL_LINKS",

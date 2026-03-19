@@ -1,0 +1,41 @@
+﻿ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ         VERIFICARE LIVE ΓÇö ce s-a implementat azi        Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+≡ƒôä PAGINA FLAGSHIP /animatori-petreceri-copii:
+   Cuvinte (body):       1345 cuvinte
+   FAQ entries:          8 ├«ntreb─âri
+   Link-uri interne:     13 ΓåÆ pagini locale
+   Sec╚¢iune personaje:   Γ£à DA
+   FlagshipLink import:  Γ¥î NU
+
+≡ƒöù INTERNAL LINKING (FlagshipLink pe fiecare pagina locala):
+   Γ£à animatori-copii-sector-1
+   Γ£à animatori-copii-sector-2
+   Γ£à animatori-copii-sector-3
+   Γ£à animatori-copii-sector-4
+   Γ£à animatori-copii-sector-5
+   Γ£à animatori-copii-sector-6
+   Γ£à animatori-copii-bucuresti
+   Γ£à animatori-copii-ilfov
+   Γ£à animatori-copii-voluntari
+   Γ£à animatori-copii-otopeni
+   Γ£à animatori-copii-pantelimon
+   Γ£à animatori-copii-bragadiru
+   Γ£à animatori-copii-chiajna
+   Γ£à animatori-copii-popesti-leordeni
+
+   Total pagini cu link intern: 14/14
+
+≡ƒÜ½ NOINDEX DUPLICATE CONTENT FIX:
+   Total articole:               499
+   Cu noindex (blocate Google):  283 articole
+   Indexabile (unice, de calitate): 216 articole
+   Procent indexabil:            43%
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+SUMAR: ce vede Google acum fa╚¢─â de ├«nainte:
+  Cuvinte flagship:    1345 (era ~400 ├«nainte)
+  Pagini cu link Γ₧£ flagship: 14/14
+  Articole duplicate blocate: 283/499
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
