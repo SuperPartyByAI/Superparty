@@ -1,0 +1,205 @@
+=================================================================
+  AUDIT COMPLET SUPERPARTY.RO — 2026-03-19
+=================================================================
+
+--- INVENTAR PAGINI ---
+Total .astro scanate:          145
+Pagini INDEXATE (robots=index): 43
+Pagini NOINDEX:                 102
+
+--- CALITATE PAGINI INDEXATE ---
+Excelent (85+):  31 pagini
+Bun (65-84):     4 pagini
+Mediu (40-64):   7 pagini
+Slab (<40):      1 pagini
+
+--- CONTINUT (cuvinte vizibile) ---
+Sub 300 cuvinte (THIN):  8 pagini — PROBLEMA SEO!
+300-599 cuvinte (OK):    11 pagini
+600+ cuvinte (BOGAT):    24 pagini
+
+--- SIMILARITATE CONTINUT (pagini indexate) ---
+Perechi >20% similaritate: 107
+Perechi >30% similaritate: 5
+
+Top 30 perechi similare:
+  🟠 MARE    32.0%  colentina <-> pantelimon-cartier
+  🟠 MARE    31.3%  sector-3 <-> sector-4
+  🟠 MARE    30.5%  sector-2 <-> sector-3
+  🟠 MARE    30.3%  sector-3 <-> sector-6
+  🟠 MARE    30.0%  sector-4 <-> sector-6
+  🟡 MEDIU   29.3%  dristor <-> tineretului
+  🟡 MEDIU   29.0%  sector-2 <-> sector-4
+  🟡 MEDIU   28.8%  colentina <-> crangasi
+  🟡 MEDIU   28.7%  berceni <-> colentina
+  🟡 MEDIU   28.7%  index <-> index
+  🟡 MEDIU   28.4%  sector-1 <-> sector-3
+  🟡 MEDIU   28.3%  drumul-taberei <-> tineretului
+  🟡 MEDIU   28.2%  sector-4 <-> sector-5
+  🟡 MEDIU   28.1%  sector-2 <-> sector-6
+  🟡 MEDIU   27.8%  dristor <-> drumul-taberei
+  🟡 MEDIU   27.8%  crangasi <-> drumul-taberei
+  🟡 MEDIU   27.8%  crangasi <-> titan
+  🟡 MEDIU   27.7%  sector-1 <-> sector-2
+  🟡 MEDIU   27.5%  sector-5 <-> sector-6
+  🟡 MEDIU   27.5%  dristor <-> pantelimon-cartier
+  🟡 MEDIU   27.2%  pantelimon-cartier <-> titan
+  🟡 MEDIU   27.1%  colentina <-> titan
+  🟡 MEDIU   27.0%  dristor <-> militari
+  🟡 MEDIU   26.8%  colentina <-> drumul-taberei
+  🟡 MEDIU   26.8%  crangasi <-> militari
+  🟡 MEDIU   26.7%  sector-3 <-> sector-5
+  🟡 MEDIU   26.6%  colentina <-> militari
+  🟡 MEDIU   26.5%  drumul-taberei <-> titan
+  🟡 MEDIU   26.5%  drumul-taberei <-> militari
+  🟡 MEDIU   26.4%  tineretului <-> titan
+
+--- PAGINI CU PROBLEME GRAVE (indexate) ---
+Fara titlu:        1
+Fara descriere:    1
+Fara canonical:    1
+Fara schema:       10
+
+--- PAGINI THIN CONTENT (sub 300 cuvinte, INDEXATE) ---
+  [  72w] recenzii.astro
+  [ 199w] index.astro
+  [ 260w] contact/index.astro
+  [ 270w] baloane-cu-heliu/index.astro
+  [ 272w] ursitoare-botez/index.astro
+  [ 277w] vata-de-zahar-si-popcorn/index.astro
+  [ 283w] decoratiuni-baloane/index.astro
+  [ 294w] arcade-baloane/index.astro
+
+--- PAGINI CALITATE MEDIE/SLABA (score <65, indexate) ---
+  [ 30] recenzii.astro  →  no-title | no-desc | thin(72w)
+  [ 55] animatori-copii-bucuresti/index.astro  →  no-canonical | no-schema
+  [ 60] arcade-baloane/index.astro  →  no-schema | thin(294w)
+  [ 60] baloane-cu-heliu/index.astro  →  no-schema | thin(270w)
+  [ 60] contact/index.astro  →  no-schema | thin(260w)
+  [ 60] decoratiuni-baloane/index.astro  →  no-schema | thin(283w)
+  [ 60] ursitoare-botez/index.astro  →  no-schema | thin(272w)
+  [ 60] vata-de-zahar-si-popcorn/index.astro  →  no-schema | thin(277w)
+
+--- TOATE PAGINILE NOINDEX (102) ---
+  [ 376w] animatori-copii-bragadiru/index.astro
+  [ 366w] animatori-copii-chiajna/index.astro
+  [ 271w] animatori-copii-ilfov/index.astro
+  [ 360w] animatori-copii-otopeni/index.astro
+  [ 370w] animatori-copii-pantelimon/index.astro
+  [ 399w] animatori-copii-popesti-leordeni/index.astro
+  [1001w] animatori-copii-sector-1/index.astro
+  [ 555w] animatori-copii-sector-2/index.astro
+  [ 568w] animatori-copii-sector-3/index.astro
+  [ 560w] animatori-copii-sector-4/index.astro
+  [ 549w] animatori-copii-sector-5/index.astro
+  [ 567w] animatori-copii-sector-6/index.astro
+  [ 816w] animatori-copii-voluntari/index.astro
+  [2409w] arie-acoperire.astro
+  [ 731w] petreceri/1-decembrie.astro
+  [ 784w] petreceri/adunatii-copaceni.astro
+  [ 745w] petreceri/afumati.astro
+  [ 759w] petreceri/alunisu.astro
+  [ 764w] petreceri/bacu.astro
+  [ 733w] petreceri/balaceanca.astro
+  [ 739w] petreceri/balotesti.astro
+  [ 737w] petreceri/baneasa.astro
+  [ 754w] petreceri/belciugatele.astro
+  [ 769w] petreceri/berceni-ilfov.astro
+  [ 776w] petreceri/bolintin-deal.astro
+  [ 764w] petreceri/bolintin-vale.astro
+  [ 750w] petreceri/branesti.astro
+  [ 752w] petreceri/branistari.astro
+  [ 752w] petreceri/buciumeni.astro
+  [ 750w] petreceri/budeni.astro
+  [ 735w] petreceri/budesti.astro
+  [ 753w] petreceri/bulbucata.astro
+  [ 748w] petreceri/butimanu.astro
+  [ 749w] petreceri/buturugeni.astro
+  [ 745w] petreceri/caciulati.astro
+  [ 731w] petreceri/caldararu.astro
+  [ 755w] petreceri/calugareni.astro
+  [ 749w] petreceri/campurelu.astro
+  [ 747w] petreceri/candeasca.astro
+  [ 733w] petreceri/catelu.astro
+  [ 750w] petreceri/catrunesti.astro
+  [ 733w] petreceri/cernica.astro
+  [ 750w] petreceri/chirculesti.astro
+  [ 733w] petreceri/chitila.astro
+  [ 742w] petreceri/ciocanesti.astro
+  [ 744w] petreceri/ciofliceni.astro
+  [ 742w] petreceri/ciorogarla.astro
+  [ 758w] petreceri/ciorogirla.astro
+  [ 742w] petreceri/clinceni.astro
+  [ 750w] petreceri/cocani.astro
+  [ 750w] petreceri/cojasca.astro
+  [ 749w] petreceri/cojesti.astro
+  [ 754w] petreceri/colibasi.astro
+  [ 758w] petreceri/comana.astro
+  [ 752w] petreceri/copaceni.astro
+  [ 738w] petreceri/corbeanca.astro
+  [ 740w] petreceri/cornetu.astro
+  [ 751w] petreceri/cosoba.astro
+  [ 753w] petreceri/coteni.astro
+  [ 747w] petreceri/cozieni.astro
+  [ 749w] petreceri/cranguri.astro
+  [ 750w] petreceri/creata.astro
+  [ 729w] petreceri/cretesti.astro
+  [ 754w] petreceri/cretuleasca.astro
+  [ 772w] petreceri/crevedia-mare.astro
+  [ 744w] petreceri/crevedia.astro
+  [ 737w] petreceri/crivina.astro
+  [ 749w] petreceri/cucuieti.astro
+  [ 743w] petreceri/dambovita.astro
+  [ 741w] petreceri/dascalu.astro
+  [ 747w] petreceri/decindea.astro
+  [ 742w] petreceri/dimieni.astro
+  [ 751w] petreceri/dobreni.astro
+  [ 729w] petreceri/dobroesti.astro
+  [ 729w] petreceri/domnesti.astro
+  [ 758w] petreceri/dragomiresti-deal.astro
+  [ 756w] petreceri/dragomiresti-vale.astro
+  [ 763w] petreceri/fierbinti-targ.astro
+  [ 743w] petreceri/fundulea.astro
+  [ 735w] petreceri/ganeasa.astro
+  [ 740w] petreceri/glina.astro
+  [ 737w] petreceri/ialomita.astro
+  [ 751w] petreceri/iepuresti.astro
+  [ 746w] petreceri/jilava.astro
+  [ 742w] petreceri/magurele.astro
+  [ 771w] petreceri/mihai-voda.astro
+  [ 743w] petreceri/mihailesti.astro
+  [ 760w] petreceri/moara-vlasiei.astro
+  [ 743w] petreceri/mogosoaia.astro
+  [ 753w] petreceri/nuci.astro
+  [ 797w] petreceri/ordoreanu-vatra-veche.astro
+  [ 738w] petreceri/pantelimon.astro
+  [ 745w] petreceri/peris.astro
+  [ 736w] petreceri/petrachioaia.astro
+  [ 745w] petreceri/prahova.astro
+  [ 738w] petreceri/racari.astro
+  [ 744w] petreceri/snagov.astro
+  [ 772w] petreceri/stefanestii-de-jos.astro
+  [ 736w] petreceri/teleorman.astro
+  [ 736w] petreceri/tunari.astro
+  [ 765w] petreceri/valea-piersicilor.astro
+  [ 739w] petreceri/vidra.astro
+
+=================================================================
+
+--- ANALIZA PE CATEGORII ---
+Sector pages (6): scor mediu 100
+Cartiere (14): scor mediu 100
+Comune/orase (10): scor mediu 90
+Pagini servicii (12): scor mediu 65
+
+=================================================================
+  VERDICT
+=================================================================
+Scor mediu global:      87/100
+Pagini thin (<300w):    19% din indexate
+Perechi critic (>50%):  0
+Perechi mari (>30%):    5
+Perechi medii (>20%):   107
+
+✅ CALITATE: Scor global excelent (87/100)
+=================================================================

@@ -1,111 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import GalleryGrid from '../components/gallery/GalleryGrid.astro';
-import { galleryAll } from '../data/gallery';
 
-const WA_TEXT = encodeURIComponent('Bună! Vreau o ofertă pentru animatori petrecere copii.\nData: \nZonă: \nVârstă: \nNr. copii: ');
-const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
 ---
 
 <Layout
-  title="Galerie SuperParty — Fotografii Reale Animatori & Petreceri Copii"
-  description="Galerie foto reală: animatori petreceri copii, personaje costumate, decorațiuni baloane, vată de zahăr, ursitoare botez. 8.000+ petreceri organizate în București și Ilfov."
-  canonical="https://www.superparty.ro/galerie/"
+  title="Galerie Foto Petreceri Copii | SuperParty București"
+  description="Galerie foto și video cu petreceri de copii animate de SuperParty în București. Personaje costumate, jocuri interactive, confetti, baloane. 8000+ petreceri."
+  canonical="https://www.superparty.ro/galerie"
+  robots="index, follow"
+  
 >
 
-<!-- Hero mic -->
-<section class="gal-hero">
-  <div class="container gal-hero-inner">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Acasă</a> <span>›</span>
-      <span>Galerie Foto</span>
-    </nav>
-    <h1 class="gal-h1">Galerie <span class="gal-accent">SuperParty</span></h1>
-    <p class="gal-sub">
-      Fotografii reale din petrecerile pe care le-am organizat.<br/>
-      {galleryAll.length}+ momente de bucurie, zâmbete și amintiri de neuitat.
-    </p>
-    <div class="gal-stats">
-      {([['🎉','8.000+','Petreceri'], ['🎭','30+','Personaje'], ['📸',`${galleryAll.length}+`,'Fotografii reale']] as const).map(([icon,num,lbl]) => (
-        <div class="gal-stat">
-          <span class="gs-icon">{icon}</span>
-          <span class="gs-num">{num}</span>
-          <span class="gs-lbl">{lbl}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- Gallery Grid cu filtre + lightbox -->
-<section class="gal-section">
+<section style="padding:4rem 0 2rem">
   <div class="container">
-    <GalleryGrid images={galleryAll} />
+    <h1 style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:1rem">Galerie Foto <span style="color:var(--primary)">Petreceri SuperParty</span></h1>
+    <p style="color:var(--text-muted);line-height:1.85;max-width:680px;margin-bottom:1rem">8.000+ petreceri animate — o selecție din momentele de magie pe care le-am creat în București și Ilfov. Personaje costumate, jocuri interactive, confetti party, baloane modelate și copii fericiți!</p>
+    <p style="color:var(--text-muted);line-height:1.85;max-width:680px;margin-bottom:1.8rem">Fiecare petrecere SuperParty este unică — programul se personalizează în funcție de vârsta copiilor, numărul de invitați și preferințele tematice ale aniversatei/aniversatului.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none">📞 Rezervă animatori</a>
+      <a href="/animatori-petreceri-copii" style="background:var(--dark-3);color:var(--text);padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;border:1px solid rgba(255,107,53,.3)">→ Pachete și prețuri</a>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="gal-cta">
-  <div class="container gal-cta-inner">
-    <div>
-      <h2 class="gal-cta-title">Vrei și tu o petrecere ca în galerie?</h2>
-      <p class="gal-cta-sub">Suntem disponibili 7 zile din 7, București &amp; Ilfov.</p>
+<section style="padding:3rem 0;background:var(--dark-2)">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Ce vei vedea la o petrecere SuperParty</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem">
+      <div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🎭</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Personaje costumate</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Costume premium autentice ale personajelor preferate — Spider-Man, Elsa, Sonic, Bluey, Batman și alte 50+ personaje din colecția noastră</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🎮</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Jocuri interactive</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Jocuri adaptate vârstei (3-12 ani): ștafete, quiz-uri animatori, jocuri de dans, concursuri de mimărit și provocări de echipă</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🎈</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Baloane modelate</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Fiecare copil primeste propria sa creaţie din baloane — animale, săbii, coroane, flori, roboți — executate live de animator în 2-3 minute</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🎨</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Face painting</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Pictură pe față cu vopsele non-toxice certificate, tematică cu personajul ales. Durată: 3-4 minute per copil, rezultat spectaculos</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🥁</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Mini disco + dans</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Muzică energică pentru copii, coregrafii simple și distractive, dans cu personajul — momentul de energie maximă al petrecerii</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:14px;padding:1.3rem"><div style="font-size:2rem;margin-bottom:.5rem">🎖️</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem">Diplome magnetice</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Fiecare copil primeste o diplomă personalizată cu prenumele lui la finalul petrecerii — amintire grozavă de dus acasă</div></div>
     </div>
-    <div class="gal-cta-btns">
-      <a href="tel:+40722744377" class="btn-primary" id="gal-call-cta">📞 Sună Acum</a>
-      <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="btn-wa" id="gal-wa-cta">💬 WhatsApp</a>
+  </div>
+</section>
+
+<section style="padding:3rem 0">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Recenzii reale de la părinți mulțumiți</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">SuperParty are <strong style="color:var(--text)">1.498+ recenzii</strong> pe Google Reviews cu nota medie <strong style="color:var(--primary)">4,9/5</strong> — cel mai mare număr de recenzii verificate din industria animatorilor din România.</p>
+    <div style="display:flex;flex-direction:column;gap:.8rem;max-width:700px">
+      <div style="background:var(--dark-3);border-left:3px solid var(--primary);padding:1rem 1.2rem;border-radius:0 12px 12px 0"><div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem">Maria D. ⭐⭐⭐⭐⭐</div><div style="color:var(--text-muted);font-size:.87rem;line-height:1.6;font-style:italic">"Animatorul a venit la timp, costumul era impecabil și copiii au fost în extaz toată ora. Spider-Man a fost vedeta zilei! Recomand cu toată inima pentru orice petrecere."</div></div><div style="background:var(--dark-3);border-left:3px solid var(--primary);padding:1rem 1.2rem;border-radius:0 12px 12px 0"><div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem">Andrei P. ⭐⭐⭐⭐⭐</div><div style="color:var(--text-muted);font-size:.87rem;line-height:1.6;font-style:italic">"Am rezervat Super 3 cu 2 personaje (Elsa și Spider-Man) pentru 25 de copii. Au mers perfect împreună, jocurile au fost bine organizate, nicio secundă de plictiseală. Felicitări echipei SuperParty!"</div></div><div style="background:var(--dark-3);border-left:3px solid var(--primary);padding:1rem 1.2rem;border-radius:0 12px 12px 0"><div style="font-weight:700;font-size:.9rem;margin-bottom:.2rem">Ioana M. ⭐⭐⭐⭐⭐</div><div style="color:var(--text-muted);font-size:.87rem;line-height:1.6;font-style:italic">"Cea mai bună decizie pentru petrecerea lui Mihai. Animatoarea a avut răbdare infinită cu copiii mici (3-4 ani) și i-a ținut implicați non-stop. Definitiv re-rezervăm pentru anul viitor!"</div></div>
     </div>
+    <p style="margin-top:1rem"><a href="/recenzii" style="color:var(--primary);font-weight:700">→ Citește toate recenziile</a></p>
   </div>
 </section>
 
 </Layout>
-
-<style>
-  /* ── Hero ─────────────────────────────────────────────── */
-  .gal-hero { background: linear-gradient(135deg, #FFF7ED 0%, #FDE8CC 100%); padding: 4rem 0 3rem; border-bottom: 1px solid rgba(249,115,22,0.12); }
-  .gal-hero-inner { max-width: 760px; }
-  .breadcrumb { font-size: 0.82rem; color: #9CA3AF; margin-bottom: 1rem; display: flex; gap: 0.4rem; align-items: center; }
-  .breadcrumb a { color: #F97316; text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .gal-h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #111827; margin-bottom: 0.75rem; line-height: 1.1; }
-  .gal-accent { color: #F97316; }
-  .gal-sub { font-size: 1.05rem; color: #4B5563; line-height: 1.65; margin-bottom: 1.5rem; }
-  .gal-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .gal-stat { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
-  .gs-icon { font-size: 1.2rem; }
-  .gs-num { font-size: 1.1rem; font-weight: 800; color: #F97316; }
-  .gs-lbl { font-size: 0.75rem; color: #6B7280; }
-
-  /* ── Gallery ──────────────────────────────────────────── */
-  .gal-section { padding: 4rem 0 3rem; background: #FFF7ED; }
-
-  /* ── CTA ──────────────────────────────────────────────── */
-  .gal-cta { background: linear-gradient(135deg, #FFF7ED, #FFE4C4); padding: 4rem 0; }
-  .gal-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-  .gal-cta-title { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; color: #111827; margin-bottom: 0.4rem; }
-  .gal-cta-sub { color: #6B7280; font-size: 0.95rem; }
-  .gal-cta-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-
-  /* ── Buttons (local, same as homepage) ───────────────── */
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    background: linear-gradient(135deg, #F97316, #ea580c);
-    color: white; padding: 0.85rem 1.8rem; border-radius: 99px;
-    font-weight: 700; font-size: 0.95rem; text-decoration: none;
-    box-shadow: 0 6px 20px rgba(249,115,22,0.35); transition: transform 0.2s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); }
-  .btn-wa {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    background: #25d366; color: white; padding: 0.85rem 1.8rem; border-radius: 99px;
-    font-weight: 700; font-size: 0.95rem; text-decoration: none;
-    box-shadow: 0 6px 20px rgba(37,211,102,0.3); transition: transform 0.2s;
-  }
-  .btn-wa:hover { transform: translateY(-2px); }
-
-  @media (max-width: 640px) {
-    .gal-cta-inner { flex-direction: column; text-align: center; }
-    .gal-cta-btns { justify-content: center; }
-    .gal-stats { gap: 1rem; }
-  }
-</style>

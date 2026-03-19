@@ -1,40 +1,55 @@
 ---
-
-const svcSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Moș Crăciun de Închiriat București",
-      "description": "Moș Crăciun autentic pentru acasă sau la birou în București. Rezervare rapidă, costume premium. SuperParty.",
-      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377", "url": "https://www.superparty.ro"}
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro"},
-        {"@type": "ListItem", "position": 2, "name": "Moș Crăciun de Închiriat București", "item": "https://superparty.ro/mos-craciun-de-inchiriat"}
-      ]
-    }
-  ]
-});
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout schema={svcSchema} title="Moș Crăciun de Închiriat București | SuperParty" description="Mos Craciun autentic pentru acasa, birouri si gradinite. Cadouri si surprize copii. Rezerva: 0722 744 377."
-  canonical="https://www.superparty.ro/mos-craciun-de-inchiriat">
-  <section style="padding:6rem 0 3rem;">
-    <div class="container">
-      <h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Moș Crăciun <span style="color:var(--primary);">de Închiriat</span> București</h1>
-      <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin-bottom:2rem; line-height:1.8;">Moș Crăciun SuperParty vine direct la voi acasă sau la evenimentul vostru! Cu costum autentic, barba reala si sacul plin de cadouri, cream momente magice pentru cei mici.</p>
-      <div style="background:var(--dark-2); border:1px solid rgba(255,107,53,0.2); border-radius:var(--radius); padding:2rem; margin-bottom:2rem;">
-        <h2 style="color:var(--primary); margin-bottom:1rem;">Disponibil pentru:</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:1rem;">
-          {['🏠 Acasa (familie)','🏢 Birouri (companii)','🎓 Gradinite si scoli','🎄 Evenimente de Craciun','🎁 Petreceri tematice'].map(loc => (
-            <div style="background:var(--dark-3); border:1px solid rgba(255,107,53,0.15); border-radius:12px; padding:1rem; text-align:center; font-weight:600; color:var(--text-muted);">{loc}</div>
-          ))}
-        </div>
-      </div>
-      <a href="tel:+40722744377" style="display:inline-block; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:1rem 2.5rem; border-radius:50px; font-weight:700; font-size:1.1rem; text-decoration:none;">📞 Rezerva Mos Craciun</a>
+
+<Layout
+  title="Moș Crăciun de Închiriat Petreceri Copii | SuperParty București"
+  description="Moș Crăciun autentic pentru petreceri copii și vizite acasă în București. Costum premium, geantă cu cadouri, spectacol interactiv. Rezervări 0722 744 377."
+  canonical="https://www.superparty.ro/mos-craciun-de-inchiriat"
+  robots="index, follow"
+>
+
+<section style="padding:4rem 0 2rem">
+  <div class="container">
+    <h1 style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:1rem">Moș Crăciun de Închiriat <span style="color:var(--primary)">Petreceri Copii</span></h1>
+    <p style="color:var(--text-muted);line-height:1.85;max-width:680px;margin-bottom:1.8rem">Moș Crăciun SuperParty este Moșul cel mai autentic din București — barbă naturală sau de calitate premium, costum roșu impecabil, geantă mare cu cadouri și un temperament blând și răbdător perfect pentru copiii de 2-12 ani.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none">📞 Rezervă: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<section style="padding:3rem 0;background:var(--dark-2)">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">Ce include vizita Moșului SuperParty</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem">
+      <div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🎅</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Vizită acasă (60 min)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">350 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Moșul bate la ușa copilului, ascultă ce și-a dorit, împarte cadourile aduse de tine, cântă colinde, fotografii</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🎪</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Petrecere grup (90 min)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">500 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Program pentru 10-25 copii: intrare spectaculoasă, povestiri, cântece, distribuire cadouri, fotografii individuale</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">🏢</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Event corporatist (2-3 ore)</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">900-1200 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Moș Crăciun + ajutoare + program complet pentru 50-150 copii. Perfect pentru petreceri de companie</div></div><div style="background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem"><div style="font-size:1.5rem;margin-bottom:.4rem">👥</div><div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem"> Duo Moș + Crăciuniță</div><div style="color:var(--primary);font-weight:900;font-size:1.1rem;margin-bottom:.5rem">700 RON</div><div style="color:var(--text-muted);font-size:.85rem;line-height:1.6">Moș Crăciun + asistentă (Crăciunița). Program interactiv combinat, energie dublă, mai multe activități</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:3rem 0">
+  <div class="container">
+    <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:1.2rem">De ce Moș Crăciun SuperParty este altfel</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Problema principală cu Moșii Crăciun de la diverse agenții: costume ieftine de carnaval, barbă de plastic evident artificială, text memorat mecanic fără adaptare la copil. Moșul SuperParty este ales din echipa noastră de animatori cu experiență — actori sau persoane cu abilități naturale de interacțiune cu copiii.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px;margin-bottom:1rem">Personalizarea Moșului: la rezervare, ne transmiteți 3-5 lucruri specifice despre copilul tău (ce-și dorește, cum îl cheamă pe cel mai bun prieten, ce materie îi place la grădiniță, ce a promis că va face mai bine). Moșul nostru le integrează natural în conversație — copilul va fi convins 100% că Moșul știe totul despre el.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:800px">Rezervări Moș Crăciun SuperParty: deschiderea rezervărilor pentru sezonul decembrie se face pe 1 octombrie. Weekendurile din 14-24 decembrie se epuizează în 48-72 ore. Dacă dorești data și ora exactă pentru Moș, rezervați în octombrie! Avem 12 Moși Crăciun în echipă — capacitate limitată.</p>
+  </div>
+</section>
+
+<section style="padding:2.5rem 0">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.04));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2rem;text-align:center">
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.7rem">Rezervă acum — confirmare în 30 minute</h2>
+      <p style="color:var(--text-muted);margin-bottom:1.2rem;font-size:.92rem">Spune-ne data și adresa — îți confirmăm disponibilitatea rapid.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <a href="tel:+40722744377" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.8rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none">📞 0722 744 377</a>
+        <a href="https://wa.me/40722744377" style="background:#25d366;color:#fff;padding:.8rem 1.4rem;border-radius:50px;font-weight:700;text-decoration:none">💬 WhatsApp</a>
+      </div>
+      <p style="margin-top:1rem;font-size:.83rem;color:var(--text-muted)">← <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> &nbsp;|&nbsp; <a href="/" style="color:var(--primary)">Acasă</a></p>
+    </div>
+  </div>
+</section>
+
 </Layout>
