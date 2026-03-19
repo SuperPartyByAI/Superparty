@@ -8,6 +8,31 @@ const currentYear = new Date().getFullYear();
 const WA_TEXT = encodeURIComponent('Bună! Vreau să rezerv animatori pentru petrecerea copilului meu.\nData: \nLocalitate/Sector: \nVârsta copilului: \nNr. copii: \nPachet dorit (opțional): ');
 const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
 
+const homeSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty",
+      "description": "Animatori profesioniști pentru petreceri copii în București și Ilfov. Pachete de la 490 RON, garantie contractuală.",
+      "url": "https://www.superparty.ro",
+      "telephone": "+40722744377",
+      "priceRange": "490-1290 RON",
+      "address": {"@type": "PostalAddress", "addressLocality": "București", "addressCountry": "RO"},
+      "areaServed": ["București", "Ilfov"],
+      "image": "https://www.superparty.ro/images/hero-party.jpg",
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1498"},
+      "openingHours": "Mo-Su 08:00-22:00"
+    },
+    {
+      "@type": "WebSite",
+      "name": "SuperParty",
+      "url": "https://www.superparty.ro",
+      "potentialAction": {"@type": "SearchAction", "target": "https://www.superparty.ro/?s={search_term_string}", "query-input": "required name=search_term_string"}
+    }
+  ]
+});
+
 const packages = [
   { name: 'Super 1', price: '490 lei', duration: '1 Personaj · 2 ore', key: 'super1',
     features: ['Jocuri & concursuri interactive', 'Baloane modelate', 'Pictură pe față', 'Dansuri & coregrafii', 'Tatuaje temporare', 'Diplome magnetice', 'Boxă portabilă', 'Transport gratuit București'], highlight: false },

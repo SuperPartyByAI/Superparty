@@ -1,7 +1,26 @@
 ---
+
+const svcSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Ursitoare Botez București",
+      "description": "Spectacol ursitoare pentru botez în București și Ilfov. 4 personaje, program complet 3 ore. SuperParty.",
+      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377", "url": "https://www.superparty.ro"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://superparty.ro"},
+        {"@type": "ListItem", "position": 2, "name": "Ursitoare Botez București", "item": "https://superparty.ro/ursitoare-botez"}
+      ]
+    }
+  ]
+});
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Ursitoare Botez București | SuperParty" description="Ursitoare profesioniste pentru botez in Bucuresti si Ilfov. Ceremonii elegante si emotionante. Rezerva: 0722 744 377."
+<Layout schema={svcSchema} title="Ursitoare Botez București | SuperParty" description="Ursitoare profesioniste pentru botez in Bucuresti si Ilfov. Ceremonii elegante si emotionante. Rezerva: 0722 744 377."
   canonical="https://www.superparty.ro/ursitoare-botez">
   <section style="padding:6rem 0 3rem;">
     <div class="container">

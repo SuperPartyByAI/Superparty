@@ -1,0 +1,94 @@
+﻿=================================================================
+  AUDIT SEO COMPLET ΓÇö SUPERPARTY.RO
+=================================================================
+
+Total pagini .astro scanate:  145
+Pagini indexate (index):      49
+Pagini noindex:               96
+
+--- SCOR SEO PAGINI INDEXATE ---
+Scor mediu:         86/100
+Excelent (85+):     31 pagini
+Bun (65-84):        16 pagini
+Mediu (40-64):      2 pagini
+Slab (<40):         0 pagini
+
+--- SCHEMA MARKUP ---
+Schema JSON-LD:     40/49 pagini indexate
+FAQ schema:         38/49
+LocalBusiness:      39/49
+BreadcrumbList:     38/49
+
+--- CUVINTE CONTINUT VIZIBIL ---
+Min: 29  Median: 509  Max: 824
+Sub 300 cuvinte:  arcade-baloane/index.astro, baloane-cu-heliu/index.astro, contact/index.astro, decoratiuni-baloane/index.astro, galerie.astro, index.astro, mos-craciun-de-inchiriat/index.astro, petreceri/bragadiru.astro, piniata/index.astro, recenzii.astro, ursitoare-botez/index.astro, vata-de-zahar-si-popcorn/index.astro
+300-599 cuvinte:  18 pagini
+600+ cuvinte:     19 pagini
+
+--- SIMILARITATE CONTINUT (pagini indexate) ---
+Perechi >20% similaritate:  121
+Top 5 similare:
+  81.0%  petreceri/calarasi.astro  <->  petreceri/giurgiu.astro
+  75.3%  petreceri/bucuresti.astro  <->  petreceri/giurgiu.astro
+  74.4%  petreceri/bucuresti.astro  <->  petreceri/calarasi.astro
+  71.8%  animatori-copii-sector-2/index.astro  <->  animatori-copii-sector-6/index.astro
+  70.2%  animatori-copii-sector-3/index.astro  <->  animatori-copii-sector-6/index.astro
+
+--- PAGINI CU PROBLEME (indexate) ---
+  [ 45] contact/index.astro
+        ΓåÆ lipseste schema | prea putine H2 | 40 cuvinte (sub 300) | doar 1/7 kw party
+  [ 55] galerie.astro
+        ΓåÆ desc 171ch (ideal 100-165) | lipseste schema | prea putine H2 | 37 cuvinte (sub 300)
+  [ 65] arcade-baloane/index.astro
+        ΓåÆ title 79ch (ideal 30-70) | desc 167ch (ideal 100-165) | prea putine H2 | 45 cuvinte (sub 300) | doar 1/7 kw party
+  [ 65] mos-craciun-de-inchiriat/index.astro
+        ΓåÆ prea putine H2 | 44 cuvinte (sub 300) | doar 2/7 kw party
+  [ 65] vata-de-zahar-si-popcorn/index.astro
+        ΓåÆ prea putine H2 | 47 cuvinte (sub 300) | doar 1/7 kw party
+  [ 68] animatori-copii-bucuresti/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 68] animatori-copii-sector-2/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 68] animatori-copii-sector-3/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 68] animatori-copii-sector-4/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 68] animatori-copii-sector-5/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 68] animatori-copii-sector-6/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 70] recenzii.astro
+        ΓåÆ prea putine H2 | 80 cuvinte (sub 300)
+  [ 75] animatori-copii-sector-1/index.astro
+        ΓåÆ lipseste canonical | lipseste schema
+  [ 75] baloane-cu-heliu/index.astro
+        ΓåÆ title 73ch (ideal 30-70) | prea putine H2 | 51 cuvinte (sub 300)
+  [ 75] decoratiuni-baloane/index.astro
+        ΓåÆ prea putine H2 | 47 cuvinte (sub 300)
+  [ 75] index.astro
+        ΓåÆ 176 cuvinte (sub 300)
+  [ 75] piniata/index.astro
+        ΓåÆ title 82ch (ideal 30-70) | desc 167ch (ideal 100-165) | prea putine H2 | 29 cuvinte (sub 300)
+  [ 75] ursitoare-botez/index.astro
+        ΓåÆ prea putine H2 | 54 cuvinte (sub 300)
+  [ 85] petreceri/bragadiru.astro
+        ΓåÆ 262 cuvinte (sub 300)
+  [ 93] petreceri/otopeni.astro
+        ΓåÆ desc 171ch (ideal 100-165)
+  ... si inca 19 pagini cu probleme
+
+--- TOP 10 PAGINI (scor SEO) ---
+  [100] petreceri/aviatiei.astro (647w)
+  [100] petreceri/berceni.astro (722w)
+  [100] petreceri/bucuresti.astro (602w)
+  [100] petreceri/calarasi.astro (602w)
+  [100] petreceri/colentina.astro (642w)
+  [100] petreceri/crangasi.astro (616w)
+  [100] petreceri/dorobanti.astro (712w)
+  [100] petreceri/dristor.astro (612w)
+  [100] petreceri/drumul-taberei.astro (706w)
+  [100] petreceri/floreasca.astro (713w)
+
+=================================================================
+  VERDICT FINAL: A ΓÇö EXCELENT (86/100 medie)
+=================================================================
