@@ -4,40 +4,34 @@ import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('seo-articles');
 const hubArticles = allArticles.filter(article =>
-  article.slug.includes('dragomiresti-vale') && article.data.indexStatus !== 'hold'
-).slice(0, 18);
+  (article.slug.includes('pantelimon') || article.slug.includes('pantelimon-cartier')) && article.data.indexStatus !== 'hold'
+).slice(0, 12);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Service",
-      "name": "Animatori Petreceri Copii Dragomirești-Vale | SuperParty",
+      "name": "Animatori Petreceri Copii Pantelimon (Cartier) | SuperParty",
       "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Dragomirești-Vale",
-      "url": "https://www.superparty.ro/petreceri/dragomiresti-vale"
+      "areaServed": "Pantelimon (Cartier), Sectorul 2, Bucuresti",
+      "url": "https://www.superparty.ro/petreceri/pantelimon-cartier"
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-              {
-        "@type": "Question",
-        "name": "Activați în Dragomirești-Vale?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — activăm în Dragomirești-Vale și localitățile adiacente. Contactați-ne pentru confirmare și detalii privind deplasarea." }
-      },
-      {
-        "@type": "Question",
-        "name": "Există taxă de deplasare pentru Dragomirești-Vale?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depinde de distanță — contactați-ne cu adresa exactă din Dragomirești-Vale pentru o ofertă completă inclusiv transport." }
-      }
+      {"@type": "Question", "name": "Activați în cartierul Pantelimon?", "acceptedAnswer": {"@type": "Answer", "text": "Da — acoperim atât cartierul Pantelimon (Sectorul 2) cât și comuna Pantelimon din Ilfov. Transport inclus."}},
+      {"@type": "Question", "name": "Există animatori disponibili în Pantelimon în weekend?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dar locurile se ocupă rapid. Rezervați cu minim 2 săptămâni înainte."}},
+      {"@type": "Question", "name": "Cât costă un animator în Pantelimon?", "acceptedAnswer": {"@type": "Answer", "text": "De la 490 RON pachetul Super 1 (2 ore). Contactați-ne pentru disponibilitate."}}
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
+        { "@type": "ListItem", "position": 1, "name": "Acasa", "item": "https://www.superparty.ro" },
         { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Dragomirești-Vale", "item": "https://www.superparty.ro/petreceri/dragomiresti-vale" }
+        { "@type": "ListItem", "position": 3, "name": "Sectorul 2", "item": "https://www.superparty.ro/petreceri/sector-2" },
+        { "@type": "ListItem", "position": 4, "name": "Pantelimon (Cartier)", "item": "https://www.superparty.ro/petreceri/pantelimon-cartier" }
       ]
     }
   ]
@@ -45,9 +39,9 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Dragomirești-Vale | SuperParty | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în Dragomirești-Vale, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
-  canonical="https://www.superparty.ro/petreceri/dragomiresti-vale"
+  title="Animatori Petreceri Copii Pantelimon (Cartier) | SuperParty Bucuresti"
+  description="Animatori profesionisti pentru petreceri copii in Pantelimon (Cartier), Pantelimon cartier, Sectorul 2, Șoseaua Pantelimon. Pachete de la 490 RON, 50+ personaje, transport gratuit. Rezerva: 0722 744 377."
+  canonical="https://www.superparty.ro/petreceri/pantelimon-cartier"
   schema={schema}
 >
 <style>
@@ -84,8 +78,8 @@ const schema = JSON.stringify({
 
 <section class="hub-hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Dragomirești-Vale</span></h1>
-    <p>Animatori copii în Dragomirești-Vale — comună la vest de București, în imediata apropiere a Domeniului Sticlari.</p>
+    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Pantelimon (Cartier)</span></h1>
+    <p>SuperParty aduce magia petrecerilor la tine acasă în <strong>Pantelimon (Cartier)</strong> — cartier din estul Bucureștiului, Sectorul 2, cu numeroase familii și cerere mare. Animatori profesionisti, 50+ personaje costumate, program complet inclus.</p>
     <div style="display:flex; gap:1rem; flex-wrap:wrap;">
       <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
@@ -97,28 +91,29 @@ const schema = JSON.stringify({
   <div class="container">
     <div class="info-grid">
       <div class="info-card">
-        <h3>📍 Locații populare în Dragomirești-Vale</h3>
+        <h3>📍 Zone acoperite în Pantelimon (Cartier)</h3>
         <ul>
-                        <li>📍 Dragomirești-Vale centru</li>
-              <li>📍 Stâlpeni / Bacu (adiacent)</li>
-              <li>📍 Zone rezidențiale</li>
-              <li>📍 Vile disponibile</li>
+              <li>📍 Cartier dens cu familii numeroase</li>
+              <li>📍 Acces via Șoseaua Pantelimon</li>
+              <li>📍 Multiple săli de petreceri în zonă</li>
+              <li>📍 Aproape de Centrul Comercial Pantelimon</li>
         </ul>
       </div>
       <div class="info-card">
         <h3>⏱ Timp de deplasare</h3>
         <ul>
-          <li>~35-45 min din centrul Bucureștiului</li>
+          <li>~20 min din centru</li>
           <li>Sosim cu 10 min înainte de program</li>
-          <li>Fără taxă de deplasare în zona centrală</li>
+          <li>Transport gratuit în Pantelimon (Cartier), Sectorul 2</li>
+          <li><a href="/petreceri/sector-2" style="color:var(--primary)">→ Vezi toate zonele Sector 2</a></li>
         </ul>
       </div>
       <div class="info-card">
         <h3>🎭 Pachete disponibile</h3>
         <ul>
-          <li>Super 1 — de la 490 RON</li>
-          <li>Super 3 — de la 840 RON</li>
-          <li>Super 7 — de la 1290 RON</li>
+          <li>Super 1 — de la 490 RON (1 personaj, 2 ore)</li>
+          <li>Super 3 — de la 840 RON (2 personaje, 2 ore)</li>
+          <li>Super 7 — de la 1290 RON (animator + 4 ursitoare)</li>
         </ul>
         <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
           <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
@@ -131,7 +126,7 @@ const schema = JSON.stringify({
 {hubArticles.length > 0 && (
 <section class="hub-section-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Dragomirești-Vale</span></h2>
+    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
     <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
     <div class="art-grid">
       {hubArticles.map(article => (
@@ -147,12 +142,12 @@ const schema = JSON.stringify({
 
 <section class="hub-section">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Dragomirești-Vale</span></h2>
+    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
     <div class="faq-list">
       {[
-        ["Activați în Dragomirești-Vale?", "Da — acoperim toată zona Dragomirești-Vale. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Dragomirești-Vale?", "Prețurile pornesc de la 490 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Dragomirești-Vale?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Dragomirești-Vale și împrejurimi."],
+        ["Activați în cartierul Pantelimon?", "Da — acoperim atât cartierul Pantelimon (Sectorul 2) cât și comuna Pantelimon din Ilfov. Transport inclus."],
+        ["Există animatori disponibili în Pantelimon în weekend?", "Da, dar locurile se ocupă rapid. Rezervați cu minim 2 săptămâni înainte."],
+        ["Cât costă un animator în Pantelimon?", "De la 490 RON pachetul Super 1 (2 ore). Contactați-ne pentru disponibilitate."]
       ].map(([q, a]) => (
         <div class="faq-item">
           <h3>❓ {q}</h3>
@@ -166,14 +161,16 @@ const schema = JSON.stringify({
 <section class="hub-section-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Dragomirești-Vale</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
+      <h2>Rezervă animator în <span style="color:var(--primary)">Pantelimon (Cartier)</span></h2>
+      <p>Disponibilitate limitată în weekend. Rezervați cu avans pentru data dorită.</p>
       <div class="cta-btns">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
       <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Înapoi la pagina principală Animatori Petreceri Copii</a>
+        ← <a href="/petreceri/sector-2" style="color:var(--primary); font-weight:600;">Sector 2</a>
+        &nbsp;|&nbsp;
+        <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Animatori Petreceri Copii București</a>
       </p>
     </div>
   </div>
