@@ -1,43 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const allArticles = await getCollection('seo-articles');
-const hubArticles = allArticles.filter(article =>
-  article.slug.includes('pantelimon') && article.data.indexStatus !== 'hold'
-).slice(0, 18);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Service",
-      "name": "Animatori Petreceri Copii Pantelimon | SuperParty",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
+      "name": "Animatori Petreceri Copii Pantelimon",
+      "provider": {"@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377"},
       "areaServed": "Pantelimon",
-      "url": "https://www.superparty.ro/petreceri/pantelimon"
+      "url": "https://superparty.ro/petreceri/pantelimon"
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-              {
-        "@type": "Question",
-        "name": "Activați în Pantelimon?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — activăm în Pantelimon și localitățile adiacente. Contactați-ne pentru confirmare și detalii privind deplasarea." }
-      },
-      {
-        "@type": "Question",
-        "name": "Există taxă de deplasare pentru Pantelimon?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depinde de distanță — contactați-ne cu adresa exactă din Pantelimon pentru o ofertă completă inclusiv transport." }
-      }
+        {"@type":"Question","name":"Organizati animatori in Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Da — SuperParty acopera Pantelimon si zona Ilfov. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate."}},
+        {"@type":"Question","name":"Este taxa de deplasare pentru Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Distanta este ~12 km pe Sos. Pantelimon — taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta."}},
+        {"@type":"Question","name":"Unde se organizeaza petrecerea in Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"In Pantelimon recomandam: sali petreceri sau curti ansambluri. Animatorul vine cu echipament portabil complet — boxe wireless, materiale jocuri, costume premium."}},
+        {"@type":"Question","name":"Ce personaje sunt disponibile in Pantelimon?","acceptedAnswer":{"@type":"Answer","text":"Cele mai cerute in zona Ilfov: Elsa, Batman si Captain America. SuperParty are peste 50 de personaje disponibile la rezervare."}},
+        {"@type":"Question","name":"Cat timp inainte rezervam animatorul?","acceptedAnswer":{"@type":"Answer","text":"Minim 7-14 zile pentru saptamani normale, 3-4 saptamani pentru weekendurile de mai-septembrie. Suna la 0722 744 377."}}
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Pantelimon", "item": "https://www.superparty.ro/petreceri/pantelimon" }
+        {"@type":"ListItem","position":1,"name":"Acasa","item":"https://superparty.ro"},
+        {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},
+        {"@type":"ListItem","position":3,"name":"Pantelimon","item":"https://superparty.ro/petreceri/pantelimon"}
       ]
     }
   ]
@@ -45,115 +34,140 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Pantelimon | SuperParty | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în Pantelimon, Ilfov. Costume premium, programe 60-120 min. Rezervă: 0722 744 377."
+  title="Animatori Petreceri Copii Pantelimon | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Pantelimon (Ilfov), ~12 km de Bucuresti (Sos. Pantelimon). Peste 50 personaje, pachete 490-1290 RON, garantie contractuala. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/pantelimon"
+  robots="noindex, follow"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .loc-hero{padding:4rem 0 2.5rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%)}
+  .loc-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .loc-hero p{color:var(--text-muted);font-size:1rem;max-width:600px;line-height:1.8;margin-bottom:1.8rem}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .loc-s{padding:3rem 0}.loc-s-alt{padding:3rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+  .info-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem}
+  .info-card h3{font-weight:700;margin-bottom:.5rem;font-size:.95rem}
+  .info-card ul{list-style:none;padding:0}
+  .info-card li{padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted)}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem;max-width:780px}
+  .rich-text strong{color:var(--text)}
+  .faq-list{display:flex;flex-direction:column;gap:.9rem;max-width:700px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.2rem}
+  .faq-item h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
+  .faq-item p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center}
+  .cta-box h2{font-size:1.5rem;font-weight:800;margin-bottom:.8rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.95rem}
+  .cta-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
 </style>
 
-<section class="hub-hero">
+<section class="loc-hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Pantelimon</span></h1>
-    <p>Petreceri cu animatori în Pantelimon — localitate la est de București, la granița cu Sectorul 2 și 3. Acoperim toată zona.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/" style="color:var(--primary)">Acasa</a> ›
+      <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
+      Pantelimon
+    </nav>
+    <h1>Animatori Petreceri Copii <span style="color:var(--primary)">Pantelimon</span></h1>
+    <p>SuperParty organizeaza petreceri de copii in <strong>Pantelimon</strong>, oras suburban est cu lac cu peste 18.000 de locuitori. Animatori actori cu costume premium, jocuri interactive, face painting si mini disco — direct la adresa ta, ~12 km de Bucuresti (Sos. Pantelimon). Garantie contractuala: daca copiii nu s-au distrat, nu platesti.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="loc-s">
   <div class="container">
+    <h2 class="sec-title">Pachete animatori in <span style="color:var(--primary)">Pantelimon</span></h2>
     <div class="info-grid">
       <div class="info-card">
-        <h3>📍 Locații populare în Pantelimon</h3>
+        <h3>📦 Super 1 — 490 RON</h3>
         <ul>
-                        <li>📍 Centrul Pantelimon</li>
-              <li>📍 Zona Cernica / Brănești (adiacent)</li>
-              <li>📍 Cartiere rezidențiale Pantelimon</li>
-              <li>📍 Săli de petreceri disponibile</li>
+          <li>1 personaj costumat premium</li>
+          <li>Durata: 2 ore program complet</li>
+          <li>Jocuri interactive + baloane modelate</li>
+          <li>Face painting + tatuaje temporare</li>
+          <li>Mini disco + diplome magnetic</li>
+          <li>Transport inclus in Pantelimon</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+        <h3>⭐ Super 3 — 840 RON (cel mai ales)</h3>
         <ul>
-          <li>~20-25 min din centrul Bucureștiului</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Fără taxă de deplasare în zona centrală</li>
+          <li>2 personaje costumati premium</li>
+          <li>Durata: 2 ore program dublu</li>
+          <li>Jocuri duble + confetti + baloane</li>
+          <li>Atentie individuala per copil</li>
+          <li>Recomandat pentru 15-35 copii</li>
+          <li>Transport inclus in Pantelimon</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+        <h3>👑 Super 7 — 1290 RON</h3>
         <ul>
-          <li>Super 1 — de la 490 RON</li>
-          <li>Super 3 — de la 840 RON</li>
-          <li>Super 7 — de la 1290 RON</li>
+          <li>1 animator + 4 ursitoare, 3 ore</li>
+          <li>Pachet botez sau aniversare mare</li>
+          <li>Program complet extins</li>
+          <li>Ideal 50-100 invitati</li>
+          <li>Transport inclus in Pantelimon</li>
+          <li><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Toate pachetele</a></li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-{hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="loc-s-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Pantelimon</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
-    <div class="art-grid">
-      {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
-          <h3>{article.data.title}</h3>
-          <p>{article.data.description?.slice(0,100)}...</p>
-        </a>
-      ))}
+    <h2 class="sec-title">Locatii si petreceri in <span style="color:var(--primary)">Pantelimon</span></h2>
+    <div class="rich-text">
+      <p><strong>Familiile mutate din Bucuresti in suburb apreciaza calitatea SuperParty.</strong> In <strong>Pantelimon</strong> (Ilfov), locatiile disponibile includ: <strong>sali petreceri</strong>, <strong>curti ansambluri</strong> si <strong>Lacul Pantelimon</strong>. acelasi serviciu premium ca in Capitala, livrare directa la usa.</p>
+      <p>Oras suburban est cu lac — SuperParty acopera zona completa, ~12 km de Bucuresti (Sos. Pantelimon). confirmam disponibilitatea in 30 minute si ajungem intotdeauna punctual. Animatorul vine cu boxe portabile wireless, costume premium licentiate, materiale pentru jocuri interactive, baloane si tot ce e necesar pentru un program de 2-3 ore fara momente goale.</p>
+      <p>costul deplasarii se stabileste transparent la rezervare. Spatiul minim necesar este de 15-20 mp — in rest, animatorul se adapteaza la orice configuratie de spatiu. Fie ca este o sala dedicata sau o curte de bloc, rezultatul este acelasi: copii fericiti si parinti relaxati.</p>
     </div>
   </div>
 </section>
-)}
 
-<section class="hub-section">
+<section class="loc-s">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Pantelimon</span></h2>
+    <h2 class="sec-title">Personaje disponibile in <span style="color:var(--primary)">Pantelimon</span></h2>
+    <div class="rich-text">
+      <p>Cele mai cerute personaje SuperParty in zona <strong>Ilfov</strong>: <strong>Elsa</strong>, <strong>Batman</strong> si <strong>Captain America</strong>. SuperParty aduce aceleasi costume premium licentiate in Pantelimon ca si in inima Capitalei — zero compromis la calitate indiferent de distanta.</p>
+      <p>Colectia completa SuperParty include peste <strong>50 de personaje</strong> disponibile la rezervare: super-eroi (Spider-Man, Batman, Captain America, Iron Man, Thor), printese Disney (Elsa, Rapunzel, Belle, Ariel, Aurora, Moana), personaje moderne (PAW Patrol, Sonic, Bluey, Miraculous Ladybug, Encanto), clasice (Clovnul vesel, Magicianul, Zanele). La doua saptamani dupa lansarea unui nou film sau serial, personajul apare in colectia noastra.</p>
+      <p>Programul inclus in orice pachet: <strong>jocuri interactive</strong> adaptate varstei (3-12 ani), <strong>baloane modelate</strong> pentru fiecare copil (animale, sabii, coroane), <strong>face painting</strong> tematic cu personajul ales, <strong>tatuaje temporare</strong> profesionale, <strong>mini disco</strong> cu muzica pentru copii si dans, <strong>diplome magnetice</strong> personalizate cu numele copilului aniversat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc-s-alt">
+  <div class="container">
+    <h2 class="sec-title">Cum rezervi animatori in <span style="color:var(--primary)">Pantelimon</span></h2>
+    <div class="rich-text">
+      <p><strong>Pas 1 — Contacteaza:</strong> Suna la <strong>0722 744 377</strong> sau trimite un mesaj WhatsApp cu: data petrecerii, adresa exacta in Pantelimon, varsta copilului aniversat si numarul aproximativ de copii invitati. Confirmare disponibilitate garantata in 30 minute.</p>
+      <p><strong>Pas 2 — Alege pachetul:</strong> Super 1 (490 RON, 1 personaj, 2 ore) pentru petreceri intime de 10-20 copii. Super 3 (840 RON, 2 personaje, 2 ore) pentru petreceri medii de 15-35 copii. Super 7 (1290 RON, 3 ore botez complet) pentru evenimente mari cu 50-100 invitati.</p>
+      <p><strong>Pas 3 — Contract si confirmare:</strong> Trimitem contractul digital in 24 ore. Plata se face DUPA petrecere, nu inainte. <strong>Garantia SuperParty</strong>: daca copiii nu s-au distrat si nu au ramas cu zambet pe fata, nu platesti — singurul serviciu de animatori din Romania cu garantie contractuala scrisa.</p>
+      <p><strong>Avans rezervare recomandat:</strong> 7-14 zile pentru saptamani normale, 2-3 saptamani pentru weekenduri si sezon mai-septembrie. Locurile pentru weekend se ocupa rapid — nu amanati rezervarea!</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc-s">
+  <div class="container">
+    <h2 class="sec-title">Intrebari despre animatori in <span style="color:var(--primary)">Pantelimon</span></h2>
     <div class="faq-list">
       {[
-        ["Activați în Pantelimon?", "Da — acoperim toată zona Pantelimon. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Pantelimon?", "Prețurile pornesc de la 490 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Pantelimon?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Pantelimon și împrejurimi."],
-      ].map(([q, a]) => (
+        ["Organizati animatori in Pantelimon?", "Da — SuperParty acopera Pantelimon si zona Ilfov. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate in 30 minute."],
+        ["Este taxa de deplasare pentru Pantelimon?", "Distanta este ~12 km de la Bucuresti pe Sos. Pantelimon. Taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta si ziua petrecerii."],
+        ["Unde se organizeaza petrecerea in Pantelimon?", "Recomandam: sali petreceri sau curti ansambluri. SuperParty se adapteaza oricarui spatiu cu minim 15-20 mp liberi. Aducem tot echipamentul necesar."],
+        ["Ce personaje pot alege pentru petrecerea din Pantelimon?", "Colectia cuprinde 50+ personaje: Elsa, Batman, Captain America si multi altii. Mentionati preferinta la rezervare — verificam disponibilitatea costumului specific in acel weekend."],
+        ["Cu cat timp inainte rezervam animatorul in Pantelimon?", "Minim 7-14 zile pentru saptamani normale. Pentru weekenduri de mai-septembrie si Craciun rezervati cu 3-4 saptamani inainte. Suna la 0722 744 377."],
+      ].map(([q,a]) => (
         <div class="faq-item">
           <h3>❓ {q}</h3>
           <p>{a}</p>
@@ -163,20 +177,21 @@ const schema = JSON.stringify({
   </div>
 </section>
 
-<section class="hub-section-alt">
+<section class="loc-s-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Pantelimon</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
+      <h2>Rezerva animator in <span style="color:var(--primary)">Pantelimon</span></h2>
+      <p>Confirmare disponibilitate in 30 minute. Plata dupa petrecere. Garantie contractuala scrisa.</p>
       <div class="cta-btns">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Înapoi la pagina principală Animatori Petreceri Copii</a>
+      <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted)">
+        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principala Animatori</a>
+        &nbsp;|&nbsp;
+        <a href="/arie-acoperire" style="color:var(--primary)">Toate zonele</a>
       </p>
     </div>
   </div>
 </section>
-
 </Layout>

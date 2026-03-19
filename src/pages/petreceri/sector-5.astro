@@ -1,161 +1,136 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const allArticles = await getCollection('seo-articles');
-const hubArticles = allArticles.filter(article =>
-  article.slug.includes('sector-5') && article.data.indexStatus !== 'hold'
-).slice(0, 18);
-
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Sector 5",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Sector 5",
-      "url": "https://www.superparty.ro/petreceri/sector-5"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-              {
-        "@type": "Question",
-        "name": "Activați în Rahova?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — acoperim tot Sectorul 5 inclusiv Rahova și toate cartierele adiacente." }
-      },
-      {
-        "@type": "Question",
-        "name": "Mergeți și în Cotroceni?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — Cotroceni și zona 13 Septembrie sunt în raza noastră principală." }
-      }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sector 5", "item": "https://www.superparty.ro/petreceri/sector-5" }
-      ]
-    }
-  ]
-});
+const schema = JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Animatori Petreceri Copii Sectorul 5","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Sectorul 5","url":"https://superparty.ro/petreceri/sector-5"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce zone din Sectorul 5 acoperiți?","acceptedAnswer":{"@type":"Answer","text":"Acoperim integral Sectorul 5: Rahova, Sebastian, Ferentari, 13 Septembrie, Cotroceni. Zero taxă deplasare în întreg sectorul."}},{"@type":"Question","name":"Unde se poate organiza petrecerea în Sectorul 5?","acceptedAnswer":{"@type":"Answer","text":"cel mai iubit parc al comunității din Sectorul 5 — SuperParty a organizat sute de petreceri în Parcul Sebastian, atât în zonele umbrite cât și în spațiile deschise cu iarbă. De asemenea: curțile caselor din Rahova, restaurantele din Cotroceni, spațiile comunitare din Sebastian."}},{"@type":"Question","name":"Ce personaje sunt cerute în Sectorul 5?","acceptedAnswer":{"@type":"Answer","text":"Sectorul 5 preferă personajele puternice și recunoscute: Spider-Man, Batman și Clovnul vesel domină. Elsa e la fel de populară ca oriunde. Particularitate: grupurile de copii din Rahova reacționează fantastic la personajele energice care interacționează mult cu publicul."}},{"@type":"Question","name":"Cât timp înainte rezervăm în Sectorul 5?","acceptedAnswer":{"@type":"Answer","text":"Sectorul 5 nu este blocat în rezervări ca sectoarele nord și est — de obicei confirmăm disponibilitate și pentru weekenduri cu 7-10 zile înainte. Totuși, pentru iunie-august, recomandăm 3 săptămâni în avans."}},{"@type":"Question","name":"Ce face unic Sectorul 5 față de alte sectoare?","acceptedAnswer":{"@type":"Answer","text":"Zona Cotroceni (lângă Universitate) este diferită față de restul Sectorului 5 — familii tinere cu venituri medii-ridicate care apreciază calitatea. SuperParty are animatori dedicați atât pentru zona Cotroceni cât și pentru Rahova și Ferentari."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://superparty.ro"},{"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},{"@type":"ListItem","position":3,"name":"Sectorul 5","item":"https://superparty.ro/petreceri/sector-5"}]}]});
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Sector 5 | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în Sector 5 București — Rahova, Ferentari, 13 Septembrie. Costume premium. Rezervă: 0722 744 377."
+  title="Animatori Petreceri Copii Sectorul 5 | SuperParty — 490 RON, garantie"
+  description="SuperParty acoperă Sectorul 5: Rahova,  Sebastian,  Ferentari. Animatori profesionisti, pachete 490-840-1290 RON, garantie contractuala scrisa. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/sector-5"
+  robots="index, follow"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .hero{padding:4rem 0 2rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 65%)}
+  .h1c{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+  .lead{color:var(--text-muted);max-width:650px;line-height:1.85;margin-bottom:2rem}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .s{padding:3rem 0}.s-alt{padding:3rem 0;background:var(--dark-2)}
+  .h2c{font-size:1.4rem;font-weight:800;margin-bottom:1rem}
+  .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem}
+  .card h3{font-weight:700;margin-bottom:.6rem;font-size:.95rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.27rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.87rem;color:var(--text-muted)}
+  .rt p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem;max-width:780px}
+  .rt strong{color:var(--text)}
+  .fqs{display:flex;flex-direction:column;gap:.9rem;max-width:710px}
+  .fq{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.1rem}
+  .fq h3{font-size:.92rem;font-weight:700;margin-bottom:.4rem}
+  .fq p{font-size:.87rem;color:var(--text-muted);line-height:1.7}
+  .cta-b{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center}
+  .cta-b h2{font-size:1.4rem;font-weight:800;margin-bottom:.8rem}
+  .cta-b p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.93rem}
+  .cb{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .fact{background:rgba(255,107,53,.08);border-left:3px solid var(--primary);padding:1rem 1.2rem;border-radius:0 10px 10px 0;margin-bottom:1rem;max-width:780px}
+  .fact p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:0}
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Sector 5</span></h1>
-    <p>SuperParty activează în tot Sectorul 5 — Rahova, Ferentari, 13 Septembrie, Cotroceni, Panduri. Animatori actori, costume originale și programe pline de energie pentru copiii tăi.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/" style="color:var(--primary)">Acasă</a> ›
+      <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
+      Sectorul 5
+    </nav>
+    <h1 class="h1c">Animatori Petreceri Copii <span style="color:var(--primary)">Sectorul 5</span></h1>
+    <p class="lead">Sectorul cu cea mai puternică identitate comunitară — petrecerile includ bunici, vecini și prieteni de cartier în mod tradițional. SuperParty vine direct la adresa ta din <strong>Sectorul 5</strong> — zero taxă deplasare, confirmare în 30 min., garantie contractuală scrisa.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="s">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Locații populare în Sector 5</h3>
+    <h2 class="h2c">Zone acoperite în <span style="color:var(--primary)">Sectorul 5</span></h2>
+    <div class="rt">
+      <p>SuperParty acoperă <strong>tot Sectorul 5</strong>: <strong>Rahova, Sebastian, Ferentari, 13 Septembrie, Cotroceni</strong>. Metrou în zonă: <strong>Răzoare (M4), Eroilor (M4/M3), Izvor (M3)</strong>. Zero taxă de deplasare pentru orice adresă din sector.</p>
+      <p>Petrecerile din Sectorul 5 au adesea 30-50 de copii — numere mari față de media națională. SuperParty recomandă pachetul Super 3 (2 personaje) sau Super 7 pentru aceste grupuri. Curtile caselor din Rahova cu suprafete generoase sunt perfecte pentru petreceri de vară cu mulți participanți.</p>
+    </div>
+    <div class="g3" style="margin-top:1.5rem">
+      <div class="card">
+        <h3>🌿 Parcul Sebastian (30 ha)</h3>
         <ul>
-                        <li>📍 Rahova / Ferentari</li>
-              <li>📍 13 Septembrie / Panduri</li>
-              <li>📍 Cotroceni / Elefterie</li>
-              <li>📍 Uranus / Piața Constituției</li>
-              <li>📍 Săli de petreceri Sector 5</li>
+          <li>cel mai iubit parc al comunității din Sectorul 5 — SuperPart...</li>
+          <li>Petreceri aer liber fără rezervare spațiu</li>
+          <li>Echipament portabil wireless inclus</li>
+          <li>10-100 de copii — adaptare completă</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>🏢 Locații indoor</h3>
         <ul>
-          <li>15-30 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Fără taxă de deplasare în zona centrală</li>
+          <li>curțile caselor din Rahova</li>
+          <li>restaurantele din Cotroceni</li>
+          <li>Spațiu minim 15-20 mp</li>
+          <li>Animatorul vine cu tot echipamentul</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>✅ Garantie SuperParty</h3>
         <ul>
-          <li>Super 1 — de la 490 RON</li>
-          <li>Super 3 — de la 840 RON</li>
-          <li>Super 7 — de la 1290 RON</li>
+          <li>Zero taxă deplasare în Sectorul 5</li>
+          <li>Confirmare în 30 minute</li>
+          <li>Contract digital în 24 ore</li>
+          <li>Plată DUPĂ petrecere</li>
+          <li>Nerambursabil dacă nu v-ați distrat</li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-{hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="s-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Sector 5</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
-    <div class="art-grid">
-      {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
-          <h3>{article.data.title}</h3>
-          <p>{article.data.description?.slice(0,100)}...</p>
-        </a>
-      ))}
+    <h2 class="h2c">Personaje și tendințe în <span style="color:var(--primary)">Sectorul 5</span></h2>
+    <div class="rt">
+      <p>Sectorul 5 preferă personajele puternice și recunoscute: Spider-Man, Batman și Clovnul vesel domină. Elsa e la fel de populară ca oriunde. Particularitate: grupurile de copii din Rahova reacționează fantastic la personajele energice care interacționează mult cu publicul.</p>
+      <p>Colecția completă SuperParty: <strong>50+ personaje</strong> — super-eroi (Spider-Man, Batman, Captain America, Iron Man, Thor, Hulk), prințese Disney (Elsa, Ana, Rapunzel, Belle, Moana, Ariel, Aurora), personaje moderne (PAW Patrol, Sonic, Bluey, Miraculous Ladybug), clasice (Clovnul vesel, Magicianul, Zânele). Menționați preferința copilului la rezervare — verificăm disponibilitatea costumului specific.</p>
+    </div>
+    <div class="fact">
+      <p>📌 <strong>Fapt interesant despre Sectorul 5:</strong> Zona Cotroceni (lângă Universitate) este diferită față de restul Sectorului 5 — familii tinere cu venituri medii-ridicate care apreciază calitatea. SuperParty are animatori dedicați atât pentru zona Cotroceni cât și pentru Rahova și Ferentari.</p>
     </div>
   </div>
 </section>
-)}
 
-<section class="hub-section">
+<section class="s">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Sector 5</span></h2>
-    <div class="faq-list">
+    <h2 class="h2c">Pachete animatori — <span style="color:var(--primary)">Sectorul 5</span></h2>
+    <div class="rt">
+      <p><strong>Super 1 (490 RON):</strong> 1 personaj costumat, 2 ore program complet — jocuri interactive adaptate vârstei, baloane modelate (1 per copil), face painting tematic, tatuaje temporare profesionale, mini disco cu muzică pentru copii și diplome magnetice personalizate. Recomandat pentru 8-20 de copii.</p>
+      <p><strong>Super 3 (840 RON):</strong> 2 personaje costumați, 2 ore program dublu. Atenție individuală crescută per copil, energia se dublează, recomandat pentru 15-35 de copii. Cel mai ales pachet în Sectorul 5.</p>
+      <p><strong>Super 7 (1290 RON):</strong> 1 animator + 4 ursitoare, 3 ore, pachet botez sau aniversare mare. Recomandat pentru 50-100 de invitați. <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Detalii complete</a></p>
+      <p>Sectorul 5 nu este blocat în rezervări ca sectoarele nord și est — de obicei confirmăm disponibilitate și pentru weekenduri cu 7-10 zile înainte. Totuși, pentru iunie-august, recomandăm 3 săptămâni în avans.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s-alt">
+  <div class="container">
+    <h2 class="h2c">Întrebări frecvente — animatori în <span style="color:var(--primary)">Sectorul 5</span></h2>
+    <div class="fqs">
       {[
-        ["Activați în Sector 5?", "Da — acoperim toată zona Sector 5. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Sector 5?", "Prețurile pornesc de la 490 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Sector 5?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Sector 5 și împrejurimi."],
-      ].map(([q, a]) => (
-        <div class="faq-item">
+        ["Ce zone din Sectorul 5 acoperiți?", "Acoperim integral Sectorul 5: Rahova, Sebastian, Ferentari, 13 Septembrie, Cotroceni. Zero taxă deplasare în întreg sectorul — inclusa în prețul pachetului ales."],
+        ["Unde se poate organiza petrecerea în Sectorul 5?", "cel mai iubit parc al comunității din Sectorul 5 — SuperParty a organizat sute de petreceri în Parcul Sebastian, atât în zonele umbrite cât și în spațiile deschise cu iarbă. De asemenea recomandăm: curțile caselor din Rahova, restaurantele din Cotroceni, spațiile comunitare din Sebastian."],
+        ["Ce personaje cerute în Sectorul 5?", "Sectorul 5 preferă personajele puternice și recunoscute: Spider-Man, Batman și Clovnul vesel domină. Elsa e la fel de populară ca oriunde. Particularitate: grupurile de copii din Rahova reacționează fantastic la personajele energice care interacționează mult cu publicul."],
+        ["Cât timp înainte rezervăm animatorul în Sectorul 5?", "Sectorul 5 nu este blocat în rezervări ca sectoarele nord și est — de obicei confirmăm disponibilitate și pentru weekenduri cu 7-10 zile înainte. Totuși, pentru iunie-august, recomandăm 3 săptămâni în avans."],
+        ["Ce face Sectorul 5 unic față de alte sectoare?", "Zona Cotroceni (lângă Universitate) este diferită față de restul Sectorului 5 — familii tinere cu venituri medii-ridicate care apreciază calitatea. SuperParty are animatori dedicați atât pentru zona Cotroceni cât și pentru Rahova și Ferentari."],
+      ].map(([q,a]) => (
+        <div class="fq">
           <h3>❓ {q}</h3>
           <p>{a}</p>
         </div>
@@ -164,20 +139,21 @@ const schema = JSON.stringify({
   </div>
 </section>
 
-<section class="hub-section-alt">
+<section class="s">
   <div class="container">
-    <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Sector 5</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
-      <div class="cta-btns">
+    <div class="cta-b">
+      <h2>Rezervă animator în <span style="color:var(--primary)">Sectorul 5</span></h2>
+      <p>Spune-ne data, adresa și vârsta copilului — confirmăm disponibilitatea în 30 minute.</p>
+      <div class="cb">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Înapoi la pagina principală Animatori Petreceri Copii</a>
+      <p style="margin-top:1rem;font-size:.87rem;color:var(--text-muted)">
+        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principală Animatori</a>
+        &nbsp;|&nbsp;
+        <a href="/arie-acoperire" style="color:var(--primary)">Toate zonele acoperite</a>
       </p>
     </div>
   </div>
 </section>
-
 </Layout>

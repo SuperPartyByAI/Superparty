@@ -1,183 +1,93 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const allArticles = await getCollection('seo-articles');
-const hubArticles = allArticles.filter(article =>
-  article.slug.includes('ilfov') && article.data.indexStatus !== 'hold'
-).slice(0, 18);
-
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Ilfov",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Județul Ilfov",
-      "url": "https://www.superparty.ro/petreceri/ilfov"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-              {
-        "@type": "Question",
-        "name": "Există taxă de deplasare în Ilfov?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depinde de localitate și distanță. Localitățile apropiate (Voluntari, Bragadiru) sunt adesea fără taxă. Contactați-ne pentru detalii." }
-      },
-      {
-        "@type": "Question",
-        "name": "Activați în Voluntari?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — Voluntari este una din localitățile Ilfov cu cea mai mare cerere pentru serviciile noastre." }
-      }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Județul Ilfov", "item": "https://www.superparty.ro/petreceri/ilfov" }
-      ]
-    }
-  ]
-});
+const schema = JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Animatori Petreceri Copii Ilfov","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"ilfov","url":"https://www.superparty.ro/petreceri/ilfov"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"SuperParty acoperă tot județul Ilfov?","acceptedAnswer":{"@type":"Answer","text":"Da — SuperParty acoperă toate localitățile din Ilfov: Voluntari, Popești-Leordeni, Otopeni, Chiajna, Bragadiru, Pantelimon, Jilava, Măgurele, Mogoșoaia, Buftea și zeci de alte comune. Sunați la 0722 744 377 cu adresa exactă."}},{"@type":"Question","name":"Care sunt cele mai solicitate localități din Ilfov?","acceptedAnswer":{"@type":"Answer","text":"Top 5 localități din Ilfov cu cerere SuperParty: Voluntari-Pipera (mulți expati), Popești-Leordeni (densitate mare familii), Otopeni (familii premium), Bragadiru (ansambluri noi) și Pantelimon (aproape de Bucuresti)."}},{"@type":"Question","name":"Există diferențe de preț între localitățile Ilfov?","acceptedAnswer":{"@type":"Answer","text":"Pachetele sunt identice (490/840/1290 RON) — singura variabilă este taxa de deplasare care depinde de distanța față de Capitală. Taxa se comunică transparent înainte de confirmare."}},{"@type":"Question","name":"Cum rezerv animator pentru o localitate din Ilfov?","acceptedAnswer":{"@type":"Answer","text":"Suni la 0722 744 377 sau WhatsApp cu: data petrecerii, adresa exactă în Ilfov, vârsta copilului și numărul de copii invitați. Confirmăm disponibilitatea în 30 minute și trimitem oferta."}},{"@type":"Question","name":"SuperParty merge și la localitățile mici din Ilfov?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim și localitățile mici: Cernica, Afumați, Dobroești, Dascălu, Brănești, Ciofliceni, Periș și altele. Taxa de transport crește proporțional cu distanța."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://superparty.ro"},{"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},{"@type":"ListItem","position":3,"name":"Animatori Petreceri Copii Ilfov","item":"https://www.superparty.ro/petreceri/ilfov"}]}]});
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Ilfov | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în județul Ilfov — Voluntari, Otopeni, Bragadiru, Chiajna. Costume premium. Rezervă: 0722 744 377."
+  title="Animatori Petreceri Copii Ilfov — Toate Localitățile | SuperParty"
+  description="SuperParty acoperă toate localitățile din Ilfov (30+ comune și orașe). Animatori profesioniști, pachete 490-1290 RON, garantie contractuala. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/ilfov"
+  robots="index, follow"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .hero{padding:4rem 0 2rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 65%)}
+  .h1x{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+  .lead{color:var(--text-muted);max-width:650px;line-height:1.85;margin-bottom:2rem}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .fqs{display:flex;flex-direction:column;gap:.9rem;max-width:710px;padding:3rem 0}
+  .fq{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.1rem}
+  .fq h3{font-size:.92rem;font-weight:700;margin-bottom:.4rem}
+  .fq p{font-size:.87rem;color:var(--text-muted);line-height:1.7}
+  .cta-b{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center;margin:3rem 0}
+  .cta-b h2{font-size:1.4rem;font-weight:800;margin-bottom:.8rem}
+  .cb{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Județul Ilfov</span></h1>
-    <p>SuperParty activează în tot județul Ilfov — Voluntari, Otopeni, Pantelimon, Bragadiru, Chiajna și alte localități. Distanța nu e o problemă; aducem magia personajelor favorite direct la petrecerea copilului.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/" style="color:var(--primary)">Acasă</a> ›
+      <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
+      Animatori Petreceri Copii Ilfov
+    </nav>
+    <h1 class="h1x">Animatori Petreceri Copii Ilfov</h1>
+    <p class="lead">SuperParty acoperă toate localitățile din Ilfov (30+ comune și orașe). Animatori profesioniști, pachete 490-1290 RON, garantie contractuala. Tel: 0722 744 377.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+
+<section style="padding:3rem 0">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Locații populare în Județul Ilfov</h3>
-        <ul>
-                        <li>📍 Voluntari / Pipera</li>
-              <li>📍 Otopeni / Mogoșoaia</li>
-              <li>📍 Pantelimon / Cernica</li>
-              <li>📍 Bragadiru / Chiajna / Chitila</li>
-              <li>📍 Popești-Leordeni / Jilava</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
-        <ul>
-          <li>25-45 min, în funcție de localitate (posibilă taxă de deplasare)</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Fără taxă de deplasare în zona centrală</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
-        <ul>
-          <li>Super 1 — de la 490 RON</li>
-          <li>Super 3 — de la 840 RON</li>
-          <li>Super 7 — de la 1290 RON</li>
-        </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
-      </div>
-    </div>
+    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1rem">SuperParty în tot județul Ilfov — 30+ localități acoperite</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px;margin-bottom:1rem">Județul Ilfov înconjoară Capitala pe toate laturile și a experimentat cea mai rapidă creștere demografică din România în ultimii 15 ani — populația a crescut cu 60%, sute de ansambluri rezidențiale au apărut, mii de familii tinere s-au mutat din Bucuresti căutând mai mult spațiu și aer curat. SuperParty a crescut odată cu Ilfovul și acoperă astăzi toate localitățile județului.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px;margin-bottom:1rem">Localitățile mari cu cerere mare SuperParty în Ilfov: <strong>Voluntari și Pipera</strong> (zona internațională, 40.000 loc.), <strong>Popești-Leordeni</strong> (35.000 loc., frontalier cu Sectorul 3), <strong>Otopeni</strong> (12.000 loc., premium lângă aeroport), <strong>Chiajna</strong> cu Militari Residence (30.000 loc.), <strong>Bragadiru</strong> (25.000 loc.), <strong>Pantelimon</strong> (18.000 loc.).</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px;margin-bottom:1rem">Localitățile medii acoperite: Jilava, Măgurele, Mogoșoaia, Buftea, Chitila, Cernica, Afumați, Dobroești, Brănești, Dascălu, Ciofliceni, Balotești, Periș, Snagov, Corbeanca, Tunari, Voluntari (rural), Gănești, Cretești și altele. Le contactați cu adresa exactă și confirmatăm taxa de deplasare în 30 minute.</p>
+  </div>
+</section>
+<section style="padding:3rem 0;background:var(--dark-2)">
+  <div class="container">
+    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1rem">Profil familii Ilfov — de ce SuperParty e alegerea #1</h2>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px;margin-bottom:1rem">Familia tipică din Ilfov are 1-2 copii, locuiește într-o vilă sau ansamblu rezidențial, a venit din Capitală căutând spațiu și calitate a vieții. Acești părinți știu ce serviciu de calitate înseamnă, nu fac compromisuri la petrecerea copilului și apreciază garanția contractuală SuperParty — unicul serviciu de animatori din România care garantează distracția în scris.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px;margin-bottom:1rem">SuperParty vine în Ilfov cu <strong>tot echipamentul</strong>: boxe portabile wireless (nu ai nevoie de prize dacă suntem afară), costume premium licentiate, materiale pentru jocuri interactive adaptate vârstei, baloane modelate, kituri de face painting profesional, tatuaje temporare non-toxice și diplome magnetice personalizate. Animatorul sosește cu 15 minute înainte, montează tot și e gata să primească copiii la ora exactă rezervată.</p>
+    <p style="color:var(--text-muted);line-height:1.9;max-width:780px">Pachete pentru Ilfov: <strong>Super 1 — 490 RON</strong>, <strong>Super 3 — 840 RON</strong>, <strong>Super 7 — 1290 RON</strong>. Taxa deplasare variabilă (comunicată transparent). Rezervare: <strong>0722 744 377</strong> — confirmare în 30 minute, contract digital în 24 ore, plată DUPĂ petrecere.</p>
   </div>
 </section>
 
-{hubArticles.length > 0 && (
-<section class="hub-section-alt">
-  <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Județul Ilfov</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
-    <div class="art-grid">
-      {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
-          <h3>{article.data.title}</h3>
-          <p>{article.data.description?.slice(0,100)}...</p>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
-)}
-
-<section class="hub-section">
-  <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Județul Ilfov</span></h2>
-    <div class="faq-list">
-      {[
-        ["Activați în Județul Ilfov?", "Da — acoperim toată zona Județul Ilfov. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Județul Ilfov?", "Prețurile pornesc de la 490 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Județul Ilfov?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Județul Ilfov și împrejurimi."],
-      ].map(([q, a]) => (
-        <div class="faq-item">
-          <h3>❓ {q}</h3>
-          <p>{a}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section class="hub-section-alt">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Județul Ilfov</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
-      <div class="cta-btns">
-        <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
-        <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+<div class="container">
+  <div class="fqs">
+    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1rem">Întrebări frecvente</h2>
+    {[
+      ["SuperParty acoperă tot județul Ilfov?", "Da — SuperParty acoperă toate localitățile din Ilfov: Voluntari, Popești-Leordeni, Otopeni, Chiajna, Bragadiru, Pantelimon, Jilava, Măgurele, Mogoșoaia, Buftea și zeci de alte comune. Sunați la 0722 744 377 cu adresa exactă."],
+      ["Care sunt cele mai solicitate localități din Ilfov?", "Top 5 localități din Ilfov cu cerere SuperParty: Voluntari-Pipera (mulți expati), Popești-Leordeni (densitate mare familii), Otopeni (familii premium), Bragadiru (ansambluri noi) și Pantelimon (aproape de Bucuresti)."],
+      ["Există diferențe de preț între localitățile Ilfov?", "Pachetele sunt identice (490/840/1290 RON) — singura variabilă este taxa de deplasare care depinde de distanța față de Capitală. Taxa se comunică transparent înainte de confirmare."],
+      ["Cum rezerv animator pentru o localitate din Ilfov?", "Suni la 0722 744 377 sau WhatsApp cu: data petrecerii, adresa exactă în Ilfov, vârsta copilului și numărul de copii invitați. Confirmăm disponibilitatea în 30 minute și trimitem oferta."],
+      ["SuperParty merge și la localitățile mici din Ilfov?", "Da — acoperim și localitățile mici: Cernica, Afumați, Dobroești, Dascălu, Brănești, Ciofliceni, Periș și altele. Taxa de transport crește proporțional cu distanța."]
+    ].map(([q,a]) => (
+      <div class="fq">
+        <h3>❓ {q}</h3>
+        <p>{a}</p>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Înapoi la pagina principală Animatori Petreceri Copii</a>
-      </p>
-    </div>
+    ))}
   </div>
-</section>
 
+  <div class="cta-b">
+    <h2>Animatori Petreceri Copii Ilfov — Rezervare</h2>
+    <p>Confirmare în 30 minute · Plată după petrecere · Garanție contractuală</p>
+    <div class="cb">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.87rem;color:var(--text-muted)">
+      ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principală</a>
+      &nbsp;|&nbsp;<a href="/arie-acoperire" style="color:var(--primary)">Toate zonele</a>
+    </p>
+  </div>
+</div>
 </Layout>

@@ -1,161 +1,136 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const allArticles = await getCollection('seo-articles');
-const hubArticles = allArticles.filter(article =>
-  article.slug.includes('sector-3') && article.data.indexStatus !== 'hold'
-).slice(0, 18);
-
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Animatori Petreceri Copii Sector 3",
-      "provider": { "@type": "LocalBusiness", "name": "SuperParty", "telephone": "+40722744377" },
-      "areaServed": "Sector 3",
-      "url": "https://www.superparty.ro/petreceri/sector-3"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-              {
-        "@type": "Question",
-        "name": "Activați în zona Titan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — Titan este una din zonele cu cea mai mare cerere din Sectorul 3 unde activăm." }
-      },
-      {
-        "@type": "Question",
-        "name": "Mergeți și la Vitan Mall?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Da — Sector 3 inclusiv zona Vitan este complet acoperită." }
-      }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.superparty.ro" },
-        { "@type": "ListItem", "position": 2, "name": "Animatori Petreceri Copii", "item": "https://www.superparty.ro/animatori-petreceri-copii" },
-        { "@type": "ListItem", "position": 3, "name": "Sector 3", "item": "https://www.superparty.ro/petreceri/sector-3" }
-      ]
-    }
-  ]
-});
+const schema = JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Animatori Petreceri Copii Sectorul 3","provider":{"@type":"LocalBusiness","name":"SuperParty","telephone":"+40722744377"},"areaServed":"Sectorul 3","url":"https://superparty.ro/petreceri/sector-3"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce zone din Sectorul 3 acoperiți?","acceptedAnswer":{"@type":"Answer","text":"Acoperim integral Sectorul 3: Titan, Dristor, Vitan, Dudești, Centrul Civic, Balta Albă, Timpuri Noi. Zero taxă deplasare în întreg sectorul."}},{"@type":"Question","name":"Unde se poate organiza petrecerea în Sectorul 3?","acceptedAnswer":{"@type":"Answer","text":"parcul IOR este destinația favorită a familiilor din Titan și pentru picnicuri cu animatori SuperParty — spațiul larg permite programe pentru 10-60 de copii simultan, fără interferențe. De asemenea: Sun Plaza Mall Kids Zone (etaj 2), sălile de petreceri din Titan și Balta Albă."}},{"@type":"Question","name":"Ce personaje sunt cerute în Sectorul 3?","acceptedAnswer":{"@type":"Answer","text":"Spider-Man și Iron Man domină la băieți 4-11 ani, Elsa și Rapunzel la fetițe. Tendință 2025: PAW Patrol pentru copii 2-4 ani. Comunitatea din Titan are gusturi clasice — personajele bine-cunoscute sunt întotdeauna câștigătoare."}},{"@type":"Question","name":"Cât timp înainte rezervăm în Sectorul 3?","acceptedAnswer":{"@type":"Answer","text":"Zona Titan este extrem de solicitată în weekend — rezervați minimum 3 săptămâni pentru orice ocazie din mai-septembrie. Sun Plaza Kids Zone se rezervă direct cu mall-ul; SuperParty vine independent la orice locație aleasă de voi."}},{"@type":"Question","name":"Ce face unic Sectorul 3 față de alte sectoare?","acceptedAnswer":{"@type":"Answer","text":"Parcul IOR a găzduit cele mai mari petreceri SuperParty în aer liber — record: 85 de copii la o singură petrecere de ziua copilăriei. Animatorii noștri sunt pregătiți pentru volume mari de participanți."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://superparty.ro"},{"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},{"@type":"ListItem","position":3,"name":"Sectorul 3","item":"https://superparty.ro/petreceri/sector-3"}]}]});
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Sector 3 | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în Sector 3 București — Titan, Vitan, Dristor, Balta Albă. Costume premium. Rezervă: 0722 744 377."
+  title="Animatori Petreceri Copii Sectorul 3 | SuperParty — 490 RON, garantie"
+  description="SuperParty acoperă Sectorul 3: Titan,  Dristor,  Vitan. Animatori profesionisti, pachete 490-840-1290 RON, garantie contractuala scrisa. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/sector-3"
+  robots="index, follow"
   schema={schema}
 >
 <style>
-  .hub-hero { padding: 4.5rem 0 3rem; background: radial-gradient(ellipse at top, rgba(255,107,53,.1) 0%, transparent 55%); }
-  .hub-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem; line-height:1.2; }
-  .hub-hero p { color:var(--text-muted); font-size:1.05rem; max-width:620px; line-height:1.8; margin-bottom:2rem; }
-  .btn-p { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:.9rem 2rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .2s; }
-  .btn-p:hover { transform:translateY(-2px); }
-  .btn-wa { background:#25d366; color:#fff; padding:.9rem 1.8rem; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
-  .hub-section { padding:3.5rem 0; }
-  .hub-section-alt { padding:3.5rem 0; background:var(--dark-2); }
-  .sec-title { font-size:1.6rem; font-weight:800; margin-bottom:.5rem; }
-  .sec-sub { color:var(--text-muted); margin-bottom:2rem; }
-  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .info-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.15); border-radius:14px; padding:1.5rem; }
-  .info-card h3 { font-weight:700; margin-bottom:.6rem; }
-  .info-card ul { list-style:none; padding:0; }
-  .info-card li { padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:.9rem; color:var(--text-muted); }
-  .art-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
-  .art-card { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.2rem; text-decoration:none; color:var(--text); transition:border-color .2s; }
-  .art-card:hover { border-color:var(--primary); }
-  .art-card h3 { font-size:.95rem; font-weight:700; color:var(--primary); margin-bottom:.4rem; }
-  .art-card p { font-size:.82rem; color:var(--text-muted); }
-  .faq-list { display:flex; flex-direction:column; gap:1rem; max-width:720px; }
-  .faq-item { background:var(--dark-3); border:1px solid rgba(255,107,53,.12); border-radius:14px; padding:1.3rem; }
-  .faq-item h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-  .faq-item p { font-size:.9rem; color:var(--text-muted); line-height:1.7; }
-  .cta-box { background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05)); border:1px solid rgba(255,107,53,.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
-  .cta-box h2 { font-size:1.7rem; font-weight:800; margin-bottom:1rem; }
-  .cta-box p { color:var(--text-muted); margin-bottom:2rem; }
-  .cta-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  @media(max-width:600px) { .cta-btns { flex-direction:column; align-items:center; } }
+  .hero{padding:4rem 0 2rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.12) 0%,transparent 65%)}
+  .h1c{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+  .lead{color:var(--text-muted);max-width:650px;line-height:1.85;margin-bottom:2rem}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .s{padding:3rem 0}.s-alt{padding:3rem 0;background:var(--dark-2)}
+  .h2c{font-size:1.4rem;font-weight:800;margin-bottom:1rem}
+  .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+  .card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem}
+  .card h3{font-weight:700;margin-bottom:.6rem;font-size:.95rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:.27rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.87rem;color:var(--text-muted)}
+  .rt p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem;max-width:780px}
+  .rt strong{color:var(--text)}
+  .fqs{display:flex;flex-direction:column;gap:.9rem;max-width:710px}
+  .fq{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.1rem}
+  .fq h3{font-size:.92rem;font-weight:700;margin-bottom:.4rem}
+  .fq p{font-size:.87rem;color:var(--text-muted);line-height:1.7}
+  .cta-b{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center}
+  .cta-b h2{font-size:1.4rem;font-weight:800;margin-bottom:.8rem}
+  .cta-b p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.93rem}
+  .cb{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .fact{background:rgba(255,107,53,.08);border-left:3px solid var(--primary);padding:1rem 1.2rem;border-radius:0 10px 10px 0;margin-bottom:1rem;max-width:780px}
+  .fact p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:0}
 </style>
 
-<section class="hub-hero">
+<section class="hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Sector 3</span></h1>
-    <p>Animatorii SuperParty aduc magie în Sector 3 — Titan, Vitan, Dristor, Balta Albă, Oltenița. Programe structurate 60-120 min, costume impecabile și amintiri de neuitat.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/" style="color:var(--primary)">Acasă</a> ›
+      <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
+      Sectorul 3
+    </nav>
+    <h1 class="h1c">Animatori Petreceri Copii <span style="color:var(--primary)">Sectorul 3</span></h1>
+    <p class="lead">Cel mai populat sector cu 400.000 de locuitori și cea mai activă scenă de petreceri pentru copii. SuperParty vine direct la adresa ta din <strong>Sectorul 3</strong> — zero taxă deplasare, confirmare în 30 min., garantie contractuală scrisa.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
       <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="s">
   <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 Locații populare în Sector 3</h3>
+    <h2 class="h2c">Zone acoperite în <span style="color:var(--primary)">Sectorul 3</span></h2>
+    <div class="rt">
+      <p>SuperParty acoperă <strong>tot Sectorul 3</strong>: <strong>Titan, Dristor, Vitan, Dudești, Centrul Civic, Balta Albă, Timpuri Noi</strong>. Metrou în zonă: <strong>Titan (M2), Dristor (M2), Timpuri Noi (M3)</strong>. Zero taxă de deplasare pentru orice adresă din sector.</p>
+      <p>Sectorul 3 este zona noastră cu cel mai mare volum de petreceri — avem animatori dedicați pentru Titan, Dristor, Vitan și Balta Albă. Confirmăm disponibilitatea în 20 de minute pentru orice adresă din sector.</p>
+    </div>
+    <div class="g3" style="margin-top:1.5rem">
+      <div class="card">
+        <h3>🌿 Parcul IOR (Lunca Morii — 70 ha)</h3>
         <ul>
-                        <li>📍 Titan / Balta Albă</li>
-              <li>📍 Vitan / Dristor</li>
-              <li>📍 Oltenița / Mihai Bravu</li>
-              <li>📍 IOR / Lunca Bradului</li>
-              <li>📍 Săli de petreceri Sector 3</li>
+          <li>parcul IOR este destinația favorită a familiilor din Titan ș...</li>
+          <li>Petreceri aer liber fără rezervare spațiu</li>
+          <li>Echipament portabil wireless inclus</li>
+          <li>10-100 de copii — adaptare completă</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>⏱ Timp de deplasare</h3>
+      <div class="card">
+        <h3>🏢 Locații indoor</h3>
         <ul>
-          <li>15-30 min din centru</li>
-          <li>Sosim cu 10 min înainte de program</li>
-          <li>Fără taxă de deplasare în zona centrală</li>
+          <li>Sun Plaza Mall Kids Zone (etaj 2)</li>
+          <li>sălile de petreceri din Titan și Balta Albă</li>
+          <li>Spațiu minim 15-20 mp</li>
+          <li>Animatorul vine cu tot echipamentul</li>
         </ul>
       </div>
-      <div class="info-card">
-        <h3>🎭 Pachete disponibile</h3>
+      <div class="card">
+        <h3>✅ Garantie SuperParty</h3>
         <ul>
-          <li>Super 1 — de la 490 RON</li>
-          <li>Super 3 — de la 840 RON</li>
-          <li>Super 7 — de la 1290 RON</li>
+          <li>Zero taxă deplasare în Sectorul 3</li>
+          <li>Confirmare în 30 minute</li>
+          <li>Contract digital în 24 ore</li>
+          <li>Plată DUPĂ petrecere</li>
+          <li>Nerambursabil dacă nu v-ați distrat</li>
         </ul>
-        <p style="margin-top:.8rem; font-size:.85rem; color:var(--text-muted);">
-          <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Vezi toate pachetele și prețurile</a>
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-{hubArticles.length > 0 && (
-<section class="hub-section-alt">
+<section class="s-alt">
   <div class="container">
-    <h2 class="sec-title">Animatori disponibili în <span style="color:var(--primary)">Sector 3</span></h2>
-    <p class="sec-sub">Personaje și servicii specifice pentru această zonă.</p>
-    <div class="art-grid">
-      {hubArticles.map(article => (
-        <a href={`/petreceri/${article.slug}`} class="art-card">
-          <h3>{article.data.title}</h3>
-          <p>{article.data.description?.slice(0,100)}...</p>
-        </a>
-      ))}
+    <h2 class="h2c">Personaje și tendințe în <span style="color:var(--primary)">Sectorul 3</span></h2>
+    <div class="rt">
+      <p>Spider-Man și Iron Man domină la băieți 4-11 ani, Elsa și Rapunzel la fetițe. Tendință 2025: PAW Patrol pentru copii 2-4 ani. Comunitatea din Titan are gusturi clasice — personajele bine-cunoscute sunt întotdeauna câștigătoare.</p>
+      <p>Colecția completă SuperParty: <strong>50+ personaje</strong> — super-eroi (Spider-Man, Batman, Captain America, Iron Man, Thor, Hulk), prințese Disney (Elsa, Ana, Rapunzel, Belle, Moana, Ariel, Aurora), personaje moderne (PAW Patrol, Sonic, Bluey, Miraculous Ladybug), clasice (Clovnul vesel, Magicianul, Zânele). Menționați preferința copilului la rezervare — verificăm disponibilitatea costumului specific.</p>
+    </div>
+    <div class="fact">
+      <p>📌 <strong>Fapt interesant despre Sectorul 3:</strong> Parcul IOR a găzduit cele mai mari petreceri SuperParty în aer liber — record: 85 de copii la o singură petrecere de ziua copilăriei. Animatorii noștri sunt pregătiți pentru volume mari de participanți.</p>
     </div>
   </div>
 </section>
-)}
 
-<section class="hub-section">
+<section class="s">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Sector 3</span></h2>
-    <div class="faq-list">
+    <h2 class="h2c">Pachete animatori — <span style="color:var(--primary)">Sectorul 3</span></h2>
+    <div class="rt">
+      <p><strong>Super 1 (490 RON):</strong> 1 personaj costumat, 2 ore program complet — jocuri interactive adaptate vârstei, baloane modelate (1 per copil), face painting tematic, tatuaje temporare profesionale, mini disco cu muzică pentru copii și diplome magnetice personalizate. Recomandat pentru 8-20 de copii.</p>
+      <p><strong>Super 3 (840 RON):</strong> 2 personaje costumați, 2 ore program dublu. Atenție individuală crescută per copil, energia se dublează, recomandat pentru 15-35 de copii. Cel mai ales pachet în Sectorul 3.</p>
+      <p><strong>Super 7 (1290 RON):</strong> 1 animator + 4 ursitoare, 3 ore, pachet botez sau aniversare mare. Recomandat pentru 50-100 de invitați. <a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Detalii complete</a></p>
+      <p>Zona Titan este extrem de solicitată în weekend — rezervați minimum 3 săptămâni pentru orice ocazie din mai-septembrie. Sun Plaza Kids Zone se rezervă direct cu mall-ul; SuperParty vine independent la orice locație aleasă de voi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s-alt">
+  <div class="container">
+    <h2 class="h2c">Întrebări frecvente — animatori în <span style="color:var(--primary)">Sectorul 3</span></h2>
+    <div class="fqs">
       {[
-        ["Activați în Sector 3?", "Da — acoperim toată zona Sector 3. Contactați-ne pentru confirmare și detalii logistice."],
-        ["Cât costă un animator în Sector 3?", "Prețurile pornesc de la 490 RON pentru 60 min. Contactați-ne pentru ofertă exactă inclusiv transport."],
-        ["Se poate organiza la domiciliu în Sector 3?", "Da — venim la domiciliu, sală de petreceri sau grădiniță din Sector 3 și împrejurimi."],
-      ].map(([q, a]) => (
-        <div class="faq-item">
+        ["Ce zone din Sectorul 3 acoperiți?", "Acoperim integral Sectorul 3: Titan, Dristor, Vitan, Dudești, Centrul Civic, Balta Albă, Timpuri Noi. Zero taxă deplasare în întreg sectorul — inclusa în prețul pachetului ales."],
+        ["Unde se poate organiza petrecerea în Sectorul 3?", "parcul IOR este destinația favorită a familiilor din Titan și pentru picnicuri cu animatori SuperParty — spațiul larg permite programe pentru 10-60 de copii simultan, fără interferențe. De asemenea recomandăm: Sun Plaza Mall Kids Zone (etaj 2), sălile de petreceri din Titan și Balta Albă."],
+        ["Ce personaje cerute în Sectorul 3?", "Spider-Man și Iron Man domină la băieți 4-11 ani, Elsa și Rapunzel la fetițe. Tendință 2025: PAW Patrol pentru copii 2-4 ani. Comunitatea din Titan are gusturi clasice — personajele bine-cunoscute sunt întotdeauna câștigătoare."],
+        ["Cât timp înainte rezervăm animatorul în Sectorul 3?", "Zona Titan este extrem de solicitată în weekend — rezervați minimum 3 săptămâni pentru orice ocazie din mai-septembrie. Sun Plaza Kids Zone se rezervă direct cu mall-ul; SuperParty vine independent la orice locație aleasă de voi."],
+        ["Ce face Sectorul 3 unic față de alte sectoare?", "Parcul IOR a găzduit cele mai mari petreceri SuperParty în aer liber — record: 85 de copii la o singură petrecere de ziua copilăriei. Animatorii noștri sunt pregătiți pentru volume mari de participanți."],
+      ].map(([q,a]) => (
+        <div class="fq">
           <h3>❓ {q}</h3>
           <p>{a}</p>
         </div>
@@ -164,20 +139,21 @@ const schema = JSON.stringify({
   </div>
 </section>
 
-<section class="hub-section-alt">
+<section class="s">
   <div class="container">
-    <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Sector 3</span></h2>
-      <p>Disponibilitate limitată în weekend. Rezervați cu avans.</p>
-      <div class="cta-btns">
+    <div class="cta-b">
+      <h2>Rezervă animator în <span style="color:var(--primary)">Sectorul 3</span></h2>
+      <p>Spune-ne data, adresa și vârsta copilului — confirmăm disponibilitatea în 30 minute.</p>
+      <div class="cb">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
         <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.9rem; color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary); font-weight:600;">Înapoi la pagina principală Animatori Petreceri Copii</a>
+      <p style="margin-top:1rem;font-size:.87rem;color:var(--text-muted)">
+        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principală Animatori</a>
+        &nbsp;|&nbsp;
+        <a href="/arie-acoperire" style="color:var(--primary)">Toate zonele acoperite</a>
       </p>
     </div>
   </div>
 </section>
-
 </Layout>

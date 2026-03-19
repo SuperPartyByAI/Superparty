@@ -14,15 +14,17 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"Activați animatori în Dimieni?","acceptedAnswer":{"@type":"Answer","text":"Da — acoperim Dimieni și localitățile învecinate. Contactați-ne cu data și adresa exactă pentru a confirma disponibilitatea."}},
-        {"@type":"Question","name":"Există taxă de deplasare pentru Dimieni?","acceptedAnswer":{"@type":"Answer","text":"Depinde de distanță (~18 km de la București). Contactați-ne pentru o ofertă completă inclusiv transport."}},
-        {"@type":"Question","name":"Unde se poate organiza petrecerea în Dimieni?","acceptedAnswer":{"@type":"Answer","text":"La domiciliu, la o sală de petreceri sau alt spațiu din Dimieni — local, grădiniță, restaurant family-friendly. Avem nevoie de minim 15–20 mp."}}
+        {"@type":"Question","name":"Organizati animatori in Dimieni?","acceptedAnswer":{"@type":"Answer","text":"Da — SuperParty acopera Dimieni si zona Ilfov. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate."}},
+        {"@type":"Question","name":"Este taxa de deplasare pentru Dimieni?","acceptedAnswer":{"@type":"Answer","text":"Distanta este ~20 km pe DN2 — taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta."}},
+        {"@type":"Question","name":"Unde se organizeaza petrecerea in Dimieni?","acceptedAnswer":{"@type":"Answer","text":"In Dimieni recomandam: curti ansambluri sau sali community. Animatorul vine cu echipament portabil complet — boxe wireless, materiale jocuri, costume premium."}},
+        {"@type":"Question","name":"Ce personaje sunt disponibile in Dimieni?","acceptedAnswer":{"@type":"Answer","text":"Cele mai cerute in zona Ilfov: PAW Patrol, Sonic si Bluey. SuperParty are peste 50 de personaje disponibile la rezervare."}},
+        {"@type":"Question","name":"Cat timp inainte rezervam animatorul?","acceptedAnswer":{"@type":"Answer","text":"Minim 7-14 zile pentru saptamani normale, 3-4 saptamani pentru weekendurile de mai-septembrie. Suna la 0722 744 377."}}
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Acasă","item":"https://superparty.ro"},
+        {"@type":"ListItem","position":1,"name":"Acasa","item":"https://superparty.ro"},
         {"@type":"ListItem","position":2,"name":"Animatori Petreceri Copii","item":"https://superparty.ro/animatori-petreceri-copii"},
         {"@type":"ListItem","position":3,"name":"Dimieni","item":"https://superparty.ro/petreceri/dimieni"}
       ]
@@ -32,78 +34,90 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Animatori Petreceri Copii Dimieni | SuperParty"
-  description="Animatori profesioniști pentru petreceri copii în Dimieni (sat, ~18 km de București). Costume premium, pachete de la 490 lei. Rezervă: 0722 744 377."
+  title="Animatori Petreceri Copii Dimieni | SuperParty — de la 490 RON"
+  description="Animatori profesionisti pentru petreceri copii in Dimieni (Ilfov), ~20 km de Bucuresti (DN2). Peste 50 personaje, pachete 490-1290 RON, garantie contractuala. Tel: 0722 744 377."
   canonical="https://www.superparty.ro/petreceri/dimieni"
-  robots="index, follow"
+  robots="noindex, follow"
   schema={schema}
 >
 <style>
-  .loc-hero {padding:4rem 0 2.5rem; background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%);}
-  .loc-hero h1 {font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin-bottom:1rem;line-height:1.2;}
-  .loc-hero p {color:var(--text-muted);font-size:1rem;max-width:600px;line-height:1.8;margin-bottom:1.8rem;}
-  .btn-p {background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s;}
-  .btn-p:hover {transform:translateY(-2px);}
-  .btn-wa {background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;}
-  .loc-s {padding:3rem 0;} .loc-s-alt {padding:3rem 0; background:var(--dark-2);}
-  .sec-title {font-size:1.5rem;font-weight:800;margin-bottom:.5rem;}
-  .info-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;}
-  .info-card {background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem;}
-  .info-card h3 {font-weight:700;margin-bottom:.5rem;font-size:.95rem;}
-  .info-card ul {list-style:none;padding:0;}
-  .info-card li {padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted);}
-  .tip-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem;margin-top:1rem;}
-  .tip-card {background:var(--dark-3);border:1px solid rgba(255,107,53,.1);border-radius:10px;padding:.9rem;text-align:center;font-size:.88rem;color:var(--text-muted);}
-  .faq-list {display:flex;flex-direction:column;gap:.9rem;max-width:700px;}
-  .faq-item {background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.2rem;}
-  .faq-item h3 {font-size:.93rem;font-weight:700;margin-bottom:.4rem;}
-  .faq-item p {font-size:.88rem;color:var(--text-muted);line-height:1.7;}
-  .cta-box {background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center;}
-  .cta-box h2 {font-size:1.5rem;font-weight:800;margin-bottom:.8rem;}
-  .cta-box p {color:var(--text-muted);margin-bottom:1.5rem;font-size:.95rem;}
-  .cta-btns {display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+  .loc-hero{padding:4rem 0 2.5rem;background:radial-gradient(ellipse at top,rgba(255,107,53,.1) 0%,transparent 55%)}
+  .loc-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+  .loc-hero p{color:var(--text-muted);font-size:1rem;max-width:600px;line-height:1.8;margin-bottom:1.8rem}
+  .btn-p{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:.85rem 1.8rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s}
+  .btn-p:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#fff;padding:.85rem 1.6rem;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+  .loc-s{padding:3rem 0}.loc-s-alt{padding:3rem 0;background:var(--dark-2)}
+  .sec-title{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+  .info-card{background:var(--dark-3);border:1px solid rgba(255,107,53,.15);border-radius:14px;padding:1.3rem}
+  .info-card h3{font-weight:700;margin-bottom:.5rem;font-size:.95rem}
+  .info-card ul{list-style:none;padding:0}
+  .info-card li{padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem;color:var(--text-muted)}
+  .rich-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1rem;max-width:780px}
+  .rich-text strong{color:var(--text)}
+  .faq-list{display:flex;flex-direction:column;gap:.9rem;max-width:700px}
+  .faq-item{background:var(--dark-3);border:1px solid rgba(255,107,53,.12);border-radius:12px;padding:1.2rem}
+  .faq-item h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
+  .faq-item p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+  .cta-box{background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,53,.05));border:1px solid rgba(255,107,53,.25);border-radius:18px;padding:2.5rem 1.5rem;text-align:center}
+  .cta-box h2{font-size:1.5rem;font-weight:800;margin-bottom:.8rem}
+  .cta-box p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.95rem}
+  .cta-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
 </style>
 
 <section class="loc-hero">
   <div class="container">
-    <h1>Animatori Petreceri Copii<br><span style="color:var(--primary)">Dimieni</span></h1>
-    <p>Organizezi o petrecere pentru copii în Dimieni? SuperParty aduce animatori actori cu costume premium direct la tine, indiferent dacă e o zi de naștere sau un alt eveniment special. Suntem la ~18 km de București și ajungem cu plăcere.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="tel:+40722744377" class="btn-p cta">📞 Rezervă: 0722 744 377</a>
-      <a href="https://wa.me/40722744377?text=Salut%21%20Vreau%20o%20ofert%C4%83%20pentru%20animatori%20petrecere%20copii.%20Data%3A%20____%20Loca%C8%9Bie%3A%20____%20V%C3%A2rst%C4%83%3A%20____%20Nr.%20copii%3A%20____" class="btn-wa cta">💬 WhatsApp</a>
+    <nav style="font-size:.82rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/" style="color:var(--primary)">Acasa</a> ›
+      <a href="/animatori-petreceri-copii" style="color:var(--primary)">Animatori Petreceri Copii</a> ›
+      Dimieni
+    </nav>
+    <h1>Animatori Petreceri Copii <span style="color:var(--primary)">Dimieni</span></h1>
+    <p>SuperParty organizeaza petreceri de copii in <strong>Dimieni</strong>, suburbie est pe DN2 cu aproximativ 5000 locuitori. Animatori actori cu costume premium, jocuri interactive, face painting si mini disco — direct la adresa ta, ~20 km de Bucuresti (DN2). Garantie contractuala: daca copiii nu s-au distrat, nu platesti.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+40722744377" class="btn-p cta">📞 Rezerva: 0722 744 377</a>
+      <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
     </div>
   </div>
 </section>
 
 <section class="loc-s">
   <div class="container">
-    <h2 class="sec-title">Informații despre <span style="color:var(--primary)">Dimieni</span></h2>
+    <h2 class="sec-title">Pachete animatori in <span style="color:var(--primary)">Dimieni</span></h2>
     <div class="info-grid">
       <div class="info-card">
-        <h3>📍 Locație și acces</h3>
+        <h3>📦 Super 1 — 490 RON</h3>
         <ul>
-          <li>Distanță: ~18 km de la București</li>
-          <li>Timp estimat: confirmat la rezervare</li>
-          <li>Taxă deplasare: comunicată la ofertă</li>
+          <li>1 personaj costumat premium</li>
+          <li>Durata: 2 ore program complet</li>
+          <li>Jocuri interactive + baloane modelate</li>
+          <li>Face painting + tatuaje temporare</li>
+          <li>Mini disco + diplome magnetic</li>
+          <li>Transport inclus in Dimieni</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>🎭 Ce includem</h3>
+        <h3>⭐ Super 3 — 840 RON (cel mai ales)</h3>
         <ul>
-          <li>Animator actor în costum premium</li>
-          <li>Jocuri, dansuri, baloane modelate</li>
-          <li>Pictură pe față + tatuaje temporare</li>
-          <li>Diplome magnetice pentru toți copiii</li>
+          <li>2 personaje costumati premium</li>
+          <li>Durata: 2 ore program dublu</li>
+          <li>Jocuri duble + confetti + baloane</li>
+          <li>Atentie individuala per copil</li>
+          <li>Recomandat pentru 15-35 copii</li>
+          <li>Transport inclus in Dimieni</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>💰 Pachete de la 490 lei</h3>
+        <h3>👑 Super 7 — 1290 RON</h3>
         <ul>
-          <li>Super 1 — 1 personaj, 2 ore — 490 lei</li>
-          <li>Super 3 — 2 personaje + confetti — 840 lei</li>
-          <li>+170 lei/oră sau personaj extra</li>
+          <li>1 animator + 4 ursitoare, 3 ore</li>
+          <li>Pachet botez sau aniversare mare</li>
+          <li>Program complet extins</li>
+          <li>Ideal 50-100 invitati</li>
+          <li>Transport inclus in Dimieni</li>
+          <li><a href="/animatori-petreceri-copii" style="color:var(--primary)">→ Toate pachetele</a></li>
         </ul>
-        <a href="/animatori-petreceri-copii" style="color:var(--primary);font-size:.85rem;display:block;margin-top:.6rem;font-weight:600;">→ Toate pachetele</a>
       </div>
     </div>
   </div>
@@ -111,29 +125,48 @@ const schema = JSON.stringify({
 
 <section class="loc-s-alt">
   <div class="container">
-    <h2 class="sec-title">Unde organizăm petrecerea în <span style="color:var(--primary)">Dimieni</span>?</h2>
-    <p style="color:var(--text-muted);margin-bottom:1.5rem;">Venim oriunde aveți spațiu — nu inventăm locații, ci ne adaptăm la ale voastre:</p>
-    <div class="tip-grid">
-      <div class="tip-card">🏠 La domiciliu<br><span style="font-size:.78rem;">curte sau sufragerie</span></div>
-      <div class="tip-card">🎂 Sală de petreceri<br><span style="font-size:.78rem;">locale, sală copii</span></div>
-      <div class="tip-card">🍽️ Restaurant family<br><span style="font-size:.78rem;">cu spațiu dedicat</span></div>
-      <div class="tip-card">🌳 Grădină<br><span style="font-size:.78rem;">petrecere în aer liber</span></div>
-      <div class="tip-card">🏫 Grădiniță/Școală<br><span style="font-size:.78rem;">la cerere specială</span></div>
-      <div class="tip-card">🏢 Club/Centru<br><span style="font-size:.78rem;">centre recreative</span></div>
+    <h2 class="sec-title">Locatii si petreceri in <span style="color:var(--primary)">Dimieni</span></h2>
+    <div class="rich-text">
+      <p><strong>Ansamblurile rezidentiale noi au curti interioare amenajate, perfecte pentru petreceri cu 15-30 copii.</strong> In <strong>Dimieni</strong> (Ilfov), locatiile disponibile includ: <strong>curti ansambluri</strong>, <strong>sali community</strong> si <strong>zona verde</strong>. animatorul supravegheaza programul in oricare spatiu disponibil — interior sau exterior.</p>
+      <p>Suburbie est pe DN2 — SuperParty acopera zona completa, ~20 km de Bucuresti (DN2). distanta mica de la Bucuresti inseamna punctualitate garantata si costuri de deplasare minime. Animatorul vine cu boxe portabile wireless, costume premium licentiate, materiale pentru jocuri interactive, baloane si tot ce e necesar pentru un program de 2-3 ore fara momente goale.</p>
+      <p>blocurile noi au si sali comunitare disponibile la cerere. Spatiul minim necesar este de 15-20 mp — in rest, animatorul se adapteaza la orice configuratie de spatiu. Fie ca este o sala dedicata sau o curte de bloc, rezultatul este acelasi: copii fericiti si parinti relaxati.</p>
     </div>
-    <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted);">Spațiu minim necesar: 15–20 mp. Noi aducem tot echipamentul.</p>
   </div>
 </section>
 
 <section class="loc-s">
   <div class="container">
-    <h2 class="sec-title">Întrebări despre animatori în <span style="color:var(--primary)">Dimieni</span></h2>
+    <h2 class="sec-title">Personaje disponibile in <span style="color:var(--primary)">Dimieni</span></h2>
+    <div class="rich-text">
+      <p>Cele mai cerute personaje SuperParty in zona <strong>Ilfov</strong>: <strong>PAW Patrol</strong>, <strong>Sonic</strong> si <strong>Bluey</strong>. SuperParty aduce aceleasi costume premium licentiate in Dimieni ca si in inima Capitalei — zero compromis la calitate indiferent de distanta.</p>
+      <p>Colectia completa SuperParty include peste <strong>50 de personaje</strong> disponibile la rezervare: super-eroi (Spider-Man, Batman, Captain America, Iron Man, Thor), printese Disney (Elsa, Rapunzel, Belle, Ariel, Aurora, Moana), personaje moderne (PAW Patrol, Sonic, Bluey, Miraculous Ladybug, Encanto), clasice (Clovnul vesel, Magicianul, Zanele). La doua saptamani dupa lansarea unui nou film sau serial, personajul apare in colectia noastra.</p>
+      <p>Programul inclus in orice pachet: <strong>jocuri interactive</strong> adaptate varstei (3-12 ani), <strong>baloane modelate</strong> pentru fiecare copil (animale, sabii, coroane), <strong>face painting</strong> tematic cu personajul ales, <strong>tatuaje temporare</strong> profesionale, <strong>mini disco</strong> cu muzica pentru copii si dans, <strong>diplome magnetice</strong> personalizate cu numele copilului aniversat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc-s-alt">
+  <div class="container">
+    <h2 class="sec-title">Cum rezervi animatori in <span style="color:var(--primary)">Dimieni</span></h2>
+    <div class="rich-text">
+      <p><strong>Pas 1 — Contacteaza:</strong> Suna la <strong>0722 744 377</strong> sau trimite un mesaj WhatsApp cu: data petrecerii, adresa exacta in Dimieni, varsta copilului aniversat si numarul aproximativ de copii invitati. Confirmare disponibilitate garantata in 30 minute.</p>
+      <p><strong>Pas 2 — Alege pachetul:</strong> Super 1 (490 RON, 1 personaj, 2 ore) pentru petreceri intime de 10-20 copii. Super 3 (840 RON, 2 personaje, 2 ore) pentru petreceri medii de 15-35 copii. Super 7 (1290 RON, 3 ore botez complet) pentru evenimente mari cu 50-100 invitati.</p>
+      <p><strong>Pas 3 — Contract si confirmare:</strong> Trimitem contractul digital in 24 ore. Plata se face DUPA petrecere, nu inainte. <strong>Garantia SuperParty</strong>: daca copiii nu s-au distrat si nu au ramas cu zambet pe fata, nu platesti — singurul serviciu de animatori din Romania cu garantie contractuala scrisa.</p>
+      <p><strong>Avans rezervare recomandat:</strong> 7-14 zile pentru saptamani normale, 2-3 saptamani pentru weekenduri si sezon mai-septembrie. Locurile pentru weekend se ocupa rapid — nu amanati rezervarea!</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc-s">
+  <div class="container">
+    <h2 class="sec-title">Intrebari despre animatori in <span style="color:var(--primary)">Dimieni</span></h2>
     <div class="faq-list">
       {[
-        ["Activați animatori în Dimieni?", "Da — acoperim Dimieni și localitățile învecinate. Contactați-ne cu data și adresa exactă pentru a confirma disponibilitatea."],
-        ["Există taxă de deplasare pentru Dimieni?", "Depinde de distanță (~18 km de la București). Contactați-ne pentru o ofertă completă inclusiv transport."],
-        ["Unde se poate organiza petrecerea în Dimieni?", "La domiciliu, la o sală de petreceri sau alt spațiu din Dimieni. Avem nevoie de minim 15–20 mp."],
-        ["Cu cât timp înainte rezervăm?", "Minim 7–14 zile, mai ales în weekend și sezon (mai–septembrie)."],
+        ["Organizati animatori in Dimieni?", "Da — SuperParty acopera Dimieni si zona Ilfov. Sunati la 0722 744 377 cu data si adresa pentru confirmare disponibilitate in 30 minute."],
+        ["Este taxa de deplasare pentru Dimieni?", "Distanta este ~20 km de la Bucuresti pe DN2. Taxa de deplasare se stabileste transparent la rezervare in functie de adresa exacta si ziua petrecerii."],
+        ["Unde se organizeaza petrecerea in Dimieni?", "Recomandam: curti ansambluri sau sali community. SuperParty se adapteaza oricarui spatiu cu minim 15-20 mp liberi. Aducem tot echipamentul necesar."],
+        ["Ce personaje pot alege pentru petrecerea din Dimieni?", "Colectia cuprinde 50+ personaje: PAW Patrol, Sonic, Bluey si multi altii. Mentionati preferinta la rezervare — verificam disponibilitatea costumului specific in acel weekend."],
+        ["Cu cat timp inainte rezervam animatorul in Dimieni?", "Minim 7-14 zile pentru saptamani normale. Pentru weekenduri de mai-septembrie si Craciun rezervati cu 3-4 saptamani inainte. Suna la 0722 744 377."],
       ].map(([q,a]) => (
         <div class="faq-item">
           <h3>❓ {q}</h3>
@@ -147,18 +180,16 @@ const schema = JSON.stringify({
 <section class="loc-s-alt">
   <div class="container">
     <div class="cta-box">
-      <h2>Rezervă animator în <span style="color:var(--primary)">Dimieni</span></h2>
-      <p>Spune-ne data, adresa și vârsta copiilor — îți confirmăm disponibilitatea și oferta în cel mult 24 ore.</p>
+      <h2>Rezerva animator in <span style="color:var(--primary)">Dimieni</span></h2>
+      <p>Confirmare disponibilitate in 30 minute. Plata dupa petrecere. Garantie contractuala scrisa.</p>
       <div class="cta-btns">
         <a href="tel:+40722744377" class="btn-p cta">📞 0722 744 377</a>
-        <a href="https://wa.me/40722744377?text=Salut%21%20Vreau%20o%20ofert%C4%83%20pentru%20animatori%20petrecere%20copii.%20Data%3A%20____%20Loca%C8%9Bie%3A%20____%20V%C3%A2rst%C4%83%3A%20____%20Nr.%20copii%3A%20____" class="btn-wa cta">💬 WhatsApp</a>
+        <a href="https://wa.me/40722744377" class="btn-wa cta">💬 WhatsApp</a>
       </div>
-      <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted);">
-        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600;">Pagina principală Animatori</a>
+      <p style="margin-top:1.2rem;font-size:.88rem;color:var(--text-muted)">
+        ← <a href="/animatori-petreceri-copii" style="color:var(--primary);font-weight:600">Pagina principala Animatori</a>
         &nbsp;|&nbsp;
-        <a href="/petreceri/ilfov" style="color:var(--primary);">Hub județ</a>
-        &nbsp;|&nbsp;
-        <a href="/arie-acoperire" style="color:var(--primary);">Toate zonele</a>
+        <a href="/arie-acoperire" style="color:var(--primary)">Toate zonele</a>
       </p>
     </div>
   </div>
