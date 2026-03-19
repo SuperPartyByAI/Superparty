@@ -1,0 +1,380 @@
+══════════════════════════════════════════════════════════════
+   AUDIT SEO — CUM VEDE GOOGLE SUPERPARTY.RO
+   2026-03-19 23:30 UTC
+══════════════════════════════════════════════════════════════
+
+📊 SCOR GLOBAL: 93/100  █████████░
+
+──────────────────────────────────────────────────────────────
+ INVENTAR PAGINI
+──────────────────────────────────────────────────────────────
+Total pagini .astro:        145
+Pagini INDEXATE de Google:  43
+Pagini NOINDEX (ascunse):   102
+Sitemap.xml:               ✅ găsit (43 URLs)
+Robots.txt:                ✅ găsit
+Robots blochează ceva:     ⚠️  DA — verifică!
+
+──────────────────────────────────────────────────────────────
+ PROBLEME CRITICE (⛔ = Google nu poate indexa corect)
+──────────────────────────────────────────────────────────────
+Pagini fără <title>:              ⛔ 1
+Pagini fără meta description:     ⛔ 1
+Pagini cu conținut <100 cuvinte:  ⛔ 1
+  → Fără titlu: recenzii
+  → Fără desc:  recenzii
+
+──────────────────────────────────────────────────────────────
+ PROBLEME IMPORTANTE (⚠️  = afectează rankingul)
+──────────────────────────────────────────────────────────────
+Pagini fără canonical URL:         ⚠️  1
+Pagini fără Schema JSON-LD:        ⚠️  1
+Conținut subțire (300-500w):       ⚠️  8
+Titlu prea lung (>70 caractere):   ✅ 0
+Titlu prea scurt (<30 caractere):  ✅ 0
+Descriere prea lungă (>165 chr):   ✅ 0
+Pagini fără tag H1:                ✅ 0
+Titlu fără cuvânt cheie principal: ⚠️  1
+
+──────────────────────────────────────────────────────────────
+ ANALIZA DETALIATA PE FIECARE PAGINA INDEXATA
+──────────────────────────────────────────────────────────────
+
+⛔ [15/100] ██░░░░░░░░  recenzii
+   Titlu:      ⛔ LIPSĂ
+   Descriere:  ⛔ LIPSĂ
+   Canonical:  ⚠️  LIPSĂ
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 72
+   Probleme:
+     ⛔ Lipsă titlu (<title>)
+     ⛔ Lipsă meta description
+     ⚠️  Lipsă canonical URL
+     ⛔ Conținut extrem de subțire (72 cuvinte)
+
+🟡 [75/100] ████████░░  animatori-copii-bucuresti/
+   Titlu:      "Animatori petreceri copii București | Superparty (#1) Peste 10.000 ..." (70chr)
+   Descriere:  "Liderii în animatori petreceri copii din București. Alege experiența premium Sup..." (165chr)
+   Canonical:  https://www.superparty.ro/animatori-copii-bucuresti/
+   Schema:     ⚠️  LIPSĂ | H1: ✅ | Cuvinte: 456
+   Probleme:
+     ⚠️  Lipsă JSON-LD Schema markup
+
+🟡 [80/100] ████████░░  arcade-baloane/
+   Titlu:      "Arcade Baloane Petreceri Copii | SuperParty" (43chr)
+   Descriere:  "Arcade din baloane personalizate pentru petreceri copii în București. Arcade tem..." (149chr)
+   Canonical:  https://www.superparty.ro/arcade-baloane
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 294
+   Probleme:
+     ⚠️  Conținut subțire (294 cuvinte, recomandat 500+)
+
+🟡 [80/100] ████████░░  baloane-cu-heliu/
+   Titlu:      "Baloane cu Heliu Petreceri Copii | SuperParty București" (55chr)
+   Descriere:  "Baloane cu heliu pentru petreceri copii în București — baloane latex colorate, b..." (157chr)
+   Canonical:  https://www.superparty.ro/baloane-cu-heliu
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 270
+   Probleme:
+     ⚠️  Conținut subțire (270 cuvinte, recomandat 500+)
+
+🟡 [80/100] ████████░░  contact/
+   Titlu:      "Contact SuperParty — Rezervare Animatori Petreceri Copii" (56chr)
+   Descriere:  "Contactează SuperParty pentru rezervare animatori petreceri copii în București ș..." (150chr)
+   Canonical:  https://www.superparty.ro/contact
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 260
+   Probleme:
+     ⚠️  Conținut subțire (260 cuvinte, recomandat 500+)
+
+🟡 [80/100] ████████░░  decoratiuni-baloane/
+   Titlu:      "Decorațiuni Baloane Petreceri Copii | SuperParty București" (58chr)
+   Descriere:  "Decorațiuni din baloane pentru petreceri copii: coloane, arcade, centrepiese, ga..." (148chr)
+   Canonical:  https://www.superparty.ro/decoratiuni-baloane
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 283
+   Probleme:
+     ⚠️  Conținut subțire (283 cuvinte, recomandat 500+)
+
+🟡 [80/100] ████████░░  homepage
+   Titlu:      "SuperParty — Animatori Petreceri Copii București & Ilfov" (56chr)
+   Descriere:  "Animatori profesioniști pentru petreceri copii în București și Ilfov. 8.000+ pet..." (158chr)
+   Canonical:  https://www.superparty.ro/
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 199
+   Probleme:
+     ⚠️  Conținut subțire (199 cuvinte, recomandat 500+)
+
+🟡 [80/100] ████████░░  ursitoare-botez/
+   Titlu:      "Ursitoare Botez | SuperParty București — Program Autentic" (57chr)
+   Descriere:  "Ursitoare profesioniste pentru botez în București. Program autentic 30-45 min, 1..." (161chr)
+   Canonical:  https://www.superparty.ro/ursitoare-botez
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 272
+   Probleme:
+     ⚠️  Conținut subțire (272 cuvinte, recomandat 500+)
+     ℹ️  Cuvântul cheie principal nu apare în titlu
+
+🟡 [80/100] ████████░░  vata-de-zahar-si-popcorn/
+   Titlu:      "Vată de Zahăr și Popcorn Petreceri Copii | SuperParty București" (63chr)
+   Descriere:  "Mașini de vată de zahăr și popcorn pentru petreceri copii în București. Chirie m..." (152chr)
+   Canonical:  https://www.superparty.ro/vata-de-zahar-si-popcorn
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 277
+   Probleme:
+     ⚠️  Conținut subțire (277 cuvinte, recomandat 500+)
+
+✅ [90/100] █████████░  galerie
+   Titlu:      "Galerie Foto Petreceri Copii | SuperParty București" (51chr)
+   Descriere:  "Galerie foto și video cu petreceri de copii animate de SuperParty în București. ..." (156chr)
+   Canonical:  https://www.superparty.ro/galerie
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 304
+   ✅ Toate verificările OK!
+
+✅ [90/100] █████████░  mos-craciun-de-inchiriat/
+   Titlu:      "Moș Crăciun de Închiriat Petreceri Copii | SuperParty București" (63chr)
+   Descriere:  "Moș Crăciun autentic pentru petreceri copii și vizite acasă în București. Costum..." (154chr)
+   Canonical:  https://www.superparty.ro/mos-craciun-de-inchiriat
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 304
+   ✅ Toate verificările OK!
+
+✅ [90/100] █████████░  petreceri/bragadiru
+   Titlu:      "Animatori Petreceri Copii Bragadiru | SuperParty | SuperParty" (61chr)
+   Descriere:  "Animatori profesioniști pentru petreceri copii în Bragadiru, Ilfov. Costume prem..." (128chr)
+   Canonical:  https://www.superparty.ro/petreceri/bragadiru
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 336
+   ✅ Toate verificările OK!
+
+✅ [90/100] █████████░  petreceri/buftea
+   Titlu:      "Animatori Petreceri Copii Buftea | SuperParty — Ilfov, Lacul Buftea" (67chr)
+   Descriere:  "Animatori copii în Buftea, Ilfov (20 km de București). Orașul studiouri și Lacul..." (139chr)
+   Canonical:  https://www.superparty.ro/petreceri/buftea
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 490
+   ✅ Toate verificările OK!
+
+✅ [90/100] █████████░  petreceri/chiajna
+   Titlu:      "Animatori Petreceri Copii Chiajna — Militari Residence | SuperParty" (67chr)
+   Descriere:  "Animatori copii în Chiajna Ilfov (8 km de București, Militari Residence). Cel ma..." (149chr)
+   Canonical:  https://www.superparty.ro/petreceri/chiajna
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 493
+   ✅ Toate verificările OK!
+
+✅ [90/100] █████████░  piniata/
+   Titlu:      "Piniată Personalizată Petreceri Copii | SuperParty București" (60chr)
+   Descriere:  "Piniate personalizate la comandă pentru petreceri copii în București. Forme 3D, ..." (134chr)
+   Canonical:  https://www.superparty.ro/piniata
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 428
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  animatori-petreceri-copii/
+   Titlu:      "Animatori Petreceri Copii București | SuperParty" (48chr)
+   Descriere:  "Animatori pentru petreceri copii în București și Ilfov. 50+ personaje costumate...." (144chr)
+   Canonical:  https://www.superparty.ro/animatori-petreceri-copii
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 978
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/aviatiei
+   Titlu:      "Animatori Petreceri Copii Aviației | SuperParty" (47chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Aviației, Sectorul 1. 50+ pers..." (146chr)
+   Canonical:  https://www.superparty.ro/petreceri/aviatiei
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 925
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/berceni
+   Titlu:      "Animatori Petreceri Copii Berceni | SuperParty" (46chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Berceni, Sectorul 4. 50+ perso..." (145chr)
+   Canonical:  https://www.superparty.ro/petreceri/berceni
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1060
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/bucuresti
+   Titlu:      "Animatori Petreceri Copii București | SuperParty" (48chr)
+   Descriere:  "Animatori petreceri copii în tot Bucureștiul — cartiere, sectoare, mall-uri, par..." (154chr)
+   Canonical:  https://www.superparty.ro/petreceri/bucuresti
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 672
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/calarasi
+   Titlu:      "Animatori Petreceri Copii Călărași | SuperParty" (47chr)
+   Descriere:  "Animatori copii în Călărași — 120 km de București, pe A2+DN3. Resedința județulu..." (133chr)
+   Canonical:  https://www.superparty.ro/petreceri/calarasi
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 810
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/colentina
+   Titlu:      "Animatori Petreceri Copii Colentina | SuperParty" (48chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Colentina, Sectorul 2. 50+ per..." (147chr)
+   Canonical:  https://www.superparty.ro/petreceri/colentina
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 998
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/crangasi
+   Titlu:      "Animatori Petreceri Copii Crângași | SuperParty" (47chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Crangasi, Sectorul 6. 50+ pers..." (146chr)
+   Canonical:  https://www.superparty.ro/petreceri/crangasi
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1070
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/dorobanti
+   Titlu:      "Animatori Petreceri Copii Dorobanți | SuperParty" (48chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Dorobanți, Sectorul 1. 50+ per..." (147chr)
+   Canonical:  https://www.superparty.ro/petreceri/dorobanti
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1205
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/dristor
+   Titlu:      "Animatori Petreceri Copii Dristor | SuperParty" (46chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Dristor, Sectorul 3. 50+ perso..." (145chr)
+   Canonical:  https://www.superparty.ro/petreceri/dristor
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 980
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/drumul-taberei
+   Titlu:      "Animatori Petreceri Copii Drumul Taberei | SuperParty" (53chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Drumul Taberei, Sectorul 6. 50..." (152chr)
+   Canonical:  https://www.superparty.ro/petreceri/drumul-taberei
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1044
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/floreasca
+   Titlu:      "Animatori Petreceri Copii Floreasca | SuperParty" (48chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Floreasca, Sectorul 2. 50+ per..." (147chr)
+   Canonical:  https://www.superparty.ro/petreceri/floreasca
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1180
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/giulesti
+   Titlu:      "Animatori Petreceri Copii Giulești | SuperParty" (47chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Giulești, Sectorul 6. 50+ pers..." (146chr)
+   Canonical:  https://www.superparty.ro/petreceri/giulesti
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1004
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/giurgiu
+   Titlu:      "Animatori Petreceri Copii Giurgiu | SuperParty" (46chr)
+   Descriere:  "Animatori copii în Giurgiu — 65 km de București pe DN5, poarta spre Bulgaria. Pa..." (128chr)
+   Canonical:  https://www.superparty.ro/petreceri/giurgiu
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 858
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/ilfov
+   Titlu:      "Animatori Petreceri Copii Ilfov — Toate Localitățile | SuperParty" (65chr)
+   Descriere:  "SuperParty acoperă toate localitățile din Ilfov (30+ comune și orașe). Animatori..." (159chr)
+   Canonical:  https://www.superparty.ro/petreceri/ilfov
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 532
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/militari
+   Titlu:      "Animatori Petreceri Copii Militari | SuperParty" (47chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Militari, Sectorul 6. 50+ pers..." (146chr)
+   Canonical:  https://www.superparty.ro/petreceri/militari
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 980
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/otopeni
+   Titlu:      "Animatori Petreceri Copii Otopeni | SuperParty — Ilfov Nord" (59chr)
+   Descriere:  "Animatori petreceri copii în Otopeni, Ilfov (14 km de București). 50+ personaje ..." (127chr)
+   Canonical:  https://www.superparty.ro/petreceri/otopeni
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 515
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/pantelimon-cartier
+   Titlu:      "Animatori Petreceri Copii Pantelimon | SuperParty" (49chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Pantelimon (Cartier), Sectorul..." (158chr)
+   Canonical:  https://www.superparty.ro/petreceri/pantelimon-cartier
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 968
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/popesti-leordeni
+   Titlu:      "Animatori Petreceri Copii Popești-Leordeni | SuperParty — Ilfov" (63chr)
+   Descriere:  "Animatori copii în Popești-Leordeni (8 km de București, Ilfov). Al 3-lea cel mai..." (145chr)
+   Canonical:  https://www.superparty.ro/petreceri/popesti-leordeni
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 537
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/rahova
+   Titlu:      "Animatori Petreceri Copii Rahova | SuperParty" (45chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Rahova, Sectorul 5. 50+ person..." (144chr)
+   Canonical:  https://www.superparty.ro/petreceri/rahova
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1131
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-1
+   Titlu:      "Animatori Petreceri Copii Sectorul 1 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty în Sectorul 1: Dorobanți, Floreasca, Aviatorilor. Animatori profesion..." (124chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-1
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1386
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-2
+   Titlu:      "Animatori Petreceri Copii Sectorul 2 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty acoperă Sectorul 2: Colentina,  Floreasca S2,  Tei. Animatori profesi..." (162chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-2
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1434
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-3
+   Titlu:      "Animatori Petreceri Copii Sectorul 3 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty acoperă Sectorul 3: Titan,  Dristor,  Vitan. Animatori profesionisti,..." (155chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-3
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1524
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-4
+   Titlu:      "Animatori Petreceri Copii Sectorul 4 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty acoperă Sectorul 4: Tineretului,  Berceni,  Oltenița. Animatori profe..." (164chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-4
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1486
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-5
+   Titlu:      "Animatori Petreceri Copii Sectorul 5 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty acoperă Sectorul 5: Rahova,  Sebastian,  Ferentari. Animatori profesi..." (162chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-5
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1512
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/sector-6
+   Titlu:      "Animatori Petreceri Copii Sectorul 6 | SuperParty — 490 RON, garantie" (69chr)
+   Descriere:  "SuperParty în Sectorul 6: Militari, Drumul Taberei, Crângași. Animatori profesio..." (125chr)
+   Canonical:  https://www.superparty.ro/petreceri/sector-6
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1559
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/tineretului
+   Titlu:      "Animatori Petreceri Copii Tineretului | SuperParty" (50chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Tineretului, Sectorul 4. 50+ p..." (149chr)
+   Canonical:  https://www.superparty.ro/petreceri/tineretului
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1037
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/titan
+   Titlu:      "Animatori Petreceri Copii Titan | SuperParty" (44chr)
+   Descriere:  "Animatori profesionisti pentru petreceri copii in Titan, Sectorul 3. 50+ persona..." (143chr)
+   Canonical:  https://www.superparty.ro/petreceri/titan
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 1188
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  petreceri/voluntari
+   Titlu:      "Animatori Petreceri Copii Voluntari — Pipera | SuperParty" (57chr)
+   Descriere:  "Animatori copii în Voluntari și Pipera (10 km de București). Zona internațională..." (154chr)
+   Canonical:  https://www.superparty.ro/petreceri/voluntari
+   Schema:     ✅ DA | H1: ✅ | Cuvinte: 513
+   ✅ Toate verificările OK!
+
+══════════════════════════════════════════════════════════════
+ PRIORITATI DE ACTIUNE
+══════════════════════════════════════════════════════════════
+
+1. ⛔ URGENT: Adaugă titlu pe 1 pagini: recenzii
+2. ⛔ URGENT: Adaugă meta description pe 1 pagini: recenzii
+3. ⛔ URGENT: Rescrie 1 pagini cu <100 cuvinte — Google le consideră "thin content"
+4. ⚠️  IMPORTANT: Adaugă canonical pe 1 pagini pentru a preveni duplicate
+5. ⚠️  IMPORTANT: Adaugă Schema JSON-LD pe 1 pagini pentru Rich Snippets în Google
+6. ⚠️  IMPORTANT: Extinde conținutul pe 8 pagini cu sub 300 cuvinte
+7. ℹ️  Adaugă cuvântul cheie "animatori petreceri copii" în titlul la 1 pagini
+
+══════════════════════════════════════════════════════════════
+ CONCLUZIE FINALA
+══════════════════════════════════════════════════════════════
+
+Scor mediu:     93/100
+Probleme CRITICE (Google nu poate indexa bine): 3
+Probleme IMPORTANTE (afectează rankingul):       10
+Pagini perfect optimizate:                       34/43
+
+⛔ SLAB: Probleme critice multiple — ranking slab garantat până la rezolvare!
+
+══════════════════════════════════════════════════════════════
