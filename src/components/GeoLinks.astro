@@ -1,0 +1,34 @@
+---
+const geoPages = [
+  { name: 'București', url: '/animatori-copii-bucuresti/' },
+  { name: 'Sector 1', url: '/animatori-copii-sector-1/' },
+  { name: 'Sector 2', url: '/animatori-copii-sector-2/' },
+  { name: 'Sector 3', url: '/animatori-copii-sector-3/' },
+  { name: 'Sector 4', url: '/animatori-copii-sector-4/' },
+  { name: 'Sector 5', url: '/animatori-copii-sector-5/' },
+  { name: 'Sector 6', url: '/animatori-copii-sector-6/' },
+  { name: 'Ilfov', url: '/animatori-copii-ilfov/' },
+  { name: 'Bragadiru', url: '/animatori-copii-bragadiru/' },
+  { name: 'Chiajna', url: '/animatori-copii-chiajna/' },
+  { name: 'Otopeni', url: '/animatori-copii-otopeni/' },
+  { name: 'Pantelimon', url: '/animatori-copii-pantelimon/' },
+  { name: 'Popești-Leordeni', url: '/animatori-copii-popesti-leordeni/' },
+  { name: 'Voluntari', url: '/animatori-copii-voluntari/' },
+];
+---
+<section class="geolinks-section" style="background-color: var(--dark-2); border-top: 1px solid rgba(255,107,53,0.15); padding: 2rem 0; margin-top: 3rem;">
+  <div class="container">
+    <h3 style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; text-align: center;">
+      Acoperire Superparty Locații &amp; Sectoare
+    </h3>
+    <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+      {geoPages.map((page) => (
+        <li>
+          <a href={page.url} style="color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.2s;">
+            Animatori copii {page.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

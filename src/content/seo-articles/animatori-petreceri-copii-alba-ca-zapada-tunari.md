@@ -1,3 +1,10 @@
+---
+title: "Animatori Petreceri Copii Alba Ca Zapada Tunari"
+description: "Organizam super petreceri pentru copii in locatia Animatori Petreceri Copii Alba Ca Zapada Tunari. Alege experienta SuperParty, cu personaje de poveste, jocuri fantastice si amintiri de neuitat!"
+indexStatus: "ready"
+robots: "index, follow"
+---
+
 
 
 <!-- UNIQUE-TEXT-V8 -->

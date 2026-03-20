@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -10,7 +10,9 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry } = Astro.props;
+type Props = { entry: CollectionEntry<'ghid'>; };
+
+const { entry } = Astro.props as Props;
 const { Content } = await entry.render();
 
 const cleanTitle = entry.data.title;

@@ -1,0 +1,515 @@
+﻿00:57:46 [vite] Re-optimizing dependencies because lockfile has changed
+00:57:52 [types] Generated 6.31s
+00:57:52 [check] Getting diagnostics for Astro files in C:\Users\ursac\Superparty...
+[96msrc/components/gallery/GalleryGrid.astro[0m:[93m45[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'PAGE_SIZE' is declared but its value is never read.
+
+[7m45[0m const PAGE_SIZE = 24;
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/components/gallery/GalleryGrid.astro[0m:[93m39[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'imagesJson' is declared but its value is never read.
+
+[7m39[0m const imagesJson = JSON.stringify(images.map(img => ({
+[7m  [0m [93m      ~~~~~~~~~~[0m
+[96msrc/components/gallery/GalleryGrid.astro[0m:[93m88[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m88[0m <script type="application/json" id="ggData">{imagesJson}</script>
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/PhotoSlider.astro[0m:[93m7[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SITE_ORIGIN' is declared but its value is never read.
+
+[7m7[0m import { SITE_ORIGIN } from '../config/site';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/layouts/Layout.astro[0m:[93m31[0m:[93m152[0m - [93mwarning[0m[90m ts(6133): [0m'rel' is declared but its value is never read.
+
+[7m31[0m   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+[7m  [0m [93m                                                                                                                                                       ~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m31[0m:[93m135[0m - [93mwarning[0m[90m ts(6133): [0m'onload' is declared but its value is never read.
+
+[7m31[0m   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+[7m  [0m [93m                                                                                                                                      ~~~~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m257[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m257[0m   <script type="module">
+[7m   [0m [93m          ~~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m230[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m230[0m   <script type="module">
+[7m   [0m [93m          ~~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m41[0m:[93m15[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m41[0m       <script type="text/partytown" define:vars={{ GA4_ID }}>
+[7m  [0m [93m              ~~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m40[0m:[93m15[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m40[0m       <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+[7m  [0m [93m              ~~~~[0m
+[96msrc/layouts/Layout.astro[0m:[93m28[0m:[93m22[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m28[0m   {schema && <script type="application/ld+json" set:html={schema} />}
+[7m  [0m [93m                     ~~~~[0m
+
+[96msrc/pages/animatori-copii-bragadiru/index.astro[0m:[93m223[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m223[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-bucuresti/index.astro[0m:[93m267[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m267[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-chiajna/index.astro[0m:[93m223[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m223[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-ilfov/index.astro[0m:[93m183[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m183[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-otopeni/index.astro[0m:[93m223[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m223[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-pantelimon/index.astro[0m:[93m223[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m223[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-popesti-leordeni/index.astro[0m:[93m223[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m223[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-1/index.astro[0m:[93m291[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m291[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-2/index.astro[0m:[93m305[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m305[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-3/index.astro[0m:[93m305[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m305[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-4/index.astro[0m:[93m305[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m305[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-5/index.astro[0m:[93m305[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m305[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-sector-6/index.astro[0m:[93m305[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m305[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-copii-voluntari/index.astro[0m:[93m195[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m195[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/animatori-petreceri-copii/index.astro[0m:[93m418[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m418[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/arie-acoperire.astro[0m:[93m7[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'searchData' is declared but its value is never read.
+
+[7m7[0m const searchData = [{"n": "Bucure╚Öti", "t": "city", "s": "bucuresti"}, {"n": "Pope╚Öti-Leordeni", "t": "town", "s": ""}, {"n": "Pantelimon", "t": "town", "s": ""}, {"n": "Chiajna", "t": "town", "s": ""}, {"n": "Voluntari", "t": "town", "s": ""}, {"n": "M─âgurele", "t": "town", "s": ""}, {"n": "Bragadiru", "t": "town", "s": ""}, {"n": "Chitila", "t": "town", "s": ""}, {"n": "Otopeni", "t": "town", "s": ""}, {"n": "Buftea", "t": "town", "s": ""}, {"n": "Mih─âile╚Öti", "t": "town", "s": "mihailesti"}, {"n": "Mihai Vod─â", "t": "town", "s": "mihai-voda"}, {"n": "Bolintin-Vale", "t": "town", "s": "bolintin-vale"}, {"n": "Fundulea", "t": "town", "s": "fundulea"}, {"n": "Bude╚Öti", "t": "town", "s": "budesti"}, {"n": "R─âcari", "t": "town", "s": "racari"}, {"n": "Fierbin╚¢i-T├órg", "t": "town", "s": "fierbinti-targ"}, {"n": "Videle", "t": "town", "s": ""}, {"n": "Titu", "t": "town", "s": ""}, {"n": "Urziceni", "t": "city", "s": ""}, {"n": "╨í╨╗╨╕╨▓╨╛ ╨┐╨╛╨╗╨╡", "t": "town", "s": ""}, {"n": "╨£╨░╤Ç╤é╨╡╨╜", "t": "town", "s": ""}, {"n": "Olteni╚¢a", "t": "city", "s": ""}, {"n": "Ploie╚Öti", "t": "city", "s": ""}, {"n": "╨ó╤â╤é╤Ç╨░╨║╨░╨╜", "t": "town", "s": ""}, {"n": "Lehliu-Gar─â", "t": "town", "s": ""}, {"n": "Giurgiu", "t": "city", "s": "giurgiu"}, {"n": "Urla╚¢i", "t": "town", "s": ""}, {"n": "╨á╤â╤ü╨╡", "t": "city", "s": ""}, {"n": "Bolde╚Öti-Sc─âeni", "t": "town", "s": ""}, {"n": "Mizil", "t": "town", "s": ""}, {"n": "B─âicoi", "t": "town", "s": ""}, {"n": "G─âe╚Öti", "t": "town", "s": ""}, {"n": "Plopeni", "t": "town", "s": ""}, {"n": "Moreni", "t": "city", "s": ""}, {"n": "T├órgovi╚Öte", "t": "city", "s": ""}, {"n": "C─âz─âne╚Öti", "t": "town", "s": ""}, {"n": "╨Ü╤â╨▒╤Ç╨░╤é", "t": "town", "s": ""}, {"n": "Alexandria", "t": "city", "s": ""}, {"n": "╨Æ╨╡╤é╨╛╨▓╨╛", "t": "town", "s": ""}, {"n": "╨ô╨╗╨░╨▓╨╕╨╜╨╕╤å╨░", "t": "town", "s": ""}, {"n": "C├ómpina", "t": "city", "s": ""}, {"n": "V─âlenii de Munte", "t": "town", "s": ""}, {"n": "╨í╨╕╤é╨╛╨▓╨╛", "t": "town", "s": ""}, {"n": "╨ù╨░╨▓╨╡╤é", "t": "town", "s": ""}, {"n": "╨í╨╡╨╜╨╛╨▓╨╛", "t": "town", "s": ""}, {"n": "Pogoanele", "t": "town", "s": ""}, {"n": "Pucioasa", "t": "town", "s": ""}, {"n": "Breaza", "t": "town", "s": ""}, {"n": "Sl─ânic", "t": "town", "s": ""}, {"n": "Topoloveni", "t": "town", "s": ""}, {"n": "╨ª╨░╤Ç ╨Ü╨░╨╗╨╛╤Å╨╜", "t": "town", "s": ""}, {"n": "╨ö╨▓╨╡ ╨╝╨╛╨│╨╕╨╗╨╕", "t": "town", "s": ""}, {"n": "Ro╚Öiorii de Vede", "t": "city", "s": ""}, {"n": "Fieni", "t": "town", "s": ""}, {"n": "Comarnic", "t": "town", "s": ""}, {"n": "╨ÿ╤ü╨┐╨╡╤Ç╨╕╤à", "t": "town", "s": ""}, {"n": "╨í╨╕╨╗╨╕╤ü╤é╤Ç╨░", "t": "city", "s": ""}, {"n": "Amara", "t": "town", "s": ""}, {"n": "Buz─âu", "t": "city", "s": ""}, {"n": "╨Ü╨╕╤é╨░╨╜╤ç╨╡╨▓╨╛", "t": "town", "s": ""}, {"n": "1 Mai", "t": "cartier", "s": ""}, {"n": "13 Septembrie", "t": "cartier", "s": ""}, {"n": "16 Februarie", "t": "cartier", "s": ""}, {"n": "21 Residence Politehnica", "t": "cartier", "s": ""}, {"n": "23 August", "t": "cartier", "s": ""}, {"n": "9 Mai", "t": "cartier", "s": ""}, {"n": "9 Mai", "t": "cartier", "s": ""}, {"n": "Adelaide Residence - Tunari", "t": "cartier", "s": ""}, {"n": "Agropol", "t": "cartier", "s": ""}, {"n": "Albert", "t": "cartier", "s": ""}, {"n": "Albert", "t": "cartier", "s": ""}, {"n": "Amber Gardens", "t": "cartier", "s": ""}, {"n": "Amfiteatru Residence", "t": "cartier", "s": ""}, {"n": "Ana Ip─âtescu", "t": "cartier", "s": ""}, {"n": "Ana Ip─âtescu", "t": "cartier", "s": ""}, {"n": "Andrei Mure╚Öanu", "t": "cartier", "s": ""}, {"n": "Andrei Mure╚Öanu", "t": "cartier", "s": ""}, {"n": "Andronache", "t": "cartier", "s": ""}, {"n": "Andronache", "t": "cartier", "s": ""}, {"n": "Ansamblul Reziden╚¢ial \"La Mesteceni\"", "t": "cartier", "s": ""}, {"n": "Ansamblul Reziden╚¢ial Antiaerian─â", "t": "cartier", "s": ""}, {"n": "Ansamblul Reziden╚¢ial Dealul Verde", "t": "cartier", "s": ""}, {"n": "Ansamblul Reziden╚¢ial Junior Pipera", "t": "cartier", "s": ""}, {"n": "Antim", "t": "cartier", "s": ""}, {"n": "Ap─âr─âtorii Patriei", "t": "cartier", "s": ""}, {"n": "Arge╚Öul", "t": "cartier", "s": ""}, {"n": "Arttemple Residence", "t": "cartier", "s": ""}, {"n": "Atlas Residence", "t": "cartier", "s": ""}, {"n": "Aviatorilor", "t": "cartier", "s": ""}, {"n": "Avia╚¢iei", "t": "cartier", "s": ""}, {"n": "Baba Novac", "t": "cartier", "s": ""}, {"n": "Baicului", "t": "cartier", "s": ""}, {"n": "Bariera Bucure╚Öti", "t": "cartier", "s": ""}, {"n": "Bariera Po╚Ötei - Bucov", "t": "cartier", "s": ""}, {"n": "Bariera Po╚Ötei - Bucov", "t": "cartier", "s": ""}, {"n": "Bazilescu", "t": "cartier", "s": ""}, {"n": "Bellu", "t": "cartier", "s": ""}, {"n": "Belvedere", "t": "cartier", "s": ""}, {"n": "Belvedere", "t": "cartier", "s": ""}, {"n": "Berceni", "t": "cartier", "s": ""}, {"n": "Bereasca", "t": "cartier", "s": ""}, {"n": "Bereasca", "t": "cartier", "s": ""}, {"n": "Beuca", "t": "cartier", "s": ""}, {"n": "Blanduzia", "t": "cartier", "s": ""}, {"n": "Bordeni", "t": "cartier", "s": ""}, {"n": "Br├óncoveanu", "t": "cartier", "s": ""}, {"n": "Br├óncu╚Öi", "t": "cartier", "s": ""}, {"n": "Br─âtia", "t": "cartier", "s": ""}, {"n": "Br─â╚¢─ârii", "t": "cartier", "s": ""}, {"n": "Bucov II", "t": "cartier", "s": ""}, {"n": "Bucov II", "t": "cartier", "s": ""}, {"n": "Bucure╚Ötii Noi", "t": "cartier", "s": ""}, {"n": "Bucure╚Ötii Noi", "t": "cartier", "s": ""}, {"n": "Bulevardul Bucure╚Öti", "t": "cartier", "s": ""}, {"n": "Bulgaru", "t": "cartier", "s": ""}, {"n": "B├ólciului", "t": "cartier", "s": ""}, {"n": "B─âleni-S├órbi", "t": "cartier", "s": ""}, {"n": "B─âneasa", "t": "cartier", "s": "baneasa"}, {"n": "B─âneasa - D─âm─âroaia", "t": "cartier", "s": ""}, {"n": "C. A. Rosetti", "t": "cartier", "s": ""}, {"n": "Calicilor", "t": "cartier", "s": ""}, {"n": "Cantacuzu", "t": "cartier", "s": ""}, {"n": "Carino", "t": "cartier", "s": ""}, {"n": "Carino", "t": "cartier", "s": ""}, {"n": "Carol", "t": "cartier", "s": ""}, {"n": "Cartier Alexandru Marghiloman", "t": "cartier", "s": ""}, {"n": "Cartier Bro╚Öteni", "t": "cartier", "s": ""}, {"n": "Cartier CFR", "t": "cartier", "s": ""}, {"n": "Cartier Constitu╚¢iei", "t": "cartier", "s": ""}, {"n": "Cartier Cr├óng", "t": "cartier", "s": ""}, {"n": "Cartier Democra╚¢iei", "t": "cartier", "s": ""}, {"n": "Cartier Doroban╚¢i", "t": "cartier", "s": ""}, {"n": "Cartier Episcopiei", "t": "cartier", "s": ""}, {"n": "Cartier Horticolei", "t": "cartier", "s": ""}, {"n": "Cartier Mihai Viteazul", "t": "cartier", "s": ""}, {"n": "Cartier Nicolae B─âlcescu", "t": "cartier", "s": ""}, {"n": "Cartier Nicolae Titulescu", "t": "cartier", "s": ""}, {"n": "Cartier Orizont", "t": "cartier", "s": ""}, {"n": "Cartier Po╚Öt─â", "t": "cartier", "s": ""}, {"n": "Cartier Reziden╚¢ial Byzantium", "t": "cartier", "s": ""}];
+[7m [0m [93m      ~~~~~~~~~~[0m
+[96msrc/pages/arie-acoperire.astro[0m:[93m1981[0m:[93m19[0m - [91merror[0m[90m ts(2339): [0mProperty 'href' does not exist on type 'HTMLSpanElement'.
+
+[7m1981[0m       if (d.s) el.href = "/petreceri/" + d.s;
+[7m    [0m [91m                  ~~~~[0m
+[96msrc/pages/arie-acoperire.astro[0m:[93m1972[0m:[93m20[0m - [91merror[0m[90m ts(2339): [0mProperty 'value' does not exist on type 'HTMLElement'.
+
+[7m1972[0m     const q = this.value.toLowerCase().trim();
+[7m    [0m [91m                   ~~~~~[0m
+
+[96msrc/pages/ghid/index.astro[0m:[93m23[0m:[93m23[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'post' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m23[0m           {posts.map((post) => (
+[7m  [0m [93m                      ~~~~[0m
+[96msrc/pages/ghid/index.astro[0m:[93m6[0m:[93m16[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'b' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m posts.sort((a, b) => (b.data.pubDate?.valueOf() || 0) - (a.data.pubDate?.valueOf() || 0));
+[7m [0m [93m               ~[0m
+[96msrc/pages/ghid/index.astro[0m:[93m6[0m:[93m13[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'a' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m posts.sort((a, b) => (b.data.pubDate?.valueOf() || 0) - (a.data.pubDate?.valueOf() || 0));
+[7m [0m [93m            ~[0m
+
+[96msrc/pages/ghid/[slug].astro[0m:[93m33[0m:[93m24[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m33[0m           <span>{entry.data.readTime || '5 minute citire'}</span>
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m31[0m:[93m24[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m31[0m           <span>{entry.data.category || 'Ghid Educa╚¢ional'}</span>
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m18[0m:[93m23[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m18[0m const heroImg = entry.data.heroImage || '/wp-content/uploads/2024/09/spiderman-animator-petrecere-copii-bucuresti-copie-1-scaled.jpg';
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m17[0m:[93m25[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m17[0m const cleanDesc = entry.data.description;
+[7m  [0m [91m                        ~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m16[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m16[0m const cleanTitle = entry.data.title;
+[7m  [0m [91m                         ~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m14[0m:[93m33[0m - [91merror[0m[90m ts(2339): [0mProperty 'render' does not exist on type 'never'.
+
+[7m14[0m const { Content } = await entry.render();
+[7m  [0m [91m                                ~~~~~~[0m
+[96msrc/pages/ghid/[slug].astro[0m:[93m7[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'entry' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m7[0m   return ghidEntries.map(entry => ({
+[7m [0m [93m                         ~~~~~[0m
+
+[96msrc/pages/index.astro[0m:[93m11[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'homeSchema' is declared but its value is never read.
+
+[7m11[0m const homeSchema = JSON.stringify({
+[7m  [0m [93m      ~~~~~~~~~~[0m
+[96msrc/pages/index.astro[0m:[93m374[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m374[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+[96msrc/pages/petreceri/aviatiei.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/aviatiei.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/berceni.astro[0m:[93m206[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m206[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/berceni.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/bragadiru.astro[0m:[93m137[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m137[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/bragadiru.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/colentina.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/colentina.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/crangasi.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/crangasi.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/dorobanti.astro[0m:[93m206[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m206[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/dorobanti.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/dristor.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/dristor.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/drumul-taberei.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/drumul-taberei.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/floreasca.astro[0m:[93m206[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m206[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/floreasca.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/giulesti.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/giulesti.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/militari.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/militari.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/pantelimon-cartier.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/pantelimon-cartier.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/rahova.astro[0m:[93m206[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m206[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/rahova.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/tineretului.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/tineretului.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/titan.astro[0m:[93m203[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m203[0m       {hubArticles.map(article => (
+[7m   [0m [93m                       ~~~~~~~[0m
+[96msrc/pages/petreceri/titan.astro[0m:[93m6[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'article' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m6[0m const hubArticles = allArticles.filter(article =>
+[7m [0m [93m                                       ~~~~~~~[0m
+
+[96msrc/pages/petreceri/[slug].astro[0m:[93m171[0m:[93m34[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m171[0m                 data-slug={entry.slug}
+[7m   [0m [91m                                 ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m160[0m:[93m34[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m160[0m                 data-slug={entry.slug}
+[7m   [0m [91m                                 ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m123[0m:[93m18[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m123[0m           {entry.data.description}
+[7m   [0m [91m                 ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m120[0m:[93m18[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m120[0m           {entry.data.title}
+[7m   [0m [91m                 ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m107[0m:[93m22[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m107[0m   description={entry.data.description}
+[7m   [0m [91m                     ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m106[0m:[93m16[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m106[0m   title={entry.data.title}
+[7m   [0m [91m               ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m100[0m:[93m103[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m100[0m   `Bun─â! Sunt interesat(─â) de: ${entry.data.title}\nLink: https://www.superparty.ro/petreceri/${entry.slug}\nData petrecerii: \nLocalitate/Sector: \nV├órsta copilului: \nNr. copii: `
+[7m   [0m [91m                                                                                                      ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m100[0m:[93m40[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m100[0m   `Bun─â! Sunt interesat(─â) de: ${entry.data.title}\nLink: https://www.superparty.ro/petreceri/${entry.slug}\nData petrecerii: \nLocalitate/Sector: \nV├órsta copilului: \nNr. copii: `
+[7m   [0m [91m                                       ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m70[0m:[93m59[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m70[0m       "url": `https://www.superparty.ro/petreceri/${entry.slug}`,
+[7m  [0m [91m                                                          ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m58[0m:[93m51[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m58[0m       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
+[7m  [0m [91m                                                  ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m58[0m:[93m30[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m58[0m       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
+[7m  [0m [91m                             ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m57[0m:[93m28[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m57[0m       "description": entry.data.description,
+[7m  [0m [91m                           ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m56[0m       "headline": entry.data.title,
+[7m  [0m [91m                        ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m52[0m:[93m59[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m52[0m       "url": `https://www.superparty.ro/petreceri/${entry.slug}`
+[7m  [0m [91m                                                          ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m36[0m:[93m91[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m36[0m const canonicalUrl = entry.data.canonical ?? `https://www.superparty.ro/petreceri/${entry.slug}`;
+[7m  [0m [91m                                                                                          ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m36[0m:[93m28[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m36[0m const canonicalUrl = entry.data.canonical ?? `https://www.superparty.ro/petreceri/${entry.slug}`;
+[7m  [0m [91m                           ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m31[0m:[93m73[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m31[0m const hasRobotsNoindex = typeof entry.data.robots === 'string' && entry.data.robots.includes('noindex');
+[7m  [0m [91m                                                                        ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m31[0m:[93m39[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m31[0m const hasRobotsNoindex = typeof entry.data.robots === 'string' && entry.data.robots.includes('noindex');
+[7m  [0m [91m                                      ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m30[0m:[93m22[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m30[0m const isHold = entry.data.indexStatus === 'hold';
+[7m  [0m [91m                     ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m20[0m:[93m64[0m - [91merror[0m[90m ts(2339): [0mProperty 'slug' does not exist on type 'never'.
+
+[7m20[0m const pageReviews = siteReviews.filter((t) => t.slug === entry.slug).slice(0, 3);
+[7m  [0m [91m                                                               ~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m16[0m:[93m33[0m - [91merror[0m[90m ts(2339): [0mProperty 'render' does not exist on type 'never'.
+
+[7m16[0m const { Content } = await entry.render();
+[7m  [0m [91m                                ~~~~~~[0m
+[96msrc/pages/petreceri/[slug].astro[0m:[93m9[0m:[93m23[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'entry' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m9[0m   return articles.map(entry => ({
+[7m [0m [93m                      ~~~~~[0m
+
+[96msrc/pages/recenzii.astro[0m:[93m474[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m474[0m <script type="application/ld+json">
+[7m   [0m [93m        ~~~~[0m
+
+Result (155 files): 
+- 29 errors
+- 0 warnings
+- 65 hints
+

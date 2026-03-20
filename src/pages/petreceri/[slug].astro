@@ -58,6 +58,33 @@ const schemaData = {
       "datePublished": entry.data.pubDate ? entry.data.pubDate.toISOString() : new Date().toISOString(),
       "author": { "@type": "Organization", "name": "SuperParty" }
     },
+    {
+      "@type": "Service",
+      "name": "Animatori Petreceri Copii București și Ilfov",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SuperParty",
+        "telephone": "0722744377"
+      },
+      "areaServed": "București, Ilfov",
+      "url": `https://www.superparty.ro/petreceri/${entry.slug}`,
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Pachet Classic Animatori",
+          "price": "250",
+          "priceCurrency": "RON",
+          "description": "1.5 ore animatie, 1 animator, personaj ales"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pachet Premium Animatori",
+          "price": "450",
+          "priceCurrency": "RON",
+          "description": "2 ore animatie, 2 animatori, masina balonase"
+        }
+      ]
+    },
     ...(cleanReviews.length > 0 ? cleanReviews.map((t: any) => ({
       "@type": "Review",
       "itemReviewed": { "@type": "LocalBusiness", "name": "SuperParty" },

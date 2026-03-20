@@ -1,4 +1,5 @@
 ---
+import GeoLinks from '../components/GeoLinks.astro';
 export interface Props {
   title: string;
   description?: string;
@@ -195,6 +196,8 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   </nav>
 
   <slot />
+
+  <GeoLinks />
 
   <footer>
     <div class="container">
