@@ -233,6 +233,56 @@
             "source": "/portfolio/:path*",
             "destination": "/animatori-petreceri-copii",
             "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-mickey-mouse-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-paw-patrol-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-pikachu-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-batman-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-spiderman-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-moana-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-rapunzel-petreceri-copii-bucuresti",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/animator-:personaj-petreceri-copii-:oras",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/sfaturi-ghiduri",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
+        },
+        {
+            "source": "/petreceri/petrecere-:path*",
+            "destination": "/animatori-petreceri-copii",
+            "permanent": true
         }
     ]
 }
