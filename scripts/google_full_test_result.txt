@@ -1,38 +1,36 @@
 ╔══════════════════════════════════════════════════════════════╗
 ║    TEST COMPLET SEO — CUM VEDE GOOGLE SUPERPARTY.RO         ║
-║    Data: 2026-03-20  Ora: 00:18 UTC            ║
+║    Data: 2026-03-20  Ora: 02:09 UTC            ║
 ╚══════════════════════════════════════════════════════════════╝
 
-📊 SCOR PAGINI INDEXATE: 97/100  ██████████
-📊 SCOR TOATE PAGINILE:  93/100  █████████░
+📊 SCOR PAGINI INDEXATE: 95/100  ██████████
+📊 SCOR TOATE PAGINILE:  95/100  ██████████
 
 ┌──────────────────────────────────────────────────────────────┐
 │  INVENTAR COMPLET SITE                                       │
 └──────────────────────────────────────────────────────────────┘
 Total fișiere .astro (pagini):     145
-  ✅ Indexate de Google:           43
-  🚫 NOINDEX (ascunse):            102
-Sitemap.xml:  ✅ găsit — 43 URL-uri
+  ✅ Indexate de Google:           144
+  🚫 NOINDEX (ascunse):            1
+Sitemap.xml:  ✅ găsit — 144 URL-uri
 Robots.txt:   ✅ găsit
 ⚠️  Robots.txt blochează: /api/
 
 ┌──────────────────────────────────────────────────────────────┐
 │  CALITATE CONȚINUT (pagini indexate)                         │
 └──────────────────────────────────────────────────────────────┘
-Conținut BOGAT (400+ cuvinte):   ✅ 28 pagini
-Conținut MEDIU (200-400w):       🟡 13 pagini
-Conținut SUBȚIRE (50-200w):      🟠 2 pagini
+Conținut BOGAT (400+ cuvinte):   ✅ 144 pagini
+Conținut MEDIU (200-400w):       🟡 0 pagini
+Conținut SUBȚIRE (50-200w):      🟠 0 pagini
 Conținut CRITIC (<50w):          ⛔ 0 pagini
-  🟠 [164w] /
-  🟠 [62w] /recenzii
 
 ┌──────────────────────────────────────────────────────────────┐
 │  SEO TEHNIC — ELEMENTE FUNDAMENTALE (pagini indexate)        │
 └──────────────────────────────────────────────────────────────┘
 Titlu <title>:          ✅ Toate OK
 Meta description:       ✅ Toate OK
-Canonical URL:          ⚠️  LIPSĂ pe 1 pagini
-Schema JSON-LD:         ✅ Toate OK
+Canonical URL:          ⚠️  LIPSĂ pe 7 pagini
+Schema JSON-LD:         ⚠️  LIPSĂ pe 13 pagini
 H1 unic:                ✅ Toate OK
   - Fără H1:            ✅ 0
   - Multiple H1:        ✅ 0
@@ -42,21 +40,21 @@ Imagini fără alt:       ⚠️  1 pagini cu alt lipsă
 ┌──────────────────────────────────────────────────────────────┐
 │  SITEMAP — ACOPERIRE INDEXATE                                │
 └──────────────────────────────────────────────────────────────┘
-URL-uri în sitemap:     43
-Pagini indexate total:  43
-În sitemap:             43/43
+URL-uri în sitemap:     144
+Pagini indexate total:  144
+În sitemap:             144/144
 ✅ Toate paginile indexate sunt în sitemap!
 
 ┌──────────────────────────────────────────────────────────────┐
 │  SCHEMA JSON-LD — TIPURI DETECTATE                          │
 └──────────────────────────────────────────────────────────────┘
-  Question                  → 171 pagini
-  Answer                    → 171 pagini
-  ListItem                  → 106 pagini
-  LocalBusiness             → 56 pagini
-  FAQPage                   → 32 pagini
-  BreadcrumbList            → 31 pagini
-  Service                   → 30 pagini
+  Question                  → 611 pagini
+  Answer                    → 611 pagini
+  ListItem                  → 370 pagini
+  LocalBusiness             → 144 pagini
+  FAQPage                   → 120 pagini
+  BreadcrumbList            → 119 pagini
+  Service                   → 118 pagini
   AggregateRating           → 26 pagini
   Place                     → 14 pagini
   Review                    → 5 pagini
@@ -74,354 +72,1067 @@ Pagini indexate total:  43
 ┌──────────────────────────────────────────────────────────────┐
 │  CONȚINUT DUPLICAT — SIMILARITATE ÎNTRE PAGINI               │
 └──────────────────────────────────────────────────────────────┘
-Perechi > 30% similaritate: ⚠️  1
-Perechi > 20% similaritate: 100 (include structură CSS/HTML)
+Perechi > 30% similaritate: ⚠️  10296
+Perechi > 20% similaritate: 10296 (include structură CSS/HTML)
 
 Top perechi > 30%:
-  🟠 30.1%  petreceri/colentina ↔ petreceri/pantelimon-cartier
+  ⛔ 99.7%  petreceri/candeasca ↔ petreceri/cojesti
+  ⛔ 99.7%  petreceri/glina ↔ petreceri/petrachioaia
+  ⛔ 99.5%  petreceri/caldararu ↔ petreceri/tunari
+  ⛔ 99.5%  petreceri/dascalu ↔ petreceri/glina
+  ⛔ 99.5%  petreceri/dascalu ↔ petreceri/petrachioaia
+  ⛔ 99.5%  petreceri/domnesti ↔ petreceri/tunari
+  ⛔ 99.4%  petreceri/caldararu ↔ petreceri/domnesti
+  ⛔ 99.4%  petreceri/campurelu ↔ petreceri/iepuresti
+  ⛔ 99.4%  petreceri/candeasca ↔ petreceri/cranguri
+  ⛔ 99.4%  petreceri/ciorogarla ↔ petreceri/cornetu
+  ⛔ 99.4%  petreceri/cojesti ↔ petreceri/cranguri
+  ⛔ 99.4%  petreceri/cretesti ↔ petreceri/stefanestii-de-jos
+  ⛔ 99.4%  petreceri/cretesti ↔ petreceri/tunari
+  ⛔ 99.4%  petreceri/stefanestii-de-jos ↔ petreceri/tunari
+  ⛔ 99.2%  petreceri/1-decembrie ↔ petreceri/cretesti
 
 ┌──────────────────────────────────────────────────────────────┐
 │  ANALIZA DETALIATA — PAGINI INDEXATE (ordine scor, worst first)│
 └──────────────────────────────────────────────────────────────┘
 
-🟡 [ 72/100] ███████░░░  /recenzii
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-1
+   Titlu (70chr): "Animatori petreceri copii Sector 1 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 1. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:11  |  Cuvinte: 1531  |  Img: 0(0 fără alt)  |  LinkInt: 4
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-2
+   Titlu (70chr): "Animatori petreceri copii Sector 2 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 2. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:13  |  Cuvinte: 1687  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-3
+   Titlu (70chr): "Animatori petreceri copii Sector 3 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 3. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:13  |  Cuvinte: 1691  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-4
+   Titlu (70chr): "Animatori petreceri copii Sector 4 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 4. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:13  |  Cuvinte: 1698  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-5
+   Titlu (70chr): "Animatori petreceri copii Sector 5 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 5. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:13  |  Cuvinte: 1681  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 80/100] ████████░░  /animatori-copii-sector-6
+   Titlu (70chr): "Animatori petreceri copii Sector 6 | Superparty (#1) Peste 1..."
+   Desc  (165chr): "Liderii în animatori petreceri copii din Sector 6. Alege experiența pr..."
+   Canonical: ⚠️  LIPSĂ  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:13 H3:13  |  Cuvinte: 1698  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă canonical URL
+     ⚠️  Lipsă Schema JSON-LD
+
+🟡 [ 86/100] █████████░  /recenzii
    Titlu (9chr): "[DINAMIC]"
    Desc  (9chr): "[DINAMIC]..."
    Canonical: ⚠️  LIPSĂ  |  Schema: WebPage, BreadcrumbList, ListItem
-   H1:1 H2:1 H3:0  |  Cuvinte: 62  |  Img: 0(0 fără alt)  |  LinkInt: 1
+   H1:1 H2:8 H3:9  |  Cuvinte: 1463  |  Img: 0(0 fără alt)  |  LinkInt: 2
      ⚠️  Lipsă canonical URL
-     ⚠️  Conținut subțire (62w, ideal 500+)
 
-🟡 [ 81/100] ████████░░  /
+🟡 [ 88/100] █████████░  /petreceri/adunatii-copaceni
+   Titlu (72chr): "Animatori Petreceri Copii Adunații-Copăceni | SuperParty — d..."
+   Desc  (189chr): "Animatori profesionisti pentru petreceri copii in Adunații-Copăceni (G..."
+   Canonical: https://www.superparty.ro/petreceri/adunatii-copaceni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1619  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (72chr > 65)
+     ℹ️  Desc prea lungă (189chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/ciorogirla
+   Titlu (71chr): "Animatori Petreceri Copii Ciorogârla (sat) | SuperParty — de..."
+   Desc  (186chr): "Animatori profesionisti pentru petreceri copii in Ciorogârla (sat) (Il..."
+   Canonical: https://www.superparty.ro/petreceri/ciorogirla  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1634  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (71chr > 65)
+     ℹ️  Desc prea lungă (186chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/dragomiresti-deal
+   Titlu (72chr): "Animatori Petreceri Copii Dragomirești-Deal | SuperParty — d..."
+   Desc  (188chr): "Animatori profesionisti pentru petreceri copii in Dragomirești-Deal (I..."
+   Canonical: https://www.superparty.ro/petreceri/dragomiresti-deal  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1603  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (72chr > 65)
+     ℹ️  Desc prea lungă (188chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/dragomiresti-vale
+   Titlu (72chr): "Animatori Petreceri Copii Dragomirești-Vale | SuperParty — d..."
+   Desc  (188chr): "Animatori profesionisti pentru petreceri copii in Dragomirești-Vale (I..."
+   Canonical: https://www.superparty.ro/petreceri/dragomiresti-vale  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1601  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (72chr > 65)
+     ℹ️  Desc prea lungă (188chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/ordoreanu-vatra-veche
+   Titlu (76chr): "Animatori Petreceri Copii Ordoreanu-Vatra Veche | SuperParty..."
+   Desc  (195chr): "Animatori profesionisti pentru petreceri copii in Ordoreanu-Vatra Vech..."
+   Canonical: https://www.superparty.ro/petreceri/ordoreanu-vatra-veche  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1642  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (76chr > 65)
+     ℹ️  Desc prea lungă (195chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/stefanestii-de-jos
+   Titlu (73chr): "Animatori Petreceri Copii Ștefăneștii de Jos | SuperParty — ..."
+   Desc  (188chr): "Animatori profesionisti pentru petreceri copii in Ștefăneștii de Jos (..."
+   Canonical: https://www.superparty.ro/petreceri/stefanestii-de-jos  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1625  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (73chr > 65)
+     ℹ️  Desc prea lungă (188chr > 160)
+
+🟡 [ 88/100] █████████░  /petreceri/valea-piersicilor
+   Titlu (72chr): "Animatori Petreceri Copii Valea Piersicilor | SuperParty — d..."
+   Desc  (187chr): "Animatori profesionisti pentru petreceri copii in Valea Piersicilor (I..."
+   Canonical: https://www.superparty.ro/petreceri/valea-piersicilor  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1637  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Titlu prea lung (72chr > 65)
+     ℹ️  Desc prea lungă (187chr > 160)
+
+✅ [ 90/100] █████████░  /animatori-copii-bragadiru
+   Titlu (44chr): "Animatori Copii Bragadiru | SuperParty Ilfov"
+   Desc  (150chr): "Animatori petreceri copii în Bragadiru, Ilfov (zona Militari/Rahova). ..."
+   Canonical: https://www.superparty.ro/animatori-copii-bragadiru/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:10  |  Cuvinte: 1673  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-chiajna
+   Titlu (57chr): "Animatori Copii Chiajna — Militari Residence | SuperParty"
+   Desc  (153chr): "Animatori petreceri copii în Chiajna, Ilfov (Militari Residence, Roșu)..."
+   Canonical: https://www.superparty.ro/animatori-copii-chiajna/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:10  |  Cuvinte: 1672  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-ilfov
+   Titlu (55chr): "Animatori Copii Ilfov — Toate Localitățile | SuperParty"
+   Desc  (156chr): "Animatori petreceri copii în toate localitățile din județul Ilfov. Sup..."
+   Canonical: https://www.superparty.ro/animatori-copii-ilfov/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:9  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-otopeni
+   Titlu (49chr): "Animatori Copii Otopeni | SuperParty — Ilfov Nord"
+   Desc  (154chr): "Animatori petreceri copii în Otopeni, Ilfov (14 km de Piața Unirii). P..."
+   Canonical: https://www.superparty.ro/animatori-copii-otopeni/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:10  |  Cuvinte: 1705  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-pantelimon
+   Titlu (45chr): "Animatori Copii Pantelimon Ilfov | SuperParty"
+   Desc  (141chr): "Animatori petreceri copii în Pantelimon, Ilfov. SuperParty de la 490 R..."
+   Canonical: https://www.superparty.ro/animatori-copii-pantelimon/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:10  |  Cuvinte: 1691  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-popesti-leordeni
+   Titlu (51chr): "Animatori Copii Popești-Leordeni | SuperParty Ilfov"
+   Desc  (137chr): "Animatori petreceri copii în Popești-Leordeni, Ilfov (8 km sud de Bucu..."
+   Canonical: https://www.superparty.ro/animatori-copii-popesti-leordeni/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:10  |  Cuvinte: 1686  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 90/100] █████████░  /animatori-copii-voluntari
+   Titlu (70chr): "Animatori petreceri copii Voluntari | Superparty (#1) Peste ..."
+   Desc  (164chr): "Liderii în animatori petreceri copii aduc magia 100% Superparty direct..."
+   Canonical: https://www.superparty.ro/animatori-copii-voluntari/  |  Schema: ⚠️  LIPSĂ
+   H1:1 H2:11 H3:13  |  Cuvinte: 1651  |  Img: 0(0 fără alt)  |  LinkInt: 5
+     ⚠️  Lipsă Schema JSON-LD
+
+✅ [ 94/100] █████████░  /petreceri/1-decembrie
+   Titlu (66chr): "Animatori Petreceri Copii 1 Decembrie | SuperParty — de la 4..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in 1 Decembrie (Ilfov),..."
+   Canonical: https://www.superparty.ro/petreceri/1-decembrie  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1593  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/afumati
+   Titlu (62chr): "Animatori Petreceri Copii Afumați | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Afumați (Ilfov), ~18..."
+   Canonical: https://www.superparty.ro/petreceri/afumati  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/alunisu
+   Titlu (62chr): "Animatori Petreceri Copii Alunișu | SuperParty — de la 490 R..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Alunișu (Giurgiu), ~..."
+   Canonical: https://www.superparty.ro/petreceri/alunisu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1615  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/bacu
+   Titlu (59chr): "Animatori Petreceri Copii Bâcu | SuperParty — de la 490 RON"
+   Desc  (176chr): "Animatori profesionisti pentru petreceri copii in Bâcu (Giurgiu), ~17 ..."
+   Canonical: https://www.superparty.ro/petreceri/bacu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1625  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (176chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/balaceanca
+   Titlu (65chr): "Animatori Petreceri Copii Bălăceanca | SuperParty — de la 49..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Bălăceanca (Ilfov), ..."
+   Canonical: https://www.superparty.ro/petreceri/balaceanca  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1594  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/balotesti
+   Titlu (64chr): "Animatori Petreceri Copii Balotești | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Balotești (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/balotesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1601  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/baneasa
+   Titlu (62chr): "Animatori Petreceri Copii Băneasa | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Băneasa (Ilfov), ~12..."
+   Canonical: https://www.superparty.ro/petreceri/baneasa  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1599  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/belciugatele
+   Titlu (67chr): "Animatori Petreceri Copii Belciugatele | SuperParty — de la ..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Belciugatele (Calara..."
+   Canonical: https://www.superparty.ro/petreceri/belciugatele  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/berceni-ilfov
+   Titlu (70chr): "Animatori Petreceri Copii Berceni (Ilfov) | SuperParty — de ..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Berceni (Ilfov) (Ilf..."
+   Canonical: https://www.superparty.ro/petreceri/berceni-ilfov  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1628  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/bolintin-deal
+   Titlu (68chr): "Animatori Petreceri Copii Bolintin-Deal | SuperParty — de la..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Bolintin-Deal (Giurg..."
+   Canonical: https://www.superparty.ro/petreceri/bolintin-deal  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1612  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/bolintin-vale
+   Titlu (68chr): "Animatori Petreceri Copii Bolintin-Vale | SuperParty — de la..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Bolintin-Vale (Giurg..."
+   Canonical: https://www.superparty.ro/petreceri/bolintin-vale  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1607  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/branesti
+   Titlu (63chr): "Animatori Petreceri Copii Brănești | SuperParty — de la 490 ..."
+   Desc  (178chr): "Animatori profesionisti pentru petreceri copii in Brănești (Ilfov), ~1..."
+   Canonical: https://www.superparty.ro/petreceri/branesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1606  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (178chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/branistari
+   Titlu (65chr): "Animatori Petreceri Copii Brăniștari | SuperParty — de la 49..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Brăniștari (Dambovit..."
+   Canonical: https://www.superparty.ro/petreceri/branistari  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/buciumeni
+   Titlu (64chr): "Animatori Petreceri Copii Buciumeni | SuperParty — de la 490..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Buciumeni (Dambovita..."
+   Canonical: https://www.superparty.ro/petreceri/buciumeni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/budeni
+   Titlu (61chr): "Animatori Petreceri Copii Budeni | SuperParty — de la 490 RO..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Budeni (Giurgiu), ~7..."
+   Canonical: https://www.superparty.ro/petreceri/budeni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1612  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/budesti
+   Titlu (62chr): "Animatori Petreceri Copii Budești | SuperParty — de la 490 R..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Budești (Ilfov), ~30..."
+   Canonical: https://www.superparty.ro/petreceri/budesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/bulbucata
+   Titlu (64chr): "Animatori Petreceri Copii Bulbucata | SuperParty — de la 490..."
+   Desc  (181chr): "Animatori profesionisti pentru petreceri copii in Bulbucata (Giurgiu),..."
+   Canonical: https://www.superparty.ro/petreceri/bulbucata  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1618  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (181chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/butimanu
+   Titlu (63chr): "Animatori Petreceri Copii Butimanu | SuperParty — de la 490 ..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Butimanu (Dambovita)..."
+   Canonical: https://www.superparty.ro/petreceri/butimanu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/buturugeni
+   Titlu (65chr): "Animatori Petreceri Copii Buturugeni | SuperParty — de la 49..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Buturugeni (Giurgiu)..."
+   Canonical: https://www.superparty.ro/petreceri/buturugeni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1606  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/caciulati
+   Titlu (64chr): "Animatori Petreceri Copii Căciulați | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Căciulați (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/caciulati  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/caldararu
+   Titlu (64chr): "Animatori Petreceri Copii Căldăraru | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Căldăraru (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/caldararu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/calugareni
+   Titlu (65chr): "Animatori Petreceri Copii Călugăreni | SuperParty — de la 49..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Călugăreni (Giurgiu)..."
+   Canonical: https://www.superparty.ro/petreceri/calugareni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1616  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/campurelu
+   Titlu (64chr): "Animatori Petreceri Copii Câmpurelu | SuperParty — de la 490..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Câmpurelu (Giurgiu),..."
+   Canonical: https://www.superparty.ro/petreceri/campurelu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1614  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/candeasca
+   Titlu (64chr): "Animatori Petreceri Copii Cândeasca | SuperParty — de la 490..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Cândeasca (Dambovita..."
+   Canonical: https://www.superparty.ro/petreceri/candeasca  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/catelu
+   Titlu (61chr): "Animatori Petreceri Copii Catelu | SuperParty — de la 490 RO..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Catelu (Ilfov), ~10 ..."
+   Canonical: https://www.superparty.ro/petreceri/catelu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1598  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/catrunesti
+   Titlu (65chr): "Animatori Petreceri Copii Câtrunești | SuperParty — de la 49..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Câtrunești (Giurgiu)..."
+   Canonical: https://www.superparty.ro/petreceri/catrunesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1613  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cernica
+   Titlu (62chr): "Animatori Petreceri Copii Cernica | SuperParty — de la 490 R..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Cernica (Ilfov), ~14..."
+   Canonical: https://www.superparty.ro/petreceri/cernica  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1593  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/chirculesti
+   Titlu (66chr): "Animatori Petreceri Copii Chirculești | SuperParty — de la 4..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Chirculești (Ilfov),..."
+   Canonical: https://www.superparty.ro/petreceri/chirculesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1611  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/chitila
+   Titlu (62chr): "Animatori Petreceri Copii Chitila | SuperParty — de la 490 R..."
+   Desc  (178chr): "Animatori profesionisti pentru petreceri copii in Chitila (Ilfov), ~12..."
+   Canonical: https://www.superparty.ro/petreceri/chitila  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1593  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (178chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/ciocanesti
+   Titlu (65chr): "Animatori Petreceri Copii Ciocanești | SuperParty — de la 49..."
+   Desc  (181chr): "Animatori profesionisti pentru petreceri copii in Ciocanești (Ilfov), ..."
+   Canonical: https://www.superparty.ro/petreceri/ciocanesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1602  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (181chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/ciofliceni
+   Titlu (65chr): "Animatori Petreceri Copii Ciofliceni | SuperParty — de la 49..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Ciofliceni (Ilfov), ..."
+   Canonical: https://www.superparty.ro/petreceri/ciofliceni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/ciorogarla
+   Titlu (65chr): "Animatori Petreceri Copii Ciorogârla | SuperParty — de la 49..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Ciorogârla (Ilfov), ..."
+   Canonical: https://www.superparty.ro/petreceri/ciorogarla  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/clinceni
+   Titlu (63chr): "Animatori Petreceri Copii Clinceni | SuperParty — de la 490 ..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Clinceni (Ilfov), ~1..."
+   Canonical: https://www.superparty.ro/petreceri/clinceni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cocani
+   Titlu (61chr): "Animatori Petreceri Copii Cocani | SuperParty — de la 490 RO..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Cocani (Ilfov), ~35 ..."
+   Canonical: https://www.superparty.ro/petreceri/cocani  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1615  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cojasca
+   Titlu (62chr): "Animatori Petreceri Copii Cojasca | SuperParty — de la 490 R..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Cojasca (Dambovita),..."
+   Canonical: https://www.superparty.ro/petreceri/cojasca  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1613  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cojesti
+   Titlu (62chr): "Animatori Petreceri Copii Cojești | SuperParty — de la 490 R..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Cojești (Dambovita),..."
+   Canonical: https://www.superparty.ro/petreceri/cojesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1610  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/colibasi
+   Titlu (63chr): "Animatori Petreceri Copii Colibași | SuperParty — de la 490 ..."
+   Desc  (186chr): "Animatori profesionisti pentru petreceri copii in Colibași (Giurgiu), ..."
+   Canonical: https://www.superparty.ro/petreceri/colibasi  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1611  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (186chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/comana
+   Titlu (61chr): "Animatori Petreceri Copii Comana | SuperParty — de la 490 RO..."
+   Desc  (178chr): "Animatori profesionisti pentru petreceri copii in Comana (Giurgiu), ~5..."
+   Canonical: https://www.superparty.ro/petreceri/comana  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1614  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (178chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/copaceni
+   Titlu (63chr): "Animatori Petreceri Copii Copăceni | SuperParty — de la 490 ..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Copăceni (Giurgiu), ..."
+   Canonical: https://www.superparty.ro/petreceri/copaceni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1615  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/corbeanca
+   Titlu (64chr): "Animatori Petreceri Copii Corbeanca | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Corbeanca (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/corbeanca  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cornetu
+   Titlu (62chr): "Animatori Petreceri Copii Cornetu | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Cornetu (Ilfov), ~20..."
+   Canonical: https://www.superparty.ro/petreceri/cornetu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cosoba
+   Titlu (61chr): "Animatori Petreceri Copii Cosoba | SuperParty — de la 490 RO..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Cosoba (Ilfov), ~65 ..."
+   Canonical: https://www.superparty.ro/petreceri/cosoba  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1612  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/coteni
+   Titlu (61chr): "Animatori Petreceri Copii Coneni | SuperParty — de la 490 RO..."
+   Desc  (187chr): "Animatori profesionisti pentru petreceri copii in Coneni (Giurgiu), ~7..."
+   Canonical: https://www.superparty.ro/petreceri/coteni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1618  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (187chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cozieni
+   Titlu (62chr): "Animatori Petreceri Copii Cozieni | SuperParty — de la 490 R..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Cozieni (Giurgiu), ~..."
+   Canonical: https://www.superparty.ro/petreceri/cozieni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cranguri
+   Titlu (63chr): "Animatori Petreceri Copii Cranguri | SuperParty — de la 490 ..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Cranguri (Dambovita)..."
+   Canonical: https://www.superparty.ro/petreceri/cranguri  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1610  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/creata
+   Titlu (61chr): "Animatori Petreceri Copii Creata | SuperParty — de la 490 RO..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Creata (Ilfov), ~35 ..."
+   Canonical: https://www.superparty.ro/petreceri/creata  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1615  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cretesti
+   Titlu (63chr): "Animatori Petreceri Copii Cretesti | SuperParty — de la 490 ..."
+   Desc  (181chr): "Animatori profesionisti pentru petreceri copii in Cretesti (Ilfov), ~2..."
+   Canonical: https://www.superparty.ro/petreceri/cretesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (181chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cretuleasca
+   Titlu (66chr): "Animatori Petreceri Copii Cretuleasca | SuperParty — de la 4..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Cretuleasca (Ilfov),..."
+   Canonical: https://www.superparty.ro/petreceri/cretuleasca  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/crevedia-mare
+   Titlu (68chr): "Animatori Petreceri Copii Crevedia Mare | SuperParty — de la..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Crevedia Mare (Giurg..."
+   Canonical: https://www.superparty.ro/petreceri/crevedia-mare  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1641  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/crevedia
+   Titlu (63chr): "Animatori Petreceri Copii Crevedia | SuperParty — de la 490 ..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Crevedia (Dambovita)..."
+   Canonical: https://www.superparty.ro/petreceri/crevedia  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1606  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/crivina
+   Titlu (62chr): "Animatori Petreceri Copii Crivina | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Crivina (Ilfov), ~25..."
+   Canonical: https://www.superparty.ro/petreceri/crivina  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1603  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/cucuieti
+   Titlu (63chr): "Animatori Petreceri Copii Cucuieti | SuperParty — de la 490 ..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Cucuieti (Dambovita)..."
+   Canonical: https://www.superparty.ro/petreceri/cucuieti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1605  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/dambovita
+   Titlu (64chr): "Animatori Petreceri Copii Dâmbovița | SuperParty — de la 490..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Dâmbovița (Dambovita..."
+   Canonical: https://www.superparty.ro/petreceri/dambovita  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1603  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/dascalu
+   Titlu (62chr): "Animatori Petreceri Copii Dascălu | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Dascălu (Ilfov), ~22..."
+   Canonical: https://www.superparty.ro/petreceri/dascalu  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1605  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/decindea
+   Titlu (63chr): "Animatori Petreceri Copii Decindea | SuperParty — de la 490 ..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Decindea (Dambovita)..."
+   Canonical: https://www.superparty.ro/petreceri/decindea  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1612  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/dimieni
+   Titlu (62chr): "Animatori Petreceri Copii Dimieni | SuperParty — de la 490 R..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Dimieni (Ilfov), ~20..."
+   Canonical: https://www.superparty.ro/petreceri/dimieni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/dobreni
+   Titlu (62chr): "Animatori Petreceri Copii Dobreni | SuperParty — de la 490 R..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Dobreni (Ilfov), ~75..."
+   Canonical: https://www.superparty.ro/petreceri/dobreni  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1616  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/dobroesti
+   Titlu (64chr): "Animatori Petreceri Copii Dobroești | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Dobroești (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/dobroesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/domnesti
+   Titlu (64chr): "Animatori Petreceri Copii Domneșiii | SuperParty — de la 490..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Domneșiii (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/domnesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/fierbinti-targ
+   Titlu (69chr): "Animatori Petreceri Copii Fierbinți-Târg | SuperParty — de l..."
+   Desc  (187chr): "Animatori profesionisti pentru petreceri copii in Fierbinți-Târg (Ialo..."
+   Canonical: https://www.superparty.ro/petreceri/fierbinti-targ  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1601  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (187chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/fundulea
+   Titlu (63chr): "Animatori Petreceri Copii Fundulea | SuperParty — de la 490 ..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Fundulea (Calarasi),..."
+   Canonical: https://www.superparty.ro/petreceri/fundulea  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/ganeasa
+   Titlu (62chr): "Animatori Petreceri Copii Găneasa | SuperParty — de la 490 R..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Găneasa (Ilfov), ~18..."
+   Canonical: https://www.superparty.ro/petreceri/ganeasa  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1603  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/glina
+   Titlu (60chr): "Animatori Petreceri Copii Glina | SuperParty — de la 490 RON"
+   Desc  (174chr): "Animatori profesionisti pentru petreceri copii in Glina (Ilfov), ~16 k..."
+   Canonical: https://www.superparty.ro/petreceri/glina  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1601  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (174chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/ialomita
+   Titlu (63chr): "Animatori Petreceri Copii Ialomița | SuperParty — de la 490 ..."
+   Desc  (185chr): "Animatori profesionisti pentru petreceri copii in Ialomița (Ialomita),..."
+   Canonical: https://www.superparty.ro/petreceri/ialomita  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1598  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (185chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/iepuresti
+   Titlu (64chr): "Animatori Petreceri Copii Iepurești | SuperParty — de la 490..."
+   Desc  (181chr): "Animatori profesionisti pentru petreceri copii in Iepurești (Giurgiu),..."
+   Canonical: https://www.superparty.ro/petreceri/iepuresti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1614  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (181chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/jilava
+   Titlu (61chr): "Animatori Petreceri Copii Jilava | SuperParty — de la 490 RO..."
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Jilava (Ilfov), ~10 ..."
+   Canonical: https://www.superparty.ro/petreceri/jilava  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/magurele
+   Titlu (63chr): "Animatori Petreceri Copii Măgurele | SuperParty — de la 490 ..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Măgurele (Ilfov), ~1..."
+   Canonical: https://www.superparty.ro/petreceri/magurele  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1608  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/mihai-voda
+   Titlu (65chr): "Animatori Petreceri Copii Mihai Vodă | SuperParty — de la 49..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Mihai Vodă (Calarasi..."
+   Canonical: https://www.superparty.ro/petreceri/mihai-voda  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1644  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/mihailesti
+   Titlu (65chr): "Animatori Petreceri Copii Mihailești | SuperParty — de la 49..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Mihailești (Giurgiu)..."
+   Canonical: https://www.superparty.ro/petreceri/mihailesti  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1600  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/moara-vlasiei
+   Titlu (68chr): "Animatori Petreceri Copii Moara Vlăsiei | SuperParty — de la..."
+   Desc  (183chr): "Animatori profesionisti pentru petreceri copii in Moara Vlăsiei (Ilfov..."
+   Canonical: https://www.superparty.ro/petreceri/moara-vlasiei  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1636  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (183chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/mogosoaia
+   Titlu (64chr): "Animatori Petreceri Copii Mogoșoaia | SuperParty — de la 490..."
+   Desc  (180chr): "Animatori profesionisti pentru petreceri copii in Mogoșoaia (Ilfov), ~..."
+   Canonical: https://www.superparty.ro/petreceri/mogosoaia  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1605  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (180chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/nuci
+   Titlu (59chr): "Animatori Petreceri Copii Nuci | SuperParty — de la 490 RON"
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Nuci (Ilfov), ~30 km..."
+   Canonical: https://www.superparty.ro/petreceri/nuci  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/pantelimon
+   Titlu (65chr): "Animatori Petreceri Copii Pantelimon | SuperParty — de la 49..."
+   Desc  (192chr): "Animatori profesionisti pentru petreceri copii in Pantelimon (Ilfov), ..."
+   Canonical: https://www.superparty.ro/petreceri/pantelimon  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1600  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (192chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/peris
+   Titlu (60chr): "Animatori Petreceri Copii Periș | SuperParty — de la 490 RON"
+   Desc  (175chr): "Animatori profesionisti pentru petreceri copii in Periș (Ilfov), ~28 k..."
+   Canonical: https://www.superparty.ro/petreceri/peris  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1607  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (175chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/petrachioaia
+   Titlu (67chr): "Animatori Petreceri Copii Petrachioaia | SuperParty — de la ..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Petrachioaia (Ilfov)..."
+   Canonical: https://www.superparty.ro/petreceri/petrachioaia  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1604  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/prahova
+   Titlu (62chr): "Animatori Petreceri Copii Prahova | SuperParty — de la 490 R..."
+   Desc  (179chr): "Animatori profesionisti pentru petreceri copii in Prahova (Prahova), ~..."
+   Canonical: https://www.superparty.ro/petreceri/prahova  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1595  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (179chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/racari
+   Titlu (61chr): "Animatori Petreceri Copii Răcari | SuperParty — de la 490 RO..."
+   Desc  (181chr): "Animatori profesionisti pentru petreceri copii in Răcari (Dambovita), ..."
+   Canonical: https://www.superparty.ro/petreceri/racari  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1606  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (181chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/snagov
+   Titlu (61chr): "Animatori Petreceri Copii Snagov | SuperParty — de la 490 RO..."
+   Desc  (182chr): "Animatori profesionisti pentru petreceri copii in Snagov (Ilfov), ~35 ..."
+   Canonical: https://www.superparty.ro/petreceri/snagov  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1611  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (182chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/teleorman
+   Titlu (64chr): "Animatori Petreceri Copii Teleorman | SuperParty — de la 490..."
+   Desc  (188chr): "Animatori profesionisti pentru petreceri copii in Teleorman (Teleorman..."
+   Canonical: https://www.superparty.ro/petreceri/teleorman  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1598  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (188chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/tunari
+   Titlu (61chr): "Animatori Petreceri Copii Tunari | SuperParty — de la 490 RO..."
+   Desc  (184chr): "Animatori profesionisti pentru petreceri copii in Tunari (Ilfov), ~15 ..."
+   Canonical: https://www.superparty.ro/petreceri/tunari  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1600  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (184chr > 160)
+
+✅ [ 94/100] █████████░  /petreceri/vidra
+   Titlu (60chr): "Animatori Petreceri Copii Vidra | SuperParty — de la 490 RON"
+   Desc  (177chr): "Animatori profesionisti pentru petreceri copii in Vidra (Ilfov), ~22 k..."
+   Canonical: https://www.superparty.ro/petreceri/vidra  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:12  |  Cuvinte: 1601  |  Img: 0(0 fără alt)  |  LinkInt: 6
+     ℹ️  Desc prea lungă (177chr > 160)
+
+✅ [ 95/100] ██████████  /
    Titlu (56chr): "SuperParty — Animatori Petreceri Copii București & Ilfov"
    Desc  (158chr): "Animatori profesioniști pentru petreceri copii în București și Ilfov. ..."
    Canonical: https://www.superparty.ro/  |  Schema: LocalBusiness, PostalAddress, AggregateRating
-   H1:1 H2:4 H3:3  |  Cuvinte: 164  |  Img: 2(2 fără alt)  |  LinkInt: 1
-     ⚠️  Conținut subțire (164w, ideal 500+)
+   H1:1 H2:11 H3:12  |  Cuvinte: 1582  |  Img: 2(2 fără alt)  |  LinkInt: 2
      ⚠️  2/2 imagini fără alt
 
-✅ [ 93/100] █████████░  /animatori-copii-bucuresti
+✅ [100/100] ██████████  /animatori-copii-bucuresti
    Titlu (48chr): "Animatori Petreceri Copii București | SuperParty"
    Desc  (165chr): "Liderii în animatori petreceri copii din București. Alege experiența p..."
    Canonical: https://www.superparty.ro/animatori-copii-bucuresti/  |  Schema: LocalBusiness, PostalAddress, AggregateRating
-   H1:1 H2:7 H3:3  |  Cuvinte: 362  |  Img: 0(0 fără alt)  |  LinkInt: 4
-     ℹ️  Conținut mediu (362w, ideal 500+)
-
-✅ [ 93/100] █████████░  /arcade-baloane
-   Titlu (43chr): "Arcade Baloane Petreceri Copii | SuperParty"
-   Desc  (149chr): "Arcade din baloane personalizate pentru petreceri copii în București. ..."
-   Canonical: https://www.superparty.ro/arcade-baloane  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:4 H3:0  |  Cuvinte: 234  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (234w, ideal 500+)
-
-✅ [ 93/100] █████████░  /baloane-cu-heliu
-   Titlu (55chr): "Baloane cu Heliu Petreceri Copii | SuperParty București"
-   Desc  (157chr): "Baloane cu heliu pentru petreceri copii în București — baloane latex c..."
-   Canonical: https://www.superparty.ro/baloane-cu-heliu  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 212  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (212w, ideal 500+)
-
-✅ [ 93/100] █████████░  /contact
-   Titlu (56chr): "Contact SuperParty — Rezervare Animatori Petreceri Copii"
-   Desc  (150chr): "Contactează SuperParty pentru rezervare animatori petreceri copii în B..."
-   Canonical: https://www.superparty.ro/contact  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 201  |  Img: 0(0 fără alt)  |  LinkInt: 1
-     ℹ️  Conținut mediu (201w, ideal 500+)
-
-✅ [ 93/100] █████████░  /decoratiuni-baloane
-   Titlu (58chr): "Decorațiuni Baloane Petreceri Copii | SuperParty București"
-   Desc  (148chr): "Decorațiuni din baloane pentru petreceri copii: coloane, arcade, centr..."
-   Canonical: https://www.superparty.ro/decoratiuni-baloane  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 226  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (226w, ideal 500+)
-
-✅ [ 93/100] █████████░  /galerie
-   Titlu (51chr): "Galerie Foto Petreceri Copii | SuperParty București"
-   Desc  (156chr): "Galerie foto și video cu petreceri de copii animate de SuperParty în B..."
-   Canonical: https://www.superparty.ro/galerie  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:2 H3:0  |  Cuvinte: 247  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (247w, ideal 500+)
-
-✅ [ 93/100] █████████░  /mos-craciun-de-inchiriat
-   Titlu (63chr): "Moș Crăciun de Închiriat Petreceri Copii | SuperParty Bucure..."
-   Desc  (154chr): "Moș Crăciun autentic pentru petreceri copii și vizite acasă în Bucureș..."
-   Canonical: https://www.superparty.ro/mos-craciun-de-inchiriat  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 245  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (245w, ideal 500+)
-
-✅ [ 93/100] █████████░  /petreceri/bragadiru
-   Titlu (61chr): "Animatori Petreceri Copii Bragadiru | SuperParty | SuperPart..."
-   Desc  (128chr): "Animatori profesioniști pentru petreceri copii în Bragadiru, Ilfov. Co..."
-   Canonical: https://www.superparty.ro/petreceri/bragadiru  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:5 H3:5  |  Cuvinte: 257  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (257w, ideal 500+)
-
-✅ [ 93/100] █████████░  /petreceri/buftea
-   Titlu (67chr): "Animatori Petreceri Copii Buftea | SuperParty — Ilfov, Lacul..."
-   Desc  (139chr): "Animatori copii în Buftea, Ilfov (20 km de București). Orașul studiour..."
-   Canonical: https://www.superparty.ro/petreceri/buftea  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 382  |  Img: 0(0 fără alt)  |  LinkInt: 4
-     ℹ️  Conținut mediu (382w, ideal 500+)
-
-✅ [ 93/100] █████████░  /petreceri/chiajna
-   Titlu (67chr): "Animatori Petreceri Copii Chiajna — Militari Residence | Sup..."
-   Desc  (149chr): "Animatori copii în Chiajna Ilfov (8 km de București, Militari Residenc..."
-   Canonical: https://www.superparty.ro/petreceri/chiajna  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 389  |  Img: 0(0 fără alt)  |  LinkInt: 4
-     ℹ️  Conținut mediu (389w, ideal 500+)
-
-✅ [ 93/100] █████████░  /piniata
-   Titlu (60chr): "Piniată Personalizată Petreceri Copii | SuperParty București"
-   Desc  (134chr): "Piniate personalizate la comandă pentru petreceri copii în București. ..."
-   Canonical: https://www.superparty.ro/piniata  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:4 H3:4  |  Cuvinte: 343  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (343w, ideal 500+)
-
-✅ [ 93/100] █████████░  /ursitoare-botez
-   Titlu (57chr): "Ursitoare Botez | SuperParty București — Program Autentic"
-   Desc  (161chr): "Ursitoare profesioniste pentru botez în București. Program autentic 30..."
-   Canonical: https://www.superparty.ro/ursitoare-botez  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 233  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (233w, ideal 500+)
-
-✅ [ 93/100] █████████░  /vata-de-zahar-si-popcorn
-   Titlu (63chr): "Vată de Zahăr și Popcorn Petreceri Copii | SuperParty Bucure..."
-   Desc  (152chr): "Mașini de vată de zahăr și popcorn pentru petreceri copii în București..."
-   Canonical: https://www.superparty.ro/vata-de-zahar-si-popcorn  |  Schema: LocalBusiness, AggregateRating
-   H1:1 H2:3 H3:0  |  Cuvinte: 222  |  Img: 0(0 fără alt)  |  LinkInt: 2
-     ℹ️  Conținut mediu (222w, ideal 500+)
+   H1:1 H2:13 H3:12  |  Cuvinte: 1615  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /animatori-petreceri-copii
    Titlu (48chr): "Animatori Petreceri Copii București | SuperParty"
    Desc  (144chr): "Animatori pentru petreceri copii în București și Ilfov. 50+ personaje ..."
    Canonical: https://www.superparty.ro/animatori-petreceri-copii  |  Schema: LocalBusiness, City, AdministrativeArea
-   H1:1 H2:7 H3:9  |  Cuvinte: 809  |  Img: 0(0 fără alt)  |  LinkInt: 20
+   H1:1 H2:11 H3:12  |  Cuvinte: 1546  |  Img: 0(0 fără alt)  |  LinkInt: 20
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /arcade-baloane
+   Titlu (43chr): "Arcade Baloane Petreceri Copii | SuperParty"
+   Desc  (149chr): "Arcade din baloane personalizate pentru petreceri copii în București. ..."
+   Canonical: https://www.superparty.ro/arcade-baloane  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:11 H3:9  |  Cuvinte: 1652  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /baloane-cu-heliu
+   Titlu (55chr): "Baloane cu Heliu Petreceri Copii | SuperParty București"
+   Desc  (157chr): "Baloane cu heliu pentru petreceri copii în București — baloane latex c..."
+   Canonical: https://www.superparty.ro/baloane-cu-heliu  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:9  |  Cuvinte: 1630  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /contact
+   Titlu (56chr): "Contact SuperParty — Rezervare Animatori Petreceri Copii"
+   Desc  (150chr): "Contactează SuperParty pentru rezervare animatori petreceri copii în B..."
+   Canonical: https://www.superparty.ro/contact  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:9  |  Cuvinte: 1602  |  Img: 0(0 fără alt)  |  LinkInt: 2
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /decoratiuni-baloane
+   Titlu (58chr): "Decorațiuni Baloane Petreceri Copii | SuperParty București"
+   Desc  (148chr): "Decorațiuni din baloane pentru petreceri copii: coloane, arcade, centr..."
+   Canonical: https://www.superparty.ro/decoratiuni-baloane  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:9  |  Cuvinte: 1644  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /galerie
+   Titlu (51chr): "Galerie Foto Petreceri Copii | SuperParty București"
+   Desc  (156chr): "Galerie foto și video cu petreceri de copii animate de SuperParty în B..."
+   Canonical: https://www.superparty.ro/galerie  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:9 H3:9  |  Cuvinte: 1648  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /mos-craciun-de-inchiriat
+   Titlu (63chr): "Moș Crăciun de Închiriat Petreceri Copii | SuperParty Bucure..."
+   Desc  (154chr): "Moș Crăciun autentic pentru petreceri copii și vizite acasă în Bucureș..."
+   Canonical: https://www.superparty.ro/mos-craciun-de-inchiriat  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:9 H3:9  |  Cuvinte: 1526  |  Img: 0(0 fără alt)  |  LinkInt: 3
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/aviatiei
    Titlu (47chr): "Animatori Petreceri Copii Aviației | SuperParty"
    Desc  (146chr): "Animatori profesionisti pentru petreceri copii in Aviației, Sectorul 1..."
    Canonical: https://www.superparty.ro/petreceri/aviatiei  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 768  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:18  |  Cuvinte: 1768  |  Img: 0(0 fără alt)  |  LinkInt: 9
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/berceni
    Titlu (46chr): "Animatori Petreceri Copii Berceni | SuperParty"
    Desc  (145chr): "Animatori profesionisti pentru petreceri copii in Berceni, Sectorul 4...."
    Canonical: https://www.superparty.ro/petreceri/berceni  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 845  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1574  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /petreceri/bragadiru
+   Titlu (61chr): "Animatori Petreceri Copii Bragadiru | SuperParty | SuperPart..."
+   Desc  (128chr): "Animatori profesioniști pentru petreceri copii în Bragadiru, Ilfov. Co..."
+   Canonical: https://www.superparty.ro/petreceri/bragadiru  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:11 H3:14  |  Cuvinte: 1510  |  Img: 0(0 fără alt)  |  LinkInt: 3
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/bucuresti
    Titlu (48chr): "Animatori Petreceri Copii București | SuperParty"
    Desc  (154chr): "Animatori petreceri copii în tot Bucureștiul — cartiere, sectoare, mal..."
    Canonical: https://www.superparty.ro/petreceri/bucuresti  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:5 H3:4  |  Cuvinte: 563  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:10 H3:12  |  Cuvinte: 1571  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /petreceri/buftea
+   Titlu (67chr): "Animatori Petreceri Copii Buftea | SuperParty — Ilfov, Lacul..."
+   Desc  (139chr): "Animatori copii în Buftea, Ilfov (20 km de București). Orașul studiour..."
+   Canonical: https://www.superparty.ro/petreceri/buftea  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:10 H3:10  |  Cuvinte: 1635  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/calarasi
    Titlu (47chr): "Animatori Petreceri Copii Călărași | SuperParty"
    Desc  (133chr): "Animatori copii în Călărași — 120 km de București, pe A2+DN3. Resedinț..."
    Canonical: https://www.superparty.ro/petreceri/calarasi  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:6 H3:4  |  Cuvinte: 647  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:11 H3:12  |  Cuvinte: 1655  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /petreceri/chiajna
+   Titlu (67chr): "Animatori Petreceri Copii Chiajna — Militari Residence | Sup..."
+   Desc  (149chr): "Animatori copii în Chiajna Ilfov (8 km de București, Militari Residenc..."
+   Canonical: https://www.superparty.ro/petreceri/chiajna  |  Schema: Service, LocalBusiness, FAQPage
+   H1:1 H2:10 H3:10  |  Cuvinte: 1642  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/colentina
    Titlu (48chr): "Animatori Petreceri Copii Colentina | SuperParty"
    Desc  (147chr): "Animatori profesionisti pentru petreceri copii in Colentina, Sectorul ..."
    Canonical: https://www.superparty.ro/petreceri/colentina  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 977  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1706  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/crangasi
    Titlu (47chr): "Animatori Petreceri Copii Crângași | SuperParty"
    Desc  (146chr): "Animatori profesionisti pentru petreceri copii in Crangasi, Sectorul 6..."
    Canonical: https://www.superparty.ro/petreceri/crangasi  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 852  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1581  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/dorobanti
    Titlu (48chr): "Animatori Petreceri Copii Dorobanți | SuperParty"
    Desc  (147chr): "Animatori profesionisti pentru petreceri copii in Dorobanți, Sectorul ..."
    Canonical: https://www.superparty.ro/petreceri/dorobanti  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 968  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1697  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/dristor
    Titlu (46chr): "Animatori Petreceri Copii Dristor | SuperParty"
    Desc  (145chr): "Animatori profesionisti pentru petreceri copii in Dristor, Sectorul 3...."
    Canonical: https://www.superparty.ro/petreceri/dristor  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 776  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1505  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/drumul-taberei
    Titlu (53chr): "Animatori Petreceri Copii Drumul Taberei | SuperParty"
    Desc  (152chr): "Animatori profesionisti pentru petreceri copii in Drumul Taberei, Sect..."
    Canonical: https://www.superparty.ro/petreceri/drumul-taberei  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 866  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1603  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/floreasca
    Titlu (48chr): "Animatori Petreceri Copii Floreasca | SuperParty"
    Desc  (147chr): "Animatori profesionisti pentru petreceri copii in Floreasca, Sectorul ..."
    Canonical: https://www.superparty.ro/petreceri/floreasca  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 962  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1691  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/giulesti
    Titlu (47chr): "Animatori Petreceri Copii Giulești | SuperParty"
    Desc  (146chr): "Animatori profesionisti pentru petreceri copii in Giulești, Sectorul 6..."
    Canonical: https://www.superparty.ro/petreceri/giulesti  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 802  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1531  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/giurgiu
    Titlu (46chr): "Animatori Petreceri Copii Giurgiu | SuperParty"
    Desc  (128chr): "Animatori copii în Giurgiu — 65 km de București pe DN5, poarta spre Bu..."
    Canonical: https://www.superparty.ro/petreceri/giurgiu  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:6 H3:4  |  Cuvinte: 697  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:11 H3:12  |  Cuvinte: 1705  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/ilfov
    Titlu (65chr): "Animatori Petreceri Copii Ilfov — Toate Localitățile | Super..."
    Desc  (159chr): "SuperParty acoperă toate localitățile din Ilfov (30+ comune și orașe)...."
    Canonical: https://www.superparty.ro/petreceri/ilfov  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 436  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:10 H3:10  |  Cuvinte: 1689  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/militari
    Titlu (47chr): "Animatori Petreceri Copii Militari | SuperParty"
    Desc  (146chr): "Animatori profesionisti pentru petreceri copii in Militari, Sectorul 6..."
    Canonical: https://www.superparty.ro/petreceri/militari  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 795  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1524  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/otopeni
    Titlu (59chr): "Animatori Petreceri Copii Otopeni | SuperParty — Ilfov Nord"
    Desc  (127chr): "Animatori petreceri copii în Otopeni, Ilfov (14 km de București). 50+ ..."
    Canonical: https://www.superparty.ro/petreceri/otopeni  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 423  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:10 H3:10  |  Cuvinte: 1676  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/pantelimon-cartier
    Titlu (49chr): "Animatori Petreceri Copii Pantelimon | SuperParty"
    Desc  (158chr): "Animatori profesionisti pentru petreceri copii in Pantelimon (Cartier)..."
    Canonical: https://www.superparty.ro/petreceri/pantelimon-cartier  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 919  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1648  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/popesti-leordeni
    Titlu (63chr): "Animatori Petreceri Copii Popești-Leordeni | SuperParty — Il..."
    Desc  (145chr): "Animatori copii în Popești-Leordeni (8 km de București, Ilfov). Al 3-l..."
    Canonical: https://www.superparty.ro/petreceri/popesti-leordeni  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 418  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:10 H3:10  |  Cuvinte: 1671  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/rahova
    Titlu (45chr): "Animatori Petreceri Copii Rahova | SuperParty"
    Desc  (144chr): "Animatori profesionisti pentru petreceri copii in Rahova, Sectorul 5. ..."
    Canonical: https://www.superparty.ro/petreceri/rahova  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 880  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1609  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-1
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 1 | SuperParty — 490 RON,..."
    Desc  (124chr): "SuperParty în Sectorul 1: Dorobanți, Floreasca, Aviatorilor. Animatori..."
    Canonical: https://www.superparty.ro/petreceri/sector-1  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:9 H3:4  |  Cuvinte: 1147  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:13 H3:7  |  Cuvinte: 1876  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-2
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 2 | SuperParty — 490 RON,..."
    Desc  (162chr): "SuperParty acoperă Sectorul 2: Colentina,  Floreasca S2,  Tei. Animato..."
    Canonical: https://www.superparty.ro/petreceri/sector-2  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:9 H3:4  |  Cuvinte: 1172  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:13 H3:7  |  Cuvinte: 1901  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-3
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 3 | SuperParty — 490 RON,..."
    Desc  (155chr): "SuperParty acoperă Sectorul 3: Titan,  Dristor,  Vitan. Animatori prof..."
    Canonical: https://www.superparty.ro/petreceri/sector-3  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:10 H3:4  |  Cuvinte: 1381  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:14 H3:7  |  Cuvinte: 2110  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-4
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 4 | SuperParty — 490 RON,..."
    Desc  (164chr): "SuperParty acoperă Sectorul 4: Tineretului,  Berceni,  Oltenița. Anima..."
    Canonical: https://www.superparty.ro/petreceri/sector-4  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:10 H3:4  |  Cuvinte: 1359  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:14 H3:7  |  Cuvinte: 2088  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-5
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 5 | SuperParty — 490 RON,..."
    Desc  (162chr): "SuperParty acoperă Sectorul 5: Rahova,  Sebastian,  Ferentari. Animato..."
    Canonical: https://www.superparty.ro/petreceri/sector-5  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:9 H3:4  |  Cuvinte: 1224  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:13 H3:7  |  Cuvinte: 1953  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/sector-6
    Titlu (69chr): "Animatori Petreceri Copii Sectorul 6 | SuperParty — 490 RON,..."
    Desc  (125chr): "SuperParty în Sectorul 6: Militari, Drumul Taberei, Crângași. Animator..."
    Canonical: https://www.superparty.ro/petreceri/sector-6  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:9 H3:4  |  Cuvinte: 1271  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   H1:1 H2:13 H3:7  |  Cuvinte: 2000  |  Img: 0(0 fără alt)  |  LinkInt: 5
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/tineretului
    Titlu (50chr): "Animatori Petreceri Copii Tineretului | SuperParty"
    Desc  (149chr): "Animatori profesionisti pentru petreceri copii in Tineretului, Sectoru..."
    Canonical: https://www.superparty.ro/petreceri/tineretului  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:8 H3:10  |  Cuvinte: 830  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:12 H3:13  |  Cuvinte: 1559  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/titan
    Titlu (44chr): "Animatori Petreceri Copii Titan | SuperParty"
    Desc  (143chr): "Animatori profesionisti pentru petreceri copii in Titan, Sectorul 3. 5..."
    Canonical: https://www.superparty.ro/petreceri/titan  |  Schema: LocalBusiness, Place, AggregateRating
-   H1:1 H2:9 H3:10  |  Cuvinte: 972  |  Img: 0(0 fără alt)  |  LinkInt: 8
+   H1:1 H2:13 H3:13  |  Cuvinte: 1701  |  Img: 0(0 fără alt)  |  LinkInt: 8
    ✅ Toate verificările OK!
 
 ✅ [100/100] ██████████  /petreceri/voluntari
    Titlu (57chr): "Animatori Petreceri Copii Voluntari — Pipera | SuperParty"
    Desc  (154chr): "Animatori copii în Voluntari și Pipera (10 km de București). Zona inte..."
    Canonical: https://www.superparty.ro/petreceri/voluntari  |  Schema: Service, LocalBusiness, FAQPage
-   H1:1 H2:4 H3:1  |  Cuvinte: 419  |  Img: 0(0 fără alt)  |  LinkInt: 4
+   H1:1 H2:10 H3:10  |  Cuvinte: 1672  |  Img: 0(0 fără alt)  |  LinkInt: 5
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /piniata
+   Titlu (60chr): "Piniată Personalizată Petreceri Copii | SuperParty București"
+   Desc  (134chr): "Piniate personalizate la comandă pentru petreceri copii în București. ..."
+   Canonical: https://www.superparty.ro/piniata  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:13  |  Cuvinte: 1596  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /ursitoare-botez
+   Titlu (57chr): "Ursitoare Botez | SuperParty București — Program Autentic"
+   Desc  (161chr): "Ursitoare profesioniste pentru botez în București. Program autentic 30..."
+   Canonical: https://www.superparty.ro/ursitoare-botez  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:9  |  Cuvinte: 1651  |  Img: 0(0 fără alt)  |  LinkInt: 3
+   ✅ Toate verificările OK!
+
+✅ [100/100] ██████████  /vata-de-zahar-si-popcorn
+   Titlu (63chr): "Vată de Zahăr și Popcorn Petreceri Copii | SuperParty Bucure..."
+   Desc  (152chr): "Mașini de vată de zahăr și popcorn pentru petreceri copii în București..."
+   Canonical: https://www.superparty.ro/vata-de-zahar-si-popcorn  |  Schema: LocalBusiness, AggregateRating
+   H1:1 H2:10 H3:9  |  Cuvinte: 1657  |  Img: 0(0 fără alt)  |  LinkInt: 3
    ✅ Toate verificările OK!
 
 ┌──────────────────────────────────────────────────────────────┐
 │  PAGINI NOINDEX — ASCUNSE DE GOOGLE (102 total)              │
 └──────────────────────────────────────────────────────────────┘
-Pagini NOINDEX cu conținut OK (200+w):  102
+Pagini NOINDEX cu conținut OK (200+w):  1
 Pagini NOINDEX cu conținut subțire:     0
 
 Primele 20 noindex (cele mai puțin conținut):
-  🟡 [207w] /animatori-copii-ilfov
-  🟡 [290w] /animatori-copii-otopeni
-  🟡 [294w] /animatori-copii-bragadiru
-  🟡 [296w] /animatori-copii-chiajna
-  🟡 [297w] /animatori-copii-pantelimon
-  🟡 [309w] /animatori-copii-popesti-leordeni
-  🟡 [436w] /animatori-copii-sector-5
-  🟡 [442w] /animatori-copii-sector-2
-  🟡 [446w] /animatori-copii-sector-3
-  🟡 [453w] /animatori-copii-sector-4
-  🟡 [453w] /animatori-copii-sector-6
-  🟡 [585w] /petreceri/1-decembrie
-  🟡 [585w] /petreceri/cernica
-  🟡 [585w] /petreceri/chitila
-  🟡 [586w] /petreceri/balaceanca
-  🟡 [587w] /petreceri/budesti
-  🟡 [587w] /petreceri/caldararu
-  🟡 [587w] /petreceri/cretesti
-  🟡 [587w] /petreceri/dobroesti
-  🟡 [587w] /petreceri/domnesti
+  🟡 [2235w] /arie-acoperire
 
 ╔══════════════════════════════════════════════════════════════╗
 ║  PRIORITĂȚI DE ACȚIUNE                                      ║
 ╚══════════════════════════════════════════════════════════════╝
 
-1. ⚠️  IMPORTANT: 1 perechi de pagini cu >30% conținut similar
-2. ⚠️  IMPORTANT: Canonical lipsă pe 1 pagini
-3. ⚠️  IMPORTANT: 2 pagini cu conținut 50-200w — extinde
+1. ⚠️  IMPORTANT: 10296 perechi de pagini cu >30% conținut similar
+2. ⚠️  IMPORTANT: Canonical lipsă pe 7 pagini
+3. ⚠️  IMPORTANT: Schema JSON-LD lipsă pe 13 pagini (pierd Rich Snippets)
 4. ℹ️  1 pagini cu imagini fără alt text
 
 ╔══════════════════════════════════════════════════════════════╗
@@ -429,10 +1140,10 @@ Primele 20 noindex (cele mai puțin conținut):
 ╚══════════════════════════════════════════════════════════════╝
 
 Total pagini scanate:              145
-Pagini indexate (văzute de Google): 43
-Scor mediu pagini indexate:        97/100
-Pagini perfect optimizate:         28/43
-Perechi conținut duplicat >30%:   1
+Pagini indexate (văzute de Google): 144
+Scor mediu pagini indexate:        95/100
+Pagini perfect optimizate:         41/144
+Perechi conținut duplicat >30%:   10296
 Probleme critice totale:           0
 Probleme importante totale:        3
 
