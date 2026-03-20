@@ -10,11 +10,13 @@ import ServiceLinkCard from '../../components/blog/ServiceLinkCard.astro';
 
 import Layout from '../../layouts/Layout.astro';
 import FlagshipLink from '../../components/FlagshipLink.astro';
+const acbSchema = JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","name":"SuperParty","description":"Animatori petreceri copii in Bucuresti. Echipa #1 din Capitala. Peste 10.000 de evenimente.","url":"https://www.superparty.ro/animatori-copii-bucuresti/","telephone":"+40722744377","priceRange":"490-1290 RON","address":{"@type":"PostalAddress","addressLocality":"Bucuresti","addressCountry":"RO"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1498","bestRating":"5"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce acoperire geografica aveti in Bucuresti?","acceptedAnswer":{"@type":"Answer","text":"Acoperim toate cele 6 sectoare ale Bucurestiului, fara taxa de deplasare."}},{"@type":"Question","name":"Ce personaje costumate aveti?","acceptedAnswer":{"@type":"Answer","text":"Avem peste 50 de personaje: Disney, Marvel, DC, Pokemon si altele la cerere."}}]}]});
 ---
 
-<Layout 
-  
-  canonical="https://www.superparty.ro/animatori-copii-bucuresti/"title="Animatori petreceri copii București | Superparty (#1) Peste 10.000 ..."
+<Layout
+  schema={acbSchema}
+  canonical="https://www.superparty.ro/animatori-copii-bucuresti/"
+  title="Animatori Petreceri Copii București | SuperParty"
   description="Liderii în animatori petreceri copii din București. Alege experiența premium Superparty: peste 50 de personaje, costume impecabile, actori profesioniști și distra..."
 >
   <main class="offline-generation-draft">
