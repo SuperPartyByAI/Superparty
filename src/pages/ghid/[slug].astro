@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const ghidEntries = await getCollection('ghid');
+  return ghidEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const cleanTitle = entry.data.title;
+const cleanDesc = entry.data.description;
+const heroImg = entry.data.heroImage || '/wp-content/uploads/2024/09/spiderman-animator-petrecere-copii-bucuresti-copie-1-scaled.jpg';
+---
+
+<Layout title={`${cleanTitle} | Ghid SuperParty`} description={cleanDesc}>
+  <article class="ghid-article" style="background:var(--dark-1,#0f0f1a)">
+    <!-- Article Hero -->
+    <header class="article-hero" style="position:relative;padding:8rem 1rem 4rem;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05);overflow:hidden">
+      <!-- Background Image cu Overlay Grea -->
+      <div style={`position:absolute;top:0;left:0;right:0;bottom:0;background:url('${heroImg}') center/cover no-repeat;opacity:0.25;filter:blur(3px);z-index:0;`}></div>
+      <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom, rgba(15,15,26,0.6) 0%, rgba(15,15,26,1) 100%);z-index:1;"></div>
+      
+      <div class="container" style="position:relative;z-index:2;max-width:800px;margin:0 auto">
+        <div style="margin-bottom:1.5rem;display:flex;justify-content:center;gap:1rem;color:#F97316;font-weight:600;font-size:0.9rem">
+          <span>{entry.data.category || 'Ghid Educațional'}</span>
+          <span>•</span>
+          <span>{entry.data.readTime || '5 minute citire'}</span>
+        </div>
+        <h1 style="font-size:2.8rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:1.5rem">
+          {cleanTitle}
+        </h1>
+        <p style="font-size:1.15rem;color:#cbd5e1;line-height:1.7">
+          {cleanDesc}
+        </p>
+      </div>
+    </header>
+
+    <!-- Continutul Markdown (The Meat) -->
+    <div class="article-content" style="padding:4rem 0">
+      <div class="container" style="max-width:800px;margin:0 auto">
+        <div class="prose prose-invert prose-lg" style="color:var(--text-muted,#94a3b8);line-height:1.8;font-size:1.1rem">
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    <!-- The SEO Link-Juice Trap (Invizibil SEO pt client, dar vital pt Google) -->
+    <div style="background:var(--dark-2,#1a1a2e);padding:5rem 0;border-top:1px solid rgba(255,255,255,0.05)">
+      <div class="container" style="max-width:800px;margin:0 auto;text-align:center;background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.2);padding:3rem 2rem;border-radius:16px">
+        <h3 style="font-size:1.8rem;color:#fff;font-weight:800;margin-bottom:1rem">Ai citit destul, e timpul pentru distracție! 🎉</h3>
+        <p style="color:#94a3b8;font-size:1.05rem;margin-bottom:2rem;line-height:1.6">
+          Sperăm că te-au inspirat aceste sfaturi. Dacă simți că organizarea e prea multă bătaie de cap, lasă-ne pe noi să facem magia. Avem cei mai buni <strong>animatori petreceri copii</strong> din oraș pregătiți să creeze amintiri perfecte.
+        </p>
+        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+          <a href="/" style="background:#F97316;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(249,115,22,0.3)">Rezervă Acum (Ofertă)</a>
+          <a href="/animatori-petreceri-copii" style="background:rgba(255,255,255,0.05);color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1)">Vezi Toate Personajele</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Formatarea textului Markdown inserat pentru Aspect Premium */
+  .prose h2 { color: #fff; font-size: 1.8rem; font-weight: 800; margin-top: 3rem; margin-bottom: 1.5rem; }
+  .prose h3 { color: #e2e8f0; font-size: 1.4rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+  .prose p { margin-bottom: 1.5rem; }
+  .prose strong { color: #fff; font-weight: 700; }
+  .prose ul, .prose ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+  .prose li { margin-bottom: 0.5rem; }
+  .prose a { color: #F97316; text-decoration: none; font-weight: 600; border-bottom: 1px dotted #F97316; }
+  .prose a:hover { color: #fff; border-bottom-style: solid; }
+  .prose blockquote { border-left: 4px solid #22d3ee; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; background: rgba(34,211,238,0.05); padding: 1.5rem; border-radius: 0 8px 8px 0; }
+</style>
