@@ -1,0 +1,31 @@
+
+> superparty-astro@1.0.0 build
+> astro build
+
+(node:15688) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+19:15:15 [types] Generated 4.87s
+19:15:15 [build] output: "static"
+19:15:15 [build] directory: C:\Users\ursac\Superparty\dist\
+19:15:15 [build] Collecting build info...
+19:15:15 [build] ✓ Completed in 5.10s.
+19:15:15 [build] Building static entrypoints...
+
+[1m[33mwarn[39m[22m - The `content` option in your Tailwind CSS configuration is missing or empty.
+[1m[33mwarn[39m[22m - Configure your content sources or your generated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration
+19:15:36 [ERROR] [vite] [31mx[39m Build failed in 20.32s
+[InvalidContentEntryFrontmatterError] [astro:content-imports] seo-articles → animatori-petreceri-copii-aladdin-jilava.mdx frontmatter does not match collection schema.
+title: Required
+description: Required
+file: C:/Users/ursac/Superparty/src/content/seo-articles/animatori-petreceri-copii-aladdin-jilava.mdx?astroContentCollectionEntry=true:0:0
+  Hint:
+    See https://docs.astro.build/en/guides/content-collections/ for more information on content schemas.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/invalid-content-entry-frontmatter-error/
+  Location:
+    C:/Users/ursac/Superparty/src/content/seo-articles/animatori-petreceri-copii-aladdin-jilava.mdx:0:0
+  Stack trace:
+    at getEntryDataAndImages (file:///C:/Users/ursac/Superparty/node_modules/.pnpm/astro@4.16.19_@types+node@24.12.0_rollup@4.59.0_typescript@5.9.3/node_modules/astro/dist/content/utils.js:137:26)
+    at async getContentEntryModule (file:///C:/Users/ursac/Superparty/node_modules/.pnpm/astro@4.16.19_@types+node@24.12.0_rollup@4.59.0_typescript@5.9.3/node_modules/astro/dist/content/vite-plugin-content-imports.js:171:35)
+    at async transform (file:///C:/Users/ursac/Superparty/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21269:16)

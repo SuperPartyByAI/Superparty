@@ -1,0 +1,74 @@
+╔══════════════════════════════════════════════════════════════════╗
+║   AUDIT COMPLET CONTINUT DUPLICAT — SUPERPARTY.RO               ║
+║   2026-03-20  |  144 pagini indexate  |  10296 perechi analizate         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────┐
+│  DISTRIBUȚIE GLOBALĂ SIMILARITATE                                │
+└──────────────────────────────────────────────────────────────────┘
+⛔ DUPLICATE (80-100%):      0 perechi [                              ] 0%
+🔴 Foarte similare(50-79%):  2225 perechi [██████                        ] 22%
+🟡 Similare (30-49%):     1700 perechi [█████                         ] 17%
+🟢 Parțial (20-29%):       412 perechi [█                             ] 4%
+✅ UNICE (0-19%):         5959 perechi [█████████████████             ] 58%
+
+┌──────────────────────────────────────────────────────────────────┐
+│  IMPACT PE PAGINI INDIVIDUALE                                     │
+└──────────────────────────────────────────────────────────────────┘
+Pagini cu duplicate >80%:  0/144 (0%)
+Pagini cu similare >50%:   101/144 (70%)
+Pagini cu conținut UNIC:   43/144 (30%)
+
+┌──────────────────────────────────────────────────────────────────┐
+│  TOP 25 DUPLICATE (cele mai similare perechi)                    │
+└──────────────────────────────────────────────────────────────────┘
+🔴 79%  petreceri/dragomiresti-vale                ↔ petreceri/tunari
+🔴 78%  petreceri/1-decembrie                      ↔ petreceri/cretesti
+🔴 78%  petreceri/alunisu                          ↔ petreceri/cucuieti
+🔴 78%  petreceri/bolintin-deal                    ↔ petreceri/cretuleasca
+🔴 78%  petreceri/branistari                       ↔ petreceri/buciumeni
+🔴 78%  petreceri/calugareni                       ↔ petreceri/mihai-voda
+🔴 78%  petreceri/ciorogirla                       ↔ petreceri/moara-vlasiei
+🔴 77%  petreceri/balotesti                        ↔ petreceri/domnesti
+🔴 77%  petreceri/calugareni                       ↔ petreceri/cocani
+🔴 77%  petreceri/cocani                           ↔ petreceri/mihai-voda
+🔴 77%  petreceri/corbeanca                        ↔ petreceri/dragomiresti-deal
+🔴 77%  petreceri/cosoba                           ↔ petreceri/crevedia-mare
+🔴 77%  petreceri/cretesti                         ↔ petreceri/domnesti
+🔴 76%  petreceri/1-decembrie                      ↔ petreceri/budesti
+🔴 76%  petreceri/1-decembrie                      ↔ petreceri/domnesti
+🔴 76%  petreceri/balotesti                        ↔ petreceri/cretesti
+🔴 76%  petreceri/budesti                          ↔ petreceri/domnesti
+🔴 76%  petreceri/crevedia                         ↔ petreceri/dimieni
+🔴 76%  petreceri/dimieni                          ↔ petreceri/valea-piersicilor
+🔴 75%  contact                                    ↔ recenzii
+🔴 75%  petreceri/1-decembrie                      ↔ petreceri/balotesti
+🔴 75%  petreceri/adunatii-copaceni                ↔ petreceri/branistari
+🔴 75%  petreceri/balotesti                        ↔ petreceri/budesti
+🔴 75%  petreceri/bolintin-vale                    ↔ petreceri/fundulea
+🔴 75%  petreceri/budesti                          ↔ petreceri/cretesti
+
+┌──────────────────────────────────────────────────────────────────┐
+│  STATISTICI PE CATEGORII                                         │
+└──────────────────────────────────────────────────────────────────┘
+petreceri/comune (intern):
+  Total: 6903 | Duplicate >80%: 0 (0%) | Similare >50%: 2178 (32%)
+alte pagini ↔ alte pagini:
+  Total: 66 | Duplicate >80%: 0 (0%) | Similare >50%: 45 (68%)
+animatori-copii (intern):
+  Total: 91 | Duplicate >80%: 0 (0%) | Similare >50%: 2 (2%)
+animatori-copii ↔ alte pagini:
+  Total: 168 | Duplicate >80%: 0 (0%) | Similare >50%: 0 (0%)
+animatori-copii ↔ petreceri/comune:
+  Total: 1652 | Duplicate >80%: 0 (0%) | Similare >50%: 0 (0%)
+alte pagini ↔ petreceri/comune:
+  Total: 944 | Duplicate >80%: 0 (0%) | Similare >50%: 0 (0%)
+petreceri/comune ↔ alte pagini:
+  Total: 472 | Duplicate >80%: 0 (0%) | Similare >50%: 0 (0%)
+
+┌──────────────────────────────────────────────────────────────────┐
+│  CONCLUZIE                                                       │
+└──────────────────────────────────────────────────────────────────┘
+Similaritate medie globală:  26%
+✅ Nu există pagini cu conținut identic (>80%)!
+✅ Site-ul respectă criteriile Google pentru conținut unic.

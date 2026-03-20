@@ -1,0 +1,11 @@
+Motiv,Sursă,Validare,Pagini
+Pagină cu redirecționare,Site,A eșuat,31
+Pagină alternativă cu etichetă canonică corespunzătoare,Site,Nu a început,2
+Blocată din cauza unei alte erori 4xx,Site,Nu a început,1
+Eroare redirecționare,Site,Nu a început,1
+Descoperită – nu este indexată,Sistemele Google,Nu a început,44
+Accesată cu crawlere – nu este indexată,Sistemele Google,Nu a început,6
+"Dublură, Google a ales o altă pagină canonică față de cea selectată de utilizator",Sistemele Google,Nu a început,2
+Dublură fără pagina canonică selectată de utilizator,Site,Dată de începere,212
+Nu a fost găsită (404),Site,Dată de începere,20
+Exclusă pe baza etichetei „noindex”,Site,Dată de începere,2

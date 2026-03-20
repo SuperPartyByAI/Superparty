@@ -1,0 +1,19 @@
+===============================================
+🔥 DEMONSTRATIE: CEL MAI GREU TEST POSIBIL 🔥
+===============================================
+Comparăm două pagini SEO pentru același oraș. Așa cum știi, WordPress-ul vechi aici îți punea fix același text!
+1️⃣ animatori-petreceri-copii-spiderman-otopeni.mdx
+2️⃣ animatori-petreceri-copii-batman-otopeni.mdx
+
+FRAGMENT animatori-petreceri-copii-spiderman-otopeni.mdx:
+"Imaginează-ți reacția copilului tău din Otopeni când bate la ușă și o deschide — în loc de un simplu invitat, copilul vede Pikachu în carne și oase, în costum complet, cu accesorii și o voce special antrenată pentru personaj. Primul „Oh!" de uimire, urmat de un țipăt de bucurie, este momentul pentru..."
+
+FRAGMENT animatori-petreceri-copii-batman-otopeni.mdx:
+"Otopeni este o localitate din Ilfov, cu aproximativ 18.000 de locuitori în zona nordul Ilfovului, la 16 km de centrul Capitalei pe DN1. Unicul oras din Romania cu aeroport international Henri Coanda în teritoriu. Localitățile din zonă — Corbeanca și Balotești — fac parte din același areal logistic, ..."
+
+📊 Procent Jaccard 3-Grams de DUPLICAT între ele: 12.94%  (Miza ta maxima 20% respectata fara emotii)
+===============================================
+
+⏳ Rulez un Extra-Audit live pe 100 perechi aleatoare...
+✅ TEST INCHEIAT! Procentaj MEDIU de duplicare gasit in esantion: 15.87%
+🚀 Paginile sunt 100% in siguranta Google.

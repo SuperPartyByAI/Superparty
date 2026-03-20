@@ -1,0 +1,81 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  AUDIT CALITATE CONTINUT — SUPERPARTY.RO                        ║
+║  Masurare: % continut UNIC + % relevanta "animatori copii"       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────┐
+│  STATISTICI GLOBALE                                              │
+└──────────────────────────────────────────────────────────────────┘
+Total pagini analizate:          144
+Cuvinte template comun (>60%):   343 cuvinte ignorate
+
+Medie % continut UNIC:           33%
+Medie % relevanta tematica:      18%
+Scor calitate mediu:             52/100
+
+✅ Calitate BUNA (60-100):       7 pagini (5%)
+🟡 Calitate MEDIE (30-59):       137 pagini (95%)
+⛔ Calitate SLABA (0-29):        0 pagini (0%)
+
+┌──────────────────────────────────────────────────────────────────┐
+│  PAGINI CU CEA MAI SLABA CALITATE (cel mai putin continut unic)  │
+└──────────────────────────────────────────────────────────────────┘
+Pagina                                             Unic%   Relev%   Scor   Cuvinte
+--------------------------------------------------------------------------------
+🟡 animatori-copii-voluntari                        54%     10%      47     839w
+🟡 petreceri/cojasca                                22%     18%      47     844w
+🟡 petreceri/crevedia-mare                          22%     18%      47     952w
+🟡 animatori-copii-bragadiru                        47%     12%      48     626w
+🟡 animatori-copii-otopeni                          48%     12%      48     642w
+🟡 petreceri/budeni                                 23%     18%      48     877w
+🟡 petreceri/buturugeni                             20%     19%      48     831w
+🟡 petreceri/iepuresti                              24%     18%      48     889w
+🟡 petreceri/bacu                                   22%     19%      49     884w
+🟡 petreceri/belciugatele                           22%     19%      49     835w
+🟡 petreceri/butimanu                               21%     19%      49     845w
+🟡 petreceri/campurelu                              21%     19%      49     847w
+🟡 petreceri/catrunesti                             25%     18%      49     933w
+🟡 petreceri/chiajna                                50%     12%      49     738w
+🟡 petreceri/colibasi                               21%     19%      49     838w
+🟡 petreceri/copaceni                               22%     19%      49     859w
+🟡 petreceri/cozieni                                22%     19%      49     832w
+🟡 petreceri/cranguri                               21%     19%      49     838w
+🟡 petreceri/creata                                 21%     19%      49     858w
+🟡 petreceri/nuci                                   22%     19%      49     879w
+🟡 animatori-copii-chiajna                          48%     13%      50     616w
+🟡 animatori-copii-popesti-leordeni                 48%     13%      50     657w
+🟡 petreceri/adunatii-copaceni                      28%     18%      50     957w
+🟡 petreceri/afumati                                19%     20%      50     850w
+🟡 petreceri/alunisu                                24%     19%      50     929w
+
+┌──────────────────────────────────────────────────────────────────┐
+│  PAGINI CU CEA MAI BUNA CALITATE                                │
+└──────────────────────────────────────────────────────────────────┘
+Pagina                                             Unic%   Relev%   Scor   Cuvinte
+--------------------------------------------------------------------------------
+✅ animatori-petreceri-copii                        39%     22%      64     972w
+✅ ursitoare-botez                                  56%     17%      62     1459w
+✅ arcade-baloane                                   57%     16%      61     1459w
+✅ baloane-cu-heliu                                 57%     16%      61     1446w
+✅ decoratiuni-baloane                              57%     16%      61     1456w
+✅ galerie                                          57%     16%      61     1458w
+✅ mos-craciun-de-inchiriat                         57%     16%      61     1333w
+🟡 petreceri/pantelimon-cartier                     53%     16%      59     1065w
+🟡 recenzii                                         58%     15%      59     1325w
+🟡 contact                                          55%     15%      58     1409w
+🟡 index                                            27%     22%      58     423w
+🟡 petreceri/berceni-ilfov                          20%     24%      58     920w
+🟡 petreceri/ilfov                                  44%     18%      58     765w
+🟡 piniata                                          59%     14%      58     1418w
+🟡 vata-de-zahar-si-popcorn                         60%     14%      58     1476w
+🟡 animatori-copii-sector-2                         50%     16%      57     731w
+🟡 animatori-copii-sector-3                         50%     16%      57     771w
+🟡 animatori-copii-sector-4                         50%     16%      57     756w
+🟡 animatori-copii-sector-5                         49%     16%      57     754w
+🟡 petreceri/colentina                              53%     15%      57     1028w
+
+┌──────────────────────────────────────────────────────────────────┐
+│  CUVINTE TEMPLATE COMUN DETECTED (apar pe >60% din pagini)      │
+└──────────────────────────────────────────────────────────────────┘
+animatori(144), petreceri(144), copii(144), superparty(144), disponibilitatea(144), acum(144), pentru(144), este(144), petrecere(144), personaje(144), include(144), premium(144), ziua(144), copilului(144), data(144), sună(144), garanție(144), copiii(144), zona(144), disponibile(144), case(144), animatorul(144), restul(144), vine(144), minute(144), deplasare(144), fără(144), parcuri(144), săli(144), restaurante(144), zonă(144), petrecerile(144), outdoor(144), avem(144), contactează(144), whatsapp(144), trebuie(144), copiilor(144), bucureștiului(144), taxă(144)
+

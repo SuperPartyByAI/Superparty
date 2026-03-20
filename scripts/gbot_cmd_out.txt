@@ -1,0 +1,94 @@
+SIMULARE GOOGLEBOT - SUPERPARTY.RO - 2026-03-20T14:53:37
+UA: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+------ A. SITEMAPS (Nu s-a putut prelua in GSC) ------
+[OK ] HTTP 200 | 26020b | ContentType: application/xml
+       URL: https://www.superparty.ro/sitemap.xml
+[ERR] HTTP 404 | 3718b | ContentType: text/html; charset=utf-8
+       URL: https://www.superparty.ro/sitemap_index.xml
+
+------ B. PAGINI CU 404 IN GSC (20 pagini) ------
+[301-OK ] /petreceri/animator-mickey-mouse-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-batman-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-paw-patrol-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-pikachu-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-spiderman-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-moana-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /petreceri/animator-rapunzel-petreceri-copii-bucuresti
+          -> /animatori-petreceri-copii
+[301-OK ] /balonase-modelate
+          -> /animatori-petreceri-copii
+[301-OK ] /animatoare-botez
+          -> /ursitoare-botez
+[301-OK ] /blog/
+          -> /
+[301-OK ] /petreceri/sfaturi-ghiduri
+          -> /animatori-petreceri-copii
+
+------ C. PAGINI CU REDIRECTIONARE IN GSC (31 pagini) ------
+[301-OK ] /animatori-petreceri -> /animatori-petreceri-copii
+[301-OK ] /vata-de-zahar -> /vata-de-zahar-si-popcorn
+[301-OK ] /popcorn-masina -> /vata-de-zahar-si-popcorn
+[301-OK ] /animatori-petreceri-copii/ -> /animatori-petreceri-copii
+[301-OK ] /contact/ -> /contact
+[200-OK? ] /recenzii/ -> (no redirect)
+[307-?   ] [noWWW]/animatori-petreceri-copii -> https://www.superparty.ro/animatori-petreceri-copii
+
+------ D. PAGINI DUPLICATE FARA CANONICAL (212 in GSC) - Test 5 exemple ------
+[OK ] 200 /petreceri/animatori-petreceri-copii-cenusareasa-domnesti
+       canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-domnesti
+       noindex: NU (indexabila)
+       schema: prezent | cuvinte: 726
+       H1: "Animator Cenușăreasa Disney Petreceri Copii Domnești | Super"
+[301] /petreceri/petrecere-tematica-incredibles-copii-bucuresti -> /animatori-petreceri-copii
+[OK ] 200 /petreceri/animatori-petreceri-copii-miraculous-ladybug-copaceni
+       canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-miraculous-ladybug-copaceni
+       noindex: DA (nu se va indexa)
+       schema: prezent | cuvinte: 723
+       H1: "LIPSA"
+[OK ] 200 /petreceri/animatori-petreceri-copii-iron-man-chiajna
+       canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-iron-man-chiajna
+       noindex: NU (indexabila)
+       schema: prezent | cuvinte: 731
+       H1: "Animator Iron Man Petreceri Copii Chiajna | Superparty.ro"
+[OK ] 200 /petreceri/animatori-petreceri-copii-ariel-berceni
+       canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-ariel-berceni
+       noindex: DA (nu se va indexa)
+       schema: prezent | cuvinte: 759
+       H1: "Animator Ariel Mica Sirenă Petreceri Copii Berceni | Superpa"
+
+------ E. PAGINI PRINCIPALE (trebuie 200 + canonical + schema + no noindex) ------
+[OK ] 200 /
+       title: "SuperParty — Animatori Petreceri Copii București &amp; Ilfov"
+       canonical: /
+       schema: OK | noindex: NU | cuvinte: 1294
+[OK ] 200 /animatori-petreceri-copii
+       title: "Animatori Petreceri Copii București | SuperParty"
+       canonical: /animatori-petreceri-copii
+       schema: OK | noindex: NU | cuvinte: 1751
+[OK ] 200 /recenzii
+       title: "Recenzii SuperParty — 1498+ testimoniale reale de la părinți"
+       canonical: /recenzii/
+       schema: OK | noindex: NU | cuvinte: 35122
+[OK ] 200 /animatori-copii-sector-1
+       title: "Animatori petreceri copii Sector 1 | Superparty (#1) Peste 1"
+       canonical: /animatori-copii-sector-1/
+       schema: OK | noindex: NU | cuvinte: 1652
+[OK ] 200 /petreceri/adunatii-copaceni
+       title: "Animatori Petreceri Copii Adunații-Copăceni | SuperParty — d"
+       canonical: /petreceri/adunatii-copaceni
+       schema: OK | noindex: NU | cuvinte: 1279
+
+====== SUMAR FINAL GOOGLEBOT ======
+Total URL-uri testate: 30
+Probleme detectate:    2
+
+Probleme detaliate:
+  1. [Sitemap HTTP 404] -- https://www.superparty.ro/sitemap_index.xml
+  2. [Sitemap ContentType gresit: text/html; charset=utf-8] -- https://www.superparty.ro/sitemap_index.xml

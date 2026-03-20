@@ -1,0 +1,122 @@
+﻿
+≡ƒñû SIMULARE GOOGLEBOT ΓÇö SUPERPARTY.RO ΓÇö 2026-03-20 14:48:11
+User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  SITEMAPS (Nu s-a putut prelua)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à 200 ΓÇö /sitemap.xml
+   ContentType: application/xml
+   Size: 26020 bytes | XML valid: DA
+   <loc> in primul chunk: 2
+Γ¢ö 404 ΓÇö /sitemap_index.xml
+   ContentType: text/html; charset=utf-8
+   Size: 3718 bytes | XML valid: NU
+   <loc> in primul chunk: 0
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  404 (20 pagini in GSC)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-mickey-mouse-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-batman-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-paw-patrol-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-pikachu-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-spiderman-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-moana-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /petreceri/animator-rapunzel-petreceri-copii-bucuresti
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /balonase-modelate
+   Redirect catre: /animatori-petreceri-copii
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /animatoare-botez
+   Redirect catre: /ursitoare-botez
+Γ£à 301 ΓåÆ REDIRECT ΓÇö /blog/
+   Redirect catre: /
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  REDIRECTURI (31 pagini in GSC)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à 301 ΓÇö /animatori-petreceri  ΓåÆ  /animatori-petreceri-copii
+Γ£à 301 ΓÇö /vata-de-zahar  ΓåÆ  /vata-de-zahar-si-popcorn
+Γ£à 301 ΓÇö /popcorn-masina  ΓåÆ  /vata-de-zahar-si-popcorn
+Γ£à 301 ΓÇö /animatori-petreceri-copii/  ΓåÆ  /animatori-petreceri-copii
+Γ£à 301 ΓÇö /contact/  ΓåÆ  /contact
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  DUPLICATE FARA CANONICAL (212 pagini)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à 200 ΓÇö /petreceri/animatori-petreceri-copii-cenusareasa-domnesti
+   canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-cenusareasa-domnesti
+   H1: " Animator Cenu╚Ö─âreasa Disney Petreceri Copii Domne"
+   Schema: Γ£à | Cuvinte: 726
+Γ¢ö 301 ΓÇö /petreceri/petrecere-tematica-incredibles-copii-bucuresti
+   Γ¢ö LIPSESTE canonical in HTML!
+   H1: "Redirecting (301)"
+   Schema: Γ¢ö | Cuvinte: 7
+Γ£à 200 ΓÇö /petreceri/animatori-petreceri-copii-miraculous-ladybug-copaceni
+   canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-miraculous-ladybug-copaceni
+   Γ¢ö ARE noindex ΓÇö Google nu va indexa!
+   H1: " Animator Ladybug Miraculous Petreceri Copii Bucur"
+   Schema: Γ£à | Cuvinte: 723
+Γ£à 200 ΓÇö /petreceri/animatori-petreceri-copii-iasi-superparty
+   canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-iasi-superparty
+   Γ¢ö ARE noindex ΓÇö Google nu va indexa!
+   H1: " Animatori Petreceri Copii Bucure╚Öti | Superparty."
+   Schema: Γ£à | Cuvinte: 700
+Γ£à 200 ΓÇö /petreceri/animatori-petreceri-copii-iron-man-chiajna
+   canonical: https://www.superparty.ro/petreceri/animatori-petreceri-copii-iron-man-chiajna
+   H1: " Animator Iron Man Petreceri Copii Chiajna | Super"
+   Schema: Γ£à | Cuvinte: 731
+Γ¢ö 301 ΓÇö /petreceri/sfaturi-ghiduri
+   Γ¢ö LIPSESTE canonical in HTML!
+   H1: "Redirecting (301)"
+   Schema: Γ¢ö | Cuvinte: 7
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  EROARE REDIRECTIONARE (1 pagina)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ¢ö 307 ΓÇö [no-www]/animatori-petreceri-copii  ΓåÆ  https://www.superparty.ro/animatori-petreceri-copii
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  PAGINI PRINCIPALE (trebuie 200+canonical+schema)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à 200 ΓÇö /
+   Title: "SuperParty ΓÇö Animatori Petreceri Copii Bucure╚Öti &amp; Ilfov"
+   canonical: https://www.superparty.ro/
+   Schema: Γ£à | noindex: Γ£à NU | cuvinte: 1294
+   description: "Animatori profesioni╚Öti pentru petreceri copii ├«n Bucure╚Öti "
+Γ£à 200 ΓÇö /animatori-petreceri-copii
+   Title: "Animatori Petreceri Copii Bucure╚Öti | SuperParty"
+   canonical: .superparty.ro/animatori-petreceri-copii
+   Schema: Γ£à | noindex: Γ£à NU | cuvinte: 1751
+   description: "Animatori pentru petreceri copii ├«n Bucure╚Öti ╚Öi Ilfov. 50+ "
+Γ£à 200 ΓÇö /recenzii
+   Title: "Recenzii SuperParty ΓÇö 1498+ testimoniale reale de la p─ârin╚¢i"
+   canonical: https://www.superparty.ro/recenzii/
+   Schema: Γ£à | noindex: Γ£à NU | cuvinte: 35122
+   description: "Cite╚Öte 1498+ recenzii reale de la p─ârin╚¢i care au ales Supe"
+Γ£à 200 ΓÇö /animatori-copii-sector-1
+   Title: "Animatori petreceri copii Sector 1 | Superparty (#1) Peste 1"
+   canonical: .superparty.ro/animatori-copii-sector-1/
+   Schema: Γ£à | noindex: Γ£à NU | cuvinte: 1652
+   description: "Liderii ├«n animatori petreceri copii din Sector 1. Alege exp"
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  SUMAR FINAL GOOGLEBOT
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Total URL-uri testate:  28
+Probleme detectate:     3
+
+Probleme de rezolvat:
+  1. [Sitemap status=404 xml=false]
+     /sitemap_index.xml
+  2. [LIPSA canonical in HTML render]
+     /petreceri/petrecere-tematica-incredibles-copii-bucuresti
+  3. [LIPSA canonical in HTML render]
+     /petreceri/sfaturi-ghiduri

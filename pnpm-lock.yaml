@@ -11,6 +11,9 @@ importers:
       '@astrojs/mdx':
         specifier: ^3.0.0
         version: 3.1.9(astro@4.16.19(@types/node@24.12.0)(rollup@4.59.0)(typescript@5.9.3))
+      '@astrojs/partytown':
+        specifier: ^2.1.5
+        version: 2.1.5
       '@astrojs/sitemap':
         specifier: ^3.7.1
         version: 3.7.1
@@ -53,6 +56,9 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       astro: ^4.8.0
+
+  '@astrojs/partytown@2.1.5':
+    resolution: {integrity: sha512-Uo2Uqmvjh/5w08wGoVAspdj14hUoE28uQH8SkzaBMw9bTBNIviEkPi3VkJi+tj1ZYAY9oX7OSkRDJ48QRtMhlw==}
 
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
@@ -437,6 +443,11 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@qwik.dev/partytown@0.11.2':
+    resolution: {integrity: sha512-795y49CqBiKiwKAD+QBZlzlqEK275hVcazZ7wBPSfgC23L+vWuA7PJmMpgxojOucZHzYi5rAAQ+IP1I3BKVZxw==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -880,6 +891,10 @@ packages:
 
   dlv@1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
+
+  dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
+    engines: {node: '>=12'}
 
   dset@3.1.4:
     resolution: {integrity: sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA==}
@@ -2038,6 +2053,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/partytown@2.1.5':
+    dependencies:
+      '@qwik.dev/partytown': 0.11.2
+      mrmime: 2.0.1
+
   '@astrojs/prism@3.1.0':
     dependencies:
       prismjs: 1.30.0
@@ -2403,6 +2423,10 @@ snapshots:
       fastq: 1.20.1
 
   '@oslojs/encoding@1.1.0': {}
+
+  '@qwik.dev/partytown@0.11.2':
+    dependencies:
+      dotenv: 16.6.1
 
   '@rollup/pluginutils@5.3.0(rollup@4.59.0)':
     dependencies:
@@ -2852,6 +2876,8 @@ snapshots:
   diff@5.2.2: {}
 
   dlv@1.1.3: {}
+
+  dotenv@16.6.1: {}
 
   dset@3.1.4: {}
 
