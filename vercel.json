@@ -1,6 +1,41 @@
 {
     "redirects": [
         {
+            "source": "/petreceri/animator-(?<char>[^/]+)-petreceri-copii-(?<loc>[^/]+)/?",
+            "destination": "/petreceri/animatori-petreceri-copii-$char-$loc",
+            "statusCode": 301
+        },
+        {
+            "source": "/petreceri/petrecere-tematica-(?<char>[^/]+)-copii-(?<loc>[^/]+)/?",
+            "destination": "/petreceri/animatori-petreceri-copii-$char-$loc",
+            "statusCode": 301
+        },
+        {
+            "source": "/wp-admin/(.*)",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/wp-content/(.*)",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/wp-includes/(.*)",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/blog/(.*)",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/blog/?",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
             "source": "/(.*)",
             "has": [
                 {
