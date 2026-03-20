@@ -9,117 +9,117 @@
                 }
             ],
             "destination": "https://www.superparty.ro/$1",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/animatori-petreceri",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/animatori-petreceri/",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/balonase-modelate",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/balonase-modelate/",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/vata-de-zahar",
             "destination": "/vata-de-zahar-si-popcorn",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/vata-de-zahar/",
             "destination": "/vata-de-zahar-si-popcorn",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/popcorn-masina",
             "destination": "/vata-de-zahar-si-popcorn",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/popcorn-masina/",
             "destination": "/vata-de-zahar-si-popcorn",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/animatoare-botez",
             "destination": "/ursitoare-botez",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/animatoare-botez/",
             "destination": "/ursitoare-botez",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/blog",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/blog/",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/arie-acoperire/",
             "destination": "/arie-acoperire",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/animatori-petreceri-copii/",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/arcade-baloane/",
             "destination": "/arcade-baloane",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/baloane-cu-heliu/",
             "destination": "/baloane-cu-heliu",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/decoratiuni-baloane/",
             "destination": "/decoratiuni-baloane",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/mos-craciun-de-inchiriat/",
             "destination": "/mos-craciun-de-inchiriat",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/piniata/",
             "destination": "/piniata",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/ursitoare-botez/",
             "destination": "/ursitoare-botez",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/vata-de-zahar-si-popcorn/",
             "destination": "/vata-de-zahar-si-popcorn",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/contact/",
             "destination": "/contact",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/",
@@ -131,7 +131,7 @@
                 }
             ],
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/",
@@ -142,147 +142,147 @@
                 }
             ],
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-content/plugins/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-content/themes/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-content/cache/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-content/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-admin/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-login.php",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-json/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/wp-includes/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/xmlrpc.php",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/feed",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/feed/",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/comments/feed",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/comments/feed/",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/category/:path*",
             "destination": "/blog",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/tag/:path*",
             "destination": "/blog",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/author/:path*",
             "destination": "/blog",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/page/:path*",
             "destination": "/",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/portfolio/:path*",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-mickey-mouse-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-paw-patrol-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-pikachu-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-batman-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-spiderman-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-moana-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-rapunzel-petreceri-copii-bucuresti",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/animator-:personaj-petreceri-copii-:oras",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/sfaturi-ghiduri",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         },
         {
             "source": "/petreceri/petrecere-:path*",
             "destination": "/animatori-petreceri-copii",
-            "permanent": true
+            "statusCode": 301
         }
     ]
 }
