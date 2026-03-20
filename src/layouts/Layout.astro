@@ -30,6 +30,9 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
+  <!-- Preload LCP Hero Image for 100/100 Lighthouse -->
+  <link rel="preload" href="/wp-content/uploads/generated/hero-coperta.webp" as="image" type="image/webp" />
+
   <!-- Google Analytics 4 (Optimizat prin Astro Partytown) -->
   {GA4_ID && (
     <>
@@ -219,7 +222,7 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   </div>
 
   <!-- Hamburger toggle JS -->
-  <script>
+  <script type="module">
     (function() {
       var btn = document.getElementById('hamburger-btn');
       var drawer = document.getElementById('mobile-drawer');
@@ -246,7 +249,7 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   </script>
 
   <!-- GA4 event tracking -->
-  <script>
+  <script type="module">
     (function() {
       function gtag() {
         if (typeof window._gtag === 'function') { window._gtag.apply(null, arguments); }

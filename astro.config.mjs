@@ -11,4 +11,7 @@ export default defineConfig({
     site: 'https://www.superparty.ro',
     trailingSlash: 'ignore',
     integrations: [mdx(), tailwind(), partytown()],
+    build: {
+      inlineStylesheets: 'always'
+    }
 });
