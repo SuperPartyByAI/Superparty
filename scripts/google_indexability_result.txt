@@ -1,0 +1,367 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DOVADĂ: 144 PAGINI GATA PENTRU GOOGLE — RAPORT COMPLET         ║
+║  Data: 2026-03-20 Ora: 01:19 UTC                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📊 TOTAL PAGINI INDEXATE: 144
+📊 SCOR MEDIU SEO: 97/100
+
+┌──────────────────────────────────────────────────────────────────┐
+│  DISTRIBUȚIE SCORURI — CUM VĂD ROBOTII GOOGLE PAGINILE          │
+└──────────────────────────────────────────────────────────────────┘
+✅ PERFECTE (95-100/100):   116 pagini  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+🟡 BUNE     (80-94/100):   20 pagini  ▓▓▓▓▓▓
+🟠 MEDII    (60-79/100):   8 pagini  ▓▓
+⛔ SLABE    (0-59/100):    0 pagini  
+
+┌──────────────────────────────────────────────────────────────────┐
+│  ELEMENTE SEO TEHNIC — TOATE 144 PAGINI                         │
+└──────────────────────────────────────────────────────────────────┘
+Titlu <title>:     ✅ TOATE 144 pagini au titlu!
+Meta description:  ✅ TOATE 144 pagini au description!
+Canonical URL:     ⚠️  7 fără canonical
+Schema JSON-LD:    ⚠️  13 fără schema
+H1 prezent:        ✅ Toate OK!
+Conținut 200+w:    ⚠️  3 prea subțiri
+
+┌──────────────────────────────────────────────────────────────────┐
+│  STATISTICI CONȚINUT                                            │
+└──────────────────────────────────────────────────────────────────┘
+Cuvinte MINIM:     89
+Cuvinte MEDIU:     602
+Cuvinte MAXIM:     1391
+Pagini 400+ cuvinte: 128/144
+Pagini 200-400w:     13/144
+Pagini sub 200w:     3/144
+
+Schema JSON-LD (Rich Snippets): 131/144 pagini (91%)
+
+┌──────────────────────────────────────────────────────────────────┐
+│  TOATE PAGINILE — ORDIN SCOR (worst → best)                     │
+└──────────────────────────────────────────────────────────────────┘
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-1/
+   T:"Animatori petreceri copii Sector 1 | Superpar..." | 812w | H1:1 H2:9 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-2/
+   T:"Animatori petreceri copii Sector 2 | Superpar..." | 453w | H1:1 H2:7 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-3/
+   T:"Animatori petreceri copii Sector 3 | Superpar..." | 458w | H1:1 H2:7 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-4/
+   T:"Animatori petreceri copii Sector 4 | Superpar..." | 464w | H1:1 H2:7 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-5/
+   T:"Animatori petreceri copii Sector 5 | Superpar..." | 447w | H1:1 H2:7 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /animatori-copii-sector-6/
+   T:"Animatori petreceri copii Sector 6 | Superpar..." | 465w | H1:1 H2:7 | Schema:⚠️ | Canon:⚠️
+🟡[ 70/100] ███████░░░  /recenzii
+   T:"[dinamic]" | 89w | H1:1 H2:1 | Schema:✅ | Canon:⚠️
+🟡[ 78/100] ████████░░  /animatori-copii-ilfov/
+   T:"Animatori Copii Ilfov — Toate Localitățile | ..." | 212w | H1:1 H2:4 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-bragadiru/
+   T:"Animatori Copii Bragadiru | SuperParty Ilfov" | 426w | H1:1 H2:5 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-chiajna/
+   T:"Animatori Copii Chiajna — Militari Residence ..." | 423w | H1:1 H2:5 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-otopeni/
+   T:"Animatori Copii Otopeni | SuperParty — Ilfov ..." | 459w | H1:1 H2:5 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-pantelimon/
+   T:"Animatori Copii Pantelimon Ilfov | SuperParty" | 433w | H1:1 H2:5 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-popesti-leordeni/
+   T:"Animatori Copii Popești-Leordeni | SuperParty..." | 452w | H1:1 H2:5 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /animatori-copii-voluntari/
+   T:"Animatori petreceri copii Voluntari | Superpa..." | 653w | H1:1 H2:6 | Schema:⚠️ | Canon:✅
+🟡[ 85/100] █████████░  /contact/
+   T:"Contact SuperParty — Rezervare Animatori Petr..." | 198w | H1:1 H2:3 | Schema:✅ | Canon:✅
+🟡[ 85/100] █████████░  /
+   T:"SuperParty — Animatori Petreceri Copii Bucure..." | 197w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /animatori-copii-bucuresti/
+   T:"Animatori Petreceri Copii București | SuperPa..." | 372w | H1:1 H2:7 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /arcade-baloane/
+   T:"Arcade Baloane Petreceri Copii | SuperParty" | 239w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /baloane-cu-heliu/
+   T:"Baloane cu Heliu Petreceri Copii | SuperParty..." | 207w | H1:1 H2:3 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /decoratiuni-baloane/
+   T:"Decorațiuni Baloane Petreceri Copii | SuperPa..." | 229w | H1:1 H2:3 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /galerie
+   T:"Galerie Foto Petreceri Copii | SuperParty Buc..." | 247w | H1:1 H2:2 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /mos-craciun-de-inchiriat/
+   T:"Moș Crăciun de Închiriat Petreceri Copii | Su..." | 238w | H1:1 H2:3 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /petreceri/bragadiru
+   T:"Animatori Petreceri Copii Bragadiru | SuperPa..." | 263w | H1:1 H2:5 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /petreceri/buftea
+   T:"Animatori Petreceri Copii Buftea | SuperParty..." | 383w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /petreceri/chiajna
+   T:"Animatori Petreceri Copii Chiajna — Militari ..." | 387w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /piniata/
+   T:"Piniată Personalizată Petreceri Copii | Super..." | 349w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /ursitoare-botez/
+   T:"Ursitoare Botez | SuperParty București — Prog..." | 234w | H1:1 H2:3 | Schema:✅ | Canon:✅
+✅[ 93/100] █████████░  /vata-de-zahar-si-popcorn/
+   T:"Vată de Zahăr și Popcorn Petreceri Copii | Su..." | 222w | H1:1 H2:3 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /animatori-petreceri-copii/
+   T:"Animatori Petreceri Copii București | SuperPa..." | 825w | H1:1 H2:7 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/1-decembrie
+   T:"Animatori Petreceri Copii 1 Decembrie | Super..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/adunatii-copaceni
+   T:"Animatori Petreceri Copii Adunații-Copăceni |..." | 623w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/afumati
+   T:"Animatori Petreceri Copii Afumați | SuperPart..." | 592w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/alunisu
+   T:"Animatori Petreceri Copii Alunișu | SuperPart..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/aviatiei
+   T:"Animatori Petreceri Copii Aviației | SuperPar..." | 776w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/bacu
+   T:"Animatori Petreceri Copii Bâcu | SuperParty —..." | 608w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/balaceanca
+   T:"Animatori Petreceri Copii Bălăceanca | SuperP..." | 579w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/balotesti
+   T:"Animatori Petreceri Copii Balotești | SuperPa..." | 584w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/baneasa
+   T:"Animatori Petreceri Copii Băneasa | SuperPart..." | 582w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/belciugatele
+   T:"Animatori Petreceri Copii Belciugatele | Supe..." | 595w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/berceni-ilfov
+   T:"Animatori Petreceri Copii Berceni (Ilfov) | S..." | 610w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/berceni
+   T:"Animatori Petreceri Copii Berceni | SuperPart..." | 855w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/bolintin-deal
+   T:"Animatori Petreceri Copii Bolintin-Deal | Sup..." | 619w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/bolintin-vale
+   T:"Animatori Petreceri Copii Bolintin-Vale | Sup..." | 614w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/branesti
+   T:"Animatori Petreceri Copii Brănești | SuperPar..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/branistari
+   T:"Animatori Petreceri Copii Brăniștari | SuperP..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/buciumeni
+   T:"Animatori Petreceri Copii Buciumeni | SuperPa..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/bucuresti
+   T:"Animatori Petreceri Copii București | SuperPa..." | 566w | H1:1 H2:5 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/budeni
+   T:"Animatori Petreceri Copii Budeni | SuperParty..." | 596w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/budesti
+   T:"Animatori Petreceri Copii Budești | SuperPart..." | 582w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/bulbucata
+   T:"Animatori Petreceri Copii Bulbucata | SuperPa..." | 602w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/butimanu
+   T:"Animatori Petreceri Copii Butimanu | SuperPar..." | 593w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/buturugeni
+   T:"Animatori Petreceri Copii Buturugeni | SuperP..." | 592w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/caciulati
+   T:"Animatori Petreceri Copii Căciulați | SuperPa..." | 591w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/calarasi
+   T:"Animatori Petreceri Copii Călărași | SuperPar..." | 644w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/caldararu
+   T:"Animatori Petreceri Copii Căldăraru | SuperPa..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/calugareni
+   T:"Animatori Petreceri Copii Călugăreni | SuperP..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/campurelu
+   T:"Animatori Petreceri Copii Câmpurelu | SuperPa..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/candeasca
+   T:"Animatori Petreceri Copii Cândeasca | SuperPa..." | 592w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/catelu
+   T:"Animatori Petreceri Copii Catelu | SuperParty..." | 582w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/catrunesti
+   T:"Animatori Petreceri Copii Câtrunești | SuperP..." | 599w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cernica
+   T:"Animatori Petreceri Copii Cernica | SuperPart..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/chirculesti
+   T:"Animatori Petreceri Copii Chirculești | Super..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/chitila
+   T:"Animatori Petreceri Copii Chitila | SuperPart..." | 580w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ciocanesti
+   T:"Animatori Petreceri Copii Ciocanești | SuperP..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ciofliceni
+   T:"Animatori Petreceri Copii Ciofliceni | SuperP..." | 592w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ciorogarla
+   T:"Animatori Petreceri Copii Ciorogârla | SuperP..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ciorogirla
+   T:"Animatori Petreceri Copii Ciorogârla (sat) | ..." | 609w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/clinceni
+   T:"Animatori Petreceri Copii Clinceni | SuperPar..." | 588w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cocani
+   T:"Animatori Petreceri Copii Cocani | SuperParty..." | 598w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cojasca
+   T:"Animatori Petreceri Copii Cojasca | SuperPart..." | 599w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cojesti
+   T:"Animatori Petreceri Copii Cojești | SuperPart..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/colentina
+   T:"Animatori Petreceri Copii Colentina | SuperPa..." | 988w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/colibasi
+   T:"Animatori Petreceri Copii Colibași | SuperPar..." | 597w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/comana
+   T:"Animatori Petreceri Copii Comana | SuperParty..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/copaceni
+   T:"Animatori Petreceri Copii Copăceni | SuperPar..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/corbeanca
+   T:"Animatori Petreceri Copii Corbeanca | SuperPa..." | 587w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cornetu
+   T:"Animatori Petreceri Copii Cornetu | SuperPart..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cosoba
+   T:"Animatori Petreceri Copii Cosoba | SuperParty..." | 596w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/coteni
+   T:"Animatori Petreceri Copii Coneni | SuperParty..." | 604w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cozieni
+   T:"Animatori Petreceri Copii Cozieni | SuperPart..." | 592w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/crangasi
+   T:"Animatori Petreceri Copii Crângași | SuperPar..." | 856w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cranguri
+   T:"Animatori Petreceri Copii Cranguri | SuperPar..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/creata
+   T:"Animatori Petreceri Copii Creata | SuperParty..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cretesti
+   T:"Animatori Petreceri Copii Cretesti | SuperPar..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cretuleasca
+   T:"Animatori Petreceri Copii Cretuleasca | Super..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/crevedia-mare
+   T:"Animatori Petreceri Copii Crevedia Mare | Sup..." | 614w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/crevedia
+   T:"Animatori Petreceri Copii Crevedia | SuperPar..." | 588w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/crivina
+   T:"Animatori Petreceri Copii Crivina | SuperPart..." | 588w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/cucuieti
+   T:"Animatori Petreceri Copii Cucuieti | SuperPar..." | 591w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dambovita
+   T:"Animatori Petreceri Copii Dâmbovița | SuperPa..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dascalu
+   T:"Animatori Petreceri Copii Dascălu | SuperPart..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/decindea
+   T:"Animatori Petreceri Copii Decindea | SuperPar..." | 596w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dimieni
+   T:"Animatori Petreceri Copii Dimieni | SuperPart..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dobreni
+   T:"Animatori Petreceri Copii Dobreni | SuperPart..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dobroesti
+   T:"Animatori Petreceri Copii Dobroești | SuperPa..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/domnesti
+   T:"Animatori Petreceri Copii Domneșiii | SuperPa..." | 578w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dorobanti
+   T:"Animatori Petreceri Copii Dorobanți | SuperPa..." | 976w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dragomiresti-deal
+   T:"Animatori Petreceri Copii Dragomirești-Deal |..." | 607w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dragomiresti-vale
+   T:"Animatori Petreceri Copii Dragomirești-Vale |..." | 605w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/dristor
+   T:"Animatori Petreceri Copii Dristor | SuperPart..." | 782w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/drumul-taberei
+   T:"Animatori Petreceri Copii Drumul Taberei | Su..." | 866w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/fierbinti-targ
+   T:"Animatori Petreceri Copii Fierbinți-Târg | Su..." | 607w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/floreasca
+   T:"Animatori Petreceri Copii Floreasca | SuperPa..." | 975w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/fundulea
+   T:"Animatori Petreceri Copii Fundulea | SuperPar..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ganeasa
+   T:"Animatori Petreceri Copii Găneasa | SuperPart..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/giulesti
+   T:"Animatori Petreceri Copii Giulești | SuperPar..." | 814w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/giurgiu
+   T:"Animatori Petreceri Copii Giurgiu | SuperPart..." | 699w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/glina
+   T:"Animatori Petreceri Copii Glina | SuperParty ..." | 584w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ialomita
+   T:"Animatori Petreceri Copii Ialomița | SuperPar..." | 582w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/iepuresti
+   T:"Animatori Petreceri Copii Iepurești | SuperPa..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ilfov
+   T:"Animatori Petreceri Copii Ilfov — Toate Local..." | 440w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/jilava
+   T:"Animatori Petreceri Copii Jilava | SuperParty..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/magurele
+   T:"Animatori Petreceri Copii Măgurele | SuperPar..." | 591w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/mihai-voda
+   T:"Animatori Petreceri Copii Mihai Vodă | SuperP..." | 618w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/mihailesti
+   T:"Animatori Petreceri Copii Mihailești | SuperP..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/militari
+   T:"Animatori Petreceri Copii Militari | SuperPar..." | 799w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/moara-vlasiei
+   T:"Animatori Petreceri Copii Moara Vlăsiei | Sup..." | 611w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/mogosoaia
+   T:"Animatori Petreceri Copii Mogoșoaia | SuperPa..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/nuci
+   T:"Animatori Petreceri Copii Nuci | SuperParty —..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/ordoreanu-vatra-veche
+   T:"Animatori Petreceri Copii Ordoreanu-Vatra Vec..." | 637w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/otopeni
+   T:"Animatori Petreceri Copii Otopeni | SuperPart..." | 421w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/pantelimon-cartier
+   T:"Animatori Petreceri Copii Pantelimon | SuperP..." | 924w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/pantelimon
+   T:"Animatori Petreceri Copii Pantelimon | SuperP..." | 583w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/peris
+   T:"Animatori Petreceri Copii Periș | SuperParty ..." | 590w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/petrachioaia
+   T:"Animatori Petreceri Copii Petrachioaia | Supe..." | 587w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/popesti-leordeni
+   T:"Animatori Petreceri Copii Popești-Leordeni | ..." | 432w | H1:1 H2:4 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/prahova
+   T:"Animatori Petreceri Copii Prahova | SuperPart..." | 586w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/racari
+   T:"Animatori Petreceri Copii Răcari | SuperParty..." | 589w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/rahova
+   T:"Animatori Petreceri Copii Rahova | SuperParty" | 890w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-1
+   T:"Animatori Petreceri Copii Sectorul 1 | SuperP..." | 1153w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-2
+   T:"Animatori Petreceri Copii Sectorul 2 | SuperP..." | 1178w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-3
+   T:"Animatori Petreceri Copii Sectorul 3 | SuperP..." | 1391w | H1:1 H2:10 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-4
+   T:"Animatori Petreceri Copii Sectorul 4 | SuperP..." | 1358w | H1:1 H2:10 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-5
+   T:"Animatori Petreceri Copii Sectorul 5 | SuperP..." | 1224w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/sector-6
+   T:"Animatori Petreceri Copii Sectorul 6 | SuperP..." | 1280w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/snagov
+   T:"Animatori Petreceri Copii Snagov | SuperParty..." | 594w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/stefanestii-de-jos
+   T:"Animatori Petreceri Copii Ștefăneștii de Jos ..." | 600w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/teleorman
+   T:"Animatori Petreceri Copii Teleorman | SuperPa..." | 584w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/tineretului
+   T:"Animatori Petreceri Copii Tineretului | Super..." | 828w | H1:1 H2:8 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/titan
+   T:"Animatori Petreceri Copii Titan | SuperParty" | 971w | H1:1 H2:9 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/tunari
+   T:"Animatori Petreceri Copii Tunari | SuperParty..." | 585w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/valea-piersicilor
+   T:"Animatori Petreceri Copii Valea Piersicilor |..." | 611w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/vidra
+   T:"Animatori Petreceri Copii Vidra | SuperParty ..." | 585w | H1:1 H2:6 | Schema:✅ | Canon:✅
+✅[100/100] ██████████  /petreceri/voluntari
+   T:"Animatori Petreceri Copii Voluntari — Pipera ..." | 428w | H1:1 H2:4 | Schema:✅ | Canon:✅
+
+
+╔══════════════════════════════════════════════════════════════════╗
+║  NOTA GOOGLE PAGESPEED INSIGHTS — DATE REALE DIN API GOOGLE     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Scara: 0-49 SLAB 🔴 | 50-89 MEDIU 🟡 | 90-100 BUN 🟢
+
+📍 https://www.superparty.ro/
+   📱 MOBIL:   Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+   🖥️  DESKTOP: Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+
+📍 https://www.superparty.ro/animatori-petreceri-copii
+   📱 MOBIL:   Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+   🖥️  DESKTOP: Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+
+📍 https://www.superparty.ro/petreceri/sector-1
+   📱 MOBIL:   Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+   🖥️  DESKTOP: Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+
+📍 https://www.superparty.ro/petreceri/floreasca
+   📱 MOBIL:   Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+   🖥️  DESKTOP: Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+
+📍 https://www.superparty.ro/petreceri/voluntari
+   📱 MOBIL:   Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+   🖥️  DESKTOP: Perf:🔴0 | SEO:🔴0 | A11y:0 | BP:0
+              LCP:N/A | TBT:N/A | CLS:N/A | SI:N/A
+
