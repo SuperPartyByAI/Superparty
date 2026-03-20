@@ -233,11 +233,6 @@
             "source": "/portfolio/:path*",
             "destination": "/animatori-petreceri-copii",
             "permanent": true
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/",
-            "permanent": false
         }
     ]
 }
