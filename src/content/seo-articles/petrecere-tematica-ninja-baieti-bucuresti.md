@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Petrecere Tematica Ninja Baieti face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in petrecere tematica ninja baieti bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch7_pinkcorset_1772214247078.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Petrecere Tematica Ninja Baieti pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -30,6 +32,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in petrecere tematica ninja baieti bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_minion_white_bg_1772228616789.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Petrecere Tematica Ninja Baieti are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Ștefăneștii de Jos sau î
 ### Structura unei Ore de Vis
 De la momentul în care Iron Man Stefanestii De Jos face primul pas în locația ta din Ștefăneștii de Jos, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii iron man stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/vata-pe-bat-1.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Ștefăneștii de Jos!
 
@@ -30,6 +32,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii iron man stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_jasmine2_white_1772225079275.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

@@ -18,6 +18,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica masha ursul bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/ursitoare-300x231.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Petrecere Tematica Masha Ursul știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -33,6 +35,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in petrecere tematica masha ursul bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch10_eskimo_1772215058099.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

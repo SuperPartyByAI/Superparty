@@ -15,6 +15,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Idei Petrecere Copil 8 Ani face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in idei petrecere copil 8 ani bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch3_jerry_mascot_1772212671486.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in idei petrecere copil 8 ani bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_masha_complete_1772225981575.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

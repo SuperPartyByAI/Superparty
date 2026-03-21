@@ -15,6 +15,8 @@ Când rezervi un animator în București, venim cu echipamentul complet: boxă a
 ### Structura unei Ore de Vis
 De la momentul în care Goodie Bags Petreceri Copii Idei Originale face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in goodie bags petreceri copii idei originale Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_blackcat_white_1772224975564.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Goodie Bags Petreceri Copii Idei Originale pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -30,6 +32,8 @@ Sistemele noastre de sunet sunt controlate permanent. Goodie Bags Petreceri Copi
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Goodie Bags Petreceri Copii Idei Originale are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in goodie bags petreceri copii idei originale Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch2_descendant1_newface_1772211504838.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

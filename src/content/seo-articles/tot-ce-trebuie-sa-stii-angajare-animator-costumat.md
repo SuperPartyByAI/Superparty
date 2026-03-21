@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Structura unei Ore de Vis
 De la momentul în care Tot Ce Trebuie Sa Stii Angajare Animator Costumat face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in tot ce trebuie sa stii angajare animator costumat Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/07/web-design-si-seo.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Tot Ce Trebuie Sa Stii Angajare Animator Costumat intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in tot ce trebuie sa stii angajare animator costumat Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch5_reddress_1772213384176.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona București și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

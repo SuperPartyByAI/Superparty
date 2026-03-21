@@ -14,6 +14,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in petrecere tematica medic spital copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch6_ladybug_1772214058802.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -29,6 +31,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Petrecere Tematica Medic Spital Copii are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in petrecere tematica medic spital copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch6_ladybug_1772214058802.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Medic Spital Copii oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

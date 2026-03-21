@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Berceni sau în aer liber, f
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii batman berceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_sonic_white_bg_1772227646947.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Batman Berceni intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii batman berceni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch7_peterpan_1772214274029.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

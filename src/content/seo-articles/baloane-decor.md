@@ -14,6 +14,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Baloane Decor face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in baloane decor Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/decoratiuni-baloane-superparty-300x225.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -29,6 +31,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in baloane decor Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/10/mos-craciun-de-inchiriat-1-a-300x296.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona București și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

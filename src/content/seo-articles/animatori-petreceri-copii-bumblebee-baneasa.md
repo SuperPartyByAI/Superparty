@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Structura unei Ore de Vis
 De la momentul în care Bumblebee Baneasa face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii bumblebee baneasa Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/08/arcada-baloane-superparty.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii bumblebee baneasa Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/08/animatori-petreceri-copii-super-party-1.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

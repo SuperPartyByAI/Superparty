@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii cluj napoca superparty Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_mario_complete_1772226280709.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din București să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -34,6 +36,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii cluj napoca superparty Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch8_bear_1772214408538.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

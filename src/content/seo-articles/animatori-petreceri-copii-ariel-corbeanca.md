@@ -15,6 +15,8 @@ Când rezervi un animator în Corbeanca, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Ariel Corbeanca face primul pas în locația ta din Corbeanca, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii ariel corbeanca Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch4_mulan_1772212812179.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Ariel Corbeanca știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în Corbeanca și vremea este ca
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Corbeanca. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii ariel corbeanca Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/piniata-pentru-copii.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Corbeanca și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

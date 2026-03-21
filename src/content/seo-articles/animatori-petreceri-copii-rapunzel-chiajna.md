@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii rapunzel chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/baloane-cu-heliu-1.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Chiaj
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Chiajna. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii rapunzel chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/vata-de-zahar-1.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Rapunzel Chiajna oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

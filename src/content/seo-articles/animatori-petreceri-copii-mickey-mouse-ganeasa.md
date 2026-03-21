@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/08/arcada-baloane-superparty.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Mickey Mouse Ganeasa știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -33,6 +35,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/07/web-design-si-seo.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Mickey Mouse Ganeasa oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

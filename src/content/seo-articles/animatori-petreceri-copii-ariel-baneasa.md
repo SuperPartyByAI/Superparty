@@ -18,6 +18,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii ariel baneasa Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_creeper_mascot_white_bg_1772227659492.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Ariel Baneasa felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -33,6 +35,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Ariel Baneasa oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii ariel baneasa Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/arcada-baloane-nunta-1.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Ariel Baneasa are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

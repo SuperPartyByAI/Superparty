@@ -15,6 +15,8 @@ Când rezervi un animator în București, venim cu echipamentul complet: boxă a
 ### Structura unei Ore de Vis
 De la momentul în care Mickey Mouse Balotesti face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse balotesti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/decoratiuni-baloane-pentru-copii-1-300x225.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Mickey Mouse Balotesti intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse balotesti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch9_stitch_1772214614523.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona București și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

@@ -15,6 +15,8 @@ Când rezervi un animator în Corbeanca, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Batman Corbeanca face primul pas în locația ta din Corbeanca, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii batman corbeanca Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch3_jerry_mascot_1772212671486.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Batman Corbeanca se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Batman Corbeanca are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii batman corbeanca Baloane, Jucarii si Zâmbete Realiste](/wp-content/uploads/2022/09/animatori-petreceri-copii-bucuresti-300x225.jpg)
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*

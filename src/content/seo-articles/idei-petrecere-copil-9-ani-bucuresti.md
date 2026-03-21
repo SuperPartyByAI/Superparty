@@ -15,6 +15,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Idei Petrecere Copil 9 Ani face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in idei petrecere copil 9 ani bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/batman.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Idei Petrecere Copil 9 Ani felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -30,6 +32,8 @@ Sistemele noastre de sunet sunt controlate permanent. Idei Petrecere Copil 9 Ani
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in idei petrecere copil 9 ani bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/vata-de-zahar-pe-bat.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Idei Petrecere Copil 9 Ani are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

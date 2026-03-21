@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Chiajna sau în aer liber, f
 ### Structura unei Ore de Vis
 De la momentul în care Batman Chiajna face primul pas în locația ta din Chiajna, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii batman chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/10/pachet-3-a.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -30,6 +32,8 @@ Sistemele noastre de sunet sunt controlate permanent. Batman Chiajna știe exact
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in animatori petreceri copii batman chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch7_jasmine2_1772214233283.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

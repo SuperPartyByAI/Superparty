@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii bumblebee pantelimon Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/09/pachet-zane-2-300x213.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Pantelimon să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -34,6 +36,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii bumblebee pantelimon Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_batman_complete_1772226133987.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

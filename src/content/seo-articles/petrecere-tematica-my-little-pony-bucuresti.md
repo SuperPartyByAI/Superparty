@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica my little pony bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_skye_complete_1772226367099.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Petrecere Tematica My Little Pony pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -33,6 +35,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in petrecere tematica my little pony bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_batman_complete_1772226133987.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

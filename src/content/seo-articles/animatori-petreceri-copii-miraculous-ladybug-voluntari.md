@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Voluntari sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii miraculous ladybug voluntari Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/spiderman-300x212.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Voluntari și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -34,6 +36,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in animatori petreceri copii miraculous ladybug voluntari Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch6_ladybug_1772214058802.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

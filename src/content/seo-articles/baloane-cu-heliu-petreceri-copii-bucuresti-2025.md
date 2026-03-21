@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in baloane cu heliu petreceri copii bucuresti 2025 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_thor_white_1772225256564.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Baloane Cu Heliu Petreceri Copii 2025 intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in baloane cu heliu petreceri copii bucuresti 2025 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/baloane-cu-heliu-pb-3.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Baloane Cu Heliu Petreceri Copii 2025 oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

@@ -15,6 +15,8 @@ Când rezervi un animator în București, venim cu echipamentul complet: boxă a
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in cum organizezi petrecere acasa ghid complet Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/09/cropped-ico-sigla-suparparty-270x270.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Cum Organizezi Petrecere Acasa Ghid Complet se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -30,6 +32,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona București și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in cum organizezi petrecere acasa ghid complet Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_bear_white_1772225190711.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

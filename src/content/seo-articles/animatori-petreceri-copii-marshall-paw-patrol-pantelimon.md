@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol pantelimon Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-petreceri-copii-superparty-2-300x225.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Marshall Paw Patrol se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -30,6 +32,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol pantelimon Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_batman_complete_1772226133987.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

@@ -19,6 +19,8 @@ Când rezervi un animator în Sector 3, venim cu echipamentul complet: boxă act
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii rapunzel sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch3_jerry_mascot_1772212671486.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Rapunzel știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -34,6 +36,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Sector 3 și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in animatori petreceri copii rapunzel sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch6_venom_1772213587896.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

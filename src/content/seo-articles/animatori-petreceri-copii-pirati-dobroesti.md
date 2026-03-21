@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii pirati dobroesti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch5_wednesday_1772213396565.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Pirati Dobroesti are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii pirati dobroesti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/ursitoare.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animator buzz lightyear toy story petreceri copii Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_sonic_white_1772224406477.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din București să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -34,6 +36,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animator buzz lightyear toy story petreceri copii Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch5_elsa_1772213409395.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Animator Buzz Lightyear Toy Story Petreceri Copii are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

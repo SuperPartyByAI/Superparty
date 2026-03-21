@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Dragomirești sau în aer li
 ### Structura unei Ore de Vis
 De la momentul în care Iron Man Dragomiresti Vale face primul pas în locația ta din Dragomirești, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii iron man dragomiresti vale Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/07/arcada-baloane-majorat-1.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Iron Man Dragomiresti Vale felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -29,6 +31,8 @@ Dacă ați planificat o petrecere în aer liber în Dragomirești și vremea est
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii iron man dragomiresti vale Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_luigi_white_bg_1772228548656.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

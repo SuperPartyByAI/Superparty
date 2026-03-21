@@ -19,6 +19,8 @@ Când rezervi un animator în Sector 4, venim cu echipamentul complet: boxă act
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii batman sector 4 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/10/pachet-4-a.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Sector 4!
 
@@ -34,6 +36,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Secto
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 4. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii batman sector 4 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_gekko_white_1772225205388.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

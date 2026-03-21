@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica encanto mirabel bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/09/pachet-zane-3.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Petrecere Tematica Encanto Mirabel pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -34,6 +36,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in petrecere tematica encanto mirabel bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_spiderman_white_1772224741705.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Encanto Mirabel oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

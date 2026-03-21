@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Spectacol Magie Copii Petreceri face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in spectacol magie copii petreceri bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch7_flamenco_1772214259643.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -30,6 +32,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucur
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in spectacol magie copii petreceri bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/animatori-copii-1.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

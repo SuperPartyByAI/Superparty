@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animator ladybug petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/pachet-mos-1-a-300x212.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Animator Ladybug Petreceri Copii pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -30,6 +32,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucur
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Animator Ladybug Petreceri Copii are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animator ladybug petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch5_wednesday_1772213396565.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

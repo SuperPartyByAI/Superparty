@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in petrecere tematica peter pan neverland bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_unicorn_myp_white_bg_1772228631877.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Bucuresti!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Peter Pan Neverland oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in petrecere tematica peter pan neverland bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/inchiriere-mos-craciun-bucuresti-1-a.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

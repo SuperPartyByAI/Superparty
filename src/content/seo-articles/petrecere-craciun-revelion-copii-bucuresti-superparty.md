@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in petrecere craciun revelion copii bucuresti superparty Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/08/animatori-petreceri-copii-super-party-1-300x244.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucuresti să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este ca
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Petrecere Craciun Revelion Copii Superparty are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in petrecere craciun revelion copii bucuresti superparty Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_creeper_mascot_white_bg_1772227659492.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Craciun Revelion Copii Superparty oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

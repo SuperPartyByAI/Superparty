@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Structura unei Ore de Vis
 De la momentul în care Batman Nuci face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii batman nuci Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-copii-1.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii batman nuci Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/decoratiuni-baloane-superparty.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

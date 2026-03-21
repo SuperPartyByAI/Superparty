@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Rahova face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii rahova bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/decoratiuni-baloane-pentru-copii-1.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Rahova știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -30,6 +32,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Rahova oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii rahova bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/07/baloane-cu-heliu-1.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

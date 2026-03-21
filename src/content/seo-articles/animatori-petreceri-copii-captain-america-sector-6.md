@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Captain America face primul pas în locația ta din Sector 6, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii captain america sector 6 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_sofia2_white_1772224961264.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Sector 6 și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -30,6 +32,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in animatori petreceri copii captain america sector 6 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_mickey_minnie_white_socks_1772227498889.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Captain America oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

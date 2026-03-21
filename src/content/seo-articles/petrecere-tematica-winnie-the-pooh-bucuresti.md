@@ -15,6 +15,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in petrecere tematica winnie the pooh bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/decoratiuni-baloane-pentru-copii-1-300x225.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Petrecere Tematica Winnie The Pooh felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -30,6 +32,8 @@ Sistemele noastre de sunet sunt controlate permanent. Petrecere Tematica Winnie 
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Winnie The Pooh oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in petrecere tematica winnie the pooh bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_jerry_white_socks_1772227473767.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

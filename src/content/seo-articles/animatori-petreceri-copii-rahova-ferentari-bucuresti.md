@@ -19,6 +19,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii rahova ferentari bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/cenusareasa-si-print-1-300x212.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Rahova Ferentari intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -34,6 +36,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Rahova Ferentari oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii rahova ferentari bucuresti Baloane, Jucarii si Zâmbete Realiste](/wp-content/uploads/2022/09/animatori-petreceri-copii-bucuresti.jpg)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

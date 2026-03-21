@@ -18,6 +18,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii captain america chiajna Baloane, Jucarii si Zâmbete Realiste](/wp-content/uploads/2021/04/animatori-petreceri-copii-elsa-ana-olaf-300x212.jpg)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Captain America Chiajna felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -33,6 +35,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Captain America Chiajna oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii captain america chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/piniata-copii-1.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

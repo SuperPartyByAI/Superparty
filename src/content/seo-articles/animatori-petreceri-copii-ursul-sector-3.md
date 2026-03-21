@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 3 sau în aer liber, 
 ### Structura unei Ore de Vis
 De la momentul în care Ursul face primul pas în locația ta din Sector 3, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii ursul sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch2_bluegirl_mannequin_1772212488357.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Ursul știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii ursul sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/pachet-mos-2-a-300x212.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 3. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

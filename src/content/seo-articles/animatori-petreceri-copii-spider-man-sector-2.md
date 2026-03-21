@@ -19,6 +19,8 @@ Când rezervi un animator în Sector 2, venim cu echipamentul complet: boxă act
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii spider man sector 2 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/10/decor-botez-nunta-majorat-300x225.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Spider Man se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -34,6 +36,8 @@ Dacă ați planificat o petrecere în aer liber în Sector 2 și vremea este cap
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Sector 2 și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in animatori petreceri copii spider man sector 2 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_pinksequin_white_1772224869867.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Spider Man are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

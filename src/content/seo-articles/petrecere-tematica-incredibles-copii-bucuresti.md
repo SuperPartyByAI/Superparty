@@ -14,6 +14,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Petrecere Tematica Incredibles Copii face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in petrecere tematica incredibles copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch2_descendant1_newface_1772211504838.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -29,6 +31,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in petrecere tematica incredibles copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/09/pachet-zane-3.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

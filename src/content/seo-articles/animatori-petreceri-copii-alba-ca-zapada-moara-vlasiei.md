@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din Moara Vlăsiei sau în aer l
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch8_thor_1772214436421.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Alba Ca Zapada Moara Vlasiei știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -33,6 +35,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Moara Vlăsiei. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_skye_complete_1772226367099.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Moara Vlăsiei și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

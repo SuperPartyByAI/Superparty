@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Structura unei Ore de Vis
 De la momentul în care Captain America Gruiu face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii captain america gruiu Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_rubble_white_1772224471361.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în București și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -30,6 +32,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucur
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii captain america gruiu Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_luigi_complete_1772225937108.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Captain America Gruiu oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

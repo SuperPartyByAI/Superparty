@@ -14,6 +14,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Pirati Cernica face primul pas în locația ta din Cernica, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii pirati cernica Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_skye_complete_1772226367099.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Cernica!
 
@@ -29,6 +31,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii pirati cernica Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/08/arcada-baloane-superparty-300x244.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

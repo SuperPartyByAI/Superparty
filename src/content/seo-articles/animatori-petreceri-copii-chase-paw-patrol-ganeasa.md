@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch11_aurora_1772215399839.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în București și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -34,6 +36,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucur
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/09/cropped-ico-sigla-suparparty-192x192.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

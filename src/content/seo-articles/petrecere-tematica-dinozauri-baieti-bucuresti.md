@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica dinozauri baieti bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/animatori-1.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Petrecere Tematica Dinozauri Baieti intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -34,6 +36,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Dinozauri Baieti oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in petrecere tematica dinozauri baieti bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_spiderman_white_1772224741705.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

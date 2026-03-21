@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in seo local test abc123 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/inchiriere-mos-craciun-bucuresti-1-a-603x1024.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din București să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în București și vremea este c
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Seo Local Test Abc123 are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in seo local test abc123 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch8_gekko_1772214422596.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

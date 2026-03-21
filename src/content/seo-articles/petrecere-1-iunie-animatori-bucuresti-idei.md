@@ -15,6 +15,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in petrecere 1 iunie animatori bucuresti idei Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/pachet-mos-1-a-300x212.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in petrecere 1 iunie animatori bucuresti idei Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/baloane-cu-heliu-pb-3-300x245.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Bucuresti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

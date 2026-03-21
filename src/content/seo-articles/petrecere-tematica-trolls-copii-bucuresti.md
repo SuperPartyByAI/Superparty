@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica trolls copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/decoratiuni-baloane-1.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucuresti să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -34,6 +36,8 @@ Sistemele noastre de sunet sunt controlate permanent. Petrecere Tematica Trolls 
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Trolls Copii oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in petrecere tematica trolls copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_luigi_complete_1772225937108.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

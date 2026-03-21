@@ -14,6 +14,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 ### Structura unei Ore de Vis
 De la momentul în care Cenusareasa Dragomiresti Vale face primul pas în locația ta din Dragomirești, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii cenusareasa dragomiresti vale Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_sonic_white_bg_1772227646947.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Dragomirești și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -29,6 +31,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii cenusareasa dragomiresti vale Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/ursitoare-botez-bucuresti-superparty-300x224.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Dragomirești. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

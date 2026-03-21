@@ -14,6 +14,8 @@ Când rezervi un animator în Jilava, venim cu echipamentul complet: boxă activ
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii bumblebee jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/spiderman.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Bumblebee Jilava știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -29,6 +31,8 @@ Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Jilava și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in animatori petreceri copii bumblebee jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch9_stitch_1772214614523.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

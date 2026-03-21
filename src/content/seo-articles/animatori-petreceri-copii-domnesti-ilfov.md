@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Ilfov sau în aer liber, fle
 ### Structura unei Ore de Vis
 De la momentul în care Domnesti face primul pas în locația ta din Ilfov, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii domnesti ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_marshall_white_bg_1772228862325.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Ilfov
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii domnesti ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/animatori-petreceri-copii-superparty-2.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Domnesti are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

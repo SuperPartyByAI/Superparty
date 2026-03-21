@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Ștefăneștii de Jos sau î
 ### Structura unei Ore de Vis
 De la momentul în care Elsa Stefanestii De Jos face primul pas în locația ta din Ștefăneștii de Jos, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii elsa stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/arcada-baloane-nunta-1.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Elsa Stefanestii De Jos știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Ștef
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in animatori petreceri copii elsa stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch9_scoobydoo_1772214630626.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Ștefăneștii de Jos. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

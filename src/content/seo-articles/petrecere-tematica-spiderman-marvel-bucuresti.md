@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 ### Structura unei Ore de Vis
 De la momentul în care Petrecere Tematica Spiderman Marvel face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in petrecere tematica spiderman marvel bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/09/cropped-ico-sigla-suparparty-192x192.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Bucuresti să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -30,6 +32,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in petrecere tematica spiderman marvel bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch4_mulan_1772212812179.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

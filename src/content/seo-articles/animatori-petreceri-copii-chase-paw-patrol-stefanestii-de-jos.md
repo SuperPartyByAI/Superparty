@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Ștefăneștii de Jos sau î
 ### Structura unei Ore de Vis
 De la momentul în care Chase Paw Patrol Stefanestii De Jos face primul pas în locația ta din Ștefăneștii de Jos, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_sonic_white_1772224406477.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Chase Paw Patrol Stefanestii De Jos se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -29,6 +31,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Chase Paw Patrol Stefanestii De Jos are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol stefanestii de jos Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/pachet-mos-2-a-300x212.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

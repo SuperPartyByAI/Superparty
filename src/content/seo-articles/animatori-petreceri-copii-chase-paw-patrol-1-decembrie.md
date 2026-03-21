@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din 1 Decembrie sau în aer libe
 ### Structura unei Ore de Vis
 De la momentul în care Chase Paw Patrol 1 Decembrie face primul pas în locația ta din 1 Decembrie, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol 1 decembrie Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_thor_white_1772225256564.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din 1 Decembrie!
 
@@ -30,6 +32,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din 1 Dec
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Chase Paw Patrol 1 Decembrie are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol 1 decembrie Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch4_mulan_1772212812179.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

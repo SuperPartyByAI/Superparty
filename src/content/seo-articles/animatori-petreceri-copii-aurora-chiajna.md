@@ -13,6 +13,8 @@ Din punct de vedere demografic, Chiajna are un profil specific zonei — familii
 
 Cei mai apreciati animatori SuperParty în Chiajna sunt cei care vin în costume de Paw Patrol — dar și Spiderman, Elsa, Bluey și Sonic au fani devotați în toate zonele. Un detaliu important: SuperParty nu închiriazǎ costume, le deține și le întreține — fiecare costum este spălat, reparat și verificat după fiecare eveniment. La petrecerea ta din Chiajna vine un costum impecabil, nu unul purtat de 50 de ori fără curățare.
 
+![Animatori petreceri copii in animatori petreceri copii aurora chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch6_pinksequin_1772213615852.webp)
+
 SuperParty asigura acoperire completă pentru Chiajna și localitățile vecine Militari și Cornetu. Programul disponibil pentru aceasta zonă: Luni-Vineri 10:00-22:00, Sâmbătă 09:00-22:00, Duminică 10:00-20:00, Sărbători legale la cerere. Rezervarea se poate face cu maxim 6 luni în avans. Nu există zi în care SuperParty să fie indisponibil — avem o echipă de 12 animatori activi plus o lista de rezervă, asigurând acoperire chiar și în cazuri de urgenta medicala sau forta majora.
 
 <!-- UNIQUE-TEXT-V8 -->

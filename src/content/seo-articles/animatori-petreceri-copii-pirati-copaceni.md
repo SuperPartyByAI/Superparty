@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii pirati copaceni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_peterpan_white_1772225178461.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Pirati Copaceni felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -34,6 +36,8 @@ Sistemele noastre de sunet sunt controlate permanent. Pirati Copaceni știe exac
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Pirati Copaceni oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii pirati copaceni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/09/pachet-zane-3.webp)
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*

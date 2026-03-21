@@ -18,6 +18,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii drumul taberei bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/popcorn-1.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -33,6 +35,8 @@ Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este ca
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Drumul Taberei oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii drumul taberei bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_pinksequin_white_1772224869867.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

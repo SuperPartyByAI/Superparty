@@ -14,6 +14,8 @@ Când rezervi un animator în Ciorogârla, venim cu echipamentul complet: boxă 
 ### Structura unei Ore de Vis
 De la momentul în care Ursul Ciorogarla face primul pas în locația ta din Ciorogârla, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii ursul ciorogarla Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/mos-craciun-de-inchiriat-superparty-300x225.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Ursul Ciorogarla se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Cioro
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Ursul Ciorogarla oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii ursul ciorogarla Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/vata-de-zahar-1.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Ciorogârla. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

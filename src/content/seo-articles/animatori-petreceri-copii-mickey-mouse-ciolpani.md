@@ -15,6 +15,8 @@ Când rezervi un animator în București, venim cu echipamentul complet: boxă a
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse ciolpani Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch10_eskimo_1772215058099.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Mickey Mouse Ciolpani știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în București și vremea este c
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse ciolpani Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/decoratiuni-din-baloane-1.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Mickey Mouse Ciolpani oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

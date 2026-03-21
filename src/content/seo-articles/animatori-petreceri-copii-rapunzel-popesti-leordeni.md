@@ -14,6 +14,8 @@ Când rezervi un animator în Popesti, venim cu echipamentul complet: boxă acti
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii rapunzel popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_unicorn_colorful_white_bg_1772228722896.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Rapunzel Leordeni știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Popes
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Rapunzel Leordeni oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii rapunzel popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_pinksequin_white_1772224869867.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Popesti. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 3 sau în aer liber, 
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/baloane-cu-heliu-1.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Mickey Mouse oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_full_spiderman_head_complete_1772226264996.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 3. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

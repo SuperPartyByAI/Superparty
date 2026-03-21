@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in top 5 personaje disney cerute petreceri bucuresti 2025 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_venom_white_1772224755742.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Top 5 Personaje Disney Cerute Petreceri 2025 pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -34,6 +36,8 @@ Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este ca
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in top 5 personaje disney cerute petreceri bucuresti 2025 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/07/baloane-cu-heliu-1.webp)
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*

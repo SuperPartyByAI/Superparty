@@ -18,6 +18,8 @@ Când rezervi un animator în Sector 6, venim cu echipamentul complet: boxă act
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol sector 6 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/baloane-cu-heliu-pb-3.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -33,6 +35,8 @@ Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Marshall Paw Patrol oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol sector 6 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/decoratiuni-din-baloane-1.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 6. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

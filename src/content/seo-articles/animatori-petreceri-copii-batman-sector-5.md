@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 5 sau în aer liber, 
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii batman sector 5 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/decoratiuni-baloane-pentru-copii-1.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Batman se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -33,6 +35,8 @@ Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Batman are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii batman sector 5 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch5_pikachu_1772213423723.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 5. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

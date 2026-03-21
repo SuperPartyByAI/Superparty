@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 1 sau în aer liber, 
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii cenusareasa sector 1 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/09/cropped-ico-sigla-suparparty-192x192.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Cenusareasa se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -33,6 +35,8 @@ Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucări
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Cenusareasa oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii cenusareasa sector 1 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_sofia2_white_1772224961264.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Cenusareasa are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

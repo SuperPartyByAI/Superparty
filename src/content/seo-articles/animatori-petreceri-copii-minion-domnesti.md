@@ -13,6 +13,8 @@ O altă întrebare frecventă de la părinții din Domnești: „Vine cu persona
 
 „Cât durează și ce include?" — Pachetul Classic (490 RON, 2 ore) include: costum complet al personajului ales, face painting tematic individual pentru fiecare copil, minimum 60 de baloane modelate (câini, sabie, pallot, coroane etc. — la alegerea copilului), mașina de baloane de săpun cu debit ridicat și jocuri interactive adaptate vârstei grupului. Nici diplome, nici artificii, nici tort — dar două ore de distracție autentică garantată prin contract, cu drept de refuz la plată dacă copiii nu s-au bucurat. Prețul nu include deplasarea la Domnești.
 
+![Animatori petreceri copii in animatori petreceri copii minion domnesti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_racer95_white_1772224769235.webp)
+
 Ultima întrebare frecventă: „Cu cât timp înainte rezervăm?" Pentru Domnești, recomandăm minim 14 zile în extrasezon (noiembrie-martie) și minimum 30 de zile în sezon (mai-septembrie, decembrie). Weekend-urile de mai, iunie și septembrie sunt cele mai solicitate — în aceste perioade, unele date se ocupă cu 6-8 săptămâni în avans. Verificarea disponibilității este gratuită și fără angajament — trimiteți un WhatsApp și primiți răspuns în 30 de minute, inclusiv în weekend.
 
 <!-- UNIQUE-TEXT-V8 -->

@@ -19,6 +19,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animator pikachu pokemon petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_chase_v2.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -34,6 +36,8 @@ Sistemele noastre de sunet sunt controlate permanent. Animator Pikachu Pokemon P
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in animator pikachu pokemon petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/printesele-disney.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

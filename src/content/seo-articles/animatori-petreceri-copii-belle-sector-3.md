@@ -13,6 +13,8 @@ Din punct de vedere demografic, Sector 3 are un profil specific zonei — famili
 
 Cei mai apreciati animatori SuperParty în Sector 3 sunt cei care vin în costume de Spiderman — dar și Spiderman, Elsa, Bluey și Sonic au fani devotați în toate zonele. Un detaliu important: SuperParty nu închiriazǎ costume, le deține și le întreține — fiecare costum este spălat, reparat și verificat după fiecare eveniment. La petrecerea ta din Sector 3 vine un costum impecabil, nu unul purtat de 50 de ori fără curățare.
 
+![Animatori petreceri copii in animatori petreceri copii belle sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2025/01/baloane-heliu.webp)
+
 SuperParty asigura acoperire completă pentru Sector 3 și localitățile vecine localitati ilfovene. Programul disponibil pentru aceasta zonă: Luni-Vineri 10:00-22:00, Sâmbătă 09:00-22:00, Duminică 10:00-20:00, Sărbători legale la cerere. Rezervarea se poate face cu maxim 6 luni în avans. Nu există zi în care SuperParty să fie indisponibil — avem o echipă de 12 animatori activi plus o lista de rezervă, asigurând acoperire chiar și în cazuri de urgenta medicala sau forta majora.
 
 <!-- UNIQUE-TEXT-V8 -->

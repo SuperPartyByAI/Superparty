@@ -14,6 +14,8 @@ Când rezervi un animator în București, venim cu echipamentul complet: boxă a
 ### Structura unei Ore de Vis
 De la momentul în care Alba Ca Zapada Ganeasa face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch6_pinksequin_1772213615852.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Alba Ca Zapada Ganeasa știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -29,6 +31,8 @@ Dacă ați planificat o petrecere în aer liber în București și vremea este c
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada ganeasa Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse-300x213.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

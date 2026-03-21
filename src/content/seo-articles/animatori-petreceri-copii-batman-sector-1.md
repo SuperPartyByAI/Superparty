@@ -19,6 +19,8 @@ Când rezervi un animator în Sector 1, venim cu echipamentul complet: boxă act
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii batman sector 1 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/10/mos-craciun-de-inchiriat-1-a-300x296.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -34,6 +36,8 @@ Dacă ați planificat o petrecere în aer liber în Sector 1 și vremea este cap
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii batman sector 1 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch4_creeper_fullmask_1772212839126.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 1. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

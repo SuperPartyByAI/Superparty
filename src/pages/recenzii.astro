@@ -179,6 +179,18 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
         const loc      = normalizeReview(r.location || '');
         const event    = normalizeReview(r.event || '');
         const text     = processReview(r.text || '');
+        
+        const showImage = (idx % 4 === 0 && idx < 40);
+        const images = [
+          '/optimized/animatori-1.webp',
+          '/optimized/batman.webp',
+          '/optimized/cenusareasa-si-print-1.webp',
+          '/optimized/animatori-petreceri-copii-acasa.webp',
+          '/optimized/animatori-petreceri-copii-superparty-2.webp',
+          '/optimized/animatori-copii-1.webp'
+        ];
+        const attachedImgUrl = images[Math.floor(idx/4) % images.length];
+
         return (
         <article
           class="review-card"
@@ -188,6 +200,8 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
           data-hidden={idx >= 24 ? 'true' : 'false'}
         >
           <p class="review-text">"{text}"</p>
+          
+
           <div class="review-meta">
             <span class="src-badge" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>
             <span class="review-name">{name}</span>

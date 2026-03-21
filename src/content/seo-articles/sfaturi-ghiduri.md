@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in sfaturi ghiduri Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2025/01/animatori-elsa-ana-si-olaf.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Sfaturi Ghiduri pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -34,6 +36,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in sfaturi ghiduri Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_unicorn_myp_white_bg_1772228631877.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Sfaturi Ghiduri are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

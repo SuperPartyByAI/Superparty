@@ -19,6 +19,8 @@ Când rezervi un animator în Bucuresti, venim cu echipamentul complet: boxă ac
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica flamingo tropical fetite bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/cenusareasa-si-print-1-300x212.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Petrecere Tematica Flamingo Tropical Fetite felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -34,6 +36,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in petrecere tematica flamingo tropical fetite bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch1_auto_red_1772209420014.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

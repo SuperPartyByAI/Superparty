@@ -13,6 +13,8 @@ Baloanele modelate de animatorul SuperParty nu sunt simple baloane — sunt mini
 
 Face painting-ul SuperParty în Tâncăbești nu înseamnă o linie simplă pe față — animatorii noștri sunt artiști formați. În funcție de timp și de preferintele copilului se face: design complet de personaj (Spider-Man cu pânze la tâmple, Elsa cu floricele de gheață), design de fantasy (dragon de prins în ochi, fluture pe toată fata), sau mini-design simplu pentru copiii mai timizi (stea, inimiortă, floare). Culorile sunt hipoalergenice, certificate CE, testate dermatologic pentru piele de copil.
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse tancabesti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mickey_costume_edit_1772208351182.webp)
+
 Copiii din Tâncăbești care au participat la petreceri SuperParty se bucurǎ în medie de câte 6-8 activități interactive diferite în cele 2 ore: concurs de dans, joc de capturat personajul, turneul talentelor, balon pe burtică, Cine bate la tarabă? și altele specifice temei personajului. Programul este dinamic, bine calibrat — niciun moment mort, nicio clipă în care copiii nu au ce face. Aceasta este diferența față de formele de animatie improvizate — superparty are un curriculum testat pe 10.000+ de evenimente.
 
 <!-- UNIQUE-TEXT-V8 -->

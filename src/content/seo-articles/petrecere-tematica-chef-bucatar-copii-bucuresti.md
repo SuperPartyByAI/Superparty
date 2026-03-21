@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in petrecere tematica chef bucatar copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch1_auto_red_1772209420014.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Bucuresti!
 
@@ -34,6 +36,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in petrecere tematica chef bucatar copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/decoratiuni-baloane-superparty.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Chef Bucatar Copii oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

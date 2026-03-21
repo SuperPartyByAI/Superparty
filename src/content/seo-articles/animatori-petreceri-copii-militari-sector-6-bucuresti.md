@@ -19,6 +19,8 @@ Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne de
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii militari sector 6 bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_sonic_white_bg_1772227646947.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -34,6 +36,8 @@ Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este ca
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Militari Sector 6 oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii militari sector 6 bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-petreceri-copii-mickey-mouse-si-minnie-mouse-300x213.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Militari Sector 6 are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

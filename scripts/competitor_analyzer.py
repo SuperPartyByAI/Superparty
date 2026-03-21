@@ -7,16 +7,20 @@ URLS = [
     "https://funevents.ro/",
     "https://momente-magice.ro/"
 ]
-MY_URL = "https://www.superparty.ro/animatori-petreceri-copii"
+MY_URL = "src/pages/animatori-petreceri-copii/index.astro"
 
 def get_html(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-    try:
-        html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
-        return html
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return ""
+    if url.startswith("http"):
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+        try:
+            html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+            return html
+        except Exception as e:
+            print(f"Error fetching {url}: {e}")
+            return ""
+    else:
+        with open(url, "r", encoding="utf-8", errors="ignore") as f:
+            return f.read()
 
 def extract_text(html):
     h1s = re.findall(r'<h1.*?>(.*?)</h1>', html, re.IGNORECASE | re.DOTALL)

@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 ### Structura unei Ore de Vis
 De la momentul în care Petrecere Tematica Vanatoare Comori face primul pas în locația ta din Bucuresti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in petrecere tematica vanatoare comori bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch4_creeper_halfmask_1772212825095.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Bucuresti!
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în Bucuresti și vremea este ca
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Petrecere Tematica Vanatoare Comori oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in petrecere tematica vanatoare comori bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/10/decor-botez-nunta-majorat.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 3 sau în aer liber, 
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii captain america sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_unicorn_myp_white_bg_1772228631877.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Captain America intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Captain America oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii captain america sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-petreceri-copii-acasa.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 3. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

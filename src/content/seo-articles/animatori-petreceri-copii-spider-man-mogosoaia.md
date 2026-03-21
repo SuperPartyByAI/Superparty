@@ -14,6 +14,8 @@ Când rezervi un animator în Mogoșoaia, venim cu echipamentul complet: boxă a
 ### Structura unei Ore de Vis
 De la momentul în care Spider Man Mogosoaia face primul pas în locația ta din Mogoșoaia, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii spider man mogosoaia Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_luigi_complete_1772225937108.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Mogoșoaia și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -29,6 +31,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Spider Man Mogosoaia are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii spider man mogosoaia Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_scorpion_mk_white_bg_1772228793685.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

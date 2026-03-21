@@ -14,6 +14,8 @@ Când rezervi un animator în Jilava, venim cu echipamentul complet: boxă activ
 ### Structura unei Ore de Vis
 De la momentul în care Pirati Jilava face primul pas în locația ta din Jilava, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii pirati jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/animatori-petreceri-copii-elsa-ana-olaf-300x212.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Pirati Jilava pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -29,6 +31,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Ce se întâmplă dacă unii copii sunt timizi?**
 *R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
+
+![Animatori petreceri copii in animatori petreceri copii pirati jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch4_hellokitty_1772212797344.webp)
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*

@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in arcade baloane petreceri copii bucuresti preturi Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/09/animatori-petreceri-copii-bucuresti.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Arcade Baloane Petreceri Copii Preturi se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -34,6 +36,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Bucuresti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in arcade baloane petreceri copii bucuresti preturi Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2025/01/mascote-petreceri-copii-bucuresti.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Arcade Baloane Petreceri Copii Preturi oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

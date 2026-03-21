@@ -13,6 +13,8 @@ Din punct de vedere demografic, Bragadiru are un profil specific zonei — famil
 
 Cei mai apreciati animatori SuperParty în Bragadiru sunt cei care vin în costume de Spiderman — dar și Spiderman, Elsa, Bluey și Sonic au fani devotați în toate zonele. Un detaliu important: SuperParty nu închiriazǎ costume, le deține și le întreține — fiecare costum este spălat, reparat și verificat după fiecare eveniment. La petrecerea ta din Bragadiru vine un costum impecabil, nu unul purtat de 50 de ori fără curățare.
 
+![Animatori petreceri copii in animatori petreceri copii cenusareasa bragadiru Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_pirate_boy_white_bg_1772228804806.webp)
+
 SuperParty asigura acoperire completă pentru Bragadiru și localitățile vecine Clinceni și Jilava. Programul disponibil pentru aceasta zonă: Luni-Vineri 10:00-22:00, Sâmbătă 09:00-22:00, Duminică 10:00-20:00, Sărbători legale la cerere. Rezervarea se poate face cu maxim 6 luni în avans. Nu există zi în care SuperParty să fie indisponibil — avem o echipă de 12 animatori activi plus o lista de rezervă, asigurând acoperire chiar și în cazuri de urgenta medicala sau forta majora.
 
 <!-- UNIQUE-TEXT-V8 -->

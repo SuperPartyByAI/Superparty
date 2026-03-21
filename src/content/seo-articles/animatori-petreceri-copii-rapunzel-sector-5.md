@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 5 sau în aer liber, 
 ### Structura unei Ore de Vis
 De la momentul în care Rapunzel face primul pas în locația ta din Sector 5, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii rapunzel sector 5 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_pirate_boy_white_bg_1772228804806.webp)
+
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
@@ -30,6 +32,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Rapunzel oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii rapunzel sector 5 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2025/01/baloane-heliu.webp)
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*

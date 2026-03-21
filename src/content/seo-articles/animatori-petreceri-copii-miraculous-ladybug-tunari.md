@@ -14,6 +14,8 @@ Când rezervi un animator în Tunari, venim cu echipamentul complet: boxă activ
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii miraculous ladybug tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch6_spiderman_1772213573063.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Miraculous Ladybug Tunari se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Tunar
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Miraculous Ladybug Tunari oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii miraculous ladybug tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/logo-superparty-160.webp)
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*

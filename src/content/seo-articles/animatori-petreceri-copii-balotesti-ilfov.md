@@ -15,6 +15,8 @@ Când rezervi un animator în Ilfov, venim cu echipamentul complet: boxă activ�
 ### Structura unei Ore de Vis
 De la momentul în care Balotesti face primul pas în locația ta din Ilfov, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii balotesti ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/07/baloane-cu-heliu-pb-3.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Balotesti intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatr
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Balotesti are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii balotesti ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch8_snowwhite2_1772214450347.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Balotesti oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

@@ -14,6 +14,8 @@ Când rezervi un animator în Snagov, venim cu echipamentul complet: boxă activ
 ### Structura unei Ore de Vis
 De la momentul în care Cenusareasa Snagov face primul pas în locația ta din Snagov, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii cenusareasa snagov Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/baloane-cu-heliu-superparty.webp)
+
 ### Greșeli Frecvente la Organizarea Aniversărilor
 O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Cenusareasa Snagov pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
@@ -29,6 +31,8 @@ Sistemele noastre de sunet sunt controlate permanent. Cenusareasa Snagov știe e
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii cenusareasa snagov Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/mos-craciun-de-inchiriat-superparty.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Snagov și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

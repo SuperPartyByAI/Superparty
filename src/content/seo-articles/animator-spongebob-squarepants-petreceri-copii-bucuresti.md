@@ -18,6 +18,8 @@ Fie că sărbătoriți acasă, la un restaurant din Bucuresti sau în aer liber,
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animator spongebob squarepants petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/catalog_chase_v2.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Animator Spongebob Squarepants Petreceri Copii felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -33,6 +35,8 @@ Sistemele noastre de sunet sunt controlate permanent. Animator Spongebob Squarep
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animator spongebob squarepants petreceri copii bucuresti Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/cenusareasa-si-print-1.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Animator Spongebob Squarepants Petreceri Copii oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

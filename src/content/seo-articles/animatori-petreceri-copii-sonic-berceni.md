@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Berceni sau în aer liber, f
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii sonic berceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/08/animatori-petreceri-copii-super-party-1.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Berceni și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -34,6 +36,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Berceni. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii sonic berceni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch2_bluegirl_mannequin_1772212488357.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Sonic Berceni oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

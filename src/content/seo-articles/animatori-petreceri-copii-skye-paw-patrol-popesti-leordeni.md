@@ -19,6 +19,8 @@ Fie că sărbătoriți acasă, la un restaurant din Popesti sau în aer liber, f
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii skye paw patrol popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/wp-content/uploads/2021/04/animatori-petreceri-copii-superparty-2-300x225.jpg)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Popesti!
 
@@ -34,6 +36,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Popesti și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+![Animatori petreceri copii in animatori petreceri copii skye paw patrol popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch2_descendant2_mannequin_1772212475119.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Skye Paw Patrol Leordeni are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

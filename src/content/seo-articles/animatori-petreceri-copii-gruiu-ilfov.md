@@ -19,6 +19,8 @@ Când rezervi un animator în Ilfov, venim cu echipamentul complet: boxă activ�
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii gruiu ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch3_jerry_mascot_1772212671486.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Gruiu felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -34,6 +36,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Gruiu oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii gruiu ilfov Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_sonic_white_bg_1772227646947.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Ilfov. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

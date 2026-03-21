@@ -14,6 +14,8 @@ Când rezervi un animator în Otopeni, venim cu echipamentul complet: boxă acti
 ### Structura unei Ore de Vis
 De la momentul în care Chase Paw Patrol face primul pas în locația ta din Otopeni, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol otopeni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2023/08/animatori-petreceri-copii-super-party-1.webp)
+
 ### Planul B pentru Ploaie la Petreceri Outdoor
 Dacă ați planificat o petrecere în aer liber în Otopeni și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
 
@@ -29,6 +31,8 @@ Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită anima
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii chase paw patrol otopeni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/piniata-copii-1.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Otopeni. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

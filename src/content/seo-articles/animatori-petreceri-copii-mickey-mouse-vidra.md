@@ -18,6 +18,8 @@ Când rezervi un animator în Vidra, venim cu echipamentul complet: boxă activ�
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse vidra Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/cropped-logo-supaerparty-ico-192x192.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Mickey Mouse Vidra intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -33,6 +35,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Vidra
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Mickey Mouse Vidra are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse vidra Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/mos-craciun-de-inchiriat-superparty-300x225.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Vidra și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

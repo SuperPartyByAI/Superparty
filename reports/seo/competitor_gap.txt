@@ -1,7 +1,7 @@
 --- ANALIZA CANTITATIVA PENTRU RANK 1 ---
-Media Cuvintelor Competitorilor (Homepages): 1627 cuvinte
-Numarul de Cuvinte Superparty.ro (Categoria principala): 1368 cuvinte
-ALERTA: Avem mai puțin text descresptiv de specialitate pe pagină decât un competitor nativ de locul 1.
+Media Cuvintelor Competitorilor (Homepages): 1628 cuvinte
+Numarul de Cuvinte Superparty.ro (Categoria principala): 2389 cuvinte
+AVANTAJ: Volumul nostru de conținut acoperă și depășește media pieței.
 
 --- IERARHIA TOP COMPETITIE (Ce Titluri folosesc liderii) ---
 H1 Inamic: Ursitoare botez si Animatori petreceri copii
@@ -10,17 +10,13 @@ H1 Inamic: Copilul tău merită o petrecere pe cinste
 --- MAPAREA GAP-ULUI (Expresii Semantice Lipsa) ---
 Iata sintagmele de 2 cuvinte esentiale pe care Liderii le folosesc ca sa stea pe Locul 1, si pe care noi le ignoram:
 GAP CRITIC: 'quot quot' -> Ei o folosesc: 18x | Noi o folosim: 0x
-GAP CRITIC: 'petreceri copii' -> Ei o folosesc: 17x | Noi o folosim: 8x
-GAP CRITIC: 'animatori petreceri' -> Ei o folosesc: 14x | Noi o folosim: 6x
 GAP CRITIC: 'fun events' -> Ei o folosesc: 8x | Noi o folosim: 0x
 GAP CRITIC: 'copii bucuresti' -> Ei o folosesc: 4x | Noi o folosim: 0x
 GAP CRITIC: 'copilul tau' -> Ei o folosesc: 3x | Noi o folosim: 0x
-GAP CRITIC: 'x x' -> Ei o folosesc: 3x | Noi o folosim: 0x
 GAP CRITIC: 'cool events' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'dansatoare orientale' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'daca vrei' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'animatorii nostri' -> Ei o folosesc: 2x | Noi o folosim: 0x
-GAP CRITIC: 'în funcție' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'copii magicieni' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'orice petrecere' -> Ei o folosesc: 2x | Noi o folosim: 0x
 GAP CRITIC: 'copilului tau' -> Ei o folosesc: 2x | Noi o folosim: 0x

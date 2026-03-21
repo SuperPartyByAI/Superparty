@@ -13,6 +13,8 @@ Din punct de vedere demografic, Cernica are un profil specific zonei — familii
 
 Cei mai apreciati animatori SuperParty în Cernica sunt cei care vin în costume de Elsa — dar și Spiderman, Elsa, Bluey și Sonic au fani devotați în toate zonele. Un detaliu important: SuperParty nu închiriazǎ costume, le deține și le întreține — fiecare costum este spălat, reparat și verificat după fiecare eveniment. La petrecerea ta din Cernica vine un costum impecabil, nu unul purtat de 50 de ori fără curățare.
 
+![Animatori petreceri copii in animatori petreceri copii jasmine cernica Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_aurora_white_1772225092224.webp)
+
 SuperParty asigura acoperire completă pentru Cernica și localitățile vecine Pantelimon și Fundeni. Programul disponibil pentru aceasta zonă: Luni-Vineri 10:00-22:00, Sâmbătă 09:00-22:00, Duminică 10:00-20:00, Sărbători legale la cerere. Rezervarea se poate face cu maxim 6 luni în avans. Nu există zi în care SuperParty să fie indisponibil — avem o echipă de 12 animatori activi plus o lista de rezervă, asigurând acoperire chiar și în cazuri de urgenta medicala sau forta majora.
 
 <!-- UNIQUE-TEXT-V8 -->

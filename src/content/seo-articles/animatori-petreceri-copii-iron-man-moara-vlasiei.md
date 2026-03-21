@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Moara Vlăsiei sau în aer l
 ### Structura unei Ore de Vis
 De la momentul în care Iron Man Moara Vlasiei face primul pas în locația ta din Moara Vlăsiei, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii iron man moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch6_sofia_1772214073648.webp)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Moara Vlăsiei să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii iron man moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/catalog_pikachu_white_bg_1772227634017.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Iron Man Moara Vlasiei oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

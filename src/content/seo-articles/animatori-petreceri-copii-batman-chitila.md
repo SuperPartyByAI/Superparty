@@ -14,6 +14,8 @@ Când rezervi un animator în Chitila, venim cu echipamentul complet: boxă acti
 ### Structura unei Ore de Vis
 De la momentul în care Batman face primul pas în locația ta din Chitila, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii batman chitila Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch6_venom_1772213587896.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -29,6 +31,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Realizați face painting cu produse sigure?**
 *R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+![Animatori petreceri copii in animatori petreceri copii batman chitila Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch7_peterpan_1772214274029.webp)
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Batman oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*

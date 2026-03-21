@@ -15,6 +15,8 @@ Când rezervi un animator în Clinceni, venim cu echipamentul complet: boxă act
 ### Structura unei Ore de Vis
 De la momentul în care Minnie Mouse Clinceni face primul pas în locația ta din Clinceni, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii minnie mouse clinceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/10/inchiriere-mos-craciun-bucuresti-1-a-177x300.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Minnie Mouse Clinceni se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -30,6 +32,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Minnie Mouse Clinceni oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii minnie mouse clinceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/mascot_costume_snowwhite_white_1772224648255.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

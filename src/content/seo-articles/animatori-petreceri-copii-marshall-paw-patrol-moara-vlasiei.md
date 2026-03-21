@@ -15,6 +15,8 @@ Fie că sărbătoriți acasă, la un restaurant din Moara Vlăsiei sau în aer l
 ### Structura unei Ore de Vis
 De la momentul în care Marshall Paw Patrol Moara Vlasiei face primul pas în locația ta din Moara Vlăsiei, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/09/pachet-zane-1-300x210.webp)
+
 ### Cum Ținem Atenția Grupelor de 9–12 Ani
 Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Marshall Paw Patrol Moara Vlasiei se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
@@ -30,6 +32,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Marshall Paw Patrol Moara Vlasiei oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii marshall paw patrol moara vlasiei Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch8_bear_1772214408538.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Marshall Paw Patrol Moara Vlasiei are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

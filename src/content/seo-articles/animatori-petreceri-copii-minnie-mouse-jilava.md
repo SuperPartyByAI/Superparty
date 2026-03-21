@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Jilava sau în aer liber, fl
 ### Structura unei Ore de Vis
 De la momentul în care Minnie Mouse Jilava face primul pas în locația ta din Jilava, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii minnie mouse jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/08/arcade-baloane-botez-nunta-majorat-superparty.webp)
+
 ### Volumul Muzicii și Sensibilitatea Zgomotului
 Sistemele noastre de sunet sunt controlate permanent. Minnie Mouse Jilava știe exact cum să mențină un volum care să asigure distracția, dar fără să acopere conversațiile adulților sau să sperie copiii sensibili la zgomot puternic.
 
@@ -29,6 +31,8 @@ Desi par simple, săbiile, cățeii și florile din baloane raman cel mai aștep
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii minnie mouse jilava Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch3_jerry_mascot_1772212671486.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Jilava și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

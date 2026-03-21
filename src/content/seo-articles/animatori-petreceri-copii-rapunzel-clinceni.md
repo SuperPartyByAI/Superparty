@@ -13,6 +13,8 @@ Din punct de vedere demografic, Clinceni are un profil specific zonei — famili
 
 Cei mai apreciati animatori SuperParty în Clinceni sunt cei care vin în costume de Bluey — dar și Spiderman, Elsa, Bluey și Sonic au fani devotați în toate zonele. Un detaliu important: SuperParty nu închiriazǎ costume, le deține și le întreține — fiecare costum este spălat, reparat și verificat după fiecare eveniment. La petrecerea ta din Clinceni vine un costum impecabil, nu unul purtat de 50 de ori fără curățare.
 
+![Animatori petreceri copii in animatori petreceri copii rapunzel clinceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/decorationi-baloane-botez-1-300x245.webp)
+
 SuperParty asigura acoperire completă pentru Clinceni și localitățile vecine Bragadiru și Cornetu. Programul disponibil pentru aceasta zonă: Luni-Vineri 10:00-22:00, Sâmbătă 09:00-22:00, Duminică 10:00-20:00, Sărbători legale la cerere. Rezervarea se poate face cu maxim 6 luni în avans. Nu există zi în care SuperParty să fie indisponibil — avem o echipă de 12 animatori activi plus o lista de rezervă, asigurând acoperire chiar și în cazuri de urgenta medicala sau forta majora.
 
 <!-- UNIQUE-TEXT-V8 -->

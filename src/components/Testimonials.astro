@@ -101,6 +101,25 @@ function sourceLabel(src: string) {
             {truncated && (
               <button class="t-expand" aria-label="Citește recenzia completă">Citește tot ↓</button>
             )}
+
+            {i % 2 === 0 && i < 6 && (
+              <div class="t-attached-img" style="margin-bottom:1rem; border-radius:12px; overflow:hidden;">
+                <img 
+                  src={[
+                    '/optimized/animatori-1.webp',
+                    '/optimized/batman.webp',
+                    '/optimized/cenusareasa-si-print-1.webp',
+                    '/optimized/animatori-petreceri-copii-acasa.webp',
+                    '/optimized/animatori-petreceri-copii-superparty-2.webp',
+                    '/optimized/animatori-copii-1.webp'
+                  ][(Math.floor(i/2)) % 6]} 
+                  alt="Petrecere exclusivista Bucuresti" 
+                  loading="lazy" 
+                  style="width:100%; height:150px; object-fit:cover; display:block;" 
+                />
+              </div>
+            )}
+
             <div class="t-footer">
               <div class="t-meta">
                 <span class="t-source" title={sourceLabel(r.source)}>{sourceIcon(r.source)}</span>

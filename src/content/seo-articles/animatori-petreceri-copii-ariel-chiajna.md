@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Chiajna sau în aer liber, f
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii ariel chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2023/08/animatori-petreceri-copii-super-party-1-300x244.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Ariel Chiajna felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -29,6 +31,8 @@ Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, f
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii ariel chiajna Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/testoasele-ninja.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Chiajna. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

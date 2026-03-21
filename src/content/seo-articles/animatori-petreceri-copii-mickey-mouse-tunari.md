@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Tunari sau în aer liber, fl
 ### Structura unei Ore de Vis
 De la momentul în care Mickey Mouse Tunari face primul pas în locația ta din Tunari, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_spiderman_white_1772224741705.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -29,6 +31,8 @@ Dacă ați planificat o petrecere în aer liber în Tunari și vremea este capri
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Mickey Mouse Tunari oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_batman_complete_1772226133987.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

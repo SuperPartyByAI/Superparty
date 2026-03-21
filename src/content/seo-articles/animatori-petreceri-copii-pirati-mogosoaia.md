@@ -19,6 +19,8 @@ Când rezervi un animator în Mogoșoaia, venim cu echipamentul complet: boxă a
 * **90-110 min:** Modelaj de baloane (săbii, flori, animăluțe) pentru fiecare copil.
 * **110-120 min:** Suflarea în lumânări, aducerea tortului, sesiunea foto de grup și La Mulți Ani!
 
+![Animatori petreceri copii in animatori petreceri copii pirati mogosoaia Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_creeper_white_1772224420251.webp)
+
 ### Cadouri și Goodie Bags
 Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Pirati Mogosoaia felicită pe rând fiecare copil pentru curajul arătat în jocuri.
 
@@ -34,6 +36,8 @@ Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm mi
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Pirati Mogosoaia oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii pirati mogosoaia Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2022/07/decor-petreceri-copii-bucuresti-1-300x244.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Mogoșoaia și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

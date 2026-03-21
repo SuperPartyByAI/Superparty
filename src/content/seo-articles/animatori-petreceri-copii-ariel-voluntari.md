@@ -15,6 +15,8 @@ Când rezervi un animator în Voluntari, venim cu echipamentul complet: boxă ac
 ### Structura unei Ore de Vis
 De la momentul în care Ariel face primul pas în locația ta din Voluntari, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii ariel voluntari Baloane, Jucarii si Zâmbete Realiste](/wp-content/uploads/2022/09/animatori-petreceri-copii-bucuresti-300x225.jpg)
+
 ### Meniul Kids-Friendly Rapid
 Pe baza experienței de la sute de petreceri, recomandăm părinților din Voluntari să evite meniurile sofisticate pentru copii. Optează pentru pizza, mini-sandvișuri, fructe deja tăiate și multă apă. Animația o să-i țină atât de ocupați încât nu vor avea timp pentru mese lungi la masă!
 
@@ -30,6 +32,8 @@ Sistemele noastre de sunet sunt controlate permanent. Ariel știe exact cum să 
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Ariel oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii ariel voluntari Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_costume_flamenco_white_1772225105790.webp)
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*

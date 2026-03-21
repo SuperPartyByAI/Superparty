@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Popesti sau în aer liber, f
 ### Structura unei Ore de Vis
 De la momentul în care Mickey Mouse Leordeni face primul pas în locația ta din Popesti, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii mickey mouse popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/costume_batch7_peterpan_1772214274029.webp)
+
 ### Checklist pentru Părinți (Fără Stres)
 Pentru o colaborare perfectă, ține cont de aceste reguli simple: invită animatorul cu 30 de minute *după* ora oficială de începere a petrecerii (pentru a fi sigur că au sosit toți copiii), pregătește un mic punct de apă plată pentru ei și eliberează centrul camerei de cabluri jucării periculoase.
 
@@ -29,6 +31,8 @@ Pe baza experienței de la sute de petreceri, recomandăm părinților din Popes
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Mickey Mouse Leordeni oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
+
+![Animatori petreceri copii in animatori petreceri copii mickey mouse popesti leordeni Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/catalog/mascot_full_masha_complete_1772225981575.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Mickey Mouse Leordeni are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

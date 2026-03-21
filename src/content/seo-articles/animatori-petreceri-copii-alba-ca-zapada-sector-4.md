@@ -15,6 +15,8 @@ Când rezervi un animator în Sector 4, venim cu echipamentul complet: boxă act
 ### Structura unei Ore de Vis
 De la momentul în care Alba Ca Zapada face primul pas în locația ta din Sector 4, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada sector 4 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-1.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Alba Ca Zapada intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -30,6 +32,8 @@ Dacă ați planificat o petrecere în aer liber în Sector 4 și vremea este cap
 
 **Î: Animatorul vine cu toate materialele necesare?**
 *R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
+
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada sector 4 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/vata-de-zahar-1-300x245.webp)
 
 **Î: Putem prelungi durata programului în ziua petrecerii?**
 *R: Depinde de disponibilitatea imediată a animatorului. Uneori, Alba Ca Zapada are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*

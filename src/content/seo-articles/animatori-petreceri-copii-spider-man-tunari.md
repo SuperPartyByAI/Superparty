@@ -14,6 +14,8 @@ Când rezervi un animator în Tunari, venim cu echipamentul complet: boxă activ
 ### Desfășurătorul Magiei Pas cu Pas
 O aniversare necesită un ritm alert. Începem cu spargerea gheții printr-un joc interactiv de cunoaștere. Urmează nucleul distracției: competiții distractive cu recuzita noastră, dansuri coregrafiate și tunelul misterios. Către final, ne liniștim ritmul cu artă pe față (face painting premium) și crearea de figurine din baloane pentru toți participanții.
 
+![Animatori petreceri copii in animatori petreceri copii spider man tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/cp-png-1.webp)
+
 ### Fotografii la Petrecere: Unghiuri și Momente
 Pentru a surprinde magia reală a momentului, recomandăm captarea emoțiilor la jocurile de parașută și în timpul suflării în tort. Când Spider Man Tunari intră prima oară pe ușă, pregătiți camera pentru reacția de soc și bucurie a sărbătoritului!
 
@@ -29,6 +31,8 @@ Dacă ați planificat o petrecere în aer liber în Tunari și vremea este capri
 
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
+
+![Animatori petreceri copii in animatori petreceri copii spider man tunari Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/mos-craciun-de-inchiriat-superparty.webp)
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Tunari. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*

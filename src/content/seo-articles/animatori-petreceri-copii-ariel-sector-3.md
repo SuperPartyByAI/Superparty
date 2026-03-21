@@ -14,6 +14,8 @@ Fie că sărbătoriți acasă, la un restaurant din Sector 3 sau în aer liber, 
 ### Structura unei Ore de Vis
 De la momentul în care Ariel face primul pas în locația ta din Sector 3, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
+![Animatori petreceri copii in animatori petreceri copii ariel sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/hero/2021/04/piniata-copii-1-300x225.webp)
+
 ### Importanța Baloanelor Modelate
 Desi par simple, săbiile, cățeii și florile din baloane raman cel mai așteptat moment. De ce? Oferă o mică suvenire tactilă pe care fiecare copil o poate lua acasă din inima petrecerii din Sector 3!
 
@@ -29,6 +31,8 @@ Sistemele noastre de sunet sunt controlate permanent. Ariel știe exact cum să 
 
 **Î: Putem organiza petrecerea la grădiniță?**
 *R: Sigur, ne deplasăm des la grădinițele din Sector 3. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
+
+![Animatori petreceri copii in animatori petreceri copii ariel sector 3 Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch4_creeper_halfmask_1772212825095.webp)
 
 **Î: Se face animație și dacă locația e mai îndepărtată de centru?**
 *R: Acoperim cu drag zona Sector 3 și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*

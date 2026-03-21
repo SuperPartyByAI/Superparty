@@ -13,6 +13,8 @@ Alegerea costumului este o decizie majoră pentru calitatea petrecerii. SuperPar
 
 SuperParty funcționează cu un sistem de backup obligatoriu pentru toate petrecerile din Copăceni și împrejurimi. Dacă animatorul principal are o urgență medicală în dimineața petrecerii, se activează imediat lista de rezervă — avem minimum 3 animatori disponibili simultan. Clientul este notificat în maximum 30 de minute de la confirmare și primeste noul animator fără niciun cost suplimentar și fara nicio modificare a programului. Aceste proceduri de backup au fost activate de 7 ori în 10 ani și în niciun caz evenimentul nu a avut de suferit.
 
+![Animatori petreceri copii in animatori petreceri copii alba ca zapada copaceni Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/catalog/costume_batch4_hellokitty_1772212797344.webp)
+
 Rezervarea pentru Copăceni se face rapid: WhatsApp la 0722 744 377, email la contact@superparty.ro sau prin formularul de pe site. Răspunsul vine în maximum 30 de minute (în intervalul orar 08:00-22:00, 7 zile pe săptâmână). Oferta primită include: data și ora confirmată, personajul rezervat, adresa de livrare în Copăceni, suma totală (transparent, fara costuri ascunse) și condițiile contractului de garanție. Semnarea se face digital prin PDF semnat — mod electronic, fara drumuri la sediu.
 
 <!-- UNIQUE-TEXT-V8 -->
