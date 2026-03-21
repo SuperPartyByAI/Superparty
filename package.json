@@ -8,8 +8,12 @@
     },
     "scripts": {
         "dev": "astro dev",
-        "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 astro build",
+        "build": "astro build",
+        "build:local": "cross-env NODE_OPTIONS=--max_old_space_size=8192 astro build",
         "preview": "astro preview"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.8",
