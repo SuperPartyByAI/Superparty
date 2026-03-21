@@ -127,7 +127,7 @@ def generate_rewrite(slug, keyword_personaj, keyword_locatie, event_type="aniver
 def process_all_files():
     reports = load_reports()
     t_slugs = load_testimonials()
-    files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx')]
+    files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx') or f.endswith('.md')]
     
     new_csv_rows = [["filename", "slug", "indexStatus", "action_taken"]]
     
@@ -151,7 +151,7 @@ def process_all_files():
                 fm_dict[k] = v.strip()
                 ordered_keys.append(k)
 
-        slug = filename.replace('.mdx', '')
+        slug = filename.replace('.mdx', '').replace('.md', '')
         report = reports.get(slug, {})
         score = report.get("overall_score", 5.0)
         risk = report.get("doorway_risk", "high")

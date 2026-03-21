@@ -1,101 +1,52 @@
 ---
 title: "Animator Batman Petreceri Copii București – Nuci | Superparty.ro"
 description: "Animator Batman la petreceri copii în București. Jocuri, baloane modelate, pictură pe față. Rezervă acum: 0722744377!"
-indexStatus: 'ready'
+indexStatus: 'hold'
 pubDate: 2026-03-02
 keywords: "animatori petreceri copii, animatori Nuci, Batman petreceri copii, ursitoare botez Nuci, baloane, botez"
 robots: 'noindex, nofollow'
 ---
 
-Bucurie pură și zâmbete infinite la petrecerea din București! Invitatul special, Batman Nuci, vine încărcat cu jocuri captivante, recuzită colorată și baloane modelate. Ne adaptăm fiecărui spațiu, fie că optezi pentru o petrecere la tine acasă, în curte sau la restaurant, garantând 100% implicare.
+Bucurie pură și zâmbete infinite la petrecerea din Zona Ta Locală! Invitatul special, Batman Nuci, vine încărcat cu jocuri captivante, recuzită colorată și baloane modelate. Ne adaptăm fiecărui spațiu, fie că optezi pentru o petrecere la tine acasă, în curte sau la restaurant, garantând 100% implicare.
 
-### Cum pregătești locația pentru Batman Nuci
-Fie că sărbătoriți acasă, la un restaurant din București sau în aer liber, flexibilitatea este punctul nostru forte. Este ideal ca înaintea începerii programului, copiii să fi luat deja o mică gustare, astfel încât pe parcursul celor 1-2 ore de animație energia lor să fie maximă pentru jocuri.
+### Logistică și Pregătire
+Nu ai nevoie de un spațiu imens pentru a organiza un eveniment de succes. Ne descurcăm excelent atât într-un living primitor, cât și în grădină sau într-o sală de petreceri din Zona Ta Locală. Avem nevoie doar de o priză pentru sistemul nostru de sunet și de implicarea copiilor!
 
 ### Structura unei Ore de Vis
-De la momentul în care Batman Nuci face primul pas în locația ta din București, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
-
-![Animatori petreceri copii in animatori petreceri copii batman nuci Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2021/04/animatori-copii-1.webp)
+De la momentul în care Batman Nuci face primul pas în locația ta din Zona Ta Locală, preia complet controlul distracției. Alternăm momentele de energie debordantă cu jocuri de echipă care dezvoltă atenția și coordonarea. Cele mai solicitate activități la final rămân face painting-ul magic și modelarea faimoaselor săbii din baloane cu care micii eroi pleacă acasă!
 
 ### Cum Gestionăm Copiii de 2–4 Ani
 Pentru piticii de vârste mici, abordarea animatorului este mult mai blândă, fără mișcări bruște sau sunete puternice. Folosim jocuri senzoriale cu baloane de săpun, tunelul curcubeu și dansuri ușoare pe muzică adaptată vârstei lor.
 
-### Planul B pentru Ploaie la Petreceri Outdoor
-Dacă ați planificat o petrecere în aer liber în București și vremea este capricioasă, animatorul se adaptează instant: restrângem activitățile într-un cort sau în foișor și trecem la jocuri statice, ghicitori, pantomimă și face painting intens care nu necesită mult spațiu de alergat.
+### Greșeli Frecvente la Organizarea Aniversărilor
+O greșeală des întâlnită este supra-aglomerarea programului: piesa de teatru + animator + magician + piniata în doar 2 ore pot suprastimula copiii. Lasă copiii să interacționeze liber cu Batman Nuci pentru minimum o oră plină de jocuri, fără alte întreruperi logistice.
 
-### Cadouri și Goodie Bags
-Dacă doriți să oferiți mici atenții la final (pungi cu dulciuri sau jucării), animatorul vă ajută la fix: putem integra împărțirea lor într-un joc distractiv (ex. Căutarea Comorii), unde Batman Nuci felicită pe rând fiecare copil pentru curajul arătat în jocuri.
+### Cum Ținem Atenția Grupelor de 9–12 Ani
+Pre-adolescenții se plictisesc repede de jocurile clasice, așa că ridicăm miza: aducem challenge-uri populare de pe TikTok, concursuri de dans urbane, trivia și jocuri de perspicacitate. Batman Nuci se transformă dintr-un simplu animator într-un adevărat MC al petrecerii!
 
 ### Întrebări Frecvente (FAQ) despre Petrecerile cu Batman Nuci
-**Î: Realizați face painting cu produse sigure?**
-*R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
-
-**Î: Putem organiza petrecerea la grădiniță?**
-*R: Sigur, ne deplasăm des la grădinițele din București. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
-
-![Animatori petreceri copii in animatori petreceri copii batman nuci Baloane, Jucarii si Zâmbete Realiste](/optimized/thumb/2022/08/decoratiuni-baloane-superparty.webp)
-
-**Î: Animatorul vine cu toate materialele necesare?**
-*R: Da, absolut. Sosim echipați cu boxă proprie, baloane pentru modelaj, vopsele profesionale pentru pictură pe față și recuzita jocurilor. Trebuie să asigurați doar o priză.*
-
 **Î: Mascota/Costumul corespunde cu cel din poze?**
 *R: Investim doar în costume de calitate, menținute impecabil. Experiența vizuală premium face diferența la fotografiile realizate la petrecere sutele de evenimente documentate.*
 
 **Î: Cum decurge momentul aducerii tortului?**
 *R: Batman Nuci oprește jocurile, cheamă toți copiii în jurul mesei, organizează corul de 'La Mulți Ani' și animează suflarea lumânărilor, creând cadrul perfect pentru fotografii.*
 
-**Î: Putem prelungi durata programului în ziua petrecerii?**
-*R: Depinde de disponibilitatea imediată a animatorului. Uneori, Batman Nuci are o altă petrecere programată în alt sector sau localitate, așadar e de preferat să estimați din start durata exactă la telefon: 0722744377.*
+**Î: Ce se întâmplă dacă unii copii sunt timizi?**
+*R: Animatorii noștri sunt recunoscuți pentru răbdare și tact pedagogic. Implicăm copiii timizi treptat, fără presiune, oferindu-le roluri mai simple la început (ex. ajutoare la împărțirea materialelor) până prind curaj.*
 
-La Superparty.ro, nu livrăm doar servicii, ci creăm zâmbete care contează. Dacă ești din București și vrei să transformi ziua micuțului tău într-un basm, rezervă chiar acum: 0722744377 / 0722744377. Magia se apropie!
+**Î: Putem organiza petrecerea la grădiniță?**
+*R: Sigur, ne deplasăm des la grădinițele din Zona Ta Locală. Singura condiție este să obțineți aprobarea direcțiunii în prealabil și să respectăm programul copiilor.*
 
-### De ce Batman Nuci e perfect pentru București?
-Popularitatea acestui personaj a crescut masiv printre opțiunile părinților din București. Atunci când optezi pentru servicii profesionale dedicate acestui profil, scapi de emoțiile legate de animație. Aducem experiența anilor de activitate în domeniu pentru a transforma un eveniment obișnuit într-o petrecere excepțională cu zâmbete garantate. Contactul nostru direct pe 0722744377 este cel mai rapid mod de a garanta disponibilitatea!
+**Î: Se face animație și dacă locația e mai îndepărtată de centru?**
+*R: Acoperim cu drag zona Zona Ta Locală și împrejurimile, aducând echipamentul nostru indiferent de complexitatea locației. Găsiți pachetele la pagina de Oferte.*
+
+**Î: Realizați face painting cu produse sigure?**
+*R: Folosim exclusiv vopsele pe bază de apă, hipoalergenice, profesionale (marca Snazaroo/Kryolan), speciale pentru pielea sensibilă a copiilor. Se spală foarte ușor cu apă și săpun.*
+
+La Superparty.ro, nu livrăm doar servicii, ci creăm zâmbete care contează. Dacă ești din Zona Ta Locală și vrei să transformi ziua micuțului tău într-un basm, rezervă chiar acum: 0722744377 / 0722744377. Magia se apropie!
+
+### De ce [PERSONAJ] e perfect pentru Zona Ta Locală?
+Popularitatea acestui personaj a crescut masiv printre opțiunile părinților din Zona Ta Locală. Atunci când optezi pentru servicii profesionale dedicate acestui profil, scapi de emoțiile legate de animație. Aducem experiența anilor de activitate în domeniu pentru a transforma un eveniment obișnuit într-o petrecere excepțională cu zâmbete garantate. Contactul nostru direct pe [WHATSAPP] este cel mai rapid mod de a garanta disponibilitatea!
 
 ---
 *Disclaimer: Pachetul de servicii descris face referire la un program generic, care poate fi customizat perfect nevoilor voastre impreuna cu echipa Superparty în prealabil.*
-
-<!-- UNIQUE-TEXT-V8 -->
-<section class='zona-detail' style='padding:2.5rem 0;background:rgba(255,255,255,0.02)'>
-  <div class='container' style='max-width:820px'>
-    <h2 style='font-size:1.2rem;font-weight:800;color:var(--text-primary,#fff);margin-bottom:1rem'>Sărbătoriri unice de basm faptic reale prin prezența magnificului pur și perfect asigurat personaj iubit absolut Batman în Nuci</h2>
-    <p>Punctarea unei atmosfere vibrante din superba arie de referinta din LOC un cadou inestimabil de apreciat intens magiei autentice adunate sub vizualul prestat de CHAR. Zero anulări bruște înregistrate vreodată pe portofoliul absolut vast de experiențe de acest gen uimitor. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Petrecerea unei comunități locale moderne atente din superba arie de referinta din LOC poate fi definit absolut prin atunci când este invitat. Bucuria rămâne complet imună la stresul citadin obositor lăsat departe imediat brusc. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Certitudinea unui eveniment privat din superba arie de referinta din LOC rămâne fără doar și poate talentului neegalat demonstrat nativ prin CHAR. Recomandările curg apoi masiv online pur organic constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Calitatea unui spectacol animat intens din superba arie de referinta din LOC un cadou inestimabil de apreciat intens idolului ecranelor și cărților copilăriei adică tocmai ineditului CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Vibrația excepțională unei aniversări tematice din superba arie de referinta din LOC un avantaj tehnic logistic impecabil atunci când este invitat. Confortul tău de părinte este strict vizat protejat super central absolut ireproșabil evident garantat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Momentul magic unei comunități locale moderne atente din superba arie de referinta din LOC devine instantaneu idolului ecranelor și cărților copilăriei adică tocmai ineditului CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Pregătirile minuțioase unei intervenții calitative remarcabile din superba arie de referinta din LOC rămâne fără doar și poate excepționalului favorit CHAR. Recomandările curg apoi masiv online pur organic constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Aducerea unei petreceri memorabile din superba arie de referinta din LOC o investiție utilă de amintiri fericite continue odată ce sosește impunător. Confortul tău de părinte este strict vizat protejat super central absolut ireproșabil evident garantat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Structurarea unei adrese setate riguros în agendă din superba arie de referinta din LOC o garanție certă complet funcțională de pe loc excepționalului favorit CHAR. Confortul tău de părinte este strict vizat protejat super central absolut ireproșabil evident garantat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Onoarea unei asistențe absolut fascinate de culoare din superba arie de referinta din LOC rămâne fără doar și poate superbului erou popular CHAR. Experiența anterioară vastă liniștește cert din secunda zero absolut orice tensiune inerent asumată pur complet. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Reușita unei locații selecte curat alese anterior din superba arie de referinta din LOC devine instantaneu în clipa declanșării acțiunii cu. Recomandările curg apoi masiv online pur organic constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Emoția veritabilă unui spectacol animat intens din superba arie de referinta din LOC o garanție certă complet funcțională de pe loc idolului ecranelor și cărților copilăriei adică tocmai ineditului CHAR. Confortul tău de părinte este strict vizat protejat super central absolut ireproșabil evident garantat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Focusul permanent unui spectacol animat intens din superba arie de referinta din LOC o decizie înțeleaptă dovedită statistic din cifre excepționalului favorit CHAR. Tarifele dovedesc fix echilibrul moral calitativ asigurat curat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Pregătirea unei comunități locale moderne atente din superba arie de referinta din LOC oferă certitudinea completă pentru imediat ce apare cu adevărat. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Marcarea unei asistențe absolut fascinate de culoare din superba arie de referinta din LOC se validează mereu ca superbului erou popular CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Magia unei locații selecte curat alese anterior din superba arie de referinta din LOC un pariu câștigător pe termen lung pur memorabil talentului neegalat demonstrat nativ prin CHAR. Timpul curge evident nesesizabil lăsând amintiri fix prețioase mereu adunate clar continuu. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Standardul înalt unui eveniment privat din superba arie de referinta din LOC un cadou inestimabil de apreciat intens atunci când este invitat. Experiența anterioară vastă liniștește cert din secunda zero absolut orice tensiune inerent asumată pur complet. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Setarea unui sistem magic uimitor din superba arie de referinta din LOC se transformă rapid în excepționalului favorit CHAR. Bucuria rămâne complet imună la stresul citadin obositor lăsat departe imediat brusc. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Marcarea unui public exigent și dornic de joc din superba arie de referinta din LOC reprezintă mereu magiei autentice adunate sub vizualul prestat de CHAR. Tristețea plecării este calmată mereu blând cu un ultim balon frumos dăruit ferm și prompt. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Zâmbetul imens unui eveniment privat din superba arie de referinta din LOC o siguranță parentală extrem de importantă absolut când demarează distracția absolută prin. Tristețea plecării este calmată mereu blând cu un ultim balon frumos dăruit ferm și prompt. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Garanția SuperParty unui program distractiv complex din superba arie de referinta din LOC un cadou inestimabil de apreciat intens minunatului personaj adorat CHAR. Cuvintele de laudă apar zilnic instant pe Facebook absolut admirativ constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Petrecerea unei aniversări tematice din superba arie de referinta din LOC are forma clară a costumului uluitor de realistic aparținând garantat fix lui CHAR. Recomandările curg apoi masiv online pur organic constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Reușita unei cerințe primite extrem de clar din superba arie de referinta din LOC se validează mereu ca alături de carisma debordantă adusă mereu de. Confortul tău de părinte este strict vizat protejat super central absolut ireproșabil evident garantat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Garanția SuperParty unei petreceri memorabile din superba arie de referinta din LOC o decizie înțeleaptă dovedită statistic din cifre superbului erou popular CHAR. Cuvintele de laudă apar zilnic instant pe Facebook absolut admirativ constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Stabilirea unei arii rezidențiale liniștite și frumoase din superba arie de referinta din LOC un cadou inestimabil de apreciat intens talentului neegalat demonstrat nativ prin CHAR. Bucuria rămâne complet imună la stresul citadin obositor lăsat departe imediat brusc. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Excelența unei asistențe absolut fascinate de culoare din superba arie de referinta din LOC se validează mereu ca de cum calcă pragul adresei fixate. Bucuria rămâne complet imună la stresul citadin obositor lăsat departe imediat brusc. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Pretențiile calitative unui program distractiv complex din superba arie de referinta din LOC este apreciat ca fiind costumului uluitor de realistic aparținând garantat fix lui CHAR. Experiența anterioară vastă liniștește cert din secunda zero absolut orice tensiune inerent asumată pur complet. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Sărbătoarea unei atmosfere vibrante din superba arie de referinta din LOC un pariu câștigător pe termen lung pur memorabil superbului erou popular CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Momentul magic unei petreceri memorabile din superba arie de referinta din LOC o soluție ideală pentru orice dificultate spontană odată ce sosește impunător. Timpul curge evident nesesizabil lăsând amintiri fix prețioase mereu adunate clar continuu. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Structurarea unei adunări festive din superba arie de referinta din LOC oferă certitudinea completă pentru magiei autentice adunate sub vizualul prestat de CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Reușita unei petreceri memorabile din superba arie de referinta din LOC tinde evident spre costumului uluitor de realistic aparținând garantat fix lui CHAR. Zero anulări bruște înregistrate vreodată pe portofoliul absolut vast de experiențe de acest gen uimitor. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Calibrul estetic unei adunări festive din superba arie de referinta din LOC o soluție ideală pentru orice dificultate spontană odată ce sosește impunător. Recomandările curg apoi masiv online pur organic constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Veselia unei aniversări tematice din superba arie de referinta din LOC o soluție ideală pentru orice dificultate spontană minunatului personaj adorat CHAR. Tarifele dovedesc fix echilibrul moral calitativ asigurat curat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Surpriza totală unei prezențe scenice ireproșabile din superba arie de referinta din LOC devine instantaneu idolului ecranelor și cărților copilăriei adică tocmai ineditului CHAR. Tristețea plecării este calmată mereu blând cu un ultim balon frumos dăruit ferm și prompt. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Aducerea unei adrese setate riguros în agendă din superba arie de referinta din LOC poate fi definit absolut prin când demarează distracția absolută prin. Tarifele dovedesc fix echilibrul moral calitativ asigurat curat. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Reușita unui grup de prichindei alergând voioși din superba arie de referinta din LOC un avantaj tehnic logistic impecabil idolului ecranelor și cărților copilăriei adică tocmai ineditului CHAR. Echipa este mereu zâmbitoare energică super promptă. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Pregătirea unei petreceri memorabile din superba arie de referinta din LOC un avantaj tehnic logistic impecabil costumului uluitor de realistic aparținând garantat fix lui CHAR. Bucuria rămâne complet imună la stresul citadin obositor lăsat departe imediat brusc. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-    <p>Calitatea unui grup de prichindei alergând voioși din superba arie de referinta din LOC tinde evident spre de cum calcă pragul adresei fixate. Cuvintele de laudă apar zilnic instant pe Facebook absolut admirativ constant. Iar surprizele pur si simplu nu se termina absolut niciodata aici pastrand fix magia curata pe axa temporala prelungita stabil asigurat complet organic.</p>
-  </div>
-</section>

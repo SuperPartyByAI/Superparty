@@ -50,17 +50,18 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Preload LCP Hero Image for 100/100 Lighthouse -->
-  <link rel="preload" href="/wp-content/uploads/generated/hero-coperta.webp" as="image" type="image/webp" />
+  <link rel="preload" href="/wp-content/uploads/generated/hero-coperta.webp" as="image" type="image/webp" fetchpriority="high" />
 
   <!-- Google Analytics 4 (Optimizat prin Astro Partytown) -->
   {GA4_ID && (
     <>
       <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-      <script type="text/partytown" define:vars={{ GA4_ID }}>
+      <script type="text/partytown" data-ga4={GA4_ID} is:inline>
+        const id = document.currentScript.getAttribute('data-ga4');
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', GA4_ID, { send_page_view: true });
+        gtag('config', id, { send_page_view: true });
         window._gtag = gtag;
       </script>
     </>

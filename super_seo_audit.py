@@ -86,7 +86,7 @@ def main():
             except json.JSONDecodeError:
                 pass
     
-    files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx')]
+    files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.mdx') or f.endswith('.md')]
     
     docs_text = {}
     parsed = {}
@@ -116,7 +116,7 @@ def main():
     for f in files:
         fm = parsed[f]["fm"]
         body = parsed[f]["body"]
-        slug = f.replace('.mdx', '')
+        slug = f.replace('.mdx', '').replace('.md', '')
         url = f"https://superparty.ro/petreceri/{slug}"
         
         words = re.findall(r'\b\w+\b', body)

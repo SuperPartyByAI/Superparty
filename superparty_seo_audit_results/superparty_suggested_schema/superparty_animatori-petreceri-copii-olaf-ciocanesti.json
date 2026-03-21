@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "SuperParty",
+      "telephone": "+40722744377",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "București/Ilfov",
+        "addressRegion": "București"
+      },
+      "url": "https://superparty.ro/petreceri/animatori-petreceri-copii-olaf-ciocanesti"
+    },
+    {
+      "@type": "Article",
+      "headline": "Animator Olaf Petreceri Copii Ciocănești | Superparty.ro",
+      "description": "Animator Olaf la petreceri copii în Ciocănești sau împrejurimi. Pachet cu jocuri, face painting profesional și baloane modelate. Rezervă la 0722744377!",
+      "datePublished": "2026-03-21",
+      "author": {
+        "@type": "Organization",
+        "name": "SuperParty"
+      }
+    }
+  ]
+}
