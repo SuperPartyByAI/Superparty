@@ -5,8 +5,6 @@ indexStatus: "ready"
 robots: "index, follow"
 ---
 
-
-
 <!-- UNIQUE-TEXT-V8 -->
 <section class='zona-detail' style='padding:2.5rem 0;background:rgba(255,255,255,0.02)'>
   <div class='container' style='max-width:820px'>
