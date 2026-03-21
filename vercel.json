@@ -21,7 +21,12 @@
             "statusCode": 301
         },
         {
-            "source": "/blog/?",
+            "source": "/blog",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/blog/",
             "destination": "/",
             "statusCode": 301
         },
@@ -170,12 +175,22 @@
             "statusCode": 301
         },
         {
-            "source": "/feed/?",
+            "source": "/feed",
             "destination": "/",
             "statusCode": 301
         },
         {
-            "source": "/comments/feed/?",
+            "source": "/feed/",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/comments/feed",
+            "destination": "/",
+            "statusCode": 301
+        },
+        {
+            "source": "/comments/feed/",
             "destination": "/",
             "statusCode": 301
         },
