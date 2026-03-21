@@ -1,17 +1,15 @@
-// build: 2026-03-21T18:45
+// build: 2026-03-21T20:40
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
-import partytown from '@astrojs/partytown';
+// Partytown removed — caused deprecated API warnings (SharedStorage, AttributionReporting)
 // Sitemap temporarily disabled — @astrojs/sitemap@3.7.1 crashes on Vercel
-// with "Cannot read properties of undefined (reading 'reduce')"
-// TODO: upgrade @astrojs/sitemap or fix after money page is live with index,follow
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://www.superparty.ro',
     trailingSlash: 'ignore',
-    integrations: [mdx({ extendMarkdown: false }), tailwind(), partytown({ config: { forward: ['dataLayer.push'] } })],
+    integrations: [mdx({ extendMarkdown: false }), tailwind()],
     build: {
       inlineStylesheets: 'always'
     }

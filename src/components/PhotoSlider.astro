@@ -75,9 +75,9 @@ const safeImages = sliderImages
   .slider-btn:hover { background: white; box-shadow: 0 6px 20px rgba(0,0,0,0.2); transform: translateY(-50%) scale(1.05); }
   .slider-prev { left: 1rem; }
   .slider-next { right: 1rem; }
-  .slider-dots { display: flex; justify-content: center; gap: 0.4rem; margin-top: 1.2rem; padding: 0 1.5rem; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #D1D5DB; cursor: pointer; transition: all 0.2s; padding: 0; }
-  .dot-active { background: #F97316; width: 24px; border-radius: 4px; }
+  .slider-dots { display: flex; justify-content: center; gap: 0; margin-top: 1.2rem; padding: 0 1.5rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #D1D5DB; cursor: pointer; transition: all 0.2s; padding: 18px; background-clip: content-box; box-sizing: content-box; margin: 0; }
+  .dot-active { background: #F97316; width: 24px; border-radius: 4px; background-clip: content-box; }
   @media (max-width: 640px) { .slider-btn { width: 36px; height: 36px; font-size: 1.1rem; } }
 </style>
 
