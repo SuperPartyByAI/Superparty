@@ -52,16 +52,16 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <!-- Preload LCP Hero Image for 100/100 Lighthouse -->
   <link rel="preload" href="/wp-content/uploads/generated/hero-coperta.webp" as="image" type="image/webp" fetchpriority="high" />
 
-  <!-- Google Analytics 4 (Optimizat prin Astro Partytown) -->
+  <!-- Google Analytics 4 (standard async - no Partytown to avoid console errors) -->
   {GA4_ID && (
     <>
-      <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-      <script type="text/partytown" data-ga4={GA4_ID} is:inline>
-        const id = document.currentScript.getAttribute('data-ga4');
+      <script defer src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+      <script data-ga4={GA4_ID} is:inline>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', id, { send_page_view: true });
+        const _id = document.currentScript ? document.currentScript.getAttribute('data-ga4') : '';
+        if (_id) gtag('config', _id, { send_page_view: true });
         window._gtag = gtag;
       </script>
     </>
@@ -217,7 +217,9 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
     <a href="/contact/">📧 Contact</a>
   </nav>
 
-  <slot />
+  <main id="main-content">
+    <slot />
+  </main>
 
   <GeoLinks />
 
