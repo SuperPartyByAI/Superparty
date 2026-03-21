@@ -35,3 +35,5 @@ Thumbs.db
 
 # Reports (generated, do not commit; except audit trail)
 reports/superparty/seo_level5_status.json
+.vercel
+.env*.local
