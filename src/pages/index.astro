@@ -119,6 +119,19 @@ const benefits = [
       ] as const).map(([icon, num, label]) => (
         <div class="hero-stat">
           <span class="stat-icon">{icon}</span>
+          <span class="stat-num">{num}</span>
+          <span class="stat-lbl">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── SLIDER "Cum arată o petrecere" ────────────────────────────────── -->
+<PhotoSlider title="Cum arată o petrecere SuperParty" />
+
+<!-- ── BENEFICII (4 carduri) ─────────────────────────────────────────── -->
+<section class="benefits-section">
   <div class="container">
     <div class="section-hdr">
       <h2 class="section-title">De ce copiii <span class="accent-text">adoră</span> SuperParty</h2>
