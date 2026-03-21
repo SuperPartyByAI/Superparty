@@ -26,6 +26,24 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <meta name="robots" content={finalRobots} />
   <link rel="canonical" href={finalCanonical} />
   {schema && <script type="application/ld+json" set:html={schema} />}
+  
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": title.replace(/\|.*/, '').trim() || "Animatori Petreceri Copii",
+    "description": description || "Servicii profesionale de animatori si organizare petreceri copii in Bucuresti.",
+    "brand": {
+      "@type": "Brand",
+      "name": "SuperParty"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "1498"
+    }
+  })} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
