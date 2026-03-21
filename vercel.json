@@ -1,16 +1,6 @@
 {
     "redirects": [
         {
-            "source": "/petreceri/animator-(?<char>[^/]+)-petreceri-copii-(?<loc>[^/]+)/?",
-            "destination": "/petreceri/animatori-petreceri-copii-$char-$loc",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/petrecere-tematica-(?<char>[^/]+)-copii-(?<loc>[^/]+)/?",
-            "destination": "/petreceri/animatori-petreceri-copii-$char-$loc",
-            "statusCode": 301
-        },
-        {
             "source": "/wp-admin/(.*)",
             "destination": "/",
             "statusCode": 301
@@ -97,16 +87,6 @@
             "statusCode": 301
         },
         {
-            "source": "/blog",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/blog/",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
             "source": "/arie-acoperire/",
             "destination": "/arie-acoperire",
             "statusCode": 301
@@ -180,42 +160,7 @@
             "statusCode": 301
         },
         {
-            "source": "/wp-content/plugins/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-content/themes/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-content/cache/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-content/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-admin/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
             "source": "/wp-login.php",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-json/:path*",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/wp-includes/:path*",
             "destination": "/",
             "statusCode": 301
         },
@@ -225,38 +170,28 @@
             "statusCode": 301
         },
         {
-            "source": "/feed",
+            "source": "/feed/?",
             "destination": "/",
             "statusCode": 301
         },
         {
-            "source": "/feed/",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/comments/feed",
-            "destination": "/",
-            "statusCode": 301
-        },
-        {
-            "source": "/comments/feed/",
+            "source": "/comments/feed/?",
             "destination": "/",
             "statusCode": 301
         },
         {
             "source": "/category/:path*",
-            "destination": "/blog",
+            "destination": "/",
             "statusCode": 301
         },
         {
             "source": "/tag/:path*",
-            "destination": "/blog",
+            "destination": "/",
             "statusCode": 301
         },
         {
             "source": "/author/:path*",
-            "destination": "/blog",
+            "destination": "/",
             "statusCode": 301
         },
         {
@@ -270,52 +205,7 @@
             "statusCode": 301
         },
         {
-            "source": "/petreceri/animator-mickey-mouse-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-paw-patrol-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-pikachu-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-batman-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-spiderman-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-moana-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-rapunzel-petreceri-copii-bucuresti",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/animator-:personaj-petreceri-copii-:oras",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
             "source": "/petreceri/sfaturi-ghiduri",
-            "destination": "/animatori-petreceri-copii",
-            "statusCode": 301
-        },
-        {
-            "source": "/petreceri/petrecere-:path*",
             "destination": "/animatori-petreceri-copii",
             "statusCode": 301
         }
