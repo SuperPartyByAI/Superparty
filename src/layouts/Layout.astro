@@ -53,34 +53,19 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <link rel="preload" href="/optimized/hero-opt.webp" as="image" type="image/webp" fetchpriority="high" />
 
 
-  <!-- Google Analytics 4 — lazy load after user interaction to maximize LCP -->
+  <!-- Google Analytics 4 — defer to not block FCP -->
   {GA4_ID && (
-    <script data-ga4={GA4_ID} is:inline>
-      (function() {
-        var GA_ID = document.currentScript ? document.currentScript.getAttribute('data-ga4') : '';
-        if (!GA_ID) return;
-        var loaded = false;
-        function loadGA() {
-          if (loaded) return;
-          loaded = true;
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = window._gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', GA_ID, { send_page_view: true });
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-          document.head.appendChild(s);
-        }
-        // Load after first user interaction
-        ['click','scroll','touchstart','keydown'].forEach(function(ev) {
-          document.addEventListener(ev, loadGA, { once: true, passive: true, capture: true });
-        });
-        // Fallback: load after 4 seconds even without interaction
-        setTimeout(loadGA, 4000);
-      })();
-    </script>
+    <>
+      <script defer src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+      <script data-ga4={GA4_ID} is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        const _id = document.currentScript ? document.currentScript.getAttribute('data-ga4') : '';
+        if (_id) gtag('config', _id, { send_page_view: true });
+        window._gtag = gtag;
+      </script>
+    </>
   )}
   <style>
     :root {
