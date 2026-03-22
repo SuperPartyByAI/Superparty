@@ -53,20 +53,6 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
   <link rel="preload" href="/optimized/hero-opt.webp" as="image" type="image/webp" fetchpriority="high" />
 
 
-  <!-- Google Analytics 4 — defer to not block FCP -->
-  {GA4_ID && (
-    <>
-      <script defer src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-      <script data-ga4={GA4_ID} is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        const _id = document.currentScript ? document.currentScript.getAttribute('data-ga4') : '';
-        if (_id) gtag('config', _id, { send_page_view: true });
-        window._gtag = gtag;
-      </script>
-    </>
-  )}
   <style>
     :root {
       --primary: #ff6b35;
@@ -312,5 +298,29 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
       });
     })();
   </script>
+  <!-- GA4: loaded after LCP via requestIdleCallback to avoid LCP blocking -->
+  {GA4_ID && (
+    <script data-ga4={GA4_ID} is:inline>
+      (function(){
+        var id = document.currentScript.getAttribute('data-ga4');
+        function load(){
+          window.dataLayer = window.dataLayer||[];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag=window._gtag=gtag;
+          gtag('js',new Date());
+          gtag('config',id,{send_page_view:true});
+          var s=document.createElement('script');
+          s.async=true;
+          s.src='https://www.googletagmanager.com/gtag/js?id='+id;
+          document.head.appendChild(s);
+        }
+        if('requestIdleCallback' in window){
+          requestIdleCallback(load,{timeout:3000});
+        } else {
+          setTimeout(load,2000);
+        }
+      })();
+    </script>
+  )}
 </body>
 </html>
