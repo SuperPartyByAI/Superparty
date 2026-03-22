@@ -9,7 +9,7 @@ const GEN = `${BASE}/generated`;
 
 // ─── Hero images (12) — toate AI generate, verificate 200 ────────────────────
 export const heroImages = [
-  { src: `/optimized/hero-opt.webp`, alt: "Echipa SuperParty — Animatori Petreceri Copii București" },
+  { src: `${GEN}/hero-coperta.webp`, alt: "Echipa SuperParty — Animatori Petreceri Copii București" },
   { src: `${GEN}/party2_bear_1772698449725.webp`, alt: "Animatori pentru copii" },
   { src: `${GEN}/party_batman_1772696670487.webp`, alt: "Batman la petrecere copii" },
   { src: `${GEN}/party_pikachu_1772696930559.webp`, alt: "Pikachu la petrecere copii" },
