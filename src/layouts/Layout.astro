@@ -44,6 +44,27 @@ const WA_URL = `https://wa.me/40722744377?text=${WA_TEXT}`;
       "ratingCount": "1498"
     }
   })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org/",
+    "@type": "ProfessionalService",
+    "name": "SuperParty",
+    "url": "https://www.superparty.ro/",
+    "logo": "https://www.superparty.ro/icon.png",
+    "image": "https://www.superparty.ro/wp-content/uploads/generated/hero-coperta.webp",
+    "telephone": "+40722744377",
+    "priceRange": "490-1290 RON",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "București",
+      "addressCountry": "RO"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "București" },
+      { "@type": "AdministrativeArea", "name": "Ilfov" }
+    ],
+    "openingHours": "Mo-Su 08:00-22:00"
+  })} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
